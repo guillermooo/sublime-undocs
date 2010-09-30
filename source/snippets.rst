@@ -1,26 +1,24 @@
 Snippets
 ========
 
-Whether you are coding in a programming language or simply writing, you're
-likely to need certain short fragments again and again. Snippets save you this
-tedious typing by inserting smart templates that adapt to the context in which
-you are writing. All this will become clearer once you gain even a superficial
-understanding about this feature.
+Whether you are coding or writing the next vampire best-seller, you're likely to
+need certain short fragments of text again and again. Use snippets to save you
+tedious typing. Snippets are smart templates that will insert text for you and
+adapt it to their context.
 
-The easiest way to create a new snippet is by selecting the ``New Snippet``
-command from Sublime Text's ``Tools`` menu. This will present you with an skeleton
-for a new snippet.
+To create a new snippet, select ``Tools > New Snippet``. Sublime Text will
+present you with an skeleton for a new snippet.
 
-You can store snippets under any package folder, but for the purposes of this
-tutorial, you can save them under you `User` package.
+Snippets can be stored under any package's folder, but to keep it simple while
+you're learning, you can save them to your ``Packages\User`` folder. For now,
+think of packages as folders. That's what they are, after all.
 
 Snippets file format
 ********************
 
-Snippets typically live under a Sublime Text pacakge folder. They are simplified
-XML files with the extension sublime-snippet. So, for instance, you could have
-a `greeting.sublime-snippet` under an `Email` package. For the time being, think
-of packages as folders. That's what they are, after all.
+Snippets typically live in a Sublime Text pacakge. They are simplified XML files
+with the extension ``sublime-snippet``. For instance, you could have a
+`greeting.sublime-snippet` inside an `Email` package.
 
 The structure of a typical snippet is as follows (including the default hints
 Sublime Text inserts for your convenience):
@@ -37,16 +35,16 @@ Sublime Text inserts for your convenience):
         <description>My Fancy Snippet</description>
     </snippet>
 
-The `snippet` element contains all the information Sublime Text needs to know
-*what* to insert, *where* to insert it and *how*. Let's see all of these parts
-in turn.
+The ``snippet`` element contains all the information Sublime Text needs in order
+to know *what* to insert, *whether* to insert it and *when*. Let's see all of
+these parts in turn.
 
 `content`
     The actual snippet. Snippets can range from simple to fairly complex
     templates. We'll look at examples of both later.
 
     .. note::
-        Note that the content is included in a ``<![CDATA[...]]`` section.
+        Note that the content is included in a ``<![CDATA[...]]>`` section.
         Snippets won't work if you don't do this!
 
     .. note::
@@ -65,7 +63,7 @@ in turn.
     .. note::
         This is not the only way to tell Sublime Text how you want to insert your
         snippet, but we'll talk about that some other time. For now, let's just
-        say that the other method more flexible as well as a bit more complex.
+        say that the other method is more flexible as well as a bit more complex.
 
 `scope`
     Scopes won't be explained here, but they are a core concept of Sublime Text.
@@ -80,8 +78,8 @@ With this information, you can start writing your own snippets. We'll see next
 how to go about this.
 
     .. note::
-        In order to keep examples short, we're only including the ``content``
-        element's text unless stated otherwise.
+        In the interest of brevity, we're only including the ``content``
+        element's text in examples unless stated otherwise.
 
 Snippet resources
 *****************
@@ -89,7 +87,8 @@ Snippet resources
 Automatic variables
 -------------------
 
-Snippets have access to contextual information in the form of variables.
+Snippets have access to contextual and environmental information in the form
+of variables.
 
 ======================    ====================================================================================
 **SELECTION**             The text that was selected when the snippet was triggered.
@@ -105,6 +104,26 @@ Snippets have access to contextual information in the form of variables.
 **TM_TAB_SIZE**           Spaces per-tab (controlled by the ``tabSize`` option).
 **TM_SOFT_TABS**          ``YES`` if ``translateTabsToSpaces`` is true, otherwise ``NO``.
 ======================    ====================================================================================
+
+Let's see a simple example of a snippet using variables:
+
+.. code-block:: c
+
+    ====================================
+    USER NAME:          $TM_FULLNAME
+    FILE NAME:          $TM_FILENAME
+     TAB SIZE:          $TM_TAB_SIZE
+    SOFT TABS:          $TM_SOFT_TABS
+    ====================================
+
+    # Output (except hash symbols and leading spaces):
+    # ====================================
+    # USER NAME:          guillermo
+    # FILE NAME:          test.txt
+    #  TAB SIZE:          4
+    # SOFT TABS:          YES
+    # ====================================
+
 
 Tab Stops and Placeholders
 --------------------------
