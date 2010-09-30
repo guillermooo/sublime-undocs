@@ -76,7 +76,7 @@ Snippet resources
 =================
 
 Automatic variables
-*******************
+-------------------
 
 Every snippet has access to metainformation about the file it's being triggered
 on in the form of variables.
@@ -97,7 +97,7 @@ on in the form of variables.
 ======================    ====================================================================================
 
 Substitutions
-*************
+-------------
 
 You can define stop points to cycle through with the `tab` key in your snippet.
 You can also put placeholder text in each of them. That way you can decide
@@ -117,4 +117,4 @@ mirror each other too.
 
 
 Complex substitutions
-*********************
+---------------------
