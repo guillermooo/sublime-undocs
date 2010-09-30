@@ -52,14 +52,20 @@ in turn.
     .. note::
         If you want the get a literal ``$``, you have to escape it like this: ``\$``.
 
+    .. note::
+        When writing a snippet that contains indentation, always use tabs. The
+        tabs will be transformed into spaces when the snippet is inserted if the
+        option ``translateTabsToSpaces`` is set to ``true``.
+
 `tabTrigger`
     Defines the sequence of keys you want to type to let Sublime Text you want
     to insert this snippet. The snippet will kick in as soon as you hit the
-    `tab` key after entering the predefined sequence.
+    ``tab`` key after entering the predefined sequence.
 
-    NOTE: This is not the only way to tell st- how you want to insert your
-    snippet, but we'll talk about that some other time. For now, let's just say
-    that the other method is both more flexible are a bit more complex.
+    .. note::
+        This is not the only way to tell Sublime Text how you want to insert your
+        snippet, but we'll talk about that some other time. For now, let's just
+        say that the other method more flexible as well as a bit more complex.
 
 `scope`
     Scopes won't be explained here, but they are a core concept of Sublime Text.
@@ -67,10 +73,15 @@ in turn.
     know what to name different parts of a text.
 
 `description`
-    I don't know what descriptions are for, but I will investigate.
+    Used when showing the snippet in the Snippets menu. If not present, Sublime Text
+    defaults to the name of the snippet.
 
 With this information, you can start writing your own snippets. We'll see next
 how to go about this.
+
+    .. note::
+        In order to keep examples short, we're only including the ``content``
+        element's text unless stated otherwise.
 
 Snippet resources
 *****************
@@ -87,7 +98,7 @@ Snippets have access to contextual information in the form of variables.
 **TM_LINE_INDEX**         Column the snippet is being inserted at, 0 based.
 **TM_LINE_NUMBER**        Row the snippet is being insterted at, 1 based.
 **TM_FILEPATH**           File path to the file being edited.
-**TM_FILENAME**           Filne name of the file being edited.
+**TM_FILENAME**           Filne name of the file being edited including extension.
 **TM_CURRENT_WORD**       Current word under the cursor when the snippet was triggered.
 **TM_CURRENT_LINE**       Content of the line the cursor was in when the snippet was triggered.
 **TM_FULLNAME**           User's username.
@@ -95,16 +106,20 @@ Snippets have access to contextual information in the form of variables.
 **TM_SOFT_TABS**          ``YES`` if ``translateTabsToSpaces`` is true, otherwise ``NO``.
 ======================    ====================================================================================
 
-Substitutions
--------------
+Tab Stops and Placeholders
+--------------------------
 
-You can define stop points to cycle through with the `tab` key in your snippet.
-You can also put placeholder text in each of them. That way you can decide
-whether to leave the placeholder or change it after you've inserted the snippet.
+You can define tab stops to cycle through with the ``tab`` key. Tab stops are
+used to walk you through the editing of a snippet once it's been inserted. They
+also let you specify a default value for the general case.
 
 .. code-block:: c
 
     Hello ${1:John}!
+
+In the example above, the cursor will select the text "John" when you press
+``tab`` once. If you press ``tab`` a second time, Sublime Text will put the
+cursor at the end of the snippet so that you can resume normal editing.
 
 You can have any number of substitutions in your snippets. Substitutions can
 mirror each other too.
