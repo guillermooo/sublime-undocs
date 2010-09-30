@@ -73,27 +73,26 @@ With this information, you can start writing your own snippets. We'll see next
 how to go about this.
 
 Snippet resources
-=================
+*****************
 
 Automatic variables
 -------------------
 
-Every snippet has access to metainformation about the file it's being triggered
-on in the form of variables.
+Snippets have access to contextual information in the form of variables.
 
 ======================    ====================================================================================
 **SELECTION**             The text that was selected when the snippet was triggered.
-**PARAM1, PARAM2...**     Arguments passed to the `insertSnippet` command. (Not covered here.)
-**TM_SELECTED_TEXT**      ???
-**TM_LINE_INDEX**         ???
-**TM_LINE_NUMBER**        Line where the cursor was in when the snippet was triggered.
-**TM_FILEPATH**           File path to the file you are editing.
-**TM_FILENAME**           Filne name of the file you are editing.
+**PARAM1, PARAM2...**     Arguments passed to the ``insertSnippet`` command. (Not covered here.)
+**TM_SELECTED_TEXT**      An alias for **SELECTION**.
+**TM_LINE_INDEX**         Column the snippet is being inserted at, 0 based.
+**TM_LINE_NUMBER**        Row the snippet is being insterted at, 1 based.
+**TM_FILEPATH**           File path to the file being edited.
+**TM_FILENAME**           Filne name of the file being edited.
 **TM_CURRENT_WORD**       Current word under the cursor when the snippet was triggered.
-**TM_CURRENT_LINE**       Holds the content of the line the cursor was in when the snippet was triggered.
-**TM_FULLNAME**           ???
-**TM_TAB_SIZE**           ???
-**TM_SOFT_TABS**          ???
+**TM_CURRENT_LINE**       Content of the line the cursor was in when the snippet was triggered.
+**TM_FULLNAME**           User's username.
+**TM_TAB_SIZE**           Spaces per-tab (controlled by the ``tabSize`` option).
+**TM_SOFT_TABS**          ``YES`` if ``translateTabsToSpaces`` is true, otherwise ``NO``.
 ======================    ====================================================================================
 
 Substitutions
