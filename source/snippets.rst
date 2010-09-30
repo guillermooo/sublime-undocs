@@ -43,12 +43,10 @@ in turn.
 
 `content`
     The actual snippet. Snippets can range from simple to fairly complex
-    templates. We'll look at examples of both later. Note that the content is
-    surrounded by the `<![CDATA[...]]` directive. Snippets won't work if you
-    don't do this!
+    templates. We'll look at examples of both later.
 
     .. note::
-        Note that the content is surrounded by the ``<![CDATA[...]]`` directive.
+        Note that the content is included in a ``<![CDATA[...]]`` section.
         Snippets won't work if you don't do this!
 
     .. note::
