@@ -2,7 +2,7 @@ Snippets
 ========
 
 Whether you are coding or writing the next vampire best-seller, you're likely to
-need certain short fragments of text again and again. Use snippets to save you
+need certain short fragments of text again and again. Use snippets to save yourself
 tedious typing. Snippets are smart templates that will insert text for you and
 adapt it to their context.
 
@@ -91,18 +91,18 @@ Snippets have access to contextual and environmental information in the form
 of variables.
 
 ======================    ====================================================================================
-**SELECTION**             The text that was selected when the snippet was triggered.
 **PARAM1, PARAM2...**     Arguments passed to the ``insertSnippet`` command. (Not covered here.)
-**TM_SELECTED_TEXT**      An alias for **SELECTION**.
-**TM_LINE_INDEX**         Column the snippet is being inserted at, 0 based.
-**TM_LINE_NUMBER**        Row the snippet is being insterted at, 1 based.
-**TM_FILEPATH**           File path to the file being edited.
-**TM_FILENAME**           Filne name of the file being edited including extension.
-**TM_CURRENT_WORD**       Current word under the cursor when the snippet was triggered.
+**SELECTION**             The text that was selected when the snippet was triggered.
 **TM_CURRENT_LINE**       Content of the line the cursor was in when the snippet was triggered.
+**TM_CURRENT_WORD**       Current word under the cursor when the snippet was triggered.
+**TM_FILENAME**           Filne name of the file being edited including extension.
+**TM_FILEPATH**           File path to the file being edited.
 **TM_FULLNAME**           User's username.
-**TM_TAB_SIZE**           Spaces per-tab (controlled by the ``tabSize`` option).
+**TM_LINE_INDEX**         Column the snippet is being inserted at, 0 based.
+**TM_LINE_NUMBER**        Row the snippet is being inserted at, 1 based.
+**TM_SELECTED_TEXT**      An alias for **SELECTION**.
 **TM_SOFT_TABS**          ``YES`` if ``translateTabsToSpaces`` is true, otherwise ``NO``.
+**TM_TAB_SIZE**           Spaces per-tab (controlled by the ``tabSize`` option).
 ======================    ====================================================================================
 
 Let's see a simple example of a snippet using variables:
