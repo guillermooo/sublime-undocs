@@ -16,7 +16,7 @@ think of packages as folders. That's what they are, after all.
 Snippets file format
 ********************
 
-Snippets typically live in a Sublime Text pacakge. They are simplified XML files
+Snippets typically live in a Sublime Text package. They are simplified XML files
 with the extension ``sublime-snippet``. For instance, you could have a
 `greeting.sublime-snippet` inside an `Email` package.
 
@@ -44,7 +44,7 @@ these parts in turn.
     templates. We'll look at examples of both later.
 
     .. note::
-        Note that the content is included in a ``<![CDATA[...]]>`` section.
+        Note that the content is included in a ``<![CDATA[…]]>`` section.
         Snippets won't work if you don't do this!
 
     .. note::
@@ -91,13 +91,13 @@ Snippets have access to contextual and environmental information in the form
 of variables.
 
 ======================    ====================================================================================
-**PARAM1, PARAM2...**     Arguments passed to the ``insertSnippet`` command. (Not covered here.)
+**PARAM1, PARAM2 …**      Arguments passed to the ``insertSnippet`` command. (Not covered here.)
 **SELECTION**             The text that was selected when the snippet was triggered.
 **TM_CURRENT_LINE**       Content of the line the cursor was in when the snippet was triggered.
 **TM_CURRENT_WORD**       Current word under the cursor when the snippet was triggered.
 **TM_FILENAME**           Filne name of the file being edited including extension.
 **TM_FILEPATH**           File path to the file being edited.
-**TM_FULLNAME**           User's username.
+**TM_FULLNAME**           User's User name.
 **TM_LINE_INDEX**         Column the snippet is being inserted at, 0 based.
 **TM_LINE_NUMBER**        Row the snippet is being inserted at, 1 based.
 **TM_SELECTED_TEXT**      An alias for **SELECTION**.
@@ -125,20 +125,67 @@ Let's see a simple example of a snippet using variables:
     # ====================================
 
 
-Tab Stops and Placeholders
---------------------------
+Tab stops
+---------
 
-You can define tab stops to cycle through with the ``tab`` key. Tab stops are
-used to walk you through the editing of a snippet once it's been inserted. They
-also let you specify a default value for the general case.
+With the help of special marks, you can cycle through positions within the
+snippet by pressing the ``tab`` key. Tab stops are used to walk you through
+the customization of a snippet once it's been inserted.
 
 .. code-block:: c
 
-    Hello ${1:John}!
+    First Name: $1
+    Second Name: $2
+    Address: $3
 
-In the example above, the cursor will select the text "John" when you press
-``tab`` once. If you press ``tab`` a second time, Sublime Text will put the
-cursor at the end of the snippet so that you can resume normal editing.
+In the example above, the cursor will jump to ``1$`` if you press ``tab`` once.
+If you press ``tab`` a second time, it will advance to ``$2``, etc. You can also
+move backwards in the series with ``shift+tab``. If you press ``tab`` after the
+highest tab stop, by default Sublime Text will place the cursor at the end of the
+snippet so that you can resume normal editing.
+
+
+    .. note::
+        If you want to control where the exit point should be, use the ``$0`` mark.
+
+Mirrored tab stops
+------------------
+
+Identical tab stop marks mirror each other: when you edit the first one, the rest
+will be populated with the same value in real time.
+
+.. code-block:: c
+
+    First Name: $1
+    Second Name: $2
+    Address: $3
+    User name: $1
+
+In this example, "User name" will be filled out with the same value as "First Name".
+
+Place holders
+-------------
+
+By expanding the tab stop syntax a little bit, you can define default values for
+every tab stop. If there's a general case for your template and you will only
+need to customize it occasionally, it makes sense to use place holders for the
+most likely text you will need.
+
+.. code-block:: c
+
+    First Name: ${1:Guillermo}
+    Second Name: ${2:López}
+    Address: ${3:Main Street 1234}
+    User name: $1
+
+Of course, you can use variables as place holders too:
+
+.. code-block:: c
+
+    First Name: ${1:Guillermo}
+    Second Name: ${2:López}
+    Address: ${3:Main Street 1234}
+    User name: ${4:$TM_FULLNAME}
 
 You can have any number of substitutions in your snippets. Substitutions can
 mirror each other too.
@@ -147,7 +194,3 @@ mirror each other too.
 
     Hello ${1:John}! This is ${2:Frank}. You owe me ${3:100}\$. I know where you
     live, $1.
-
-
-Complex substitutions
----------------------
