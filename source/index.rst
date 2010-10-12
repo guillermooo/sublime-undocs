@@ -15,7 +15,7 @@ Contents:
    commands
    macros
    snippets
-..   option
+   options
 
 Indices and tables
 ==================

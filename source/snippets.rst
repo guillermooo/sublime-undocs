@@ -187,10 +187,53 @@ Of course, you can use variables as place holders too:
     Address: ${3:Main Street 1234}
     User name: ${4:$TM_FULLNAME}
 
-You can have any number of substitutions in your snippets. Substitutions can
-mirror each other too.
+You can also nest tab stops within place holders.
 
 .. code-block:: c
 
-    Hello ${1:John}! This is ${2:Frank}. You owe me ${3:100}\$. I know where you
-    live, $1.
+    Test: ${1:Nested ${2:Placeholder}}
+
+Substitutions
+-------------
+
+.. WARNING::
+    This section is a draft and may contain inaccurate information.
+
+In addition to the place holder syntax, tab stops can specify more complex operations
+with substitutions. Use substitutions to dynamically generate text based on a mirrored
+tab stop.
+
+The substitution syntax has the following syntaxes:
+
+    - ``${var_name/regex/format_string/}``
+    - ``${var_name/regex/format_string/options}``
+
+**var_name**
+    The variable name: 1, 2, 3...
+
+**regex**
+    Perl-style regular expression: See the `Boost library reference for regular expressions <http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html>`_.
+
+**format_string**
+    See the `Boost library reference for format strings <http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html>`_.
+
+**options**
+    Optional. May be any of the following:
+        **i**
+            Case-insensitive regex.
+        **g**
+            Replace all occurrences of ``regex``.
+        **m**
+            Don't ignore newlines in the string.
+
+With substitutions you can, for instance, underline text effortlessly:
+
+.. code-block:: c
+
+          Original: ${1:Hey, Joe!}
+    Transformation: ${1/./=/g}
+
+    # Output
+
+          Original: Hey, Joe!
+    Transformation: =========
