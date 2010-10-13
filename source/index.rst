@@ -12,10 +12,13 @@ Contents:
    :maxdepth: 2
 
    conventions
-   commands
-   macros
-   snippets
-   options
+   Core Features <core_features>
+   Customization <customization>
+   Extensibility and Automation <extensibility>
+.. macros
+.. snippets
+..   commands
+..   options
 
 .. Indices and tables
 .. ==================
