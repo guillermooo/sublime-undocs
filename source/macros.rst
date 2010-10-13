@@ -14,18 +14,27 @@ How to record a macro
 To start recording a macro, press ``CTRL + Q``. After that, carefully execute the
 desired steps one by one. When you're done, press ``CTRL + Q`` to stop recording.
 Your new macro won't be saved to a file, but kept in the macro buffer instead.
-You can now run the macro by pressing ``CTRL + SHIFT + Q``. Alternatively, you can
-save it to a file by choosing **Tools | Save macro...**.
+You can now run the recorded macro by pressing ``CTRL + SHIFT + Q`` or save it
+to a file by selecting **Tools | Save macro...**.
 
 The macro buffer will only remember the macro recorded latest.
+
+.. note::
+    Macros only capture commands sent to the buffer: window level commands, such
+    as creating a new file, will be ignored.
 
 How to edit a macro
 *******************
 
 Alternatively to recording a macro, you can edit it by hand. Save a new file with
 the extension ``sublime-macro`` under ``\Packages\User`` and add commands to it. You
-can only specifiy one command per line. See the Commands section for more information
+can only issue one command per line. See the Commands section for more information
 on commands.
 
-You can actually save your macro files under any package folder, but if you save
-them under ``\Packages\User``, they will show up under **Tools | Macros | User**.
+Macro files can be stored in any package folder, but if you save them to
+``\Packages\User``, they will show up under **Tools | Macros | User**.
+
+
+.. note::
+    If you're editing a macro by hand, you need to escape quotes, whitespace and
+    backslashes by preceding them with ``\``.
