@@ -8,3 +8,12 @@
         Example:
 
             **Tools | Snippets | New...***
+
+    * Keyboard shortcuts
+
+        Use preformatted text in all caps.
+
+        Example:
+
+            ``CTRL + Q``
+
