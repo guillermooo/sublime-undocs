@@ -12,9 +12,9 @@ Contents:
    :maxdepth: 2
 
    conventions
-   Core Features <core_features>
+   Core Features <core/core_features>
    Customization <customization/customization>
-   Extensibility and Automation <extensibility>
+   Extensibility and Automation <extensibility/extensibility>
 
 .. Indices and tables
 .. ==================
