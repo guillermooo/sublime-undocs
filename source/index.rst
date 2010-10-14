@@ -13,12 +13,8 @@ Contents:
 
    conventions
    Core Features <core_features>
-   Customization <customization>
+   Customization <customization/customization>
    Extensibility and Automation <extensibility>
-.. macros
-.. snippets
-..   commands
-..   options
 
 .. Indices and tables
 .. ==================
