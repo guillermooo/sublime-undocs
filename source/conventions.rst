@@ -10,3 +10,4 @@ Conventions
 ***********
 
 * Relative paths (e. g. ``\Packages\User``) refer to ``%APPDATA%\Sublime Text`` unless otherwise noted.
+* We assume default key bindings when indicating keyboard shortcuts.
