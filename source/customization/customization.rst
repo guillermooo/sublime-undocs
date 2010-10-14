@@ -8,3 +8,8 @@ you can adapt it to your needs and preferences.
     :maxdepth: 2
 
     options
+    indentation
+    keybindings
+    menus
+
+

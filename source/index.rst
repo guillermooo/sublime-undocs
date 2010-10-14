@@ -15,6 +15,7 @@ Contents:
    Core Features <core/core_features>
    Customization <customization/customization>
    Extensibility and Automation <extensibility/extensibility>
+   faq
 
 .. Indices and tables
 .. ==================
