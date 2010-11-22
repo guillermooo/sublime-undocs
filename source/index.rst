@@ -6,8 +6,6 @@
 Sublime Text Help
 =================
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
 
