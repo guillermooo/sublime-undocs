@@ -64,7 +64,7 @@ Sublime Text implements the idea of scopes from Texmate, a text editor for Mac.
 `Textmate's online manual`_ contains further information about scopes that is useful for
 Sublime Text users too.
 
-.. `Textmate's online manual`: http://manual.macromates.com/en/
+.. _`Textmate's online manual`: http://manual.macromates.com/en/
 
 .. note::
   Sublime Text provides a hook to override the scope matching look-up chain,
