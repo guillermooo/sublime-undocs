@@ -8,8 +8,8 @@ contextual information on which many editing features rely.
 
 In broad strokes, Sublime attempts to match rules defined in syntax definitions against
 the buffer's text and gives occurrences names known as *scopes*. Scopes are then used
-to determine the course of action when actions defined in package items like snippets
-or commands are triggered.
+to determine the course of action when dynamic items like snippets or commands are
+triggered.
 
 Prerequisites
 *************
