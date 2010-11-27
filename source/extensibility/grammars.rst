@@ -393,7 +393,7 @@ available options::
                "match": ""
                          }
          ],
-         contentName: ""
+         "contentName": ""
        }
 
 Some elements may look familiar, but their combination might be daunting. Let's
