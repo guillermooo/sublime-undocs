@@ -28,6 +28,10 @@ body {
 /*    display: none;*/
 }
 
+.highlight {
+    background-color: #E8E8E8;
+}
+
 .highlight-python {
     background-color: #E8E8E8;
     padding-top: 0.2em;
