@@ -114,13 +114,13 @@ Let's see a simple example of a snippet using variables::
     SOFT TABS:          $TM_SOFT_TABS
     ====================================
 
-    # Output (except hash symbols and leading spaces):
-    # ====================================
-    # USER NAME:          guillermo
-    # FILE NAME:          test.txt
-    #  TAB SIZE:          4
-    # SOFT TABS:          YES
-    # ====================================
+    # Output:
+    ====================================
+    USER NAME:          guillermo
+    FILE NAME:          test.txt
+     TAB SIZE:          4
+    SOFT TABS:          YES
+    ====================================
 
 
 Tab stops
