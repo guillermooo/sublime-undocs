@@ -29,11 +29,11 @@ body {
 }
 
 .highlight {
-    background-color: #E8E8E8;
+/*    background-color: #E8E8E8;*/
 }
 
 .highlight-python {
-    background-color: #E8E8E8;
+/*    background-color: #E8E8E8;*/
     padding-top: 0.2em;
     padding-left: 1em;
     padding-bottom: 0.2em;
