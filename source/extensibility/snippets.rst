@@ -21,9 +21,7 @@ with the extension ``sublime-snippet``. For instance, you could have a
 `greeting.sublime-snippet` inside an `Email` package.
 
 The structure of a typical snippet is as follows (including the default hints
-Sublime Text inserts for your convenience):
-
-.. code-block:: xml
+Sublime Text inserts for your convenience)::
 
     <snippet>
         <content><![CDATA[Type your snippet here]]></content>
@@ -39,7 +37,7 @@ The ``snippet`` element contains all the information Sublime Text needs in order
 to know *what* to insert, *whether* to insert it and *when*. Let's see all of
 these parts in turn.
 
-`content`
+**content**
     The actual snippet. Snippets can range from simple to fairly complex
     templates. We'll look at examples of both later.
 
@@ -55,7 +53,7 @@ these parts in turn.
         tabs will be transformed into spaces when the snippet is inserted if the
         option ``translateTabsToSpaces`` is set to ``true``.
 
-`tabTrigger`
+**tabTrigger**
     Defines the sequence of keys you want to type to let Sublime Text you want
     to insert this snippet. The snippet will kick in as soon as you hit the
     ``tab`` key after entering the predefined sequence.
@@ -65,12 +63,12 @@ these parts in turn.
         snippet, but we'll talk about that some other time. For now, let's just
         say that the other method is more flexible as well as a bit more complex.
 
-`scope`
+**scope**
     Scopes won't be explained here, but they are a core concept of Sublime Text.
     Basically, scopes are named ranges of text. Based on grammars, Sublime Text
     know what to name different parts of a text.
 
-`description`
+**description**
     Used when showing the snippet in the Snippets menu. If not present, Sublime Text
     defaults to the name of the snippet.
 
@@ -91,23 +89,21 @@ Snippets have access to contextual and environmental information in the form
 of variables.
 
 ======================    ====================================================================================
-**PARAM1, PARAM2 …**      Arguments passed to the ``insertSnippet`` command. (Not covered here.)
-**SELECTION**             The text that was selected when the snippet was triggered.
-**TM_CURRENT_LINE**       Content of the line the cursor was in when the snippet was triggered.
-**TM_CURRENT_WORD**       Current word under the cursor when the snippet was triggered.
-**TM_FILENAME**           Filne name of the file being edited including extension.
-**TM_FILEPATH**           File path to the file being edited.
-**TM_FULLNAME**           User's User name.
-**TM_LINE_INDEX**         Column the snippet is being inserted at, 0 based.
-**TM_LINE_NUMBER**        Row the snippet is being inserted at, 1 based.
-**TM_SELECTED_TEXT**      An alias for **SELECTION**.
-**TM_SOFT_TABS**          ``YES`` if ``translateTabsToSpaces`` is true, otherwise ``NO``.
-**TM_TAB_SIZE**           Spaces per-tab (controlled by the ``tabSize`` option).
+**$PARAM1, $PARAM2 …**      Arguments passed to the ``insertSnippet`` command. (Not covered here.)
+**$SELECTION**             The text that was selected when the snippet was triggered.
+**$TM_CURRENT_LINE**       Content of the line the cursor was in when the snippet was triggered.
+**$TM_CURRENT_WORD**       Current word under the cursor when the snippet was triggered.
+**$TM_FILENAME**           Filne name of the file being edited including extension.
+**$TM_FILEPATH**           File path to the file being edited.
+**$TM_FULLNAME**           User's User name.
+**$TM_LINE_INDEX**         Column the snippet is being inserted at, 0 based.
+**$TM_LINE_NUMBER**        Row the snippet is being inserted at, 1 based.
+**$TM_SELECTED_TEXT**      An alias for **SELECTION**.
+**$TM_SOFT_TABS**          ``YES`` if ``translateTabsToSpaces`` is true, otherwise ``NO``.
+**$TM_TAB_SIZE**           Spaces per-tab (controlled by the ``tabSize`` option).
 ======================    ====================================================================================
 
-Let's see a simple example of a snippet using variables:
-
-.. code-block:: c
+Let's see a simple example of a snippet using variables::
 
     ====================================
     USER NAME:          $TM_FULLNAME
@@ -132,7 +128,7 @@ With the help of special marks, you can cycle through positions within the
 snippet by pressing the ``tab`` key. Tab stops are used to walk you through
 the customization of a snippet once it's been inserted.
 
-.. code-block:: c
+::
 
     First Name: $1
     Second Name: $2
@@ -154,7 +150,7 @@ Mirrored tab stops
 Identical tab stop marks mirror each other: when you edit the first one, the rest
 will be populated with the same value in real time.
 
-.. code-block:: c
+::
 
     First Name: $1
     Second Name: $2
@@ -171,7 +167,7 @@ every tab stop. If there's a general case for your template and you will only
 need to customize it occasionally, it makes sense to use place holders for the
 most likely text you will need.
 
-.. code-block:: c
+::
 
     First Name: ${1:Guillermo}
     Second Name: ${2:López}
@@ -180,7 +176,7 @@ most likely text you will need.
 
 Of course, you can use variables as place holders too:
 
-.. code-block:: c
+::
 
     First Name: ${1:Guillermo}
     Second Name: ${2:López}
@@ -189,7 +185,7 @@ Of course, you can use variables as place holders too:
 
 You can also nest tab stops within place holders.
 
-.. code-block:: c
+::
 
     Test: ${1:Nested ${2:Placeholder}}
 
@@ -228,7 +224,7 @@ The substitution syntax has the following syntaxes:
 
 With substitutions you can, for instance, underline text effortlessly:
 
-.. code-block:: c
+::
 
           Original: ${1:Hey, Joe!}
     Transformation: ${1/./=/g}

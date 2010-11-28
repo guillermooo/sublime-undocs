@@ -1,0 +1,101 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    font-size: 14pt;
+}
+
+.document {
+    text-align: left;
+    margin: auto;
+    width: 960px;
+}
+
+.related {
+    text-align: left;
+    margin: auto;
+    width: 960px;
+}
+
+.footer {
+    text-align: left;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+}
+
+.related {
+/*    display: none;*/
+}
+
+.highlight-python {
+    background-color: #E8E8E8;
+    padding-top: 0.2em;
+    padding-left: 1em;
+    padding-bottom: 0.2em;
+}
+
+.highlight-python pre {
+    font-family: Consolas, Courier New, sans;
+}
+
+a.headerlink {
+    text-decoration: none;
+    color: #F5F5F5;
+}
+
+tt.docutils {
+    background-color: #E8E8E8;
+    font-family: Consolas, Courier New, sans;
+}
+
+.sidebar {
+    background-color: #F5F4D0;
+    padding-top: 0.2em;
+    padding-left: 1em;
+    padding-right: 1.25em;
+    padding-bottom: 0.75em;
+    margin-top: 0.75em;
+}
+
+.sidebar .first {
+    font-weight: bold;
+}
+
+
+.footer {
+    border-top: gray 1px solid;
+    padding-top: 0.5em;
+    color: gray;
+}
+
+.admonition {
+    background-color: #F5F5F5;
+    padding-left: 0.75em;
+    padding-right: 0.2em;
+    border-top: gray 1px solid;
+    border-bottom: gray 1px solid;
+    margin-bottom: 0.2em;
+    margin-top: 0.2em;
+}
+
+.admonition .first {
+    font-weight: bold;
+}
+
+table.docutils {
+/*    border: 1px solid #888;*/
+    border: 0;
+    border-collapse: collapse;
+/*    -moz-box-shadow: 2px 2px 4px #eee;*/
+/*    -webkit-box-shadow: 2px 2px 4px #eee;*/
+/*    box-shadow: 2px 2px 4px #eee;*/
+}
+
+table.docutils td, table.docutils th {
+    border: 0;
+    border-bottom: 1px solid #888;
+    padding-top: 0.25em;
+    padding-left: 0.3em;
+    padding-right: 0.5em;
+}

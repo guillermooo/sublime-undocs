@@ -120,16 +120,16 @@ We'll be styling the actual snippet content, not the ``sublime-snippet`` file.
 
 These are the elements we want to style in a snippet:
 
-    - Variables (**$PARAM1**, **$USER_NAME**...)
-    - Simple tab stops (**$0**, **$1**...)
+    - Variables (**$PARAM1**, **$USER_NAME** …)
+    - Simple tab stops (**$0**, **$1** …)
     - Complex tab stops with place holders (**${1:Hello}**)
     - Nested tab stops (**${1:Hello ${2:World}!}**)
-    - Escape sequences (**\\$**, **\\<**...)
-    - Illegal sequences (**$**, **<**...)
+    - Escape sequences (**\\$**, **\\<** …)
+    - Illegal sequences (**$**, **<** …)
 
 .. note::
     Before continuing, make sure you've installed the GrammarDev package
-    as explained further up.
+    as explained further above.
 
 Creating A New Syntax Definition
 --------------------------------
@@ -188,10 +188,10 @@ Let's examine now the key elements.
     Text will automatically apply this syntax definition to it.
 
 **foldingStartMarker**
-    XXX. Optional.
+    TODO. Optional.
 
 **foldingStopMarker**
-    XXX. Optional.
+    TODO. Optional.
 
 **patterns**
     Container for your patterns.
@@ -258,7 +258,7 @@ Now we can begin to add our rules for Sublime snippets. Let's start with simple
 tab stops. These could be matched with a regex like so::
 
     \$[0-9]+
-    # or...
+    # or…
     \$\d+
 
 However, because we're writing our regex in JSON, we need to account for JSON's
@@ -270,7 +270,7 @@ With escaping out of the way, we can build our pattern like this::
 
     { "match": "\\$\\d+",
       "name": "keyword.source.ssraw",
-      "comment": "Tab stops like $1, $2..."
+      "comment": "Tab stops like $1, $2…"
     }
 
 .. sidebar:: Choosing The Right Scope Name
@@ -300,7 +300,7 @@ And we can add it to our syntax definition too::
         "patterns": [
             { "match": "\\$\\d+",
               "name": "keyword.source.ssraw",
-              "comment": "Tab stops like $1, $2..."
+              "comment": "Tab stops like $1, $2…"
             }
         ],
         "uuid": "ca03e751-04ef-4330-9a6b-9b99aae1c418"
@@ -331,7 +331,7 @@ Let's proceed to creating another rule for automatic variables.
 
     { "match": "\\$[A-Za-z][A-Za-z0-9_]+",
       "name": "keyword.source.ssraw",
-      "comment": "Variables like $PARAM1, $TM_SELECTION..."
+      "comment": "Variables like $PARAM1, $TM_SELECTION…"
     }
 
 Repeat the steps above to update the tmLanguage file and restart Sublime Text.
@@ -351,7 +351,7 @@ Let's rewrite one of our previous patterns to use captures::
        "captures": {
            "1": { "name": "constant.numeric.ssraw" }
        },
-      "comment": "Variables like $PARAM1, $TM_SELECTION..."
+      "comment": "Variables like $PARAM1, $TM_SELECTION…"
     }
 
 Captures introduce complexity to your rule, but they are pretty straightforward.
@@ -495,7 +495,7 @@ At long last, here's the final syntax definition::
             "captures": {
                 "1": { "name": "constant.numeric.ssraw" }
              },
-            "comment": "Tab stops like $1, $2..."
+            "comment": "Tab stops like $1, $2…"
           },
 
           { "match": "\\$([A-Za-z][A-Za-z0-9_]+)",
@@ -503,7 +503,7 @@ At long last, here's the final syntax definition::
             "captures": {
                 "1": { "name": "constant.numeric.ssraw" }
              },
-            "comment": "Variables like $PARAM1, $TM_SELECTION..."
+            "comment": "Variables like $PARAM1, $TM_SELECTION…"
           },
 
           { "name": "variable.complex.ssraw",

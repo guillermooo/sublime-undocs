@@ -28,7 +28,10 @@ Command names are written in *camelCase* and are always suffixed with *Command*
 
 Sublime Text will unify all command names by removing the *Command* suffix and
 lowercasing the initial letter. Following with the previous examples, you would
-call them like this: ``myNew``, ``nuke`` and ``duplicateLine``. Otherwise, Sublime
-Text wouldn't find them and would fail silently.
+call them like this (with ``view.runCommand`` or a similar API call):
 
+    - ``myNew``
+    - ``nuke``
+    - ``duplicateLine``
 
+Otherwise, Sublime Text wouldn't find them and would fail silently.

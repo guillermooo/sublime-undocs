@@ -9,5 +9,5 @@ volunteers. We hope it's useful!
 Conventions
 ***********
 
-* Relative paths (e. g. ``\Packages\User``) refer to ``%APPDATA%\Sublime Text`` unless otherwise noted.
+* Relative paths (e. g. ``Packages\User``) are rooted at ``sublime.packagesPath()`` unless otherwise noted.
 * We assume default key bindings when indicating keyboard shortcuts.
