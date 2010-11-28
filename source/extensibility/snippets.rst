@@ -21,7 +21,9 @@ with the extension ``sublime-snippet``. For instance, you could have a
 `greeting.sublime-snippet` inside an `Email` package.
 
 The structure of a typical snippet is as follows (including the default hints
-Sublime Text inserts for your convenience)::
+Sublime Text inserts for your convenience):
+
+.. code-block:: xml
 
     <snippet>
         <content><![CDATA[Type your snippet here]]></content>

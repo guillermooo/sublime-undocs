@@ -27,7 +27,7 @@ in Sublime's ``Packages`` folder. From the Windows command line, it would look
 roughly like this::
 
   cd "%APPDATA%/Sublime Text/Packages"
-  hg clone http://bitbucket.org/guillermooo/GrammarDev GrammarDev
+  hg clone http://bitbucket.org/guillermooo/grammardev GrammarDev
 
 
 .. sidebar:: Mercurial and Bitbucket
@@ -35,9 +35,9 @@ roughly like this::
   Mercurial is a distributed version control system (DVCS) and you need to install
   it separately. Bitbucket is an online service that provides hosting for Mercurial
   repositories. There are freely available command-line and graphical
-  `clients for Mercurial`_.
+  `Mercurial clients`_.
 
-  .. _`clients for Mercurial`: http://mercurial.selenic.com/downloads/
+  .. _`Mercurial clients`: http://mercurial.selenic.com/downloads/
 
 File format
 ***********
