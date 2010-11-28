@@ -22,19 +22,22 @@ lives on a public Mercurial_ repository at Bitbucket_.
 .. _Mercurial: http://mercurial.selenic.com/
 .. _Bitbucket: http://bitbucket.org
 
-Mercurial is a distributed version control system (DVCS) and you need to install
-it separately. Bitbucket is an online service that provides hosting for Mercurial
-repositories. There are freely available command-line and graphical
-`clients for Mercurial`_.
-
-.. _`clients for Mercurial`: http://mercurial.selenic.com/downloads/
-
 To obtain GrammarDev, clone the Bitbucket repository under the name ``GrammarDev``
 in Sublime's ``Packages`` folder. From the Windows command line, it would look
-like this::
+roughly like this::
 
   cd "%APPDATA%/Sublime Text/Packages"
   hg clone http://bitbucket.org/guillermooo/GrammarDev GrammarDev
+
+
+.. sidebar:: Mercurial and Bitbucket
+
+  Mercurial is a distributed version control system (DVCS) and you need to install
+  it separately. Bitbucket is an online service that provides hosting for Mercurial
+  repositories. There are freely available command-line and graphical
+  `clients for Mercurial`_.
+
+  .. _`clients for Mercurial`: http://mercurial.selenic.com/downloads/
 
 File format
 ***********
