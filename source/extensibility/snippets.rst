@@ -6,19 +6,19 @@ need certain short fragments of text again and again. Use snippets to save yours
 tedious typing. Snippets are smart templates that will insert text for you and
 adapt it to their context.
 
-To create a new snippet, select ``Tools > New Snippet``. Sublime Text will
+To create a new snippet, select **Tools | New Snippet**. Sublime Text will
 present you with an skeleton for a new snippet.
 
 Snippets can be stored under any package's folder, but to keep it simple while
 you're learning, you can save them to your ``Packages\User`` folder. For now,
 think of packages as folders. That's what they are, after all.
 
-Snippets file format
+Snippets File Format
 ********************
 
 Snippets typically live in a Sublime Text package. They are simplified XML files
 with the extension ``sublime-snippet``. For instance, you could have a
-`greeting.sublime-snippet` inside an `Email` package.
+``greeting.sublime-snippet`` inside an ``Email`` package.
 
 The structure of a typical snippet is as follows (including the default hints
 Sublime Text inserts for your convenience):
@@ -43,64 +43,70 @@ these parts in turn.
     The actual snippet. Snippets can range from simple to fairly complex
     templates. We'll look at examples of both later.
 
+    Keep the following in mind when writing your own snippets:
+
+        - If you want the get a literal ``$``, you have to escape it like this: ``\$``.
+
+        - When writing a snippet that contains indentation, always use tabs. The
+          tabs will be transformed into spaces when the snippet is inserted if the
+          option ``translateTabsToSpaces`` is set to ``true``.
+
     .. note::
-        Note that the content is included in a ``<![CDATA[…]]>`` section.
+        The **content** must be included in a ``<![CDATA[…]]>`` section.
         Snippets won't work if you don't do this!
 
-    .. note::
-        If you want the get a literal ``$``, you have to escape it like this: ``\$``.
-
-    .. note::
-        When writing a snippet that contains indentation, always use tabs. The
-        tabs will be transformed into spaces when the snippet is inserted if the
-        option ``translateTabsToSpaces`` is set to ``true``.
-
 **tabTrigger**
-    Defines the sequence of keys you want to type to let Sublime Text you want
-    to insert this snippet. The snippet will kick in as soon as you hit the
-    ``tab`` key after entering the predefined sequence.
+    Defines the sequence of keys you will press to insert this snippet. The
+    snippet will kick in as soon as you hit the ``tab`` key after typing this
+    sequence.
 
+    A tab trigger is an implicit key binding.
+
+.. XXX Link to commands
     .. note::
-        This is not the only way to tell Sublime Text how you want to insert your
-        snippet, but we'll talk about that some other time. For now, let's just
-        say that the other method is more flexible as well as a bit more complex.
+        There are other ways to cause Sublime Text to insert snippets via
+        commands.
 
 **scope**
-    Scopes won't be explained here, but they are a core concept of Sublime Text.
-    Basically, scopes are named ranges of text. Based on grammars, Sublime Text
-    know what to name different parts of a text.
+    Scope selector determining the context where the snippet will be active.
+    See `Scope and Scope Selectors` for more information.
+
+.. XXX Link to section mentioned.
 
 **description**
     Used when showing the snippet in the Snippets menu. If not present, Sublime Text
     defaults to the name of the snippet.
 
-With this information, you can start writing your own snippets. We'll see next
-how to go about this.
+With this information, you can start writing your own snippets as described in
+the next sections.
 
-    .. note::
-        In the interest of brevity, we're only including the ``content``
-        element's text in examples unless stated otherwise.
+.. note::
+    In the interest of brevity, we're only including the ``content``
+    element's text in examples unless stated otherwise.
 
-Snippet resources
+Snippet Resources
 *****************
 
-Automatic variables
--------------------
+Environment Variables
+---------------------
 
-Snippets have access to contextual and environmental information in the form
-of variables.
+Snippets have access to contextual information in the form of environment variables.
+Sublime Text sets the values of the variables listed below automatically.
+
+You can also add your own variables to provide extra information. These custom
+variables are defined in ``sublime-options`` files.
 
 ======================    ====================================================================================
 **$PARAM1, $PARAM2 …**      Arguments passed to the ``insertSnippet`` command. (Not covered here.)
 **$SELECTION**             The text that was selected when the snippet was triggered.
 **$TM_CURRENT_LINE**       Content of the line the cursor was in when the snippet was triggered.
 **$TM_CURRENT_WORD**       Current word under the cursor when the snippet was triggered.
-**$TM_FILENAME**           Filne name of the file being edited including extension.
+**$TM_FILENAME**           File name of the file being edited including extension.
 **$TM_FILEPATH**           File path to the file being edited.
-**$TM_FULLNAME**           User's User name.
+**$TM_FULLNAME**           User's user name.
 **$TM_LINE_INDEX**         Column the snippet is being inserted at, 0 based.
 **$TM_LINE_NUMBER**        Row the snippet is being inserted at, 1 based.
-**$TM_SELECTED_TEXT**      An alias for **SELECTION**.
+**$TM_SELECTED_TEXT**      An alias for **$SELECTION**.
 **$TM_SOFT_TABS**          ``YES`` if ``translateTabsToSpaces`` is true, otherwise ``NO``.
 **$TM_TAB_SIZE**           Spaces per-tab (controlled by the ``tabSize`` option).
 ======================    ====================================================================================
@@ -123,12 +129,12 @@ Let's see a simple example of a snippet using variables::
     ====================================
 
 
-Tab stops
----------
+Fields
+------
 
-With the help of special marks, you can cycle through positions within the
-snippet by pressing the ``tab`` key. Tab stops are used to walk you through
-the customization of a snippet once it's been inserted.
+With the help of field markers, you can cycle through positions within the
+snippet by pressing the ``TAB`` key. Fields are used to walk you through the
+customization of a snippet once it's been inserted.
 
 ::
 
@@ -136,20 +142,20 @@ the customization of a snippet once it's been inserted.
     Second Name: $2
     Address: $3
 
-In the example above, the cursor will jump to ``1$`` if you press ``tab`` once.
-If you press ``tab`` a second time, it will advance to ``$2``, etc. You can also
-move backwards in the series with ``shift+tab``. If you press ``tab`` after the
-highest tab stop, by default Sublime Text will place the cursor at the end of the
-snippet so that you can resume normal editing.
+In the example above, the cursor will jump to ``$1`` if you press ``TAB`` once.
+If you press ``TAB`` a second time, it will advance to ``$2``, etc. You can also
+move backwards in the series with ``SHIFT + TAB``. If you press ``TAB`` after the
+highest tab stop, Sublime Text will place the cursor at the end of the snippet's
+content so that you can resume normal editing.
 
+If you want to control where the exit point should be, use the ``$0`` mark.
 
-    .. note::
-        If you want to control where the exit point should be, use the ``$0`` mark.
+You can break out of the field cycle any time by pressing ``ESC``.
 
-Mirrored tab stops
-------------------
+Mirrored Fields
+---------------
 
-Identical tab stop marks mirror each other: when you edit the first one, the rest
+Identical field markers mirror each other: when you edit the first one, the rest
 will be populated with the same value in real time.
 
 ::
@@ -161,13 +167,12 @@ will be populated with the same value in real time.
 
 In this example, "User name" will be filled out with the same value as "First Name".
 
-Place holders
+Place Holders
 -------------
 
-By expanding the tab stop syntax a little bit, you can define default values for
-every tab stop. If there's a general case for your template and you will only
-need to customize it occasionally, it makes sense to use place holders for the
-most likely text you will need.
+By expanding the field syntax a little bit, you can define default values for
+a field. Place holders are useful when there's a general case for your snippet
+but you still want to keep its customization convenient.
 
 ::
 
@@ -176,7 +181,7 @@ most likely text you will need.
     Address: ${3:Main Street 1234}
     User name: $1
 
-Of course, you can use variables as place holders too:
+Variables can be used as place holders:
 
 ::
 
@@ -185,7 +190,7 @@ Of course, you can use variables as place holders too:
     Address: ${3:Main Street 1234}
     User name: ${4:$TM_FULLNAME}
 
-You can also nest tab stops within place holders.
+And you can nest place holders within other place holders too:
 
 ::
 
@@ -231,7 +236,7 @@ With substitutions you can, for instance, underline text effortlessly:
           Original: ${1:Hey, Joe!}
     Transformation: ${1/./=/g}
 
-    # Output
+    # Output:
 
           Original: Hey, Joe!
     Transformation: =========
