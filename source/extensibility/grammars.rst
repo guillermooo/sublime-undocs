@@ -1,3 +1,6 @@
+.. highlight:: js
+  :linenothreshold: 10
+
 Syntax Definitions
 ==================
 
@@ -24,7 +27,9 @@ lives on a public Mercurial_ repository at Bitbucket_.
 
 To obtain GrammarDev, clone the Bitbucket repository under the name ``GrammarDev``
 in Sublime's ``Packages`` folder. From the Windows command line, it would look
-roughly like this::
+roughly like this:
+
+.. code-block:: python
 
   cd "%APPDATA%/Sublime Text/Packages"
   hg clone http://bitbucket.org/guillermooo/grammardev GrammarDev
@@ -57,6 +62,8 @@ above comes in.
 
 By all means, do edit the Plist files by hand if you prefer to work in XML, but
 keep always in mind the differing needs with regards to escape sequences, etc.
+
+.. _scopes-and-scope-selectors:
 
 Scopes and Scope Selectors
 **************************

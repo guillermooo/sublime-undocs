@@ -69,9 +69,7 @@ these parts in turn.
 
 **scope**
     Scope selector determining the context where the snippet will be active.
-    See `Scope and Scope Selectors` for more information.
-
-.. XXX Link to section mentioned.
+    See :ref:`scopes-and-scope-selectors` for more information.
 
 **description**
     Used when showing the snippet in the Snippets menu. If not present, Sublime Text

@@ -14,6 +14,7 @@ Sublime Text Help
    Customization <customization/customization>
    Extensibility and Automation <extensibility/extensibility>
    faq
+   Reference <reference/reference>
 
 .. Indices and tables
 .. ==================
