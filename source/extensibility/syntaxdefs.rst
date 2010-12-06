@@ -198,10 +198,10 @@ Let's examine now the key elements.
     Text will automatically apply this syntax definition to it.
 
 **foldingStartMarker**
-    TODO. Optional.
+    Currently ignored.
 
 **foldingStopMarker**
-    TODO. Optional.
+    Currently ignored.
 
 **patterns**
     Container for your patterns.
@@ -230,6 +230,16 @@ Analyzing Patterns
 The ``patterns`` array can contain several types of elements. We'll look at some
 of them in the following sections. If you want to learn more about patterns,
 refer to Textmate's online manual.
+
+
+.. sidebar:: Regular Expressions' Syntax In Syntax Definitions
+
+  Sublime Text uses Oniguruma_'s syntax for regular expressions in syntax definitions.
+  There are a few features supported by Oniguruma that aren't part of normal perl-style
+  regular expressions, and several existing syntax definitions make use of these,
+  hence the requirement for Oniguruma.
+
+  .. _Oniguruma: http://www.geocities.jp/kosako3/oniguruma/doc/RE.txt
 
 Matches
 -------
@@ -457,8 +467,8 @@ importance of ordering have finally made an appearance here.
 We've seen further above that tab stops can be nested. In order to account for
 this, we need to recursively style nested tab stops. That's what the ``include``
 rule does when furnished the ``$self`` value: it recursively applies our entire
-grammar to the portion of text contained in our begin-end rule, excluding the
-text consumed by both ``begin`` and ``end``.
+syntax definition to the portion of text contained in our begin-end rule, excluding
+the text consumed by both ``begin`` and ``end``.
 
 Remember that matched text is consumed and is excluded from the next match
 attempt.
