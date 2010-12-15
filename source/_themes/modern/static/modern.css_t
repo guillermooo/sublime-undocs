@@ -29,10 +29,15 @@ body {
 }
 
 .highlight {
-/*    background-color: #E8E8E8;*/
+    background-color: #F8F8F8;
+    padding-top: 0.2em;
+    padding-left: 1em;
+    padding-bottom: 0.2em;
+    font-family: Consolas, Courier New, sans;
 }
 
 .highlight-python {
+    font-family: Consolas, Courier New, sans;
     background-color: #F8F8F8;
     padding-top: 0.2em;
     padding-left: 1em;
