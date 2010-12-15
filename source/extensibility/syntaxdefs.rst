@@ -1,5 +1,4 @@
 .. highlight:: js
-  :linenothreshold: 10
 
 Syntax Definitions
 ==================
