@@ -28,7 +28,7 @@ body {
 /*    display: none;*/
 }
 
-.highlight {
+.highlight pre {
     background-color: #F8F8F8;
     padding-top: 0.2em;
     padding-left: 1em;
@@ -36,7 +36,7 @@ body {
     font-family: Consolas, Courier New, sans;
 }
 
-.highlight-python {
+/*.highlight-python {
     font-family: Consolas, Courier New, sans;
     background-color: #F8F8F8;
     padding-top: 0.2em;
@@ -47,7 +47,7 @@ body {
 .highlight-python pre {
     font-family: Consolas, Courier New, sans;
 }
-
+*/
 a.headerlink {
     text-decoration: none;
     color: #F5F5F5;
