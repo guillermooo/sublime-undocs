@@ -10,3 +10,4 @@ the general index.
     :maxdepth: 2
 
     snippets
+    syntaxdefs
