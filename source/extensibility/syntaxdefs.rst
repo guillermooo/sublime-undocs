@@ -3,15 +3,16 @@
 Syntax Definitions
 ==================
 
-Syntax definitions make Sublime Text aware of different languages. Most prominently,
-they work together with colors to provide syntax highlighting. Because syntax
-definitions carve scopes in a source code file, however, they provide fine-grained
-contextual information on which many editing features rely.
+Syntax definitions make Sublime Text aware of programming and markup languages.
+Most noticeably, they work together with colors to provide syntax highlighting.
+Their purpose is to define *scopes* in a source code buffer that divide the text
+in named regions. Many editing features in Sublime Text make extensive use of
+this fine-grained contextual information, like snippets and key bindings.
 
-In broad strokes, Sublime attempts to match rules defined in syntax definitions against
-the buffer's text and gives occurrences names known as *scopes*. Scopes are then used
-to determine the course of action when dynamic items like snippets or commands are
-triggered.
+Essentially, syntax definitions consist of regular expressions used to find
+text and more or less arbitrary, dot separated strings called *scopes* or *scope
+names*. For every occurrence of a given regular expression, Sublime Text gives
+the matched text its corresponding *scope name*.
 
 Prerequisites
 *************
@@ -33,13 +34,17 @@ roughly like this:
   cd "%APPDATA%/Sublime Text/Packages"
   hg clone http://bitbucket.org/guillermooo/grammardev GrammarDev
 
+.. note::
+  If you're using a portable version of Sublime Text, the ``Packages`` folder
+  will be located inside the ``Data`` directory.
+
 
 .. sidebar:: Mercurial and Bitbucket
 
   Mercurial is a distributed version control system (DVCS) and you need to install
   it separately. Bitbucket is an online service that provides hosting for Mercurial
   repositories. There are freely available command-line and graphical
-  `Mercurial clients`_.
+  `Mercurial clients`_. Grab one and install it before continuing.
 
   .. _`Mercurial clients`: http://mercurial.selenic.com/downloads/
 
@@ -76,7 +81,8 @@ bound to and looks at the caret's position in the file. If the caret's current
 scope matches the snippet's scope selector, Sublime Text fires the snippet off.
 Otherwise, nothing happens.
 
-.. note::
+.. sidebar:: What's the Difference?
+
   There's a slight difference between *scopes* and *scope selectors*: scopes are
   the names defined in a syntax definition, whilst scope selectors are used in
   items like snippets and key bindings to target scopes. When creating a new syntax
@@ -94,8 +100,9 @@ that's useful for Sublime Text users too.
 
 .. _`Textmate's online manual`: http://manual.macromates.com/en/
 
-.. note::
-  Sublime Text provides a hook to create user-defined scopes for plugins too.
+.. ST lets the user react to contexts in plugins, not scopes.
+.. .. note::
+..  Sublime Text provides a hook to create user-defined scopes for plugins too.
 
 How Syntax Definitions Work
 ***************************
@@ -129,12 +136,12 @@ We'll be styling the actual snippet content, not the ``sublime-snippet`` file.
 
 These are the elements we want to style in a snippet:
 
-    - Variables (**$PARAM1**, **$USER_NAME** …)
-    - Simple tab stops (**$0**, **$1** …)
-    - Complex tab stops with place holders (**${1:Hello}**)
-    - Nested tab stops (**${1:Hello ${2:World}!}**)
-    - Escape sequences (**\\$**, **\\<** …)
-    - Illegal sequences (**$**, **<** …)
+    - Variables (``$PARAM1``, ``$USER_NAME`` …)
+    - Simple tab stops (``$0``, ``$1`` …)
+    - Complex tab stops with place holders (``${1:Hello}``)
+    - Nested tab stops (``${1:Hello ${2:World}!}``)
+    - Escape sequences (``\\$``, ``\\<`` …)
+    - Illegal sequences (``$``, ``<`` …)
 
 .. note::
     Before continuing, make sure you've installed the GrammarDev package
@@ -178,31 +185,31 @@ You should now see a file like this::
 
 Let's examine now the key elements.
 
-**uuid**
+``uuid``
     Located at the end, this is a unique identifier for this syntax definition.
     Each new syntax definition gets its own uuid. Don't modify them.
 
-**name**
+``name``
     The name that Sublime Text will display in the syntax definition drop-down menu
     (bottom right). Use a short, descriptive name. Typically, you will be using the
     programming language's name you are creating the syntax definition for.
 
-**scopeName**
+``scopeName``
     The top level scope for this syntax definition. It takes the form
     ``source.<lang_name>`` or ``text.<lang_name>``. For programming languages,
     use ``source``. For markup and everything else, ``text``.
 
-**fileTypes**
-    This is a list of file extensions. When opening one of these files, Sublime
-    Text will automatically apply this syntax definition to it.
+``fileTypes``
+    This is a list of file extensions. When opening files of these types,
+    Sublime Text will automatically activate this syntax definition for them.
 
-**foldingStartMarker**
+``foldingStartMarker``
     Currently ignored.
 
-**foldingStopMarker**
+``foldingStopMarker``
     Currently ignored.
 
-**patterns**
+``patterns``
     Container for your patterns.
 
 For our example, fill in the template with the following information::
@@ -219,7 +226,7 @@ For our example, fill in the template with the following information::
 
 .. note::
     JSON is a very strict format, so make sure to get all the commas and quotes right.
-    If the conversion to Plist fails, take a look a the console's output by
+    If the conversion to Plist fails, take a look at the console's output by
     hitting ``CTRL + ~`` for more information on the error. We'll explain further
     below how to convert a syntax definition in JSON to Plist.
 
@@ -234,9 +241,9 @@ refer to Textmate's online manual.
 .. sidebar:: Regular Expressions' Syntax In Syntax Definitions
 
   Sublime Text uses Oniguruma_'s syntax for regular expressions in syntax definitions.
-  There are a few features supported by Oniguruma that aren't part of normal perl-style
-  regular expressions, and several existing syntax definitions make use of these,
-  hence the requirement for Oniguruma.
+  Several existing syntax definitions make use of features supported by this regular
+  expression engine that aren't part of perl-style regular expressions, hence the
+  requirement for Oniguruma.
 
   .. _Oniguruma: http://www.geocities.jp/kosako3/oniguruma/doc/RE.txt
 
@@ -250,13 +257,13 @@ They take this form::
       "comment": "This comment is optional."
     }
 
-**match**
+``match``
     A regular expression Sublime Text will use to try and find matches.
 
-**name**
-    Name of the scope that should be applied to the matches for **match**.
+``name``
+    Name of the scope that should be applied to the occurrences of ``match``.
 
-**comment**
+``comment``
     An optional comment about this pattern.
 
 Let's go back to our example. Make it look like this::
@@ -280,7 +287,7 @@ tab stops. These could be matched with a regex like so::
     # or…
     \$\d+
 
-However, because we're writing our regex in JSON, we need to account for JSON's
+However, because we're writing our regex in JSON, we need to factor in JSON's
 own escaping rules. Thus, our previous example becomes::
 
     \\$\\d+
@@ -292,7 +299,7 @@ With escaping out of the way, we can build our pattern like this::
       "comment": "Tab stops like $1, $2…"
     }
 
-.. sidebar:: Choosing The Right Scope Name
+.. sidebar:: Choosing the Right Scope Name
 
     Naming scopes isn't obvious sometimes. Check the Textmate online manual
     for guidance on scope names. It is important to re-use the basic categories

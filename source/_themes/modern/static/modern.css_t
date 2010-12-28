@@ -28,6 +28,15 @@ body {
 /*    display: none;*/
 }
 
+h1, h2, h3 {
+    font-family: "Arial";
+    letter-spacing: -0.1em;
+}
+
+pre {
+    font-family: Consolas, Courier New, sans;
+}
+
 .highlight pre {
     background-color: #F8F8F8;
     padding-top: 0.2em;
@@ -107,9 +116,4 @@ table.docutils td, table.docutils th {
     padding-top: 0.25em;
     padding-left: 0.3em;
     padding-right: 0.5em;
-}
-
-
-.sidebar-title {
-    font-family: 'Convered By Your Grace';
 }
