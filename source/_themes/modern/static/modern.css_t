@@ -39,6 +39,7 @@ body {
 }
 
 h1, h2, h3 {
+    color: #454545;
     font-family: "Arial";
     letter-spacing: -0.1em;
 }
@@ -51,11 +52,17 @@ span.pre {
     background-color: transparent;
 }
 
+
 .highlight pre {
-    background-color: #F8F8F8;
-    padding-top: 0.2em;
+    border: 1px solid gray;
+}
+
+.highlight pre {
+/*    background-color: #F8F8F8;*/
+    background-color: #DBDBDB;
+    padding-top: 0.5em;
     padding-left: 1em;
-    padding-bottom: 0.2em;
+    padding-bottom: 0.5em;
     font-family: Consolas, Courier New, sans;
 }
 
@@ -91,15 +98,16 @@ dl.docutils dd {
 
 .sidebar {
     background-color: #B4CBE0;
-    padding-top: 0.2em;
+    padding-top: 0.1em;
     padding-left: 1em;
     padding-right: 1.25em;
-    padding-bottom: 0.75em;
-    margin-top: 0.75em;
+    padding-bottom: 0.1em;
 }
 
 .sidebar .first {
     font-weight: bold;
+    font-size: 1.2em;
+    color: #4B709C;
 }
 
 
@@ -109,14 +117,33 @@ dl.docutils dd {
     color: gray;
 }
 
+p.admonition-title {
+    display: none;
+}
+
 .admonition {
-    background-color: #F5F5F5;
-    padding-left: 0.75em;
-    padding-right: 0.2em;
-    border-top: gray 1px solid;
-    border-bottom: gray 1px solid;
+    border-left: 3px #858483 solid;
+/*    border-right: 3px #858483 solid;*/
+    color: #616060;
+/*    background-color: #F5F5F5;*/
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 0.2em;
     margin-top: 0.2em;
+    width: 90%;
+}
+
+div.warning {
+    background-color: #F5C6C9;
+    color: #A1030B;
+    font-size: 1.4em;
+    border-left: 5px #A1030B solid;
+    border-right: 5px #A1030B solid;
+    width: 100%;
+/*    padding-top: 10px;*/
+/*    padding-bottom: 10px;*/
 }
 
 .admonition .first {
