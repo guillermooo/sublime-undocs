@@ -3,23 +3,20 @@
 Syntax Definitions
 ==================
 
-As explained below, _sds are stored in Plist files, but we'll be using JSON
-for the examples. See :ref:`syntaxdefs` for more information about converting
-JSON into Plist.
-
 .. warning::
     This topic is a draft and may contain wrong information.
 
 Compatibility with Textmate
 ***************************
 
-Sublime Text syntax definitions are generally compatible with Textmate snippets.
+Sublime Text syntax definitions are generally compatible with Textmate language
+files.
 
 File Format
 ***********
 
-Snippet files Plist format with the ``tmLanguage`` extension. Here's an example
-in JSON:
+Syntax definitions are files in the Plist format with the ``tmLanguage`` extension.
+In this reference files, however, JSON is used instead and converted into Plist.
 
 .. code-block:: js
 
@@ -79,7 +76,7 @@ in JSON:
     Include the extensions without the leading dot.
 
 ``uuid``
-    Unique indentifier for this _sd. Currently ignored.
+    Unique indentifier for this syntax definition. Currently ignored.
 
 ``foldingStartMarker``
     Currently ignored. Used for code folding.
@@ -92,7 +89,8 @@ in JSON:
 
 ``repostitory``
     Array of patterns abstracted out from the patterns element. Useful to keep
-    the _sd tidy as well as for specialized uses like recursive patterns. Optional.
+    the syntax definition tidy as well as for specialized uses like recursive
+    patterns. Optional.
 
 
 The Patterns Array
@@ -139,14 +137,14 @@ Elements contained in the ``patterns`` array.
         }
 
 ``include``
-    Includes items in the repository, other _sds or the current one.
+    Includes items in the repository, other syntax definitions or the current one.
 
     References:
 
         =========       ===========================
-        $self           The current _sd.
+        $self           The current syntax definition.
         #itemName       itemName in the repository.
-        source.js       External _sds.
+        source.js       External syntax definitions.
         =========       ===========================
 
     Examples:
@@ -156,13 +154,13 @@ Elements contained in the ``patterns`` array.
         // Requires presence of DoubleQuotedStrings element in the repository.
         { "include": "#DoubleQuotedStrings" }
 
-        // Recursively includes the current _sd.
+        // Recursively includes the current syntax definition.
         { "include": "$self" }
 
-        // Includes and external _sd.
+        // Includes and external syntax definition.
         { "include": "source.js" }
 
-``begin .. end``
+``begin..end``
     Defines a scope potentially spanning multiple lines
 
     Contains the following elements:
