@@ -8,13 +8,13 @@ Macro files are plain text files with the extension ``sublime-macro``. Sublime T
 ships with a few macros providing core functionality, such as line and word deletion.
 You can find these under **Tools | Macros | Default**.
 
-How to record a macro
+How to Record a Macro
 *********************
 
-To start recording a macro, press ``CTRL + Q``. After that, carefully execute the
-desired steps one by one. When you're done, press ``CTRL + Q`` again to stop
+To start recording a macro, press ``CTRL+Q``. After that, carefully execute the
+desired steps one by one. When you're done, press ``CTRL+Q`` again to stop
 recording. Your new macro won't be saved to a file, but kept in the macro buffer
-instead. You will now be able to run the recorded macro by pressing ``CTRL + SHIFT + Q``
+instead. You will now be able to run the recorded macro by pressing ``CTRL+SHIFT+Q``
 or save it to a file by selecting **Tools | Save macro…**.
 
 .. note::
@@ -24,7 +24,7 @@ or save it to a file by selecting **Tools | Save macro…**.
     Recorded macros only capture commands sent to the buffer: window level commands,
     such as creating a new file, will be ignored.
 
-How to edit a macro
+How to Edit a Macro
 *******************
 
 Alternatively to recording a macro, you can edit it by hand. Save a new file with

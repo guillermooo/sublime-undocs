@@ -1,12 +1,17 @@
 body {
+/*    background-color: #8F8F8F;*/
     font-family: Arial;
     text-align: center;
     font-size: 13pt;
 }
 
 .document {
+/*    background-color: white;*/
     text-align: left;
     margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+/*    padding-top: 1em;*/
     width: 960px;
 }
 
@@ -16,7 +21,12 @@ body {
     width: 960px;
 }
 
+.clearer {
+/*    background-color: white;*/
+}
+
 .footer {
+/*    background-color: white;*/
     text-align: left;
     margin-top: 1em;
     margin-left: auto;
@@ -35,6 +45,10 @@ h1, h2, h3 {
 
 pre {
     font-family: Consolas, Courier New, sans;
+}
+
+span.pre {
+    background-color: transparent;
 }
 
 .highlight pre {
@@ -63,12 +77,20 @@ a.headerlink {
 }
 
 tt.docutils {
-    background-color: #E8E8E8;
+/*    background-color: #E8E8E8;*/
     font-family: Consolas, Courier New, sans;
 }
 
+.docutils dt span.pre {
+    font-weight: bold;
+}
+
+dl.docutils dd {
+    margin-bottom: 0.4em;
+}
+
 .sidebar {
-    background-color: #F5F4D0;
+    background-color: #B4CBE0;
     padding-top: 0.2em;
     padding-left: 1em;
     padding-right: 1.25em;

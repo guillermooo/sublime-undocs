@@ -29,7 +29,7 @@ To obtain GrammarDev, clone the Bitbucket repository under the name ``GrammarDev
 in Sublime's ``Packages`` folder. From the Windows command line, it would look
 roughly like this:
 
-.. code-block:: python
+.. code-block:: bat
 
   cd "%APPDATA%/Sublime Text/Packages"
   hg clone http://bitbucket.org/guillermooo/grammardev GrammarDev
@@ -152,7 +152,7 @@ Creating A New Syntax Definition
 
 To create a new syntax definition, follow these steps:
 
-  - Hit ``CTRL + ~`` to open the Sublime Text python console.
+  - Hit ``CTRL+~`` to open the Sublime Text python console.
   - Type ``view.runCommand("newSyntaxDef")``.
   - Save the new file to your ``Packages\User`` folder as ``Sublime Snippets (Raw).JSON-tmLanguage``.
 
@@ -227,7 +227,7 @@ For our example, fill in the template with the following information::
 .. note::
     JSON is a very strict format, so make sure to get all the commas and quotes right.
     If the conversion to Plist fails, take a look at the console's output by
-    hitting ``CTRL + ~`` for more information on the error. We'll explain further
+    hitting ``CTRL+~`` for more information on the error. We'll explain further
     below how to convert a syntax definition in JSON to Plist.
 
 Analyzing Patterns
@@ -338,7 +338,7 @@ above, they are simply XML files in the Plist format.
 
 Follow these steps to perform the conversion:
 
-    - Press ``CTRL + SHIFT + G``.
+    - Press ``CTRL+SHIFT+G``.
     - A tmLanguage file will be generated for you in the same folder as your
       JSON-tmLanguage file.
     - Close and reopen Sublime Text so all your changes can take effect.
@@ -365,9 +365,9 @@ Repeat the steps above to update the tmLanguage file and restart Sublime Text.
 Fine Tuning Matches
 -------------------
 
-You might have noticed that the entire text in **$PARAM1**, for instance, is styled
+You might have noticed that the entire text in ``$PARAM1``, for instance, is styled
 the same way. Depending on your needs or your personal preferences, you may want
-the **$** to stand out. That's where ``captures`` come in. Using captures,
+the ``$`` to stand out. That's where ``captures`` come in. Using captures,
 you can break a pattern down into components to target them individually.
 
 Let's rewrite one of our previous patterns to use captures::
@@ -425,24 +425,24 @@ available options::
 Some elements may look familiar, but their combination might be daunting. Let's
 see them individually.
 
-**begin**
+``begin``
     Regex for the opening mark for this scope.
 
-**end**
+``end``
     Regex for the end mark for this scope.
 
-**beginCaptures**
+``beginCaptures``
     Captures for the begin marker. They work like captures for simple matches. Optional.
 
-**endCaptures**
+``endCaptures``
     Same as beginCaptures but for the end marker. Optional.
 
-**contentName**
+``contentName``
     Scope for the whole matched region, from the begin marker to the end marker,
     inclusive. This will effectively create nested scopes for beginCaptures,
     endCaptures and patterns defined within this rule. Optional.
 
-**patterns**
+``patterns``
     An array of patterns to match against the begin-end content **only**---they are not
     matched against the text consumed by **begin** or **end**.
 
