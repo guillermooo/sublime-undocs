@@ -5,12 +5,12 @@ Syntax Definitions
 
 Syntax definitions make Sublime Text aware of programming and markup languages.
 Most noticeably, they work together with colors to provide syntax highlighting.
-Their purpose is to define *scopes* in a source code buffer that divide the text
-in named regions. Many editing features in Sublime Text make extensive use of
-this fine-grained contextual information, like snippets and key bindings.
+Syntax definitions define *scopes* in a buffer that divide the text in named
+regions. Several editing features in Sublime Text make extensive use of
+this fine-grained contextual information.
 
 Essentially, syntax definitions consist of regular expressions used to find
-text and more or less arbitrary, dot separated strings called *scopes* or *scope
+text, and more or less arbitrary, dot-separated strings called *scopes* or *scope
 names*. For every occurrence of a given regular expression, Sublime Text gives
 the matched text its corresponding *scope name*.
 
