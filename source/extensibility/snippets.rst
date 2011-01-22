@@ -109,7 +109,9 @@ variables are defined in ``sublime-options`` files.
 **$TM_TAB_SIZE**           Spaces per-tab (controlled by the ``tabSize`` option).
 ======================    ====================================================================================
 
-Let's see a simple example of a snippet using variables::
+Let's see a simple example of a snippet using variables:
+
+.. code-block:: perl
 
     ====================================
     USER NAME:          $TM_FULLNAME

@@ -44,7 +44,7 @@ roughly like this:
   Mercurial is a distributed version control system (DVCS) and you need to install
   it separately. Bitbucket is an online service that provides hosting for Mercurial
   repositories. There are freely available command-line and graphical
-  `Mercurial clients`_. Grab one and install it before continuing.
+  `Mercurial clients`_.
 
   .. _`Mercurial clients`: http://mercurial.selenic.com/downloads/
 
@@ -250,7 +250,9 @@ refer to Textmate's online manual.
 Matches
 -------
 
-They take this form::
+They take this form:
+
+.. code-block:: js
 
     { "match": "[Mm]y \s+[Rr]egex",
       "name": "string.ssraw",
@@ -266,7 +268,9 @@ They take this form::
 ``comment``
     An optional comment about this pattern.
 
-Let's go back to our example. Make it look like this::
+Let's go back to our example. Make it look like this:
+
+.. code-block:: js
 
     { "name": "Sublime Snippet (Raw)",
       "scopeName": "source.ssraw",
@@ -281,18 +285,24 @@ Let's go back to our example. Make it look like this::
 That is, make sure the ``patterns`` array is empty.
 
 Now we can begin to add our rules for Sublime snippets. Let's start with simple
-tab stops. These could be matched with a regex like so::
+tab stops. These could be matched with a regex like so:
+
+.. code-block:: perl
 
     \$[0-9]+
     # or…
     \$\d+
 
 However, because we're writing our regex in JSON, we need to factor in JSON's
-own escaping rules. Thus, our previous example becomes::
+own escaping rules. Thus, our previous example becomes:
+
+.. code-block:: js
 
     \\$\\d+
 
-With escaping out of the way, we can build our pattern like this::
+With escaping out of the way, we can build our pattern like this:
+
+.. code-block:: js
 
     { "match": "\\$\\d+",
       "name": "keyword.source.ssraw",
@@ -316,7 +326,9 @@ With escaping out of the way, we can build our pattern like this::
     ``constant.numeric`` to anything other than a number if you have a good
     reason to do so.
 
-And we can add it to our syntax definition too::
+And we can add it to our syntax definition too:
+
+.. code-block:: js
 
     {   "name": "Sublime Snippet (Raw)",
         "scopeName": "source.ssraw",
@@ -351,9 +363,9 @@ it with the extension ``ssraw``. The buffer's syntax name should switch to
 "Sublime Snippet (Raw)" automatically, and you should get syntax highlighting if
 you type ``$1`` or any other simple tab stop.
 
-Let's proceed to creating another rule for automatic variables.
+Let's proceed to creating another rule for environmental variables.
 
-::
+.. code-block:: js
 
     { "match": "\\$[A-Za-z][A-Za-z0-9_]+",
       "name": "keyword.source.ssraw",
@@ -370,12 +382,14 @@ the same way. Depending on your needs or your personal preferences, you may want
 the ``$`` to stand out. That's where ``captures`` come in. Using captures,
 you can break a pattern down into components to target them individually.
 
-Let's rewrite one of our previous patterns to use captures::
+Let's rewrite one of our previous patterns to use captures:
+
+.. code-block:: js
 
     { "match": "\\$([A-Za-z][A-Za-z0-9_]+)",
       "name": "keyword.ssraw",
-       "captures": {
-           "1": { "name": "constant.numeric.ssraw" }
+      "captures": {
+          "1": { "name": "constant.numeric.ssraw" }
        },
       "comment": "Variables like $PARAM1, $TM_SELECTION…"
     }
@@ -446,7 +460,7 @@ see them individually.
     An array of patterns to match against the begin-end content **only**---they are not
     matched against the text consumed by **begin** or **end**.
 
-We'll use this rule to style nested complex tab stops in snippets::
+We'll use this rule to style nested complex fields in snippets::
 
     { "name": "variable.complex.ssraw",
        "begin": "(\\$)(\\{)([0-9]+):",
@@ -470,7 +484,7 @@ keys are self-explanatory: they define a region enclosed between ``${<NUMBER>:``
 The most interesting part, however, is ``patterns``. Recursion and the
 importance of ordering have finally made an appearance here.
 
-We've seen further above that tab stops can be nested. In order to account for
+We've seen further above that fields can be nested. In order to account for
 this, we need to recursively style nested tab stops. That's what the ``include``
 rule does when furnished the ``$self`` value: it recursively applies our entire
 syntax definition to the portion of text contained in our begin-end rule, excluding
