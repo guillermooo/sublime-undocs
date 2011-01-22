@@ -69,8 +69,8 @@ keep always in mind the differing needs with regards to escape sequences, etc.
 
 .. _scopes-and-scope-selectors:
 
-Scopes and Scope Selectors
-**************************
+Scopes
+******
 
 Scopes are a key concept in Sublime Text. Essentially, they are named text
 regions in a buffer. They don't do anything by themselves, but Sublime Text peeks
@@ -81,7 +81,7 @@ bound to and looks at the caret's position in the file. If the caret's current
 scope matches the snippet's scope selector, Sublime Text fires the snippet off.
 Otherwise, nothing happens.
 
-.. sidebar:: What's the Difference?
+.. sidebar:: Scopes vs. Scope Selectors
 
   There's a slight difference between *scopes* and *scope selectors*: scopes are
   the names defined in a syntax definition, whilst scope selectors are used in
