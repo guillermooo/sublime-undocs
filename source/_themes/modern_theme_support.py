@@ -6,7 +6,7 @@ from pygments.token import Keyword, Name, Comment, String, Error, \
 
 class SublimeStyle(Style):
     # background_color = "#f8f8f8"
-    background_color = "#BBBCBD"
+    background_color = "transparent"
     default_style = ""
 
     styles = {
@@ -60,18 +60,18 @@ class SublimeStyle(Style):
         Literal:                   "#000000",        # class: 'l'
         Literal.Date:              "#000000",        # class: 'ld'
 
-        String:                    "#4e9a06",        # class: 's'
-        String.Backtick:           "#4e9a06",        # class: 'sb'
-        String.Char:               "#4e9a06",        # class: 'sc'
+        String:                    "#067529",        # class: 's'
+        String.Backtick:           "#067529",        # class: 'sb'
+        String.Char:               "#067529",        # class: 'sc'
         String.Doc:                "italic #8f5902", # class: 'sd' - like a comment
-        String.Double:             "#4e9a06",        # class: 's2'
-        String.Escape:             "#4e9a06",        # class: 'se'
-        String.Heredoc:            "#4e9a06",        # class: 'sh'
-        String.Interpol:           "#4e9a06",        # class: 'si'
-        String.Other:              "#4e9a06",        # class: 'sx'
-        String.Regex:              "#4e9a06",        # class: 'sr'
-        String.Single:             "#4e9a06",        # class: 's1'
-        String.Symbol:             "#4e9a06",        # class: 'ss'
+        String.Double:             "#067529",        # class: 's2'
+        String.Escape:             "#067529",        # class: 'se'
+        String.Heredoc:            "#067529",        # class: 'sh'
+        String.Interpol:           "#067529",        # class: 'si'
+        String.Other:              "#067529",        # class: 'sx'
+        String.Regex:              "#067529",        # class: 'sr'
+        String.Single:             "#067529",        # class: 's1'
+        String.Symbol:             "#067529",        # class: 'ss'
 
         Generic:                   "#000000",        # class: 'g'
         Generic.Deleted:           "#a40000",        # class: 'gd'

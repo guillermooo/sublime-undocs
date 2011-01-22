@@ -136,7 +136,7 @@ With the help of field markers, you can cycle through positions within the
 snippet by pressing the ``TAB`` key. Fields are used to walk you through the
 customization of a snippet once it's been inserted.
 
-::
+.. code-block:: perl
 
     First Name: $1
     Second Name: $2
@@ -158,7 +158,7 @@ Mirrored Fields
 Identical field markers mirror each other: when you edit the first one, the rest
 will be populated with the same value in real time.
 
-::
+.. code-block:: perl
 
     First Name: $1
     Second Name: $2
@@ -174,7 +174,7 @@ By expanding the field syntax a little bit, you can define default values for
 a field. Place holders are useful when there's a general case for your snippet
 but you still want to keep its customization convenient.
 
-::
+.. code-block:: perl
 
     First Name: ${1:Guillermo}
     Second Name: ${2:López}
@@ -183,7 +183,7 @@ but you still want to keep its customization convenient.
 
 Variables can be used as place holders:
 
-::
+.. code-block:: perl
 
     First Name: ${1:Guillermo}
     Second Name: ${2:López}
@@ -192,7 +192,7 @@ Variables can be used as place holders:
 
 And you can nest place holders within other place holders too:
 
-::
+.. code-block:: perl
 
     Test: ${1:Nested ${2:Placeholder}}
 
@@ -231,7 +231,7 @@ The substitution syntax has the following syntaxes:
 
 With substitutions you can, for instance, underline text effortlessly:
 
-::
+.. code-block:: perl
 
           Original: ${1:Hey, Joe!}
     Transformation: ${1/./=/g}

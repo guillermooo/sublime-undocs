@@ -92,17 +92,20 @@ span.pre {
     background-color: transparent;
 }
 
-div.highlight-* {
-    clear: both;
+div[class|=highlight] {
+    font-family: Consolas, Courier New, sans;
+    background-color: #E6E6E6;
 }
 
-.highlight pre {
-    background-color: #DBDBDB;
+div[class|=highlight] pre {
+    margin-left: 0.75em;
+    margin-right: 0.75em;
     padding-top: 0.5em;
-    padding-left: 1em;
     padding-bottom: 0.5em;
-    font-family: Consolas, Courier New, sans;
+/*    margin-top: 0.5em;*/
+/*    margin-bottom: 0.5em;*/
 }
+
 
 a.headerlink {
     text-decoration: none;
