@@ -11,4 +11,5 @@ the general index.
 
     snippets
     syntaxdefs
+    build_systems
     api

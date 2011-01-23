@@ -191,3 +191,8 @@ div.toctree-wrapper a:hover {
     text-decoration: underline;
     background-color: transparent;
 }
+
+div.seealso {
+    background-color: #C2D1C9;
+    width: 100%;
+}

@@ -1,41 +1,62 @@
 Build Systems
 =============
 
-See `Build Systems <http://www.sublimetext.com/docs/build>`_.
+**The specifics of this topic target Sublime Text X.**
 
-.. warning::
+.. seealso::
 
-    This topic is only valid for Sublime Text X.
+   :doc:`Reference for build systems <../reference/build_systems>`
+        Complete documentation on all available options, variables, etc.
 
-define
-    run command line utilities
-    build stuff, test ??, launch external console progs (tidy)
+If you need to run build programs like ``make``, command line utilities like
+``tidy``, interpreters, etc., use **build systems**. Build systems provide a
+convenient way to pass arguments to these programs and adjust other settings so
+that you can run your entire project or selected files through them.
 
-options
-    cmd
-        Required. Command to be run. The executable must be on your ``PATH``.
-    file_regex
-        Captures build errors and extracts information to enable you to cycle
-        through errors by pressing ``F4``. **EXPLAIN 4 FIELDS PCRE?**
-    selector
-        Determines in which scope the build system will be active.
-    working_dir
-        If set, the current directory is changed to point to this location
-        before running ``cmd``.
+.. note::
+    The programs you want to call from Sublime Text X via build systems must be
+    in your ``PATH``.
 
-variables:
-    $file
-    $file_dir
-    $file_name
-    $file_ext
-    $basename
-    $project_dir
-    $project_name
+File Format
+***********
 
-Snippet formatting. **EXPLAIN AND REFER TO SNIPPETS**.
+Like many other configuration files in Sublime Text X, build systems use JSON.
+Build systems have the extension ``sublime-build`` and must be located somewhere
+under the ``Packages`` folder.
 
-alternatives
-    plugin, subprocess, exec command?
+Example
+*******
 
-limitations
-    no windowed programs
+Here's an example build system:
+
+.. code-block:: js
+
+    {
+        "cmd": ["python", "-u", "$file"],
+        "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+        "selector": "source.python"
+    }
+
+``cmd``
+    Required. This option contains the actual command line that will be executed;
+    in this case::
+
+        python -u /path/to/current/file.ext
+
+``file_regex``
+    A Perl-style regular expression to capture the external program's output and
+    extract error information. This information is then used to help you move
+    through errors with ``F4``.
+
+``selector``
+    Determines de scope where the build system will be active.
+
+In addition to options, you can use variables in build systems too, like we've
+done above with ``$file``, which expands to the full path of the file underlying
+the currently active buffer in Sublime Text X.
+
+How to Run a Build System
+*************************
+
+Build systems can be run by pressing ``F7`` or always upon saving your file.
+You can also run build systems from the menu if you go to **Tools | Build**.
