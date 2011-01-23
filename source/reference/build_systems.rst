@@ -31,6 +31,7 @@ Options
 ``file_regex``  Regular expression to capture error output.
 ``selector``    Scope where the build system will be active.
 ``working_dir`` Directory to change the current directory to before running ``cmd``.
+``encoding``    Output encoding of ``cmd``. Must be a valid python encoding. Defaults to ``utf-8``.
 =============== ================================================================================
 
 Capturing Error Output with ``file_regex``
@@ -48,15 +49,18 @@ be shown in the status bar.
 Variables
 *********
 
-================= =====================================================================================
-``$file``         The full path to the current file, e.g., ``C:\Files\Chapter1.txt``
-``$file_dir``     The directory of the current file, e.g., ``C:\Files``
-``$file_name``    The name portion of the current file, e.g., ``Chapter1.txt``
-``$file_ext``     The extension portion of the current file, e.g., ``txt``
-``$base_name``    The name only portion of the current file, e.g., ``Document``
-``$project_dir``  The directory of the current project , e.g., ``C:\Files``
-``$project_name`` The name portion of the current project, e.g., ``Book`` for ``C:\Files\Book.sublime-project``
-================= =====================================================================================
+====================== =====================================================================================
+``$file``              The full path to the current file, e.g., ``C:\Files\Chapter1.txt``
+``$file_path``         The directory of the current file, e.g., ``C:\Files``
+``$file_name``         The name portion of the current file, e.g., ``Chapter1.txt``
+``$file_extension``    The extension portion of the current file, e.g., ``txt``
+``$file_base_name``    The name only portion of the current file, e.g., ``Document``
+``$project``           The directory of the current project , e.g., ``C:\Files``
+``$project_path``      The directory of the current project , e.g., ``C:\Files``
+``$project_name``      The name portion of the current project, e.g., ``Book`` for ``C:\Files\Book.sublime-project``
+``$project_extension`` The name portion of the current project, e.g., ``Book`` for ``C:\Files\Book.sublime-project``
+``$project_base_name`` The name portion of the current project, e.g., ``Book`` for ``C:\Files\Book.sublime-project``
+====================== =====================================================================================
 
 Variable Place Holders
 ----------------------
