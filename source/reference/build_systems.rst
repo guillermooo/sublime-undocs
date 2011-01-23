@@ -73,11 +73,9 @@ This will emit the name of the current project if there is one, otherwise *Defau
 
 ::
 
-    ${File/\.php/\.txt/}
+    ${file/\.php/\.txt/}
 
-This will emit the name of the current file, replacing *.php* with *.txt*.
-
-Like snippets.
+This will emit the full path of the current file, replacing *.php* with *.txt*.
 
 Running Build Systems
 *********************
