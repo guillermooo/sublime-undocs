@@ -37,7 +37,7 @@ Recreation of Packages
 Sublime Text has a self-healing mechanism to recover deleted packages. It keeps a copy of
 all installed packages so it can recreate them when needed. This means it will be able to
 reinstall core packages, shipped packages and user packages alike. However, only user
-packages installed as ``sublime-package``s are added to the installed packages registry.
+packages installed as ``sublime-package`` are added to the installed packages registry.
 Packages installed in alternative ways will be completely lost if you delete them.
 
 Instalation of Packages

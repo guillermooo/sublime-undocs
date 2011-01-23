@@ -22,12 +22,12 @@ File Format
 
 Like many other configuration files in Sublime Text X, build systems use JSON.
 Build systems have the extension ``sublime-build`` and must be located somewhere
-under the ``Packages`` folder.
+under the ``Packages`` folder (e.g. ``Packages\User``).
 
 Example
 *******
 
-Here's an example build system:
+Here's an example of a build system:
 
 .. code-block:: js
 
@@ -49,7 +49,10 @@ Here's an example build system:
     through errors with ``F4``.
 
 ``selector``
-    Determines de scope where the build system will be active.
+    If the **Tools | Build System | Automatic** option is set, this option's value
+    will be used to determine whether the build system should be used for your file.
+
+.. XXX What's the name of the option for Tools | Build System Automatic?
 
 In addition to options, you can use variables in build systems too, like we've
 done above with ``$file``, which expands to the full path of the file underlying
@@ -58,5 +61,5 @@ the currently active buffer in Sublime Text X.
 How to Run a Build System
 *************************
 
-Build systems can be run by pressing ``F7`` or always upon saving your file.
+Build systems can be run by pressing ``F7`` or set to always run upon saving your file.
 You can also run build systems from the menu if you go to **Tools | Build**.

@@ -26,20 +26,21 @@ Build systems use JSON. Here's an example:
 Options
 *******
 
-=============== ================================================================================
+=============== ====================================================================================================
 ``cmd``         Array containing the command to run and its desired arguments.
-``file_regex``  Regular expression to capture error output.
-``selector``    Scope where the build system will be active.
+``file_regex``  Regular expression to capture error output of ``cmd``.
+``selector``    Used when **Tools | Build System | Automatic** is set for automatic discovery based on file's scope.
 ``working_dir`` Directory to change the current directory to before running ``cmd``.
 ``encoding``    Output encoding of ``cmd``. Must be a valid python encoding. Defaults to ``utf-8``.
-=============== ================================================================================
+=============== ====================================================================================================
 
 Capturing Error Output with ``file_regex``
 ------------------------------------------
 
-The ``file_regex`` option uses a Perl-style regular expression to capture up  to
+The ``file_regex`` option uses a Perl-style regular expression to capture up to
 four fields of error information from the build program's standard streams, namely:
-**file name**, **line number**, **column number** and **error message**.
+**file name**, **line number**, **column number** and **error message**. Use groups
+in the pattern to capture this information.
 
 When error information is captured, you can cycle through error instances in your
 project's files with ``F4`` and ``SHIFT + F4``. The captured error message will
@@ -50,16 +51,16 @@ Variables
 *********
 
 ====================== =====================================================================================
-``$file``              The full path to the current file, e.g., ``C:\Files\Chapter1.txt``
-``$file_path``         The directory of the current file, e.g., ``C:\Files``
-``$file_name``         The name portion of the current file, e.g., ``Chapter1.txt``
-``$file_extension``    The extension portion of the current file, e.g., ``txt``
-``$file_base_name``    The name only portion of the current file, e.g., ``Document``
-``$project``           The directory of the current project , e.g., ``C:\Files``
-``$project_path``      The directory of the current project , e.g., ``C:\Files``
-``$project_name``      The name portion of the current project, e.g., ``Book`` for ``C:\Files\Book.sublime-project``
-``$project_extension`` The name portion of the current project, e.g., ``Book`` for ``C:\Files\Book.sublime-project``
-``$project_base_name`` The name portion of the current project, e.g., ``Book`` for ``C:\Files\Book.sublime-project``
+``$file``              The full path to the current file, e.g., ``C:\Files\Chapter1.txt``.
+``$file_path``         The directory of the current file, e.g., ``C:\Files``.
+``$file_name``         The name portion of the current file, e.g., ``Chapter1.txt``.
+``$file_extension``    The extension portion of the current file, e.g., ``txt``.
+``$file_base_name``    The name only portion of the current file, e.g., ``Document``.
+``$project``           The full path to the current project file.
+``$project_path``      The directory of the current project file.
+``$project_name``      The name portion of the current project file.
+``$project_extension`` The extension portion of the current project file.
+``$project_base_name`` The name only portion of the current project file.
 ====================== =====================================================================================
 
 Variable Place Holders
@@ -80,7 +81,7 @@ This will emit the full path of the current file, replacing *.php* with *.txt*.
 Running Build Systems
 *********************
 
-Check under **Tools** in the Sublime Text X menu or press ``F7``.
+Select **Tools | Build** in the Sublime Text X menu or press ``F7``.
 
 Troubleshooting
 ***************
@@ -89,3 +90,6 @@ External programs used in build systems need to be in your ``PATH``. As a quick 
 can try to run them from the command line first and see whether they work. However,
 note that your shell's ``PATH`` variable might differ to that seen by Sublime Text X due
 to your shell's profile.
+
+At the moment (v. 20110123), new build systems require Sublime Text X to be restarted before
+they can appear under **Tools | Build System**.
