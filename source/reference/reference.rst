@@ -11,3 +11,4 @@ the general index.
 
     snippets
     syntaxdefs
+    api
