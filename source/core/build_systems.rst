@@ -8,10 +8,10 @@ Build Systems
    :doc:`Reference for build systems <../reference/build_systems>`
         Complete documentation on all available options, variables, etc.
 
-If you need to run build programs like ``make``, command line utilities like
-``tidy``, interpreters, etc., use **build systems**. Build systems provide a
-convenient way to pass arguments to these programs and adjust other settings so
-that you can run your entire project or selected files through them.
+If you need to run your files through build programs like ``make``, command line
+utilities like ``tidy``, interpreters, etc., you can use **build systems**.
+Build systems provide a convenient way to pass arguments and environment information
+to external programs.
 
 .. note::
     The programs you want to call from Sublime Text X via build systems must be

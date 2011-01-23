@@ -7,7 +7,8 @@ Build Systems
 
 **The specifics of this topic target Sublime Text X.**
 
-Build systems run external programs to process your project's files.
+Build systems run external programs to process your project's files and show
+captured output.
 
 File Format
 ***********
@@ -29,7 +30,7 @@ Options
 ``cmd``         Array containing the command to run and its desired arguments.
 ``file_regex``  Regular expression to capture error output.
 ``selector``    Scope where the build system will be active.
-``working_dir`` Directory to change to before running ``cmd``.
+``working_dir`` Directory to change the current directory to before running ``cmd``.
 =============== ================================================================================
 
 Capturing Error Output with ``file_regex``
@@ -40,20 +41,21 @@ four fields of error information from the build program's standard streams, name
 **file name**, **line number**, **column number** and **error message**.
 
 When error information is captured, you can cycle through error instances in your
-project's files with ``F4`` and ``SHIFT + F4``
+project's files with ``F4`` and ``SHIFT + F4``. The captured error message will
+be shown in the status bar.
 
 
 Variables
 *********
 
 ================= =====================================================================================
-``$file``         The full path to the current file, e.g., ``C:\\Files\\Chapter1.txt``
-``$file_dir``     The directory of the current file, e.g., ``C:\\Files``
+``$file``         The full path to the current file, e.g., ``C:\Files\Chapter1.txt``
+``$file_dir``     The directory of the current file, e.g., ``C:\Files``
 ``$file_name``    The name portion of the current file, e.g., ``Chapter1.txt``
 ``$file_ext``     The extension portion of the current file, e.g., ``txt``
 ``$base_name``    The name only portion of the current file, e.g., ``Document``
-``$project_dir``  The directory of the current project , e.g., ``C:\\Files``
-``$project_name`` The name portion of the current project, e.g., ``Book`` for ``C:\\Files\\Book.sublime-project``
+``$project_dir``  The directory of the current project , e.g., ``C:\Files``
+``$project_name`` The name portion of the current project, e.g., ``Book`` for ``C:\Files\Book.sublime-project``
 ================= =====================================================================================
 
 Variable Place Holders

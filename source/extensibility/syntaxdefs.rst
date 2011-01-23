@@ -31,7 +31,7 @@ roughly like this:
 
 .. code-block:: bat
 
-  cd "%APPDATA%/Sublime Text/Packages"
+  cd "%APPDATA%\Sublime Text\Packages"
   hg clone http://bitbucket.org/guillermooo/grammardev GrammarDev
 
 .. note::

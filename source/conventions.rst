@@ -13,5 +13,5 @@ Conventions
   ``sublime.packagesPath()`` unless otherwise noted.
 
 * We assume default key bindings when indicating keyboard shortcuts.
-* This guide targets Sublime Text 1.x. It will be updated to document Sublime
-  Text X when it enters beta.
+* This guide is being rewritten to target Sublime Text X specifically. Nevertheless,
+  most new information should be useful for Sublime Text users too.
