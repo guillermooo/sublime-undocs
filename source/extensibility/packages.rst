@@ -1,6 +1,9 @@
 Packages
 ========
 
+.. warning::
+	This topic is a draft and may contain wrong information.
+
 Packages are simply directories under ``Packages``. They exist mainly for organizational
 purposes and bear no especial meaning to Sublime Text except in a few cases that will be
 explained later.
