@@ -1,0 +1,70 @@
+Basic Concepts
+==============
+
+While reading these pages, you will come across recurring *shorthand writing* and
+assumptions. Here we explain those in full in addition to describing fundamental
+aspects of Sublime Text 2.
+
+Data Directory
+**************
+
+Sublime Text 2 stores nearly all of the interesting files for users under the
+data directory. This is a platform-dependent location:
+
+* **Windows**: ``%APPDATA%\Sublime Text 2``
+* **OS X**: ``~/Library/Application Support/Sublime Text 2``
+* **Linux**: ``~/.Sublime Text 2``
+
+.. note::
+	If you're running a portable installation of Sublime Text 2, the data
+	directory will be inside the ``Data`` directory of your installation.
+
+The Packages Path
+^^^^^^^^^^^^^^^^^
+
+This is a very frequently referenced location within the data directory. You
+can obtain it by means of an API call: ``os.packages_path()``. In this guide,
+we refer to this location like ``Packages\...``, the *packages path* or  the
+*packages folder*.
+
+The ``User`` Package
+^^^^^^^^^^^^^^^^^^^^
+
+The ``Packages\User`` package is a catch-all directory for custom plugins,
+snippets, macros, etc. You will often be instructed to store files here. Consider
+the ``Packages\User`` package as your personal area in the packages folder.
+
+Sublime Text 2 will never overwrite the contents of the ``User`` package during
+upgrades.
+
+The Python Console
+******************
+
+Sublime Text 2 has an embedded Python interpreter. It's a invaluable tool you
+will find yourself turning to often in order to inspect Sublime Text 2 settings
+and quickly test API calls while you're writing plugins.
+
+To open the Python console, press ``CTRL + ~``.
+
+Your System's Python vs Sublime Text 2 Embedded Python
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you have Python installed on your system, you may wonder whether Sublime Text 2
+uses it through its Python console. The answer is *no*: Sublime Text 2 comes with
+its own Python interpreter and it's separate from your system's Python installation.
+
+TextMate Compatibility
+**********************
+
+Sublime Text 2 is generally compatible with TextMate snippets, color schemes,
+``.tmLanguage`` files and ``.tmPreferences`` files.
+
+Be Sublime, My Friend
+*********************
+
+Borrowing from `Bruce Lee's wisdom`_, Sublime Text 2 can be bent and twisted in
+many ways to become your perfect weapon. Sublime Text 2 is highly configurable
+and extensible, and in skilled hands it can defeat an army of ninjas without
+breaking a sweat. Empty your mind. Be sublime, my friend.
+
+.. _Bruce Lee's wisdom: http://www.youtube.com/watch?v=7ijCSu87I9k&feature=related
