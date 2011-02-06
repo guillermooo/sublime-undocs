@@ -111,7 +111,8 @@ repositories like Google Code, GitHub and Bitbucket.
 Manual Installation
 -------------------
 
-Simply copy and paste a directory containing Sublime Text resources to``Packages``.
+Simply copy and paste a directory containing Sublime Text resources to the
+packages folder.
 
 Packages and Magic
 ******************
@@ -126,7 +127,7 @@ during a software update.
 
 .. sidebar:: The ``User`` Package
 
-	Usually, unpackaged resources are stored in the ``User`` package. If you
+	Usually, unpackaged resources are stored in ``Packages\User`` package. If you
 	have a few loose snippets, macros or plugins, this is a good place to keep
 	them.
 
