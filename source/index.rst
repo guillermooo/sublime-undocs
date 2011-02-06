@@ -10,6 +10,7 @@ Sublime Text Help
    :maxdepth: 2
 
    conventions
+   basic_concepts
    Core Features <core/core_features>
    Customization <customization/customization>
    Extensibility and Automation <extensibility/extensibility>
