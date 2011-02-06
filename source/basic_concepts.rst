@@ -23,8 +23,8 @@ The Packages Path
 ^^^^^^^^^^^^^^^^^
 
 This is a very frequently referenced location within the data directory. You
-can obtain it by means of an API call: ``os.packages_path()``. In this guide,
-we refer to this location as ``Packages``, the *packages path* or  the
+can obtain it by means of an API call: ``sublime.packages_path()``. In this
+guide, we refer to this location as ``Packages``, the *packages path* or  the
 *packages folder*.
 
 The ``User`` Package
