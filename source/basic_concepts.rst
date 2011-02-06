@@ -1,8 +1,8 @@
 Basic Concepts
 ==============
 
-While reading these pages, you will come across recurring *shorthand writing* and
-assumptions. Here we explain those in full in addition to describing fundamental
+While reading these pages, you will come across several forms of *shorthand writing*
+and assumptions. Here we explain those in full in addition to describing fundamental
 aspects of Sublime Text 2.
 
 Data Directory
@@ -24,18 +24,18 @@ The Packages Path
 
 This is a very frequently referenced location within the data directory. You
 can obtain it by means of an API call: ``os.packages_path()``. In this guide,
-we refer to this location like ``Packages\...``, the *packages path* or  the
+we refer to this location as ``Packages``, the *packages path* or  the
 *packages folder*.
 
 The ``User`` Package
 ^^^^^^^^^^^^^^^^^^^^
 
-The ``Packages\User`` package is a catch-all directory for custom plugins,
-snippets, macros, etc. You will often be instructed to store files here. Consider
-the ``Packages\User`` package as your personal area in the packages folder.
+``Packages\User`` is a catch-all directory for custom plugins, snippets, macros,
+etc. You will often be instructed to store files here. Consider ``Packages\User``
+as your personal area in the packages folder.
 
-Sublime Text 2 will never overwrite the contents of the ``User`` package during
-upgrades.
+Sublime Text 2 will never overwrite the contents of the ``Packages\User``
+during upgrades.
 
 The Python Console
 ******************

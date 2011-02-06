@@ -36,7 +36,7 @@ Conventions in This Guide
   Nevertheless, *mutatis mutandis*, most new information should be useful for
   Sublime Text users too. Hey, that was Latin back there!
 
-Before you continue reading the material contained in this guide, we recommend
+Before you continue reading the material contained in this guide, we encourage
 you to take a look at the :doc:`basic_concepts` section.
 
 Happy learning!
