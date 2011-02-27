@@ -1,28 +1,25 @@
 Build Systems
 =============
 
-**The specifics of this topic target Sublime Text X.**
-
 .. seealso::
 
    :doc:`Reference for build systems <../reference/build_systems>`
         Complete documentation on all available options, variables, etc.
 
-If you need to run your files through build programs like ``make``, command line
-utilities like ``tidy``, interpreters, etc., you can use **build systems**.
-Build systems provide a convenient way to pass arguments and environment information
-to external programs.
+Build systems provide a convenient way to pass arguments and environment
+information to external programs. Use build systems if you need to run your
+files through build programs like ``make``, command line utilities like
+``tidy``, interpreters, etc.
 
 .. note::
-    The programs you want to call from Sublime Text X via build systems must be
-    in your ``PATH``.
+    The program you want to call from a build system must be in your ``PATH``.
 
 File Format
 ***********
 
-Like many other configuration files in Sublime Text X, build systems use JSON.
+Like many other configuration files in Sublime Text, build systems use JSON.
 Build systems have the extension ``sublime-build`` and must be located somewhere
-under the ``Packages`` folder (e.g. ``Packages\User``).
+under the ``Packages`` folder (e.g. ``Packages/User``).
 
 Example
 *******
@@ -52,11 +49,9 @@ Here's an example of a build system:
     If the **Tools | Build System | Automatic** option is set, this option's value
     will be used to determine whether the build system should be used for your file.
 
-.. XXX What's the name of the option for Tools | Build System Automatic?
-
 In addition to options, you can use variables in build systems too, like we've
 done above with ``$file``, which expands to the full path of the file underlying
-the currently active buffer in Sublime Text X.
+the currently active buffer in Sublime Text.
 
 How to Run a Build System
 *************************

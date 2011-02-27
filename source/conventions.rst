@@ -22,11 +22,11 @@ Text 2. Until then, watch out for the differences between the two versions!
 Conventions in This Guide
 *************************
 
-* This guide is written from the perspective of a Windows user. Most
-  instructions should require trivial changes to work on other platforms.
+* This guide is written from the perspective of a Windows user, but most
+  instructions should only require trivial changes to work on other platforms.
 
-* Relative paths (e. g. ``Packages\User``) are rooted at the parent of
-  ``sublime.packages_path()`` unless otherwise stated.
+* Relative paths (e. g. ``Packages/User``) are rooted at the parent of
+  ``sublime.packages_path()`` unless otherwise noted.
 
 * We assume default key bindings when indicating keyboard shortcuts unless
   otherwise noted. Due to the way Sublime Text maps keys to commands, **some
@@ -35,6 +35,8 @@ Conventions in This Guide
 * This guide is in the process of being rewritten to target Sublime Text 2.
   Nevertheless, *mutatis mutandis*, most new information should be useful for
   Sublime Text users too. Hey, that was Latin back there!
+ 
+* *Sublime Text 2* is referred to simply as *Sublime Text* too.
 
 Before you continue reading the material contained in this guide, we encourage
 you to take a look at the :doc:`basic_concepts` section.
