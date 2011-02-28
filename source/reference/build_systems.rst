@@ -5,15 +5,13 @@ Build Systems
 
     This topic is a draft.
 
-**The specifics of this topic target Sublime Text X.**
-
-Build systems run external programs to process your project's files and show
-captured output.
+Build systems run external programs to process your project's files and print
+captured output to the output panel.
 
 File Format
 ***********
 
-Build systems use JSON. Here's an example:
+Build systems use JSON. Here's an example build system:
 
 .. sourcecode:: python
 
@@ -37,14 +35,15 @@ Options
 Capturing Error Output with ``file_regex``
 ------------------------------------------
 
-The ``file_regex`` option uses a Perl-style regular expression to capture up to
-four fields of error information from the build program's standard streams, namely:
-**file name**, **line number**, **column number** and **error message**. Use groups
-in the pattern to capture this information.
+The ``file_regex`` option uses a Perl-style regular expression to capture up
+to four fields of error information from the build program's output, namely:
+*file name*, *line number*, *column number* and *error message*. Use
+groups in the pattern to capture this information. The *file name* field and
+the *line number* field are required fields.
 
-When error information is captured, you can cycle through error instances in your
-project's files with ``F4`` and ``SHIFT + F4``. The captured error message will
-be shown in the status bar.
+When error information is captured, you can cycle through error instances in
+your project's files with ``F4`` and ``SHIFT + F4``. If available, the captured
+*error message* will be displayed in the status bar.
 
 
 Variables
@@ -81,15 +80,18 @@ This will emit the full path of the current file, replacing *.php* with *.txt*.
 Running Build Systems
 *********************
 
-Select **Tools | Build** in the Sublime Text X menu or press ``F7``.
+Select **Tools | Build** in the Sublime Text menu or press ``F7``.
 
-Troubleshooting
-***************
+Troubleshooting Build Systems
+*****************************
 
-External programs used in build systems need to be in your ``PATH``. As a quick test, you
-can try to run them from the command line first and see whether they work. However,
-note that your shell's ``PATH`` variable might differ to that seen by Sublime Text X due
-to your shell's profile.
+External programs used in build systems need to be in your ``PATH``. As a
+quick test, you can try to run them from the command line first and see whether
+they work. However, note that your shell's ``PATH`` variable might differ to
+that seen by Sublime Text due to your shell's profile.
 
-At the moment (v. 20110123), new build systems require Sublime Text X to be restarted before
-they can appear under **Tools | Build System**.
+.. seealso::
+	
+	`Managing Environmental Variables in Windows <http://goo.gl/F77EM>`_
+		Search Microsoft for this topic.
+	
