@@ -177,6 +177,8 @@ mismatch between the two.
 Troubleshooting
 ***************
 
+.. TODO: fix formatting for API cross-ref.
+
 See `sublime.log_commands(flag)`_  to enable command logging. It may help when
 debugging key maps.
 
