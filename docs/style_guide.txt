@@ -3,11 +3,11 @@
 
     * Menu navigation
 
-        References to menu items should be in bold face.
+        References to menu items should be in bold face, separated by pipes.
 
         Example:
 
-            **Tools | Snippets | New...***
+            **Tools | Snippets | New...**
 
     * Keyboard shortcuts
 

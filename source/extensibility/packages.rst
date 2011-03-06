@@ -131,6 +131,8 @@ during a software update.
 	have a few loose snippets, macros or plugins, this is a good place to keep
 	them.
 
+.. _merging-and-order-of-preference:
+
 Merging and Order of Preference
 -------------------------------
 

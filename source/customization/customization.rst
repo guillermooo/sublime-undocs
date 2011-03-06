@@ -9,7 +9,7 @@ you can adapt it to your needs and preferences.
 
     options
     indentation
-    keybindings
+    key_bindings
     menus
 
 

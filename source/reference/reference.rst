@@ -12,4 +12,5 @@ the general index.
     snippets
     syntaxdefs
     build_systems
+    key_bindings
     api
