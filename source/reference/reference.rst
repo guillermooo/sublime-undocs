@@ -13,4 +13,5 @@ the general index.
     syntaxdefs
     build_systems
     key_bindings
+    completions
     api
