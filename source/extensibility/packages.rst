@@ -41,7 +41,7 @@ In order to talk about packages, we're going to divide them in groups:
 	are not part of any Sublime Text installation and are always contributed by
 	users or other third parties.
 
-**installed package**
+**installed packages**
 	Any package of any type that Sublime Text can restore if deleted.
 
 Let's emphasize that this artificial division is for the sake of clarity in this guide.
