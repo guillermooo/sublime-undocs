@@ -8,6 +8,7 @@ You can add additional features to Sublime Text in several ways.
 
     macros
     snippets
+    completions
     syntaxdefs
     plugins
     packages

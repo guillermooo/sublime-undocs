@@ -1,7 +1,7 @@
 Key Bindings
 ============
 
-Key bindings map key presses to actions.
+Key bindings map key presses to commands.
 
 File Format
 ***********
@@ -31,8 +31,8 @@ for your personal key map is ``Packages/User``.
 See :ref:`merging-and-order-of-preference` for information about how Sublime
 Text sorts files for merging.
 
-Elements in Key Bindings
-************************
+Structure of a Key Binding
+**************************
 
 Key maps are arrays of key bindings. Below you'll find valid elements in key bindings.
 
@@ -65,26 +65,26 @@ Here's an example illustrating most of the features outlined above::
 
 .. _context-reference:
 
-Elements in Contexts
-********************
+Structure of a Context
+**********************
 
 ``key``
-	Name of the contextual hint to evaluate.
+	Name of a context operand to query.
 
 ``operator``
 	Type of test to perform against ``key``.
 
 ``operand``
-	Value to test against.
+	Value against which the result of ``key`` is tested.
 
 ``match_all``
 	Requires the test to succeed for all selections. Defaults to ``false``.
 
-Contextual Hints
+Context Operands
 ----------------
 
 ``auto_complete_visible``
-	Returns ``true`` if the autocomplete list is visible.
+	Returns ``true`` if the autocomplete dialog is visible.
 
 ``has_next_field``
 	Returns ``true`` if there's a next snippet field available.
@@ -116,13 +116,16 @@ Contextual Hints
 ``text``
 	Restricts the test to the line the caret is in.
 
+``selector``
+	Returns the current scope.
+
 Operators
 ---------
 
 ``equal``, ``not_equal``
 	Test for equality.
 
-``regext contains``, ``not_regex_contains``
+``regex_contains``, ``not_regex_contains``
 	Match against a regular expression.
 
 Command Mode
