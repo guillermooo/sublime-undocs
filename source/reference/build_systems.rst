@@ -1,12 +1,10 @@
 Build Systems
 =============
 
-.. warning::
-
-    This topic is a draft.
 
 Build systems run external programs to process your project's files and print
-captured output to the output panel.
+captured output to the output panel. Ultimately, they call ``subprocess.Popen``.
+
 
 File Format
 ***********
@@ -21,16 +19,34 @@ Build systems use JSON. Here's an example build system:
         "selector": "source.python"
     }
 
+
 Options
 *******
 
-=============== ====================================================================================================
-``cmd``         Array containing the command to run and its desired arguments.
-``file_regex``  Regular expression to capture error output of ``cmd``.
-``selector``    Used when **Tools | Build System | Automatic** is set for automatic discovery based on file's scope.
-``working_dir`` Directory to change the current directory to before running ``cmd``.
-``encoding``    Output encoding of ``cmd``. Must be a valid python encoding. Defaults to ``utf-8``.
-=============== ====================================================================================================
+``cmd``
+    Array containing the command to run and its desired arguments.
+
+    .. note::
+        Under Windows, GUIs are supressed.
+
+``file_regex``
+    Optional. Regular expression to capture error output of ``cmd``.
+
+``selector``
+    Optional. Used when **Tools | Build System | Automatic** is set for automatic discovery based on file's scope.
+
+``working_dir``
+    Optional. Directory to change the current directory to before running ``cmd``.
+
+``encoding``
+    Optional. Output encoding of ``cmd``. Must be a valid python encoding. Defaults to ``utf-8``.
+
+``target``
+    Optional. Sublime Text command to run. Defaults to ``exec`` (``Packages/Default/exec.py``).
+
+``env``
+    Optional. Dictionary of environment variables to be merged with the current
+    process'that will be passed to ``cmd``.
 
 Capturing Error Output with ``file_regex``
 ------------------------------------------
@@ -44,6 +60,28 @@ the *line number* field are required fields.
 When error information is captured, you can cycle through error instances in
 your project's files with ``F4`` and ``SHIFT + F4``. If available, the captured
 *error message* will be displayed in the status bar.
+
+Platform-specific Options
+-------------------------
+
+``windows``, ``osx`` and ``linux`` are additional options which override any
+build system options for the corresponding platform only. Here's an example::
+
+
+    {
+        "cmd": ["ant"],
+        "file_regex": "^ *\\[javac\\] (.+):([0-9]+):() (.*)$",
+        "working_dir": "${project_path:${folder}}",
+        "selector": "source.java",
+    
+        "windows":
+        {
+            "cmd": ["ant.bat"]
+        }
+    }
+
+In this case, ``ant.bat`` will be executed under Windows, while for the other
+platforms ``ant`` will be used instead.
 
 
 Variables
@@ -81,6 +119,7 @@ Running Build Systems
 *********************
 
 Select **Tools | Build** in the Sublime Text menu or press ``F7``.
+
 
 Troubleshooting Build Systems
 *****************************

@@ -17,7 +17,7 @@ Structure of a Completions List
 	:ref:`scopes-and-scope-selectors` for more information.
 
 ``completions``
-	Array of completions (strings or triggers).
+	Array of completions.
 
 Here's an exceprt from the html completions::
 
@@ -28,7 +28,8 @@ Here's an exceprt from the html completions::
 		[
 			{ "trigger": "a", "contents": "<a href=\"$1\">$0</a>" },
 			{ "trigger": "abbr", "contents": "<abbr>$0</abbr>" },
-			{ "trigger": "acronym", "contents": "<acronym>$0</acronym>" },
+			{ "trigger": "acronym", "contents": "<acronym>$0</acronym>" }
+
 		]
 	}
 
@@ -51,21 +52,22 @@ Normal
 ------
 
 ``trigger``
-	Sequence of keys that will insert the ``contents``.
+	Text that will be displayed in the autocomplete dialog and will cause the
+	``contents`` to be inserted when validated.
 
 ``contents``
-	Text to be sourced in the autocomplete dialog. Can be a snippet.
+	Text to be inserted in the buffer. Can be a snippet.
 
 How to Open the Autocomplete Dialog
 ***********************************
 
-By default, it's bound to ``CTRL + SPACEBAR``.
+Press ``CTRL + SPACEBAR``.
 
 Completions through the API
 ***************************
 
-In addition to ``.sublime-snippet`` files and ``.sublime-completions``, you can
-source completions from the API thanks to ``EventListener.on_query_completions``.
+In addition to ``.sublime-completions`` files, you can source completions from
+the API using ``EventListener.on_query_completions``.
 
 Order of Precedence for Completions
 ***********************************
@@ -77,13 +79,14 @@ precedence:
 	* Completion files
 	* Words in buffer
 
-Additionally, snippets will compete to be completed automatically too. Snippets
-take the highest precedence, but in order to trigger when pressing ``tab``,
-the prefix typed in the buffer must match their trigger exctly, while
-completions fuzzy match against it.
+Additionally, snippets will compete to be completed automatically too. They
+take the highest precedence, but the prefix typed in the buffer must match
+their trigger exctly. Completions perform a fuzzy match against the prefix
+instead.
 
-If there's only one candidate to be completed, the autocomplete dialog will be
-bypassed and the word will be inserted right away.
+If the list of completions can be narrowed down to one choice, the autocomplete
+dialog will be bypassed and the corresponding content will be inserted straight
+away.
 
 Enabling Tab Completion for Completion Lists
 ********************************************
