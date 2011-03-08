@@ -27,7 +27,7 @@ Here's an excerpt from the html completions::
 		[
 			{ "trigger": "a", "contents": "<a href=\"$1\">$0</a>" },
 			{ "trigger": "abbr", "contents": "<abbr>$0</abbr>" },
-			{ "trigger": "acronym", "contents": "<acronym>$0</acronym>" },
+			{ "trigger": "acronym", "contents": "<acronym>$0</acronym>" }
 		]
 	}
 
