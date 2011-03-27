@@ -1,10 +1,15 @@
 Plugins
 =======
 
-Sublime Text 2 is extensible with Python plugins. Plugins add functionality by
-reusing existing commands or creating new ones. A plugin can consist of a new
-command or a collection of commands working together to build a feature.
-Therefore, plugins are rather a logical entity than a physical one.
+.. seealso::
+
+   :doc:`API Reference <../reference/api>`
+        More information on the Python API.
+
+
+Sublime Text 2 is programmable with Python scripts. Plugins reuse existing
+commands or create new ones to build a feature. Plugins are rather a logical
+entity than a physical one.
 
 
 Prerequisites
@@ -18,19 +23,17 @@ In order to write plugins, you must be able to program in Python_.
 Where to Store Plugins
 **********************
 
-Often, plugins come bundled in packages, but you can keep your own collection
-of plugins under ``Packages/User`` too.
-
 Sublime Text 2 will look for plugins in these places:
 
 * ``Packages``
 * ``Packages/<pkg_name>/``
 
-Therefore, any plugin nested more than one level deep from ``Packages`` won't
-be picked up by Sublime Text 2. You shouldn't keep plugins lying around right under
-``Packages`` for organizational reasons.
+Consequently, any plugin nested deeper in ``Packages`` won't be loaded.
 
-.. don't patronize; explain order matters
+Keeping plugins right under ``Packages`` is discouraged, because Sublime Text
+sorts packages in a predefined way before loading them. Thus, you might get
+confusing results if your plugins live outside of a package.
+
 
 Your First Plugin
 *****************
@@ -43,9 +46,9 @@ Let's write a "Hello, World!" plugin for Sublime Text 2:
 
 You've just written your first plugin. Let's put it to use:
 
-#. Create a new, empty buffer (``CTRL + N``).
+#. Create a new buffer (``CTRL + N``).
 #. Open the python console (``CTRL + ```).
-#. Type: ``view.run_command("example")``.
+#. Type: ``view.run_command("example")`` and press enter.
 
 You should see the text "Hello, World!" in your new buffer.
 
@@ -53,7 +56,7 @@ You should see the text "Hello, World!" in your new buffer.
 Analyzing Your First Plugin
 ***************************
 
-The plugin created in the previous section should rogughly look like this::
+The plugin created in the previous section should look roughly like this::
 
     import sublime, sublime_plugin
     
@@ -62,25 +65,30 @@ The plugin created in the previous section should rogughly look like this::
             self.view.insert(edit, 0, "Hello, World!")
 
 
-``sublime`` and ``sublime_plugin`` are both provided by Sublime Text 2 and will often be
-required when you write new plugins.
+The ``sublime`` and ``sublime_plugin`` modules are both provided by
+Sublime Text 2.
 
-New commands derive the ``ApplicationCommand``, ``WindowCommand`` and ``TextCommand``
-classes defined in ``sublime_plugin``.
+New commands derive from the ``*Command`` classes defined in ``sublime_plugin``
+(more on this later).
 
-The rest of the code is concerned with particulars of the ``TextCommand`` or the
-API that will discuss in the next sections.
+The rest of the code is concerned with particulars of the ``TextCommand`` or
+the API that we'll discuss in the next sections.
 
-However, before moving on, we'll look at how we called the new command. First,
-we opened the python console, and then we issued a call to ``view.run_command``.
-This is a rather inconvenient way of using plugins, but it's often useful when
-you're in the development phase. For now, keep in mind that plugin commands
-can be accessed through key bindings or other means, just as normal commands are.
+Before moving on, though, we'll look at how we called the new command: We first
+opened the python console, and then issued a call to ``view.run_command``. This
+is a rather inconvenient way of using plugins, but it's often useful when
+you're in the development phase. For now, keep in mind that your commands
+can be accessed through key bindings or other means, just as other commands are.
+
+Conventions for Command Names
+-----------------------------
 
 You might have noticed that our command is defined with the name ``ExampleCommand``,
-but we pass instead the string ``example`` to the API call. This is necessary bevause
+but we pass the string ``example`` to the API call instead. This is necessary because
 Sublime Text 2 normalizes command names by stripping the ``Command`` suffix and
 separating ``CamelCasedPhrases`` with underscores, like this: ``camel_cased_phrases``.
+
+New commands should follow the pattern mentioned above for class names.
 
 
 Types of Commands
@@ -92,12 +100,12 @@ You can create the following types of commands:
 * Window commands (``WindowCommand``)
 * Text commands (``TextCommand``)
 
-When you're writing your plugins, you need to consider the purpose of your
-plugin and choose the appropriate type of commands for it.
+When writing plugins, consider your goal and choose the appropriate type of
+commands for your plugin.
 
 
-Commonalities between Types of Commands
----------------------------------------
+Shared Traits of Commands
+-------------------------
 
 All commands need to implement a ``run`` method in order to work. Additionally,
 they can receive and arbitrarily long number of keyword parameters.
@@ -116,22 +124,25 @@ Window Commands
 
 Window commands operate at the window level. This doesn't mean that you cannot
 manipulate views from window commands, but rather that you don't need views to
-exist in order for window commands to be available. For isntance, it wouln't
-make sense for the built-in command ``new_window`` to need a pre-existent view
-to be available. You want to be able to create new views regardless of there is
-any open.
+exist in order for window commands to be available. For instance, the built-in
+command ``new_file`` is defined as a ``WindowCommand`` so it works too when no
+view is open. Requiring a view to exisit in that case wouln't make sense.
 
 
 Text Commands
 -------------
 
 Text commands operate at the buffer level and they require a buffer to exist
-in order to be available. When writing text commands, it is important to keep
-in mind the edit object. The edit object groups modifications to the bufffer
-atomically so undo and macros work in a sensible way. You are responsible of
-creating and closing edit objects. To do so, you can call ``view.begin_edit``
-and ``edit.end_edit``. Text commands get passed an ``edit`` object in their
-``run`` method for convenience.
+in order to be available.
+
+Text Commands and the ``edit`` Object
+-------------------------------------
+
+The edit object groups modifications to the view so undo and macros work in a
+sensible way. You are responsible for creating and closing edit objects. To do
+so, you can call ``view.begin_edit`` and ``edit.end_edit``. Text commands get
+passed an open ``edit`` object in their ``run`` method for convenience.
+Additionally, many ``View`` methods require an edit object.
 
 
 Responding to Events
@@ -139,12 +150,20 @@ Responding to Events
 
 Any command deriving from ``EventListener`` will be able to respond to events.
 
+.. sidebar:: A Word of Warning about ``EventListener``
+
+	Expensive operations in event listeners can cause Sublime Text 2 to become
+	unresponsive, especially in events triggered frequently, like ``on_modified``
+	and ``on_selection_modified``. Be careful of how much work is done in those
+	and do not implement events you don't need, even if they just ``pass``.
+
 
 Another Plugin Example: Feeding the Completions List
 ----------------------------------------------------
 
 Let's create a plugin that fetches data from Google Autocomplete service and
-feeds it to Sublime Text 2 completions list.
+feeds it to Sublime Text 2 completions list. Please note that as ideas for
+plugins go, this a very bad one.
 
 ::
 
@@ -164,3 +183,14 @@ feeds it to Sublime Text 2 completions list.
 	        sugs = [(x.attrib["data"], x.attrib["data"]) for x in elements]
 	
 	        return sugs
+
+
+Learning the API
+****************
+
+In order to create plugins, you need to get acquainted with the Python API
+Sublime Text 2 exposes, and the available commands. Documentation on both is
+scarce at the time of this writing, but you can read existing code and learn
+from it too. In particular, the ``Packages/Default`` folder contains many
+examples of undocumented commands and API calls.
+
