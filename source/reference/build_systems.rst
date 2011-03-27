@@ -46,7 +46,7 @@ Options
 
 ``env``
     Optional. Dictionary of environment variables to be merged with the current
-    process'that will be passed to ``cmd``.
+    process' that will be passed to ``cmd``.
 
 Capturing Error Output with ``file_regex``
 ------------------------------------------
@@ -55,9 +55,9 @@ The ``file_regex`` option uses a Perl-style regular expression to capture up
 to four fields of error information from the build program's output, namely:
 *file name*, *line number*, *column number* and *error message*. Use
 groups in the pattern to capture this information. The *file name* field and
-the *line number* field are required fields.
+the *line number* field are required.
 
-When error information is captured, you can cycle through error instances in
+When error information is captured, you can navigate to error instances in
 your project's files with ``F4`` and ``SHIFT + F4``. If available, the captured
 *error message* will be displayed in the status bar.
 
@@ -131,6 +131,6 @@ that seen by Sublime Text due to your shell's profile.
 
 .. seealso::
 	
-	`Managing Environmental Variables in Windows <http://goo.gl/F77EM>`_
+	`Managing Environment Variables in Windows <http://goo.gl/F77EM>`_
 		Search Microsoft for this topic.
 	

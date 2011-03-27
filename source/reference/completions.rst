@@ -2,7 +2,7 @@ Completions
 ===========
 
 Completions provide and IDE-like functionality to insert dynamic content through
-the autocomplete dialog.
+the autocomplete list.
 
 File Format
 ***********
@@ -52,14 +52,14 @@ Normal
 ------
 
 ``trigger``
-	Text that will be displayed in the autocomplete dialog and will cause the
+	Text that will be displayed in the autocomplete list and will cause the
 	``contents`` to be inserted when validated.
 
 ``contents``
 	Text to be inserted in the buffer. Can be a snippet.
 
-How to Open the Autocomplete Dialog
-***********************************
+How to Open the Autocomplete List
+*********************************
 
 Press ``CTRL + SPACEBAR``.
 
@@ -72,7 +72,7 @@ the API using ``EventListener.on_query_completions``.
 Order of Precedence for Completions
 ***********************************
 
-The autocomplete dialog is populated from several sources, in this order of
+The autocomplete list is populated from several sources, in this order of
 precedence:
 
 	* API

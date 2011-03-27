@@ -14,6 +14,7 @@ files through build programs like ``make``, command line utilities like
 .. note::
     The program you want to call from a build system must be in your ``PATH``.
 
+
 File Format
 ***********
 
@@ -22,7 +23,7 @@ Build systems have the extension ``sublime-build`` and must be located somewhere
 under the ``Packages`` folder (e.g. ``Packages/User``).
 
 Example
-*******
+-------
 
 Here's an example of a build system:
 
@@ -51,10 +52,11 @@ Here's an example of a build system:
 
 In addition to options, you can use variables in build systems too, like we've
 done above with ``$file``, which expands to the full path of the file underlying
-the currently active buffer in Sublime Text.
+the active buffer.
 
-How to Run a Build System
-*************************
 
-Build systems can be run by pressing ``F7`` or set to always run upon saving your file.
-You can also run build systems from the menu if you go to **Tools | Build**.
+Running Build Systems
+*********************
+
+Build systems can be run by pressing ``F7`` or from the menu
+(**Tools | Build**).
