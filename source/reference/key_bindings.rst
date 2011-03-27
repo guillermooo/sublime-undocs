@@ -1,7 +1,9 @@
+============
 Key Bindings
 ============
 
 Key bindings map key presses to commands.
+
 
 File Format
 ***********
@@ -10,8 +12,9 @@ Key bindings are stored in ``.sublime-keymap`` files and defined in JSON. All
 key map file names need to follow this pattern: ``Default (Platform).sublime-keymap``.
 Otherwise, Sublime Text will ignore them.
 
+
 Platform-Specific Key Maps
-**************************
+--------------------------
 
 Each platform gets its own key map:
 
@@ -21,18 +24,9 @@ Each platform gets its own key map:
 
 Separate key maps exist to abide by different vendor-specific `HCI <http://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction>`_ guidelines.
 
-Keeping Key Maps Organized
-**************************
-
-Sublime Text ships with default key maps under ``Packages/Default``. Other
-packages may include their own key map files. The recommended storage location
-for your personal key map is ``Packages/User``.
-
-See :ref:`merging-and-order-of-preference` for information about how Sublime
-Text sorts files for merging.
 
 Structure of a Key Binding
-**************************
+--------------------------
 
 Key maps are arrays of key bindings. Below you'll find valid elements in key bindings.
 
@@ -65,8 +59,9 @@ Here's an example illustrating most of the features outlined above::
 
 .. _context-reference:
 
+
 Structure of a Context
-**********************
+----------------------
 
 ``key``
 	Name of a context operand to query.
@@ -81,10 +76,10 @@ Structure of a Context
 	Requires the test to succeed for all selections. Defaults to ``false``.
 
 Context Operands
-----------------
+^^^^^^^^^^^^^^^^
 
 ``auto_complete_visible``
-	Returns ``true`` if the autocomplete dialog is visible.
+	Returns ``true`` if the autocomplete list is visible.
 
 ``has_next_field``
 	Returns ``true`` if there's a next snippet field available.
@@ -119,14 +114,19 @@ Context Operands
 ``selector``
 	Returns the current scope.
 
-Operators
----------
+Context Operators
+^^^^^^^^^^^^^^^^^
 
 ``equal``, ``not_equal``
 	Test for equality.
 
-``regex_contains``, ``not_regex_contains``
+``regex_match``, ``not_regex_match``
 	Match against a regular expression.
+
+``regex_contains``, ``not_regex_contains``
+	Match against a regular expression (containment).
+
+
 
 Command Mode
 ************
@@ -134,34 +134,76 @@ Command Mode
 Sublime Text provides a ``command_mode`` setting to prevent key presses from
 being sent to the buffer. This is useful to emulate Vim's modal behavior.
 
+
 Bindable Keys
 *************
 
-Keys may be specified literally or by name. Below you'll find a list of available
-names (and some literals). This list isn't exhaustive.
+Keys may be specified literally or by name. Below you'll find the list of
+valid names:
 
-* ``0-9``
-* ``A-Z``
-* ``a-z``
-* ``backquote``
-* ``backspace``
-* ``break``
-* ``delete``
-* ``enter``
-* ``equals``
-* ``escape``
-* ``f1-f12``
-* ``forward_slash``
-* ``home``, ``end``
+* ``up``
+* ``down``
+* ``right``
+* ``left``
 * ``insert``
-* ``left, up, right, down``
-* ``minus``
-* ``pageup, pagedown``
-* ``plus``
-* ``right_bracket``, ``left_bracket``
-* ``semicolon``
-* ``space``
+* ``home``
+* ``end``
+* ``pageup``
+* ``pagedown``
+* ``backspace``
+* ``delete``
 * ``tab``
+* ``enter``
+* ``pause``
+* ``escape``
+* ``space``
+* ``keypad0``
+* ``keypad1``
+* ``keypad2``
+* ``keypad3``
+* ``keypad4``
+* ``keypad5``
+* ``keypad6``
+* ``keypad7``
+* ``keypad8``
+* ``keypad9``
+* ``keypad_period``
+* ``keypad_divide``
+* ``keypad_multiply``
+* ``keypad_minus``
+* ``keypad_plus``
+* ``keypad_enter``
+* ``clear``
+* ``f1``
+* ``f2``
+* ``f3``
+* ``f4``
+* ``f5``
+* ``f6``
+* ``f7``
+* ``f8``
+* ``f9``
+* ``f10``
+* ``f11``
+* ``f12``
+* ``f13``
+* ``f14``
+* ``f15``
+* ``f16``
+* ``f17``
+* ``f18``
+* ``f19``
+* ``f20``
+* ``sysreq``
+* ``break``
+* ``context_menu``
+* ``browser_back``
+* ``browser_forward``
+* ``browser_refresh``
+* ``browser_stop``
+* ``browser_search``
+* ``browser_favorites``
+* ``browser_home``
 
 Modifiers
 ---------
@@ -171,11 +213,33 @@ Modifiers
 * ``alt``
 * ``super`` (Windows key, Command key...)
 
+Warning about Bindable Keys
+---------------------------
+
+* ``Ctrl+Alt+<alphanum>`` should not be used on any Windows key bindings.
+* ``Option+<alphanum>`` should not be used on any OS X key bindings.
+
+In both cases, the users ability to insert non-ascii characters would be
+compromised.
+
+
+Keeping Key Maps Organized
+**************************
+
+Sublime Text ships with default key maps under ``Packages/Default``. Other
+packages may include their own key map files. The recommended storage location
+for your personal key map is ``Packages/User``.
+
+See :ref:`merging-and-order-of-preference` for information about how Sublime
+Text sorts files for merging.
+
+
 International Keyboards
 ***********************
 
 Due to the way Sublime Text maps key names to physical keys, there might be a
 mismatch between the two.
+
 
 Troubleshooting
 ***************
