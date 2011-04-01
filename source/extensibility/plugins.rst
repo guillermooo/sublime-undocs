@@ -6,6 +6,9 @@ Plugins
    :doc:`API Reference <../reference/api>`
         More information on the Python API.
 
+   :doc:`Plugins Reference <../reference/plugins>`
+        More information about plugins.        
+
 
 Sublime Text 2 is programmable with Python scripts. Plugins reuse existing
 commands or create new ones to build a feature. Plugins are rather a logical
@@ -150,13 +153,6 @@ Responding to Events
 
 Any command deriving from ``EventListener`` will be able to respond to events.
 
-.. sidebar:: A Word of Warning about ``EventListener``
-
-	Expensive operations in event listeners can cause Sublime Text 2 to become
-	unresponsive, especially in events triggered frequently, like ``on_modified``
-	and ``on_selection_modified``. Be careful of how much work is done in those
-	and do not implement events you don't need, even if they just ``pass``.
-
 
 Another Plugin Example: Feeding the Completions List
 ----------------------------------------------------
@@ -180,9 +176,13 @@ plugins go, this a very bad one.
 	                        urlopen(GOOGLE_AC % prefix)
 	                    ).getroot().findall("./CompleteSuggestion/suggestion")
 	                    
-	        sugs = [(x.attrib["data"], x.attrib["data"]) for x in elements]
+	        sugs = [(x.attrib["data"],) * 2 for x in elements]
 	
 	        return sugs
+
+.. note::
+	Please make sure you don't keep this plugin around after trying it. It will
+	interefere with the autocompletions look-up chain.
 
 
 Learning the API

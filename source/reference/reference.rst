@@ -14,4 +14,5 @@ the general index.
     build_systems
     key_bindings
     completions
+    plugins
     api
