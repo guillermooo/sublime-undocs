@@ -1,7 +1,8 @@
 Core Features
 =============
 
-These concepts are fundamental to understanding how Sublime Text works.
+Built-in features requiring little fiddling on the part of the user to make
+them meet their needs.
 
 .. toctree::
     :maxdepth: 2
