@@ -7,7 +7,7 @@ you can adapt it to your needs and preferences.
 .. toctree::
     :maxdepth: 2
 
-    options
+    settings
     indentation
     key_bindings
     menus
