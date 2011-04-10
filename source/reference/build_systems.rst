@@ -93,6 +93,7 @@ Variables
 ``$file_name``         The name portion of the current file, e.g., ``Chapter1.txt``.
 ``$file_extension``    The extension portion of the current file, e.g., ``txt``.
 ``$file_base_name``    The name only portion of the current file, e.g., ``Document``.
+``$packages``          The full path to the ``Packages`` folder. 
 ``$project``           The full path to the current project file.
 ``$project_path``      The directory of the current project file.
 ``$project_name``      The name portion of the current project file.
