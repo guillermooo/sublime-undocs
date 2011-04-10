@@ -1,4 +1,6 @@
-from fabric.api import run, cd
+from fabric.api import run, cd, env
+
+env.hosts = ["guillermooo@sublimetext.info"]
 
 def deploy():
     with cd("hg/sublimehelp"):
