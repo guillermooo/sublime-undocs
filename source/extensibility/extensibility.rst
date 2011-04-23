@@ -1,7 +1,8 @@
 Extending Sublime Text
 ======================
 
-You can add additional features to Sublime Text in several ways.
+As it can be seen from the long list of topics below, Sublime Text is a very
+extensible editor.
 
 .. toctree::
     :maxdepth: 2

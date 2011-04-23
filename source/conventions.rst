@@ -1,11 +1,12 @@
+========================
 About This Documentation
 ========================
 
 This is the unofficial documentation for the Sublime Text editor, maintained by
 volunteers. We hope it's useful!
 
-Sublime Text 1 vs Sublime Text 2
-********************************
+Sublime Text 1 Vs. Sublime Text 2
+=================================
 
 This documentation was initially written for Sublime Text 1. The second version
 of the editor has brought about a few notable changes that render part of the
@@ -19,14 +20,15 @@ means that ``namesLikeThis`` look like ``names_like_this`` in Sublime Text 2.
 In the following weeks, we hope to bring the documentation in line with Sublime
 Text 2. Until then, watch out for the differences between the two versions!
 
+
 Conventions in This Guide
-*************************
+=========================
 
 * This guide is written from the perspective of a Windows user, but most
   instructions should only require trivial changes to work on other platforms.
 
-* Relative paths (e. g. ``Packages/User``) are rooted at data directory unless
-  otherwise noted.
+* Relative paths (e. g. :file:`Packages/User`) are rooted at the data directory
+  unless otherwise noted.
 
 * We assume default key bindings when indicating keyboard shortcuts unless
   otherwise noted. Due to the way Sublime Text maps keys to commands, **some
@@ -34,9 +36,10 @@ Conventions in This Guide
 
 * This guide is in the process of being rewritten to target Sublime Text 2.
   Nevertheless, *mutatis mutandis*, most new information should be useful for
-  Sublime Text users too. Hey, that was Latin back there!
+  Sublime Text 1 users too. Hey, that was Latin back there!
  
-* *Sublime Text 2* is referred to simply as *Sublime Text* too.
+* *Sublime Text 2* is referred to simply as *Sublime Text* too (no pun
+  intended).
 
 Before you continue reading the material contained in this guide, we encourage
 you to take a look at the :doc:`basic_concepts` section.
