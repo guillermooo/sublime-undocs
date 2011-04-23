@@ -30,7 +30,7 @@ situations. For example, if ``auto_detect_indentation`` is on, you might be
 confused by the value a call to ``view.settings().get('tab_size')`` returns, especially
 if you've explicitly set ``tab_size`` moments earlier.
 
-By way of example, this is the order in which Sublime Text would process a
+For example, this is the order in which Sublime Text would process a
 hypothetical hierarchy of settings for Python on Windows:
 
 - :file:`Packages/Default/Base File.sublime-settings`
