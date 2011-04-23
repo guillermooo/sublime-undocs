@@ -94,6 +94,10 @@ To use the autocomplete list:
 	* Optionally, press :kbd:`Ctrl+spacebar` again to select next entry
 	* Press :kbd:`Enter` or :kbd:`Tab` to validate selection
 
+.. note::
+	The current selection in the autocomplete list can actually be validated with
+	any punctuation sign that isn't itself bound to a snippet.
+
 Snippets show up in the autocomplete list following the pattern:
 ``<tab_trigger> : <name>``. For the other completions, you will just see the
 text to be inserted.

@@ -2,6 +2,10 @@
 Completions
 ===========
 
+.. warning::
+	This topic is a draft and doesn't reflect the exact behavior of completions
+	in the latest version of the editor.
+
 .. seealso::
 
    :doc:`Reference for completions <../reference/completions>`

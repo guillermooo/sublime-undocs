@@ -20,7 +20,7 @@ data directory. This is a platform-dependent location:
 * **Linux**: :file:`~/.Sublime Text 2`
 * **Portable Installation**: :file:`Sublime Text 2/Data`
 
-The :file:`Packages/Path`
+The :file:`Packages` Path
 =========================
 
 This is a location within the data directory that we'll keep referring to again
