@@ -17,22 +17,22 @@ the matched text its corresponding *scope name*.
 Prerequisites
 *************
 
-In order to follow this tutorial, you will need to install GrammarDev_, a package
-intended to ease the creation of new syntax definitions for Sublime Text. GrammarDev
+In order to follow this tutorial, you will need to install AAAPackageDev_, a package
+intended to ease the creation of new syntax definitions for Sublime Text. AAAPackageDev
 lives on a public Mercurial_ repository at Bitbucket_.
 
-.. _GrammarDev: http://bitbucket.org/guillermooo/grammardev
+.. _AAAPackageDev: https://bitbucket.org/guillermooo/aaapackagedev
 .. _Mercurial: http://mercurial.selenic.com/
 .. _Bitbucket: http://bitbucket.org
 
-To obtain GrammarDev, clone the Bitbucket repository under the name ``GrammarDev``
+To obtain AAAPackageDev, clone the Bitbucket repository under the name ``AAAPackageDev``
 in Sublime's ``Packages`` folder. From the Windows command line, it would look
 roughly like this:
 
 .. code-block:: bat
 
   cd "%APPDATA%\Sublime Text\Packages"
-  hg clone http://bitbucket.org/guillermooo/grammardev GrammarDev
+  hg clone http://bitbucket.org/guillermooo/grammardev AAAPackageDev
 
 .. note::
   If you're using a portable version of Sublime Text, the ``Packages`` folder
@@ -53,7 +53,7 @@ File format
 
 Sublime uses `property list`_ files (Plist) to store syntax definitions. Because
 editing XML files is a cumbersome task, though, we'll be using JSON_ instead and
-converting it to Plist afterwards. This is where the GrammarDev package mentioned
+converting it to Plist afterwards. This is where the AAAPackageDev package mentioned
 above comes in.
 
 .. _`property list`: http://en.wikipedia.org/wiki/Property_list
@@ -61,7 +61,7 @@ above comes in.
 
 .. note::
     If you experience unexpected errors during this tutorial, chances are
-    GrammarDev is to blame. Don't immediately think your problem is due to a
+    AAAPackageDev is to blame. Don't immediately think your problem is due to a
     bug in Sublime Text.
 
 By all means, do edit the Plist files by hand if you prefer to work in XML, but
@@ -144,7 +144,7 @@ These are the elements we want to style in a snippet:
     - Illegal sequences (``$``, ``<``\ …)
 
 .. note::
-    Before continuing, make sure you've installed the GrammarDev package
+    Before continuing, make sure you've installed the AAAPackageDev package
     as explained further above.
 
 Creating A New Syntax Definition

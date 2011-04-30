@@ -9,7 +9,7 @@ File Format
 ***********
 
 Key bindings are stored in ``.sublime-keymap`` files and defined in JSON. All
-key map file names need to follow this pattern: ``Default (Platform).sublime-keymap``.
+key map file names need to follow this pattern: ``Default (<platform>).sublime-keymap``.
 Otherwise, Sublime Text will ignore them.
 
 
@@ -211,7 +211,7 @@ Modifiers
 * ``shift``
 * ``ctrl``
 * ``alt``
-* ``super`` (Windows key, Command key...)
+* ``super`` (Windows key, Command key…)
 
 Warning about Bindable Keys
 ---------------------------
