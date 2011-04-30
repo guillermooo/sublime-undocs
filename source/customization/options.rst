@@ -1,12 +1,13 @@
 Options
 =======
 
-File Type Preferences
-*********************
+.. seealso::
 
-See `File Type Preferences <http://www.sublimetext.com/docs/file-type-preferences>`_.
+   `File Type Preferences <http://www.sublimetext.com/docs/file-type-preferences>`_.
+   Warning: Sublime Text 1 Documentation
 
-General Preferences
-*******************
+   `General Preferences <http://www.sublimetext.com/docs/general-preferences>`_.
+   Warning: Sublime Text 1 Documentation
 
-See `General Preferences <http://www.sublimetext.com/docs/general-preferences>`_.
+
+Options are called *settings* in Sublime Text 2.

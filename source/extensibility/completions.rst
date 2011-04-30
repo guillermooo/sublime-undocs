@@ -151,3 +151,9 @@ means that, unlike in the case of the completions list, Sublime Text will
 always make a decision for you. The rules to select the best completion are the
 same as above, but in case of ambiguity, Sublime Text will still insert the
 item deemed most suitable.
+
+Inserting a Literal Tab Character
+---------------------------------
+
+When ``tab_completion`` is enabled, you can press ``Shift+Tab`` to insert a
+literal tab character.

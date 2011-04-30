@@ -136,12 +136,12 @@ We'll be styling the actual snippet content, not the ``sublime-snippet`` file.
 
 These are the elements we want to style in a snippet:
 
-    - Variables (``$PARAM1``, ``$USER_NAME`` …)
-    - Simple tab stops (``$0``, ``$1`` …)
+    - Variables (``$PARAM1``, ``$USER_NAME``\ …)
+    - Simple tab stops (``$0``, ``$1``\ …)
     - Complex tab stops with place holders (``${1:Hello}``)
     - Nested tab stops (``${1:Hello ${2:World}!}``)
-    - Escape sequences (``\\$``, ``\\<`` …)
-    - Illegal sequences (``$``, ``<`` …)
+    - Escape sequences (``\\$``, ``\\<``\ …)
+    - Illegal sequences (``$``, ``<``\ …)
 
 .. note::
     Before continuing, make sure you've installed the GrammarDev package
@@ -306,7 +306,7 @@ With escaping out of the way, we can build our pattern like this:
 
     { "match": "\\$\\d+",
       "name": "keyword.source.ssraw",
-      "comment": "Tab stops like $1, $2…"
+      "comment": "Tab stops like $1, $2..."
     }
 
 .. sidebar:: Choosing the Right Scope Name
@@ -338,7 +338,7 @@ And we can add it to our syntax definition too:
         "patterns": [
             { "match": "\\$\\d+",
               "name": "keyword.source.ssraw",
-              "comment": "Tab stops like $1, $2…"
+              "comment": "Tab stops like $1, $2..."
             }
         ],
         "uuid": "ca03e751-04ef-4330-9a6b-9b99aae1c418"
@@ -369,7 +369,7 @@ Let's proceed to creating another rule for environmental variables.
 
     { "match": "\\$[A-Za-z][A-Za-z0-9_]+",
       "name": "keyword.source.ssraw",
-      "comment": "Variables like $PARAM1, $TM_SELECTION…"
+      "comment": "Variables like $PARAM1, $TM_SELECTION..."
     }
 
 Repeat the steps above to update the tmLanguage file and restart Sublime Text.
@@ -391,7 +391,7 @@ Let's rewrite one of our previous patterns to use captures:
       "captures": {
           "1": { "name": "constant.numeric.ssraw" }
        },
-      "comment": "Variables like $PARAM1, $TM_SELECTION…"
+      "comment": "Variables like $PARAM1, $TM_SELECTION..."
     }
 
 Captures introduce complexity to your rule, but they are pretty straightforward.
@@ -535,7 +535,7 @@ At long last, here's the final syntax definition::
             "captures": {
                 "1": { "name": "constant.numeric.ssraw" }
              },
-            "comment": "Tab stops like $1, $2…"
+            "comment": "Tab stops like $1, $2..."
           },
 
           { "match": "\\$([A-Za-z][A-Za-z0-9_]+)",
@@ -543,7 +543,7 @@ At long last, here's the final syntax definition::
             "captures": {
                 "1": { "name": "constant.numeric.ssraw" }
              },
-            "comment": "Variables like $PARAM1, $TM_SELECTION…"
+            "comment": "Variables like $PARAM1, $TM_SELECTION..."
           },
 
           { "name": "variable.complex.ssraw",
