@@ -81,8 +81,9 @@ Priority of Sources for Completions
 	* ``.sublime-completions`` files
 	* Words in buffer
 
-Snippets will only be automatically completed against an exact match to their
-tab trigger. Other completions sources are filtered with fuzzy matches too.
+Snippets will only be automatically completed against an exact match of their
+tab trigger. Other sources for completions are filtered with a case insensitve
+fuzzy search instead.
 
 
 The Completions List
@@ -111,10 +112,16 @@ Enabling and Disabling Tab Completion for Completions
 *****************************************************
 
 The ``tab_completion`` setting is ``true`` by default. Set it to ``false`` if
-you want disable :kbd:`Tab`'s behavior of sourcing the most likely completion.
-This setting has no effect on triggers defined in ``.sublime-snippet`` files,
-so snippets will always be inserted after a :kbd:`Tab`.
+you want :kbd:`Tab` to stop sourcing the most likely completion. This setting
+has no effect on triggers defined in ``.sublime-snippet`` files, so snippets
+will always be inserted after a :kbd:`Tab`.
 
 With ``tab_completion`` on, The same order of priority as stated above applies,
 but, unlike in the case of the completions list, Sublime Text will always
 insert a completion, even if faced with an ambiguous choice.
+
+Inserting a Literal Tab
+-----------------------
+
+If ``tab_completion`` is ``true``, you can press ``Shift+Tab`` after a prefix
+to insert a literal tab character.

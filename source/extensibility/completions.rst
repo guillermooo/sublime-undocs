@@ -2,14 +2,12 @@
 Completions
 ===========
 
-.. warning::
-	This topic is a draft and doesn't reflect the exact behavior of completions
-	in the latest version of the editor.
-
 .. seealso::
 
    :doc:`Reference for completions <../reference/completions>`
-        Complete documentation on all available options.
+      Complete documentation on all available options.
+   `Sublime Text Documentation <http://www.sublimetext.com/docs/2/tab_completion.html>`_
+   	Official documentation on this topic.
 
 Completions provide functionality in the spirit of IDEs to suggest terms and
 insert snippets. Completions work through the completions list or, optionally,
