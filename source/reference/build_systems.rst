@@ -32,8 +32,16 @@ Options
 ``file_regex``
     Optional. Regular expression to capture error output of ``cmd``.
 
+``line_regex``
+    If the ``file_regex`` doesn't match on the current line, but there's a
+    ``line_regex`` specified, and it does match the current line, then walk
+    backwards through the buffer until a line matching the file regex is found:
+    use these two matches to determine the file and line to go to.
+
 ``selector``
-    Optional. Used when **Tools | Build System | Automatic** is set for automatic discovery based on file's scope.
+    Optional. Used when **Tools | Build System | Automatic** is set to ``true``.
+    Sublime Text uses this scope selector to find the appropriate build system
+    for the active view.
 
 ``working_dir``
     Optional. Directory to change the current directory to before running ``cmd``.
@@ -47,6 +55,13 @@ Options
 ``env``
     Optional. Dictionary of environment variables to be merged with the current
     process' that will be passed to ``cmd``.
+
+``shell``
+    If ``true``, ``cmd`` will be run through the shell (``cmd.exe``, ``bash``...).
+
+``path``
+    This string will replace the current process' ``PATH`` before calling ``cmd``.
+    The old ``PATH`` value will be restored after that.
 
 Capturing Error Output with ``file_regex``
 ------------------------------------------
