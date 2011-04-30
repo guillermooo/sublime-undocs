@@ -2,7 +2,7 @@ Completions
 ===========
 
 Completions provide an IDE-like functionality to insert dynamic content through
-the autocomplete list or by pressing :kbd:`Tab`.
+the completions list or by pressing :kbd:`Tab`.
 
 File Format
 ***********
@@ -53,7 +53,7 @@ Trigger-based Completions
 -------------------------
 
 ``trigger``
-	Text that will be displayed in the autocomplete list and will cause the
+	Text that will be displayed in the completions list and will cause the
 	``contents`` to be inserted when validated.
 
 ``contents``
@@ -85,20 +85,20 @@ Snippets will only be automatically completed against an exact match to their
 tab trigger. Other completions sources are filtered with fuzzy matches too.
 
 
-The Autocomplete List
+The Completions List
 *********************
 
-To use the autocomplete list:
+To use the completions list:
 
 	* Press :kbd:`Ctrl+spacebar` to open
 	* Optionally, press :kbd:`Ctrl+spacebar` again to select next entry
 	* Press :kbd:`Enter` or :kbd:`Tab` to validate selection
 
 .. note::
-	The current selection in the autocomplete list can actually be validated with
+	The current selection in the completions list can actually be validated with
 	any punctuation sign that isn't itself bound to a snippet.
 
-Snippets show up in the autocomplete list following the pattern:
+Snippets show up in the completions list following the pattern:
 ``<tab_trigger> : <name>``. For the other completions, you will just see the
 text to be inserted.
 
@@ -107,15 +107,14 @@ dialog will be bypassed and the corresponding content will be inserted straight
 away according to the priority rules stated above.
 
 
-Enabling Tab Completion for Completions
-***************************************
+Enabling and Disabling Tab Completion for Completions
+*****************************************************
 
-The ``tab_completion`` setting is ``false`` by default. Set it to ``true`` if
-you want to be able to press :kbd:`Tab` to source the most likely completion.
+The ``tab_completion`` setting is ``true`` by default. Set it to ``false`` if
+you want disable :kbd:`Tab`'s behavior of sourcing the most likely completion.
 This setting has no effect on triggers defined in ``.sublime-snippet`` files,
-so snippets will always be inserted after a :kbd:`Tab` regardless of this
-setting.
+so snippets will always be inserted after a :kbd:`Tab`.
 
-The same order of priority as stated above applies, but, unlike in the case of
-the autocomplete list, Sublime Text will always insert a completion, even if
-faced with an ambiguous choice.
+With ``tab_completion`` on, The same order of priority as stated above applies,
+but, unlike in the case of the completions list, Sublime Text will always
+insert a completion, even if faced with an ambiguous choice.
