@@ -145,7 +145,7 @@ current prefix.
 
 If you want to be able to tab-complete completions, the setting
 ``tab_completion`` must be set to ``true``. By default, ``tab_completion`` is
-set to ``false``. Snippet tab-completion is unaffected by this setting, they
+set to ``true``. Snippet tab-completion is unaffected by this setting: they
 will always be completed according to their tab trigger.
 
 With ``tab_completion`` enabled, completion of items is always automatic, which
