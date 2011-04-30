@@ -57,7 +57,7 @@ Options
     process' that will be passed to ``cmd``.
 
 ``shell``
-    If ``true``, ``cmd`` will be run through the shell (``cmd.exe``, ``bash``...).
+    If ``true``, ``cmd`` will be run through the shell (``cmd.exe``, ``bash``…).
 
 ``path``
     This string will replace the current process' ``PATH`` before calling ``cmd``.

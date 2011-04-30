@@ -11,7 +11,7 @@ Exploring the API
 
 A quick way to see the API in action:
 
-#. Add ``Packages\Default`` (**Preferences | Browse Packages...**) to your project.
+#. Add ``Packages\Default`` (**Preferences | Browse Packages…**) to your project.
 #. ``CTRL + SHIFT + F``
 #. Enter ``*.py`` in the **In Files:** field
 #. Check ``Use Buffer`` option
