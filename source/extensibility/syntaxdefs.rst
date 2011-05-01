@@ -152,9 +152,9 @@ Creating A New Syntax Definition
 
 To create a new syntax definition, follow these steps:
 
-  - Hit ``CTRL+~`` to open the Sublime Text python console.
-  - Type ``view.runCommand("newSyntaxDef")``.
-  - Save the new file to your ``Packages\User`` folder as ``Sublime Snippets (Raw).JSON-tmLanguage``.
+  - Hit ``Ctrl+``` to open the Sublime Text python console.
+  - Type ``window.run_command("new_syntax_def")``.
+  - Save the new file to your ``Packages/User`` folder as ``Sublime Snippets (Raw).JSON-tmLanguage``.
 
 You should now see a file like this::
 
@@ -350,9 +350,10 @@ above, they are simply XML files in the Plist format.
 
 Follow these steps to perform the conversion:
 
-    - Press ``CTRL+SHIFT+G``.
+    - Select ``Json to tmLanguage`` in **Tools | Build System**.
+    - Press :kbd:`F7`.
     - A tmLanguage file will be generated for you in the same folder as your
-      JSON-tmLanguage file.
+      ``.JSON-tmLanguage`` file.
     - Close and reopen Sublime Text so all your changes can take effect.
 
 .. note::
