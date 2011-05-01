@@ -2,17 +2,15 @@
 Completions
 ===========
 
-.. warning::
-	This topic is a draft and doesn't reflect the exact behavior of completions
-	in the latest version of the editor.
-
 .. seealso::
 
    :doc:`Reference for completions <../reference/completions>`
-        Complete documentation on all available options.
+      Complete documentation on all available options.
+   `Sublime Text Documentation <http://www.sublimetext.com/docs/2/tab_completion.html>`_
+   	Official documentation on this topic.
 
 Completions provide functionality in the spirit of IDEs to suggest terms and
-insert snippets. Completions work through the autocomplete list or, optionally,
+insert snippets. Completions work through the completions list or, optionally,
 by pressing :kbd:`Tab`.
 
 Note that completions in the broader sense of *words that Sublime Text will
@@ -55,7 +53,7 @@ Here's an excerpt from the HTML completions:
 	}
 
 ``scope``
-	Determines when the autocomplete list will be populated with this
+	Determines when the completions list will be populated with this
 	list of completions. See :ref:`scopes-and-scope-selectors` for more
 	information.
 
@@ -107,7 +105,7 @@ Snippets will always win if the current prefix matches their tab trigger
 exactly. For the rest of the completions sources, a fuzzy match is performed.
 Also, snippets will always lose against a fuzzy match. Note that this is only
 relevant if the completion is going to be inserted automatically. When the
-autocomplete list is shown, snippets will be listed along the other items, even
+completions list is shown, snippets will be listed along the other items, even
 if the prefix only partially matches the snippets' tab triggers.
 
 How to Use Completions
@@ -119,14 +117,14 @@ the result that will be explained below.
 
 Completions can be inserted in two ways: 
 
-	* through the autocomplete list (:kbd:`Ctrl+spacebar`);
+	* through the completions list (:kbd:`Ctrl+spacebar`);
 	* by pressing :kbd:`Tab`.
 
 
-The Autocomplete List
-*********************
+The Completions List
+********************
 
-The autocomplete list (:kbd:`Ctrl+spacebar`) may work in two ways: by bringing
+The completions list (:kbd:`Ctrl+spacebar`) may work in two ways: by bringing
 up a list of suggested words to be completed, or by inserting the best match
 directly.
 
@@ -145,11 +143,17 @@ current prefix.
 
 If you want to be able to tab-complete completions, the setting
 ``tab_completion`` must be set to ``true``. By default, ``tab_completion`` is
-set to ``false``. Snippet tab-completion is unaffected by this setting, they
+set to ``true``. Snippet tab-completion is unaffected by this setting: they
 will always be completed according to their tab trigger.
 
 With ``tab_completion`` enabled, completion of items is always automatic, which
-means that, unlike in the case of the autocomplete list, Sublime Text will
+means that, unlike in the case of the completions list, Sublime Text will
 always make a decision for you. The rules to select the best completion are the
 same as above, but in case of ambiguity, Sublime Text will still insert the
 item deemed most suitable.
+
+Inserting a Literal Tab Character
+---------------------------------
+
+When ``tab_completion`` is enabled, you can press ``Shift+Tab`` to insert a
+literal tab character.

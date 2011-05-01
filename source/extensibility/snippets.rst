@@ -6,12 +6,11 @@ need certain short fragments of text again and again. Use snippets to save yours
 tedious typing. Snippets are smart templates that will insert text for you and
 adapt it to their context.
 
-To create a new snippet, select **Tools | New Snippet**. Sublime Text will
+To create a new snippet, select **Tools | New Snippet…**. Sublime Text will
 present you with an skeleton for a new snippet.
 
 Snippets can be stored under any package's folder, but to keep it simple while
-you're learning, you can save them to your ``Packages\User`` folder. For now,
-think of packages as folders. That's what they are, after all.
+you're learning, you can save them to your ``Packages/User`` folder.
 
 Snippets File Format
 ********************
@@ -39,7 +38,7 @@ The ``snippet`` element contains all the information Sublime Text needs in order
 to know *what* to insert, *whether* to insert it and *when*. Let's see all of
 these parts in turn.
 
-**content**
+``content``
     The actual snippet. Snippets can range from simple to fairly complex
     templates. We'll look at examples of both later.
 
@@ -51,27 +50,21 @@ these parts in turn.
           tabs will be transformed into spaces when the snippet is inserted if the
           option ``translateTabsToSpaces`` is set to ``true``.
 
-    .. note::
-        The **content** must be included in a ``<![CDATA[…]]>`` section.
+        The ``content`` must be included in a ``<![CDATA[…]]>`` section.
         Snippets won't work if you don't do this!
 
-**tabTrigger**
+``tabTrigger``
     Defines the sequence of keys you will press to insert this snippet. The
-    snippet will kick in as soon as you hit the ``tab`` key after typing this
-    sequence.
+    snippet will kick in as soon as you hit the :kbd:`Tab` key after typing
+    this sequence.
 
     A tab trigger is an implicit key binding.
 
-.. XXX Link to commands
-    .. note::
-        There are other ways to cause Sublime Text to insert snippets via
-        commands.
-
-**scope**
+``scope``
     Scope selector determining the context where the snippet will be active.
     See :ref:`scopes-and-scope-selectors` for more information.
 
-**description**
+``description``
     Used when showing the snippet in the Snippets menu. If not present, Sublime Text
     defaults to the name of the snippet.
 
@@ -80,10 +73,10 @@ the next sections.
 
 .. note::
     In the interest of brevity, we're only including the ``content``
-    element's text in examples unless stated otherwise.
+    element's text in examples unless otherwise noted.
 
-Snippet Resources
-*****************
+Snippet Features
+****************
 
 Environment Variables
 ---------------------
@@ -92,10 +85,10 @@ Snippets have access to contextual information in the form of environment variab
 Sublime Text sets the values of the variables listed below automatically.
 
 You can also add your own variables to provide extra information. These custom
-variables are defined in ``sublime-options`` files.
+variables are defined in ``.sublime-options`` files.
 
 ======================    ====================================================================================
-**$PARAM1, $PARAM2 …**      Arguments passed to the ``insertSnippet`` command. (Not covered here.)
+**$PARAM1, $PARAM2…**      Arguments passed to the ``insert_snippet`` command. (Not covered here.)
 **$SELECTION**             The text that was selected when the snippet was triggered.
 **$TM_CURRENT_LINE**       Content of the line the cursor was in when the snippet was triggered.
 **$TM_CURRENT_WORD**       Current word under the cursor when the snippet was triggered.
@@ -105,8 +98,8 @@ variables are defined in ``sublime-options`` files.
 **$TM_LINE_INDEX**         Column the snippet is being inserted at, 0 based.
 **$TM_LINE_NUMBER**        Row the snippet is being inserted at, 1 based.
 **$TM_SELECTED_TEXT**      An alias for **$SELECTION**.
-**$TM_SOFT_TABS**          ``YES`` if ``translateTabsToSpaces`` is true, otherwise ``NO``.
-**$TM_TAB_SIZE**           Spaces per-tab (controlled by the ``tabSize`` option).
+**$TM_SOFT_TABS**          ``YES`` if ``translate_tabs_to_spaces`` is true, otherwise ``NO``.
+**$TM_TAB_SIZE**           Spaces per-tab (controlled by the ``tab_size`` option).
 ======================    ====================================================================================
 
 Let's see a simple example of a snippet using variables:
@@ -133,7 +126,7 @@ Fields
 ------
 
 With the help of field markers, you can cycle through positions within the
-snippet by pressing the ``TAB`` key. Fields are used to walk you through the
+snippet by pressing the :kbd:`Tab` key. Fields are used to walk you through the
 customization of a snippet once it's been inserted.
 
 .. code-block:: perl
@@ -142,15 +135,15 @@ customization of a snippet once it's been inserted.
     Second Name: $2
     Address: $3
 
-In the example above, the cursor will jump to ``$1`` if you press ``TAB`` once.
-If you press ``TAB`` a second time, it will advance to ``$2``, etc. You can also
-move backwards in the series with ``SHIFT + TAB``. If you press ``TAB`` after the
+In the example above, the cursor will jump to ``$1`` if you press :kbd:`Tab` once.
+If you press :kbd:`Tab` a second time, it will advance to ``$2``, etc. You can also
+move backwards in the series with :kbd:`Shift+Tab`. If you press :kbd:`Tab` after the
 highest tab stop, Sublime Text will place the cursor at the end of the snippet's
 content so that you can resume normal editing.
 
 If you want to control where the exit point should be, use the ``$0`` mark.
 
-You can break out of the field cycle any time by pressing ``ESC``.
+You can break out of the field cycle any time by pressing :kbd:`Esc`.
 
 Mirrored Fields
 ---------------
@@ -212,7 +205,7 @@ The substitution syntax has the following syntaxes:
     - ``${var_name/regex/format_string/options}``
 
 **var_name**
-    The variable name: 1, 2, 3...
+    The variable name: 1, 2, 3…
 
 **regex**
     Perl-style regular expression: See the `Boost library reference for regular expressions <http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html>`_.

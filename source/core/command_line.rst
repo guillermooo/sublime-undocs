@@ -1,4 +1,7 @@
 Command Line Usage
 ==================
 
-See `Command Line Flags <http://www.sublimetext.com/docs/command-line>`_.
+.. seealso::
+   
+   `OS X Command Line <http://www.sublimetext.com/docs/2/osx_command_line.html>`_
+      Official Sublime Text Documentation

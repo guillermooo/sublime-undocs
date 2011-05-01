@@ -43,14 +43,13 @@ Your First Plugin
 
 Let's write a "Hello, World!" plugin for Sublime Text 2:
 
-#. Select **Tools | New Plugin...** in the menu.
-#. Make sure there's a colon after ``class ExampleCommand(sublime_plugin.TextCommand)``. This step is required due to a bug in Sublime Text 2 at the time of this writing.
+#. Select **Tools | New Plugin…** in the menu.
 #. Save to ``Packages/User/hello_world.py``.
 
 You've just written your first plugin. Let's put it to use:
 
-#. Create a new buffer (``CTRL + N``).
-#. Open the python console (``CTRL + ```).
+#. Create a new buffer (``Ctrl+n``).
+#. Open the python console (``Ctrl+```).
 #. Type: ``view.run_command("example")`` and press enter.
 
 You should see the text "Hello, World!" in your new buffer.
@@ -78,7 +77,7 @@ The rest of the code is concerned with particulars of the ``TextCommand`` or
 the API that we'll discuss in the next sections.
 
 Before moving on, though, we'll look at how we called the new command: We first
-opened the python console, and then issued a call to ``view.run_command``. This
+opened the python console, and then issued a call to ``view.run_command()``. This
 is a rather inconvenient way of using plugins, but it's often useful when
 you're in the development phase. For now, keep in mind that your commands
 can be accessed through key bindings or other means, just as other commands are.
@@ -110,7 +109,7 @@ commands for your plugin.
 Shared Traits of Commands
 -------------------------
 
-All commands need to implement a ``run`` method in order to work. Additionally,
+All commands need to implement a ``.run()`` method in order to work. Additionally,
 they can receive and arbitrarily long number of keyword parameters.
 
 
@@ -143,7 +142,7 @@ Text Commands and the ``edit`` Object
 
 The edit object groups modifications to the view so undo and macros work in a
 sensible way. You are responsible for creating and closing edit objects. To do
-so, you can call ``view.begin_edit`` and ``edit.end_edit``. Text commands get
+so, you can call ``view.begin_edit()`` and ``edit.end_edit()``. Text commands get
 passed an open ``edit`` object in their ``run`` method for convenience.
 Additionally, many ``View`` methods require an edit object.
 

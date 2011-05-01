@@ -17,7 +17,7 @@ a package:
     - settings (``.sublime-settings``)
     - syntax definitions (``.tmLanguage``)
     - snippets (``.sublime-snippet``)
-    - themes (``sublime-theme``)
+    - themes (``.sublime-theme``)
 
 Some of them may include support files for other packages or built-in functionality
 too. Such is the case of the dictionaries used by the spell-checker
@@ -93,13 +93,11 @@ changes from one system to another is how you copy these files.
 Installation of Packages with ``.sublime-package`` Archives
 -----------------------------------------------------------
 
-To install a ``.sublime-package``, simply double-click on it. Sublime Text will
-take care of the rest.
+If you're running a full installation of Sublime Text, simply double-click on the
+``.sublime-package``. Sublime Text will take care of the rest.
 
-.. note::
-	This method will only work with full installations. If you're using a
-	portable installation, copy the ``.sublime-package`` to the ``Installed Packages``
-	directory manually and restart Sublime Text.
+If you're using a portable installation, copy the ``.sublime-package`` to the
+``Data/Installed Packages`` directory manually and restart Sublime Text.
 
 Installation of Packages from a Version Control System
 ------------------------------------------------------
@@ -122,12 +120,12 @@ One notable exception is that macros defined in any package appear under
 **Tools | Macros | <Your Package>**.
 
 As mentioned at the begninning, however, there are some packages that Sublime
-Text treats especially. For instance, ``Package\User`` will never be clobbered
+Text treats especially. For instance, ``Package/User`` will never be clobbered
 during a software update.
 
 .. sidebar:: The ``User`` Package
 
-	Usually, unpackaged resources are stored in ``Packages\User`` package. If you
+	Usually, unpackaged resources are stored in ``Packages/User`` package. If you
 	have a few loose snippets, macros or plugins, this is a good place to keep
 	them.
 
@@ -136,11 +134,12 @@ during a software update.
 Merging and Order of Preference
 -------------------------------
 
-``Packages\Default`` and ``Packages\User`` also receive a special treament when
+``Packages/Default`` and ``Packages/User`` also receive a special treament when
 merging files (e. g. ``.sublime-keymap`` and ``.sublime-settings`` files). Before
 the merging can take place, the files have to be arranged in an order. To that end,
-Sublime Text sorts them by name, but ``Default`` and ``User`` are special: ``Default``
-will always go to the front of the list, and ``User`` to the end.
+Sublime Text sorts them by name, but files contained in ``Default`` and ``User``
+are special: ``Default`` will always go to the front of the list, and ``User``
+to the end.
 
 The ``Installed Packages`` Directory
 ************************************

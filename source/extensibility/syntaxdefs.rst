@@ -17,22 +17,22 @@ the matched text its corresponding *scope name*.
 Prerequisites
 *************
 
-In order to follow this tutorial, you will need to install GrammarDev_, a package
-intended to ease the creation of new syntax definitions for Sublime Text. GrammarDev
+In order to follow this tutorial, you will need to install AAAPackageDev_, a package
+intended to ease the creation of new syntax definitions for Sublime Text. AAAPackageDev
 lives on a public Mercurial_ repository at Bitbucket_.
 
-.. _GrammarDev: http://bitbucket.org/guillermooo/grammardev
+.. _AAAPackageDev: https://bitbucket.org/guillermooo/aaapackagedev
 .. _Mercurial: http://mercurial.selenic.com/
 .. _Bitbucket: http://bitbucket.org
 
-To obtain GrammarDev, clone the Bitbucket repository under the name ``GrammarDev``
+To obtain AAAPackageDev, clone the Bitbucket repository under the name ``AAAPackageDev``
 in Sublime's ``Packages`` folder. From the Windows command line, it would look
 roughly like this:
 
 .. code-block:: bat
 
   cd "%APPDATA%\Sublime Text\Packages"
-  hg clone http://bitbucket.org/guillermooo/grammardev GrammarDev
+  hg clone http://bitbucket.org/guillermooo/grammardev AAAPackageDev
 
 .. note::
   If you're using a portable version of Sublime Text, the ``Packages`` folder
@@ -53,7 +53,7 @@ File format
 
 Sublime uses `property list`_ files (Plist) to store syntax definitions. Because
 editing XML files is a cumbersome task, though, we'll be using JSON_ instead and
-converting it to Plist afterwards. This is where the GrammarDev package mentioned
+converting it to Plist afterwards. This is where the AAAPackageDev package mentioned
 above comes in.
 
 .. _`property list`: http://en.wikipedia.org/wiki/Property_list
@@ -61,7 +61,7 @@ above comes in.
 
 .. note::
     If you experience unexpected errors during this tutorial, chances are
-    GrammarDev is to blame. Don't immediately think your problem is due to a
+    AAAPackageDev is to blame. Don't immediately think your problem is due to a
     bug in Sublime Text.
 
 By all means, do edit the Plist files by hand if you prefer to work in XML, but
@@ -136,15 +136,15 @@ We'll be styling the actual snippet content, not the ``sublime-snippet`` file.
 
 These are the elements we want to style in a snippet:
 
-    - Variables (``$PARAM1``, ``$USER_NAME`` …)
-    - Simple tab stops (``$0``, ``$1`` …)
+    - Variables (``$PARAM1``, ``$USER_NAME``\ …)
+    - Simple tab stops (``$0``, ``$1``\ …)
     - Complex tab stops with place holders (``${1:Hello}``)
     - Nested tab stops (``${1:Hello ${2:World}!}``)
-    - Escape sequences (``\\$``, ``\\<`` …)
-    - Illegal sequences (``$``, ``<`` …)
+    - Escape sequences (``\\$``, ``\\<``\ …)
+    - Illegal sequences (``$``, ``<``\ …)
 
 .. note::
-    Before continuing, make sure you've installed the GrammarDev package
+    Before continuing, make sure you've installed the AAAPackageDev package
     as explained further above.
 
 Creating A New Syntax Definition
@@ -152,9 +152,9 @@ Creating A New Syntax Definition
 
 To create a new syntax definition, follow these steps:
 
-  - Hit ``CTRL+~`` to open the Sublime Text python console.
-  - Type ``view.runCommand("newSyntaxDef")``.
-  - Save the new file to your ``Packages\User`` folder as ``Sublime Snippets (Raw).JSON-tmLanguage``.
+  - Hit ``Ctrl+``` to open the Sublime Text python console.
+  - Type ``window.run_command("new_syntax_def")``.
+  - Save the new file to your ``Packages/User`` folder as ``Sublime Snippets (Raw).JSON-tmLanguage``.
 
 You should now see a file like this::
 
@@ -306,7 +306,7 @@ With escaping out of the way, we can build our pattern like this:
 
     { "match": "\\$\\d+",
       "name": "keyword.source.ssraw",
-      "comment": "Tab stops like $1, $2…"
+      "comment": "Tab stops like $1, $2..."
     }
 
 .. sidebar:: Choosing the Right Scope Name
@@ -338,7 +338,7 @@ And we can add it to our syntax definition too:
         "patterns": [
             { "match": "\\$\\d+",
               "name": "keyword.source.ssraw",
-              "comment": "Tab stops like $1, $2…"
+              "comment": "Tab stops like $1, $2..."
             }
         ],
         "uuid": "ca03e751-04ef-4330-9a6b-9b99aae1c418"
@@ -350,9 +350,10 @@ above, they are simply XML files in the Plist format.
 
 Follow these steps to perform the conversion:
 
-    - Press ``CTRL+SHIFT+G``.
+    - Select ``Json to tmLanguage`` in **Tools | Build System**.
+    - Press :kbd:`F7`.
     - A tmLanguage file will be generated for you in the same folder as your
-      JSON-tmLanguage file.
+      ``.JSON-tmLanguage`` file.
     - Close and reopen Sublime Text so all your changes can take effect.
 
 .. note::
@@ -369,7 +370,7 @@ Let's proceed to creating another rule for environmental variables.
 
     { "match": "\\$[A-Za-z][A-Za-z0-9_]+",
       "name": "keyword.source.ssraw",
-      "comment": "Variables like $PARAM1, $TM_SELECTION…"
+      "comment": "Variables like $PARAM1, $TM_SELECTION..."
     }
 
 Repeat the steps above to update the tmLanguage file and restart Sublime Text.
@@ -391,7 +392,7 @@ Let's rewrite one of our previous patterns to use captures:
       "captures": {
           "1": { "name": "constant.numeric.ssraw" }
        },
-      "comment": "Variables like $PARAM1, $TM_SELECTION…"
+      "comment": "Variables like $PARAM1, $TM_SELECTION..."
     }
 
 Captures introduce complexity to your rule, but they are pretty straightforward.
@@ -535,7 +536,7 @@ At long last, here's the final syntax definition::
             "captures": {
                 "1": { "name": "constant.numeric.ssraw" }
              },
-            "comment": "Tab stops like $1, $2…"
+            "comment": "Tab stops like $1, $2..."
           },
 
           { "match": "\\$([A-Za-z][A-Za-z0-9_]+)",
@@ -543,7 +544,7 @@ At long last, here's the final syntax definition::
             "captures": {
                 "1": { "name": "constant.numeric.ssraw" }
              },
-            "comment": "Variables like $PARAM1, $TM_SELECTION…"
+            "comment": "Variables like $PARAM1, $TM_SELECTION..."
           },
 
           { "name": "variable.complex.ssraw",
