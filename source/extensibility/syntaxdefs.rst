@@ -12,7 +12,7 @@ this fine-grained contextual information.
 Essentially, syntax definitions consist of regular expressions used to find
 text, and more or less arbitrary, dot-separated strings called *scopes* or *scope
 names*. For every occurrence of a given regular expression, Sublime Text gives
-the matched text its corresponding *scope name*.
+the matching text its corresponding *scope name*.
 
 Prerequisites
 *************
@@ -25,28 +25,18 @@ lives on a public Mercurial_ repository at Bitbucket_.
 .. _Mercurial: http://mercurial.selenic.com/
 .. _Bitbucket: http://bitbucket.org
 
-To obtain AAAPackageDev, clone the Bitbucket repository under the name ``AAAPackageDev``
-in Sublime's ``Packages`` folder. From the Windows command line, it would look
-roughly like this:
-
-.. code-block:: bat
-
-  cd "%APPDATA%\Sublime Text\Packages"
-  hg clone http://bitbucket.org/guillermooo/grammardev AAAPackageDev
-
-.. note::
-  If you're using a portable version of Sublime Text, the ``Packages`` folder
-  will be located inside the ``Data`` directory.
-
+Download the latest ``.sublime-package`` file and double click on it if you're
+running a full installation of Sublime Text, or perform a manual installation
+as described in :ref:`installation-of-sublime-packages`.
 
 .. sidebar:: Mercurial and Bitbucket
 
-  Mercurial is a distributed version control system (DVCS) and you need to install
-  it separately. Bitbucket is an online service that provides hosting for Mercurial
-  repositories. There are freely available command-line and graphical
-  `Mercurial clients`_.
+  Mercurial is a distributed version control system (DVCS). Bitbucket is an
+  online service that provides hosting for Mercurial repositories. If you want
+  to install Mercurial, there are freely available command-line and graphical
+  `clients`_.
 
-  .. _`Mercurial clients`: http://mercurial.selenic.com/downloads/
+  .. _`clients`: http://mercurial.selenic.com/downloads/
 
 File format
 ***********
@@ -56,7 +46,7 @@ editing XML files is a cumbersome task, though, we'll be using JSON_ instead and
 converting it to Plist afterwards. This is where the AAAPackageDev package mentioned
 above comes in.
 
-.. _`property list`: http://en.wikipedia.org/wiki/Property_list
+.. _property list: http://en.wikipedia.org/wiki/Property_list
 .. _JSON: http://en.wikipedia.org/wiki/JSON
 
 .. note::
@@ -81,7 +71,7 @@ bound to and looks at the caret's position in the file. If the caret's current
 scope matches the snippet's scope selector, Sublime Text fires the snippet off.
 Otherwise, nothing happens.
 
-.. sidebar:: Scopes vs. Scope Selectors
+.. sidebar:: Scopes vs Scope Selectors
 
   There's a slight difference between *scopes* and *scope selectors*: scopes are
   the names defined in a syntax definition, whilst scope selectors are used in
@@ -100,9 +90,6 @@ that's useful for Sublime Text users too.
 
 .. _`Textmate's online manual`: http://manual.macromates.com/en/
 
-.. ST lets the user react to contexts in plugins, not scopes.
-.. .. note::
-..  Sublime Text provides a hook to create user-defined scopes for plugins too.
 
 How Syntax Definitions Work
 ***************************
@@ -111,6 +98,8 @@ At their core, syntax definitions are arrays of regular expressions paired with
 scope names. Sublime Text will try to match these patterns against a buffer's text
 and attach the corresponding scope name to all occurrences. These pairs of regular
 expressions and scope names are known as *rules*.
+
+.. XXX: What are those exceptions mentioned below?
 
 Rules are applied in order, one line at a time. Each rule consumes the matched
 text region, which will therefore be excluded from the next rule's matching attempt
@@ -126,11 +115,11 @@ Your First Syntax Definition
 ****************************
 
 By way of example, let's create a syntax definition for Sublime Text snippets.
-We'll be styling the actual snippet content, not the ``sublime-snippet`` file.
+We'll be styling the actual snippet content, not the ``.sublime-snippet`` file.
 
 .. note::
   Since syntax definitions are primarily used to enable syntax highlighting,
-  we'll use *to style* with the meaning *to break down a source code file into
+  we'll use *to style* as in *to break down a source code file into
   scopes*. Keep in mind, however, that colors are a different thing to syntax
   definitions and that scopes have many more uses besides syntax highlighting.
 
@@ -152,33 +141,15 @@ Creating A New Syntax Definition
 
 To create a new syntax definition, follow these steps:
 
-  - Hit ``Ctrl+``` to open the Sublime Text python console.
-  - Type ``window.run_command("new_syntax_def")``.
+  - Go to **Tools | Packages | Package Development | New Syntax Definition**
   - Save the new file to your ``Packages/User`` folder as ``Sublime Snippets (Raw).JSON-tmLanguage``.
 
 You should now see a file like this::
 
-  { "name": "Untitled",
-    "scopeName": "source.untitled",
-    "fileTypes": ["ff", "fff"],
-    "foldingStartMarker": "\\\\{\\\\s*$",
-    "foldingStopMarker": "^\\\\s*\\\\}",
+  { "name": "Syntax Name",
+    "scopeName": "source.syntax_name", 
+    "fileTypes": [""], 
     "patterns": [
-       { "name": "keyword.untitled",
-         "match": "\\\\b(if|while|for|return)\\\\b"
-       },
-       { "name": "string.quoted.double.untitled",
-         "begin": "\\\"",
-         "beginCaptures": {
-           "0": { "name": "definition.string.quoted.double.untitled" }
-          },
-          "end": "\\\"",
-          "patterns": [
-             { "name": "constant.character.escape.untitled",
-               "match": "\\\\."
-             }
-          ]
-       }
     ],
     "uuid": "ca03e751-04ef-4330-9a6b-9b99aae1c418"
   }
@@ -203,12 +174,6 @@ Let's examine now the key elements.
     This is a list of file extensions. When opening files of these types,
     Sublime Text will automatically activate this syntax definition for them.
 
-``foldingStartMarker``
-    Currently ignored.
-
-``foldingStopMarker``
-    Currently ignored.
-
 ``patterns``
     Container for your patterns.
 
@@ -217,8 +182,6 @@ For our example, fill in the template with the following information::
     {   "name": "Sublime Snippet (Raw)",
         "scopeName": "source.ssraw",
         "fileTypes": ["ssraw"],
-        "foldingStartMarker": "\\\\{\\\\s*$",
-        "foldingStopMarker": "^\\\\s*\\\\}",
         "patterns": [
         ],
         "uuid": "ca03e751-04ef-4330-9a6b-9b99aae1c418"
@@ -226,9 +189,9 @@ For our example, fill in the template with the following information::
 
 .. note::
     JSON is a very strict format, so make sure to get all the commas and quotes right.
-    If the conversion to Plist fails, take a look at the console's output by
-    hitting ``CTRL+~`` for more information on the error. We'll explain further
-    below how to convert a syntax definition in JSON to Plist.
+    If the conversion to Plist fails, take a look at the output panel by for more
+    information on the error. We'll explain later how to convert a syntax
+    definition in JSON to Plist.
 
 Analyzing Patterns
 ******************
@@ -275,8 +238,6 @@ Let's go back to our example. Make it look like this:
     { "name": "Sublime Snippet (Raw)",
       "scopeName": "source.ssraw",
       "fileTypes": ["ssraw"],
-      "foldingStartMarker": "\\\\{\\\\s*$",
-      "foldingStopMarker": "^\\\\s*\\\\}",
       "patterns": [
       ],
       "uuid": "ca03e751-04ef-4330-9a6b-9b99aae1c418"
@@ -285,12 +246,12 @@ Let's go back to our example. Make it look like this:
 That is, make sure the ``patterns`` array is empty.
 
 Now we can begin to add our rules for Sublime snippets. Let's start with simple
-tab stops. These could be matched with a regex like so:
+fields. These could be matched with a regex like so:
 
 .. code-block:: perl
 
     \$[0-9]+
-    # or…
+    # or...
     \$\d+
 
 However, because we're writing our regex in JSON, we need to factor in JSON's
@@ -333,8 +294,6 @@ And we can add it to our syntax definition too:
     {   "name": "Sublime Snippet (Raw)",
         "scopeName": "source.ssraw",
         "fileTypes": ["ssraw"],
-        "foldingStartMarker": "\\\\{\\\\s*$",
-        "foldingStopMarker": "^\\\\s*\\\\}",
         "patterns": [
             { "match": "\\$\\d+",
               "name": "keyword.source.ssraw",
@@ -344,27 +303,27 @@ And we can add it to our syntax definition too:
         "uuid": "ca03e751-04ef-4330-9a6b-9b99aae1c418"
     }
 
-We're now ready to convert our file to tmLanguage. Syntax definitions use
-Textmate's tmLanguage extension for compatibility reasons. As explained further
+We're now ready to convert our file to ``.tmLanguage``. Syntax definitions use
+Textmate's ``.tmLanguage`` extension for compatibility reasons. As explained further
 above, they are simply XML files in the Plist format.
 
 Follow these steps to perform the conversion:
 
-    - Select ``Json to tmLanguage`` in **Tools | Build System**.
-    - Press :kbd:`F7`.
-    - A tmLanguage file will be generated for you in the same folder as your
-      ``.JSON-tmLanguage`` file.
-    - Close and reopen Sublime Text so all your changes can take effect.
+    - Select ``Json to tmLanguage`` in **Tools | Build System**
+    - Press :kbd:`F7`
+    - A ``.tmLanguage`` file will be generated for you in the same folder as your
+      ``.JSON-tmLanguage`` file
+    - Restart Sublime Text so all your changes can take effect
 
 .. note::
     Sublime Text cannot reload syntax definitions automatically upon their modification.
 
 You have now created your first syntax definition. Next, open a new file and save
-it with the extension ``ssraw``. The buffer's syntax name should switch to
+it with the extension ``.ssraw``. The buffer's syntax name should switch to
 "Sublime Snippet (Raw)" automatically, and you should get syntax highlighting if
-you type ``$1`` or any other simple tab stop.
+you type ``$1`` or any other simple snippet field.
 
-Let's proceed to creating another rule for environmental variables.
+Let's proceed to creating another rule for environment variables.
 
 .. code-block:: js
 
@@ -373,7 +332,7 @@ Let's proceed to creating another rule for environmental variables.
       "comment": "Variables like $PARAM1, $TM_SELECTION..."
     }
 
-Repeat the steps above to update the tmLanguage file and restart Sublime Text.
+Repeat the steps above to update the ``.tmLanguage`` file and restart Sublime Text.
 
 Fine Tuning Matches
 -------------------
@@ -383,7 +342,7 @@ the same way. Depending on your needs or your personal preferences, you may want
 the ``$`` to stand out. That's where ``captures`` come in. Using captures,
 you can break a pattern down into components to target them individually.
 
-Let's rewrite one of our previous patterns to use captures:
+Let's rewrite one of our previous patterns to use ``captures``:
 
 .. code-block:: js
 
@@ -447,18 +406,18 @@ see them individually.
     Regex for the end mark for this scope.
 
 ``beginCaptures``
-    Captures for the begin marker. They work like captures for simple matches. Optional.
+    Captures for the ``begin`` marker. They work like captures for simple matches. Optional.
 
 ``endCaptures``
-    Same as beginCaptures but for the end marker. Optional.
+    Same as ``beginCaptures`` but for the ``end`` marker. Optional.
 
 ``contentName``
     Scope for the whole matched region, from the begin marker to the end marker,
-    inclusive. This will effectively create nested scopes for beginCaptures,
-    endCaptures and patterns defined within this rule. Optional.
+    inclusive. This will effectively create nested scopes for ``beginCaptures``,
+    ``endCaptures`` and ``patterns`` defined within this rule. Optional.
 
 ``patterns``
-    An array of patterns to match against the begin-end content **only**---they are not
+    An array of patterns to match against the begin-end content **only** ---they are not
     matched against the text consumed by **begin** or **end**.
 
 We'll use this rule to style nested complex fields in snippets::
@@ -494,7 +453,7 @@ the text consumed by both ``begin`` and ``end``.
 Remember that matched text is consumed and is excluded from the next match
 attempt.
 
-To finish off complex tab stops, we'll style place holders as strings. Since
+To finish off complex fields, we'll style place holders as strings. Since
 we've already matched all possible tokens inside a complex tab stop, we can
 safely tell Sublime Text to give any remaining text (``.``) a literal string scope.
 
@@ -528,8 +487,6 @@ At long last, here's the final syntax definition::
   {   "name": "Sublime Snippet (Raw)",
       "scopeName": "source.ssraw",
       "fileTypes": ["ssraw"],
-      "foldingStartMarker": "\\{\\s*$",
-      "foldingStopMarker": "^\\s*\\}",
       "patterns": [
           { "match": "\\$(\\d+)",
             "name": "keyword.ssraw",

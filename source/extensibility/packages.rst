@@ -90,6 +90,8 @@ changes from one system to another is how you copy these files.
 	Packages installed as ``.sublime-package`` archives get added automatically
 	to ``Installed Packages``, so they are very convenient.
 
+.. _installation-of-sublime-packages:
+
 Installation of Packages with ``.sublime-package`` Archives
 -----------------------------------------------------------
 
