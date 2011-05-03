@@ -42,6 +42,10 @@ Types of Commadns
 * ``sublime_plugin.TextCommand``
 * ``sublime_plugin.EventListener``
 
+Window command instances have a ``.window`` attribute pointing to the window
+instance that created them. Similarly, view command instances have a ``.view``
+attribute.
+
 Shared Traits for Commands
 --------------------------
 
@@ -55,7 +59,9 @@ How to Call Commands from the API
 Use a reference to a ``View``, a ``Window`` or ``sublime`` depending on
 the type of command, and call ``object.run_command('command_name')``.
 In addition, you can pass a dictionary where keys are names of parameters
-to ``command_name``.
+to ``command_name``. ::
+
+   window.run_command("echo", {"Tempus": "Irreparabile", "Fugit": "."})
 
 
 Text Commands and the ``edit`` Object

@@ -126,9 +126,9 @@ We'll be styling the actual snippet content, not the ``.sublime-snippet`` file.
 These are the elements we want to style in a snippet:
 
     - Variables (``$PARAM1``, ``$USER_NAME``\ …)
-    - Simple tab stops (``$0``, ``$1``\ …)
-    - Complex tab stops with place holders (``${1:Hello}``)
-    - Nested tab stops (``${1:Hello ${2:World}!}``)
+    - Simple fields (``$0``, ``$1``\ …)
+    - Complex fields with place holders (``${1:Hello}``)
+    - Nested fields (``${1:Hello ${2:World}!}``)
     - Escape sequences (``\\$``, ``\\<``\ …)
     - Illegal sequences (``$``, ``<``\ …)
 
@@ -161,9 +161,9 @@ Let's examine now the key elements.
     Each new syntax definition gets its own uuid. Don't modify them.
 
 ``name``
-    The name that Sublime Text will display in the syntax definition drop-down menu
-    (bottom right). Use a short, descriptive name. Typically, you will be using the
-    programming language's name you are creating the syntax definition for.
+    The name that Sublime Text will display in the syntax definition drop-down list
+    Use a short, descriptive name. Typically, you will be using the programming
+    language's name you are creating the syntax definition for.
 
 ``scopeName``
     The top level scope for this syntax definition. It takes the form
@@ -189,7 +189,7 @@ For our example, fill in the template with the following information::
 
 .. note::
     JSON is a very strict format, so make sure to get all the commas and quotes right.
-    If the conversion to Plist fails, take a look at the output panel by for more
+    If the conversion to Plist fails, take a look at the output panel for more
     information on the error. We'll explain later how to convert a syntax
     definition in JSON to Plist.
 
@@ -418,7 +418,7 @@ see them individually.
 
 ``patterns``
     An array of patterns to match against the begin-end content **only** ---they are not
-    matched against the text consumed by **begin** or **end**.
+    matched against the text consumed by ``begin`` or ``end``.
 
 We'll use this rule to style nested complex fields in snippets::
 
@@ -445,7 +445,7 @@ The most interesting part, however, is ``patterns``. Recursion and the
 importance of ordering have finally made an appearance here.
 
 We've seen further above that fields can be nested. In order to account for
-this, we need to recursively style nested tab stops. That's what the ``include``
+this, we need to recursively style nested fields. That's what the ``include``
 rule does when furnished the ``$self`` value: it recursively applies our entire
 syntax definition to the portion of text contained in our begin-end rule, excluding
 the text consumed by both ``begin`` and ``end``.
@@ -454,7 +454,7 @@ Remember that matched text is consumed and is excluded from the next match
 attempt.
 
 To finish off complex fields, we'll style place holders as strings. Since
-we've already matched all possible tokens inside a complex tab stop, we can
+we've already matched all possible tokens inside a complex field, we can
 safely tell Sublime Text to give any remaining text (``.``) a literal string scope.
 
 Final Touches

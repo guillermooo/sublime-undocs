@@ -130,12 +130,17 @@ exist in order for window commands to be available. For instance, the built-in
 command ``new_file`` is defined as a ``WindowCommand`` so it works too when no
 view is open. Requiring a view to exisit in that case wouln't make sense.
 
+Window command instances have a ``.window`` attribute pointing to the window
+instance that created them.
 
 Text Commands
 -------------
 
 Text commands operate at the buffer level and they require a buffer to exist
 in order to be available.
+
+View command instances have a ``.view`` attribute pointing to the view instance
+that created them.
 
 Text Commands and the ``edit`` Object
 -------------------------------------
