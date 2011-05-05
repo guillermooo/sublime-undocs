@@ -37,7 +37,7 @@ hypothetical hierarchy of settings for Python on Windows:
 - :file:`Packages/Default/Base File.sublime-settings`
 - :file:`Packages/Default/Base File (Windows).sublime-settings`
 - :file:`Packages/User/Base File.sublime-settings`
-- :file:`Packages/User/Base File (Windows).sublime-settings`
+.. - :file:`Packages/User/Base File (Windows).sublime-settings`
 - :file:`Packages/Python/Python.sublime-settings`
 - :file:`Packages/User/Python.sublime-settings`
 - *Session data for the current file*
