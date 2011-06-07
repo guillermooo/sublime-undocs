@@ -22,7 +22,7 @@ Types of Settings
 =================
 
 As mentioned above, there are several types of ``.sublime-settings`` files
-controling several aspects of the editor. In this section only file type
+controlling several aspects of the editor. In this section only file type
 settings are explained.
 
 
@@ -94,8 +94,8 @@ platform-specific settings for file types. For example,
 under ``Pakages/User`` only ``Python.sublime-settings`` would be read, but not
 ``Python (<platform>).sublime-settings``.
 
-Regardless of where it's placed, any file type settings file has precedence over
-every global settings file affecting file types.
+Regardless of its location, any file-type-specific settings file has precedence
+over every global settings file affecting file types.
 
 
 Where to Store User Settings
@@ -107,6 +107,6 @@ This is the recommended place to store user settings.
 
 You can nevertheless save settings files under other subdirectories of ``Packages``.
 For example, ``Packages/ZZZ/Python.sublime-settings`` would override
-``Packages/Python/Python.sublime-settings`` due to alphabetical order. However,
-``Packages/User/Python.sublime-settings`` would continue to have the highest
-precedence for the Python file type settings.
+``Packages/Python/Python.sublime-settings`` by virtue of alphabetical order.
+However, ``Packages/User/Python.sublime-settings`` would continue to have the
+highest precedence for the Python file type settings.
