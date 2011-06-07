@@ -11,7 +11,7 @@ Format
 ======
 
 Settings files use JSON and have the ``.sublime-settings`` extension. The purpose
-of a``.sublime-settings`` files is determined by its name. For example,
+of a ``.sublime-settings`` file is determined by its name. For example,
 ``Python.sublime-settings`` controls settings for Python files, whereas
 ``Minimap.sublime-settings`` controls the minimap settings, etc.
 
@@ -40,7 +40,7 @@ the *session*. Session data is updated as you work on a file, so if you adjust
 settings for a file in any way (mainly through API calls), they will be
 recorded in the session and will take precedence over any ``.sublime-settings``
 files. Calls to ``obj.settings().get()`` always return the value in effect for
-``obj`` at the time it was called.
+``obj``.
 
 When untangling the applicable settings for a file at any time, one must also
 keep in mind that Sublime Text adjusts settings automatically in some
@@ -95,7 +95,7 @@ under ``Pakages/User`` only ``Python.sublime-settings`` would be read, but not
 ``Python (<platform>).sublime-settings``.
 
 Regardless of where it's placed, any file type settings file has precedence over
-every global settings affecting file types.
+every global settings file affecting file types.
 
 
 Where to Store User Settings
