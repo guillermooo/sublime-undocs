@@ -32,7 +32,7 @@ File Settings
 A hierarchy of ``.sublime-settings`` files controls settings specific to a file
 type. Therefore, the location of settings matters. As it's always the case when
 merging files of any kind, Sublime Text gives the top priority to files in the
-``User`` package. See the section :ref:`merging-and-order-of-preference` for
+``User`` package. See the section :ref:`merging-and-order-of-precedence` for
 more information.
 
 In addition, there's yet another layer of settings that overrides the others:
