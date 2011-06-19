@@ -13,6 +13,7 @@ the general index.
     syntaxdefs
     build_systems
     key_bindings
+    Settings <settings>
     completions
     plugins
     api
