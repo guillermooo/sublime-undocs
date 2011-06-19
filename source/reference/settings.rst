@@ -30,8 +30,6 @@ Global Settings
 ``scroll_speed``
    Set to ``0`` to disable smooth scrolling. Set to a value between ``0`` and
    ``1`` to scroll slower, or set to a value larger than ``1`` to scroll faster.
-``tab_completion``
-   Determines whether pressing :kbd:`Tab` will insert completions.
 
 
 File Settings
@@ -161,6 +159,8 @@ System and Miscellaneous Settings
 ``default_line_ending``
    Determines what characters to use to designate new lines. Valid values:
    ``system`` (OS-dependant), ``windows`` (``CRLF``) and ``unix`` (``LF``).
+``tab_completion``
+   Determines whether pressing :kbd:`Tab` will insert completions.
 
 
 Build and Error Navigation Settings
