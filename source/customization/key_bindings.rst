@@ -36,7 +36,7 @@ override key bindings defined there or add new ones, you can store them in asepa
 key map with a higher precedence, for example
 :file:`Packages/User/Default (Windows).sublime-keymap`.
 
-See :ref:`merging-and-order-of-preference` for more information about how
+See :ref:`merging-and-order-of-precedence` for more information about how
 Sublime Text sorts files for merging.
 
 Advanced Key Bindings

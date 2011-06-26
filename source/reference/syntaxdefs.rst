@@ -87,7 +87,7 @@ In this reference files, however, JSON is used instead and converted into Plist.
 ``patterns``
     Array of patterns to match against the buffer's text.
 
-``repostitory``
+``repository``
     Array of patterns abstracted out from the patterns element. Useful to keep
     the syntax definition tidy as well as for specialized uses like recursive
     patterns. Optional.

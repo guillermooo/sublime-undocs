@@ -42,6 +42,20 @@ p {
     width: 960px;
 }
 
+div.lang_bar {
+    width: 960px;
+    text-align: right;
+    margin: auto;
+    margin-bottom: 2em;
+    font-size: 90%;
+}
+
+div.lang_bar a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
 div.related {
     width: 960px;
     text-align: left;

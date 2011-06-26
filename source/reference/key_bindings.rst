@@ -230,7 +230,7 @@ Sublime Text ships with default key maps under ``Packages/Default``. Other
 packages may include their own key map files. The recommended storage location
 for your personal key map is ``Packages/User``.
 
-See :ref:`merging-and-order-of-preference` for information about how Sublime
+See :ref:`merging-and-order-of-precedence` for information about how Sublime
 Text sorts files for merging.
 
 
