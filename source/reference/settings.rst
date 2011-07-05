@@ -17,16 +17,6 @@ Global Settings
    Excludes the matching folders from the side bar, GoTo Anything, etc.
 ``file_exclude_patterns``
    Excludes the matching files from the side bar, GoTo Anything, etc.
-``new_window_settings``
-   Initial session settings for new windows. This is a dictionary containing nested settings.
-``side_bar_visible``
-   Setting for ``new_window_settings``.
-``status_bar_visible``
-   Setting for ``new_window_settings``.
-``show_tabs``
-   Setting for ``new_window_settings``.
-``show_minimap``
-   Setting for ``new_window_settings``.
 ``scroll_speed``
    Set to ``0`` to disable smooth scrolling. Set to a value between ``0`` and
    ``1`` to scroll slower, or set to a value larger than ``1`` to scroll faster.

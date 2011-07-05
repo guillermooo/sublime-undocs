@@ -55,11 +55,10 @@ users, like Textmate's.
 Installation of Packages
 ************************
 
-There are three main ways to install packages:
+There are two main ways to install packages:
 
 	- ``.sublime-package`` files
 	- version control systems
-	- copy-pasting of files
 
 Ultimately, installing a package consists simply in placing a directory
 containing Sublime Text resources under ``Packages``. The only thing that
@@ -69,11 +68,8 @@ changes from one system to another is how you copy these files.
 	
    Note that installing a package doesn't actually make that package an
    installed package. *Installed packages* are ``.sublime-package`` files
-   residing in the ``Installed Packages`` directory. *To install a package*
-   means to copy it to ``Packages``.
-
-   Packages installed as ``.sublime-package`` files get added automatically
-   to ``Installed Packages``, so they are very convenient.
+   residing in the ``Installed Packages`` directory. In this guide, we use
+   *to install a package* to mean to copy a package to ``Packages``.
 
    Sublime Text can restore any package located in ``Installed Packages``, but
    not every package located in ``Packages``.
@@ -83,11 +79,9 @@ changes from one system to another is how you copy these files.
 Installation of ``.sublime-package`` Files
 ------------------------------------------
 
-If you're running a full installation of Sublime Text, simply double-click on
-the ``.sublime-package`` file. Sublime Text will take care of the rest.
-
-If you're using a portable installation, copy the ``.sublime-package`` to the
-``Installed Packages`` directory manually and restart Sublime Text.
+Copy the ``.sublime-package`` file to the ``Installed Packages`` directory
+and restart Sublime Text. If the ``Installed Packages`` doesn't exist, you can
+create it.
 
 Note that ``.sublime-package`` files are simply ``.zip`` archives with a custom
 file extension.
@@ -102,12 +96,6 @@ repositories like Google Code, GitHub and Bitbucket.
 Also, there is a `Sublime Text organization`_ at GitHub open to contributors.
 
 .. _Sublime Text organization: http://github.com/SublimeText
-
-Manual Installation
--------------------
-
-Simply copy and paste a directory containing Sublime Text resources to the
-packages directory.
 
 
 Packages and Magic
