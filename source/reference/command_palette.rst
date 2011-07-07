@@ -2,25 +2,11 @@
 Command Palette
 ===============
 
-.. seealso::
-  
-   :doc:`Reference for Command Palette <../reference/command_palette>`
-      Complete documentation on the command palette options.
+The command palette is fed entries with ``.sublime-commands`` files.
 
 
-Overview
-========
-
-The *command palette* is an interactive list bound to :kbd:`Ctrl+Shift+P` whose
-purpose is to execute commands. The command palette is fed entries with
-commands files. Usually, commands that don't warrant creating a key binding of
-their own are good candidates for inclusion in a ``.sublime-commands`` file.
-
-
-File Format (Commands Files)
-============================
-
-Commands files use JSON and have the ``.sublime-commands`` extension.
+File Format (``.sublime-commands`` Files)
+=========================================
 
 Here's an excerpt from ``Packages/Default/Default.sublime-commands``::
 
@@ -41,7 +27,10 @@ Here's an excerpt from ``Packages/Default/Default.sublime-commands``::
 ``command``
    Command to be executed.
 ``args``
-   Arguments to pass to ``command``.
+   Arguments to pass to ``command``. Note that to locate the packages folder
+   you need to use a snippet-like variable: ``${packages}`` or $packages. This
+   different to other areas of the editor due to different implementations of
+   the lower level layers.
 
 
 How to Use the Command Palette
@@ -50,5 +39,5 @@ How to Use the Command Palette
 #. Press :kbd:`Ctrl+Shift+P`
 #. Select command
 
-The command palette filters entries by context, so whenever you open it, you
-won't always see all the commands defined in every ``.sublime-commands`` file.
+Entries are filtered by current context. Not all entries will be visible at all
+times.
