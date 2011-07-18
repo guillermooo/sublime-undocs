@@ -20,6 +20,12 @@ Global Settings
 ``scroll_speed``
    Set to ``0`` to disable smooth scrolling. Set to a value between ``0`` and
    ``1`` to scroll slower, or set to a value larger than ``1`` to scroll faster.
+``show_tab_close_buttons``
+   If ``false``, hides the tabs' close buttons until the mouse is hovered over
+   the tab.
+``mouse_wheel_switches_tabs``
+   If ``true``, scrolling the mouse wheel will cause tabs to switch if the
+   cursor is in the tab area.
 
 
 File Settings
@@ -64,7 +70,7 @@ Visual Settings
    Size of the font for editable text.
 ``font_options``
    Valid values: ``bold``, ``italic``, ``no_antialias``, ``gray_antialias``,
-   ``subpixel_antialias``.
+   ``subpixel_antialias``, ``directwrite`` (Windows).
 ``gutter``
    Toggles display of gutter.
 ``rulers``
@@ -145,7 +151,7 @@ System and Miscellaneous Settings
    `add more dictionaries <http://extensions.services.openoffice.org/en/dictionaries>`_.
 ``fallback_encoding``
    The encoding to use when the encoding can't be determined automatically.
-   ASCII, UTF-8 and UTF-16 (BE and LE) encodings will be automatically detected.
+   ASCII, UTF-8 and UTF-16 encodings will be automatically detected.
 ``default_line_ending``
    Determines what characters to use to designate new lines. Valid values:
    ``system`` (OS-dependant), ``windows`` (``CRLF``) and ``unix`` (``LF``).
