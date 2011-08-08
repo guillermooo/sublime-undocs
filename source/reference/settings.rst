@@ -26,6 +26,9 @@ Global Settings
 ``mouse_wheel_switches_tabs``
    If ``true``, scrolling the mouse wheel will cause tabs to switch if the
    cursor is in the tab area.
+``open_files_in_new_window``   
+   OS X only. When filters are opened from Finder, or by dragging onto the
+   dock icon, this controls if a new window is created or not.
 
 
 File Settings
