@@ -15,7 +15,7 @@ data directory. This is a platform-dependent location:
 
 * **Windows**: :file:`%APPDATA%\\Sublime Text 2`
 * **OS X**: :file:`~/Library/Application Support/Sublime Text 2`
-* **Linux**: :file:`~/.Sublime Text 2`
+* **Linux**: :file:`~/.config/sublime-text-2`
 * **Portable Installation**: :file:`Sublime Text 2/Data`
 
 The :file:`Packages` Directory
