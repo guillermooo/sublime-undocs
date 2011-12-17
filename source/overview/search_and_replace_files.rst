@@ -48,10 +48,10 @@ these options.
 .. xxx link to reference to fulloptions
 
 
-.. _snr-results-display-files:
+.. _snr-results-format-files:
 
-Options to Display Results
-==========================
+Results Format
+==============
 
 In the search panel, you can find the following options to customize the
 results format:
