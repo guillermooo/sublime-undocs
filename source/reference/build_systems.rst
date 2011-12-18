@@ -1,24 +1,24 @@
 Build Systems
 =============
 
-Build systems run external programs to process your files, and print their
-output to the output panel. Ultimately, they call ``subprocess.Popen``.
+Build systems let you run your files through external programs, and see their
+output inside Sublime Text.
 
 Essentially, build systems are configuration data for an external program. In
 them, you specify the switches, options and environment information you want
 passed to the executable.
 
-Optionally, you can override the default *middleman* between the configuration
-data and the external program. For example, you could implement the build
-system entirely in a Sublime Text plugin, without ever calling an external
-program. You can do this because this *middleman* is simply a Sublime Text
-plugin, implemented in ``Packages/Default/exec.py``.
+The default behavior of build systems can be overriden. For example, you could
+implement a build system entirely in a Sublime Text plugin, without ever
+calling an external program. You can do this because the default build system
+is a plugin itself, implemented in ``Packages/Default/exec.py``. Further below
+we'll explain how to specify custom build systems in ``.sublime-build`` files.
 
 
 File Format
 ***********
 
-Build systems use JSON. Here's an example:
+Build systems are JSON files. Here's an example:
 
 .. sourcecode:: python
 
@@ -37,25 +37,22 @@ Options
     specify an absolute path, the external program must be in your ``PATH``, one
     of your system's environmental variables.
 
-    .. XXX Is this still true?
-    .. note::
-        Under Windows, GUIs are supressed.
+    On Windows, GUIs are supressed.
 
-.. XXX Cross-reference properly to next section.
 ``file_regex``
     Optional. Regular expression (Perl-style) to capture error output of
-    ``cmd``. See next section for more details.
+    ``cmd``. See the next section for details.
 
 ``line_regex``
     Optional. If ``file_regex`` doesn't match on the current line, but
-    ``line_regex`` is specified, and it does match on the current line, then
+    ``line_regex`` exists, and it does match on the current line, then
     walk backwards through the buffer until a line matching ``file regex`` is
     found, and use these two matches to determine the file and line to go to.
 
 ``selector``
     Optional. Used when **Tools | Build System | Automatic** is set to ``true``.
     Sublime Text uses this scope selector to find the appropriate build system
-    for the active view automatically.
+    for the active view.
 
 ``working_dir``
     Optional. Directory to change the current directory to before running ``cmd``.
@@ -67,20 +64,26 @@ Options
 
 ``target``
     Optional. Sublime Text command to run. Defaults to ``exec`` (``Packages/Default/exec.py``).
-    It receives the configuration data specified in the ``.build-system`` file.
+    This command receives the configuration data specified in the ``.build-system`` file.
+
+    Used to override the default build system command.
 
 ``env``
     Optional. Dictionary of environment variables to be merged with the current
     process' that will be passed to ``cmd``.
+
+    Use this element, for example, to add or modify environment variables
+    without modifying your system's settings.
 
 ``shell``
     Optional. If ``true``, ``cmd`` will be run through the shell (``cmd.exe``, ``bash``\ …).
 
 ``path``
     Optional. This string will replace the current process' ``PATH`` before
-    calling ``cmd``. The old ``PATH`` value will be restored after that. It's
-    useful to add directories to ``PATH`` that you don't have or want in your
-    regular ``PATH`` variable everywhere.
+    calling ``cmd``. The old ``PATH`` value will be restored after that.
+
+    Use this option to add directories to ``PATH`` without having to modify
+    your system's settings.
 
 Capturing Error Output with ``file_regex``
 ------------------------------------------
@@ -98,8 +101,8 @@ your project's files with ``F4`` and ``Shift+F4``. If available, the captured
 Platform-specific Options
 -------------------------
 
-``windows``, ``osx`` and ``linux`` are additional options to provide
-platform-specific data. Here's an example::
+The ``windows``, ``osx`` and ``linux`` elements let you provide
+platform-specific data in the build system. Here's an example::
 
 
     {
@@ -162,15 +165,28 @@ Select the desired build system from **Tools | Build System**, and then select
 Troubleshooting Build Systems
 *****************************
 
-External programs used in build systems need to be in your ``PATH``. As a
-quick test, you can try to run them from the command line first and see whether
-they work. Note, however, that your shell's ``PATH`` variable might differ to
-that seen by Sublime Text due to your shell's profile. Remember that you can
-use the ``path`` option in a ``.build-system`` file to add directories to
-``PATH`` without changing your system's settings.
+Build systems will look for executables in your ``PATH``, unless you pass them
+an absolute path to the executable. Therefore, your ``PATH`` variable must be
+correctly set.
+
+Note that on some operating systems, the value for ``PATH`` will vary from a
+terminal window to a graphical application. Thus, even if the command you are
+using in your build system works in the command line, it may not work from
+Sublime Text. This is due to user profiles in shells.
+
+To solve this issue, make sure you set the desired ``PATH`` so that graphical
+applications such as Sublime Text can find it. See the links below for more
+information.
+
+Alternatively, you can use the ``path`` element in ``.sublime-build`` files
+to override the ``PATH`` used to locate the executable specified in ``cmd``.
+This new value for ``PATH`` will only be in effect for as long as your
+build system is running. After that, the old ``PATH`` will be restored.
 
 .. seealso::
-	
-	`Managing Environment Variables in Windows <http://goo.gl/F77EM>`_
-		Search Microsoft for this topic.
-	
+
+    `Managing Environment Variables in Windows <http://goo.gl/F77EM>`_
+        Search Microsoft knowledge base for this topic.
+
+    `Setting environment variables in OSX <http://stackoverflow.com/q/135688/1670>`_
+        StackOverflow topic.
