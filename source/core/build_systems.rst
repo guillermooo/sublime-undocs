@@ -2,25 +2,19 @@
 Build Systems
 =============
 
-.. seealso::
+Build systems let you run external programs and supply them arguments and
+environmental information. Use build systems if you need to run your files
+through utilities like :program:`make`, :program:`tidy`, interpreters, etc.
 
-   :doc:`Reference for build systems <../reference/build_systems>`
-        Complete documentation on all available options, variables, etc.
-
-Build systems provide a convenient way to supply arguments and environmental
-information to external programs and run them. Use build systems if you need
-to run your files through build programs like :program:`make`, command line
-utilities like :program:`tidy`, interpreters, etc.
-
-.. note::
-    Executables called from build systems must be in your ``PATH``.
+Executables called from build systems must be in your ``PATH``. For more
+information about making sure the ``PATH`` is set correctly for your
+build system, see the :doc:`complete reference for build systems <../reference/build_systems>`.
 
 
 File Format
 ===========
 
-Like many other configuration files in Sublime Text, build systems are JSON
-files. Fittingly, they have the extension ``.sublime-build``.
+Build systems are JSON files and have the extension ``.sublime-build``.
 
 Example
 -------
@@ -47,22 +41,28 @@ Here's an example of a build system:
 
 ``selector``
     If the **Tools | Build System | Automatic** option is set, Sublime Text
-    will use this information to determine which build system is to be used for
-    the active file.
+    will automatically find the corresponding build system for the active file
+    by matching ``selector`` to the file's scope.
 
-In addition to options, you can use variables in build systems too, like we've
-done above with ``$file``, which expands to the full path of the file
-underlying the active buffer.
+In addition to options, you can also use some variables in build systems, like
+we have done above with ``$file``, which expands to the the active buffer's
+file name.
 
 
 Where to Store Build Systems
 ============================
 
 Build systems must be located somewhere under the ``Packages`` folder
-(e. g. :file:`Packages/User`).
+(e. g. :file:`Packages/User`). Many packages include their own build systems.
 
 
 Running Build Systems
 =====================
 
 Build systems can be run by pressing :kbd:`F7` or from **Tools | Build**.
+
+
+.. seealso::
+
+   :doc:`Reference for build systems <../reference/build_systems>`
+        Complete documentation on all available options, variables, etc.
