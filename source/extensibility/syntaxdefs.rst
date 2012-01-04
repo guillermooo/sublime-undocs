@@ -1,7 +1,5 @@
-.. highlight:: js
-
 Syntax Definitions
-==================
+=================
 
 Syntax definitions make Sublime Text aware of programming and markup languages.
 Most noticeably, they work together with colors to provide syntax highlighting.
