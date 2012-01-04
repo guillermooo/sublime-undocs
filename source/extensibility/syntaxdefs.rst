@@ -25,9 +25,8 @@ lives on a public Mercurial_ repository at Bitbucket_.
 .. _Mercurial: http://mercurial.selenic.com/
 .. _Bitbucket: http://bitbucket.org
 
-Download the latest ``.sublime-package`` file and double click on it if you're
-running a full installation of Sublime Text, or perform a manual installation
-as described in :ref:`installation-of-sublime-packages`.
+Download the latest ``.sublime-package`` file and install it as described in
+:ref:`installation-of-sublime-packages`.
 
 .. sidebar:: Mercurial and Bitbucket
 
@@ -313,10 +312,7 @@ Follow these steps to perform the conversion:
     - Press :kbd:`F7`
     - A ``.tmLanguage`` file will be generated for you in the same folder as your
       ``.JSON-tmLanguage`` file
-    - Restart Sublime Text so all your changes can take effect
-
-.. note::
-    Sublime Text cannot reload syntax definitions automatically upon their modification.
+    - Sublime Text will reload the changes to the syntax definition
 
 You have now created your first syntax definition. Next, open a new file and save
 it with the extension ``.ssraw``. The buffer's syntax name should switch to
