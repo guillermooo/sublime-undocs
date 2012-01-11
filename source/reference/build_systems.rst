@@ -27,8 +27,7 @@ switches and options to be run with.
 
 Note that build systems need not call any external program at all if there
 isn't any reason to; you could implement a build system entirely in a
-Sublime Text command. Similarly, build systems don't need to process any files;
-they can simply be used to launch programs too, like a calculator.
+Sublime Text command.
 
 
 File Format
