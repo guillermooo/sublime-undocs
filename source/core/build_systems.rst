@@ -2,13 +2,12 @@
 Build Systems
 =============
 
-Build systems let you run external programs and supply them arguments and
-environmental information. Use build systems if you need to run your files
-through utilities like :program:`make`, :program:`tidy`, interpreters, etc.
+Build systems let you run your files through external programs like
+:program:`make`, :program:`tidy`, interpreters, etc.
 
 Executables called from build systems must be in your ``PATH``. For more
-information about making sure the ``PATH`` is set correctly for your
-build system, see the :doc:`complete reference for build systems <../reference/build_systems>`.
+information about making sure the ``PATH`` seen by Sublime Text is set
+correctly, see :ref:`troubleshooting-build-systems`.
 
 
 File Format

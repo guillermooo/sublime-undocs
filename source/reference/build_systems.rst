@@ -1,24 +1,38 @@
 Build Systems
 =============
 
-Build systems let you run your files through external programs, and see their
-output inside Sublime Text.
+Build systems let you run your files through external programs and see the
+output they generate within Sublime Text.
 
-Essentially, build systems are configuration data for an external program. In
-them, you specify the switches, options and environment information you want
-passed to the executable.
+Build systems consist of two --or optionally three-- parts:
 
-The default behavior of build systems can be overriden. For example, you could
-implement a build system entirely in a Sublime Text plugin, without ever
-calling an external program. You can do this because the default build system
-is a plugin itself, implemented in ``Packages/Default/exec.py``. Further below
-we'll explain how to specify custom build systems in ``.sublime-build`` files.
+* configuration data in JSON format (the `.sublime-build` file contents)
+* a Sublime Text command driving the build process
+* optionally, an external executable file (script, binary file)
+
+Essentially, ``.sublime-build`` files are configuration data for an external
+program as well as for the Sublime Text command just mentioned. In them, you
+specify the switches, options and environment information you want forwarded.
+
+The Sublime Text command then receives the data stored in the `.sublime-build`
+file. At this point, it can do whatever it needs to *build* the files. By
+default, build systems will use the ``exec`` command, implemented in
+``Packages/Default/exec.py``. As we'll explain below, you can override this
+command.
+
+Lastly, the external program may be a shell script you've created to process
+your files, or a well-known utility like ``make`` or ``tidy``.
+
+Note that build systems need not call any external program at all if there
+isn't any reason to; you could implement a build system entirely in a
+Sublime Text command. Similarly, build systems don't need to process any files;
+they can simply be used to launch programs too, like a calculator.
 
 
 File Format
 ***********
 
-Build systems are JSON files. Here's an example:
+``.build-system`` files use JSON. Here's an example:
 
 .. sourcecode:: python
 
@@ -34,8 +48,8 @@ Options
 
 ``cmd``
     Array containing the command to run and its desired arguments. If you don't
-    specify an absolute path, the external program must be in your ``PATH``, one
-    of your system's environmental variables.
+    specify an absolute path, the external program will be searched in your
+    ``PATH``, one of your system's environmental variables.
 
     On Windows, GUIs are supressed.
 
@@ -66,11 +80,13 @@ Options
     Optional. Sublime Text command to run. Defaults to ``exec`` (``Packages/Default/exec.py``).
     This command receives the configuration data specified in the ``.build-system`` file.
 
-    Used to override the default build system command.
+    Used to override the default build system command. Note that if you choose
+    to override the default command for build systems, you can add arbitrary
+    variables in the ``.sublime-build`` file.
 
 ``env``
     Optional. Dictionary of environment variables to be merged with the current
-    process' that will be passed to ``cmd``.
+    process' before passing them to ``cmd``.
 
     Use this element, for example, to add or modify environment variables
     without modifying your system's settings.
@@ -124,7 +140,7 @@ In this case, ``ant`` will be executed for every platform except Windows, where
 Variables
 *********
 
-Build systems expand the following variables:
+Build systems expand the following variables in ``.sublime-build`` files:
 
 ====================== =====================================================================================
 ``$file``              The full path to the current file, e. g., ``C:\Files\Chapter1.txt``.
@@ -162,17 +178,19 @@ Select the desired build system from **Tools | Build System**, and then select
 **Tools | Build** or press ``F7``.
 
 
+.. _troubleshooting-build-systems:
+
 Troubleshooting Build Systems
 *****************************
 
-Build systems will look for executables in your ``PATH``, unless you pass them
+Build systems will look for executables in your ``PATH``, unless you specify
 an absolute path to the executable. Therefore, your ``PATH`` variable must be
 correctly set.
 
-Note that on some operating systems, the value for ``PATH`` will vary from a
-terminal window to a graphical application. Thus, even if the command you are
-using in your build system works in the command line, it may not work from
-Sublime Text. This is due to user profiles in shells.
+On some operating systems, the value for ``PATH`` will vary from a terminal
+window to a graphical application. Thus, even if the command you are using in
+your build system works in the command line, it may not work from Sublime Text.
+This is due to user profiles in shells.
 
 To solve this issue, make sure you set the desired ``PATH`` so that graphical
 applications such as Sublime Text can find it. See the links below for more
