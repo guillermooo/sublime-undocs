@@ -6,7 +6,7 @@ output they generate within Sublime Text.
 
 Build systems consist of two --or optionally three-- parts:
 
-* configuration data in JSON format (the `.sublime-build` file contents)
+* configuration data in JSON format (the ``.sublime-build`` file contents)
 * a Sublime Text command driving the build process
 * optionally, an external executable file (script, binary file)
 
@@ -14,14 +14,16 @@ Essentially, ``.sublime-build`` files are configuration data for an external
 program as well as for the Sublime Text command just mentioned. In them, you
 specify the switches, options and environment information you want forwarded.
 
-The Sublime Text command then receives the data stored in the `.sublime-build`
+The Sublime Text command then receives the data stored in the ``.sublime-build``
 file. At this point, it can do whatever it needs to *build* the files. By
 default, build systems will use the ``exec`` command, implemented in
 ``Packages/Default/exec.py``. As we'll explain below, you can override this
 command.
 
 Lastly, the external program may be a shell script you've created to process
-your files, or a well-known utility like ``make`` or ``tidy``.
+your files, or a well-known utility like ``make`` or ``tidy``. Usually, these
+executable files will receive paths to files or directories, along with
+switches and options to be run with.
 
 Note that build systems need not call any external program at all if there
 isn't any reason to; you could implement a build system entirely in a
