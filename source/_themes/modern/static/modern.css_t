@@ -29,6 +29,10 @@ div.sphinxsidebarwrapper > ul, div.sphinxsidebarwrapper > h4 {
 	display: none;
 }
 
+div.sphinxsidebarwrapper ul.main-locations {
+	display: block;
+}
+
 div.sphinxsidebarwrapper a {
 	font-weight: bold;
 }
