@@ -2,7 +2,7 @@
 Basic Concepts
 ==============
 
-Here we’ll explain concepts –mainly specific to Sublime Text– that the reader needs to be familiar with in order to fully understand the contents of this guide.
+Here we’ll explain concepts that the reader needs to be familiar with in order to fully understand the contents of this guide.
 
 Conventions in This Guide¶
 ==========================
