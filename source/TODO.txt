@@ -1,3 +1,10 @@
-* hook up repo to ReadTheDocs.org
-* write contributor guidelines
-* ...
+- keep sublimetext.info up for now as is
+- hook up repo to ReadTheDocs.org
+- hook up sublimetext.info to ReadTheDocs.org? Preserve current layout if possible.
+
+- write contributor guidelines
+- ...
+
+
+DONE
+====
