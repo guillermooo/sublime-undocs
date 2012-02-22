@@ -1,0 +1,10 @@
+syntax: glob
+
+build/
+*.pyc
+*.sublime-project
+*.sublime-workspace
+
+_*.txt
+
+.hgtags
