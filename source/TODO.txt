@@ -1,0 +1,3 @@
+* hook up repo to ReadTheDocs.org
+* write contributor guidelines
+* ...
