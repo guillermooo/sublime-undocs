@@ -2,6 +2,10 @@
 - hook up sublimetext.info to ReadTheDocs.org? Preserve current layout if possible.
 
 - write contributor guidelines
+- a glossary seems to be in order (buffer, etc) ??
+- hook up the topical guide from the index and vice versa
+- eventually make the topical guide the front page, and refer to the toc from there
+- add appendixes for stuff like the key bindings?
 - ...
 
 

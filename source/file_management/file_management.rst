@@ -1,0 +1,76 @@
+===============
+File Management
+===============
+
+Goto Anything
+=============
+
+*Goto Anything* lets you navigate files swiftly. Open it with :kbd:`Ctrl+P`.
+As you type into the input area, open files and files in open directories will
+be searched, and a preview of the best match will be shown.
+
+This preview is *transient*; it won't become the actual active buffer until
+you perform some operation on it. Transient views go away when you press
+:kbd:`Esc`. You will find transient views in other situations. They are like
+ghosts or something.
+
+*Goto Anything* lives up to its name; searching files isn't all there is to it:
+
+.. comment on rules for searching: slash, etc.
+
+Append ``#`` to a file name, and then keep typing, like this:
+
+::
+
+	foobaz#treasure
+
+This instructs Sublime Text to perform a fuzzy search for *treasure* in the
+file matching *foobaz*.
+
+And there's more:
+
+To search symbols in the active buffer, press :kbd:`Ctrl+;`.
+
+To go to a line number, press :kbd:`Ctrl+G`.
+
+Searching for symbols will only work for file types that have symbols defined
+for them.
+
+Sidebar
+=======
+
+The sidebar gives you an overview of your project. Files and folders added to
+the sidebar will be available in Goto Anything and project-wide actions.
+Projects and the sidebar are closely related. There's always an open project,
+whether it's implicit or explicit.
+
+To open or close the sidebar, press :kbd:`Ctrl+K, Ctrl+B`.
+
+The sidebar can be navigated with the arrow keys, but first you need to give it
+the input focus by pressing :kbd:`Ctrl+0`. To return input focus to the buffer,
+press :kbd:`Esc`. Alternatively, you can use the mouse to the same effect,
+but why would you?
+
+Projects
+========
+
+Projects group sets of files and directories you need to work on as a unit.
+Once you've set up your project the way that suits you, save it and give it a
+name so that you can instantly go back to that state later if you switch
+projects.
+
+To save a project, go to **Project | Save Project As...**.
+
+To quickly switch between projects, press :kbd:`Ctrl+Alt+P`.
+
+Project data are stored in JSON files with a `.sublime-project` extension.
+Wherever there's a `.sublime-project` file, you will also see an ancillary
+`.sublime-workspace` file. This one is used by Sublime Text and you should
+keep away from it.
+
+Project files can define settings specific to that project only. More on that
+in the `official documentation`_.
+
+.. _official documentation: http://www.sublimetext.com/docs/2/projects.html 
+
+.. what about the command line?

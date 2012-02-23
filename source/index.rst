@@ -12,6 +12,7 @@ Sublime Text Unofficial Documentation
    conventions
    basic_concepts
    Core Features <core/core_features>
+   File Management <file_management/file_management>
    Customization <customization/customization>
    Extensibility and Automation <extensibility/extensibility>
    faq
