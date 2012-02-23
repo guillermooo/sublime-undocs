@@ -25,11 +25,12 @@ Append ``#`` to a file name, and then keep typing, like this:
 	foobaz#treasure
 
 This instructs Sublime Text to perform a fuzzy search for *treasure* in the
-file matching *foobaz*.
+file matching *foobaz*. Pressing :kbd:`Ctrl+;` will open Goto Anything and
+type ``#`` for you.
 
 And there's more:
 
-To search symbols in the active buffer, press :kbd:`Ctrl+;`.
+To search symbols in the active buffer, press :kbd:`Ctrl+r`.
 
 To go to a line number, press :kbd:`Ctrl+G`.
 
