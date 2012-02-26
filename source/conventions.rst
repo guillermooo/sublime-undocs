@@ -12,7 +12,7 @@ repetitive tasks so you can focus on your work. And it's fun to use!
 
 .. _Sublime Text: http://www.sublimetext.com
 
-Before you continue reading the material contained in this guide, we encourage
-you to take a look at the :doc:`basic_concepts` section.
+Before you continue, we encourage you to read through the :doc:`basic_concepts`
+section.
 
 Happy learning!
