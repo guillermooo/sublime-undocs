@@ -10,4 +10,3 @@ them meet their needs.
     commands
     build_systems
     command_line
-    projects

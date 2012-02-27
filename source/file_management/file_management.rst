@@ -1,39 +1,42 @@
-===============
-File Management
-===============
+===================================
+File Navigation and File Management
+===================================
 
 Goto Anything
 =============
 
-*Goto Anything* lets you navigate files swiftly. Open it with :kbd:`Ctrl+P`.
+Goto Anything lets you **navigate files** swiftly. Open it with :kbd:`Ctrl+P`.
 As you type into the input area, open files and files in open directories will
 be searched, and a preview of the best match will be shown.
 
-This preview is *transient*; it won't become the actual active buffer until
-you perform some operation on it. Transient views go away when you press
+
+This preview is *transient*, that is, it won't become the actual active buffer
+until you perform some operation on it. Transient views go away when you press
 :kbd:`Esc`. You will find transient views in other situations. They are like
 ghosts or something.
 
-*Goto Anything* lives up to its name; searching files isn't all there is to it:
+Goto Anything lives up to its name --there's more to it than locating files:
 
 .. comment on rules for searching: slash, etc.
 
-Append ``#`` to a file name, and then keep typing, like this:
+To perform a **fuzzy search**, append ``#`` and then keep typing, like this:
 
 ::
 
-	foobaz#treasure
+	island#treasure
 
 This instructs Sublime Text to perform a fuzzy search for *treasure* in the
-file matching *foobaz*. Pressing :kbd:`Ctrl+;` will open Goto Anything and
+file matching *island*. Pressing :kbd:`Ctrl+;` will open Goto Anything and
 type ``#`` for you.
 
 And there's more:
 
-To search symbols in the active buffer, press :kbd:`Ctrl+r`.
-
-To go to a line number, press :kbd:`Ctrl+G`.
-
+To **search symbols** in the active buffer, press :kbd:`Ctrl+R`. The operator
+``:`` can be used as explained above too.
+ 
+To **go to a line number**, press :kbd:`Ctrl+G`. The operator ``@`` can be used
+as explained above too.
+ 
 Searching for symbols will only work for file types that have symbols defined
 for them.
 
@@ -45,12 +48,15 @@ the sidebar will be available in Goto Anything and project-wide actions.
 Projects and the sidebar are closely related. There's always an open project,
 whether it's implicit or explicit.
 
-To open or close the sidebar, press :kbd:`Ctrl+K, Ctrl+B`.
+To **open or close** the sidebar, press :kbd:`Ctrl+K, Ctrl+B`.
 
 The sidebar can be navigated with the arrow keys, but first you need to give it
-the input focus by pressing :kbd:`Ctrl+0`. To return input focus to the buffer,
+the **input focus** by pressing :kbd:`Ctrl+0`. To return input focus to the buffer,
 press :kbd:`Esc`. Alternatively, you can use the mouse to the same effect,
 but why would you?
+
+The sidebar also provides basic file management operations through the context
+menu.
 
 Projects
 ========
@@ -66,8 +72,8 @@ To quickly switch between projects, press :kbd:`Ctrl+Alt+P`.
 
 Project data are stored in JSON files with a `.sublime-project` extension.
 Wherever there's a `.sublime-project` file, you will also see an ancillary
-`.sublime-workspace` file. This one is used by Sublime Text and you should
-keep away from it.
+`.sublime-workspace` file. The second is used by Sublime Text and you shouldn't
+edit it yourself.
 
 Project files can define settings specific to that project only. More on that
 in the `official documentation`_.

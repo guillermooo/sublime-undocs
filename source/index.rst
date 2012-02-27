@@ -9,7 +9,7 @@ Sublime Text Unofficial Documentation
 .. toctree::
    :maxdepth: 2
 
-   conventions
+   intro
    basic_concepts
    Core Features <core/core_features>
    File Management <file_management/file_management>
