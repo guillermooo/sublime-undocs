@@ -1,24 +1,41 @@
-========
-Overview
-========
+==================
+Search and Replace
+==================
 
-Sublime Text 2 features several search methods: regular buffer search,
-incremental buffer search and project search. In this topic, we'll examine
-each of them.
+Sublime Text features two main types of search:
 
+.. toctree::
+   :maxdepth: 1
+
+	Search - Single File <search_and_replace>
+	Search - Multiple Files <search_and_replace_files>
+
+We'll examine them in turn, but let's talk about a powerful tool for searching
+text first: regular expressions.
 
 .. _snr-regexes:
 
 Regular Expressions
 ===================
 
-Regular Expressions are a powerful tool to find text patterns in a document.
-To take full advantage of the search and replace facilities in Sublime Text 2,
-you should learn at least the basics of regular expressions.
+Regular Expressions find complex *patterns* in text. To take full advantage of
+the search and replace facilities in Sublime Text, you should learn at least
+the basics of regular expressions. In this guide we will not explain how to use
+regular expressions.
 
-Sublime Text 2 uses the `Boost syntax`_ for regular expressions.
+Typing out *regular expression* gets boring fast, and actually saying it is
+even more annoying, so nerds usually shorten that to *regexp* or *regex*
+instead.
+
+This is how a regex might look like::
+
+	(?:Sw|P)i(?:tch|s{2})\s(?:it\s)?of{2}!
+
+Regexes are known to hurt people's feelings.
+
+To use regular expressions, you need to activate them first in the various
+search panels. Othwerwise, the search term will be interpreted literally.
+
+Sublime Text uses the `Boost syntax`_ for regular expressions.
 
 .. _Boost syntax: http://www.boost.org/doc/libs/1_47_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html 
-
-To use regular expressions in the search panels,  you need activated them
-first. The search term will otherwise be interpreted literally.
