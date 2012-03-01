@@ -8,15 +8,15 @@ to fully understand the contents of this guide.
 Conventions in This Guide
 ==========================
 
-* This guide is written from the perspective of a Windows user, but most
-  instructions should only require trivial changes to work on other platforms.
+This guide is written from the perspective of a Windows user, but most
+instructions should only require trivial changes to work on other platforms.
 
-* Relative paths (e. g. *Packages/User*) start at the data directory unless
-  otherwise noted. The data directory is explained further below.
+Relative paths (e. g. *Packages/User*) start at the *data directory* unless
+otherwise noted. The *data directory* is explained further below.
 
-* We assume default key bindings when indicating keyboard shortcuts. Due to the
-  way Sublime Text maps keys to commands, some key bindings won't match your
-  locale's keyboard layout.
+We assume default key bindings when indicating keyboard shortcuts. Due to the
+way Sublime Text maps keys to commands, **some key bindings won't match your
+locale's keyboard layout**.
 
 
 With Great Power Comes Lots of Questions
@@ -24,22 +24,22 @@ With Great Power Comes Lots of Questions
 
 Sublime Text is a very extensible and customizable editor. It does many things
 out of the box, but if you spend some time tailoring it to your exact needs,
-it can give you superpowers. Naturally, for that you first need to learn how
-to configure things.
+it will give you superpowers. This guide will teach you all you need to know
+to configure Sublime Text.
 
 In the following paragraphs, we'll outline some aspects that won't click in
-your mind until you've spent some time using Sublime Text. Dont' despair, if
-you keep using the editor and looking around in this guide, everything will
-fall into place at some point.
+your mind until you've spent some time using Sublime Text. Keep exploring the
+editor and looking around in this guide, and everything will fall into place
+at some point.
 
-Sublime Text is unquestionably a versatile tool for programmers, but you don't
+Sublime Text is undeniably a versatile tool for programmers, but you don't
 need to be one to use it, or even to configure it to make it the perfect tool
 for your writing. If you're a hacker, however, you are about to spend the
 remainder of your day playing around with this editor.
 
 
 The *Data* Directory
-==========================
+====================
 
 Sublime Text 2 stores nearly all of the interesting files for users under the
 data directory. This is a platform-dependent location:
@@ -59,9 +59,9 @@ indicated above.
 The *Packages* Directory
 ==============================
 
-This is a **key directory**: all resources for supported programming and markup
-languages are stored here. A *package* is a directory containing related files
-having a special meaning to Sublime Text.
+This is a **key directory**: all resources for supported programming and
+markup languages are stored here. A *package* is a directory containing
+related files having a special meaning to Sublime Text.
 
 You can access the packages directory from the Sublime Text 2 menu
 (**Preferences | Browse Packages...**), or by means of an api call:
@@ -104,12 +104,12 @@ The console also shows text output by Sublime Text or its plugins.
 Your System's Python vs the Sublime Text 2 Embedded Python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-On Windows and Linux, Sublime Text 2 comes with its own Python interpreter and
-it's separate from your system's Python installation.
+On **Windows** and **Linux**, Sublime Text 2 comes with its own Python
+interpreter and it's separate from your system's Python installation.
 
-On OS X, the system Python is used instead. Modifying your system version of
-Python, such as replacing it with the MacPorts version, can cause problems for
-Sublime Text.
+On **OS X**, the system Python is used instead. Modifying your system version
+of Python, such as replacing it with the MacPorts version, can cause problems
+for Sublime Text.
 
 The embedded interpreter is intended only to interact with the plugin API, not
 for general development.
@@ -150,6 +150,7 @@ have the *.tmPreferences* extension. This means that *.plist* files will be
 ignored, even if they are located under a *Syntaxes* or *Preferences*
 subdirectory.
 
+
 Vi Emulation
 ============
 
@@ -163,6 +164,7 @@ package is *ignored* by default. Read more about Vintage_ in the official
 documentation.
 
 .. _Vintage: http://www.sublimetext.com/docs/2/vintage.html
+
 
 Be Sublime, My Friend
 =====================
