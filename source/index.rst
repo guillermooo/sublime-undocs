@@ -12,7 +12,7 @@ Sublime Text Unofficial Documentation
    intro
    basic_concepts
    Core Features <core/core_features>
-   Search and Replace <overview/search_and_replace_overview>
+   Search and Replace <search_and_replace/search_and_replace_overview>
    File Navigation and File Management <file_management/file_management>
    Customization <customization/customization>
    Extensibility and Automation <extensibility/extensibility>
