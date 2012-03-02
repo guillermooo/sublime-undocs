@@ -128,7 +128,7 @@ think of'. Ok, maybe not *anything*, but Sublime Text definitely hands you over
 a good deal of control.
 
 These settings files are simply text files following a special structure or
-*format*: JSON dominates, but you'll find XML files too.
+*format*: JSON predominates, but you'll find XML files too.
 
 In this guide, we refer collectively to all these disparate configuration
 files as *resources*. Sublime Text will look for resources inside the packages
