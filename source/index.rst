@@ -11,6 +11,7 @@ Sublime Text Unofficial Documentation
 
    intro
    basic_concepts
+   Editing <editing/editing>
    Search and Replace <search_and_replace/search_and_replace_overview>
    Build Systems (Batch Processing) <file_processing/build_systems>
    File Navigation and File Management <file_management/file_management>
