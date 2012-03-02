@@ -32,9 +32,9 @@ type ``#`` for you.
 And there's more:
 
 To **search symbols** in the active buffer, press :kbd:`Ctrl+R`. The operator
-``:`` can be used as explained above too.
+``@`` can be used as explained above too.
  
-To **go to a line number**, press :kbd:`Ctrl+G`. The operator ``@`` can be used
+To **go to a line number**, press :kbd:`Ctrl+G`. The operator ``:`` can be used
 as explained above too.
  
 Searching for symbols will only work for file types that have symbols defined
