@@ -13,7 +13,7 @@ correctly, see :ref:`troubleshooting-build-systems`.
 File Format
 ===========
 
-Build systems are JSON files and have the extension ``.sublime-build``.
+Build systems are JSON files and have the extension *.sublime-build*.
 
 Example
 -------
@@ -51,8 +51,8 @@ file name.
 Where to Store Build Systems
 ============================
 
-Build systems must be located somewhere under the ``Packages`` folder
-(e. g. :file:`Packages/User`). Many packages include their own build systems.
+Build systems must be located somewhere under the *Packages* folder
+(e. g. *Packages/User*). Many packages include their own build systems.
 
 
 Running Build Systems
