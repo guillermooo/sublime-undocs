@@ -7,6 +7,7 @@ extensible editor.
 .. toctree::
     :maxdepth: 2
 
+    commands
     macros
     snippets
     completions
