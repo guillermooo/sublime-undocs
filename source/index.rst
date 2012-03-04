@@ -18,7 +18,6 @@ Sublime Text Unofficial Documentation
    Customization <customization/customization>
    Extensibility and Automation <extensibility/extensibility>
    Command Line <command_line/command_line>
-   faq
    Reference <reference/reference>
    Glossary <glossary/glossary>
 
