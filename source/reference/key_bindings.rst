@@ -216,11 +216,15 @@ Modifiers
 Warning about Bindable Keys
 ---------------------------
 
+If you're developing a package, keep this in mind:
+
 * ``Ctrl+Alt+<alphanum>`` should not be used on any Windows key bindings.
 * ``Option+<alphanum>`` should not be used on any OS X key bindings.
 
-In both cases, the users ability to insert non-ascii characters would be
+In both cases, the user's ability to insert non-ascii characters would be
 compromised.
+
+If you are the end-user, you are free to remap those key combinations.
 
 
 Keeping Key Maps Organized
