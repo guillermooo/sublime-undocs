@@ -6,18 +6,18 @@ output they generate within Sublime Text.
 
 Build systems consist of two --or optionally three-- parts:
 
-* configuration data in JSON format (the ``.sublime-build`` file contents)
+* configuration data in JSON format (the *.sublime-build* file contents)
 * a Sublime Text command driving the build process
 * optionally, an external executable file (script, binary file)
 
-Essentially, ``.sublime-build`` files are configuration data for an external
+Essentially, *.sublime-build* files are configuration data for an external
 program as well as for the Sublime Text command just mentioned. In them, you
 specify the switches, options and environment information you want forwarded.
 
-The Sublime Text command then receives the data stored in the ``.sublime-build``
+The Sublime Text command then receives the data stored in the *.sublime-build*
 file. At this point, it can do whatever it needs to *build* the files. By
 default, build systems will use the ``exec`` command, implemented in
-``Packages/Default/exec.py``. As we'll explain below, you can override this
+*Packages/Default/exec.py*. As we'll explain below, you can override this
 command.
 
 Lastly, the external program may be a shell script you've created to process
@@ -33,7 +33,7 @@ Sublime Text command.
 File Format
 ***********
 
-``.build-system`` files use JSON. Here's an example:
+*.build-system* files use JSON. Here's an example:
 
 .. sourcecode:: python
 
@@ -78,12 +78,12 @@ Options
     Defaults to ``UTF-8``.
 
 ``target``
-    Optional. Sublime Text command to run. Defaults to ``exec`` (``Packages/Default/exec.py``).
-    This command receives the configuration data specified in the ``.build-system`` file.
+    Optional. Sublime Text command to run. Defaults to ``exec`` (*Packages/Default/exec.py*).
+    This command receives the configuration data specified in the *.build-system* file.
 
     Used to override the default build system command. Note that if you choose
     to override the default command for build systems, you can add arbitrary
-    variables in the ``.sublime-build`` file.
+    variables in the *.sublime-build* file.
 
 ``env``
     Optional. Dictionary of environment variables to be merged with the current
@@ -141,15 +141,15 @@ In this case, ``ant`` will be executed for every platform except Windows, where
 Variables
 *********
 
-Build systems expand the following variables in ``.sublime-build`` files:
+Build systems expand the following variables in *.sublime-build* files:
 
 ====================== =====================================================================================
-``$file``              The full path to the current file, e. g., ``C:\Files\Chapter1.txt``.
-``$file_path``         The directory of the current file, e. g., ``C:\Files``.
-``$file_name``         The name portion of the current file, e. g., ``Chapter1.txt``.
-``$file_extension``    The extension portion of the current file, e. g., ``txt``.
-``$file_base_name``    The name only portion of the current file, e. g., ``Document``.
-``$packages``          The full path to the ``Packages`` folder. 
+``$file_path``         The directory of the current file, e. g., *C:\Files*.
+``$file``              The full path to the current file, e. g., *C:\Files\Chapter1.txt*.
+``$file_name``         The name portion of the current file, e. g., *Chapter1.txt*.
+``$file_extension``    The extension portion of the current file, e. g., *txt*.
+``$file_base_name``    The name only portion of the current file, e. g., *Document*.
+``$packages``          The full path to the *Packages* folder. 
 ``$project``           The full path to the current project file.
 ``$project_path``      The directory of the current project file.
 ``$project_name``      The name portion of the current project file.
@@ -164,7 +164,7 @@ Features found in snippets can be used with these variables. For example::
 
     ${project_name:Default}
 
-This will emit the name of the current project if there is one, otherwise *Default*.
+This will emit the name of the current project if there is one, otherwise ``Default``.
 
 ::
 
@@ -197,7 +197,7 @@ To solve this issue, make sure you set the desired ``PATH`` so that graphical
 applications such as Sublime Text can find it. See the links below for more
 information.
 
-Alternatively, you can use the ``path`` element in ``.sublime-build`` files
+Alternatively, you can use the ``path`` element in *.sublime-build* files
 to override the ``PATH`` used to locate the executable specified in ``cmd``.
 This new value for ``PATH`` will only be in effect for as long as your
 build system is running. After that, the old ``PATH`` will be restored.
