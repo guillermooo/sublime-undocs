@@ -20,6 +20,7 @@ Sublime Text Unofficial Documentation
    Command Line <command_line/command_line>
    faq
    Reference <reference/reference>
+   Glossary <glossary/glossary>
 
 .. Indices and tables
 .. ==================
