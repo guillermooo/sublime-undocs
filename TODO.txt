@@ -1,15 +1,15 @@
 - keep sublimetext.info up for now as is
-- hook up sublimetext.info to ReadTheDocs.org? Preserve current layout if possible.
-	- wont' preserve url structure anyway due to files reorg
 - write contributor guidelines
-- a glossary seems to be in order (buffer, etc) ??
+
 - hook up the topical guide from the index and vice versa
 - eventually make the topical guide the front page, and refer to the toc from there
-- add appendixes for stuff like the key bindings? -reference section seems to be fine for this
-- ...
 
 
 DONE
 ====
 
 - hook up repo to ReadTheDocs.org
+- hook up sublimetext.info to ReadTheDocs.org? Preserve current layout if possible.
+	- wont' preserve url structure anyway due to files reorg
+- a glossary seems to be in order (buffer, etc) ??
+- add appendixes for stuff like the key bindings? -reference section seems to be fine for this
