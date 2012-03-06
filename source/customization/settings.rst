@@ -58,14 +58,14 @@ places. All settings defined in identically named files will be merged together
 and overwritten according to predefined rules. See
 :ref:`merging-and-order-of-precedence` for more information.
 
-Let us remember again that any given setting file in *Packages/User* ultimately
-overrides every other setting file of the same name.
+Let us remember again that any given settings file in *Packages/User* ultimately
+overrides every other settings file of the same name.
 
-In addition, Sublime Text maintains *session* data --settings for the particular set
-of files being currently edited. Session data is updated as you work on files,
-so if you adjust settings for a particular file in any way (mainly through API calls),
-they will be recorded in the session and will take precedence over any
-applicable *.sublime-settings* files.
+In addition to settings files, Sublime Text maintains *session* data --settings
+for the particular set of files being currently edited. Session data is updated
+as you work on files, so if you adjust settings for a particular file in any
+way (mainly through API calls), they will be recorded in the session and will
+take precedence over any applicable *.sublime-settings* files.
 
 To check the value of a setting in effect for a particular file, use
 *view.settings().get(<setting_name>)* from the console.
@@ -73,18 +73,18 @@ To check the value of a setting in effect for a particular file, use
 Lastly, it's also worth noting that some settings may be adjusted automatically
 for you. Keep this is mind if you're puzzled about some setting's value. For
 instance, this is the case for certain whitespace-related settings and the
-*syntax* setting.
+``syntax`` setting.
 
 Below, you can see the order in which Sublime Text would process a
 hypothetical hierarchy of settings for Python files on Windows:
 
-- :file:`Packages/Default/Preferences.sublime-settings`
-- :file:`Packages/Default/Preferences (Windows).sublime-settings`
-- :file:`Packages/User/Preferences.sublime-settings`
-- :file:`Packages/Python/Python.sublime-settings`
-- :file:`Packages/User/Python.sublime-settings`
-- *Session data for the current file*
-- *Auto adjusted settings*
+- *Packages/Default/Preferences.sublime-settings*
+- *Packages/Default/Preferences (Windows).sublime-settings*
+- *Packages/User/Preferences.sublime-settings*
+- *Packages/Python/Python.sublime-settings*
+- *Packages/User/Python.sublime-settings*
+- Session data for the current file
+- Auto adjusted settings
 
 
 Global Editor Settings and Global File Settings
@@ -102,11 +102,11 @@ File Type Settings
 
 If you want to target a specific file type, name the *.sublime-settings* file
 after the file type's syntax definition. For example, if our syntax definition
-was called :file:`Python.tmLanguage`, we'd need to call our settings file
-:file:`Python.sublime-settings`.
+was called *Python.tmLanguage*, we'd need to call our settings file
+*Python.sublime-settings*.
 
 Settings files for specific file types usually live in packages, like
-:file:`Packages/Python`, but there can be multiple settings files for the same
+*Packages/Python*, but there can be multiple settings files for the same
 file type in separate locations.
 
 Similarly to global settings, one can establish platform-specific settings for
@@ -125,4 +125,4 @@ Where to Store User Settings (Once Again)
 
 Whenever you want to save settings, especially if they should be preserved
 between software updates, place the corresponding *.sublime-settings* file in
-:file:`Packages/User`.
+*Packages/User*.
