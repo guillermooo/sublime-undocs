@@ -50,7 +50,7 @@ Options
 ``cmd``
     Array containing the command to run and its desired arguments. If you don't
     specify an absolute path, the external program will be searched in your
-    ``PATH``, one of your system's environmental variables.
+    :const:`PATH`, one of your system's environmental variables.
 
     On Windows, GUIs are supressed.
 
@@ -96,10 +96,10 @@ Options
     Optional. If ``true``, ``cmd`` will be run through the shell (``cmd.exe``, ``bash``\ …).
 
 ``path``
-    Optional. This string will replace the current process' ``PATH`` before
-    calling ``cmd``. The old ``PATH`` value will be restored after that.
+    Optional. This string will replace the current process' :const:`PATH` before
+    calling ``cmd``. The old :const:`PATH` value will be restored after that.
 
-    Use this option to add directories to ``PATH`` without having to modify
+    Use this option to add directories to :const:`PATH` without having to modify
     your system's settings.
 
 Capturing Error Output with ``file_regex``
@@ -127,7 +127,7 @@ platform-specific data in the build system. Here's an example::
         "file_regex": "^ *\\[javac\\] (.+):([0-9]+):() (.*)$",
         "working_dir": "${project_path:${folder}}",
         "selector": "source.java",
-    
+
         "windows":
         {
             "cmd": ["ant.bat"]
@@ -149,7 +149,7 @@ Build systems expand the following variables in *.sublime-build* files:
 ``$file_name``         The name portion of the current file, e. g., *Chapter1.txt*.
 ``$file_extension``    The extension portion of the current file, e. g., *txt*.
 ``$file_base_name``    The name only portion of the current file, e. g., *Document*.
-``$packages``          The full path to the *Packages* folder. 
+``$packages``          The full path to the *Packages* folder.
 ``$project``           The full path to the current project file.
 ``$project_path``      The directory of the current project file.
 ``$project_name``      The name portion of the current project file.
@@ -184,23 +184,23 @@ Select the desired build system from **Tools | Build System**, and then select
 Troubleshooting Build Systems
 *****************************
 
-Build systems will look for executables in your ``PATH``, unless you specify
-an absolute path to the executable. Therefore, your ``PATH`` variable must be
+Build systems will look for executables in your :const:`PATH`, unless you specify
+an absolute path to the executable. Therefore, your :const:`PATH` variable must be
 correctly set.
 
-On some operating systems, the value for ``PATH`` will vary from a terminal
+On some operating systems, the value for :const:`PATH` will vary from a terminal
 window to a graphical application. Thus, even if the command you are using in
 your build system works in the command line, it may not work from Sublime Text.
 This is due to user profiles in shells.
 
-To solve this issue, make sure you set the desired ``PATH`` so that graphical
+To solve this issue, make sure you set the desired :const:`PATH` so that graphical
 applications such as Sublime Text can find it. See the links below for more
 information.
 
 Alternatively, you can use the ``path`` element in *.sublime-build* files
-to override the ``PATH`` used to locate the executable specified in ``cmd``.
-This new value for ``PATH`` will only be in effect for as long as your
-build system is running. After that, the old ``PATH`` will be restored.
+to override the :const:`PATH` used to locate the executable specified in ``cmd``.
+This new value for :const:`PATH` will only be in effect for as long as your
+build system is running. After that, the old :const:`PATH` will be restored.
 
 .. seealso::
 

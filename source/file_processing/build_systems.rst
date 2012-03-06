@@ -5,8 +5,8 @@ Build Systems (Batch Processing)
 Build systems let you run your files through external programs like
 :program:`make`, :program:`tidy`, interpreters, etc.
 
-Executables called from build systems must be in your ``PATH``. For more
-information about making sure the ``PATH`` seen by Sublime Text is set
+Executables called from build systems must be in your :const:`PATH`. For more
+information about making sure the :const:`PATH` seen by Sublime Text is set
 correctly, see :ref:`troubleshooting-build-systems`.
 
 
