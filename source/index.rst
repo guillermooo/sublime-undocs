@@ -10,6 +10,7 @@ Sublime Text Unofficial Documentation
    :maxdepth: 2
 
    intro
+   Installation <getting_started/install>
    basic_concepts
    Editing <editing/editing>
    Search and Replace <search_and_replace/search_and_replace_overview>
