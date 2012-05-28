@@ -14,10 +14,13 @@ Where to Store Plugins
 
 Sublime Text 2 will look for plugins in these places:
 
-* ``Package``
+* ``Packages``
 * ``Packages/<pkg_name>``
 
 Any plugin nested deeper in ``Packages`` won't be loaded.
+
+All plugins should live inside a directory of their own and not directly
+under ``Packages``.
 
 
 Conventions for Command Names
@@ -31,7 +34,7 @@ However, Sublime Text 2 transforms the class name from ``CamelCasedPhrases`` to
 and ``AnotherExampleCommand`` would turn into ``another_example``.
 
 For class definition names, use ``CamelCasedPhrasesCommand``;
-to call a command from the API, use the transformed name (``camel_cased_phrases``).
+to call a command from the API, use the normalized name (``camel_cased_phrases``).
 
 
 Types of Commadns
@@ -50,7 +53,8 @@ Shared Traits for Commands
 --------------------------
 
 All commands must implement a ``.run()`` method.
-All commands can receive and arbitrarily long number of keyword arguments.
+All commands can receive and arbitrarily long number of keyword arguments,
+but they must be valid JSON types.
 
 
 How to Call Commands from the API
@@ -62,6 +66,14 @@ In addition, you can pass a dictionary where keys are names of parameters
 to ``command_name``. ::
 
    window.run_command("echo", {"Tempus": "Irreparabile", "Fugit": "."})
+
+
+ Command Arguments
+ *****************
+
+ All user-provided arguments to commands must be valid JSON types. Only
+ Sublime Text can pass other types of arguments to commands (such as edit
+ objects, view instances, etc.).
 
 
 Text Commands and the ``edit`` Object
@@ -91,3 +103,37 @@ Any subclass of ``EventListener`` will be able to respond to events.
 	unresponsive, especially in events triggered frequently, like ``on_modified``
 	and ``on_selection_modified``. Be careful of how much work is done in those
 	and do not implement events you don't need, even if they just ``pass``.
+
+
+Python and the Standard Library
+*******************************
+
+Sublime Text ships with a trimmed down standard library. Notable missing
+modules are the *gtk* and *sqlite3* modules.
+
+
+Automatic Plugin Reload
+***********************
+
+Sublime Text will automatically reload top-level Python modules from packages
+as they change (perhaps because you are editing a *.py* file). Note that
+Python subpackages won't be reloaded; this can lead to confusion while
+developing plugins. Generally, it's best to restart Sublime Text when you
+change plugin files so all changes take effect.
+
+
+Multithreading
+**************
+
+Only the ``.set_timeout()`` function is safe to call from different threads.
+
+
+Plugin vs Sublime Package
+*************************
+
+Packages are directories inside the *Packages* folder containing plugins and
+possibly other resources. Plugins are simply user-created commands or features
+by means of Python files.
+
+*.sublime-package* files are zipped files meant to be unpacked to a folder
+under *Packages* so they too become an additional package.
