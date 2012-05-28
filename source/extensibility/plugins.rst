@@ -7,7 +7,7 @@ Plugins
         More information on the Python API.
 
    :doc:`Plugins Reference <../reference/plugins>`
-        More information about plugins.        
+        More information about plugins.
 
 
 Sublime Text 2 is programmable with Python scripts. Plugins reuse existing
@@ -61,7 +61,7 @@ Analyzing Your First Plugin
 The plugin created in the previous section should look roughly like this::
 
     import sublime, sublime_plugin
-    
+
     class ExampleCommand(sublime_plugin.TextCommand):
         def run(self, edit):
             self.view.insert(edit, 0, "Hello, World!")
@@ -128,10 +128,13 @@ Window commands operate at the window level. This doesn't mean that you cannot
 manipulate views from window commands, but rather that you don't need views to
 exist in order for window commands to be available. For instance, the built-in
 command ``new_file`` is defined as a ``WindowCommand`` so it works too when no
-view is open. Requiring a view to exisit in that case wouln't make sense.
+view is open. Requiring a view to exisit in that case wouldn't make sense.
 
 Window command instances have a ``.window`` attribute pointing to the window
 instance that created them.
+
+The ``.run()`` method of a window command does not need to take any required
+arguments.
 
 Text Commands
 -------------
@@ -141,6 +144,9 @@ in order to be available.
 
 View command instances have a ``.view`` attribute pointing to the view instance
 that created them.
+
+The ``.run()`` method of a text command needs to take an ``edit`` instance as
+a first positional argument.
 
 Text Commands and the ``edit`` Object
 -------------------------------------
@@ -168,20 +174,20 @@ plugins go, this a very bad one.
 ::
 
 	import sublime, sublime_plugin
-	
+
 	from xml.etree import ElementTree as ET
 	from urllib import urlopen
-	
+
 	GOOGLE_AC = r"http://google.com/complete/search?output=toolbar&q=%s"
-	
+
 	class GoogleAutocomplete(sublime_plugin.EventListener):
 	    def on_query_completions(self, view, prefix, locations):
 	        elements = ET.parse(
 	                        urlopen(GOOGLE_AC % prefix)
 	                    ).getroot().findall("./CompleteSuggestion/suggestion")
-	                    
+
 	        sugs = [(x.attrib["data"],) * 2 for x in elements]
-	
+
 	        return sugs
 
 .. note::
