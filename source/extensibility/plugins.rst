@@ -198,9 +198,9 @@ plugins go, this a very bad one.
 Learning the API
 ****************
 
-In order to create plugins, you need to get acquainted with the Python API
-Sublime Text 2 exposes, and the available commands. Documentation on both is
-scarce at the time of this writing, but you can read existing code and learn
-from it too. In particular, the ``Packages/Default`` folder contains many
-examples of undocumented commands and API calls.
+In order to create plugins, you need to get acquainted with the Sublime Text
+API and the available commands. Documentation on both is scarce at the time of
+this writing, but you can read existing code and learn from it too. In
+particular, the ``Packages/Default`` folder contains many examples of
+undocumented commands and API calls.
 
