@@ -191,8 +191,8 @@ plugins go, this a very bad one.
 	        return sugs
 
 .. note::
-	Please make sure you don't keep this plugin around after trying it. It will
-	interefere with the autocompletions look-up chain.
+	Make sure you don't keep this plugin around after trying it or it will
+	interefere with the autocompletion system.
 
 
 Learning the API
