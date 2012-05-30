@@ -46,7 +46,7 @@ Types of Commands
 * ``sublime_plugin.EventListener``
 
 Instances of ``WindowCommand`` have a ``.window`` attribute pointing to the
-window instance that created them. Similarly, instances of ``TextCommand ``
+window instance that created them. Similarly, instances of ``TextCommand``
 have a ``.view`` attribute.
 
 Shared Traits for Commands
