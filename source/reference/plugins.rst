@@ -96,7 +96,7 @@ Responding to Events
 ********************
 
 Any subclass of ``EventListener`` will be able to respond to events. You cannot
-make a class derive from both ``EventListener`` and any other type of commands.
+make a class derive from both ``EventListener`` and any other type of command.
 
 .. sidebar:: A Word of Warning about ``EventListener``
 

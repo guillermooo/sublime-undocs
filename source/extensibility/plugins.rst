@@ -128,7 +128,7 @@ Window commands operate at the window level. This doesn't mean that you cannot
 manipulate views from window commands, but rather that you don't need views to
 exist in order for window commands to be available. For instance, the built-in
 command ``new_file`` is defined as a ``WindowCommand`` so it works too when no
-view is open. Requiring a view to exisit in that case wouldn't make sense.
+view is open. Requiring a view to exist in that case wouldn't make sense.
 
 Window command instances have a ``.window`` attribute pointing to the window
 instance that created them.
