@@ -37,7 +37,7 @@ For class definition names, use ``CamelCasedPhrasesCommand``;
 to call a command from the API, use the normalized name (``camel_cased_phrases``).
 
 
-Types of Commadns
+Types of Commands
 *****************
 
 * ``sublime_plugin.ApplicationCommand``
@@ -45,9 +45,9 @@ Types of Commadns
 * ``sublime_plugin.TextCommand``
 * ``sublime_plugin.EventListener``
 
-Window command instances have a ``.window`` attribute pointing to the window
-instance that created them. Similarly, view command instances have a ``.view``
-attribute.
+Instances of ``WindowCommand`` have a ``.window`` attribute pointing to the
+window instance that created them. Similarly, instances of ``TextCommand ``
+have a ``.view`` attribute.
 
 Shared Traits for Commands
 --------------------------
@@ -60,7 +60,7 @@ but they must be valid JSON types.
 How to Call Commands from the API
 *********************************
 
-Use a reference to a ``View``, a ``Window`` or ``sublime`` depending on
+Use a reference to a ``View`` or a ``Window``, or ``sublime`` depending on
 the type of command, and call ``object.run_command('command_name')``.
 In addition, you can pass a dictionary where keys are names of parameters
 to ``command_name``. ::
@@ -95,7 +95,8 @@ As well as grouping modifications, you can use edit objects for grouping changes
 Responding to Events
 ********************
 
-Any subclass of ``EventListener`` will be able to respond to events.
+Any subclass of ``EventListener`` will be able to respond to events. You cannot
+make a class derive from both ``EventListener`` and any other type of commands.
 
 .. sidebar:: A Word of Warning about ``EventListener``
 
@@ -109,7 +110,7 @@ Python and the Standard Library
 *******************************
 
 Sublime Text ships with a trimmed down standard library. Notable missing
-modules are the *gtk* and *sqlite3* modules.
+modules are the *gtk*, *multiprocessing* and *sqlite3* modules.
 
 
 Automatic Plugin Reload
@@ -118,22 +119,11 @@ Automatic Plugin Reload
 Sublime Text will automatically reload top-level Python modules from packages
 as they change (perhaps because you are editing a *.py* file). Note that
 Python subpackages won't be reloaded; this can lead to confusion while
-developing plugins. Generally, it's best to restart Sublime Text when you
-change plugin files so all changes take effect.
+developing plugins. Generally, it's best to restart Sublime Text after you've
+made changes to plugin files so all changes take effect.
 
 
 Multithreading
 **************
 
 Only the ``.set_timeout()`` function is safe to call from different threads.
-
-
-Plugin vs Sublime Package
-*************************
-
-Packages are directories inside the *Packages* folder containing plugins and
-possibly other resources. Plugins are simply user-created commands or features
-by means of Python files.
-
-*.sublime-package* files are zipped files meant to be unpacked to a folder
-under *Packages* so they too become an additional package.
