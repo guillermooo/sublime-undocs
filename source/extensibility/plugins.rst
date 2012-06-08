@@ -116,10 +116,8 @@ they can receive and arbitrarily long number of keyword parameters.
 Application Commands
 --------------------
 
-Application commands derive from ``sublime_plugin.ApplicationCommand``. Due to
-the status of the API at the time of this writing, we won't discuss application
-commands any further at the moment.
-
+Application commands derive from ``sublime_plugin.ApplicationCommand`` and
+can be executed with ``sublime.run_command()``.
 
 Window Commands
 ---------------
