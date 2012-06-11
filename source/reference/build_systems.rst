@@ -102,6 +102,16 @@ Options
     Use this option to add directories to :const:`PATH` without having to modify
     your system's settings.
 
+``variants``
+    Optional. A list of dictionaries of options to override the main build
+    system's options. Variant ``name``s will appear in the Command Palette for
+    easy access if the build system's selector matches for the active file.
+
+``name``
+    **Only valid inside a variant** (see ``variants``). Identifies variant
+    build systems. If ``name`` is *Run*, the variant will show up under the
+    **Tools | Build System** menu and be bound to *Ctrl + Shift + B*.
+
 Capturing Error Output with ``file_regex``
 ------------------------------------------
 
@@ -134,8 +144,39 @@ platform-specific data in the build system. Here's an example::
         }
     }
 
-In this case, ``ant`` will be executed for every platform except Windows, where
-``ant.bat`` will be used instead.
+In this case, ``ant`` will be executed for every platform except Windows,
+where ``ant.bat`` will be used instead.
+
+Variants
+--------
+
+Here's a contrived example of a build system with variants::
+
+    {
+        "selector": "source.python",
+        "cmd": ["date"],
+
+        "variants": [
+
+            { "cmd": ["ls -l *.py"],
+              "name": "List Python Files",
+              "shell": true
+            },
+
+            { "cmd": ["wc", "$file"],
+              "name": "Word Count (current file)"
+            },
+
+            { "cmd": ["python", "-u", "$file"],
+              "name": "Run"
+            }
+        ]
+    }
+
+
+Given this settings, *Ctrl + B* would run the *date* command, *Crtl + Shift +
+B* would run the Python interpreter and the remaining variants would appear
+in the Command Palette whenever the build system was active.
 
 
 Variables
