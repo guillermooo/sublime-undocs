@@ -1,5 +1,5 @@
 Syntax Definitions
-=================
+==================
 
 Syntax definitions make Sublime Text aware of programming and markup languages.
 Most noticeably, they work together with colors to provide syntax highlighting.
@@ -144,8 +144,8 @@ To create a new syntax definition, follow these steps:
 You should now see a file like this::
 
   { "name": "Syntax Name",
-    "scopeName": "source.syntax_name", 
-    "fileTypes": [""], 
+    "scopeName": "source.syntax_name",
+    "fileTypes": [""],
     "patterns": [
     ],
     "uuid": "ca03e751-04ef-4330-9a6b-9b99aae1c418"
