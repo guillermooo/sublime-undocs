@@ -174,7 +174,7 @@ Here's a contrived example of a build system with variants::
     }
 
 
-Given this settings, *Ctrl + B* would run the *date* command, *Crtl + Shift +
+Given these settings, *Ctrl + B* would run the *date* command, *Crtl + Shift +
 B* would run the Python interpreter and the remaining variants would appear
 in the Command Palette whenever the build system was active.
 
