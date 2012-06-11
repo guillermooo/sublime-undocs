@@ -18,5 +18,6 @@ the general index.
     completions
     plugins
     api
+    commands
     keyboard_shortcuts_win
     keyboard_shortcuts_osx
