@@ -13,8 +13,8 @@ Gotchas
 
 Some commands taking paths as parameters support snippet-like syntax, while
 others don't. The first kind of command would take a parameter like
-``{$packages}/SomeDir/SomeFile.Ext`` whereas the second kind of command would
-take a parameter like ``Packages/SomeDir/SomeFile.Ext``.
+*${packages}/SomeDir/SomeFile.Ext* whereas the second kind of command would
+take a parameter like *Packages/SomeDir/SomeFile.Ext*.
 
 
 Commands
@@ -44,11 +44,11 @@ Commands
 **move**
 	Advances the caret by predefined units.
 
-	- **by** [Enum]: Values: characters, words, word_ends, subwords, subword_ends, lines, pages.
+	- **by** [Enum]: Values: *characters*, *words*, *word_ends*, *subwords*, *subword_ends*, *lines*, *pages*.
 	- **forward** [Bool]: Whether to advance or reverse in the buffer.
 
 **move_to**
 	Advances the caret to predefined locations.
 
-	- **to** [Enum]: Values: bol, eol, bof, eof, brackets.
-	- **extend**: Whether to extend the selection. Default to ``false``.
+	- **to** [Enum]: Values: *bol*, *eol*, *bof*, *eof*, *brackets*.
+	- **extend** [Bool]: Whether to extend the selection. Defaults to ``false``.

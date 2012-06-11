@@ -128,7 +128,7 @@ Python and the Standard Library
 *******************************
 
 Sublime Text ships with a trimmed down standard library. Notable missing
-modules are the *gtk*, *multiprocessing* and *sqlite3* modules.
+modules are the *Tkinter*, *multiprocessing* and *sqlite3* modules.
 
 
 Automatic Plugin Reload
