@@ -26,9 +26,8 @@ be JSON types. Here's a few examples of commands run from the Python console::
    view.run_command('insert_snippet', {"contents": "<$SELECTION>"})
    view.window().run_command("prompt_select_project")
 
-Command Reference
-*****************
 
-Currently there isn't a convenient way of looking up command names and valid
-arguments for them. You can, however, search for many of them inside the
-``Default`` package.
+.. seealso::
+
+   :doc:`Reference for commands <../reference/commands>`
+        Command reference.
