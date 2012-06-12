@@ -29,5 +29,5 @@ Glossary
     panel
         An input/output widget such as a search panel or the output panel.
 
-    overlay panel
-        An input widget of a special kind. Goto Anything is and overlay panel.
+    overlay
+        An input widget of a special kind. Goto Anything is an overlay.
