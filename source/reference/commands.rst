@@ -66,22 +66,23 @@ Commands
  **switch_file**
  	Switches between two files with the same name and different extensions.
 
- 	- **extensions** [[String]]: Extensions for which switching will be enabled.
+ 	- **extensions** [[String]]: Extensions (without leading dot) for which switching will be enabled.
 
  **close**
  	Closes the active view.
 
  **close_file**
  	Closes the active view and, under certain circumsances, the whole application.
+ 	XXX Sounds kinda wrong.
 
  **toggle_sidebar**
  	Shows or hides the sidebar.
 
  **toggle_full_screen**
- 	Toggles full screen mode on/off.
+ 	Toggles full screen mode on or off.
 
  **toggle_distraction_free**
- 	Toggles distraction free mode on/off.
+ 	Toggles distraction free mode on or off.
 
  **left_delete**
  	Deletes the character right before the caret.
@@ -105,7 +106,8 @@ Commands
  	Redoes each action stepping through granular edits.
 
  **cut**
- 	Removes the selected text and sends it to the system clipboard.
+ 	Removes the selected text and sends it to the system clipboard. Put
+ 	differently, it cuts.
 
  **copy**
  	Sends the selected text to to the system clipboard.
@@ -120,7 +122,7 @@ Commands
  	Adds a line to the current selection.
 
  	- **forward** [Bool]: Whether to add the next or previous line. Defaults to
- ``true``.
+ 	  ``true``.
 
  **scroll_lines**
  	Scroll lines in the view.
@@ -134,14 +136,14 @@ Commands
  	Switch to the next view.
 
  **next_view_in_stack**
- 	Switch to the view that was active most recently.
+ 	Switch to the most recently active view.
 
  **previous_view_in_stack**
  	Switch to the view that was active before the view that was active most
  	recently. I don't think this is very clear.
 
  **select_all**
- 	Select the whole view contents.
+ 	Select the view's content.
 
  **split_selection_into_lines**
  	Unsurprisingly, it splits the selection into lines.
@@ -150,7 +152,7 @@ Commands
  	Collapses multiple selections into a single selection.
 
  **clear_fields**
- 	Exhausts snippet fields to prevent further cycling through them.
+ 	Breaks out of the active snippet field cycle.
 
  **hide_panel**
  	Hides the active panel.
@@ -181,7 +183,8 @@ Commands
  	Advances the caret to the text snippet field in the current cycle.
 
  **commit_completion**
- 	Inserts the currently selected item in the auto complete list.
+ 	Inserts into the buffer the item that's currently selected in the auto
+ 	complete list.
 
  **unindent**
  	Does what it says.
@@ -190,19 +193,19 @@ Commands
  	Moves the caret to the previous snippet field in the current cycle.
 
  **toggle_overwrite**
- 	Toggles overwriting on/off.
+ 	Toggles overwriting on or off.
 
  **expand_selection**
  	Extends the selection until predifined limits.
 
- 	- **to** [Enum]: line XXX must be more XXX
+ 	- **to** [Enum]: line XXX there must be more of these XXX
 
  **find_under_expand**
- 	Adds a new selection region based on the current selection or the current
- 	word.
+ 	Adds a new selection based on the current selection or expands the
+ 	selection to the current word.
 
  **close_tag**
- 	Surrounds the current innert text with the appropiate tag.
+ 	Surrounds the current inner text with the appropiate tags.
 
  **toggle_record_macro**
  	Starts or stops the macro recorder.
@@ -214,7 +217,7 @@ Commands
  	Shows an overlay.
 
  	- **overlay** [Enum]: Values: goto, command_palette
- 	- **show_files** [Bool]: Optimize overlay display for showing files.
+ 	- **show_files** [Bool]: Optimize overlay display for displaying paths.
 
  **show_panel**
  	Shows a panel.
@@ -224,7 +227,7 @@ Commands
  	- **toggle** [Bool]: xXX
 
  **find_next**
- 	Find the text occurrence of the current search term.
+ 	Find the next occurrence of the current search term.
 
  **find_prev**
  	Find the previous occurrence of the current search term.
@@ -245,10 +248,10 @@ Commands
  	XXX
 
  **next_result**
- 	Find next captured result.
+ 	Advance to the next captured result.
 
  **prev_result**
- 	Find next captured result.
+ 	Move to the previous captured result.
 
  **toggle_setting**
  	Toggles the value of a boolean setting.
@@ -256,24 +259,24 @@ Commands
  	- **setting** [String]: The name of the setting to be toggled.
 
  **next_misspelling**
- 	Find the next misspelling
+ 	Advance to the next misspelling
 
  **prev_misspelling**
- 	Find the previous misspelling.
+ 	Move to the previous misspelling.
 
  **swap_line_down**
- 	Swaps the current line with the line below it.
+ 	Swaps the current line with the line below.
 
  **swap_line_up**
- 	Swaps the current line with the line above it.
+ 	Swaps the current line with the line above.
 
  **toggle_comment**
- 	Comments or uncomments the active regions.
+ 	Comments or uncomments the active lines.
 
  	- **block** [Bool]: Whether to use a block comment.
 
  **join_lines**
- 	Join the current line with the next one.
+ 	Joins the current line with the next one.
 
  **duplicate_line**
  	Duplicates the current line.
@@ -293,7 +296,7 @@ Commands
  	XXX Document all options.
 
  **transpose**
- 	Make stuff dance.
+ 	Makes stuff dance.
 
  **sort_lines**
  	Sorts lines.
