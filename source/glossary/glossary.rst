@@ -25,3 +25,9 @@ Glossary
     	or a *.sublime-package* file. Most of the time, it means a directory
     	inside ``Packages`` containing resources that belong together to build
     	a new feature or provide support for a programming or markup language.
+
+    panel
+        An input/output widget such as a search panel or the output panel.
+
+    overlay panel
+        An input widget of a special kind. Goto Anything is and overlay panel.
