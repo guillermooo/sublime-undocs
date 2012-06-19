@@ -24,9 +24,8 @@ Often, relative paths in arguments to commands are assumed to start at the
 Variables in Paths as Arguments
 -------------------------------
 
-In addition to the ``packages`` variable, which expands to the packages
-directory, the same variables available to build systems are expanded in
-arguments to commands. See :ref:`build-system-variables` for more information.
+The same variables available to build systems are expanded in arguments to
+commands. See :ref:`build-system-variables` for more information.
 
 
 Commands
