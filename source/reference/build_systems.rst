@@ -178,9 +178,10 @@ Given these settings, *Ctrl + B* would run the *date* command, *Crtl + Shift +
 B* would run the Python interpreter and the remaining variants would appear
 in the Command Palette whenever the build system was active.
 
+.. _build-system-variables:
 
-Variables
-*********
+Build System Variables
+**********************
 
 Build systems expand the following variables in *.sublime-build* files:
 

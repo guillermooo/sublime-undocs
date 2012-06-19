@@ -4,21 +4,29 @@ Commands
 Overview
 ========
 
+.. named actions, used everywhere, take json arguments
 This list of commands is a work in progress.
 
 
 About Paths in Command Arguments
 ================================
 
-Some commands taking paths as parameters support snippet-like syntax, while
-others don't. A command of the first kind would take a parameter like
-*${packages}/SomeDir/SomeFile.Ext* whereas a command of the second kind would
-take a parameter like *Packages/SomeDir/SomeFile.Ext*.
+Some commands take paths as parameters. Among these, some support snippet-like
+syntax, while others don't. A command of the first kind would take a parameter
+like *${packages}/SomeDir/SomeFile.Ext* whereas a command of the second kind
+would take a parameter like *Packages/SomeDir/SomeFile.Ext*.
 
 Generally, newer commands support the snippet-like syntax.
 
 Often, relative paths in arguments to commands are assumed to start at the
 ``Data`` directory.
+
+Variables in Paths as Arguments
+-------------------------------
+
+In addition to the ``packages`` variable, which expands to the packages
+directory, the same variables available to build systems are expanded in
+arguments to commands. See :ref:`build-system-variables` for more information.
 
 
 Commands
@@ -57,333 +65,327 @@ Commands
 	- **to** [Enum]: Values: *bol*, *eol*, *bof*, *eof*, *brackets*.
 	- **extend** [Bool]: Whether to extend the selection. Defaults to ``false``.
 
- **new_window**
- 	Opens a new window.
+**new_window**
+	Opens a new window.
 
- **close_window**
- 	Closes the active window.
+**close_window**
+	Closes the active window.
 
- **switch_file**
- 	Switches between two files with the same name and different extensions.
+**switch_file**
+	Switches between two files with the same name and different extensions.
 
- 	- **extensions** [[String]]: Extensions (without leading dot) for which switching will be enabled.
+	- **extensions** [[String]]: Extensions (without leading dot) for which switching will be enabled.
 
- **close**
- 	Closes the active view.
+**close**
+	Closes the active view.
 
- **close_file**
- 	Closes the active view and, under certain circumsances, the whole application.
- 	XXX Sounds kinda wrong.
+**close_file**
+	Closes the active view and, under certain circumsances, the whole application.
+	XXX Sounds kinda wrong.
 
- **toggle_sidebar**
- 	Shows or hides the sidebar.
+**toggle_sidebar**
+	Shows or hides the sidebar.
 
- **toggle_full_screen**
- 	Toggles full screen mode on or off.
+**toggle_full_screen**
+	Toggles full screen mode on or off.
 
- **toggle_distraction_free**
- 	Toggles distraction free mode on or off.
+**toggle_distraction_free**
+	Toggles distraction free mode on or off.
 
- **left_delete**
- 	Deletes the character right before the caret.
+**left_delete**
+	Deletes the character right before the caret.
 
- **right_delete**
- 	Deletes the character right after the caret.
+**right_delete**
+	Deletes the character right after the caret.
 
- **undo**
- 	Undoes the latest action.
+**undo**
+	Undoes the latest action.
 
- **redo**
- 	Reapplies the latest undone action.
+**redo**
+	Reapplies the latest undone action.
 
- **redo_or_repeat**
- 	Performs the latest action again.
+**redo_or_repeat**
+	Performs the latest action again.
 
- **soft_undo**
- 	Undoes each action stepping through granular edits.
+**soft_undo**
+	Undoes each action stepping through granular edits.
 
- **soft_redo**
- 	Redoes each action stepping through granular edits.
+**soft_redo**
+	Redoes each action stepping through granular edits.
 
- **cut**
- 	Removes the selected text and sends it to the system clipboard. Put
- 	differently, it cuts.
+**cut**
+	Removes the selected text and sends it to the system clipboard. Put
+	differently, it cuts.
 
- **copy**
- 	Sends the selected text to to the system clipboard.
+**copy**
+	Sends the selected text to to the system clipboard.
 
- **paste**
- 	Inserts the clipboard contents after the caret.
+**paste**
+	Inserts the clipboard contents after the caret.
 
- **paste_and_indent**
- 	Inserts the clipboard contents after the caret and indents contextually.
+**paste_and_indent**
+	Inserts the clipboard contents after the caret and indents contextually.
 
- **select_lines**
- 	Adds a line to the current selection.
+**select_lines**
+	Adds a line to the current selection.
 
- 	- **forward** [Bool]: Whether to add the next or previous line. Defaults to
- 	  ``true``.
+	- **forward** [Bool]: Whether to add the next or previous line. Defaults to
+	  ``true``.
 
- **scroll_lines**
- 	Scroll lines in the view.
+**scroll_lines**
+	Scrolls lines in the view.
 
- 	- **amount** [Float]: Positive values scroll lines down and negative values scroll lines up.
+	- **amount** [Float]: Positive values scroll lines down and negative values scroll lines up.
 
- **prev_view**
- 	Switch to the previous view.
+**prev_view**
+	Switches to the previous view.
 
- **next_view**
- 	Switch to the next view.
+**next_view**
+	Switches to the next view.
 
- **next_view_in_stack**
- 	Switch to the most recently active view.
+**next_view_in_stack**
+	Switches to the most recently active view.
 
- **previous_view_in_stack**
- 	Switch to the view that was active before the view that was active most
- 	recently. I don't think this is very clear.
+**previous_view_in_stack**
+	Switches to the view that was active before the most recently active view.
+	I don't think this is very clear or even true.
 
- **select_all**
- 	Select the view's content.
+**select_all**
+	Select the view's content.
 
- **split_selection_into_lines**
- 	Unsurprisingly, it splits the selection into lines.
+**split_selection_into_lines**
+	Unsurprisingly, it splits the selection into lines.
 
- **single_selection**
- 	Collapses multiple selections into a single selection.
+**single_selection**
+	Collapses multiple selections into a single selection.
 
- **clear_fields**
- 	Breaks out of the active snippet field cycle.
+**clear_fields**
+	Breaks out of the active snippet field cycle.
 
- **hide_panel**
- 	Hides the active panel.
+**hide_panel**
+	Hides the active panel.
 
- 	- **cancel** [Bool]: XXX
+	- **cancel** [Bool]: XXX
 
- **hide_overlay**
- 	Hides the active overlay.
+**hide_overlay**
+	Hides the active overlay.
 
- **hide_auto_complete**
- 	Hides the auto complete list.
+**hide_auto_complete**
+	Hides the auto complete list.
 
- **insert_best_completion**
- 	Inserts the best completion that can be inferred from the current context.
+**insert_best_completion**
+	Inserts the best completion that can be inferred from the current context.
+	XXX Probably useless. XXX
 
- 	- **default** [String]: String to insert failing a best completion.
+	- **default** [String]: String to insert failing a best completion.
 
- **replace_completion_with_next_completion**
- 	Weird stuff.
+**replace_completion_with_next_completion**
+	XXX Useless for users. XXX
 
- **reindent**
- 	Documenting some commands is such a waste of time.
+**reindent**
+	XXX ??? XXX
 
- **indent**
- 	Awesome.
+**indent**
+	Increments indentation.
 
- **next_field**
- 	Advances the caret to the text snippet field in the current cycle.
+**next_field**
+	Advances the caret to the text snippet field in the current snippet field
+	cycle.
 
- **commit_completion**
- 	Inserts into the buffer the item that's currently selected in the auto
- 	complete list.
+**prev_field**
+	Moves the caret to the previous snippet field in the current snippet field
+	cycle.
 
- **unindent**
- 	Does what it says.
+**commit_completion**
+	Inserts into the buffer the item that's currently selected in the auto
+	complete list. XXX Probably not useful for users. XXX
 
- **prev_field**
- 	Moves the caret to the previous snippet field in the current cycle.
+**unindent**
+	Unindents.
 
- **toggle_overwrite**
- 	Toggles overwriting on or off.
+**toggle_overwrite**
+	Toggles overwriting on or off.
 
- **expand_selection**
- 	Extends the selection until predifined limits.
+**expand_selection**
+	Extends the selection up to predifined limits.
 
- 	- **to** [Enum]: line XXX there must be more of these XXX
+	- **to** [Enum]: line XXX there must be more of these XXX
 
- **find_under_expand**
- 	Adds a new selection based on the current selection or expands the
- 	selection to the current word.
+**find_under_expand**
+	Adds a new selection based on the current selection or expands the
+	selection to the current word.
 
- **close_tag**
- 	Surrounds the current inner text with the appropiate tags.
+**close_tag**
+	Surrounds the current inner text with the appropiate tags.
 
- **toggle_record_macro**
- 	Starts or stops the macro recorder.
+**toggle_record_macro**
+	Starts or stops the macro recorder.
 
- **run_macro**
- 	Runs the macro stored in the macro buffer.
+**run_macro**
+	Runs the macro stored in the macro buffer.
 
- **show_overlay**
- 	Shows an overlay.
+**show_overlay**
+	Shows an overlay.
 
- 	- **overlay** [Enum]: Values: goto, command_palette
- 	- **show_files** [Bool]: Optimize overlay display for displaying paths.
+	- **overlay** [Enum]: Values: goto, command_palette
+	- **show_files** [Bool]: Optimize overlay display for displaying paths.
 
- **show_panel**
- 	Shows a panel.
+**show_panel**
+	Shows a panel.
 
- 	- **panel** [Enum]: Values: incremental_find, find, replace, find_in_files, console
- 	- **reverse** [Bool]: Whether to search backwards in the buffer.
- 	- **toggle** [Bool]: xXX
+	- **panel** [Enum]: Values: incremental_find, find, replace, find_in_files, console
+	- **reverse** [Bool]: Whether to search backwards in the buffer.
+	- **toggle** [Bool]: xXX
 
- **find_next**
- 	Find the next occurrence of the current search term.
+**find_next**
+	Finds the next occurrence of the current search term.
 
- **find_prev**
- 	Find the previous occurrence of the current search term.
+**find_prev**
+	Finds the previous occurrence of the current search term.
 
- **find_under**
- 	Find the next occurrence of the current selection or the current word.
+**find_under**
+	Finds the next occurrence of the current selection or the current word.
 
- **find_under_prev**
- 	Find the previous occurrence of the current selection or the current word.
+**find_under_prev**
+	Finds the previous occurrence of the current selection or the current word.
 
- **find_all_under**
- 	Find all occurrences of the current selection or the current word.
+**find_all_under**
+	Finds all occurrences of the current selection or the current word.
 
- **slurp_find_string**
- 	XXX
+**slurp_find_string**
+	XXX
 
- **slurp_replace_string**
- 	XXX
+**slurp_replace_string**
+	XXX
 
- **next_result**
- 	Advance to the next captured result.
+**next_result**
+	Advance to the next captured result.
 
- **prev_result**
- 	Move to the previous captured result.
+**prev_result**
+	Move to the previous captured result.
 
- **toggle_setting**
- 	Toggles the value of a boolean setting.
+**toggle_setting**
+	Toggles the value of a boolean setting.
 
- 	- **setting** [String]: The name of the setting to be toggled.
+	- **setting** [String]: The name of the setting to be toggled.
 
- **next_misspelling**
- 	Advance to the next misspelling
+**next_misspelling**
+	Advance to the next misspelling
 
- **prev_misspelling**
- 	Move to the previous misspelling.
+**prev_misspelling**
+	Move to the previous misspelling.
 
- **swap_line_down**
- 	Swaps the current line with the line below.
+**swap_line_down**
+	Swaps the current line with the line below.
 
- **swap_line_up**
- 	Swaps the current line with the line above.
+**swap_line_up**
+	Swaps the current line with the line above.
 
- **toggle_comment**
- 	Comments or uncomments the active lines.
+**toggle_comment**
+	Comments or uncomments the active lines.
 
- 	- **block** [Bool]: Whether to use a block comment.
+	- **block** [Bool]: Whether to use a block comment.
 
- **join_lines**
- 	Joins the current line with the next one.
+**join_lines**
+	Joins the current line with the next one.
 
- **duplicate_line**
- 	Duplicates the current line.
+**duplicate_line**
+	Duplicates the current line.
 
- **auto_complete**
- 	Opens the auto comeplete list.
+**auto_complete**
+	Opens the auto comeplete list.
 
- **replace_completion_with_auto_complete**
- 	Sure.
+**replace_completion_with_auto_complete**
+	XXX Useless for users. XXX
 
- **show_scope_name**
- 	Shows the name for the caret's scope.
+**show_scope_name**
+	Shows the name for the caret's scope in the status bar.
 
- **exec**
- 	Runs an external process asynchronously.
+**exec**
+	Runs an external process asynchronously.
 
- 	XXX Document all options.
+	XXX Document all options.
 
- **transpose**
- 	Makes stuff dance.
+**transpose**
+	Makes stuff dance.
 
- **sort_lines**
- 	Sorts lines.
+**sort_lines**
+	Sorts lines.
 
- 	- **case_sensitive** [Bool]: Whether the sort should be case sensitive.
+	- **case_sensitive** [Bool]: Whether the sort should be case sensitive.
 
- **set_layout**
- 	XXX
+**set_layout**
+	XXX
 
- **focus_group**
- 	XXX
+**focus_group**
+	XXX
 
- **move_to_group**
- 	XXX
+**move_to_group**
+	XXX
 
- **select_by_index**
- 	XXX
+**select_by_index**
+	XXX
 
- **next_bookmark**
- 	XXX
+**next_bookmark**
+	XXX
 
- **prev_bookmark**
- 	XXX
+**prev_bookmark**
+	XXX
 
- **toggle_bookmark**
- 	XXX
+**toggle_bookmark**
+	Sets or unsets bookmark for the current line(s). Bookmarks remember the
+	region shape when they were set.
 
- **clear_bookmarks**
- 	XXXX
+**clear_bookmarks**
+	Removes all bookmarks.
 
- **select_all_bookmarks**
- 	XXX
+**select_all_bookmarks**
+	Selects all bookmarked regions.
 
- **wrap_lines**
- 	XXX
+**wrap_lines**
+	XXX
 
- **upper_case**
- 	XXX
+**upper_case**
+	Makes the selection upper case.
 
- **lower_case**
- 	XXX
+**lower_case**
+	Makes the selection lower case.
 
- **set_mark**
- 	XXX
+**set_mark**
+	XXX
 
- **select_to_mark**
- 	XXX
+**select_to_mark**
+	XXX
 
- **delete_to_mark**
- 	XXX
+**delete_to_mark**
+	XXX
 
- **swap_with_mark**
- 	XXX
+**swap_with_mark**
+	XXX
 
- **yank**
- 	XXX
+**yank**
+	XXX
 
- **show_at_center**
- 	XXX
+**show_at_center**
+	XXX
 
- **increase_font_size**
- 	XXX
+**increase_font_size**
+	Increases the font size.
 
- **decrease_font_size**
- 	XXX
+**decrease_font_size**
+	Decreases the font size.
 
- **fold**
- 	XXX
+**fold**
+	XXX
 
- **unfold**
- 	XXX
+**unfold**
+	XXX
 
- **fold_by_level**
- 	XXX
+**fold_by_level**
+	XXX
 
- **context_menu**
- 	Shows the context menu.
-
+**context_menu**
+	Shows the context menu.
 
 .. Some regex-related and search-related commands missing. they don's seem to
 .. be too useful.
-
-
-
-
-
-
-
-
-
