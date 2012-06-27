@@ -156,7 +156,7 @@ Vi Emulation
 
 This information is mainly useful for dinosaurs and people who like to drop
 the term RSI in conversations. Vi is an ancient modal editor that lets the
-user perform all operation from the keyboard. Vim, a modern version of vi,
+user perform all operations from the keyboard. Vim, a modern version of vi,
 is still in widespread use.
 
 Sublime Text provides vi emulation through the *Vintage* package. The Vintage
@@ -166,11 +166,22 @@ documentation.
 .. _Vintage: http://www.sublimetext.com/docs/2/vintage.html
 
 
+Emacs
+=====
+
+This information is hardly useful for anyone. Emacs is... Well, nobody really
+knows what emacs is, although some people edit text with it.
+
+If you are an emacs user, you're probably not reading this.
+
+
 Be Sublime, My Friend
 =====================
 
-Borrowing from `Bruce Lee's wisdom`_, Sublime Text 2 can become almost anything
+Borrowing from `Bruce Lee's wisdom`_, Sublime Text can become almost anything
 you need it to be. In skilled hands, it can defeat an army of ninjas without
-your breaking a sweat. So... empty your mind; be sublime, my friend.
+your breaking a sweat.
+
+Empty your mind; be sublime, my friend.
 
 .. _Bruce Lee's wisdom: http://www.youtube.com/watch?v=iO3sBulXpVw
