@@ -109,7 +109,7 @@ Context Operands
 	Returns the value of the ``x`` setting. ``x`` can be any string.
 
 ``text``
-	Restricts the test to the line the caret is in.
+	Restricts the test to the selected text.
 
 ``selector``
 	Returns the current scope.
