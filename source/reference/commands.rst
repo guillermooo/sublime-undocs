@@ -164,7 +164,8 @@ Commands
 **hide_panel**
 	Hides the active panel.
 
-	- **cancel** [Bool]: XXX
+	- **cancel** [Bool]: Notifies the panel to restore the selection to what it
+	was when the panel was opened. (Only incremental find panel.)
 
 **hide_overlay**
 	Hides the active overlay.
@@ -208,7 +209,7 @@ Commands
 **expand_selection**
 	Extends the selection up to predifined limits.
 
-	- **to** [Enum]: line XXX there must be more of these XXX
+	- **to** [Enum]: Values: bol, hardbol, eol, hardeol, bof, eof, brackets, line.
 
 **find_under_expand**
 	Adds a new selection based on the current selection or expands the
@@ -234,7 +235,7 @@ Commands
 
 	- **panel** [Enum]: Values: incremental_find, find, replace, find_in_files, console
 	- **reverse** [Bool]: Whether to search backwards in the buffer.
-	- **toggle** [Bool]: xXX
+	- **toggle** [Bool]: Whether to hide the panel if it's already visible.
 
 **find_next**
 	Finds the next occurrence of the current search term.
@@ -252,10 +253,12 @@ Commands
 	Finds all occurrences of the current selection or the current word.
 
 **slurp_find_string**
-	XXX
+	Copies the current selection or word into the "find" field of the find
+	panel.
 
 **slurp_replace_string**
-	XXX
+	Copies the current selection or word into the "replace" field of the find
+	and replace panel.
 
 **next_result**
 	Advance to the next captured result.
@@ -326,14 +329,14 @@ Commands
 	XXX
 
 **next_bookmark**
-	XXX
+	Select the next bookmarked region.
 
 **prev_bookmark**
-	XXX
+	Select the previous bookmarked region.
 
 **toggle_bookmark**
-	Sets or unsets bookmark for the current line(s). Bookmarks remember the
-	region shape when they were set.
+	Sets or unsets a bookmark for the active region(s). (Bookmarks can be
+	accessed via the regions API using ``"bookmarks"`` as the key.)
 
 **clear_bookmarks**
 	Removes all bookmarks.
@@ -342,7 +345,9 @@ Commands
 	Selects all bookmarked regions.
 
 **wrap_lines**
-	XXX
+	Wraps lines. By default, it wraps lines at the first ruler's column.
+
+	- **width** [Int]: Specifies the column at which lines should be wrapped.
 
 **upper_case**
 	Makes the selection upper case.
