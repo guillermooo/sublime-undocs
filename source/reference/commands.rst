@@ -55,8 +55,12 @@ Commands
 **move**
 	Advances the caret by predefined units.
 
-	- **by** [Enum]: Values: *characters*, *words*, *word_ends*, *subwords*, *subword_ends*, *lines*, *pages*.
+	- **by** [Enum]: Values: *characters*, *words*, *word_ends*, *subwords*, *subword_ends*, *lines*, *pages*, *stops*.
 	- **forward** [Bool]: Whether to advance or reverse in the buffer.
+	- **word_begin** [Bool]
+	- **empty_line** [Bool]
+	- **punct_begin** [Bool]
+	- **separators** [Bool]
 
 **move_to**
 	Advances the caret to predefined locations.
