@@ -8,6 +8,53 @@ Overview
 Sublime Text is full to the brim with editing features. This topic just
 scratches the surface of what's possible.
 
+Column Selection
+================
+
+Column Selection can be used to select a rectangular area of a file.
+Column selection doesn't operate via a separate mode, instead it makes
+use of multiple selections.
+
+You can use additive selections to select multiple blocks of text, or
+subtractive selections to remove a block.
+
+Using the Mouse
+---------------
+
+Windows
+
+* Right Mouse Button ``+ ⇧``
+* OR: Middle Mouse Button
+\
+
+* Add to selection: ``Ctrl``
+* Subtract from selection: ``Alt``
+
+Linux
+
+* Right Mouse Button ``+ ⇧``
+\
+
+* Add to selection: ``Ctrl``
+* Subtract from selection: ``Alt``
+
+OS X
+
+* Left Mouse Button + ``⌥``
+* OR: Middle Mouse Button
+\
+
+* Add to selection: ``⌘``
+* Subtract from selection: ``⌘ + ⇧``
+
+Using the Keyboard
+------------------
+
+Windows: ``Ctrl + Alt + Up`` and ``Ctrl + Alt + Down``
+
+Linux: ``Alt + ⇧ + Up`` and ``Alt + ⇧ + Down``
+
+OS X: ``⌃ + ⇧ + Up`` and ``⌃ + ⇧ + Down``
 
 Multiple Selections
 ===================
