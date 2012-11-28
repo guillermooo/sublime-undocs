@@ -172,7 +172,7 @@ Commands
 	was when the panel was opened. (Only incremental find panel.)
 
 **hide_overlay**
-	Hides the active overlay.
+	Hides the active overlay.  Show the overlay using the show_overlay command.
 
 **hide_auto_complete**
 	Hides the auto complete list.
@@ -229,10 +229,16 @@ Commands
 	Runs the macro stored in the macro buffer.
 
 **show_overlay**
-	Shows an overlay.
+	Shows the overlay box.  Use the hide_overlay command to hide it.
 
-	- **overlay** [Enum]: Values: goto, command_palette
-	- **show_files** [Bool]: Optimize overlay display for displaying paths.
+	- **overlay** [Enum]:
+                The type of overlay to show.  Possible values:
+
+		- 'goto': Show the `Goto Anything <http://docs.sublimetext.info/en/latest/file_management/file_management.html#goto-anything>`_ overlay.
+		- 'command_palette': Show the `command palette <http://docs.sublimetext.info/en/latest/extensibility/command_palette.html>`_.
+
+	- **show_files** [Bool]: If using the goto overlay, start by displaying files rather than an empty box.
+	- **text** [String]: The initial contents to put in the overlay box.
 
 **show_panel**
 	Shows a panel.
