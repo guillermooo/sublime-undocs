@@ -229,16 +229,16 @@ Commands
 	Runs the macro stored in the macro buffer.
 
 **show_overlay**
-	Shows the overlay box.  Use the hide_overlay command to hide it.
+	Shows the requested overlay. Use the **hide_overlay** command to hide it.
 
 	- **overlay** [Enum]:
-                The type of overlay to show.  Possible values:
+                The type of overlay to show. Possible values:
 
-		- 'goto': Show the `Goto Anything <http://docs.sublimetext.info/en/latest/file_management/file_management.html#goto-anything>`_ overlay.
-		- 'command_palette': Show the `command palette <http://docs.sublimetext.info/en/latest/extensibility/command_palette.html>`_.
+		- *goto*: Show the `Goto Anything <http://docs.sublimetext.info/en/latest/file_management/file_management.html#goto-anything>`_ overlay.
+		- *command_palette*: Show the `command palette <http://docs.sublimetext.info/en/latest/extensibility/command_palette.html>`_.
 
-	- **show_files** [Bool]: If using the goto overlay, start by displaying files rather than an empty box.
-	- **text** [String]: The initial contents to put in the overlay box.
+	- **show_files** [Bool]: If using the goto overlay, start by displaying files rather than an empty widget.
+	- **text** [String]: The initial contents to put in the overlay.
 
 **show_panel**
 	Shows a panel.
