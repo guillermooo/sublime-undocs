@@ -186,8 +186,8 @@ Build System Variables
 Build systems expand the following variables in *.sublime-build* files:
 
 ====================== =====================================================================================
-``$file_path``         The directory of the current file, e. g., *C:\Files*.
-``$file``              The full path to the current file, e. g., *C:\Files\Chapter1.txt*.
+``$file_path``         The directory of the current file, e. g., *C:\\Files*.
+``$file``              The full path to the current file, e. g., *C:\\Files\\Chapter1.txt*.
 ``$file_name``         The name portion of the current file, e. g., *Chapter1.txt*.
 ``$file_extension``    The extension portion of the current file, e. g., *txt*.
 ``$file_base_name``    The name only portion of the current file, e. g., *Document*.
