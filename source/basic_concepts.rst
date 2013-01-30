@@ -50,7 +50,7 @@ data directory. This is a platform-dependent location:
 
 For **portable installations**, look inside *Sublime Text 2/Data*. Here, the
 *Sublime Text 2* part refers to the directory to which you've extracted the
-contens of the compressed file containing Sublime Text 2.
+contents of the compressed file containing Sublime Text 2.
 
 Note that only for portable installations does a directory named *Data* exist.
 For the other types of installation, the data directory is the location
