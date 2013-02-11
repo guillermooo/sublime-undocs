@@ -139,7 +139,7 @@ Creating A New Syntax Definition
 To create a new syntax definition, follow these steps:
 
   - Go to **Tools | Packages | Package Development | New Syntax Definition**
-  - Save the new file to your ``Packages/User`` folder as ``Sublime Snippets (Raw).JSON-tmLanguage``.
+  - Save the new file to your ``Packages/User`` folder as a ``.JSON-tmLanguage`` file.
 
 You should now see a file like this::
 
