@@ -114,6 +114,12 @@ Context Operands
 ``selector``
 	Returns the current scope.
 
+``panel_has_focus``
+	Returns ``true`` if the current focus is on a panel.
+
+``panel``
+	Returns ``true`` if the panel given as operand is visible.
+
 Context Operators
 ^^^^^^^^^^^^^^^^^
 
