@@ -56,6 +56,10 @@ Editing
 | ⌃ + U           | soft undo; jumps to your last change before               |
 |                 | undoing change when repeated                              |
 +-----------------+-----------------------------------------------------------+
+| ⌃ + ⇧ + Up      | Column selection up                                       |
++-----------------+-----------------------------------------------------------+
+| ⌃ + ⇧ + Down    | Column selection down                                     |
++-----------------+-----------------------------------------------------------+
 
 Navigation/Goto Anywhere
 ------------------------
