@@ -86,6 +86,12 @@ Commands
 	Closes the active view and, under certain circumsances, the whole application.
 	XXX Sounds kinda wrong.
 
+**save**
+        Saves the file in the current window
+
+**prompt_save_as**
+        Asks for a new filename and saves the file in the current window
+
 **toggle_sidebar**
 	Shows or hides the sidebar.
 
