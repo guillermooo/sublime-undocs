@@ -87,10 +87,10 @@ Commands
 	XXX Sounds kinda wrong.
 
 **save**
-        Saves the file in the current window
+        Saves the active file.
 
 **prompt_save_as**
-        Asks for a new filename and saves the file in the current window
+        Prompts for a new file name and saves the active file.
 
 **toggle_sidebar**
 	Shows or hides the sidebar.
