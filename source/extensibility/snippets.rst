@@ -44,14 +44,24 @@ these parts in turn.
 
     Keep the following in mind when writing your own snippets:
 
-        - If you want the get a literal ``$``, you have to escape it like this: ``\$``.
+        - If you want to get a literal ``$``, you have to escape it like this: ``\$``.
 
         - When writing a snippet that contains indentation, always use tabs. The
           tabs will be transformed into spaces when the snippet is inserted if the
           option ``translateTabsToSpaces`` is set to ``true``.
 
-        The ``content`` must be included in a ``<![CDATA[…]]>`` section.
-        Snippets won't work if you don't do this!
+        - The ``content`` must be included in a ``<![CDATA[…]]>`` section.
+          Snippets won't work if you don't do this!
+
+        - The ``content`` of your snippet must not contain ``]]>`` because this
+          string of characters will prematurely close the ``<![CDATA[…]]>`` section,
+          resulting in an XML error. To work around this pitfall, you can insert an
+          undefined variable into the string like this: ``]]$NOT_DEFINED>``. This
+          modified string passes through the XML parser without closing the content
+          element's ``<![CDATA[…]]>`` section, but Sublime Text will replace
+          ``$NOT_DEFINED`` with an empty string before inserting the snippet into
+          your document. In other words, ``]]$NOT_DEFINED>`` in your snippet file
+          ``content`` will be written as ``]]>`` when you trigger the snippet.
 
 ``tabTrigger``
     Defines the sequence of keys you will press to insert this snippet. The
