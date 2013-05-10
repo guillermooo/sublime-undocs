@@ -372,10 +372,10 @@ Commands
 	Makes the selection lower case.
 
 **title_case**
-	Makes the selection's first letter upper case and all the rest of the word lower case
+	Capitalizes the selection's first charracter and turns the rest into lower case.
 
 **swap_case**
-	Swaps each character in the selection's case 
+	Swaps the case of each character in the selection.
 
 **set_mark**
 	XXX
