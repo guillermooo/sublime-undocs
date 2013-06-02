@@ -1,5 +1,5 @@
 ===================================
-Search and Replace - Multiple Files 
+Search and Replace - Multiple Files
 ===================================
 
 .. _snr-search-files:
@@ -27,11 +27,11 @@ define the scope of the search in several ways:
 
 * Adding individual directories (Unix-style paths, even on Windows)
 * Adding/excluding files based on a pattern
-* Adding  symbolic locations (``<open folders>``, ``<open files>``)
+* Adding symbolic locations (``<open folders>``, ``<open files>``)
 
 You can combine these filters separing them with commas, for example:
 
-	/C/Users/Joe/Top Secret,-*.html,<open files>
+	/C/Users/Joe/Top Secret,-\*.html,<open files>
 
 Press the **...** button in the search panel to display a menu containing
 these options.
