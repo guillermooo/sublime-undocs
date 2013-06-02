@@ -15,7 +15,7 @@ Toggle Regular Expressions	``Alt + R``
 Toggle Case Sensitivity   	``Alt + C``
 Toggle Exact Match       	``Alt + W``
 Find Next					``Enter``
-Find Previous				``Shift + Enter`` 
+Find Previous				``Shift + Enter``
 Find All					``Alt + Enter``
 ==========================	===========
 
@@ -42,7 +42,7 @@ You can open the replace planel with ``Ctrl + H``.
 Replace All:				``Ctrl + Alt + Enter``
 ==========================	======================
 
-.. xxx no key binding for replacing once?
+.. XXX no key binding for replacing once?
 
 
 .. _snr-tips-buffer:
@@ -53,9 +53,7 @@ Tips
 Other Ways of Searching in Buffers
 ----------------------------------
 
-.. todo: link to goto anything section
-
-Goto Anything provides the operator ``#`` to search in the current
+:ref:`Goto Anything <fm-goto-anything>` provides the operator ``#`` to search in the current
 buffer. The search term will be the part following the ``#`` operator.
 
 Other Key Bindings to Search in Buffers
@@ -69,7 +67,9 @@ Search Backwards Using Most Recent Pattern		``Shift + F3``
 Select All Matches Using Most Recent Pattern	``Alt + F3``
 ===============================================	==============
 
-.. search under cursor ??
+.. XXX search under cursor ??
+
+.. _snr-multiline-search:
 
 Multiline Search
 ----------------

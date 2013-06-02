@@ -2,6 +2,8 @@
 File Navigation and File Management
 ===================================
 
+.. _fm-goto-anything:
+
 Goto Anything
 =============
 
@@ -36,6 +38,9 @@ used as explained above too.
 Searching for symbols will only work for file types that have symbols defined
 for them.
 
+
+.. _fm-sidebar:
+
 Sidebar
 =======
 
@@ -53,6 +58,9 @@ effect, but why would you?
 
 The sidebar also provides basic file management operations through the context
 menu.
+
+
+.. _fm-projects:
 
 Projects
 ========
