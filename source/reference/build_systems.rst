@@ -110,7 +110,7 @@ Options
 ``name``
     **Only valid inside a variant** (see ``variants``). Identifies variant
     build systems. If ``name`` is *Run*, the variant will show up under the
-    **Tools | Build System** menu and be bound to *Ctrl + Shift + B*.
+    **Tools | Build System** menu and be bound to :kbd:`Ctrl+Shift+B`.
 
 Capturing Error Output with ``file_regex``
 ------------------------------------------

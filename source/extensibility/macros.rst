@@ -35,7 +35,7 @@ commands to it. This is how a macro file looks like::
        {"command": "insert", "args": {"characters": "\n"}}
    ]
 
-See the :doc:`../core/commands` section for more information on commands.
+See the :doc:`/reference/commands` section for more information on commands.
 
 .. XXX: do we need to escape every kind of quotations marks?
 

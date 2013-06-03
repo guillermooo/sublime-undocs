@@ -25,6 +25,7 @@ Windows
 
 * Right Mouse Button ``+ ⇧``
 * OR: Middle Mouse Button
+
 \
 
 * Add to selection: ``Ctrl``
@@ -33,6 +34,7 @@ Windows
 Linux
 
 * Right Mouse Button ``+ ⇧``
+
 \
 
 * Add to selection: ``Ctrl``
@@ -42,6 +44,7 @@ OS X
 
 * Left Mouse Button + ``⌥``
 * OR: Middle Mouse Button
+
 \
 
 * Add to selection: ``⌘``
