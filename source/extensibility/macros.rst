@@ -5,9 +5,10 @@ Macros
 Macros are a basic automation facility consisting in sequences of commands. Use
 them whenever you need to repeat the exact same steps to perform an operation.
 
-Macro files are JSON files with the extension ``.sublime-macro``. Sublime Text
+Macro files are JSON files with the ``.sublime-macro`` extension. Sublime Text
 ships with a few macros providing core functionality, such as line and word
-deletion. You can find these under **Tools | Macros**.
+deletion. You can find these under **Tools | Macros** or in
+``Packages/Default``.
 
 How to Record Macros
 ********************
@@ -48,4 +49,5 @@ Where to Store Macros
 Macro files can be stored in any package folder, and they will show up
 under **Tools | Macros | <PackageName>**.
 
-
+Macro files can be run by the ``run_macro_file`` command.
+See :doc:`/reference/commands` for more information about commands.
