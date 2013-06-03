@@ -1,5 +1,6 @@
 .. sublime: wordWrap false
 
+========
 Snippets
 ========
 
@@ -16,7 +17,7 @@ Snippet files are XML files with the ``sublime-snippet`` extension.
 .. code-block:: xml
 
     <snippet>
-        <content><![CDATA[]]></content>
+        <content><![CDATA[...]]></content>
         <tabTrigger></tabTrigger>
         <scope></scope>
         <description></description>
@@ -89,11 +90,11 @@ Syntax:
     - ``${var_name/regex/format_string/options}``
 
 ``var_name``
-    The field's name to base the substitution on: 1, 2, 3…
+    The field's name to base the substitution on: 1, 2, 3, SELECTION…
 ``regex``
-    Perl-style regular expression: See the Boost library documentation for `regular expressions <http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html>`_.
+    Perl-style regular expression: See the `Boost library documentation`_ for regular expressions.
 ``format_string``
-    See the Boost library documentation for `format strings <http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html>`_.
+    See the `Boost library documentation`_ for format strings.
 ``options``
     Optional. Any of the following:
         ``i``
@@ -102,3 +103,5 @@ Syntax:
             Replace all occurrences of ``regex``.
         ``m``
             Don't ignore newlines in the string.
+
+.. _`Boost library documentation`: http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html
