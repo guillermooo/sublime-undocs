@@ -2,15 +2,25 @@
 Settings (Reference)
 ====================
 
+.. warning::
+
+   This page may be outdated and contain wrong information. However, you can
+   find most of the available settings with a brief description in the default
+   settings file (**Preferences | Settings - Default** or
+   :file:`Default/Preferences.sublime-settings`).
+
+.. seealso::
+
+   :doc:`Customization - Settings </customization/settings>`
+      A detailed overview on settings in Sublime Text and their order of
+      precedence.
+
 
 Global Settings
 ===============
 
-**Target file:** ``Global.sublime-settings``.
-
-
 ``theme``
-   Theme to be used. Accepts a file base name (e. g.: ``Default.sublime-theme``).
+   Theme to be used. Accepts a file base name (e. g.: :file:`Default.sublime-theme`).
 ``remember_open_files``
    Determines whether to reopen the buffers that were open when Sublime Text was last closed.
 ``folder_exclude_patterns``
@@ -26,15 +36,13 @@ Global Settings
 ``mouse_wheel_switches_tabs``
    If ``true``, scrolling the mouse wheel will cause tabs to switch if the
    cursor is in the tab area.
-``open_files_in_new_window``   
+``open_files_in_new_window``
    OS X only. When filters are opened from Finder, or by dragging onto the
    dock icon, this controls if a new window is created or not.
 
 
 File Settings
 =============
-
-**Target files:** ``Base File.sublime-settings``, ``<file_type>.sublime-settings``.
 
 Whitespace and Indentation
 **************************
@@ -66,7 +74,7 @@ Visual Settings
 
 ``color_scheme``
    Sets the colors used for text highlighting. Accepts a path rooted at the
-   data directory (e. g.: ``Packages/Color Scheme - Default/Monokai Bright.tmTheme``).
+   data directory (e.g.: :file:`Packages/Color Scheme - Default/Monokai Bright.tmTheme`).
 ``font_face``
    Font face to be used for editable text.
 ``font_size``
@@ -138,7 +146,7 @@ Automatic Behavior
    useful (e. g.: word wrapping). In such other contexts, the text might be
    tokenized based on other criteria (e. g. the syntax definition rules).
 ``ensure_newline_at_eof_on_save``
-   Always adds a new line at the end of the file if not present when saving.   
+   Always adds a new line at the end of the file if not present when saving.
 
 System and Miscellaneous Settings
 *********************************
@@ -150,7 +158,7 @@ System and Miscellaneous Settings
    Toggles the spell checker.
 ``dictionary``
    Word list to be used by the spell checker. Accepts a path rooted at the
-   data directory (e. g.: ``Packages/Language - English/en_US.dic``). You can
+   data directory (e. g.: :path`Packages/Language - English/en_US.dic`). You can
    `add more dictionaries <http://extensions.services.openoffice.org/en/dictionaries>`_.
 ``fallback_encoding``
    The encoding to use when the encoding can't be determined automatically.
@@ -165,14 +173,10 @@ System and Miscellaneous Settings
 Build and Error Navigation Settings
 ***********************************
 
-``result_file_regex``
-   Regular expression used to extract error information from some output dumped
-   into a view or output panel. Follows the same rules as error capturing in
-   build systems.º
-``result_line_regex``
-   Regular expression used to extract error information from some output dumpºed
-   into a view or output panel. Follows the same rules as error capturing in
-   build systems.
+``result_file_regex`` and ``result_line_regex``
+   Regular expressions used to extract error information from some output dumped
+   into a view or output panel. Follows the same rules as :ref:`error capturing
+   in build systems <build-capture-error-output>`.
 ``result_base_dir``
    Directory to start looking for offending files in based on information
    extracted with ``result_file_regex`` and ``result_line_regex``.
