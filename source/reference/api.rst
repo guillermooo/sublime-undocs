@@ -3,7 +3,10 @@ Python API
 
 .. seealso::
 
-    `Official Documentation <http://www.sublimetext.com/docs/2/api_reference.html>`_
+    `Official Documentation for Sublime Text 2 <http://www.sublimetext.com/docs/2/api_reference.html>`_
+        API documentation.
+
+    `Official Documentation for Sublime Text 3 <http://www.sublimetext.com/docs/3/api_reference.html>`_
         API documentation.
 
 Exploring the API

@@ -28,7 +28,7 @@ How to Edit Macros
 ******************
 
 Alternatively to recording a macro, you can edit it by hand. Save a new file
-with the extension ``.sublime-macro`` under :file:`Packages\User` and add
+with the extension ``.sublime-macro`` under :file:`Packages/User` and add
 commands to it. This is how a macro file looks like::
 
    [

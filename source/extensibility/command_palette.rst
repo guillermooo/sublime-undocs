@@ -3,10 +3,12 @@ Command Palette
 ===============
 
 .. seealso::
-  
+
    :doc:`Reference for Command Palette <../reference/command_palette>`
       Complete documentation on the command palette options.
 
+
+.. _ext-command-palette-overview:
 
 Overview
 ========
@@ -28,7 +30,7 @@ Here's an excerpt from ``Packages/Default/Default.sublime-commands``::
        { "caption": "Project: Save As", "command": "save_project_as" },
        { "caption": "Project: Close", "command": "close_project" },
        { "caption": "Project: Add Folder", "command": "prompt_add_folder" },
-   
+
        { "caption": "Preferences: Default File Settings", "command": "open_file", "args": {"file": "${packages}/Default/Base File.sublime-settings"} },
        { "caption": "Preferences: User File Settings", "command": "open_file", "args": {"file": "${packages}/User/Base File.sublime-settings"} },
        { "caption": "Preferences: Default Global Settings", "command": "open_file", "args": {"file": "${packages}/Default/Global.sublime-settings"} },
