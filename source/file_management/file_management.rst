@@ -12,28 +12,44 @@ As you type into the input area, names of open files and files in open
 directories will be searched, and a preview of the best match will be shown.
 This preview is *transient*, that is, it won't become the actual active buffer
 until you perform some operation on it. Transient views go away when you press
-:kbd:`Esc`. You will find transient views in other situations. They are like
-ghosts or something.
+:kbd:`Esc`. You will find transient views in other situations, e.g. when
+single-clicking a file in the sidebar.
 
-Goto Anything lives up to its name --there's more to it than locating files:
+Goto Anything lives up to its name --there's more to it than locating files.
 
-To perform a **fuzzy search**, append ``#`` and then keep typing, like this:
 
-::
+Goto Anything directives
+------------------------
 
-	island#treasure
+There are a few special directives for Goto Anything which will point you to
+other places than just the beginning of a file. Any of these directives can be
+used in combination with file search queries and will be applied on the
+currently selected file or on the file you are currently editing if you didn't
 
-This instructs Sublime Text to perform a fuzzy search for *treasure* in the
-file whose name matches *island*. Pressing :kbd:`Ctrl+;` will open Goto
-Anything and type ``#`` for you.
+Directives are invoked with a special character, e.g. ``:``, and all text after
+that will be interpreted by the directive. Example::
 
-And there's more:
+	island:123
 
-To **search symbols** in the active buffer, press :kbd:`Ctrl+R`. The operator
-``@`` can be used as explained above too.
+This instructs Sublime Text to first search for a file that matches ``island``
+and then goes to line 123.
 
-To **go to a line number**, press :kbd:`Ctrl+G`. The operator ``:`` can be
-used as explained above too.
+Here is a list of the supported directives:
+
+:samp:`@{symbol}`
+    Searches for **symbol** symbol in the active buffer; bound to :kbd:`Ctrl+R`.
+
+    Symbols usually are classes or functions but can be anything defined by the
+    syntax definition. See *Symbols - Syntax Preferences* (XXX to be
+    added).
+
+:samp:`#{search}`
+    Fuzzy-searches the file for **search** and highlights all occasions; bound
+    to :kbd:`Ctrl+;`.
+
+:samp:`:{line_number}`
+    Goes to the specified line number or the end of the file if it exceeds the
+    file; bound to :kbd:`Ctrl+G`.
 
 Searching for symbols will only work for file types that have symbols defined
 for them.
@@ -73,9 +89,9 @@ To save a project, go to **Project | Save Project As...**.
 
 To quickly switch between projects, press :kbd:`Ctrl+Alt+P`.
 
-Project data are stored in JSON files with a `.sublime-project` extension.
-Wherever there's a `.sublime-project` file, you will find an ancillary
-`.sublime-workspace` file too. The second one is used by Sublime Text and you
+Project data are stored in JSON files with a *.sublime-project* extension.
+Wherever there's a *.sublime-project* file, you will find an ancillary
+*.sublime-workspace* file too. The second one is used by Sublime Text and you
 shouldn't edit it yourself.
 
 Project files can define settings specific to that project only. More on that
