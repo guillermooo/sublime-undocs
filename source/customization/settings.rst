@@ -121,6 +121,8 @@ Regardless of its location, any file-type-specific settings file has precedence
 over a global settings file affecting file types.
 
 
+.. _settings-hierarchy:
+
 The Settings Hierarchy
 ======================
 
@@ -132,13 +134,12 @@ hypothetical hierarchy of settings for Python files on Windows:
 - :file:`Packages/AnyOtherPackage/Preferences.sublime-settings`
 - :file:`Packages/AnyOtherPackage/Preferences (Windows).sublime-settings`
 - :file:`Packages/User/Preferences.sublime-settings`
+- Settings from the current project
 - :file:`Packages/Python/Python.sublime-settings`
 - :file:`Packages/Python/Python (Windows).sublime-settings`
 - :file:`Packages/User/Python.sublime-settings`
 - Session data for the current file
 - Auto-adjusted settings
-
-.. XXX Where are project-specific settings?
 
 
 Where to Store User Settings (Once Again)
