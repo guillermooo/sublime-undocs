@@ -56,6 +56,21 @@ Commands
 
 	- **variant** [String]: Optional. The name of the variant to be run.
 
+**set_build_system**
+	Changes the current build system.
+
+	- **file** [String]: Path to the build system. If empty, Sublime Text tries
+	  to automatically find an appropriate build systems from specified
+	  selectors.
+	- **index** [Int]: Used in the **Tools | Build System** menu but otherwise
+	  probably not useful.
+
+**new_build_system**
+	Creates a new buffer and inserts a build system template.
+
+**toggle_save_all_on_build**
+	Toggles whether all open files should be saved before starting the build.
+
 **run_macro_file**
 	Runs a *.sublime-macro* file.
 
@@ -71,8 +86,8 @@ Commands
 
 	.. seealso::
 
-	    :doc:`/extensibility/snippets`
-	        Documentation on snippets and their variable features.
+		:doc:`/extensibility/snippets`
+			Documentation on snippets and their variable features.
 
 **insert**
 	Inserts a string.
@@ -109,6 +124,14 @@ Commands
 	  to the file to be opened. Relative paths will originate from the recently
 	  accessed directory (e.g. the directory of the currently opened file).
 
+**open_dir**
+	Opens the specified directory with the default file manager.
+
+	- **dir** [String]: The directory to open.
+
+**open_file_settings**
+	Opens the syntax-specific user settings file for the current syntax.
+
 **new_window**
 	Opens a new window.
 
@@ -126,17 +149,46 @@ Commands
 **exit**
 	Exits the whole application with all open windows.
 
+**reopen_last_file**
+	Reopens the last closed file.
+
 **save**
 	Saves the active file.
+
+	- **encoding** [String]: The file encoding to save as.
 
 **prompt_save_as**
 	Prompts for a new file name and saves the active file.
 
+**save_project_as**
+	Prompts for a new file name and saves the current project.
+
 **prompt_select_project**
 	Opens a popup with recently accessed projects where you can fuzzy-search.
 
+**prompt_open_project**
+	Prompts for a project file to open as a project.
+
+**close_project**
+	Closes the current project.
+
+**prompt_add_folder**
+	Prompts for a folder to add to the current project.
+
+**close_folder_list**
+	Removes all folders from the current project.
+
+**refresh_folder_list**
+	Reloads all folders in the current project and updates the side bar.
+
 **toggle_sidebar**
 	Shows or hides the sidebar.
+
+**toggle_show_open_files**
+	Shows ot hides the open files in the sidebar.
+
+**toggle_status_bar**
+	Shows or hides the status bar.
 
 **toggle_full_screen**
 	Toggles full screen mode on or off.
@@ -164,6 +216,8 @@ Commands
 
 **redo_or_repeat**
 	Performs the latest action again.
+
+.. XXX does this mean selections?
 
 **soft_undo**
 	Undoes each action stepping through granular edits.
@@ -233,7 +287,7 @@ Commands
 	  was when the panel was opened. (Only incremental find panel.)
 
 **hide_overlay**
-	Hides the active overlay.  Show the overlay using the show_overlay command.
+	Hides the active overlay. Show the overlay using the show_overlay command.
 
 **hide_auto_complete**
 	Hides the auto complete list.
@@ -256,6 +310,12 @@ Commands
 **indent**
 	Increments indentation of selection.
 
+**unindent**
+	Unindents selection.
+
+**detect_indentation**
+	Guesses the indentation from the current file.
+
 **next_field**
 	Advances the caret to the text snippet field in the current snippet field
 	cycle.
@@ -269,9 +329,6 @@ Commands
 	  complete list.
 	| XXX Probably not useful for users. XXX
 
-**unindent**
-	Unindents selection.
-
 **toggle_overwrite**
 	Toggles overwriting on or off.
 
@@ -279,11 +336,7 @@ Commands
 	Extends the selection up to predefined limits.
 
 	- **to** [Enum]: Values: *bol*, *hardbol*, *eol*, *hardeol*, *bof*, *eof*,
-	  *brackets*, *line*.
-
-**find_under_expand**
-	Adds a new selection based on the current selection or expands the
-	selection to the current word.
+	  *brackets*, *line*, *tag*, *scope*, *indentation*.
 
 **close_tag**
 	Surrounds the current inner text with the appropiate tags.
@@ -293,6 +346,9 @@ Commands
 
 **run_macro**
 	Runs the macro stored in the macro buffer.
+
+**save_macro**
+	Prompts for a fiel path to save the macro in the macro buffer to.
 
 **show_overlay**
 	Shows the requested overlay. Use the **hide_overlay** command to hide it.
@@ -327,6 +383,14 @@ Commands
 **find_under_prev**
 	Finds the previous occurrence of the current selection or the current word.
 
+**find_under_expand**
+	Adds a new selection based on the current selection or expands the
+	selection to the current word.
+
+**find_under_expand_skip**
+	Adds a new selection based on the current selection or expands the
+	selection to the current word while removing the current selection.
+
 **find_all_under**
 	Finds all occurrences of the current selection or the current word.
 
@@ -345,9 +409,20 @@ Commands
 	Move to the previous captured result.
 
 **toggle_setting**
-	Toggles the value of a boolean setting.
+	Toggles the value of a boolean setting. This value is view-specific.
 
 	- **setting** [String]: The name of the setting to be toggled.
+
+**set_setting**
+	Set the value of a setting. This value is view-specific.
+
+	- **setting** [String]: The name of the setting to changed.
+	- **value** [*]: The value to set to.
+
+**set_line_ending**
+	Changes the line endings of the current file.
+
+	- **type** [Enum]: *windows*, *unix*, *cr*
 
 **next_misspelling**
 	Advance to the next misspelling
@@ -419,6 +494,21 @@ Commands
 
 	- **case_sensitive** [Bool]: Whether the sort should be case sensitive.
 
+**sort_selection**
+	Sorts lines in selection.
+
+	- **case_sensitive** [Bool]: Whether the sort should be case sensitive.
+
+**permute_lines**
+	XXX
+
+	- **operation** [Enum]: *reverse*, *unique*, *shuffle* ...?
+
+**permute_selection**
+	XXX
+
+	- **operation** [Enum]: *reverse*, *unique*, *shuffle* ...?
+
 **set_layout**
 	Changes the group layout of the current window. This command uses the same
 	pattern as :py:meth:`Window.set_layout`, see there for a list and
@@ -428,7 +518,7 @@ Commands
 	Gives focus to the top-most file in the specified group.
 
 	- **group** [Int]: The group index to focus. This is determined by the order
-      of ``cells`` items from the current layout (see :py:meth:`Window.set_layout`).
+	  of ``cells`` items from the current layout (see :py:meth:`Window.set_layout`).
 
 **move_to_group**
 	Moves the current file to the specified group.
@@ -449,6 +539,11 @@ Commands
 **toggle_bookmark**
 	Sets or unsets a bookmark for the active region(s). (Bookmarks can be
 	accessed via the regions API using ``"bookmarks"`` as the key.)
+
+**select_bookmark**
+	Selects a bookmarked region in the current file.
+
+	- **index** [Int]
 
 **clear_bookmarks**
 	Removes all bookmarks.
@@ -486,6 +581,11 @@ Commands
 **swap_with_mark**
 	XXX
 
+**clear_bookmarks**
+	XXX
+
+	- **name** [String]: e.g. ``"mark"``.
+
 **yank**
 	XXX
 
@@ -500,8 +600,14 @@ Commands
 **decrease_font_size**
 	Decreases the font size.
 
+**reset_font_size**
+	Resets the font size to the default
+
+	*Note*: This essentially removes the entry from your User settings, there
+	might be other places where this has been "changed".
+
 **fold**
-	Folds the current selection and displays ``…`` instead. Unfolding arrows are
+	Folds the current selection and displays ``…`` instead. Unfold arrows are
 	added to the lines where a region has been folded.
 
 **unfold**
@@ -524,5 +630,63 @@ Commands
 **context_menu**
 	Shows the context menu.
 
+**open_recent_file**
+	Opens a recently closed file.
+
+	- **index** [Int]
+
+**open_recent_folder**
+	Opens a recently closed folder.
+
+	- **index** [Int]
+
+**open_recent_project**
+	Opens a recently closed project.
+
+	- **index** [Int]
+
+**clear_recent_files**
+	Deletes records of recently accessed files and folders.
+
+**clear_recent_projects**
+	Deletes records of recently accessed projects.
+
+**reopen**
+	Reopens the current file.
+
+	- **encoding** [String]: The file encoding the file should be reopened with.
+
+**clone_file**
+	Clones the current view into the same tab group, both sharing the same
+	buffer. That means you can drag one tab to another group and every update to
+	one view will be visible in the other one too.
+
+**revert**
+	Undoes all unsaved changes to the file.
+
+**expand_tabs**
+	XXX
+
+	- **set_translate_tabs** [Bool]
+
+**unexpand_tabs**
+	XXX
+
+	- **set_translate_tabs** [Bool]
+
+**new_plugin**
+	Creates a new buffer and inserts a plugin template (a text command).
+
+**new_snippet**
+	Creates a new buffer and inserts a snippet template.
+
+**open_url**
+	Opens the specified url with the default browser.
+
+	- **url** [String]
+
+**show_about_window**
+	I think you know what this does.
+
 .. Some regex-related and search-related commands missing. They don't seem to
-.. be too useful.
+.. be too useful at all.
