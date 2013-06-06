@@ -2,6 +2,12 @@
 Build Systems (Batch Processing)
 ================================
 
+.. seealso::
+
+   :doc:`Reference for build systems <../reference/build_systems>`
+        Complete documentation on all available options, variables, etc.
+
+
 Build systems let you run your files through external programs like
 :program:`make`, :program:`tidy`, interpreters, etc.
 
@@ -59,9 +65,3 @@ Running Build Systems
 =====================
 
 Build systems can be run by pressing :kbd:`F7` or from **Tools | Build**.
-
-
-.. seealso::
-
-   :doc:`Reference for build systems <../reference/build_systems>`
-        Complete documentation on all available options, variables, etc.
