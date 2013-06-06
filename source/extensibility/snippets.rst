@@ -11,7 +11,7 @@ To create a new snippet, select **Tools | New Snippet…**. Sublime Text will
 present you with an skeleton for a new snippet.
 
 Snippets can be stored under any package's folder, but to keep it simple while
-you're learning, you can save them to your :path:`Packages/User` folder.
+you're learning, you can save them to your :file:`Packages/User` folder.
 
 Snippets File Format
 ********************
