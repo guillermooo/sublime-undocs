@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Sublime Text Unofficial Documentation'
-copyright = u'2012, Sublime Text Community'
+copyright = u'2013, Sublime Text Community'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -64,7 +64,7 @@ release = '2.0'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['overview.rst']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
