@@ -13,10 +13,31 @@ Python API
 
 
 Missing in the official docs
-----------------------------
+****************************
 
 There are quite a few things that are not (yet) documented in the official docs,
 this section tries to solve this.
+
+
+Index
+-----
+
+.. XXX It would be very nice if this could've been automatically generated but I
+.. couldn't find a way and nobody was able to help me out. I AM DISAPPOINT! - FF
+
+.. py:currentmodule:: sublime
+
+module :py:mod:`sublime`
+    - class :py:class:`Window`
+        * :py:meth:`~Window.set_layout`
+    - class :py:class:`View`
+        * :py:meth:`~View.match_selector`
+
+.. py:currentmodule:: sublime_plugin
+
+module :py:mod:`sublime_plugin`
+    - class :py:class:`EventListener`
+        * :py:meth:`~EventListener.on_query_completions`
 
 
 .. #############################################################################
@@ -24,6 +45,9 @@ this section tries to solve this.
 .. #############################################################################
 
 .. py:module:: sublime
+
+``sublime`` module
+------------------
 
 .. py:class:: Window
 
@@ -125,10 +149,15 @@ this section tries to solve this.
 .. # sublime_plugin docs
 .. #############################################################################
 
-
 .. py:module:: sublime_plugin
 
+``sublime_plugin`` module
+-------------------------
+
 .. py:class:: EventListener
+
+    A wrapper class for events. Subclass and define the methods you want to
+    receive events on and you are done, no registering necessary.
 
     .. py:method:: on_query_completions(view, prefix, locations)
 
