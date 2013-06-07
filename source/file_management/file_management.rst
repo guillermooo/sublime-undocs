@@ -18,6 +18,8 @@ single-clicking a file in the sidebar.
 Goto Anything lives up to its name --there's more to it than locating files.
 
 
+.. _fm-goto-directives:
+
 Goto Anything directives
 ------------------------
 
