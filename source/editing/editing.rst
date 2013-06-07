@@ -23,41 +23,41 @@ Using the Mouse
 
 Windows
 
-* Right Mouse Button ``+ ⇧``
+* Right Mouse Button :kbd:`+ ⇧`
 * OR: Middle Mouse Button
 
 \
 
-* Add to selection: ``Ctrl``
-* Subtract from selection: ``Alt``
+* Add to selection: :kbd:`Ctrl`
+* Subtract from selection: :kbd:`Alt`
 
 Linux
 
-* Right Mouse Button ``+ ⇧``
+* Right Mouse Button :kbd:`+ ⇧`
 
 \
 
-* Add to selection: ``Ctrl``
-* Subtract from selection: ``Alt``
+* Add to selection: :kbd:`Ctrl`
+* Subtract from selection: :kbd:`Alt`
 
 OS X
 
-* Left Mouse Button + ``⌥``
+* Left Mouse Button + :kbd:`⌥`
 * OR: Middle Mouse Button
 
 \
 
-* Add to selection: ``⌘``
-* Subtract from selection: ``⌘ + ⇧``
+* Add to selection: :kbd:`⌘`
+* Subtract from selection: :kbd:`⌘ + ⇧`
 
 Using the Keyboard
 ------------------
 
-Windows: ``Ctrl + Alt + Up`` and ``Ctrl + Alt + Down``
+Windows: :kbd:`Ctrl + Alt + Up` and :kbd:`Ctrl + Alt + Down`
 
-Linux: ``Alt + ⇧ + Up`` and ``Alt + ⇧ + Down``
+Linux: :kbd:`Alt + ⇧ + Up` and :kbd:`Alt + ⇧ + Down`
 
-OS X: ``⌃ + ⇧ + Up`` and ``⌃ + ⇧ + Down``
+OS X: :kbd:`⌃ + ⇧ + Up` and :kbd:`⌃ + ⇧ + Down`
 
 Multiple Selections
 ===================
@@ -65,16 +65,16 @@ Multiple Selections
 Multiple selections let you make sweeping changes to your text efficiently.
 Any praise about multiple selections is an understatement. This is why:
 
-Select some text and press ``Ctrl + D`` to **add more** instances. If
-you want **to skip the current instance**, press ``Ctrl + K, Ctrl + D``.
+Select some text and press :kbd:`Ctrl + D` to **add more** instances. If
+you want **to skip the current instance**, press :kbd:`Ctrl + K, Ctrl + D`.
 
-If you go too far, press ``Ctrl + U`` to **deselect** the current instance.
+If you go too far, press :kbd:`Ctrl + U` to **deselect** the current instance.
 
 
 Transforming Multiple Selections into Lines
 ===========================================
 
-``Ctrl + L`` expands the selections to the end of the line. ``Ctrl + Shift + L``
+:kbd:`Ctrl + L` expands the selections to the end of the line. :kbd:`Ctrl + Shift + L`
 splits the selections into lines.
 
 You can copy multiple selected lines to a separate buffer, edit them there,
@@ -88,17 +88,17 @@ Other Ways of Selecting Text
 The list is long; all available options can be found under **Selection**. To
 name a few:
 
-* Select subwords (``Alt + Shift + <arrow>``)
-* Expand selection to brackets (``Ctrl + Shift + M``)
-* Expand selection to indentation (``Ctrl + Shift + J``)
-* Expand selection to scope (``Ctrl + Shift + Space``)
+* Select subwords (:kbd:`Alt + Shift + <arrow>`)
+* Expand selection to brackets (:kbd:`Ctrl + Shift + M`)
+* Expand selection to indentation (:kbd:`Ctrl + Shift + J`)
+* Expand selection to scope (:kbd:`Ctrl + Shift + Space`)
 
 
 Transposing Things
 ==================
 
 Need to swap two letters or, better yet, two words? Experiment with
-``Ctrl + T``.
+:kbd:`Ctrl + T`.
 
 
 And much, much more...

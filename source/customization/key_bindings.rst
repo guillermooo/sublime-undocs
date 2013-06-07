@@ -4,7 +4,7 @@ Key Bindings
 
 .. seealso::
 
-   :doc:`Reference for key bindings <../reference/key_bindings>`
+   :doc:`Reference for key bindings </reference/key_bindings>`
         Complete documentation on key bindings.
 
 Key bindings let you map sequences of key presses to actions.
@@ -12,7 +12,7 @@ Key bindings let you map sequences of key presses to actions.
 File Format
 ===========
 
-Key bindings are defined in JSON and stored in ``.sublime-keymap`` files. In
+Key bindings are defined in JSON and stored in *.sublime-keymap* files. In
 order to integrate better with each platform, there are separate key map files
 for Linux, OSX and Windows. Only key maps for the corresponding platform will
 be loaded.
