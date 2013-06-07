@@ -4,10 +4,8 @@ Completions
 
 .. seealso::
 
-   :doc:`Reference for completions <../reference/completions>`
-      Complete documentation on all available options.
-   `Sublime Text Documentation <http://www.sublimetext.com/docs/2/tab_completion.html>`_
-   	Official documentation on this topic.
+	`Sublime Text Documentation <http://www.sublimetext.com/docs/2/tab_completion.html>`_
+		Official documentation on this topic.
 
 Completions provide functionality in the spirit of IDEs to suggest terms and
 insert snippets. Completions work through the completions list or, optionally,
@@ -17,79 +15,97 @@ Note that completions in the broader sense of *words that Sublime Text will
 look up and insert for you* are not limited to completions files, because other
 sources contribute to the list of words to be completed, namely:
 
-	 * Snippets 
+	 * Snippets
 	 * API-injected completions
 	 * Buffer contents
 
-However, ``.sublime-completions`` files are the most explicit way Sublime Text
+However, *.sublime-completions* files are the most explicit way Sublime Text
 provides you to feed it completions. This topic deals with the creation of
-``.sublime-completions`` files as well as with the interaction between all
+*.sublime-completions* files as well as with the interaction between all
 sources for completions.
 
 
 File Format
 ===========
 
-Completions are JSON files with the ``.sublime-completions`` extension.
+Completions are JSON files with the *.sublime-completions* extension.
 Entries in completions files can contain either snippets or plain strings.
 
-
-Example
-*******
-
-Here's an excerpt from the HTML completions:
+Here's an example (with HTML completions):
 
 .. code-block:: js
 
 	{
 		"scope": "text.html - source - meta.tag, punctuation.definition.tag.begin",
-	
-		"completions":
-		[
-			{ "trigger": "a", "contents": "<a href=\"$1\">$0</a>" },
-			{ "trigger": "abbr", "contents": "<abbr>$0</abbr>" },
-			{ "trigger": "acronym", "contents": "<acronym>$0</acronym>" }
-		]
-	}
 
-``scope``
-	Determines when the completions list will be populated with this
-	list of completions. See :ref:`scopes-and-scope-selectors` for more
-	information.
-
-In the example above, we've used trigger-based completions only, but
-completions files support simple completions too. Simple completions are just
-plain strings. Expanding our example with a few simple completions, we'd end up
-with a list like so:
-
-.. code-block:: js
-
-	{
-		"scope": "text.html - source - meta.tag, punctuation.definition.tag.begin",
-	
 		"completions":
 		[
 			{ "trigger": "a", "contents": "<a href=\"$1\">$0</a>" },
 			{ "trigger": "abbr", "contents": "<abbr>$0</abbr>" },
 			{ "trigger": "acronym", "contents": "<acronym>$0</acronym>" },
-			
+			{ "trigger": "script\t<script src=\"...\" />",
+			  "contents": "<script src=\"$1\" />" },
+
 			"ninja",
 			"robot",
 			"pizza"
 		]
 	}
 
+**scope**
+	Determines when the completions list will be populated with this
+	list of completions. See :ref:`scopes-and-scope-selectors` for more
+	information.
+
+**completions**
+	Array of *completions*.
+
+Types of Completions
+********************
+
+Plain Strings
+-------------
+
+Plain strings are equivalent to an entry where the ``trigger`` is identical to
+the ``contents``:
+
+.. code-block:: js
+
+	"foo"
+	// is equivalent to:
+	{ "trigger": "foo", "contents": "foo" }
+
+
+Trigger-based Completions
+-------------------------
+
+.. code-block:: js
+
+	{ "trigger": "foo", "contents": "foobar" }
+
+**trigger**
+	Text that will be displayed in the completions list and will cause the
+	``contents`` to be inserted when chosen.
+
+	You can use a ``\t`` tab character to separate the trigger from a brief
+	description on what the completion is about, it will be displayed right-aligned and slightly grayed and does not affect the trigger itself.
+
+**contents**
+	Text to be inserted in the buffer. Can use :ref:`snippet-features`.
+
 
 Sources for Completions
 =======================
 
-Completions not only originate in ``.sublime-completions`` files. This is the
-exhaustive list of sources for completions:
+These are the sources for completions the user can control:
 
 	* Snippets
-	* API-injected completions
-	* ``.sublime-completions`` files
-	* Words in buffer
+	* ``.sublime-completions``
+	* API-injected completions via ``EventListener.on_query_completions()``
+
+Additionally, other completions are folded into the final list:
+
+	* Words in the buffer
 
 Priority of Sources for Completions
 ***********************************
@@ -115,36 +131,45 @@ There are two methods to use completions, and although the priority given to
 completions when screening them is always the same, there is a difference in
 the result that will be explained below.
 
-Completions can be inserted in two ways: 
+Completions can be inserted in two ways:
 
-	* through the completions list (:kbd:`Ctrl+spacebar`);
+	* through the completions list (:kbd:`Ctrl+spacebar`), or
 	* by pressing :kbd:`Tab`.
 
 
 The Completions List
 ********************
 
-The completions list (:kbd:`Ctrl+spacebar`) may work in two ways: by bringing
-up a list of suggested words to be completed, or by inserting the best match
-directly.
+To use the completions list:
+
+* Press :kbd:`Ctrl+spacebar` to open
+* Optionally, press :kbd:`Ctrl+spacebar` again to select next entry or use up
+  and down arrow keys
+* Press :kbd:`Enter` or :kbd:`Tab` to validate selection (depending on the
+  ``auto_complete_commit_on_tab`` )
+
+
+.. note::
+	The current selection in the completions list can actually be validated with
+	any punctuation sign that isn't itself bound to a snippet (e.g. ``.``).
+
+The completions list  may work in two ways: by bringing up a list of suggested
+words to be completed, or by inserting the best match directly. The automatic
+insertion will only be done if the list of completion candidates can be narrowed
+down to one unambiguous choice given the current prefix.
 
 If the choice of best completion is ambiguous, an interactive list will be
-presented to the user, who will have to select an item himself. Unlike other
-items, snippets in this list are displayed in this format:
-``<tab_trigger> : <name>``, where ``<tab_trigger>`` and ``<name>`` are
-variable.
+presented to the user. Unlike other items, snippets in this list are displayed
+in this format: :samp:`{tab_trigger}\\t{name}`.
 
-The completion with :kbd:`Ctrl+spacebar` will only be automatic if the list of
-completion candidates can be narrowed down to one unambiguous choice given the
-current prefix.
 
 :kbd:`Tab`-completed Completions
 ********************************
 
 If you want to be able to tab-complete completions, the setting
-``tab_completion`` must be set to ``true``. By default, ``tab_completion`` is
-set to ``true``. Snippet tab-completion is unaffected by this setting: they
-will always be completed according to their tab trigger.
+``tab_completion`` must be set to ``true`` (default). Snippet tab-completion is
+unaffected by this setting: They will always be completed according to their tab
+trigger.
 
 With ``tab_completion`` enabled, completion of items is always automatic, which
 means that, unlike in the case of the completions list, Sublime Text will

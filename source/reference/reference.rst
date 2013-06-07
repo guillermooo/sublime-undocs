@@ -14,7 +14,6 @@ the general index.
     key_bindings
     Settings <settings>
     Command Palette <command_palette>
-    completions
     plugins
     api
     commands
