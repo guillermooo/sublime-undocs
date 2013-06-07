@@ -93,19 +93,23 @@ Sublime Text has three release *channels*:
 .. _Dev: http://www.sublimetext.com/dev
 .. _Nightly: http://www.sublimetext.com/nightly
 
-If you are working on a NASA project or are on a tight deadline, keep using
-the stable releases and stop reading here. **Stable releases** are better
-tested and more reliable for everyday use than the others. They come out
-roughly once a month. **The majority of users will want to use stable releases
-only.**
+Furthermore, there are separate channels for the Sublime Text 3 Beta which is only available to users who own a licence:
+
+* `3-Beta <http://www.sublimetext.com/3>`_ (comparable to *Nightly*)
+* `3-Dev <http://www.sublimetext.com/3dev>`_
+
+If you are working on a NASA project or are on a tight deadline, keep using the
+stable releases and stop reading here. **Stable releases** are better tested and
+more reliable for everyday use than the others. **The majority of users will
+want to use stable releases only.**
 
 The *dev* and *nightly* channels are unstable, which means that builds
 published through them are likely to contain bugs and to not work reliably.
 They are updated more often than stable releases.
 
-**Dev builds** are available for everyone. On average, they're released twice
-a month. While not quite ready for everyday use yet, they showcase new
-features in a mostly unbroken fashion.
+**Dev builds** are available for everyone and are released inbetween stable
+releases. While not quite ready for everyday use yet, they showcase new features
+in a mostly unbroken fashion.
 
 Lastly, **nightly builds** are the bleeding edge, with frequent updates and
 also frequent problems of various degrees of severity. They are fun to try

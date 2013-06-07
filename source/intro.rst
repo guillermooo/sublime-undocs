@@ -16,3 +16,17 @@ Before you continue, we encourage you to read through the :doc:`basic_concepts`
 section.
 
 Happy learning!
+
+
+Contributing to the Documentation
+=================================
+
+If you are known to Sublime Text and want to contribute to this documentation,
+head over to the `github repo`_. We use `Sphinx`_ to create these pages.
+
+.. _github repo: http://sphinx-doc.org/
+.. _Sphinx: http://sphinx-doc.org/
+
+Furthermore, for every individual page in this documentation there are three
+github-related links in the left navigation column. Pick one appropriate to your
+needs.
