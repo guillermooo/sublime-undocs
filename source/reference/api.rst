@@ -1,6 +1,8 @@
 Python API
 ==========
 
+.. _api-official-docs:
+
 .. seealso::
 
     `Official Documentation for Sublime Text 2 <http://www.sublimetext.com/docs/2/api_reference.html>`_
@@ -16,13 +18,24 @@ Missing in the official docs
 There are quite a few things that are not (yet) documented in the official docs,
 this section tries to solve this.
 
+
+.. #############################################################################
+.. # sublime docs
+.. #############################################################################
+
 .. py:module:: sublime
 
 .. py:class:: Window
 
+    This class represents windows in Sublime Text and provides an interface of
+    methods to interact with them. For all available methods, see the
+    `official documentation <http://www.sublimetext.com/docs/2/api_reference.html#sublime.Window>`__.
+
     .. py:method:: set_layout(layout)
 
-        Expects a dictionatry like this::
+        Changes the group layout of the current window.
+
+        Expects a dictionary like this::
 
             {"cols": [float], "rows": [float], "cells": [[int]]}
 
@@ -87,8 +100,95 @@ this section tries to solve this.
                                         [1, 1, 2, 2]]
             })
 
-        :param layout: dictionary with layout options, see below
-        :returns: None
+
+.. py:class:: View
+
+    Similar to :py:class:`Window`, this class represents views in Sublime Text
+    and provides an interface of methods to interact with them. For all
+    available methods, see the
+    `official documentation <http://www.sublimetext.com/docs/2/api_reference.html#sublime.View>`__.
+
+    .. py:method:: match_selector(point, selector)
+
+        Matches the scope at ``point`` against the specified ``selector``.
+
+        Equivalent to::
+
+            view.score_selector(point, selector) != 0
+
+        or::
+
+            sublime.score_selector(view.scope_name(point), selector) != 0
+
+
+.. #############################################################################
+.. # sublime_plugin docs
+.. #############################################################################
+
+
+.. py:module:: sublime_plugin
+
+.. py:class:: EventListener
+
+    .. py:method:: on_query_completions(view, prefix, locations)
+
+        Called whenever the completion list is requested.
+
+        This accounts for all views and all windows, so in order to provide
+        syntax-specific completions you should test the current scope of
+        ``locations`` with :py:meth:`~sublime.View.match_selector`.
+
+        **view**
+            A :py:class:`~sublime.View` instance for which the completions should
+            be made.
+
+        **prefix**
+            The text entered so far. This is only until the next word separator.
+
+        **locations**
+            Array of points in ``view`` where the completion should be
+            inserted. This can be interpreted as the current selection.
+
+            If you want to handle completions that depend on word separator
+            characters you need to test each location individually. See
+            :ref:`completions-multi-cursor` on how Sublime Text handles
+            completions with multiple cursors.
+
+        *Return value*
+            Expects two (three) formats for return values:
+
+            1.  :samp:`[[{trigger}, {contents}], ...]`
+
+                A **list** of completions similar to
+                :ref:`completions-trigger-based` but without mapping keys.
+                *trigger* may use the ``\\t`` description syntax.
+
+                **Note:** In Sublime Text 3, completions may also consist of
+                plain strings instead of the trigger-contents-list.
+
+            2.  :samp:`([[{trigger}, {contents}], ...], {flags})`
+
+                Basically the same as above but wrapped in a 2-sized **tuple**.
+                The second element, the *flags*, may be a bitwise OR combination
+                of these flags:
+
+                ``sublime.INHIBIT_WORD_COMPLETIONS``
+                    Prevents Sublime Text from adding its word completions to
+                    the completion list after all plugins have been processed.
+
+                ``sublime.INHIBIT_EXPLICIT_COMPLETIONS``
+                    XXX What does this do?
+
+                Flags are shared among all completions, once set by one
+                plugin you can not revert them.
+
+            3.  Anything else (e.g. ``None``)
+
+                No effect.
+
+        **Example**:
+            See :ref:`plugins-completions-example` for an example on how to use
+            this event.
 
 
 Exploring the API
@@ -96,10 +196,10 @@ Exploring the API
 
 A quick way to see the API in action:
 
-#. Add ``Packages\Default`` (**Preferences | Browse Packages…**) to your project.
-#. ``CTRL + SHIFT + F``
+#. Add :file:`Packages/Default` (**Preferences | Browse Packages…**) to your project.
+#. :kbd:`Ctrl + Shift + F`
 #. Enter ``*.py`` in the **In Files:** field
 #. Check ``Use Buffer`` option
 #. Search API name
-#. ``F4``
+#. :kbd:`F4`
 #. Study relevant source code
