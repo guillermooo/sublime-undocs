@@ -123,6 +123,8 @@ Commands
 	- **file** [String]: Absolute or relative :ref:`path <cmd-about-paths>`
 	  to the file to be opened. Relative paths will originate from the recently
 	  accessed directory (e.g. the directory of the currently opened file).
+	- **contents** [String]: This string will be written to the new buffer if
+	  the file does not exist.
 
 **open_dir**
 	Opens the specified directory with the default file manager.
