@@ -3,6 +3,7 @@
 
 - hook up the topical guide from the index and vice versa
 - eventually make the topical guide the front page, and refer to the toc from there
+- ?
 
 
 DONE
