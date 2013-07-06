@@ -10,7 +10,7 @@ Plugins
         More information about plugins.
 
 
-Sublime Text 2 is programmable with Python scripts. Plugins reuse existing
+Sublime Text is programmable with Python scripts. Plugins reuse existing
 commands or create new ones to build a feature. Plugins are a logical entity,
 rather than a physical one.
 
@@ -26,7 +26,7 @@ In order to write plugins, you must be able to program in Python_.
 Where to Store Plugins
 **********************
 
-Sublime Text 2 will look for plugins directly in these places:
+Sublime Text will look for plugins directly in these places:
 
 * ``Packages``
 * ``Packages/<pkg_name>/``
@@ -41,7 +41,7 @@ confusing results if your plugins live outside a package.
 Your First Plugin
 *****************
 
-Let's write a "Hello, World!" plugin for Sublime Text 2:
+Let's write a "Hello, World!" plugin for Sublime Text:
 
 #. Select **Tools | New Plugin...** in the menu.
 #. Save to ``Packages/User/hello_world.py``.
@@ -68,7 +68,7 @@ The plugin created in the previous section should look roughly like this::
 
 
 Both the ``sublime`` and ``sublime_plugin`` modules are provided by
-Sublime Text 2.
+Sublime Text.
 
 All new commands derive from the ``*Command`` classes defined in ``sublime_plugin``
 (more on this later).
@@ -87,7 +87,7 @@ Conventions for Command Names
 
 You might have noticed that our command is defined with the name ``ExampleCommand``,
 but we pass the string ``example`` to the API call instead. This is necessary because
-Sublime Text 2 normalizes command names, stripping the ``Command`` suffix and
+Sublime Text normalizes command names, stripping the ``Command`` suffix and
 separating ``CamelCasedPhrases`` with underscores, like this: ``snake_cased_phrases``.
 
 New commands should follow the CamelCase pattern for class names.
@@ -168,7 +168,7 @@ Another Plugin Example: Feeding the Completions List
 ----------------------------------------------------
 
 Let's create a plugin that fetches data from Google's Autocomplete service and then
-feeds it to the Sublime Text 2 completions list. Please note that, as ideas for
+feeds it to the Sublime Text completions list. Please note that, as ideas for
 plugins go, this a very bad one.
 
 ::

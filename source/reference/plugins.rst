@@ -13,7 +13,7 @@ Plugins are Python scripts implementing ``*Command`` classes from
 Where to Store Plugins
 **********************
 
-Sublime Text 2 will look for plugins in these places:
+Sublime Text will look for plugins in these places:
 
 * ``Packages``
 * ``Packages/<pkg_name>``
@@ -27,10 +27,10 @@ under ``Packages``.
 Conventions for Command Names
 *****************************
 
-By convention, Sublime Text 2 command class names are suffixed with ``Command``
+By convention, Sublime Text command class names are suffixed with ``Command``
 and written as ``CamelCasedPhrases``.
 
-However, Sublime Text 2 transforms the class names from ``CamelCasedPhrases``
+However, Sublime Text transforms the class names from ``CamelCasedPhrases``
 to ``snake_cased_phrases``. So, ``ExampleCommand`` would turn into ``example``
 and ``AnotherExampleCommand`` would turn into ``another_example``.
 
@@ -116,7 +116,7 @@ command.
 
 .. sidebar:: A Word of Warning about ``EventListener``
 
-	Expensive operations in event listeners can cause Sublime Text 2 to become
+	Expensive operations in event listeners can cause Sublime Text to become
 	unresponsive, especially in events triggered frequently, like
 	``on_modified`` and ``on_selection_modified``. Be careful of how much work
 	is done in these and don't implement events you don't need, even if they
