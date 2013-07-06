@@ -52,7 +52,7 @@ The *Data* Directory
 Nearly all of the interesting files for users live under the data directory.
 This is a platform-dependent location:
 
-.. XXX I'm using the portable installation, so doublecheck this.
+.. XXX I'm using the portable installation, so double check this.
 
 * **Windows**: *%APPDATA%\\Sublime Text 3*
 * **OS X**: *~/Library/Application Support/Sublime Text 3*
@@ -115,7 +115,7 @@ run them. The console also shows text output by Sublime Text or its plugins.
 Your System's Python vs the Sublime Text 3 Embedded Python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. XXX Doublecheck this
+.. XXX Double check this
 On **Windows** and **Linux**, Sublime Text 3 comes with its own Python
 interpreter and it's separate from your system's Python installation.
 
@@ -137,14 +137,14 @@ there simply must be a place to specify all your preferences.
 
 Among other things, you can modify the editor's behavior, add macros and
 snippets, extend menus... and even create whole new features --where *feature*
-means 'anything you can think of'. Ok, right, there might be things you can't
+means 'anything you can think of'. OK, right, there might be things you can't
 do, but you're definitely spoiled for choice.
 
 These configuration files are simple text files following a special structure
 or *format*: JSON predominates, but you'll find XML files and Python files
 too.
 
-In this guide, for brevitiy we refer collectively to all these disparate
+In this guide, for brevity we refer collectively to all these disparate
 configuration files as *resources*.
 
 Sublime Text will look for resources inside the packages folder. To keep
@@ -182,7 +182,7 @@ documentation.
 
 An evolution of Vintage called Vintageous_ offers a better Vi editing
 experience and is updated more often. Vintageous_ is an open source project,
-just as Vintage_, only it's not mantained by the Sublime Text owners.
+just as Vintage_, only it's not maintained by the Sublime Text owners.
 
 .. _Vintage: http://www.sublimetext.com/docs/3/vintage.html
 .. _Vintageous: http://guillermooo.bitbucket.org/Vintageous
