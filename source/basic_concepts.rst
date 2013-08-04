@@ -181,8 +181,8 @@ package is *ignored* by default. Read more about Vintage_ in the official
 documentation.
 
 An evolution of Vintage called Vintageous_ offers a better Vi editing
-experience and is updated more often. Vintageous_ is an open source project,
-just as Vintage_, only it's not maintained by the Sublime Text owners.
+experience and is updated more often than Vintage. Vintageous_ is an open
+source project, just as Vintage_.
 
 .. _Vintage: http://www.sublimetext.com/docs/3/vintage.html
 .. _Vintageous: http://guillermooo.bitbucket.org/Vintageous

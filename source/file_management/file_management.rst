@@ -5,59 +5,75 @@ File Navigation and File Management
 Goto Anything
 =============
 
-Goto Anything lets you **navigate the filesystem** swiftly. Open it with :kbd:`Ctrl+P`.
-As you type into the input area, names of open files and files in open
-folders will be searched, and a preview of the best match will be shown.
-This preview is *transient*; that is, it won't become the actual active buffer
-until you perform some operation on it. Transient views go away when you press
+Use Goto Anything to **navigate your project's files** swiftly. (More about
+projects later.)
+
+To open Goto Anything, press :kbd:`Ctrl+P`. As you type into the input area,
+all file names of files open within the editor (and of files in added folders
+too) will be searched, and a preview of the best match will be shown. This
+preview is *transient*; that is, it won't become the actual active view until
+you perform some operation on it. Transient views go away when you press
 :kbd:`Esc`. You will see transient views in other situations too.
 
-Goto Anything lives up to its name---there's more to it than locating files:
+But Goto Anything lives up to its name---there's more to it than searching
+files:
 
-To perform a **fuzzy search**, append ``#`` and then keep typing, like this:
+To perform a **fuzzy search** using Goto Anything, append ``#`` and keep
+typing, like this:
 
 ::
 
-	island#treasure
+	isl#trsr
 
-This instructs Sublime Text to perform a fuzzy search for *treasure* in the
-file whose name matches *island*. Pressing :kbd:`Ctrl+;` will open Goto
-Anything and insert ``#`` for you.
+This makes Sublime Text perform a fuzzy search for *trsr* in files whose name
+loosely matches *isl*. For example, you could find the word *treasure* inside
+a file named *island*.
 
-But there's more:
+To perform a fuzzy search in the current view, press :kbd:`Ctrl+;`.
 
-To **search symbols** in the active buffer, press :kbd:`Ctrl+R`. The operator
-``@`` can be used as explained above too.
+Fuzzy searches can detect transposed characters for clumsy fingers.
 
-To **go to a line number**, press :kbd:`Ctrl+G`. The operator ``:`` can be
-used as explained above too.
+And there's more:
 
-Searching for symbols will work only if the file types have symbols defined
-for them.
+To **search symbols** in the current view, press :kbd:`Ctrl+R`. As in the case
+of ``#``, the ``@`` operator can be used after file names too.
+
+To **go to a line number**, press :kbd:`Ctrl+G`. Again, the operator ``:`` can
+be used after file names, just as ``#`` and ``@``.
+
+Searching for symbols will only work if the active file type has symbols
+defined for it. Symbols are defined in *.tmLanguage* files.
+
+.. todo: Explain how to create symbols.
+
 
 Sidebar
 =======
 
-The sidebar gives you an overview of your project. Files and folders added to
-the sidebar will be available in Goto Anything, and for project-wide actions.
-Projects and the sidebar are closely related. There's always an open project,
-whether or not it's explicit.
+The sidebar gives an overview of the active project. Files and folders added
+to the sidebar will be available in Goto Anything as well as for project-wide
+actions (like project-wide searches). Projects and the sidebar are closely
+related.
+
+Note that there's always an active project, whether it's explicit or not.
 
 To **toggle** the sidebar, press :kbd:`Ctrl+K, Ctrl+B`.
 
 The sidebar can be navigated with the arrow keys, but first you need to give
-it the **input focus** by pressing :kbd:`Ctrl+0`. To return input focus to the
-buffer, press :kbd:`Esc`. Alternatively, you can use the mouse to the same
-effect, but why would you?
+it the **focus** by pressing :kbd:`Ctrl+0`. To return the focus to the view,
+press :kbd:`Esc`. Alternatively, you can use the mouse to the same effect, but
+why would you?
 
-The sidebar provides basic file management operations through the context menu.
+The sidebar provides basic file management operations through its context
+menu.
+
 
 Projects
 ========
 
-Essentially, projects group together sets of files and folders. Once you've
-set up a project by adding folders in a way that suits you, save it and
-give it a name.
+Projects group sets of files and folders to keep your work organized. Set up a
+project by adding folders in a way that suits you, and then save your new
+configuration.
 
 To save a project, go to **Project | Save Project As...**.
 
@@ -68,12 +84,46 @@ Wherever there's a `.sublime-project` file, you'll find an ancillary
 `.sublime-workspace` file too. The second one is created by Sublime Text and you
 shouldn't edit it yourself.
 
-Project files can define settings specific only to that project; there's more
-in the `official documentation`_.
+Project files can define settings specific to that project. More
+information in the `official documentation`_.
 
 .. _official documentation: http://www.sublimetext.com/docs/2/projects.html
 
-You can open a project from the **command line** by passing the *.sublime-
-project* file as an argument.
+.. todo: add settings example here.
 
-.. TODO: talk about settings related to projects
+You can open a project from the **command line** by passing the *.sublime-
+project* file as an argument to the Sublime Text executable.
+
+
+Workspaces
+==========
+
+Workspaces create subdivisions within an existing project. They can be seen as
+different views into a project. For example, you may only want to have a
+selected few files open while working on *Feature A*. Or perhaps you use a
+different pane layout when you're writing tests, etc. Workspaces help in these
+situations.
+
+**Workspaces behave very much like projects**. To create a new workspace, select
+**Project | New Workspace for Project**. To save the current workspace, select
+**Project | Save Workspace As...**.
+
+Workspaces are stored in JSON files with the *.sublime-workspace* extension.
+Contrary to *.sublime-project* files, **you should not** store *.sublime-
+workspace* files in a source code repository.
+
+To switch between different workspaces, use :kbd:`Ctrl+Alt+P`, exactly as you
+do with projects.
+
+
+Panes
+=====
+
+Panes are groups of views. In Sublime Text you can have multiple panes open
+at the same time.
+
+To create a new pane, press :kbd:`Ctrl+K, Ctrl+Up`. To destroy a pane,
+press :kbd:`Ctrl+K, Ctrl+Down`.
+
+To find further commands to manage the pane layout, look under **View |
+Layout** and related submenus.
