@@ -18,8 +18,8 @@ you perform some operation on it. Transient views go away when you press
 But Goto Anything lives up to its name---there's more to it than searching
 files:
 
-To perform a **fuzzy search** using Goto Anything, append ``#`` and keep
-typing, like this:
+To perform a **fuzzy text search** using Goto Anything, append ``#`` and
+keep typing, like this:
 
 ::
 
@@ -80,9 +80,8 @@ To save a project, go to **Project | Save Project As...**.
 To switch projects quickly, press :kbd:`Ctrl+Alt+P`.
 
 Project data are stored in JSON files with a `.sublime-project` extension.
-Wherever there's a `.sublime-project` file, you'll find an ancillary
-`.sublime-workspace` file too. The second one is created by Sublime Text and you
-shouldn't edit it yourself.
+Wherever there's a `.sublime-project` file, you may find an ancillary
+`.sublime-workspace` file too. Workspaces are explained further below.
 
 Project files can define settings specific to that project. More
 information in the `official documentation`_.
@@ -115,15 +114,21 @@ workspace* files in a source code repository.
 To switch between different workspaces, use :kbd:`Ctrl+Alt+P`, exactly as you
 do with projects.
 
+As with projects, you can open a workspace from the **command line** by
+passing the relevant *.sublime-workspace* file as an argument to the Sublime
+Text executable.
+
+.. TODO: Really?
+
 
 Panes
 =====
 
-Panes are groups of views. In Sublime Text you can have multiple panes open
+Panes are groups of Views. In Sublime Text you can have multiple panes open
 at the same time.
 
 To create a new pane, press :kbd:`Ctrl+K, Ctrl+Up`. To destroy a pane,
 press :kbd:`Ctrl+K, Ctrl+Down`.
 
-To find further commands to manage the pane layout, look under **View |
-Layout** and related submenus.
+To find further pane management commands, look under **View | Layout** and
+related submenus.
