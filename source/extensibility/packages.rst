@@ -2,7 +2,7 @@
 Packages
 ========
 
-Packages are simply folders under ``Packages``. They exist mainly for
+Packages are simply folders under :file:``Packages``. They exist mainly for
 organizational purposes, but Sublime Text follows a few rules when dealing with
 them. More on this later.
 
@@ -13,7 +13,7 @@ Here's a list of the typical resources living inside packages:
     - macros (``.sublime-macro``)
     - menus (``.sublime-menu``)
     - plugins (``.py``)
-    - preferences (``.tmPreferences``)
+    - syntax preferences (``.tmPreferences``)
     - settings (``.sublime-settings``)
     - syntax definitions (``.tmLanguage``)
     - snippets (``.sublime-snippet``)
@@ -59,19 +59,19 @@ Installation of Packages
 
 There are two main ways to install packages:
 
-	- ``.sublime-package`` files
-	- version control systems
+    - *.sublime-package* files
+    - version control systems
 
 Ultimately, installing a package is simply a matter of copying a folder
-containing Sublime Text resources thato ``Packages``. The only thing that
+containing Sublime Text resources to :file:``Packages``. The only thing that
 changes from one system to another is how you copy these files.
 
 .. sidebar:: Installing Packages vs Installed Packages
 
    Note that "installing a package" actually doesn't make that package a Sublime Text
-   installed package. *Installed packages* are ``.sublime-package`` files
+   installed package. *Installed packages* are *.sublime-package* files
    residing in the ``Installed Packages`` folder. In this guide, we use
-   *install a package* to mean copying a package to ``Packages``.
+   *install a package* to mean copying a package to :file:``Packages``.
 
    Sublime Text can restore any package located in ``Installed Packages``, but
    can't automatically restore the packages located in ``Packages``.
@@ -114,9 +114,9 @@ software.
 
 .. sidebar:: The ``User`` Package
 
-	Usually, unpackaged resources are stored in ``Packages/User``. If you
-	have a few loose snippets, macros or plugins, this is a good place to keep
-	them.
+    Usually, unpackaged resources are stored in ``Packages/User``. If you
+    have a few loose snippets, macros or plugins, this is a good place to keep
+    them.
 
 .. _merging-and-order-of-precedence:
 
@@ -124,7 +124,7 @@ Merging and Order of Precedence
 -------------------------------
 
 ``Packages/Default`` and ``Packages/User`` also receive special treatment when
-merging files (e.g. ``.sublime-keymap`` and ``.sublime-settings`` files).
+merging files (e. g. ``.sublime-keymap`` and ``.sublime-settings`` files).
 Before merging can take place, the files have to be arranged in some order. To
 that end, Sublime Text sorts them alphabetically by name, with the exception
 of the folders ``Default`` and ``User``. Files contained in ``Default`` will
