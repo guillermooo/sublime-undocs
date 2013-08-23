@@ -1,3 +1,4 @@
+========
 Snippets
 ========
 
@@ -6,17 +7,17 @@ need certain short fragments of text again and again. Use snippets to save yours
 tedious typing. Snippets are smart templates that will insert text for you,
 adapting it to their context.
 
-To create a new snippet, select **Tools | New Snippet...** Sublime Text will
-present you with an skeleton for it.
+To create a new snippet, select **Tools | New Snippet…**. Sublime Text will
+present you with an skeleton for a new snippet.
 
 Snippets can be stored under any package's folder, but to keep it simple while
-you're learning, you can save them to your ``Packages/User`` folder.
+you're learning, you can save them to your :file:`Packages/User` folder.
 
 Snippets File Format
 ********************
 
 Snippets typically live in a Sublime Text package. They are simplified XML files
-with the extension ``sublime-snippet``. For instance, you could have a
+with the extension *.sublime-snippet*. For instance, you could have a
 ``greeting.sublime-snippet`` inside an ``Email`` package.
 
 The structure of a typical snippet is as follows (including the default hints
@@ -50,7 +51,7 @@ these parts in turn.
           When the snippet is inserted, the tabs will be transformed into spaces
           if the option ``translateTabsToSpaces`` is ``true``.
 
-        - The ``content`` must be included in a ``<![CDATA[...]]>`` section.
+        - The ``content`` must be included in a ``<![CDATA[…]]>`` section.
           Snippets won't work if you don't do this!
 
         - The ``content`` of your snippet must not contain ``]]>`` because this
@@ -74,8 +75,8 @@ these parts in turn.
     See :ref:`scopes-and-scope-selectors` for more information.
 
 ``description``
-    Used for displaying the snippet in the Snippets menu. If unavailable, Sublime Text
-    defaults to the name of the snippet.
+    Used when showing the snippet in the Snippets menu. If not present, Sublime
+    Text defaults to the file name of the snippet.
 
 With this information, you can start writing your own snippets as described in
 the next sections.
@@ -83,6 +84,9 @@ the next sections.
 .. note::
     In the interest of brevity, we're only including the ``content``
     element's text in examples unless otherwise noted.
+
+
+.. _snippet-features:
 
 Snippet Features
 ****************
@@ -150,7 +154,8 @@ move backwards in the series with :kbd:`Shift+Tab`. If you press :kbd:`Tab` afte
 highest tab stop, Sublime Text will place the cursor at the end of the snippet's
 content, enabling you to resume normal editing.
 
-If you want to control where the exit point should be, use the ``$0`` mark.
+If you want to control where the exit point should be, use the ``$0`` mark. By
+default, the exit point is the end of the snippet.
 
 You can break out of the field cycle any time by pressing :kbd:`Esc`.
 
@@ -201,12 +206,10 @@ And you can nest placeholders within other placeholders too:
 Substitutions
 -------------
 
-.. WARNING::
-    This section is a draft and may contain inaccurate information.
-
-In addition to the placeholder syntax, tab stops can specify more complex operations
-with substitutions. Use substitutions to dynamically generate text based on a mirrored
-tab stop.
+In addition to the placeholder syntax, tab stops can specify more complex
+operations with substitutions. Use substitutions to dynamically generate text
+based on a mirrored tab stop. Of course, the tab stop you want to use as
+variable has to be mirrored somewhere else in the snippet.
 
 The substitution syntax has the following syntaxes:
 
@@ -214,13 +217,14 @@ The substitution syntax has the following syntaxes:
     - ``${var_name/regex/format_string/options}``
 
 **var_name**
-    The variable name: 1, 2, 3...
+    The variable name: 1, 2, 3…
 
 **regex**
-    Perl-style regular expression: See the `Boost library reference for regular expressions <http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html>`_.
+    Perl-style regular expression: See the `Boost library documentation for
+    regular expressions`_.
 
 **format_string**
-    See the `Boost library reference for format strings <http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html>`_.
+    See the `Boost library documentation for format strings`_.
 
 **options**
     Optional. May be any of the following:
@@ -230,6 +234,10 @@ The substitution syntax has the following syntaxes:
             Replace all occurrences of ``regex``.
         **m**
             Don't ignore newlines in the string.
+
+.. _`Boost library documentation for regular expressions`: http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html
+
+.. _`Boost library documentation for format strings`: http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html
 
 With substitutions you can, for instance, underline text effortlessly:
 
