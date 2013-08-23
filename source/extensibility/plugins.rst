@@ -1,3 +1,4 @@
+=======
 Plugins
 =======
 
@@ -26,7 +27,7 @@ In order to write plugins, you must be able to program in Python_.
 Where to Store Plugins
 **********************
 
-Sublime Text 2 will look for plugins directly in these places:
+Sublime Text 2 will only look for plugins in these places:
 
 * ``Packages``
 * ``Packages/<pkg_name>/``
@@ -43,13 +44,13 @@ Your First Plugin
 
 Let's write a "Hello, World!" plugin for Sublime Text 2:
 
-#. Select **Tools | New Plugin...** in the menu.
+#. Select **Tools | New Plugin…** in the menu.
 #. Save to ``Packages/User/hello_world.py``.
 
-You've just written your first plugin! Let's put it to use:
+You've just written your first plugin. Let's put it to use:
 
 #. Create a new buffer (``Ctrl+n``).
-#. Open the Python console (``Ctrl+```).
+#. Open the python console (``Ctrl+```).
 #. Type: ``view.run_command("example")`` and press enter.
 
 You should see the text "Hello, World!" in your new buffer.
@@ -77,7 +78,7 @@ The rest of the code is concerned with the particulars of ``TextCommand`` or wit
 the API. We'll discuss those topics in later sections.
 
 Before moving on, though, we'll look at how we invoked the new command. First we
-opened the Python console, and then we issued a call to ``view.run_command()``. This
+opened the python console, and then we issued a call to ``view.run_command()``. This
 is rather an inconvenient way of using plugins, but it's often useful when
 you're in the development phase of a plugin. For now, keep in mind that your commands
 can be accessed both through key bindings and by other means, just like other commands.
@@ -131,7 +132,8 @@ view is open. Requiring a view to exist in that case wouldn't make sense.
 Window command instances have a ``.window`` attribute to point to the window
 instance that created them.
 
-The ``.run()`` method of a window command needn't be passed any positional arguments.
+The ``.run()`` method of a window command does not take any required
+arguments.
 
 Text Commands
 -------------
@@ -164,6 +166,8 @@ Responding to Events
 Any command deriving from ``EventListener`` will be able to respond to events.
 
 
+.. _plugins-completions-example:
+
 Another Plugin Example: Feeding the Completions List
 ----------------------------------------------------
 
@@ -171,7 +175,7 @@ Let's create a plugin that fetches data from Google's Autocomplete service and t
 feeds it to the Sublime Text 2 completions list. Please note that, as ideas for
 plugins go, this a very bad one.
 
-::
+.. sourcecode:: py
 
 	import sublime, sublime_plugin
 
@@ -191,8 +195,15 @@ plugins go, this a very bad one.
 	        return sugs
 
 .. note::
-	Make sure you don't keep this plugin around after trying it or it will
-	interfere with Sublime Text's autocompletion.
+    Make sure you don't keep this plugin around after trying it or it will
+    interfere with the autocompletion system.
+
+.. seealso::
+
+    .. py:currentmodule:: sublime_plugin
+
+    :py:meth:`EventListener.on_query_completions`
+        Documentation on the API event used in this example.
 
 
 Learning the API
@@ -201,5 +212,6 @@ Learning the API
 In order to create plugins, you need to get acquainted with the Sublime Text
 API and the available commands. Documentation on both is scarce at the time of
 this writing, but you can read existing code and learn from it too. In
-particular, the ``Packages/Default`` folder contains many examples of
+particular, the :file:`Packages/Default` folder contains many examples of
 undocumented commands and API calls.
+
