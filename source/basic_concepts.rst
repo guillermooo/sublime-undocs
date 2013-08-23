@@ -11,8 +11,8 @@ Conventions in This Guide
 This guide is written from the perspective of a Windows user, but most
 instructions should require only trivial changes to work on other platforms.
 
-Relative paths (e.g. *Packages/User*) start at the *data directory* unless
-otherwise noted. The *data directory* is explained further below.
+Relative paths (e.g. :file:`Packages/User`) start at `the Data Directory`_
+unless otherwise noted.
 
 We assume default key bindings when indicating keyboard shortcuts. Due to the
 way Sublime Text maps keys to commands, **some key bindings won't match your
@@ -44,12 +44,12 @@ The *Data* Directory
 Sublime Text 2 stores nearly all of the interesting files for users under the
 data directory. This is a platform-dependent location:
 
-* **Windows**: *%APPDATA%\\Sublime Text 2*
-* **OS X**: *~/Library/Application Support/Sublime Text 2*
-* **Linux**: *~/.config/sublime-text-2*
+* **Windows**: :file:`%APPDATA%\\Sublime Text 2`
+* **OS X**: :file:`~/Library/Application Support/Sublime Text 2`
+* **Linux**: :file:`~/.config/sublime-text-2`
 
-For **portable installations**, look inside *Sublime Text 2/Data*. Here, the
-*Sublime Text 2* part refers to the directory to which you've extracted the
+For **portable installations**, look inside :file:`Sublime Text 2/Data`. Here,
+the *Sublime Text 2* part refers to the directory to which you've extracted the
 contents of the compressed file containing Sublime Text 2.
 
 Note that only in portable installations does a directory named *Data* exist.
@@ -63,7 +63,7 @@ This is a **key directory**: all resources for supported programming and
 markup languages are stored here. A *package* is a directory containing
 related files having a special meaning to Sublime Text.
 
-You can access the packages directory from the Sublime Text 2 menu
+You can access the packages directory from the Sublime Text menu
 (**Preferences | Browse Packages...**), or by means of an api call:
 ``sublime.packages_path()``. In this guide, we refer to this location as
 *Packages*, *packages path*, *packages folder* or *packages directory*.
@@ -71,40 +71,41 @@ You can access the packages directory from the Sublime Text 2 menu
 The ``User`` Package
 ^^^^^^^^^^^^^^^^^^^^
 
-*Packages/User* is a catch-all directory for custom plugins, snippets,
-macros, etc. Consider it your personal area in the packages folder. Sublime
-Text 2 will never overwrite the contents of *Packages/User* during upgrades.
+:file:`Packages/User` is a catch-all directory for custom plugins, snippets,
+macros, etc. Consider it your personal area in the packages folder. Sublime Text
+will never overwrite the contents of :file:`Packages/User` during upgrades.
 
 
 The Python Console and the Python API
 =====================================
 
 This information is especially interesting for programmers. For the rest of
-Sublime Text 2 users, you just need to know that Sublime Text enables users
-with programming skills to add their own features to the editor. (So go learn
-how to program; it's great fun!)
+Sublime Text users, you just need to know that it enables users with programming
+skills to add their own features to the editor. (So go learn how to program;
+it's great fun!)
 
-Sublime Text 2 comes with an embedded Python interpreter. It's an useful tool
-to inspect Sublime Text 2 settings and to quickly test API calls while you're
-writing plugins.
+Sublime Text comes with an embedded Python interpreter. It's an useful tool to
+inspect Sublime Text settings and to quickly test API calls while you're writing
+plugins.
 
-To open the Python console, press ``Ctrl+``` or select **View | Show Console**
+To open the Python console, press :kbd:`Ctrl+\`` or select **View | Show Console**
 in the menu.
 
 Confused? Let's try again more slowly:
 
 *Python* is a programming language known to be easy for beginners and very
 powerful at the same time. *API* is short for ‘Application Programming
-Interface', which is a fancy way of saying that Sublime Text 2 is prepared to
-be programmed by the user. Put differently, Subime Text gives the user access
-to its internals through Python. Finally, a *console* is a little window inside
+Interface', which is a fancy way of saying that Sublime Text is prepared to be
+programmed by the user. Put differently, Subime Text gives the user access to
+its internals through Python. Lastly, a *console* is a little window inside
 Sublime Text which lets you type in short snippets of Python code and run them.
 The console also shows text output by Sublime Text or its plugins.
 
-Your System's Python vs the Sublime Text 2 Embedded Python
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-On **Windows** and **Linux**, Sublime Text 2 comes with its own Python
+Your System's Python vs the Sublime Text Embedded Python
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On **Windows** and **Linux**, Sublime Text comes with its own Python
 interpreter and it's separate from your system's Python installation.
 
 On **OS X**, the system Python is used instead. Modifying your system version
@@ -112,7 +113,8 @@ of Python, such as replacing it with the MacPorts version, can cause problems
 for Sublime Text.
 
 The embedded interpreter is intended only to interact with the plugin API, not
-for general development.
+for general development. A few plugins may run into issues because the embedded
+or used interpreters are not the same on every OS.
 
 
 Packages, Plugins, Resources and Other Things That May Not Make Sense to You Now
@@ -120,7 +122,8 @@ Packages, Plugins, Resources and Other Things That May Not Make Sense to You Now
 
 For now, just keep in mind that almost everything in Sublime Text can be adapted
 to your needs. This vast flexibility is the reason why you will learn about so
-many settings files: there simply must be a place to specify all your preferences.
+many settings files: there simply must be a place to specify all your
+preferences.
 
 Configuration files in Sublime Text let you change the editor's behavior, add
 macros, snippets or create new features --where *feature* means ‘anything you can
@@ -143,7 +146,7 @@ Textmate Compatibility
 This information is mainly useful for Textmate expats who are now using Sublime
 Text. Textmate is an editor for the Mac.
 
-Sublime Text 2 is fairly compatible with Textmate bundles with the notable
+Sublime Text is fairly compatible with Textmate bundles with the notable
 exception of commands. Additionally, Sublime Text requires all syntax
 definitions to have the *.tmLanguage* extension, and all preferences files to
 have the *.tmPreferences* extension. This means that *.plist* files will be
