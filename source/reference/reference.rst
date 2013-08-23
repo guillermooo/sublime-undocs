@@ -9,13 +9,11 @@ the general index.
 .. toctree::
     :maxdepth: 2
 
-    snippets
     syntaxdefs
     build_systems
     key_bindings
     Settings <settings>
     Command Palette <command_palette>
-    completions
     plugins
     api
     commands
