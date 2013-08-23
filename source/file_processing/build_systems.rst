@@ -2,6 +2,12 @@
 Build Systems (Batch Processing)
 ================================
 
+.. seealso::
+
+   :doc:`Reference for build systems <../reference/build_systems>`
+        Complete documentation on all available options, variables, etc.
+
+
 Build systems let you run your files through external programs like
 :program:`make`, :program:`tidy`, interpreters, etc.
 
@@ -52,16 +58,10 @@ Where to Store Build Systems
 ============================
 
 Build systems must be located somewhere under the *Packages* folder
-(e.g. *Packages/User*). Many packages include their own build systems.
+(e. g. *Packages/User*). Many packages include their own build systems.
 
 
 Running Build Systems
 =====================
 
 Build systems can be run by pressing :kbd:`F7` or from **Tools | Build**.
-
-
-.. seealso::
-
-   :doc:`Reference for build systems <../reference/build_systems>`
-        Complete documentation on all available options, variables, etc.
