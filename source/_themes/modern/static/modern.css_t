@@ -1,0 +1,110 @@
+@import url("basic.css");
+
+html {
+	border-top: 4px solid #424242;
+}
+
+body {
+	color: #1C1C1C;
+	font-family: Arial;
+    margin-top: 0%;
+    margin-left: 3%;
+}
+
+/* Sphinx sidebar ===========================================================*/
+div.sphinxsidebar {
+	width: 300px;
+}
+
+div.sphinxsidebar {
+	color: #A6A6A6;
+	margin-left: 2%;
+}
+
+div.sphinxsidebar p.searchtip {
+	display: none;
+}
+
+div.sphinxsidebarwrapper > ul, div.sphinxsidebarwrapper > h4 {
+	display: none;
+}
+
+div.sphinxsidebarwrapper ul.main-locations {
+	display: block;
+}
+
+div.sphinxsidebarwrapper a {
+	font-weight: bold;
+}
+
+div.sphinxsidebarwrapper p.tagline {
+	font-size: 95%;
+	/*letter-spacing: 1px;*/
+	margin-top: 0em;
+	margin-bottom: 1.4em;
+}
+
+div.sphinxsidebarwrapper h2 {
+	margin-bottom: 0.1em;
+}
+
+#searchbox {
+	margin-top: 1.4em;
+}
+
+div.sphinxsidebarwrapper h3 {
+	font-weight: 700;
+}
+/*===========================================================================*/
+
+a:link {color:#208BE8;}      /* unvisited link */
+a:visited {color:#208BE8;}  /* visited link */
+a:hover {color:#208BE8;}  /* mouse over link */
+a:active {color:#208BE8;}  /* selected link */
+
+.document h1, h2, h3 {
+	color: #4F4F4F;
+	font-weight: 200;
+}
+
+.document h1 {
+	letter-spacing: -2pt;
+}
+
+.document h3 {
+	font-size: 1em;
+	font-weight: normal;
+}
+
+.section h1, .section h2 {
+	margin-left: -0.75em;
+}
+
+.section h2 {
+	margin-top: 1.5em;
+	font-size: 1.25em;
+}
+
+.section h3 {
+	font-weight: 600;
+	color: #5C5C5C;
+}
+
+.document p {
+	line-height: 120%;
+}
+
+div.documentwrapper {
+	padding-bottom: 3%;
+	border-right: solid 1px #F0F0F0;
+	background-color: white;
+	padding-right: 1%;
+	padding-left: 1%;
+	max-width: 40%;
+	min-width: 25%;
+	float: left;
+}
+
+div.footer {
+	color: #A6A6A6;
+}
