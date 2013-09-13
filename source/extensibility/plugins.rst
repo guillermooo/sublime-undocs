@@ -44,7 +44,7 @@ Your First Plugin
 
 Let's write a "Hello, World!" plugin for Sublime Text 2:
 
-#. Select **Tools | New Plugin…** in the menu.
+#. Select **Tools | New Pluginâ€¦** in the menu.
 #. Save to ``Packages/User/hello_world.py``.
 
 You've just written your first plugin. Let's put it to use:

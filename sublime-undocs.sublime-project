@@ -1,0 +1,25 @@
+{
+    "folders": [
+        {
+            "path": ".",
+            "folder_exclude_patterns": ["build"]
+        }
+    ],
+    "build_systems": [
+        {
+            "name": "Sphinx: Build HTML Docs",
+            "cmd": ["make", "html"],
+            "working_dir": "${project_path}",
+            "file_regex": "(.*?):(\\d*): .*",
+
+            "windows": {
+                "cmd": ["make.bat", "html"]
+            },
+
+            "selector": "text.restructuredtext"
+        }
+    ],
+    "settings": {
+        "rulers": [80]
+    }
+}

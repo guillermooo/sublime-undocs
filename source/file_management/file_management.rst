@@ -2,6 +2,8 @@
 File Navigation and File Management
 ===================================
 
+.. _fm-goto-anything:
+
 Goto Anything
 =============
 

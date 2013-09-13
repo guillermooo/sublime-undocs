@@ -13,3 +13,13 @@ DONE
 	- wont' preserve url structure anyway due to files reorg
 - a glossary seems to be in order (buffer, etc) ??
 - add appendixes for stuff like the key bindings? -reference section seems to be fine for this
+
+
+current
+=======
+
+- YAML languages
+- Package Control
+- tmPreferences
+- hidden settings
+- https://github.com/srusskih/SublimeJEDI/commit/a6e686b9db15326d8edd23d3700d57e993313057
