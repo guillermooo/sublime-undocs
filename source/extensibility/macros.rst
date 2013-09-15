@@ -18,7 +18,7 @@ desired steps one by one. When you're done, press :kbd:`Ctrl+q` again to stop
 the macro recorder. Your new macro won't be saved to a file, but kept in the
 macro buffer instead. You will now be able to run the recorded macro by
 pressing :kbd:`Ctrl+Shift+q` or save it to a file by selecting
-**Tools | Save macro…**.
+**Tools | Save macroâ€¦**.
 
 Note that the macro buffer will only remember the macro recorded latest. Also,
 recorded macros only capture commands sent to the buffer: window level

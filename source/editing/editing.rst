@@ -25,6 +25,7 @@ Windows
 
 * Right Mouse Button :kbd:`+ ⇧`
 * OR: Middle Mouse Button
+
 \
 
 * Add to selection: :kbd:`Ctrl`
@@ -43,6 +44,7 @@ OS X
 
 * Left Mouse Button + :kbd:`⌥`
 * OR: Middle Mouse Button
+
 \
 
 * Add to selection: :kbd:`⌘`

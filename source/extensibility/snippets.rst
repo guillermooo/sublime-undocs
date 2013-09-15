@@ -100,7 +100,7 @@ Sublime Text automatically sets the values of the variables listed below.
 You can also add your own variables to provide extra information. These custom
 variables are defined in ``.sublime-options`` files.
 
-======================    ====================================================================================
+=======================    =======================================================================
 **$PARAM1, $PARAM2...**    Arguments passed to the ``insert_snippet`` command. (Not covered here.)
 **$SELECTION**             The text that was selected when the snippet was triggered.
 **$TM_CURRENT_LINE**       Content of the cursor's line when the snippet was triggered.
@@ -113,7 +113,7 @@ variables are defined in ``.sublime-options`` files.
 **$TM_SELECTED_TEXT**      An alias for **$SELECTION**.
 **$TM_SOFT_TABS**          ``YES`` if ``translate_tabs_to_spaces`` is true, otherwise ``NO``.
 **$TM_TAB_SIZE**           Spaces per-tab (controlled by the ``tab_size`` option).
-======================    ====================================================================================
+=======================    =======================================================================
 
 Let's see a simple example of a snippet using variables:
 
