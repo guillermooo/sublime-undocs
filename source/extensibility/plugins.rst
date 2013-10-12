@@ -10,8 +10,8 @@ Plugins
         More information about plugins.
 
 
-Sublime Text is programmable with Python scripts. Plugins reuse existing
-commands or create new ones to build a feature. Plugins are a logical entity,
+You can write plugins for Sublime Text in Python. Plugins build features by
+reusing existing commands or creating new ones. Plugins are a logical entity,
 rather than a physical one.
 
 
@@ -19,6 +19,7 @@ Prerequisites
 *************
 
 In order to write plugins, you must be able to program in Python_.
+Sublime Text uses Python 3.
 
 .. _Python: http://www.python.org
 
@@ -28,14 +29,16 @@ Where to Store Plugins
 
 Sublime Text will look for plugins directly in these places:
 
+* ``Installed Packages`` (only *.sublime-package* files)
 * ``Packages``
 * ``Packages/<pkg_name>/``
 
-Consequently, any plugin nested deeper in ``Packages`` won't be loaded.
+Therefore, any plugin nested deeper in ``Packages`` won't be loaded.
 
-Keeping plugins just under ``Packages`` is discouraged, because Sublime Text
-sorts packages in a predefined way before loading them. So, you might get
-confusing results if your plugins live outside a package.
+Keeping plugins just under ``Packages`` is discouraged. Sublime Text sorts
+packages in a predefined way before loading them, so if you save plugins
+directly under ``Packages``, you might get confusing results if your plugins
+live outside a package.
 
 
 Your First Plugin
@@ -52,7 +55,7 @@ You've just written your first plugin! Let's put it to use:
 #. Open the Python console (``Ctrl+```).
 #. Type: ``view.run_command("example")`` and press enter.
 
-You should see the text "Hello, World!" in your new buffer.
+You should see the text "Hello, World!" in the newly created buffer.
 
 
 Analyzing Your First Plugin
@@ -73,24 +76,26 @@ Sublime Text.
 All new commands derive from the ``*Command`` classes defined in ``sublime_plugin``
 (more on this later).
 
-The rest of the code is concerned with the particulars of ``TextCommand`` or with
+The rest of the code is concerned with particulars of ``TextCommand`` or with
 the API. We'll discuss those topics in later sections.
 
-Before moving on, though, we'll look at how we invoked the new command. First we
-opened the Python console, and then we issued a call to ``view.run_command()``. This
-is rather an inconvenient way of using plugins, but it's often useful when
-you're in the development phase of a plugin. For now, keep in mind that your commands
-can be accessed both through key bindings and by other means, just like other commands.
+Before moving on, though, we'll look at how we invoked the new command. First
+we opened the Python console, and then we issued a call to
+``view.run_command()``. This is a rather inconvenient way of using plugins,
+but it's often useful when you're in the development phase of a plugin. For
+now, keep in mind that your commands can be accessed through key bindings
+and by other means, just like other commands.
 
 Conventions for Command Names
 -----------------------------
 
-You might have noticed that our command is defined with the name ``ExampleCommand``,
-but we pass the string ``example`` to the API call instead. This is necessary because
-Sublime Text normalizes command names, stripping the ``Command`` suffix and
-separating ``CamelCasedPhrases`` with underscores, like this: ``snake_cased_phrases``.
+You may have noticed that our command is named ``ExampleCommand``, but we
+passed the string ``example`` to the API call instead. This is necessary
+because Sublime Text standardizes command names by stripping the ``Command``
+suffix and separating ``PhrasesLikThis`` with underscores, like so:
+``phrases_like_this``.
 
-New commands should follow the CamelCase pattern for class names.
+New commands should follow the same naming pattern.
 
 
 Types of Commands
@@ -98,9 +103,8 @@ Types of Commands
 
 You can create the following types of commands:
 
-* Application commands (``ApplicationCommand``)
-* Window commands (``WindowCommand``)
-* Text commands (``TextCommand``)
+* Window commands (``sublime_plugin.WindowCommand``)
+* Text commands (``sublime_plugin.TextCommand``)
 
 When writing plugins, consider your goal and choose the appropriate type of
 commands for your plugin.
@@ -112,26 +116,23 @@ Shared Traits of Commands
 All commands need to implement a ``.run()`` method in order to work. Additionally,
 they can receive an arbitrarily long number of keyword parameters.
 
-
-Application Commands
---------------------
-
-Application commands derive from ``sublime_plugin.ApplicationCommand`` and
-can be executed with ``sublime.run_command()``.
+**Note:** Parameters to commands must be valid JSON values due to how ST
+serializes them internally.
 
 Window Commands
 ---------------
 
-Window commands operate at the window level. This doesn't mean you can't
-manipulate views from window commands, but rather that you don't need views
-in order for window commands to be available. For instance, the built-in
-command ``new_file`` is defined as a ``WindowCommand`` so it works, even when no
-view is open. Requiring a view to exist in that case wouldn't make sense.
+Window commands operate at the window level. This doesn't mean that you can't
+manipulate views from window commands, but rather that you don't need views in
+order for window commands to be available. For instance, the built-in command
+``new_file`` is defined as a ``WindowCommand`` so it works even when no view
+is open. Requiring a view to exist in that case wouldn't make sense.
 
 Window command instances have a ``.window`` attribute to point to the window
 instance that created them.
 
-The ``.run()`` method of a window command needn't be passed any positional arguments.
+The ``.run()`` method of a window command doesn't require any positional
+parameter.
 
 Text Commands
 -------------
@@ -142,21 +143,20 @@ in order to be available.
 View command instances have a ``.view`` attribute pointing to the view instance
 that created them.
 
-The ``.run()`` method of a text command needs to accept an ``edit`` instance as
-the first positional argument.
+The ``.run()`` method of text commands requires and ``edit`` instance as
+its first positional argument.
 
 Text Commands and the ``edit`` Object
 -------------------------------------
 
-The edit object groups any modifications to the view so as to enable undo and
-macros to work sensibly.
+The edit object groups any modifications to the view so that undo and macros
+work sensibly.
 
-You are responsible for creating and closing edit objects. To do
-so, you can call ``view.begin_edit()`` and ``edit.end_edit()``.
-For convenience, the currently open ``edit`` object gets passed to text
-commands' ``run`` method automatically.
-Additionally, many ``View`` methods require an edit object.
-
+**Note:** Contrary to older versions, Sublime Text 3 doesn't allow
+programmatic control over edit objects. The API is in charge of managing them.
+Plugin creators must ensure that all modifying operations occur inside the
+``.run`` method of a text command if they are creating a new one. Obviously,
+you can also use ``view.run_command`` to call existing commands.
 
 Responding to Events
 --------------------
@@ -167,9 +167,9 @@ Any command deriving from ``EventListener`` will be able to respond to events.
 Another Plugin Example: Feeding the Completions List
 ----------------------------------------------------
 
-Let's create a plugin that fetches data from Google's Autocomplete service and then
-feeds it to the Sublime Text completions list. Please note that, as ideas for
-plugins go, this a very bad one.
+Let's create a plugin that fetches data from Google's Autocomplete service and
+then feeds it to the Sublime Text completions list. Please note that, as ideas
+for plugins go, this a very bad one.
 
 ::
 
@@ -200,6 +200,9 @@ Learning the API
 
 In order to create plugins, you need to get acquainted with the Sublime Text
 API and the available commands. Documentation on both is scarce at the time of
-this writing, but you can read existing code and learn from it too. In
-particular, the ``Packages/Default`` folder contains many examples of
-undocumented commands and API calls.
+this writing, but you can read existing code and learn from it too.
+
+In particular, the ``$PATH_TO_SUBLIME/Packages/Default.sublime-package``
+contains many examples of undocumented commands and API calls. Note that you
+will first have to extract it to a folder if you want to take a look at its
+contents.
