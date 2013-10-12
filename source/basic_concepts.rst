@@ -115,13 +115,8 @@ run them. The console also shows text output by Sublime Text or its plugins.
 Your System's Python vs the Sublime Text 3 Embedded Python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. XXX Double check this
-On **Windows** and **Linux**, Sublime Text 3 comes with its own Python
-interpreter and it's separate from your system's Python installation.
-
-On **OS X**, the system Python is used instead. Modifying your system version
-of Python, such as replacing it with the MacPorts version, can cause problems
-for Sublime Text.
+Sublime Text 3 comes with its own Python interpreter and it's separate from
+your system's Python installation.
 
 The embedded interpreter is intended only to interact with the plugin API, not
 for general development.
