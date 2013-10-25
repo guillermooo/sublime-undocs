@@ -112,6 +112,11 @@ Options
     build systems. If ``name`` is *Run*, the variant will show up under the
     **Tools | Build System** menu and be bound to *Ctrl + Shift + B*.
 
+``syntax``
+    Optional. When provided, the build system output will be formatted with the
+    provided syntax definition.
+
+
 Capturing Error Output with ``file_regex``
 ------------------------------------------
 
