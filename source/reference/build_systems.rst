@@ -114,9 +114,8 @@ Options
 
 ``syntax``
     Optional. When provided, the build system output will be formatted with the
-    provided `syntax definition`_.
+    provided syntax definition.
 
-    .. _syntax definition: ../extensibility/syntaxdefs
 
 Capturing Error Output with ``file_regex``
 ------------------------------------------
