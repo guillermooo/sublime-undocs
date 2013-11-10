@@ -66,7 +66,7 @@ press :kbd:`Esc`. Alternatively, you can use the mouse to the same effect.
 Files opened from the sidebar create *semi-transient* views. Unlike transient
 views, *semi-transient* views show up as a new tab. You will be able to tell
 semi-transient views from other views because their tab text is shown in
-italics. When a new semi-transient view is opnened, any existing semi-
+italics. When a new semi-transient view is opened, any existing semi-
 transient view in the same pane gets automatically closed.
 
 The sidebar provides basic file management operations through its context
