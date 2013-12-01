@@ -60,7 +60,7 @@ find the *sublime_text.exe* executable inside that folder.
 OS X
 ====
 
-Download and open the *.dmg* file, and then drag the Sublime Text 2 bundle
+Download and open the *.dmg* file, and then drag the Sublime Text 3 bundle
 into the *Applications* folder.
 
 Linux
@@ -69,35 +69,55 @@ Linux
 You can download the package and uncompress it manually. Alternatively, you
 can use the command line.
 
+
+Ubuntu
+******
+
 **For i386**
 
 ::
 
     cd ~
-    wget http://c758482.r82.cf2.rackcdn.com/Sublime\ Text\ 2.0.1.tar.bz2
-    tar vxjf Sublime\ Text\ 2.0.1.tar.bz2
+    wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3047_i386.deb
 
 **For x64**
 
 ::
 
     cd ~
-    wget http://c758482.r82.cf2.rackcdn.com/Sublime Text 2.0.1 x64.tar.bz2
-    tar vxjf Sublime\ Text\ 2.0.1\ x64.tar.bz2
+    wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3047_amd64.deb
 
+Other Linux Distributions
+*************************
+
+**For i386**
+
+::
+
+    cd ~
+    wget http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3047_x32.tar.bz2
+    tar vxjf sublime_text_3_build_3047_x32.tar.bz2
+
+**For x64**
+
+::
+
+    cd ~
+    wget http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3047_x64.tar.bz2
+    tar vxjf sublime_text_3_build_3047_x64.tar.bz2
 
 Now we should move the uncompressed files to an appropriate location.
 
 ::
 
-    sudo mv Sublime\ Text\ 2 /opt/
+    sudo mv Sublime\ Text\ 3 /opt/
 
 
 Lastly, we create a `symbolic link` to use at the command line.
 
 ::
 
-    sudo ln -s /opt/Sublime\ Text\ 2/sublime_text /usr/bin/sublime
+    sudo ln -s /opt/Sublime\ Text\ 3/sublime_text /usr/bin/sublime
 
 
 In Ubuntu, if you also want to add Sublime Text to the Unity luncher, read on.
@@ -114,15 +134,15 @@ Then copy the following into it.
 ::
 
     [Desktop Entry]
-    Version=2.0.1
-    Name=Sublime Text 2
+    Version=3.0
+    Name=Sublime Text 3
     # Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
     # From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
     GenericName=Text Editor
 
     Exec=sublime
     Terminal=false
-    Icon=/opt/Sublime Text 2/Icon/48x48/sublime_text.png
+    Icon=/opt/Sublime Text 3/Icon/48x48/sublime_text.png
     Type=Application
     Categories=TextEditor;IDE;Development
     X-Ayatana-Desktop-Shortcuts=NewWindow
@@ -137,7 +157,7 @@ you're asked to enter your license, you should try running this command.
 
 ::
 
-    sudo chown -R username:username /home/username/.config /sublime-text-2
+    sudo chown -R username:username /home/username/.config /sublime-text-3
 
 Just replace `username` with your account's username. This should fix the
 permission error in the case that you opened up Sublime Text as root when you
@@ -153,7 +173,7 @@ Sublime Text has three release *channels*:
 * `Dev`_
 * `Nightly`_
 
-.. _Stable: http://www.sublimetext.com/2
+.. _Stable: http://www.sublimetext.com/3
 .. _Dev: http://www.sublimetext.com/dev
 .. _Nightly: http://www.sublimetext.com/nightly
 
