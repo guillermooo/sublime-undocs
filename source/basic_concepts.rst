@@ -107,7 +107,7 @@ Confused? Let's try again more slowly:
 *Python* is a programming language known to be easy for beginners and very
 powerful at the same time. *API* is short for 'Application Programming
 Interface', which is a fancy way of saying that Sublime Text 3 is prepared to
-be programmed by the user. Put differently, Subime Text gives the user access
+be programmed by the user. Put differently, Sublime Text gives the user access
 to its internals through Python. Finally, a *console* is a little window
 inside Sublime Text that lets you type in short snippets of Python code and
 run them. The console also shows text output by Sublime Text or its plugins.
