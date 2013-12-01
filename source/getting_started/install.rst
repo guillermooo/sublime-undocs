@@ -4,8 +4,8 @@ Installation
 
 The process of installing Sublime Text is different for each platform.
 
-Make sure to read the `conditions for use`_ on the official site. Sublime Text
-is not free.
+Make sure to read the `conditions for use`_ on the official site. **Sublime Text
+is not free**.
 
 .. _conditions for use: http://www.sublimetext.com/buy
 
