@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Sublime Text Unofficial Documentation'
-copyright = u'2012, Sublime Text Community'
+copyright = u'2013, Guillermo López-Anglada & The Sublime Text Community'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -212,5 +212,5 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'sublimetexthelp', u'Sublime Text Unofficial Documentation',
-     [u'Sublime Text Community'], 1)
+     [u'Guillermo López-Anglada', u'Sublime Text Community'], 1)
 ]
