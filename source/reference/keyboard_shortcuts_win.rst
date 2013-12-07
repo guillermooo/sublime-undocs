@@ -58,6 +58,8 @@ Editing
 | Ctrl + U        | soft undo; jumps to your last change before               |
 |                 | undoing change when repeated                              |
 +-----------------+-----------------------------------------------------------+
+| Alt + ⇧ +  W    | Wrap Selection in html tag                                |
++-----------------+-----------------------------------------------------------+
 
 Windows
 ```````
