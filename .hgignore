@@ -6,3 +6,5 @@ build/
 
 *.sublime-workspace
 
+*.swp
+

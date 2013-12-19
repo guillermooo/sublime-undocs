@@ -177,7 +177,7 @@ documentation.
 
 An evolution of Vintage called Vintageous_ offers a better Vi editing
 experience and is updated more often than Vintage. Vintageous_ is an open
-source project, just as Vintage.
+source project.
 
 .. _Vintage: http://www.sublimetext.com/docs/3/vintage.html
 .. _Vintageous: http://guillermooo.bitbucket.org/Vintageous
