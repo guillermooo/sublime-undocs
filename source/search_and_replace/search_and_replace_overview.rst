@@ -23,8 +23,8 @@ the search and replace facilities in Sublime Text, you should at least learn
 the basics of regular expressions. In this guide we won't explain how to use
 regular expressions.
 
-Typing out *regular expression* gets boring fast, and saying it actually is
-even more annoying, so instead nerds usually shorten that to *regexp* or *regex*.
+Typing out *regular expression* gets boring fast, and saying it is even more
+annoying, so instead nerds usually shorten that to *regexp* or *regex*.
 
 This is how a regex might look::
 
@@ -32,8 +32,9 @@ This is how a regex might look::
 
 Regexes are known to hurt people's feelings.
 
-To use regular expressions, first you need to activate them in the various
-search panels. Otherwise, the search term will be interpreted literally.
+To use regular expressions in Sublime Text, you first need to activate them in
+the various search panels. The search term will otherwise be interpreted
+literally.
 
 Sublime Text uses the `Boost syntax`_ for regular expressions.
 
