@@ -1,8 +1,9 @@
 Customizing Sublime Text
 ========================
 
-Sublime Text is highly customizable. In the topics below, we'll explain to you how
-you can adapt it to your needs and preferences.
+Sublime Text can be fully customized. In the following topics, we outline the
+most common options. In particular, **we don't cover** themes and color schemes,
+an immensely configurable area of Sublime Text.
 
 .. toctree::
     :maxdepth: 2

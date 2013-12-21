@@ -1,10 +1,12 @@
 Reference
 =========
 
-In this section you will find concise information about many aspects of Sublime Text.
+This section contains concise technincal information about Sublime Text. It is
+intended mainly as a quick reference for advanced users who want to modify
+Sublime Text's default behavior.
 
-If you're looking for a slow-paced introduction to any of these topics, try
-the general index.
+If you're looking for a gentler introduction to any of these topics, try the
+general index.
 
 .. toctree::
     :maxdepth: 2
