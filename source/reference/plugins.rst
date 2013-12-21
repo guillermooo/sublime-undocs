@@ -33,12 +33,12 @@ Conventions for Command Names
 By convention, Sublime Text command class names are suffixed with ``Command``
 and written as ``NamesLikeThisCommand``.
 
-However, command names are automatically transformed names from ``NamesLikeThisCommand``
+However, command names are automatically transformed from ``NamesLikeThisCommand``
 to ``name_like_this``. Thus, ``ExampleCommand`` would become ``example``,
 and ``AnotherExampleCommand`` would become ``another_example``.
 
 In names for classes defining commands, use ``NameLikeThisCommand``. To call a
-command from the API, use the standardized name (``name_like_this``).
+command from the API, use the standardized ``name_like_this``.
 
 
 Types of Commands
