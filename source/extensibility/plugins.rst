@@ -82,7 +82,7 @@ like the plugin API, menu files, macros, etc.
 Sublime Text Commands derive from the ``*Command`` classes defined in
 ``sublime_plugin`` (more on this later).
 
-The rest of the code in our example concerned with particulars of
+The rest of the code in our example is concerned with particulars of
 ``TextCommand`` or with the API. We'll discuss those topics in later sections.
 
 Before moving on, though, we'll look at how we invoked the new command: first
