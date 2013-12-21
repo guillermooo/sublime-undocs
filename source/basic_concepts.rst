@@ -29,21 +29,20 @@ With Great Power Comes A Lot of Questions
 
 Unquestionably a versatile tool for programmers, you don't need to be one in
 order to use Sublime Text, or even to configure it extensively. If you're a
-hacker, however, you are in for a great many pleasant surprises.
-
-Sublime Text can be infinitely customized and extended. You can start using it
-efficiently out of the box, but spending some time tailoring it to your exact
-needs will pay off great dividends.
+hacker, however, you are in for a great many pleasant surprises: Sublime Text
+can be infinitely customized and extended. You can start using it efficiently
+out of the box, but spending some time tailoring it to your exact needs will
+make it even better.
 
 This guide will teach you how to configure Sublime Text.
 
-You won't master Sublime Text in a day, but it's built on a handful of
-pervasive ideas that make for a consistent and easily understandable system.
+Sublime Text can't be mastered in a day, but it's built on a handful of
+pervasive ideas that make for a consistent and easily understandable system
+once all the pieces come together.
 
-In the following paragraphs, we'll outline a few key aspects that won't click
-in your mind until you've spent some time using the editor. Keep
-experimenting, keep looking around in this guide, and, eventually, everything
-will fall into place.
+In the following paragraphs, we'll outline key aspects that may not click
+in your mind until you've spent some time using the editor. Experiment,
+look around in this guide and, eventually, everything will fall into place.
 
 
 The *Data* Directory
@@ -70,8 +69,8 @@ indicated above.
 The *Packages* Directory
 ==============================
 
-This is a **key directory**: all resources for supported programming and
-markup languages are stored here. A *package* is a directory containing
+This is a **key directory**: all resources for supported programming and markup
+languages are stored here. A *package* is a directory or zip file containing
 related files having a special meaning for Sublime Text.
 
 You can access the packages directory from the main menu
@@ -83,7 +82,7 @@ The ``User`` Package
 ^^^^^^^^^^^^^^^^^^^^
 
 *Packages/User* is a catch-all directory for custom plugins, snippets,
-macros, etc. Consider it your personal area in the packages folder. Sublime
+macros, etc. Consider it your personal area within the packages folder. Sublime
 Text will never overwrite the contents of *Packages/User* during upgrades.
 
 
@@ -125,28 +124,29 @@ for general development.
 Packages, Plugins, Resources and Other Things That May Not Make Sense to You Now
 ================================================================================
 
-Almost every aspect of Sublime Text can be tweaked, extended or customized.
-This is all you need to understand for now. Well, that and that this vast
-flexibility is the reason why you'll learn about so many configuration files:
-there simply must be a place to specify all your preferences.
+Almost every aspect of Sublime Text can be extended or customized. For now, this
+is all you need to understand. This vast flexibility is the reason why you will
+learn about so many configuration files: there simply must be a place to specify
+all your preferences.
 
 Among other things, you can modify the editor's behavior, add macros and
 snippets, extend menus... and even create whole new features --where *feature*
 means 'anything you can think of'. OK, right, there might be things you can't
 do, but you're definitely spoiled for choice.
 
-These configuration files are simple text files following a special structure
-or *format*: JSON predominates, but you'll find XML files and Python files
-too.
+All these configuration files we're referring to are simple text files following
+a special structure or *format*: JSON predominates, but you'll find some XML
+files, and Python files too for the more advanced extensibility options.
 
-In this guide, for brevity we refer collectively to all these disparate
+In this guide, for brevity, we refer collectively to all these disparate
 configuration files as *resources*.
 
-Sublime Text will look for resources inside the packages folder. To keep
-things tidy, the editor has a notion of a *package*, which is a folder
-containing resources that belong together (maybe they all help compose emails
-faster, write HTML efficiently, enhance the coding experience for C, Ruby,
-Go...).
+Sublime Text will look for resources inside the packages folder. And what is a
+package, you ask? We'll talk at length about them, but the short version is
+that, to keep things tidy, the editor has a notion of a *package*, which is a
+folder containing resources that belong together (maybe they all help compose
+emails faster, write HTML efficiently, enhance the coding experience for C,
+Ruby, Go...).
 
 
 Textmate Compatibility
@@ -177,7 +177,7 @@ documentation.
 
 An evolution of Vintage called Vintageous_ offers a better Vi editing
 experience and is updated more often than Vintage. Vintageous_ is an open
-source project, just as Vintage_.
+source project, just as Vintage.
 
 .. _Vintage: http://www.sublimetext.com/docs/3/vintage.html
 .. _Vintageous: http://guillermooo.bitbucket.org/Vintageous
