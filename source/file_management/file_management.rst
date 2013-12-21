@@ -15,11 +15,9 @@ preview is *transient*; that is, it won't become the actual active view until
 you perform some operation on it. Transient views go away when you press
 :kbd:`Esc`. You will see transient views in other situations too.
 
-But Goto Anything lives up to its name---there's more to it than searching
-files:
+Goto Anything lives up to its name---there's more to it than searching files:
 
-To perform a **fuzzy text search** using Goto Anything, append ``#`` and
-keep typing, like this:
+To perform a **fuzzy text search**, append ``#`` and keep typing, like so:
 
 ::
 
@@ -27,22 +25,22 @@ keep typing, like this:
 
 This makes Sublime Text perform a fuzzy search for *trsr* in files whose name
 loosely matches *isl*. For example, you could find the word *treasure* inside
-a file named *island*.
+a file named *island.txt*.
 
-To perform a fuzzy search in the current view, press :kbd:`Ctrl+;`.
+To perform a fuzzy search quickly in the active view, you can press :kbd:`Ctrl+;`.
 
-Fuzzy searches can detect transposed characters for clumsy fingers.
+By the way, fuzzy searches can detect transposed characters for clumsy fingers.
 
 And there's more:
 
-To **search symbols** in the current view, press :kbd:`Ctrl+R`. As in the case
+To **search symbols** in the active view, press :kbd:`Ctrl+R`. As in the case
 of ``#``, the ``@`` operator can be used after file names too.
 
 To **go to a line number**, press :kbd:`Ctrl+G`. Again, the operator ``:`` can
 be used after file names, just as ``#`` and ``@``.
 
-Searching for symbols will only work if the active file type has symbols
-defined for it. Symbols are defined in *.tmLanguage* files.
+Note that searching for symbols will only work if the active file type has
+symbols defined for it. Symbols are defined in *.tmLanguage* files.
 
 .. todo: Explain how to create symbols.
 
@@ -50,11 +48,11 @@ defined for it. Symbols are defined in *.tmLanguage* files.
 Sidebar
 =======
 
-The sidebar gives an overview of the active project. Files and folders added
+The sidebar gives you an overview of the active project. Files and folders added
 to the sidebar will be available in Goto Anything as well as for project-wide
 actions (like project-wide searches).
 
-Projects and the sidebar are very closely related. It's important to note that
+Projects and the sidebar are closely related. It's important to note that
 there's always an active project, whether it's explicit or implicit.
 
 To **toggle** the sidebar, press :kbd:`Ctrl+K, Ctrl+B`.
@@ -98,6 +96,22 @@ information in the `official documentation`_.
 You can open a project from the **command line** by passing the *.sublime-
 project* file as an argument to the Sublime Text executable.
 
+Project files are meant to be committed to source code repositories.
+
+
+Notable Settings Related to The Sidebar and Projects
+====================================================
+
+These options control which files are shown in the sidebar and included in
+project-wide actions, such as searching files.
+
+	folder_exclude_patterns
+	file_exclude_patterns
+	binary_file_patterns
+
+To see a detailed description of their purpose, open the default settings file
+(*Default/Preferences.sublime-settings*) via the Command Palette (`Ctrl+P`).
+
 
 Workspaces
 ==========
@@ -108,7 +122,7 @@ example, you may want to have only a selected few files open while working on
 tests, etc. Workspaces help in these situations.
 
 **Workspaces behave very much like projects. To create a new workspace, select
-**Project | New Workspace for Project. To save the current workspace, select
+**Project | New Workspace for Project. To save the active workspace, select
 **Project | Save Workspace As....
 
 Workspaces data is stored in JSON files with the *.sublime-workspace*
@@ -129,11 +143,11 @@ Text executable.
 Panes
 =====
 
-Panes are groups of Views. In Sublime Text you can have multiple panes open
+Panes are groups of views. In Sublime Text you can have multiple panes open
 at the same time.
 
-To create a new pane, press :kbd:`Ctrl+K, Ctrl+Up`. To destroy a pane,
-press :kbd:`Ctrl+K, Ctrl+Down`.
+To create a new pane, press :kbd:`Ctrl+K, Ctrl+Up`. To close a pane, press
+:kbd:`Ctrl+K, Ctrl+Down`.
 
-To find further pane management commands, look under **View | Layout** and
+Further pane management commands can be found under **View | Layout** and
 related submenus.
