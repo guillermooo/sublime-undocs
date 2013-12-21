@@ -31,7 +31,7 @@ Conventions for Command Names
 *****************************
 
 By convention, Sublime Text command class names are suffixed with ``Command``
-and written as ``CamelCasedPhrases``.
+and written as ``NamesLikeThisCommand``.
 
 However, command names are automatically transformed names from ``NamesLikeThisCommand``
 to ``name_like_this``. Thus, ``ExampleCommand`` would become ``example``,
