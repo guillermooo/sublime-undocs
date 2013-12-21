@@ -17,6 +17,9 @@ whose purpose is to execute commands. The command palette is fed by entries in
 key binding of their own are good candidates for inclusion in a ``.sublime- commands``
 files.
 
+By default, the command palette includes many useful commands, and provides
+convenient access to individual settings as well as settings files.
+
 
 File Format (Commands Files)
 ============================
