@@ -125,6 +125,13 @@ of the *Default* and *User* folders. Files contained in *Default* will
 always go to the front of the list, and those in *User*, to the end.
 
 
+Ignored Packages
+****************
+
+To temporarily disable packages, you can add them to the `ignored_packages` list
+in your *Packages/User/Preferences.sublime-settings* file.
+
+
 Restoring Packages
 ******************
 
