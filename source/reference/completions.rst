@@ -9,6 +9,15 @@ File Format
 
 Completions are JSON files with the ``.sublime-completions`` extension.
 
+
+Where to Store Completions
+**************************
+
+Completions files can be stored anywhere under *Packages*. They can be included
+in ``.sublime-package`` archives too. If you're defining completions for your
+own use, *Packages/User* is the right place to keep them.
+
+
 Structure of a Completions List
 *******************************
 
