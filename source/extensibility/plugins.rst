@@ -9,8 +9,10 @@ Plugins
    :doc:`Plugins Reference <../reference/plugins>`
         More information about plugins.
 
+This section is intended for users with programming skills.
 
-You can write plugins for Sublime Text in Python. Plugins build features by
+
+Sublime Text can be extended through Python plugins. Plugins build features by
 reusing existing commands or creating new ones. Plugins are a logical entity,
 rather than a physical one.
 
@@ -19,7 +21,7 @@ Prerequisites
 *************
 
 In order to write plugins, you must be able to program in Python_.
-Sublime Text uses Python 3.
+At the time of this writing, Sublime Text used Python 3.
 
 .. _Python: http://www.python.org
 
@@ -27,18 +29,17 @@ Sublime Text uses Python 3.
 Where to Store Plugins
 **********************
 
-Sublime Text will look for plugins directly in these places:
+Sublime Text will look for plugins only in these places:
 
 * ``Installed Packages`` (only *.sublime-package* files)
 * ``Packages``
 * ``Packages/<pkg_name>/``
 
-Therefore, any plugin nested deeper in ``Packages`` won't be loaded.
+As a consequence, any plugin nested deeper in ``Packages`` won't be loaded.
 
-Keeping plugins just under ``Packages`` is discouraged. Sublime Text sorts
-packages in a predefined way before loading them, so if you save plugins
-directly under ``Packages``, you might get confusing results if your plugins
-live outside a package.
+Keeping plugins directly under ``Packages`` is discouraged. Sublime Text sorts
+packages in a predefined way before loading them, so if you save plugin files
+directly under ``Packages`` you might get confusing results.
 
 
 Your First Plugin
@@ -71,17 +72,22 @@ The plugin created in the previous section should look roughly like this::
 
 
 Both the ``sublime`` and ``sublime_plugin`` modules are provided by
-Sublime Text.
+Sublime Text; they are not part of the Python standard library.
 
-All new commands derive from the ``*Command`` classes defined in ``sublime_plugin``
-(more on this later).
+As we mentioned earlier, plugins reuse or create *commands*. Commands are an
+essential building block in Sublime Text. They are simply Python classes
+that can be called in similar ways from different Sublime Text facilities,
+like the plugin API, menu files, macros, etc.
 
-The rest of the code is concerned with particulars of ``TextCommand`` or with
-the API. We'll discuss those topics in later sections.
+Sublime Text Commands derive from the ``*Command`` classes defined in
+``sublime_plugin`` (more on this later).
 
-Before moving on, though, we'll look at how we invoked the new command. First
-we opened the Python console, and then we issued a call to
-``view.run_command()``. This is a rather inconvenient way of using plugins,
+The rest of the code in our example concerned with particulars of
+``TextCommand`` or with the API. We'll discuss those topics in later sections.
+
+Before moving on, though, we'll look at how we invoked the new command: first
+we opened the Python console and then we issued a call to
+``view.run_command()``. This is a rather inconvenient way of calling commands,
 but it's often useful when you're in the development phase of a plugin. For
 now, keep in mind that your commands can be accessed through key bindings
 and by other means, just like other commands.
@@ -107,7 +113,7 @@ You can create the following types of commands:
 * Text commands (``sublime_plugin.TextCommand``)
 
 When writing plugins, consider your goal and choose the appropriate type of
-commands for your plugin.
+commands.
 
 
 Shared Traits of Commands
@@ -134,13 +140,15 @@ instance that created them.
 The ``.run()`` method of a window command doesn't require any positional
 parameter.
 
+Window commands are able to route text commands to their window's active view.
+
 Text Commands
 -------------
 
-Text commands operate at the buffer level, so they require a buffer to exist
+Text commands operate at the view level, so they require a view to exist
 in order to be available.
 
-View command instances have a ``.view`` attribute pointing to the view instance
+Text command instances have a ``.view`` attribute pointing to the view instance
 that created them.
 
 The ``.run()`` method of text commands requires and ``edit`` instance as
@@ -149,14 +157,14 @@ its first positional argument.
 Text Commands and the ``edit`` Object
 -------------------------------------
 
-The edit object groups any modifications to the view so that undo and macros
-work sensibly.
+The edit object groups modifications to the view so that undo and macros work
+sensibly.
 
-**Note:** Contrary to older versions, Sublime Text 3 doesn't allow
-programmatic control over edit objects. The API is in charge of managing them.
+**Note:** Contrary to older versions, Sublime Text 3 doesn't allow programmatic
+control over edit objects. The API is in charge of managing their life cycle.
 Plugin creators must ensure that all modifying operations occur inside the
-``.run`` method of a text command if they are creating a new one. Obviously,
-you can also use ``view.run_command`` to call existing commands.
+``.run`` method of new text commands. To call existing commands, you can use
+``view.run_command(<cmd_name>, <args>)`` or similar API calls.
 
 Responding to Events
 --------------------
@@ -200,9 +208,10 @@ Learning the API
 
 In order to create plugins, you need to get acquainted with the Sublime Text
 API and the available commands. Documentation on both is scarce at the time of
-this writing, but you can read existing code and learn from it too.
+this writing, but you can read existing code and learn from it.
 
 In particular, the ``$PATH_TO_SUBLIME/Packages/Default.sublime-package``
 contains many examples of undocumented commands and API calls. Note that you
-will first have to extract it to a folder if you want to take a look at its
-contents.
+will first have to extract its content to a folder if you want to take a look at
+the code within. As an exercise, you can try creating a build system to do that
+on demand, and a project file to be able to peek at the sample code easily.
