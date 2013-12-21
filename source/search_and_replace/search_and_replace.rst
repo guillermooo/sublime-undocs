@@ -7,8 +7,9 @@ Search and Replace - Single File
 Searching
 =========
 
-To open the **search panel** for buffers, press ``Ctrl + F``. Some options in
-the search panel and search actions can be controlled with the keyboard:
+To open the **search panel** for the active file, press ``Ctrl + F``. Some
+options and actions available through this panel can be controlled from the
+keyboard:
 
 ==========================	===========
 Toggle Regular Expressions	``Alt + R``
@@ -24,11 +25,11 @@ Find All					``Alt + Enter``
 Incremental Search
 ==================
 
-The **incremental search panel** can be brought up with ``Ctrl + I``. The only
-difference with the regular search panel lies in the behavior of the ``Enter``
-key: in incremental searches, it will select the next match in the buffer and
-dismiss the search panel for you. Choosing between this panel or the regular
-search panel is mainly a matter of preference.
+The **incremental search panel** is bound to ``Ctrl + I``. The only difference
+with the regular search panel lies in the behavior of the ``Enter`` key: in
+incremental searches, it will select the next match in the file and dismiss
+the search panel for you. Choosing between this panel or the regular search
+panel is mainly a matter of preference.
 
 
 .. _snr-replace-buffer:
@@ -36,10 +37,11 @@ search panel is mainly a matter of preference.
 Replacing Text
 ==============
 
-You can open the replace planel with ``Ctrl + H``.
+To open the replace planel, press ``Ctrl + H``. Some actions available through
+this panel can be controlled from the keyboard.
 
 ==========================	======================
-Replace All:				``Ctrl + Alt + Enter``
+Replace All					``Ctrl + Alt + Enter``
 ==========================	======================
 
 .. xxx no key binding for replacing once?
@@ -50,16 +52,16 @@ Replace All:				``Ctrl + Alt + Enter``
 Tips
 ====
 
-Other Ways of Searching in Buffers
-----------------------------------
+Other Ways of Searching in Files
+--------------------------------
 
 .. todo: link to goto anything section
 
-Goto Anything provides the operator ``#`` to search in the current
-buffer. The search term will be the part following the ``#`` operator.
+**Goto Anything** provides the ``#`` operator to search in the active file. The
+search term will be the text following the operator.
 
-Other Key Bindings to Search in Buffers
----------------------------------------
+Other Search-Related Key Bindings
+---------------------------------
 
 These key bindings work when the search panel is hidden.
 
@@ -74,6 +76,5 @@ Select All Matches Using Most Recent Pattern	``Alt + F3``
 Multiline Search
 ----------------
 
-You can type a multiline search pattern. To enter a newline character, press
-``Ctrl + Enter`` in the search panel. Note that the search panel is resizable
-too.
+You can type in multiline search patterns into search panels. To enter newline
+characters, press ``Ctrl + Enter``. Note that search panels are resizable.
