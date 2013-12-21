@@ -91,10 +91,10 @@ when the edit is finished.
 
 Contrary to earlier versions of Sublime Text, the ``edit`` object's life time is
 now managed solely by the editor. Plugin authors must ensure to perform all
-editing operations within the ``.run()`` method of text commands so that macros
+editing operations within the ``run()`` method of text commands so that macros
 and repeating commands work as expected.
 
-To call other commands from your own commands, use the ``.run_command()``
+To call other commands from your own commands, use the ``run_command()``
 function.
 
 
@@ -109,7 +109,7 @@ command.
 
 	Expensive operations in event listeners can cause Sublime Text to become
 	unresponsive, especially in events triggered frequently, like
-	``.on_modified()`` and ``.on_selection_modified()``. Be careful of how much
+	``on_modified()`` and ``on_selection_modified()``. Be careful of how much
 	work is done in these and don't implement events you don't need, even if
 	they just ``pass``.
 
@@ -134,6 +134,6 @@ effect.
 Multithreading
 **************
 
-Only the ``.set_timeout()`` function is safe to call from different threads.
+Only the ``set_timeout()`` function is safe to call from different threads.
 
 .. XXX: Is this still true?
