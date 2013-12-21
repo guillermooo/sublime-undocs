@@ -50,8 +50,8 @@ It's worth noting that by *third party* we mainly refer to users of other
 editors, such as Textmate.
 
 
-Installation of Packages
-************************
+Package Installation
+*********************
 
 Ultimately, installing a package is simply a matter of copying a folder
 containing Sublime Text resources to ``Packages``, or a *.sublime-package*
@@ -121,8 +121,8 @@ Merging and Order of Precedence
 merging files (e.g. *.sublime-keymap* and *.sublime-settings* files).
 Before merging can take place, the files have to be arranged in some order. To
 that end, Sublime Text sorts them alphabetically by name, with the exception
-of the folders *Default* and *User*. Files contained in *Default* will
-always go to the front of the list and, those in *User*, to the end.
+of the *Default* and *User* folders. Files contained in *Default* will
+always go to the front of the list, and those in *User*, to the end.
 
 
 Restoring Packages
@@ -138,11 +138,14 @@ Reverting Sublime Text to Its Default Configuration
 ---------------------------------------------------
 
 To revert Sublime Text to its default configuration, delete the data directory
-and restart the editor. Keep in mind, though, that the ``Installed Packages``
-folder will be deleted too, so you'll lose all your installed packages.
+and restart the editor. Keep in mind that the ``Installed Packages`` folder will
+be deleted too, so you'll lose all your installed packages.
 
 Always make sure to back up your data before taking an extreme measure like
 this one.
+
+Reverting Sublime Text to a fresh state solves many problems that appear to be
+due to bugs in Sublime Text but are in fact caused by misbehaving plugins.
 
 
 The ``Installed Packages`` Directory
