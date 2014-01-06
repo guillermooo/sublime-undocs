@@ -45,25 +45,25 @@ Using the Mouse
 Windows
 
 ==========================	=====================================
-Select Block				Right Mouse Button ``+ ⇧``
-Add to Selection			``Ctrl`` + Right Mouse Button + ``⇧``
-Remove from Selection		``Alt`` + Right Mouse Button + ``⇧``
+Select Block				Right Mouse Button + ⇧
+Add to Selection			Ctrl + Right Mouse Button + ⇧
+Remove from Selection		Alt + Right Mouse Button + ⇧
 ==========================	=====================================
 
 Linux
 
 ==========================	=====================================
-Select Block				Right Mouse Button ``+ ⇧``
-Add to Selection			``Ctrl`` + Right Mouse Button + ``⇧``
-Remove from Selection		``Alt`` + Right Mouse Button + ``⇧``
+Select Block				Right Mouse Button + ⇧
+Add to Selection			Ctrl + Right Mouse Button + ⇧
+Remove from Selection		Alt + Right Mouse Button + ⇧
 ==========================	=====================================
 
 OS X
 
 =====================	=======================================
-Select Block			Right Mouse Button + ``⌥``
-Add to Selection		``⌘`` + Right Mouse Button + ``⇧``
-Remove from Selection	``⌘ + ⇧`` + Right Mouse Button + ``⇧``
+Select Block			Right Mouse Button + ⌥
+Add to Selection		⌘ + Right Mouse Button + ⇧
+Remove from Selection	⌘ + ⇧ + Right Mouse Button + ⇧
 =====================	=======================================
 
 
@@ -71,9 +71,9 @@ Using the Keyboard
 ------------------
 
 =====================	=============================================
-Windows					``Ctrl + Alt + Up`` and ``Ctrl + Alt + Down``
-Linux					``Alt + ⇧ + Up`` and ``Alt + ⇧ + Down``
-OS X					``⌃ + ⇧ + Up`` and ``⌃ + ⇧ + Down``
+Windows					Ctrl + Alt + Up and Ctrl + Alt + Down
+Linux					Alt + ⇧ + Up and Alt + ⇧ + Down
+OS X					⌃ + ⇧ + Up and ⌃ + ⇧ + Down
 =====================	=============================================
 
 
