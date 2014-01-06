@@ -8,54 +8,6 @@ Overview
 Sublime Text is brim-full of editing features. This topic just
 scratches the surface of what's possible.
 
-Column Selection
-================
-
-Column Selection can be used to select a rectangular area of a file.
-Column selection doesn't operate via a separate mode, instead it makes
-use of multiple selections.
-
-You can use additive selections to select multiple blocks of text, or
-subtractive selections to remove a block.
-
-Using the Mouse
----------------
-
-Windows
-
-* Right Mouse Button ``+ ⇧``
-* OR: Middle Mouse Button
-\
-
-* Add to selection: ``Ctrl``
-* Subtract from selection: ``Alt``
-
-Linux
-
-* Right Mouse Button ``+ ⇧``
-\
-
-* Add to selection: ``Ctrl``
-* Subtract from selection: ``Alt``
-
-OS X
-
-* Left Mouse Button + ``⌥``
-* OR: Middle Mouse Button
-\
-
-* Add to selection: ``⌘``
-* Subtract from selection: ``⌘ + ⇧``
-
-Using the Keyboard
-------------------
-
-Windows: ``Ctrl + Alt + Up`` and ``Ctrl + Alt + Down``
-
-Linux: ``Alt + ⇧ + Up`` and ``Alt + ⇧ + Down``
-
-OS X: ``⌃ + ⇧ + Up`` and ``⌃ + ⇧ + Down``
-
 Multiple Selections
 ===================
 
@@ -77,6 +29,52 @@ splits the selections into lines.
 You can copy multiple selected lines to a separate buffer, edit them there,
 select the content again as multiple lines and then paste them back into
 place in the first buffer.
+
+
+Column Selection
+================
+
+You can select a rectangular area of a file. Column selection makes use of
+multiple selections.
+
+It's possible to add blocks of text to or remove them from the selection.
+
+Using the Mouse
+---------------
+
+Windows
+
+==========================	=====================================
+Select Block				Right Mouse Button ``+ ⇧``
+Add to Selection			``Ctrl`` + Right Mouse Button + ``⇧``
+Remove from Selection		``Alt`` + Right Mouse Button + ``⇧``
+==========================	=====================================
+
+Linux
+
+==========================	=====================================
+Select Block				Right Mouse Button ``+ ⇧``
+Add to Selection			``Ctrl`` + Right Mouse Button + ``⇧``
+Remove from Selection		``Alt`` + Right Mouse Button + ``⇧``
+==========================	=====================================
+
+OS X
+
+=====================	=======================================
+Select Block			Right Mouse Button + ``⌥``
+Add to Selection		``⌘`` + Right Mouse Button + ``⇧``
+Remove from Selection	``⌘ + ⇧`` + Right Mouse Button + ``⇧``
+=====================	=======================================
+
+
+Using the Keyboard
+------------------
+
+=====================	=============================================
+Windows					``Ctrl + Alt + Up`` and ``Ctrl + Alt + Down``
+Linux					``Alt + ⇧ + Up`` and ``Alt + ⇧ + Down``
+OS X					``⌃ + ⇧ + Up`` and ``⌃ + ⇧ + Down``
+=====================	=============================================
 
 
 Other Ways of Selecting Text
