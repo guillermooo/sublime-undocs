@@ -98,7 +98,7 @@ Conventions for Command Names
 You may have noticed that our command is named ``ExampleCommand``, but we
 passed the string ``example`` to the API call instead. This is necessary
 because Sublime Text standardizes command names by stripping the ``Command``
-suffix and separating ``PhrasesLikThis`` with underscores, like so:
+suffix and separating ``PhrasesLikeThis`` with underscores, like so:
 ``phrases_like_this``.
 
 New commands should follow the same naming pattern.
@@ -151,7 +151,7 @@ in order to be available.
 Text command instances have a ``.view`` attribute pointing to the view instance
 that created them.
 
-The ``.run()`` method of text commands requires and ``edit`` instance as
+The ``.run()`` method of text commands requires an ``edit`` instance as
 its first positional argument.
 
 Text Commands and the ``edit`` Object
