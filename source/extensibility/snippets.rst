@@ -7,7 +7,7 @@ tedious typing. Snippets are smart templates that will insert text for you,
 adapting it to their context.
 
 To create a new snippet, select **Tools | New Snippet...** Sublime Text will
-present you with an skeleton for it.
+present you with a skeleton for it.
 
 Snippets can be stored under any package's folder, but to keep it simple while
 you're learning, you can save them to your ``Packages/User`` folder.
@@ -174,7 +174,7 @@ Placeholders
 
 By expanding the field syntax a little bit, you can define default values for
 a field. Placeholders are useful whenever there's a general case for your snippet,
-but still you still want to keep it customizable.
+but you still want to keep it customizable.
 
 .. code-block:: perl
 
