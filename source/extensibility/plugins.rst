@@ -151,7 +151,7 @@ in order to be available.
 Text command instances have a ``.view`` attribute pointing to the view instance
 that created them.
 
-The ``.run()`` method of text commands requires and ``edit`` instance as
+The ``.run()`` method of text commands requires an ``edit`` instance as
 its first positional argument.
 
 Text Commands and the ``edit`` Object
