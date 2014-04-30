@@ -201,6 +201,9 @@ Commands
 **toggle_tabs**
 	Shows or hides the tab bar.
 
+**toggle_menu**
+	Shows or hides the menu bar.
+
 **toggle_minimap**
 	Shows or hides the minimap.
 
