@@ -184,7 +184,7 @@ for plugins go, this a very bad one.
 	import sublime, sublime_plugin
 
 	from xml.etree import ElementTree as ET
-	from urllib import urlopen
+	from urllib.request import urlopen
 
 	GOOGLE_AC = r"http://google.com/complete/search?output=toolbar&q=%s"
 
