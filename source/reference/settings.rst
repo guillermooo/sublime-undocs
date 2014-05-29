@@ -100,10 +100,10 @@ Visual Settings
    the screen horizontally to see the clipped text.
 ``wrap_width``
    If greater than ``0``, wraps long lines at the specified column as opposed
-   to the window width. Only takes effect if ``wrap_width`` is set to ``true``.
+   to the window width. Only takes effect if ``word_wrap`` is set to ``true``.
 ``indent_subsequent_lines``
    If set to ``false``, wrapped lines will not be indented. Only takes effect
-   if ``wrap_width`` is set to ``true``.
+   if ``word_wrap`` is set to ``true``.
 ``draw_centered``
    If set to ``true``, text will be drawn centered rather than left-aligned.
 ``match_brackets``
