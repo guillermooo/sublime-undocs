@@ -48,4 +48,11 @@ Where to Store Macros
 Macro files can be stored in any package folder, and then will show up
 under **Tools | Macros | <PackageName>**.
 
+Key Binding for Macros
+**********************
+
+Macro files can be bound to key combinations by passing the macro file path to the `run_macro_file` like so::
+
+    {"keys": ["super+alt+l"], "command": "run_macro_file", "args": {"file": "res://Packages/User/Example.sublime-macro"}}
+
 
