@@ -61,6 +61,7 @@ Commands
 	- **empty_line** [Bool]
 	- **punct_begin** [Bool]
 	- **separators** [Bool]
+	- **extend** [Bool]: Whether to extend the selection. Defaults to ``false``.
 
 **move_to**
 	Advances the caret to predefined locations.
