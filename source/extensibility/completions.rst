@@ -1,6 +1,6 @@
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
 
 ===========
 Completions
@@ -163,7 +163,7 @@ Inserting a Literal Tab Character
 
 When ``tab_completion`` is enabled, you can press ``Shift+Tab`` to insert a
 literal tab character.
+
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.

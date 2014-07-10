@@ -1,13 +1,13 @@
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
 
 ========
 Packages
 ========
 
 Packages are simply folders under ``Packages``, or zip archives with the
-`.sublime-package` extension saved under ``Installed Packages``. 
+`.sublime-package` extension saved under ``Installed Packages``.
 
 Here's a list of typical resources that can be found inside packages:
 
@@ -164,7 +164,7 @@ The ``Installed Packages`` Directory
 
 You will find this folder in the data directory. It contains a copy of every
 ``sublime-package`` installed. It is used to restore ``Packages``.
+
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.

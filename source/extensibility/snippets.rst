@@ -1,6 +1,6 @@
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
 
 Snippets
 ========
@@ -246,7 +246,7 @@ With substitutions you can, for instance, underline text effortlessly:
 
           Original: Hey, Joe!
     Transformation: =========
+
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.

@@ -1,6 +1,6 @@
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
 
 ==================
 Search and Replace
@@ -43,7 +43,7 @@ literally.
 Sublime Text uses the `Boost syntax`_ for regular expressions.
 
 .. _Boost syntax: http://www.boost.org/doc/libs/1_47_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html
+
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.

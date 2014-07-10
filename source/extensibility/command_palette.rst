@@ -1,6 +1,6 @@
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
 
 ===============
 Command Palette
@@ -60,7 +60,7 @@ How to Use the Command Palette
 
 The command palette filters entries by context. This means that whenever you open it, you
 won't always see all the commands defined in every ``.sublime-commands`` file.
+
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.

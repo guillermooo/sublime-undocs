@@ -1,12 +1,12 @@
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
 
 ========================
 About This Documentation
 ========================
 
-This is the unofficial documentation for the Sublime Text editor. 
+This is the unofficial documentation for the Sublime Text editor.
 
 *The sublime what? What are you talking about!?*
 
@@ -19,7 +19,7 @@ If you're coming here for the first time, we encourage you to read through the
 :doc:`basic_concepts` section before you continue.
 
 Happy learning!
+
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.

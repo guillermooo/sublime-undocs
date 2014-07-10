@@ -1,6 +1,6 @@
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
 
 ============
 Installation
@@ -199,7 +199,7 @@ Finally, **nightly builds** are the bleeding edge, with frequent updates and
 also frequent problems of various degrees of severity. They are fun to try
 out, but do so at your own risk. Nightly builds are **only available for
 registered users**.
+
 .. warning::
 
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-
+   Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
