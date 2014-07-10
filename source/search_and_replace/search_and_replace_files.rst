@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 ===================================
 Search and Replace - Multiple Files
 ===================================
@@ -64,3 +68,7 @@ following key bindings:
 Next match			:kbd:`F4`
 Previous match		:kbd:`Shift + F4`
 ================	==============
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

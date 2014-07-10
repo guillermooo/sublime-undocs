@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 ==================
 Search and Replace
 ==================
@@ -43,3 +47,7 @@ Sublime Text uses Perl Regular Expression Syntax from the Boost library.
 	`Boost library documentation for format strings <http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html>`_
 		Documentation on format strings. Note that Sublime Text additionally
 		interprets :samp:`\\{n}` as :samp:`${n}`.
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

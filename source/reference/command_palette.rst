@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 ===============
 Command Palette
 ===============
@@ -41,3 +45,7 @@ How to Use the Command Palette
 
 Entries are filtered by current context. Not all entries will be visible at all
 times.
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

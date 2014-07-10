@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 Python API
 ==========
 
@@ -231,3 +235,7 @@ A quick way to see the API in action:
 #. Search API name
 #. :kbd:`F4`
 #. Study relevant source code
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

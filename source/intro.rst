@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 ========================
 About This Documentation
 ========================
@@ -30,3 +34,7 @@ head over to the `github repo`_. We use `Sphinx`_ to create these pages.
 Furthermore, for every individual page in this documentation there are three
 github-related links in the left navigation column. Pick one appropriate to your
 needs.
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

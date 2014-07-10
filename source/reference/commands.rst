@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 ========
 Commands
 ========
@@ -729,3 +733,7 @@ binding, in a macro, as a menu entry or in a plugin.
 - Similar to menus you can do exactly the same with *.sublime-command* files.
   See :doc:`/extensibility/completions` for some documentation on completion
   files.
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

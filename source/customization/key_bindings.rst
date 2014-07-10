@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 ============
 Key Bindings
 ============
@@ -73,4 +77,7 @@ This key binding translates to *clear snippet fields and resume normal editing
 if there is a next field available*. Thus, pressing :kbd:`ESC` when you are not
 cycling through snippet fields will **not** trigger this key binding (however,
 something else might occur instead if :kbd:`ESC` happens to be bound to a
-different context too ---and that's likely to be the case for :kbd:`ESC`).
+different context too ---and that's likely to be the case for :kbd:`ESC`)... warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

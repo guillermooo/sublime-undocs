@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 Syntax Definitions
 ==================
 
@@ -592,3 +596,7 @@ creation of syntax definitions.
 
     :doc:`/reference/syntaxdefs`
         Reference for snytax definitions
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
