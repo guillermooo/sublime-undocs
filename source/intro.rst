@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 ========================
 About This Documentation
 ========================
@@ -15,3 +19,7 @@ If you're coming here for the first time, we encourage you to read through the
 :doc:`basic_concepts` section before you continue.
 
 Happy learning!
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 .. _glossary:
 
 ========
@@ -31,3 +35,7 @@ Glossary
 
     overlay
         An input widget of a special kind. For example, Goto Anything is an overlay.
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 .. sublime: wordWrap false
 
 Snippets
@@ -104,3 +108,7 @@ Syntax:
             Replace all occurrences of ``regex``.
         ``m``
             Don't ignore newlines in the string.
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 =======
 Editing
 =======
@@ -102,3 +106,7 @@ And much, much more...
 The **Edit**, **Selection**, **Find** and **Goto** menus are good places to
 look for handy editing tools. You might end up using just a few of them,
 but the rest will still be there for when you need them.
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

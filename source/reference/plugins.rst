@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 Plugins
 =======
 
@@ -137,3 +141,7 @@ Multithreading
 Only the ``set_timeout()`` function is safe to call from different threads.
 
 .. XXX: Is this still true?
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

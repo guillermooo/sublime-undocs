@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 .. Sublime Docs documentation master file, created by
    sphinx-quickstart on Thu Sep 30 21:07:00 2010.
    You can adapt this file completely to your liking, but it should at least
@@ -29,3 +33,7 @@ Sublime Text Unofficial Documentation
 .. * :ref:`search`
 
 .. * :ref:`modindex`
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

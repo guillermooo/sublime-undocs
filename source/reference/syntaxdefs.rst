@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 .. sublime: wordWrap false
 
 Syntax Definitions
@@ -267,3 +271,7 @@ Escape Sequences
 Be sure to escape JSON/XML sequences as needed.
 
 .. EXPLAIN
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

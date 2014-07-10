@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 ============
 Key Bindings
 ============
@@ -74,3 +78,7 @@ if there is a next field available*. Thus, unless you are cycling through snippe
 fields, pressing :kbd:`ESC` will **not** trigger this key binding. (However,
 something else might occur instead if :kbd:`ESC` happens to be bound to a
 different context too---and that's likely to be the case for :kbd:`ESC`.)
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

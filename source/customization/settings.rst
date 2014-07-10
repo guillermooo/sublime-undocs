@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 ========
 Settings
 ========
@@ -126,3 +130,7 @@ Where to Store User Settings (Once Again)
 Whenever you want to save settings, especially if they should be preserved
 between software updates, place the corresponding *.sublime-settings* file in
 *Packages/User*.
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

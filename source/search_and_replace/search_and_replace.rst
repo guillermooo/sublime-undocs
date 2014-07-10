@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 ================================
 Search and Replace - Single File
 ================================
@@ -78,3 +82,7 @@ Multiline Search
 
 You can type in multiline search patterns into search panels. To enter newline
 characters, press ``Ctrl + Enter``. Note that search panels are resizable.
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+

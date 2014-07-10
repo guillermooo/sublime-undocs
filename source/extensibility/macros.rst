@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 ======
 Macros
 ======
@@ -48,4 +52,8 @@ Where to Store Macros
 Macro files can be stored in any package folder, and then will show up
 under **Tools | Macros | <PackageName>**.
 
+
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
 

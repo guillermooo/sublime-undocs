@@ -1,3 +1,7 @@
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
 Commands
 ********
 
@@ -415,3 +419,7 @@ Commands
 
 .. Some regex-related and search-related commands missing. they don's seem to
 .. be too useful.
+.. warning::
+
+   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
+
