@@ -534,15 +534,6 @@ At long last, here's the final syntax definition::
 
 There are more available constructs and code reuse techniques, but the above
 explanations should get you started with the creation of syntax definitions.
-<<<<<<< Updated upstream
-.. warning::
-
-   Want even better documentation for Sublime Text? You can  `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-=======
-
 
 .. warning::
-
    Want even better documentation for Sublime Text? You can `help <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
->>>>>>> Stashed changes
-
