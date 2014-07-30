@@ -84,3 +84,4 @@ Build systems can be run by pressing :kbd:`F7` or from **Tools | Build**.
 
 
 .. |AmountRaised| image:: https://www.bountysource.com/badge/team?team_id=841&style=raised
+   :target: https://www.bountysource.com/teams/st-undocs/fundraiser

@@ -23,3 +23,4 @@ But here's `Bruce Lee, screaming <http://splicd.com/LMUsa66JQc4/392/396>`_
 
 
 .. |AmountRaised| image:: https://www.bountysource.com/badge/team?team_id=841&style=raised
+   :target: https://www.bountysource.com/teams/st-undocs/fundraiser
