@@ -206,3 +206,4 @@ Empty your mind; be sublime, my friend.
 
 
 .. |AmountRaised| image:: https://www.bountysource.com/badge/team?team_id=841&style=raised
+   :target: https://www.bountysource.com/teams/st-undocs/fundraiser

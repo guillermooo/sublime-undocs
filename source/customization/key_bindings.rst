@@ -91,3 +91,4 @@ different context too ---and that's likely to be the case for :kbd:`ESC`)... war
 
 
 .. |AmountRaised| image:: https://www.bountysource.com/badge/team?team_id=841&style=raised
+   :target: https://www.bountysource.com/teams/st-undocs/fundraiser
