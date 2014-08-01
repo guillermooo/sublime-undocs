@@ -102,7 +102,7 @@ you just need to know that Sublime Text enables users with programming skills
 to add their own features to the editor. (So go learn how to program; it's
 great fun!)
 
-Sublime Text comes with an embedded Python interpreter. It's an useful tool
+Sublime Text comes with an embedded Python interpreter. It's a useful tool
 to inspect the editor's settings and to quickly test API calls while
 developing plugins.
 
