@@ -1,4 +1,3 @@
-
 ============
 Installation
 ============
@@ -180,5 +179,3 @@ Lastly, **nightly builds** are the bleeding edge, with frequent updates and
 also frequent problems of various degrees of severity. They are fun to try
 out, but do so at your own risk. Nighlty builds are **only available for
 registered users**.
-
-

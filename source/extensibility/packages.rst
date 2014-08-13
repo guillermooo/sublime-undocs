@@ -1,4 +1,3 @@
-
 ========
 Packages
 ========
@@ -165,6 +164,3 @@ The ``Pristine Packages`` Directory
 
 You will find this folder in the data directory. It contains a copy of every
 shipped and core package. It is used to restore ``Packages``.
-
-
-

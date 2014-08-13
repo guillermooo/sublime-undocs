@@ -1,4 +1,3 @@
-
 ========================
 Customizing Sublime Text
 ========================
@@ -13,7 +12,3 @@ you can adapt it to your needs and preferences.
     indentation
     key_bindings
     menus
-
-
-
-

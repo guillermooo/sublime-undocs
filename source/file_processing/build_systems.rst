@@ -1,4 +1,3 @@
-
 ================================
 Build Systems (Batch Processing)
 ================================
@@ -66,5 +65,3 @@ Running Build Systems
 =====================
 
 Build systems can be run by pressing :kbd:`F7` or from **Tools | Build**.
-
-

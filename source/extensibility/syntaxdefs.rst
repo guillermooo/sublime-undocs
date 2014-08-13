@@ -1,4 +1,3 @@
-
 Syntax Definitions
 ==================
 
@@ -593,5 +592,3 @@ creation of syntax definitions.
 
     :doc:`/reference/syntaxdefs`
         Reference for snytax definitions
-
-

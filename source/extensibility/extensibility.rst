@@ -1,4 +1,3 @@
-
 ======================
 Extending Sublime Text
 ======================
@@ -17,5 +16,3 @@ extensible editor.
     syntaxdefs
     plugins
     packages
-
-

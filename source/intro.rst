@@ -1,4 +1,3 @@
-
 ========================
 About This Documentation
 ========================
@@ -31,5 +30,3 @@ head over to the `github repo`_. We use `Sphinx`_ to create these pages.
 Furthermore, for every individual page in this documentation there are three
 github-related links in the left navigation column. Pick one appropriate to your
 needs.
-
-

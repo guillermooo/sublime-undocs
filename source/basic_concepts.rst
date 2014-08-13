@@ -1,4 +1,3 @@
-
 ==============
 Basic Concepts
 ==============
@@ -189,5 +188,3 @@ your breaking a sweat.
 Empty your mind; be sublime, my friend.
 
 .. _Bruce Lee's wisdom: http://www.youtube.com/watch?v=iO3sBulXpVw
-
-

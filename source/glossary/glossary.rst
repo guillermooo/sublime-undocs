@@ -1,4 +1,3 @@
-
 .. _glossary:
 
 ========
@@ -32,5 +31,3 @@ Glossary
 
     overlay
         An input widget of a special kind. For example, Goto Anything is an overlay.
-
-

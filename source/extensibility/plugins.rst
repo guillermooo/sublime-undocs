@@ -1,4 +1,3 @@
-
 =======
 Plugins
 =======
@@ -215,6 +214,3 @@ API and the available commands. Documentation on both is scarce at the time of
 this writing, but you can read existing code and learn from it too. In
 particular, the :file:`Packages/Default` folder contains many examples of
 undocumented commands and API calls.
-
-
-

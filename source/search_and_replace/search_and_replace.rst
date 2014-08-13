@@ -1,4 +1,3 @@
-
 ================================
 Search and Replace - Single File
 ================================
@@ -78,5 +77,3 @@ Multiline Search
 You can type a multiline search pattern. To enter a newline character, press
 :kbd:`Ctrl + Enter` in the search panel. Note that the search panel is resizable
 too.
-
-

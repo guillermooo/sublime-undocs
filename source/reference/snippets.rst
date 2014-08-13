@@ -1,4 +1,3 @@
-
 .. sublime: wordWrap false
 
 Snippets
@@ -105,5 +104,3 @@ Syntax:
             Replace all occurrences of ``regex``.
         ``m``
             Don't ignore newlines in the string.
-
-

@@ -1,4 +1,3 @@
-
 ===============
 Command Palette
 ===============
@@ -55,5 +54,3 @@ How to Use the Command Palette
 
 The command palette filters entries by context, so whenever you open it, you
 won't always see all the commands defined in every ``.sublime-commands`` file.
-
-

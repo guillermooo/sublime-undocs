@@ -1,4 +1,3 @@
-
 ===================================
 Search and Replace - Multiple Files
 ===================================
@@ -65,5 +64,3 @@ following key bindings:
 Next match			:kbd:`F4`
 Previous match		:kbd:`Shift + F4`
 ================	==============
-
-

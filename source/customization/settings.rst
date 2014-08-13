@@ -1,4 +1,3 @@
-
 ========
 Settings
 ========
@@ -148,5 +147,3 @@ Where to Store User Settings (Once Again)
 Whenever you want to save settings, especially if they should be preserved
 between software updates, place the corresponding *.sublime-settings* file in
 :file:`Packages/User`.
-
-

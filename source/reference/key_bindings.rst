@@ -1,4 +1,3 @@
-
 ============
 Key Bindings
 ============
@@ -260,5 +259,3 @@ To enable command logging, see `sublime.log_commands(flag)`_. This may help in
 debugging key maps.
 
 .. _sublime.log_commands(flag): http://www.sublimetext.com/docs/2/api_reference.html
-
-
