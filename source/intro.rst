@@ -1,10 +1,3 @@
-.. warning::
-
-   Want even better documentation for Sublime Text?
-
-   We are starting a new round of writing and editing to improve this guide in many ways. If you find it useful, please `support us <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-
-   |AmountRaised|
 
 ========================
 About This Documentation
@@ -38,14 +31,5 @@ head over to the `github repo`_. We use `Sphinx`_ to create these pages.
 Furthermore, for every individual page in this documentation there are three
 github-related links in the left navigation column. Pick one appropriate to your
 needs.
-.. warning::
-
-   Want even better documentation for Sublime Text?
-
-   We are starting a new round of writing and editing to improve this guide in many ways. If you find it useful, please `support us <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-
-   |AmountRaised|
 
 
-.. |AmountRaised| image:: https://www.bountysource.com/badge/team?team_id=841&style=raised
-   :target: https://www.bountysource.com/teams/st-undocs/fundraiser
