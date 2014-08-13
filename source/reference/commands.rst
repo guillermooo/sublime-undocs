@@ -1,4 +1,3 @@
-
 Commands
 ********
 
@@ -417,5 +416,3 @@ Commands
 
 .. Some regex-related and search-related commands missing. they don's seem to
 .. be too useful.
-
-

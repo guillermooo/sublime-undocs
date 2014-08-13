@@ -1,4 +1,3 @@
-
 Snippets
 ========
 
@@ -243,5 +242,3 @@ With substitutions you can, for instance, underline text effortlessly:
 
           Original: Hey, Joe!
     Transformation: =========
-
-

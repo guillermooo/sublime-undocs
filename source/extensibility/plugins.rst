@@ -1,4 +1,3 @@
-
 Plugins
 =======
 
@@ -216,5 +215,3 @@ contains many examples of undocumented commands and API calls. Note that you
 will first have to extract its content to a folder if you want to take a look at
 the code within. As an exercise, you can try creating a build system to do that
 on demand, and a project file to be able to peek at the sample code easily.
-
-

@@ -1,4 +1,3 @@
-
 ===============
 Command Palette
 ===============
@@ -42,5 +41,3 @@ How to Use the Command Palette
 
 Entries are filtered by current context. Not all entries will be visible at all
 times.
-
-

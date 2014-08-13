@@ -1,4 +1,3 @@
-
 ====================
 Settings (Reference)
 ====================
@@ -194,5 +193,3 @@ Input Settings
 ``command_mode``
    If set to ``true``, the buffer will ignore key strokes. Useful when emulating
    Vim's modal behavior.
-
-

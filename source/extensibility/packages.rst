@@ -1,4 +1,3 @@
-
 ========
 Packages
 ========
@@ -161,5 +160,3 @@ The ``Installed Packages`` Directory
 
 You will find this folder in the data directory. It contains a copy of every
 ``sublime-package`` installed. It is used to restore ``Packages``.
-
-

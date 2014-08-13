@@ -1,4 +1,3 @@
-
 ======
 Macros
 ======
@@ -48,6 +47,3 @@ Where to Store Macros
 
 Macro files can be stored in any package folder, and then will show up
 under **Tools | Macros | <PackageName>**.
-
-
-

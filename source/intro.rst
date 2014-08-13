@@ -1,4 +1,3 @@
-
 ========================
 About This Documentation
 ========================
@@ -16,5 +15,3 @@ If you're coming here for the first time, we encourage you to read through the
 :doc:`basic_concepts` section before you continue.
 
 Happy learning!
-
-

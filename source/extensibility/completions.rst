@@ -1,4 +1,3 @@
-
 ===========
 Completions
 ===========
@@ -160,5 +159,3 @@ Inserting a Literal Tab Character
 
 When ``tab_completion`` is enabled, you can press ``Shift+Tab`` to insert a
 literal tab character.
-
-

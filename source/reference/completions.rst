@@ -1,4 +1,3 @@
-
 Completions
 ===========
 
@@ -135,5 +134,3 @@ Inserting a Literal Tab
 
 If ``tab_completion`` is ``true``, you can press ``Shift+Tab`` after a prefix
 to insert a literal tab character.
-
-

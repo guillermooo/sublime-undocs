@@ -31,5 +31,3 @@ be JSON types. Here are a few examples of commands run from the Python console::
 
    :doc:`Reference for commands <../reference/commands>`
         Command reference.
-
-

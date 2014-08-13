@@ -1,4 +1,3 @@
-
 ===================================
 File Navigation and File Management
 ===================================
@@ -152,5 +151,3 @@ To create a new pane, press :kbd:`Ctrl+K, Ctrl+Up`. To close a pane, press
 
 Further pane management commands can be found under **View | Layout** and
 related submenus.
-
-

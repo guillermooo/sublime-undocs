@@ -1,4 +1,3 @@
-
 Python API
 ==========
 
@@ -19,5 +18,3 @@ A quick way to see the API in action:
 #. Search API name
 #. ``F4``
 #. Study relevant source code
-
-

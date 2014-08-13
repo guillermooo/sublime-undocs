@@ -1,4 +1,3 @@
-
 Plugins
 =======
 
@@ -138,5 +137,3 @@ Multithreading
 Only the ``set_timeout()`` function is safe to call from different threads.
 
 .. XXX: Is this still true?
-
-

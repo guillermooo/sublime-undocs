@@ -1,4 +1,3 @@
-
 Reference
 =========
 
@@ -24,5 +23,3 @@ general index.
     commands
     keyboard_shortcuts_win
     keyboard_shortcuts_osx
-
-

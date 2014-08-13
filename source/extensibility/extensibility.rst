@@ -1,4 +1,3 @@
-
 Extending Sublime Text
 ======================
 
@@ -16,5 +15,3 @@ with additional functionality.
     syntaxdefs
     plugins
     packages
-
-

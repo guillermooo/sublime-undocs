@@ -1,4 +1,3 @@
-
 ==============
 Basic Concepts
 ==============
@@ -202,5 +201,3 @@ you need it to be. In skilled hands, blah, blah, blah.
 Empty your mind; be sublime, my friend.
 
 .. _Bruce Lee's wisdom: http://www.youtube.com/watch?v=7ijCSu87I9k
-
-

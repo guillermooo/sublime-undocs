@@ -1,4 +1,3 @@
-
 ================================
 Search and Replace - Single File
 ================================
@@ -79,5 +78,3 @@ Multiline Search
 
 You can type in multiline search patterns into search panels. To enter newline
 characters, press ``Ctrl + Enter``. Note that search panels are resizable.
-
-
