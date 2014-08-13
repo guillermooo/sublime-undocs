@@ -41,10 +41,9 @@ To open the replace planel, press ``Ctrl + H``. Some actions available through
 this panel can be controlled from the keyboard.
 
 ==========================	======================
+Replace Next				``Ctrl + Shift + H``
 Replace All					``Ctrl + Alt + Enter``
 ==========================	======================
-
-.. xxx no key binding for replacing once?
 
 
 .. _snr-tips-buffer:
