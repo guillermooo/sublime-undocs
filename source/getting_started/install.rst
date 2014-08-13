@@ -1,10 +1,3 @@
-.. warning::
-
-   Want even better documentation for Sublime Text?
-
-   We are starting a new round of writing and editing to improve this guide in many ways. If you find it useful, please `support us <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-
-   |AmountRaised|
 
 ============
 Installation
@@ -204,13 +197,4 @@ also frequent problems of various degrees of severity. They are fun to try
 out, but do so at your own risk. Nightly builds are **only available for
 registered users**.
 
-.. warning::
 
-   Want even better documentation for Sublime Text?
-
-   We are starting a new round of writing and editing to improve this guide in many ways. If you find it useful, please `support us <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-
-   |AmountRaised|
-
-.. |AmountRaised| image:: https://www.bountysource.com/badge/team?team_id=841&style=raised
-   :target: https://www.bountysource.com/teams/st-undocs/fundraiser

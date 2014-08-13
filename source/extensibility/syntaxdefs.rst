@@ -1,11 +1,4 @@
-.. warning::
-
-   Want even better documentation for Sublime Text?
-
-   We are starting a new round of writing and editing to improve this guide in many ways. If you find it useful, please `support us <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-
-   |AmountRaised|
-
+==================
 Syntax Definitions
 ==================
 
@@ -534,13 +527,3 @@ At long last, here's the final syntax definition::
 
 There are more available constructs and code reuse techniques, but the above
 explanations should get you started with the creation of syntax definitions.
-
-.. warning::
-   Want even better documentation for Sublime Text?
-
-   We are starting a new round of writing and editing to improve this guide in many ways. If you find it useful, please `support us <https://www.bountysource.com/teams/st-undocs/fundraiser>`_.
-
-   |AmountRaised|
-
-.. |AmountRaised| image:: https://www.bountysource.com/badge/team?team_id=841&style=raised
-   :target: https://www.bountysource.com/teams/st-undocs/fundraiser
