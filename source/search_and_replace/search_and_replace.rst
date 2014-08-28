@@ -54,10 +54,8 @@ Tips
 Other Ways of Searching in Files
 --------------------------------
 
-.. todo: link to goto anything section
-
-**Goto Anything** provides the ``#`` operator to search in the active file. The
-search term will be the text following the operator.
++:ref:`Goto Anything <fm-goto-anything>` provides the operator ``#`` to search
+in the active file. The search term will be the text following the operator.
 
 Other Search-Related Key Bindings
 ---------------------------------
@@ -70,7 +68,9 @@ Search Backwards Using Most Recent Pattern		``Shift + F3``
 Select All Matches Using Most Recent Pattern	``Alt + F3``
 ===============================================	==============
 
-.. search under cursor ??
+.. XXX search under cursor ??
+
+.. _snr-multiline-search:
 
 Multiline Search
 ----------------
