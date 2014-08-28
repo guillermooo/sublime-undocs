@@ -1,6 +1,16 @@
-The following people have financially supported the writers of this guide.
+The following people have financially supported the writers of this guide
+through a fundraiser in July-August 2014.
 
 **Thanks a bunch to all of you!**
+
+---
+
+Even though their contribution arrived after the campaign's end, we'd like
+to make a special mention of Sublime Hq for their generous donation.
+
+- [sublimehq](https://www.sublimetext.com)
+
+---
 
 - [wbond](http://wbond.net)
 - [zchrykng](https://github.com/zchrykng)
