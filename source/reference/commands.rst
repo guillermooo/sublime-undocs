@@ -303,7 +303,7 @@ Commands
 **toggle_comment**
 	Comments or uncomments the active lines.
 
-	- **block** [Bool]: Whether to use a block comment.
+	- **block** [Bool]: Whether to insert a block comment.
 
 **join_lines**
 	Joins the current line with the next one.
