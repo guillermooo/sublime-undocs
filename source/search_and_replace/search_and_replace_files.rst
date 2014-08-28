@@ -27,11 +27,11 @@ define scopes in several ways:
 
 * Adding individual directories (Unix-style paths, even on Windows)
 * Adding/excluding files based on a pattern
-* Adding  symbolic locations (``<open folders>``, ``<open files>``)
+* Adding symbolic locations (``<open folders>``, ``<open files>``)
 
 It is also possible to combine these filters using commas; for example:
 
-	/C/Users/Joe/Top Secret,-*.html,<open files>
+	/C/Users/Joe/Top Secret,-\*.html,<open files>
 
 Press the **...** button in the search panel to display a menu containing
 these options.
