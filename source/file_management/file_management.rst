@@ -2,6 +2,8 @@
 File Navigation and File Management
 ===================================
 
+.. _fm-goto-anything:
+
 Goto Anything
 =============
 
@@ -44,6 +46,7 @@ symbols defined for it. Symbols are defined in *.tmLanguage* files.
 
 .. todo: Explain how to create symbols.
 
+.. _fm-sidebar:
 
 Sidebar
 =======
@@ -70,6 +73,7 @@ transient view in the same pane gets automatically closed.
 The sidebar provides basic file management operations through its context
 menu.
 
+.. _fm-projects:
 
 Projects
 ========
