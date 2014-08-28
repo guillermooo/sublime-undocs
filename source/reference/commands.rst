@@ -1,3 +1,4 @@
+********
 Commands
 ********
 
@@ -55,7 +56,8 @@ Commands
 **move**
 	Advances the caret by predefined units.
 
-	- **by** [Enum]: Values: *characters*, *words*, *word_ends*, *subwords*, *subword_ends*, *lines*, *pages*, *stops*.
+	- **by** [Enum]: Values: *characters*, *words*, *word_ends*, *subwords*,
++	  *subword_ends*, *lines*, *pages*, *stops*.
 	- **forward** [Bool]: Whether to advance or reverse in the buffer.
 	- **word_begin** [Bool]
 	- **empty_line** [Bool]
@@ -78,20 +80,25 @@ Commands
 **switch_file**
 	Switches between two files with the same name and different extensions.
 
-	- **extensions** [[String]]: Extensions (without leading dot) for which switching will be enabled.
+	- **extensions** [String]: Extensions (without leading dot) for which
+	  switching will be enabled.
 
 **close**
 	Closes the active view.
 
 **close_file**
-	Closes the active view and, under certain circumsances, the whole application.
+	Closes the active view and, under certain circumsances, the whole
+	application.
 	XXX Sounds kinda wrong.
 
+**exit**
+	Exits the whole application with all open windows.
+
 **save**
-        Saves the active file.
+	Saves the active file.
 
 **prompt_save_as**
-        Prompts for a new file name and saves the active file.
+    Prompts for a new file name and saves the active file.
 
 **toggle_sidebar**
 	Shows or hides the sidebar.
@@ -145,7 +152,8 @@ Commands
 **scroll_lines**
 	Scrolls lines in the view.
 
-	- **amount** [Float]: Positive values scroll lines down and negative values scroll lines up.
+	**amount** [Float]: Positive values scroll lines down and negative values
+	scroll lines up.
 
 **prev_view**
 	Switches to the previous view.
@@ -158,7 +166,7 @@ Commands
 
 **previous_view_in_stack**
 	Switches to the view that was active before the most recently active view.
-	I don't think this is very clear or even true.
+.. XXX I don't think this is very clear or even true.
 
 **select_all**
 	Select the view's content.
@@ -185,8 +193,8 @@ Commands
 	Hides the auto complete list.
 
 **insert_best_completion**
-	Inserts the best completion that can be inferred from the current context.
-	XXX Probably useless. XXX
+	| Inserts the best completion that can be inferred from the current context.
+	| XXX Probably useless. XXX
 
 	- **default** [String]: String to insert failing a best completion.
 
@@ -208,8 +216,9 @@ Commands
 	cycle.
 
 **commit_completion**
-	Inserts into the buffer the item that's currently selected in the auto
-	complete list. XXX Probably not useful for users. XXX
+	| Inserts into the buffer the item that's currently selected in the auto
+	  complete list.
+	| XXX Probably not useful for users. XXX
 
 **unindent**
 	Unindents.
@@ -220,7 +229,8 @@ Commands
 **expand_selection**
 	Extends the selection up to predifined limits.
 
-	- **to** [Enum]: Values: bol, hardbol, eol, hardeol, bof, eof, brackets, line.
+	- **to** [Enum]: Values: *bol*, *hardbol*, *eol*, *hardeol*, *bof*, *eof*,
+	  *brackets*, *line*.
 
 **find_under_expand**
 	Adds a new selection based on the current selection or expands the
@@ -239,7 +249,7 @@ Commands
 	Shows the requested overlay. Use the **hide_overlay** command to hide it.
 
 	- **overlay** [Enum]:
-                The type of overlay to show. Possible values:
+		The type of overlay to show. Possible values:
 
 		- *goto*: Show the `Goto Anything <http://docs.sublimetext.info/en/latest/file_management/file_management.html#goto-anything>`_ overlay.
 		- *command_palette*: Show the `command palette <http://docs.sublimetext.info/en/latest/extensibility/command_palette.html>`_.
@@ -250,7 +260,8 @@ Commands
 **show_panel**
 	Shows a panel.
 
-	- **panel** [Enum]: Values: incremental_find, find, replace, find_in_files, console
+	- **panel** [Enum]: Values: *incremental_find*, *find*, *replace*,
+	  *find_in_files*, *console* or *output.<panel_name>*.
 	- **reverse** [Bool]: Whether to search backwards in the buffer.
 	- **toggle** [Bool]: Whether to hide the panel if it's already visible.
 
@@ -301,7 +312,7 @@ Commands
 	Swaps the current line with the line above.
 
 **toggle_comment**
-	Comments or uncomments the active lines.
+	Comments or uncomments the active lines, if available.
 
 	- **block** [Bool]: Whether to insert a block comment.
 
@@ -312,7 +323,7 @@ Commands
 	Duplicates the current line.
 
 **auto_complete**
-	Opens the auto comeplete list.
+	Opens the auto complete list.
 
 **replace_completion_with_auto_complete**
 	XXX Useless for users. XXX
@@ -373,7 +384,8 @@ Commands
 	Makes the selection lower case.
 
 **title_case**
-	Capitalizes the selection's first character and turns the rest into lower case.
+	Capitalizes the selection's first character and turns the rest into lower
+	case.
 
 **swap_case**
 	Swaps the case of each character in the selection.
@@ -414,5 +426,5 @@ Commands
 **context_menu**
 	Shows the context menu.
 
-.. Some regex-related and search-related commands missing. they don's seem to
+.. Some regex-related and search-related commands missing. They don't seem to
 .. be too useful.
