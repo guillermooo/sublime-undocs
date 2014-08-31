@@ -10,7 +10,7 @@ Following our [fundraiser on BountySource][fundraiser] during July-August 2014,
 we've started revising all topics and adding new ones. You can follow our
 progress on our public [Trello board][trello].
 
-Huge thanks to [all our supporters](./BACKERS.md)!
+Huge thanks to [all our backers](./BACKERS.md)!
 
 
 ## Support Us
@@ -22,9 +22,9 @@ You can support our writing by treating us to a beer or sending a donation:
 
 ## Contributing
 
-We accept error reports and feature requests via our [issue tracker][] and
-encourage you to send pull requests (but we cannot guarantee they will always
-be merged).
+We accept error reports and requests for new content via our [issue tracker][]
+and encourage you to send pull requests (but we cannot guarantee they will
+always be merged).
 
 **Please follow our style guidelines as described in
 [CONTRIBUTING.md](./CONTRIBUTING.md).**
@@ -35,7 +35,7 @@ build system that builds the HTML docs using [Sphinx][].
 
 ### Building (HTML Preview)
 
-In order to build and preview the docs you'll need Sphinx, which in return
+In order to build and preview the docs you'll need Sphinx, which in turn
 requires **Python 2.7**. **Python 3+ will not work.**
 
     pip install sphinx
