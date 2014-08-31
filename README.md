@@ -1,50 +1,51 @@
 # Sublime Text Unofficial Documentation
 
 
-This project was started because the [official documentation][off-docs] of
-Sublime Text is lacking. You can visit it online on
-<http://docs.sublimetext.info/>, hosted via [ReadTheDocs][] and built using
-[Sphinx][].
+We started this project to fill the gaps in the Sublime Text
+[official documentation][off-docs]. You can visit this guide at
+<http://docs.sublimetext.info/>. It is hosted via [ReadTheDocs][] and built
+using [Sphinx][].
 
-Following our [fundraiser on BountySource][fundraiser] during July-August 2014
-we are currently in the process of revising all topics and adding more topics
-in general. You can follow our progress on our public [Trello board][trello].
+Following our [fundraiser on BountySource][fundraiser] during July-August 2014,
+we've started revising all topics and adding new ones. You can follow our
+progress on our public [Trello board][trello].
 
-Huge thanks to [all our supporters](./BACKERS.md)
+Huge thanks to [all our supporters](./BACKERS.md)!
 
 
-## Supporting
+## Support Us
 
-You can support us by treating us to a beer or alternatively sending a
-donation:
+You can support our writing by treating us to a beer or sending a donation:
 
 *PayPal/Gittip/Pledgie be here*
 
 
 ## Contributing
 
-You are free to submit any form of issue on our [issues][] page and we are very
-open to pull requests. Your PR will be reviewed and might not be accepted.
-**Please follow our (style) guidelines in
+We accept error reports and feature requests via our [issue tracker][] and
+encourage you to send pull requests (but we cannot guarantee they will always
+be merged).
+
+**Please follow our style guidelines as described in
 [CONTRIBUTING.md](./CONTRIBUTING.md).**
 
-A `.sublime-project` file is included in this repository with a few general
-settings and a build system that builds the HTML docs using [Sphinx][].
+This repository includes a `.sublime-project` with predefined settings and a
+build system that builds the HTML docs using [Sphinx][].
 
 
 ### Building (HTML Preview)
 
-In order to build and preview the docs you need Sphinx, which in return
-requires **Python 2.7**. Python 3+ does not work.
+In order to build and preview the docs you'll need Sphinx, which in return
+requires **Python 2.7**. **Python 3+ will not work.**
 
     pip install sphinx
 
-By default, a standard theme will be used, but you can make it use the
-ReadTheDocs theme by installing it as well:
+When previewing the docs, a standard Sphinx theme will be used by default, but
+you can install and use the ReadTheDocs theme if you prefer that:
 
     pip install sphinx_rtd_theme
 
-The build script will check for and use it, if the theme is available.
+If the theme is available, the build system will pick it up.
 
 
 [off-docs]: http://sublimetext.com/docs/3
