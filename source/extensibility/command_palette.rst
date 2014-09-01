@@ -7,6 +7,7 @@ Command Palette
    :doc:`Reference for Command Palette <../reference/command_palette>`
       Complete documentation on the command palette options.
 
+.. _ext-command-palette-overview:
 
 Overview
 ========
