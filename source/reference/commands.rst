@@ -168,6 +168,7 @@ Commands
 
 **previous_view_in_stack**
 	Switches to the view that was active before the most recently active view.
+	
 .. XXX I don't think this is very clear or even true.
 
 **select_all**
