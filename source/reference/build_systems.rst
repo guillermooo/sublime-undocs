@@ -1,3 +1,4 @@
+=============
 Build Systems
 =============
 
@@ -110,7 +111,7 @@ Options
 ``name``
     **Only valid inside a variant** (see ``variants``). Identifies variant
     build systems. If ``name`` is *Run*, the variant will show up under the
-    **Tools | Build System** menu and be bound to *Ctrl + Shift + B*.
+    **Tools | Build System** menu and be bound to :kbd:`Ctrl+Shift+B`.
 
 ``syntax``
     Optional. When provided, the build system output will be formatted with the
