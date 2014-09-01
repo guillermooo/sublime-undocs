@@ -42,13 +42,13 @@ Commands
 **run_macro_file**
 	Runs a *.sublime-macro* file.
 
-	- **file** [String]: Path to the macro file.
+	- **file** [String]: Relative path to the macro file.
 
 **insert_snippet**
 	Inserts a snippet from a string or *.sublime-snippet* file.
 
 	- **contents** [String]: Snippet as a string to be inserted.
-	- **name** [String]: Path to the *.sublime-snippet* file to be inserted.
+	- **name** [String]: Relative path to the *.sublime-snippet* file to be inserted.
 
 **insert**
 	Inserts a string.
