@@ -90,7 +90,7 @@ Syntax:
     - ``${var_name/regex/format_string/options}``
 
 ``var_name``
-    The name of the field to base the substitution on: 1, 2, 3...
+    The name of the field to base the substitution on: 1, 2, 3, SELECTION...
 ``regex``
     Perl-style regular expression: See the `Boost library documentation`_ for regular expressions.
 ``format_string``
