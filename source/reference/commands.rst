@@ -42,13 +42,13 @@ Commands
 **run_macro_file**
 	Runs a *.sublime-macro* file.
 
-	- **file** [String]: Path to the macro file.
+	- **file** [String]: Relative path to the macro file.
 
 **insert_snippet**
 	Inserts a snippet from a string or *.sublime-snippet* file.
 
 	- **contents** [String]: Snippet as a string to be inserted.
-	- **name** [String]: Path to the *.sublime-snippet* file to be inserted.
+	- **name** [String]: Relative path to the *.sublime-snippet* file to be inserted.
 
 **insert**
 	Inserts a string.
@@ -168,6 +168,7 @@ Commands
 
 **previous_view_in_stack**
 	Switches to the view that was active before the most recently active view.
+	
 .. XXX I don't think this is very clear or even true.
 
 **select_all**
