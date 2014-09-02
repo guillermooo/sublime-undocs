@@ -5,9 +5,10 @@ Build Systems
 Build systems let you run your files through external programs without leaving
 Sublime Text, and see the output they generate.
 
-Build systems consist of two---or optionally three---parts:
+Build systems consist of one --or optionally three-- parts:
 
 * Configuration data in JSON format (the *.sublime-build* file contents)
+* Optionally, a Sublime Text command driving the build process
 * A Sublime Text command driving the build process
 * An optional, external executable file (script or binary file)
 
@@ -18,7 +19,7 @@ specify the switches, options and environment information you want forwarded.
 The Sublime Text command then receives the data stored in the *.sublime-build*
 file. At this point, it can do whatever it needs to do, to *build* the files. By
 default, build systems will use the ``exec`` command implemented by
-*Packages/Default/exec.py*. As explained below, you can override this
+:file:`Packages/Default/exec.py`. As we'll explain below, you can override this
 command.
 
 Finally, the external program may be a shell script you've created to process
@@ -36,7 +37,7 @@ File Format
 
 *.build-system* files use JSON. Here's an example:
 
-.. sourcecode:: python
+.. sourcecode:: javascript
 
     {
         "cmd": ["python", "-u", "$file"],
@@ -83,6 +84,7 @@ These options are standard for all build systems.
     **Tools | Build System** menu and be bound to :kbd:`Ctrl+Shift+B`.
 
 .. _build-arbitrary-options:
+
 
 Arbitrary options
 -----------------
@@ -163,8 +165,9 @@ Platform-specific Options
 -------------------------
 
 The ``windows``, ``osx`` and ``linux`` elements let you provide
-platform-specific data in the build system. Here's an example::
+platform-specific data in the build system. Here's an example:
 
+.. sourcecode:: javascript
 
     {
         "cmd": ["ant"],
@@ -172,8 +175,7 @@ platform-specific data in the build system. Here's an example::
         "working_dir": "${project_path:${folder}}",
         "selector": "source.java",
 
-        "windows":
-        {
+        "windows": {
             "cmd": ["ant.bat"]
         }
     }
@@ -185,7 +187,9 @@ where ``ant.bat`` will be used instead.
 Variants
 --------
 
-Here's a contrived example of a build system with variants::
+Here's a contrived example of a build system with variants
+
+.. sourcecode:: javascript
 
     {
         "selector": "source.python",
