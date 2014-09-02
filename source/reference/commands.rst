@@ -20,6 +20,9 @@ would take a parameter like *Packages/SomeDir/SomeFile.Ext*.
 
 Generally, newer commands support the snippet-like syntax.
 
+Commands expect UNIX-style paths if not otherwise noted, including on
+Windows (for example, :file:`/c/Program Files/Sublime Text 2/sublime_plugin.py`).
+
 Often, relative paths in arguments to commands are assumed to start at the
 ``Data`` directory.
 
@@ -28,6 +31,9 @@ Variables in Paths as Arguments
 
 The same variables available to build systems are expanded in arguments to
 commands. See :ref:`build-system-variables` for more information.
+
+.. TODO: split into Window and Text (and Application) commands since they behave
+.. differently and require other call mechanisms when called from a plugin
 
 .. _cmd-list:
 
@@ -48,7 +54,8 @@ Commands
 	Inserts a snippet from a string or *.sublime-snippet* file.
 
 	- **contents** [String]: Snippet as a string to be inserted.
-	- **name** [String]: Relative path to the *.sublime-snippet* file to be inserted.
+	- **name** [String]: Relative :ref:`path <cmd-about-paths>` to the
+	  *.sublime-snippet* file to be inserted.
 
 **insert**
 	Inserts a string.
@@ -72,6 +79,13 @@ Commands
 
 	- **to** [Enum]: Values: *bol*, *eol*, *bof*, *eof*, *brackets*.
 	- **extend** [Bool]: Whether to extend the selection. Defaults to ``false``.
+
+**open_file**
+	Opens the specified file.
+
+	- **file** [String]: Absolute or relative :ref:`path <cmd-about-paths>`
+	  to the file to be opened. Relative paths will originate from the recently
+	  accessed directory (e.g. the directory of the currently opened file).
 
 **new_window**
 	Opens a new window.
@@ -205,10 +219,12 @@ Commands
 	XXX Useless for users. XXX
 
 **reindent**
-	XXX ??? XXX
+	Corrects indentation of the selection with regular expressions set in the
+	syntax's preferences. The base indentation will be that of the line before
+	the first selected line. Sometimes does not work as expected.
 
 **indent**
-	Increments indentation.
+	Increments indentation of selection.
 
 **next_field**
 	Advances the caret to the text snippet field in the current snippet field
@@ -224,13 +240,13 @@ Commands
 	| XXX Probably not useful for users. XXX
 
 **unindent**
-	Unindents.
+	Unindents selection.
 
 **toggle_overwrite**
 	Toggles overwriting on or off.
 
 **expand_selection**
-	Extends the selection up to predifined limits.
+	Extends the selection up to predefined limits.
 
 	- **to** [Enum]: Values: *bol*, *hardbol*, *eol*, *hardeol*, *bof*, *eof*,
 	  *brackets*, *line*.
@@ -335,10 +351,34 @@ Commands
 **show_scope_name**
 	Shows the name for the caret's scope in the status bar.
 
-**exec**
-	Runs an external process asynchronously.
+.. _cmd-exec:
 
-	XXX Document all options.
+**exec**
+	Runs an external process asynchronously. On Windows, GUIs are supressed.
+
+	``exec`` is the default command used by build systems, thus it provides
+	similar functionality. However, a few options in build systems are taken
+	care of by Sublime Text internally so they list below only contains
+	parameters accepted by this command.
+
+	- **cmd** [[String]]
+	- **file_regex** [String]
+	- **line_regex** [String]
+	- **working_dir** [String]
+	- **encoding** [String]
+	- **env** [{String, String}]
+	- **path** [String]
+	- **shell** [Bool]
+	- **kill** [Bool]: If ``True`` will simply terminate the current build
+	  process. This is invoked via *Build: Cancel* command from the
+	  :ref:`Command Palette <ext-command-palette-overview>`.
+	- **quiet** [Bool]: If ``True`` prints less information about running the
+	  command.
+
+	.. seealso::
+
+		:ref:`Arbitrary Options for build systems <build-arbitrary-options>`
+			Detailed documentation on all other available options.
 
 **transpose**
 	Makes stuff dance.
