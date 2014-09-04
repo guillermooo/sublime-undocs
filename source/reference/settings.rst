@@ -4,10 +4,9 @@ Settings (Reference)
 
 +.. warning::
 
-   This page may be outdated and contain wrong information. However, you can
-   find most of the available settings with a brief description in the default
-   settings file (**Preferences | Settings - Default** or
-   :file:`Default/Preferences.sublime-settings`).
+   This page may be outdated and contain wrong or not all information. However,
+   you can find most of the available settings with a brief description in the
+   default settings file (**Preferences | Settings - Default** or   :file:`Default/Preferences.sublime-settings`).
 
 .. seealso::
  
@@ -19,20 +18,45 @@ Settings (Reference)
 Global Settings
 ===============
 
-**Target file:** ``Global.sublime-settings``.
+These settings can only be modified from :file:`Preferences.sublime-settings`
+and :file:`Preferences ({platform}).sublime-settings`.
 
+.. XXX obviously, some settings are missing here ... but do we really need to
+.. include all the settings with a brief description? That's what the comments
+.. in the default settings are for, actually.
 
 ``theme``
    Theme to be used. Accepts a file base name (e. g.: :file:`Default.sublime-theme`).
+``scroll_speed``
+   Set to ``0`` to disable smooth scrolling. Set to a value between ``0`` and
+   ``1`` to scroll slower, or set to a value larger than ``1`` to scroll faster.
+``hot_exit``
+   Exiting the application or window with an associated project with
+   ``hot_exit`` enabled will cause it to close immediately without prompting.
+   Unsaved modifications and open files will be preserved and restored when next
+   starting.
 ``remember_open_files``
-   Determines whether to reopen the buffers that were open when Sublime Text was last closed.
+   Determines whether to reopen the buffers that were open when Sublime Text was
+   last closed.
+``open_files_in_new_window``
+   OS X only. When filters are opened from Finder, or by dragging onto the
+   dock icon, this controls if a new window is created or not.
+``close_windows_when_empty``
+   Close windows as soon as the last file is closed, unless there's a folder
+   open within the window.
+``show_full_path``
+   Show the full path to files in the title bar.
+``preview_on_click``
+   If ``true``, preview file contents when clicking on a file in the side bar.
+   Double clicking or editing the preview will open the file and assign it a
+   tab.   
 ``folder_exclude_patterns``
    Excludes the matching folders from the side bar, GoTo Anything, etc.
 ``file_exclude_patterns``
    Excludes the matching files from the side bar, GoTo Anything, etc.
-``scroll_speed``
-   Set to ``0`` to disable smooth scrolling. Set to a value between ``0`` and
-   ``1`` to scroll slower, or set to a value larger than ``1`` to scroll faster.
+``binary_file_patterns``
+   Excludes the matching files from GoTo Anything and Find in Files but not the
+   side bar.
 ``show_tab_close_buttons``
    If ``false``, hides the tabs' close buttons until the mouse hovers over
    the tab.
@@ -42,7 +66,8 @@ Global Settings
 ``open_files_in_new_window``
    OS X only. When filters are opened from Finder, or by dragging onto the
    dock icon, this controls whether a new window is created or not.
-
+``ignored_packages``
+   A list of packages that will be ignored (not loaded).
 
 File Settings
 =============
