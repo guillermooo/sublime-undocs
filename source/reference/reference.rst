@@ -11,7 +11,6 @@ general index.
 .. toctree::
     :maxdepth: 2
 
-    snippets
     syntaxdefs
     build_systems
     key_bindings

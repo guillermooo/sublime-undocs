@@ -3,21 +3,21 @@ Snippets
 ========
 
 Whether you are coding or writing the next vampire best-seller, you're likely to
-need certain short fragments of text again and again. Use snippets to save yourself
-tedious typing. Snippets are smart templates that will insert text for you,
-adapting it to their context.
+need certain short fragments of text again and again. Use snippets to save
+yourself tedious typing. Snippets are smart templates that will insert text for
+you and adapt it to their context.
 
 To create a new snippet, select **Tools | New Snippet...** Sublime Text will
 present you with a skeleton for it.
 
 Snippets can be stored under any package's folder, but to keep it simple while
-you're learning, you can save them to your ``Packages/User`` folder.
+you're learning, you can save them to your :path:`Packages/User` folder.
 
 Snippets File Format
 ********************
 
 Snippets typically live in a Sublime Text package. They are simplified XML files
-with the extension ``sublime-snippet``. For instance, you could have a
+with the extension *.sublime-snippet*. For instance, you could have a
 ``greeting.sublime-snippet`` inside an ``Email`` package.
 
 The structure of a typical snippet is as follows (including the default hints
@@ -45,7 +45,8 @@ these parts in turn.
 
     Keep the following in mind when writing your own snippets:
 
-        - If you want to get a literal ``$``, you have to escape it like this: ``\$``.
+        - If you want to get a literal ``$``, you have to escape it like this:
+          ``\$``.
 
         - When writing a snippet that contains indentation, always use tabs.
           When the snippet is inserted, the tabs will be transformed into spaces
@@ -55,14 +56,15 @@ these parts in turn.
           Snippets won't work if you don't do this!
 
         - The ``content`` of your snippet must not contain ``]]>`` because this
-          string of characters will prematurely close the ``<![CDATA[…]]>`` section,
-          resulting in an XML error. To work around this pitfall, you can insert an
-          undefined variable into the string like this: ``]]$NOT_DEFINED>``. This
-          modified string passes through the XML parser without closing the content
-          element's ``<![CDATA[…]]>`` section, but Sublime Text will replace
-          ``$NOT_DEFINED`` with an empty string before inserting the snippet into
-          your document. In other words, ``]]$NOT_DEFINED>`` in your snippet file
-          ``content`` will be written as ``]]>`` when you trigger the snippet.
+          string of characters will prematurely close the ``<![CDATA[???]]>``
+          section, resulting in an XML error. To work around this pitfall, you
+          can insert an undefined variable into the string like this:
+          ``]]$NOT_DEFINED>``. This modified string passes through the XML
+          parser without closing the content element's ``<![CDATA[???]]>``
+          section, but Sublime Text will replace ``$NOT_DEFINED`` with an empty
+          string before inserting the snippet into your file. In other
+          words, ``]]$NOT_DEFINED>`` in your snippet file ``content`` will be
+          written as ``]]>`` when you trigger the snippet.
 
 ``tabTrigger``
     Defines the sequence of keys that must be pressed to insert this snippet. After typing
@@ -75,8 +77,8 @@ these parts in turn.
     See :ref:`scopes-and-scope-selectors` for more information.
 
 ``description``
-    Used for displaying the snippet in the Snippets menu. If unavailable, Sublime Text
-    defaults to the name of the snippet.
+    Used when showing the snippet in the Snippets menu. If not present, Sublime
+    Text defaults to the file name of the snippet.
 
 With this information, you can start writing your own snippets as described in
 the next sections.
@@ -91,14 +93,15 @@ Snippet Features
 Environment Variables
 ---------------------
 
-Snippets have access to contextual information in the form of environment variables.
-Sublime Text automatically sets the values of the variables listed below.
+Snippets have access to contextual information in the form of environment
+variables. The values of the variables listed below are set automatically
+by Sublime Text.
 
 You can also add your own variables to provide extra information. These custom
 variables are defined in ``.sublime-options`` files.
 
 ======================    ====================================================================================
-**$PARAM1, $PARAM2...**    Arguments passed to the ``insert_snippet`` command. (Not covered here.)
+**$PARAM1 .. $PARAMn**     Arguments passed to the ``insert_snippet`` command. (Not covered here.)
 **$SELECTION**             The text that was selected when the snippet was triggered.
 **$TM_CURRENT_LINE**       Content of the cursor's line when the snippet was triggered.
 **$TM_CURRENT_WORD**       Word under the cursor when the snippet was triggered.
@@ -145,13 +148,14 @@ customization of a snippet after it's been inserted.
     Second Name: $2
     Address: $3
 
-In the example above, the cursor will jump to ``$1`` if you press :kbd:`Tab` once.
-If you press :kbd:`Tab` a second time, it will advance to ``$2``, etc. You can also
-move backwards in the series with :kbd:`Shift+Tab`. If you press :kbd:`Tab` after the
-highest tab stop, Sublime Text will place the cursor at the end of the snippet's
-content, enabling you to resume normal editing.
+In the example above, the cursor will jump to ``$1`` if you press :kbd:`Tab`
+once. If you press :kbd:`Tab` a second time, it will advance to ``$2``, etc. You
+can also move backwards in the series with :kbd:`Shift+Tab`. If you press
+:kbd:`Tab` after the highest tab stop, Sublime Text will place the cursor at the
+end of the snippet's content so that you can resume normal editing.
 
-If you want to control where the exit point should be, use the ``$0`` mark.
+If you want to control where the exit point should be, use the ``$0`` mark. By
+default, this is the end of the snippet.
 
 You can break out of the field cycle any time by pressing :kbd:`Esc`.
 
@@ -168,7 +172,8 @@ will be populated in real time with the same value.
     Address: $3
     User name: $1
 
-In this example, "User name" will be filled out with the same value as "First Name".
+In this example, "User name" will be filled out with the same value as "First
+Name".
 
 Placeholders
 -------------
@@ -199,15 +204,14 @@ And you can nest placeholders within other placeholders too:
 
     Test: ${1:Nested ${2:Placeholder}}
 
+
 Substitutions
 -------------
 
-.. WARNING::
-    This section is a draft and may contain inaccurate information.
-
-In addition to the placeholder syntax, tab stops can specify more complex operations
-with substitutions. Use substitutions to dynamically generate text based on a mirrored
-tab stop.
+In addition to the place holder syntax, tab stops can specify more complex
+operations with substitutions. Use substitutions to dynamically generate text
+based on a mirrored tab stop. Of course, the tab stop you want to use as
+variable has to be mirrored somewhere else in the snipept.
 
 The substitution syntax has the following syntaxes:
 
@@ -218,10 +222,10 @@ The substitution syntax has the following syntaxes:
     The variable name: 1, 2, 3...
 
 **regex**
-    Perl-style regular expression: See the `Boost library reference for regular expressions <http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html>`_.
+    Perl-style regular expression: See the `Boost library documentation`_.
 
 **format_string**
-    See the `Boost library reference for format strings <http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html>`_.
+    See the `Boost library documentation`_.
 
 **options**
     Optional. May be any of the following:
@@ -231,6 +235,8 @@ The substitution syntax has the following syntaxes:
             Replace all occurrences of ``regex``.
         **m**
             Don't ignore newlines in the string.
+
+.. _`Boost library documentation`: http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html
 
 With substitutions you can, for instance, underline text effortlessly:
 
