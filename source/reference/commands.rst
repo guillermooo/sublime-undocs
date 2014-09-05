@@ -40,6 +40,12 @@ commands. See :ref:`build-system-variables` for more information.
 Commands
 ========
 
+.. py:currentmodule:: sublime
+
+.. note::
+
+	This list is incomplete.
+
 **build**
 	Runs a build system.
 
@@ -381,7 +387,7 @@ Commands
 			Detailed documentation on all other available options.
 
 **transpose**
-	Makes stuff dance.
+	Makes words and charactersMakes swap places.
 
 **sort_lines**
 	Sorts lines.
@@ -389,7 +395,9 @@ Commands
 	- **case_sensitive** [Bool]: Whether the sort should be case sensitive.
 
 **set_layout**
-	XXX
+	Changes the group layout of the current window. This command uses the same
+	pattern as :py:meth:`Window.set_layout`, see there for a list and
+	explanation of parameters.
 
 **focus_group**
 	XXX
@@ -450,7 +458,8 @@ Commands
 	XXX
 
 **show_at_center**
-	XXX
+	Scrolls the view to show the selected line in the middle of the view and
+	adjusts the horizontal scrolling if necessary.
 
 **increase_font_size**
 	Increases the font size.
@@ -459,13 +468,21 @@ Commands
 	Decreases the font size.
 
 **fold**
-	XXX
+	Folds the current selection and displays ``???`` instead. Unfolding arrows are
+	added to the lines where a region has been folded.
 
 **unfold**
-	XXX
+	Unfolds all folded regions in the selection.
 
 **fold_by_level**
-	XXX
+	Scans the whole file and folds everything with an indentation level of
+	``level`` or higher. This does not unfold already folded regions if you
+	first fold by level 2 and then by 3, for example.
+
+	- **level** [int]: The level of indentation that should be folded.
+
+**unfold_all**
+	Unfolds all folded regions.
 
 **context_menu**
 	Shows the context menu.
