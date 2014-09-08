@@ -7,27 +7,26 @@ Search and Replace - Single File
 Searching
 =========
 
-To open the **search panel** for the active file, press ``Ctrl + F``. Some
-options and actions available through this panel can be controlled from the
-keyboard:
+To open the **search panel** for buffers, press :kbd:`Ctrl + F`. Some options
+and actions available through this panel can be controlled from the keyboard:
 
-==========================	===========
-Toggle Regular Expressions	``Alt + R``
-Toggle Case Sensitivity   	``Alt + C``
-Toggle Exact Match       	``Alt + W``
-Find Next					``Enter``
-Find Previous				``Shift + Enter``
-Find All					``Alt + Enter``
-==========================	===========
+==========================	====================
+Toggle Regular Expressions	:kbd:`Alt + R`
+Toggle Case Sensitivity   	:kbd:`Alt + C`
+Toggle Exact Match       	:kbd:`Alt + W`
+Find Next					:kbd:`Enter`
+Find Previous				:kbd:`Shift + Enter`
+Find All					:kbd:`Alt + Enter`
+==========================	====================
 
 .. _snr-incremental-search-buffer:
 
 Incremental Search
 ==================
 
-The **incremental search panel** is bound to ``Ctrl + I``. The only difference
-with the regular search panel lies in the behavior of the ``Enter`` key: in
-incremental searches, it will select the next match in the file and dismiss
+The **incremental search panel** can be brought up with :kbd:`Ctrl + I`. The only
+difference with the regular search panel lies in the behavior of the :kbd:`Enter``
+key. In incremental searches, it will select the next match in the file and dismiss
 the search panel for you. Choosing between this panel or the regular search
 panel is mainly a matter of preference.
 
@@ -37,13 +36,13 @@ panel is mainly a matter of preference.
 Replacing Text
 ==============
 
-To open the replace planel, press ``Ctrl + H``. Some actions available through
+To open the replace planel, press :kbd:`Ctrl + H`. Some actions available through
 this panel can be controlled from the keyboard.
 
-==========================	======================
-Replace Next				``Ctrl + Shift + H``
-Replace All					``Ctrl + Alt + Enter``
-==========================	======================
+==========================	=========================
+Replace All:				:kbd:`Ctrl + Alt + Enter`
+Replace Next:				:kbd:`Ctrl + Shift + H`
+==========================	=========================
 
 
 .. _snr-tips-buffer:
@@ -51,22 +50,24 @@ Replace All					``Ctrl + Alt + Enter``
 Tips
 ====
 
+
 Other Ways of Searching in Files
 --------------------------------
 
-+:ref:`Goto Anything <fm-goto-anything>` provides the operator ``#`` to search
-in the active file. The search term will be the text following the operator.
+:ref:`Goto Anything <fm-goto-anything>` provides the operator ``#`` to search in
+the current buffer, see :ref:`fm-goto-directives`.
+
 
 Other Search-Related Key Bindings
 ---------------------------------
 
 These key bindings work when the search panel is hidden.
 
-===============================================	==============
-Search Forward Using Most Recent Pattern 		``F3``
-Search Backwards Using Most Recent Pattern		``Shift + F3``
-Select All Matches Using Most Recent Pattern	``Alt + F3``
-===============================================	==============
+===============================================	=================
+Search Forward Using Most Recent Pattern 		:kbd:`F3`
+Search Backwards Using Most Recent Pattern		:kbd:`Shift + F3`
+Select All Matches Using Most Recent Pattern	:kbd:`Alt + F3`
+===============================================	=================
 
 .. XXX search under cursor ??
 
@@ -76,4 +77,4 @@ Multiline Search
 ----------------
 
 You can type in multiline search patterns into search panels. To enter newline
-characters, press ``Ctrl + Enter``. Note that search panels are resizable.
+characters, press :kbd:`Ctrl + Enter`. Note that search panels are resizable.
