@@ -15,8 +15,8 @@ About Paths in Command Arguments
 
 Some commands take paths as parameters. Among these, some support snippet-like
 syntax, while others don't. A command of the first kind would take a parameter
-like *${packages}/SomeDir/SomeFile.Ext* whereas a command of the second kind
-would take a parameter like *Packages/SomeDir/SomeFile.Ext*.
+like :file:`${packages}/SomeDir/SomeFile.ext` whereas a command of the second kind
+would take a parameter like :file:`Packages/SomeDir/SomeFile.ext`.
 
 Generally, newer commands support the snippet-like syntax.
 
@@ -59,9 +59,15 @@ Commands
 **insert_snippet**
 	Inserts a snippet from a string or *.sublime-snippet* file.
 
-	- **contents** [String]: Snippet as a string to be inserted.
+	- **contents** [String]: Snippet as a string to be inserted. Remember that
+	  backslashes ``\`` have to be escaped, like in every other JSON string.
 	- **name** [String]: Relative :ref:`path <cmd-about-paths>` to the
 	  *.sublime-snippet* file to be inserted.
+
+.. seealso::
+
+	:doc:`/extensibility/snippets`
+		Documentation on snippets and their variable features.  
 
 **insert**
 	Inserts a string.
@@ -72,7 +78,7 @@ Commands
 	Advances the caret by predefined units.
 
 	- **by** [Enum]: Values: *characters*, *words*, *word_ends*, *subwords*,
-+	  *subword_ends*, *lines*, *pages*, *stops*.
+	  *subword_ends*, *lines*, *pages*, *stops*.
 	- **forward** [Bool]: Whether to advance or reverse in the buffer.
 	- **word_begin** [Bool]
 	- **empty_line** [Bool]
@@ -122,6 +128,9 @@ Commands
 **prompt_save_as**
     Prompts for a new file name and saves the active file.
 
+**prompt_select_project**
+	Opens a popup with recently accessed projects where you can fuzzy-search. 
+
 **toggle_sidebar**
 	Shows or hides the sidebar.
 
@@ -130,6 +139,12 @@ Commands
 
 **toggle_distraction_free**
 	Toggles distraction free mode on or off.
+
+**toggle_tabs**
+	Shows or hides the tab bar.
+
+**toggle_minimap**
+	Shows or hides the minimap.
 
 **left_delete**
 	Deletes the character right before the caret.
@@ -161,6 +176,9 @@ Commands
 
 **paste**
 	Inserts the clipboard contents after the caret.
+
+	- **clipboard** [String]: May be *selection*. XXX what other values are
+	  allowed?
 
 **paste_and_indent**
 	Inserts the clipboard contents after the caret and indents contextually.
@@ -195,7 +213,7 @@ Commands
 	Select the view's content.
 
 **split_selection_into_lines**
-	Unsurprisingly, it splits the selection into lines.
+	Splits the selection into multiple selections, one on each line.
 
 **single_selection**
 	Collapses multiple selections into a single selection.
@@ -372,7 +390,7 @@ Commands
 	- **line_regex** [String]
 	- **working_dir** [String]
 	- **encoding** [String]
-	- **env** [{String, String}]
+	- **env** [{String: String}]
 	- **path** [String]
 	- **shell** [Bool]
 	- **kill** [Bool]: If ``True`` will simply terminate the current build
@@ -400,13 +418,20 @@ Commands
 	explanation of parameters.
 
 **focus_group**
-	XXX
+	Gives focus to the top-most file in the specified group.
+
+	- **group** [Int]: The group index to focus. This is determined by the order
+      of ``cells`` items from the current layout (see :py:meth:`Window.set_layout`).
 
 **move_to_group**
-	XXX
+	Moves the current file to the specified group.
+
+	- **group** [Int]: The group index to focus. See **focus_group** command.
 
 **select_by_index**
-	XXX
+	Focuses a certain tab in the current group.
+
+	- **index** [Int]: The tab index to focus.
 
 **next_bookmark**
 	Select the next bookmarked region.
@@ -479,7 +504,11 @@ Commands
 	``level`` or higher. This does not unfold already folded regions if you
 	first fold by level 2 and then by 3, for example.
 
-	- **level** [int]: The level of indentation that should be folded.
+	- **level** [Int]: The level of indentation that should be folded.
+
+**fold_tag_attributes**
+	Folds all tag attributes in XML files, only leaving the tag's name and the
+	closing bracket visible.
 
 **unfold_all**
 	Unfolds all folded regions.
