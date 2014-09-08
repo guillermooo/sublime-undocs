@@ -255,6 +255,12 @@ This will emit the name of the current project if there is one, otherwise
 
 This will emit the full path of the current file, replacing *.php* with *.txt*.
 
+.. seealso::
+
+    :doc:`/extensibility/snippets`
+        Documentation on snippets and their variable features.
+
+
 
 Running Build Systems
 *********************
