@@ -683,3 +683,37 @@ Commands
 
 .. Some regex-related and search-related commands missing. They don't seem to
 .. be too useful.
+
+
+Discovering Commands
+====================
+
+There are several ways to discover a command's name in order to use it as a key
+binding, in a macro, as a menu entry or in a plugin.
+
+- Browsing the default key bindings at **Preferences | Key Bindings - Default**.
+  If you know the key binding whose command you want to inspect you can just
+  search for it using the :doc:`search panel
+  </search_and_replace/search_and_replace>`. This, of course, also works in the
+  opposite direction.
+
+- ::
+
+	``sublime.log_commands(True)``
+
+  Running the above in the console will tell Sublime Text to print the command's
+  name in the console whenever a command is run. You can practically just enter
+  this, do whatever is needed to run the command you want to inspect and then
+  look at the console. It will also print the passed arguments so you can
+  basically get all the information you need from it. When you are done, just
+  run the function again with ``False`` as parameter.
+
+- Inspecting *.sublime-menu* files. If your command is run by a menu item,
+  browse the default menu file at :file:`Packages/Default/Main.sublime-menu`.
+  You will find them quick enough once you take a look at it, or see the :doc:`menu documentation </customization/menus>`.
+
+.. XXX link menu docs when they are done
+
+- Similar to menus you can do exactly the same with *.sublime-command* files.
+  See :doc:`/extensibility/completions` for some documentation on completion
+  files.
