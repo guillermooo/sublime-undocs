@@ -87,6 +87,9 @@ the next sections.
     In the interest of brevity, we're only including the ``content``
     element's text in examples unless otherwise noted.
 
+
+.. _snippet-features:
+
 Snippet Features
 ****************
 
@@ -222,10 +225,11 @@ The substitution syntax has the following syntaxes:
     The variable name: 1, 2, 3...
 
 **regex**
-    Perl-style regular expression: See the `Boost library documentation`_.
+    Perl-style regular expression: See the `Boost library documentation for
+    regular expressions`_.
 
 **format_string**
-    See the `Boost library documentation`_.
+    See the `Boost library documentation for format strings`_.
 
 **options**
     Optional. May be any of the following:
@@ -236,7 +240,9 @@ The substitution syntax has the following syntaxes:
         **m**
             Don't ignore newlines in the string.
 
-.. _`Boost library documentation`: http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html
+.. _`Boost library documentation for regular expressions`: http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html
+
+.. _`Boost library documentation for format strings`: http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html
 
 With substitutions you can, for instance, underline text effortlessly:
 
