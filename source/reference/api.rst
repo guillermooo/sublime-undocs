@@ -19,19 +19,24 @@ this section tries to solve this.
 
     .. py:method:: set_layout(layout)
 
-        Expects a dictionatry like this::
+        Changes the tile-based panel layout of view groups.
+
+        :param dict layout: specifies the new layout, see below
+        :returns: None
+
+        Expects a dictionary like this::
 
             {"cols": [float], "rows": [float], "cells": [[int]]}
 
         where :samp:`[type]` represents a list of *type*.
 
         **cols**
-            A list of the column seperators (*float*), should start with ``0``
-            (left) and end with ``1`` (right).
+            A list of the column separators (floating point numbers), should
+            start with ``0`` (left) and end with ``1`` (right).
 
         **rows**
-            A list of the row seperators (*float*), should start with ``0``
-            (top) and end with ``1`` (bottom).
+            A list of the row separators (floating point numbers), should start
+            with ``0`` (top) and end with ``1`` (bottom).
 
         **cells**
             A list of cell lists which describe a cell's boundaries each. Cells
@@ -41,18 +46,22 @@ this section tries to solve this.
                 [x1, y1, x2, y2]
 
             where all values are integers respectively and map to the *cols* and
-            *rows* indices. Thus, a cell with ``[0, 0, 1, 2]`` translates to a
+            *rows* indicies. Thus, a cell with ``[0, 0, 1, 2]`` translates to a
             cell from the top left to the first column and the second row
             separator (in a 2x2 grid this would be bottom center).
 
         .. note::
 
-            *rows* and *cols* are not tested for boundaries. Thus, even though
-            it makes zero sense to have a values lower than ``0`` or higher than
-            ``1`` it is possible to specify them and Sublime Text will in fact
-            treat them accordingly. Furthermore, it is possible to have the
-            first value not be ``0`` and the last not be ``1``, the remaining
-            space will simply be black in this case. Don't try this at home!
+            **rows** and **cols** are not tested for boundaries and they are not
+            adjusted either. Thus, it is possible to specify values lower than
+            ``0`` or higher than ``1`` and Sublime Text will in fact treat them
+            accordingly. That means you can crop views or create borders. It is
+            not known whether the "background color" of these empty spaces can
+            be modified, the default is black. Use at your own risk!
+
+            The order of column or row separators is not checked either. If you,
+            for example, use a reversed column list like ``[1, 0.5, 0]`` you
+            get to see two black panels. Sublime Text is unusable in this state.
 
         **Examples**::
 
@@ -75,7 +84,7 @@ this section tries to solve this.
 
         ::
 
-            # A 2-column layout with the seperator in the middle and the right
+            # A 2-column layout with the separator in the middle and the right
             # column being split in half
             window.set_layout({
                 "cols": [0, 0.5, 1],
@@ -83,9 +92,6 @@ this section tries to solve this.
                 "cells": [[0, 0, 1, 2], [1, 0, 2, 1],
                                         [1, 1, 2, 2]]
             })
-
-        :param layout: dictionary with layout options, see below
-        :returns: None
 
 
 Exploring the API
