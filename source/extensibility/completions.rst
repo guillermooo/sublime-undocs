@@ -75,6 +75,8 @@ the ``contents``:
 	{ "trigger": "foo", "contents": "foo" }
 
 
+.. _completions-trigger-based:
+
 Trigger-based Completions
 -------------------------
 
@@ -99,13 +101,15 @@ Sources for Completions
 
 These are the sources for completions the user can control:
 
-	* Snippets
-	* ``.sublime-completions``
-	* API-injected completions via ``EventListener.on_query_completions()``
+.. py:currentmodule:: sublime_plugin
+
+* :doc:`/extensibility/snippets`
+* *.sublime-completions*
+* API-injected completions via :py:meth:`EventListener.on_query_completions`
 
 Additionally, other completions are folded into the final list:
 
-	* Words in the buffer
+* Words in the buffer
 
 
 Priority of Sources for Completions
@@ -113,10 +117,10 @@ Priority of Sources for Completions
 
 This is the order in which completions are prioritized:
 
-	* Snippets
-	* API-injected completions
-	* ``.sublime-completions`` files
-	* Words in the buffer
+* Snippets
+* API-injected completions
+* *.sublime-completions* files
+* Words in buffer
 
 Snippets will always win if the current prefix matches their tab trigger
 exactly. For the rest of the completion sources, a fuzzy match is performed.
@@ -163,6 +167,33 @@ down to one unambiguous choice given the current prefix.
 If the choice of best completion is ambiguous, an interactive list will be
 presented to the user. Unlike other items, snippets in this list are displayed
 in this format: :samp:`{tab_trigger}\\t{name}`.
+
+
+.. _completions-multi-cursor:
+
+Completions with multiple cursors
+*********************************
+
+Sublime Text can also handle completions with multiple cursors but will only
+open the completion list when all cursors share the same text between the
+current cursor position and the last word separator character (e.g. ``.``  or a
+line break).
+
+Working example (``|`` represents one cursor)::
+
+	l|
+	some text with l|
+	l| and.l|
+
+Not working example::
+
+	l|
+	some text with la|
+	l| andl|
+
+Selections are essentially ignored, only the position of the cursor matters.
+Thus, ``e|[-some selection] example``, with ``|`` as the cursor and ``[...]`` as
+the current selection, completes to ``example|[-some selection] example``.
 
 
 :kbd:`Tab`-Completed Completions
