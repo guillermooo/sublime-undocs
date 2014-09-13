@@ -173,6 +173,8 @@ Responding to Events
 Any command deriving from ``EventListener`` will be able to respond to events.
 
 
+.. _plugins-completions-example:
+
 Another Plugin Example: Feeding the Completions List
 ----------------------------------------------------
 
@@ -180,28 +182,35 @@ Let's create a plugin that fetches data from Google's Autocomplete service and
 then feeds it to the Sublime Text completions list. Please note that, as ideas
 for plugins go, this a very bad one.
 
-::
+.. sourcecode:: py
 
-	import sublime, sublime_plugin
+    import sublime, sublime_plugin
 
-	from xml.etree import ElementTree as ET
-	from urllib.request import urlopen
+    from xml.etree import ElementTree as ET
+    from urllib import urlopen
 
-	GOOGLE_AC = r"http://google.com/complete/search?output=toolbar&q=%s"
+    GOOGLE_AC = r"http://google.com/complete/search?output=toolbar&q=%s"
 
-	class GoogleAutocomplete(sublime_plugin.EventListener):
-	    def on_query_completions(self, view, prefix, locations):
-	        elements = ET.parse(
-	                        urlopen(GOOGLE_AC % prefix)
-	                    ).getroot().findall("./CompleteSuggestion/suggestion")
+    class GoogleAutocomplete(sublime_plugin.EventListener):
+        def on_query_completions(self, view, prefix, locations):
+            elements = ET.parse(
+                urlopen(GOOGLE_AC % prefix)
+            ).getroot().findall("./CompleteSuggestion/suggestion")
 
-	        sugs = [(x.attrib["data"],) * 2 for x in elements]
+            sugs = [(x.attrib["data"],) * 2 for x in elements]
 
-	        return sugs
+            return sugs
 
 .. note::
-	Make sure you don't keep this plugin around after trying it or it will
-	interfere with Sublime Text's autocompletion.
+    Make sure you don't keep this plugin around after trying it or it will
+    interfere with the autocompletion system.
+
+.. seealso::
+
+    .. py:currentmodule:: sublime_plugin
+
+    :py:meth:`EventListener.on_query_completions`
+        Documentation on the API event used in this example.
 
 
 Learning the API
@@ -211,8 +220,8 @@ In order to create plugins, you need to get acquainted with the Sublime Text
 API and the available commands. Documentation on both is scarce at the time of
 this writing, but you can read existing code and learn from it.
 
-In particular, the ``$PATH_TO_SUBLIME/Packages/Default.sublime-package``
-contains many examples of undocumented commands and API calls. Note that you
-will first have to extract its content to a folder if you want to take a look at
-the code within. As an exercise, you can try creating a build system to do that
-on demand, and a project file to be able to peek at the sample code easily.
+In particular, the :file:`Packages/Default` contains many examples of
+undocumented commands and API calls. Note that you will first have to extract
+its content to a folder if you want to take a look at the code within. As an
+exercise, you can try creating a build system to do that on demand, and a
+project file to be able to peek at the sample code easily.
