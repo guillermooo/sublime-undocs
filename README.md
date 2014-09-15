@@ -14,10 +14,10 @@ Huge thanks to [all our backers](./BACKERS.md)!
 
 ## Support Us
 
-You can support our writing by treating us to a beer or sending a donation:
+If you find this guide useful, you can treat us to a beer or send a donation
+our way:
 
-*PayPal/Gittip/Pledgie be here*
-
+<img src="http://img.shields.io/gratipay/sublimeundocs.svg">
 
 ## Contributing
 
