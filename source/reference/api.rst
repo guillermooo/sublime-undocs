@@ -105,9 +105,6 @@ this section tries to solve this.
                                         [1, 1, 2, 2]]
             })
 
-        :param layout: dictionary with layout options, see below
-        :returns: None
-
 .. py:class:: View
 
     Similar to :py:class:`Window`, this class represents views in Sublime Text
@@ -119,12 +116,15 @@ this section tries to solve this.
 
         Matches the scope at ``point`` against the specified ``selector``.
 
+        :param int point: Point in the view whose scope the selector should be
+                          matched against.
+        :param str selector: A scope selector.
+        :returns bool: Whether the selector matches or not.
+
         Equivalent to::
 
             view.score_selector(point, selector) != 0
-
-        or::
-
+            # or
             sublime.score_selector(view.scope_name(point), selector) != 0
 
 .. #############################################################################
