@@ -52,15 +52,15 @@ these parts in turn.
           When the snippet is inserted, the tabs will be transformed into spaces
           if the option ``translateTabsToSpaces`` is ``true``.
 
-        - The ``content`` must be included in a ``<![CDATA[...]]>`` section.
+        - The ``content`` must be included in a ``<![CDATA[…]]>`` section.
           Snippets won't work if you don't do this!
 
         - The ``content`` of your snippet must not contain ``]]>`` because this
-          string of characters will prematurely close the ``<![CDATA[???]]>``
+          string of characters will prematurely close the ``<![CDATA[…]]>``
           section, resulting in an XML error. To work around this pitfall, you
           can insert an undefined variable into the string like this:
           ``]]$NOT_DEFINED>``. This modified string passes through the XML
-          parser without closing the content element's ``<![CDATA[???]]>``
+          parser without closing the content element's ``<![CDATA[…]]>``
           section, but Sublime Text will replace ``$NOT_DEFINED`` with an empty
           string before inserting the snippet into your file. In other
           words, ``]]$NOT_DEFINED>`` in your snippet file ``content`` will be

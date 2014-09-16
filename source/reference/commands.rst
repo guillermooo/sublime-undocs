@@ -600,7 +600,7 @@ Commands
 	might be other places where this has been "changed".
 
 **fold**
-	Folds the current selection and displays ``???`` instead. Unfold arrows are
+	Folds the current selection and displays ``…`` instead. Unfold arrows are
 	added to the lines where a region has been folded.
 
 **unfold**

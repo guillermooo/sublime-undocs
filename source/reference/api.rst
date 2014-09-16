@@ -202,7 +202,7 @@ Exploring the API
 
 A quick way to see the API in action:
 
-#. Add :file:`Packages/Default` (**Preferences | Browse Packages???**) to your project.
+#. Add :file:`Packages/Default` (**Preferences | Browse Packages…**) to your project.
 #. :kbd:`Ctrl + Shift + F`
 #. Enter ``*.py`` in the **In Files:** field
 #. Check ``Use Buffer`` option
