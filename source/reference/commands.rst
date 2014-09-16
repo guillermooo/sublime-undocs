@@ -566,7 +566,7 @@ Commands
 **set_mark**
 	Sets a one-per-file mark on the character right before the caret, for
 	further operations with the related commands. If a mark has already been 
-	set in that file,it is removed and set to the new position.
+	set in that file, it is removed and set to the new position.
 
 **select_to_mark**
 	Selects the text between the character right before the caret and the
