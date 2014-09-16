@@ -17,7 +17,7 @@ Huge thanks to [all our backers](./BACKERS.md)!
 If you find this guide useful, you can treat us to a beer or send a donation
 our way:
 
-<img src="http://img.shields.io/gratipay/sublimeundocs.svg">
+[![Gratipay](http://img.shields.io/gratipay/sublimeundocs.svg)](https://gratipay.com/sublimeundocs/)
 
 ## Contributing
 
