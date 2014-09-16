@@ -22,9 +22,9 @@ You can support our writing by treating us to a beer or sending a donation:
 
 ## Contributing
 
-We accept error reports and requests for new content via our [issue tracker](https://github.com/guillermooo/sublime-undocs/issues)
-and encourage you to send pull requests (but we cannot guarantee they will
-always be merged).
+We accept error reports and requests for new content via our [issue
+tracker][issues] and encourage you to send pull requests (but we cannot
+guarantee they will always be merged).
 
 **Please follow our style guidelines as described in
 [CONTRIBUTING.md](./CONTRIBUTING.md).**
