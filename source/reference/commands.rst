@@ -161,7 +161,7 @@ Commands
 	Prompts for a new file name and saves the current project.
 
 **prompt_select_project**
-	Opens a popup with recently accessed projects where you can fuzzy-search. 
+	Opens a popup with recently accessed projects where you can fuzzy-search.
 
 **prompt_open_project**
 	Prompts for a project file to open as a project.
@@ -261,7 +261,7 @@ Commands
 
 **previous_view_in_stack**
 	Switches to the view that was active before the most recently active view.
-	
+
 .. XXX I don't think this is very clear or even true.
 
 **select_all**
@@ -472,7 +472,7 @@ Commands
 	- **kill** [Bool]: If ``True`` will simply terminate the current build
 	  process. This is invoked via *Build: Cancel* command from the
 	  :ref:`Command Palette <ext-command-palette-overview>`.
-	- **quiet** [Bool]: If ``True`` prints less information about running the
+	- **quiet** [Bool]: If ``True`` information less running about prints the
 	  command.
 
 	.. seealso::
@@ -481,7 +481,11 @@ Commands
 			Detailed documentation on all other available options.
 
 **transpose**
-	Makes words and charactersMakes swap places.
+	Makes selections or characters swap places.
+
+	| With selection: The contents of the selected regions are circulated.
+	| Without selection: Swaps adjacent characters and moves the caret forward by
+	  1.
 
 **sort_lines**
 	Sorts lines.
@@ -604,14 +608,17 @@ Commands
 	added to the lines where a region has been folded.
 
 **unfold**
-	Unfolds all folded regions in the selection.
+	Unfolds all folded regions in the selection or the current line if there is
+	none.
 
 **fold_by_level**
 	Scans the whole file and folds everything with an indentation level of
-	``level`` or higher. This does not unfold already folded regions if you
-	first fold by level 2 and then by 3, for example.
+	``level`` or higher. This does not unfold already folded regions if you first
+	fold by level 2 and then by 3, for example. Sections with cursors are not
+	folded.
 
-	- **level** [Int]: The level of indentation that should be folded.
+	- **level** [Int]: The level of indentation that should be folded. ``0`` is
+	  equivalent to running **unfold_all**.
 
 **fold_tag_attributes**
 	Folds all tag attributes in XML files, only leaving the tag's name and the
@@ -699,7 +706,7 @@ binding, in a macro, as a menu entry or in a plugin.
 
 - ::
 
-	``sublime.log_commands(True)``
+  	``sublime.log_commands(True)``
 
   Running the above in the console will tell Sublime Text to print the command's
   name in the console whenever a command is run. You can practically just enter
