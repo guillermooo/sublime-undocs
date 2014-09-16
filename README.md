@@ -1,6 +1,5 @@
 # Sublime Text Unofficial Documentation
 
-
 We started this project to fill the gaps in the Sublime Text
 [official documentation][off-docs]. You can visit this guide at
 <http://docs.sublimetext.info/>. It is hosted via [ReadTheDocs][] and built
@@ -35,7 +34,7 @@ build system that builds the HTML docs using [Sphinx][].
 
 ### Building (HTML Preview)
 
-In order to build and preview the docs you'll need Sphinx, which in turn
+In order to build and preview the docs you'll need [Sphinx][], which in turn
 requires **Python 2.7**. **Python 3+ will not work.**
 
     pip install sphinx
@@ -46,6 +45,9 @@ you can install and use the ReadTheDocs theme if you prefer that:
     pip install sphinx_rtd_theme
 
 If the theme is available, the build system will pick it up.
+
+After the build is finished you can open `build/html/index.html` in your
+default browser.
 
 
 [off-docs]: http://sublimetext.com/docs/3
