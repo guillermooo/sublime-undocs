@@ -74,3 +74,19 @@ if there is a next field available*. Thus, unless you are cycling through snippe
 fields, pressing :kbd:`ESC` will **not** trigger this key binding. (However,
 something else might occur instead if :kbd:`ESC` happens to be bound to a
 different context too---and that's likely to be the case for :kbd:`ESC`.)
+
+Keys combinaisons
+*****************
+
+You can create a key binding which will be triggered only if a combinaison of
+multiple keys is stroked in sequence. To use it, you just have to add a second
+value in the ``keys`` array::
+
+		{ "keys": ["ctrl+k", "ctrl+v"], "command": "paste_from_history" }
+
+Here, to trigger the command ``paste_from_history``, you have to press
+:kbd:`Ctrl` + :kbd:`k` first, release the key :kbd:`k`, then press the key
+:kbd:`v`.
+
+Note: this example is a default key binding, so you don't need to add it to
+your config file and you can try it right now !
