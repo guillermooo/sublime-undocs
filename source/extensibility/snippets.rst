@@ -240,9 +240,9 @@ The substitution syntax has the following syntaxes:
         **m**
             Don't ignore newlines in the string.
 
-.. _`Boost library documentation for regular expressions`: http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html
+.. _`Boost library documentation for regular expressions`: http://www.boost.org/doc/libs/1_56_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html
 
-.. _`Boost library documentation for format strings`: http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html
+.. _`Boost library documentation for format strings`: http://www.boost.org/doc/libs/1_56_0/libs/regex/doc/html/boost_regex/format/boost_format_syntax.html
 
 With substitutions you can, for instance, underline text effortlessly:
 
@@ -255,3 +255,17 @@ With substitutions you can, for instance, underline text effortlessly:
 
           Original: Hey, Joe!
     Transformation: =========
+
+Another more complex example can translate snail_case to Tile Case With Spaces.
+Basically, it combines two separate expressions and replaces into one.
+It also illustrates that replaces may occur before the actual tabstop.
+
+.. code-block:: perl
+
+    Transformation: ${1/^(\w)|(?:_(\w))/(?1\u$1:)(?2 \u$2:)/g}
+          Original: ${1:text_in_snail_case}
+
+    # Output:
+
+    Transformation: Text In Snail Case
+          Original: text_in_snail_case
