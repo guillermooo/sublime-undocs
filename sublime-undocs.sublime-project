@@ -21,6 +21,10 @@
         }
     ],
     "settings": {
-        "rulers": [80]
+        "rulers": [80],
+        "tab_size": 3,
+        "translate_tabs_to_spaces": true,
+        "detect_indentation": true,
+        "trim_trailing_white_space_on_save": true
     }
 }
