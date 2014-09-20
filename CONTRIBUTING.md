@@ -17,88 +17,91 @@ and great additional ones if necessary.
 
 ### `.rst` Style guidelines
 
-Please note that
-some files might not follow all these guidelines yet
-since we established them at a later point.
-If you encounter inconsistencies,
-please report or file a pull request to fix them.
+Not all the files in this project
+follow these guidelines yet,
+as we established them
+after a large portion of this guide had been written.
+If you find any style inconsistencies,
+please file a report or send a pull request to fix them.
 
 #### Line Width
 
-All lines must be 80 characters long or less.
+Lines MUST NOT be longer than 80 characters,
+except for tables and urls.
 
-When writing text,
-try to split it using [semantic linefeeds][].
-As an example,
-this file does it as well.
+Split the text using [semantic linefeeds][].
+This file can serve as an example.
 
 [semantic linefeeds]: http://rhodesmill.org/brandon/2012/one-sentence-per-line/
 
 #### Enumerations
 
-- Unnumbered enumerations should use the following hierarchy:
+- Unnumbered lists SHOULD use the following hierarchy:
 
   ```rst
   -
      *
   ```
 
-- Numbered enumerations should use `#.` when possible:
+- Numbered lists SHOULD use `#.` when possible:
 
   ```rst
-  #. This will be the first entry, but we might change this in the future.
-  #. Using ``#.`` allows us to swap lines without having to change the numbers.
+  #. This is the first item,
+     but it may change places
+     in the future.
+  #. Using ``#.``,
+     we can swap lines around
+     without worrying about numbering.
   ```
 
 #### Indentation
 
-Generally, blocks are indented by 3 spaces
+Blocks SHOULD be indented by 3 spaces,
 but visual indentation is preferred.
 
 *Examples:*
 
 ```rst
 - This sentence can be split
-  using a semantic linefeed
-  which we mentioned earlier.
+  using a semantic linefeed,
+  as mentioned earlier.
 
-1. The very same thing applies to this line
+#. The very same thing applies to this line,
    but it uses a three-spaces indent instead.
 
-.. This is a multi-line comment,
+.. This is a multiline comment,
    properly indented.
    Yeah.
 
 .. directive::
    :option:
 
-   Text will be here.
+   Text goes here.
 
 :Hello: This field has a short field name,
-        so aligning the field body
+        so aligning the body text
         with the first line
-        is feasible.
+        is ok.
 
 :Number-of-African-swallows-required-to-carry-a-coconut:
-   It would be very difficult
-   to align the field body
-   with the left edge
+   It would be awkward
+   to align the field's body
+   with the right edge
    of the first line.
-   It's mostly preferable
-   not to begin the body
+
+   In this case
+   it's discouraged
+   to begin a field's body 
    on the same line as the marker.
 ```
 
-The [Wrap Plus][] package helps with this,
-but currently not with definition lists.
+#### Headings
 
-[Wrap Plus]: https://sublime.wbond.net/packages/Wrap%20Plus
-
-#### Headers
-
-The following header styles should be used in the displayed order.
-For technical reasons you **must** follow the exact hierarchy,
-e.g. h3 must come after h2 or higher and **not** after h1.
+The following heading styles
+MUST be used in the displayed order
+for technical reasons
+(e.g. h3 must come after h2 or higher,
+and **not** after h1).
 
 ```rst
 ===========
@@ -117,22 +120,24 @@ Heading 4
 
 #### File Paths
 
-File paths (relative or absolute) are specified like this:
+File paths (relative or absolute)
+MUST be specified like this:
 
     :file:`{Packages}/SomePackage/somefile.ext`
 
-`{variables}` may be used arbitrarily,
-but the following path prefixes are known:
+Variable parts (`{name}`) may be used freely,
+but you will come across these frequently:
 
 - `{Data}`
 - `{Packages}`
 - `{User}`
 - `{Default}`
 
-All paths use forward slashes
-unless designated specifically for Windows.
+All paths MUST be written with forward slashes
+unless they are meant to be used in Windows.
 
-File extensions (when referring to file types) look like:
+File extensions (when referring to file types)
+MUST be written like this:
 
     ``.ext``
 
@@ -145,18 +150,21 @@ all shortcut keys use the `:kbd:` role:
 :kbd:`Ctrl + T`
 ```
 
-All key parts are written in TitleCase
-and all key bindings should refer to the default for Windows.
+All key names are written in TitleCase
+and all key bindings MUST refer
+to the default for Windows.
 
 #### Sublime Text-specific
 
-- Commands in the command palette are referenced as follows:
+- Commands in the command palette
+  MUST be written as follows:
 
   ```rst
   **Preferences: Settings - User**
   ```
 
-- Menu items (in the main menu by default) are specified like so (notice `→`):
+- Menu items (in the main menu by default)
+  MUST be written as follows (notice the `→`):
 
   ```rst
   *Preferences → Package Settings → ...*
@@ -164,9 +172,18 @@ and all key bindings should refer to the default for Windows.
 
 #### Comments
 
-The following comment "keywords" may be used
+The following comment 'keywords' may be used
 *at the beginning* of a comment
-to mark a section for a revisit:
+to mark a section for review:
 
 - XXX
 - TODO
+
+Examples:
+
+```rst
+.. TODO
+   - Add some screenshots
+
+.. XXX Does anyone really need this?
+```
