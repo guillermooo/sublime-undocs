@@ -14,16 +14,15 @@ Multiple Selections
 Multiple selections let you make sweeping changes to your text efficiently.
 Any praise about multiple selections is an understatement. This is why:
 
-Select some text and press ``Ctrl + D`` to **add more** instances. If
-you want **to skip the current instance**, press ``Ctrl + K, Ctrl + D``.
+Select some text and press :kbd:`Ctrl + D` to **add more** instances. If
+you want **to skip the current instance**, press :kbd:`Ctrl + K, Ctrl + D`.
 
-If you go too far, press ``Ctrl + U`` to **deselect** the current instance.
-
+If you go too far, press :kbd:`Ctrl + U` to **deselect** the current instance.
 
 Transforming Multiple Selections into Lines
 ===========================================
 
-``Ctrl + L`` expands the selections to the end of the line. ``Ctrl + Shift + L``
+:kbd:`Ctrl + L` expands the selections to the end of the line. :kbd:`Ctrl + Shift + L`
 splits the selections into lines.
 
 You can copy multiple selected lines to a separate buffer, edit them there,
@@ -45,25 +44,25 @@ Using the Mouse
 Windows
 
 ==========================	=====================================
-Select Block				Right Mouse Button + ⇧
-Add to Selection			Ctrl + Right Mouse Button + ⇧
-Remove from Selection		Alt + Right Mouse Button + ⇧
+Select Block				Right Mouse Button + :kbd:`⇧`
+Add to Selection			Ctrl + Right Mouse Button + :kbd:`⇧`
+Remove from Selection		Alt + Right Mouse Button + :kbd:`⇧`
 ==========================	=====================================
 
 Linux
 
 ==========================	=====================================
-Select Block				Right Mouse Button + ⇧
-Add to Selection			Ctrl + Right Mouse Button + ⇧
-Remove from Selection		Alt + Right Mouse Button + ⇧
+Select Block				Right Mouse Button + :kbd:`⇧`
+Add to Selection			Ctrl + Right Mouse Button + :kbd:`⇧`
+Remove from Selection		Alt + Right Mouse Button + :kbd:`⇧`
 ==========================	=====================================
 
 OS X
 
 =====================	=======================================
-Select Block			Right Mouse Button + ⌥
-Add to Selection		⌘ + Right Mouse Button + ⇧
-Remove from Selection	⌘ + ⇧ + Right Mouse Button + ⇧
+Select Block			Right Mouse Button + :kbd:`⌥`
+Add to Selection		:kbd:`⌘` + Right Mouse Button + :kbd:`⇧`
+Remove from Selection	:kbd:`⌘` + :kbd:`⇧` + Right Mouse Button + :kbd:`⇧`
 =====================	=======================================
 
 
@@ -72,8 +71,8 @@ Using the Keyboard
 
 =====================	=============================================
 Windows					Ctrl + Alt + Up and Ctrl + Alt + Down
-Linux					Alt + ⇧ + Up and Alt + ⇧ + Down
-OS X					⌃ + ⇧ + Up and ⌃ + ⇧ + Down
+Linux					Alt + :kbd:`⇧` + Up and Alt + :kbd:`⇧` + Down
+OS X					:kbd:`⌃` + :kbd:`⇧` + Up and :kbd:`⌃` + :kbd:`⇧` + Down
 =====================	=============================================
 
 
@@ -83,17 +82,17 @@ Other Ways of Selecting Text
 The list is long; all available options can be found under **Selection**. To
 name a few:
 
-* Select subwords (``Alt + Shift + <arrow>``)
-* Expand selection to brackets (``Ctrl + Shift + M``)
-* Expand selection to indentation (``Ctrl + Shift + J``)
-* Expand selection to scope (``Ctrl + Shift + Space``)
+* Select subwords (:kbd:`Alt + Shift + <arrow>`)
+* Expand selection to brackets (:kbd:`Ctrl + Shift + M`)
+* Expand selection to indentation (:kbd:`Ctrl + Shift + J`)
+* Expand selection to scope (:kbd:`Ctrl + Shift + Space`)
 
 
 Transposing Things
 ==================
 
 Need to swap two letters or, better yet, two words? Experiment with
-``Ctrl + T``.
+:kbd:`Ctrl + T`.
 
 
 And much, much more...

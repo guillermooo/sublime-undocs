@@ -15,8 +15,8 @@ Conventions
 Written from the perspective of a Windows user, most instructions will only
 require trivial changes to work on other platforms.
 
-Relative paths, like *Packages/User*, start at the *data directory* unless
-otherwise noted. The *data directory* is explained further below.
+Relative paths (e.g. :file:`Packages/User`) start at `the Data Directory`_
+unless otherwise noted.
 
 We assume default key bindings when indicating keyboard shortcuts. If you're
 using a non-English keyboard layout, note that **some key bindings won't match
@@ -81,9 +81,9 @@ You can access the packages directory from the main menu
 The ``User`` Package
 ^^^^^^^^^^^^^^^^^^^^
 
-*Packages/User* is a catch-all directory for custom plugins, snippets,
-macros, etc. Consider it your personal area within the packages folder. Sublime
-Text will never overwrite the contents of *Packages/User* during upgrades.
+:file:`Packages/User` is a catch-all directory for custom plugins, snippets,
+macros, etc. Consider it your personal area in the packages folder. Sublime Text
+will never overwrite the contents of :file:`Packages/User` during upgrades.
 
 
 The Python Console and the Python API
@@ -98,7 +98,7 @@ Sublime Text comes with an embedded Python interpreter. It's a useful tool
 to inspect the editor's settings and to quickly test API calls while
 developing plugins.
 
-To open the Python console, press ``Ctrl+``` or select **View | Show Console**
+To open the Python console, press :kbd:`Ctrl+\`` or select **View | Show Console**
 from the main menu.
 
 Confused? Let's try again more slowly:
