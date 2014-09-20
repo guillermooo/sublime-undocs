@@ -7,16 +7,16 @@ Packages are simply folders under ``Packages``, or zip archives with the
 
 Here's a list of typical resources that can be found inside packages:
 
-    - build systems (``.sublime-build``)
-    - key maps (``.sublime-keymap``)
-    - macros (``.sublime-macro``)
-    - menus (``.sublime-menu``)
-    - plugins (``.py``)
-    - preferences (``.tmPreferences``)
-    - settings (``.sublime-settings``)
-    - syntax definitions (``.tmLanguage``)
-    - snippets (``.sublime-snippet``)
-    - themes (``.sublime-theme``)
+- build systems (``.sublime-build``)
+- key maps (``.sublime-keymap``)
+- macros (``.sublime-macro``)
+- menus (``.sublime-menu``)
+- plugins (``.py``)
+- syntax preferences (``.tmPreferences``)
+- settings (``.sublime-settings``)
+- syntax definitions (``.tmLanguage``)
+- snippets (``.sublime-snippet``)
+- themes (``.sublime-theme``)
 
 Some packages may include support files for other packages or core features.
 For example, the spell checker uses *$PATH_TO_SUBLIME_TEXT\Packages\Language -
@@ -31,20 +31,20 @@ classification is artificial and useful just for clarity when discussing this
 topic. Sublime Text doesn't use this classification in any way.
 
 **core packages**
-	Required packages for proper functioning.
+   Sublime Text requires these packages in order to work.
 
 **shipped packages**
-  Included in every installation, though technically not required. They
-  enhance Sublime Text out of the box. May have been contributed by users or
-  third parties.
+   Included in every installation, though technically not required. They
+   enhance Sublime Text out of the box. May have been contributed by users or
+   third parties.
 
 **user packages**
-  Installed by the user to extend Sublime Text's functionaility. They are not
-  part of any Sublime Text installation, and are always contributed by users
-  or third parties.
+   Installed by the user to extend Sublime Text's functionaility. They are not
+   part of any Sublime Text installation, and are always contributed by users
+   or third parties.
 
 **installed packages**
-  Packages stored under *Installed Packages* as *.sublime-package*\ 's
+   Packages stored under *Installed Packages* as *.sublime-package*\ 's
 
 It's worth noting that by *third party* we mainly refer to users of other
 editors, such as Textmate.
@@ -60,16 +60,13 @@ and copy these files.
 
 .. sidebar:: Installing Packages vs Installed Packages
 
-   Note that "installing a package" actually doesn't make that package a Sublime Text
-   installed package. *Installed packages* are ``.sublime-package`` files
-   residing in the ``Installed Packages`` folder. In this guide, we use
-   *install a package* to mean either copying a package to ``Packages`` or
-   a *.sublime-package* file to *Installed Packages*. We hope to come up with
-   a less confusing terminology in the future to explain this!
+   Note that installing a package doesn't actually make that package an
+   installed package. *Installed packages* are *.sublime-package* files
+   residing in the ``Installed Packages`` directory. In this guide, we use
+   *to install a package* to mean to copy a package to :file:`Packages`.
 
-.. XXX - I'm not sure this is still true.
    Sublime Text can restore any package located in ``Installed Packages``, but
-   can't automatically restore the packages located in ``Packages``.
+   not every package located in ``Packages``.
 
 .. _installation-of-sublime-packages:
 
@@ -108,9 +105,9 @@ However, Sublime Text follows some rules for packages. For instance,
 
 .. sidebar:: The ``User`` Package
 
-	Usually, unpackaged resources are stored in ``Packages/User``. If you
-	have a few loose snippets, macros or plugins, this is a good place to keep
-	them.
+   Usually, unpackaged resources are stored in ``Packages/User``. If you
+   have a few loose snippets, macros or plugins, this is a good place to keep
+   them.
 
 .. _merging-and-order-of-precedence:
 
