@@ -564,40 +564,39 @@ Commands
 	Swaps the case of each character in the selection.
 
 **set_mark**
-	Sets a one-per-file mark on the character right before the caret, for
-	further operations with the related commands. If a mark has already been 
-	set in that file, it is removed and set to the new position.
+	Marks the position of each caret in the current file. If any marks have
+	already been set in that file, they are removed.
 
 **select_to_mark**
-	Selects the text between the character right before the caret and the
-	marked character. If the former precedes the latter, it is not included 
-	in the selection, but the latter is, and vice versa.
+	Selects the text between the current position of each one of the current
+	carets and the marked position. Each caret is matched with each mark
+	in order of occurrence, and is moved to the beginning of its selection.
 	
-	In other words, the text is selected as if the text was selected from
-	the current position of the caret to the position where it was when
-	the mark was set.
+	If any number of selections overlap, they are joined and, of all the
+	carets corresponding to each one of the joined selections, only the one
+	occurring first in the file is preserved.
+	
+	If the number of current carets is less or equal to the number of marks,
+	the remaining marks in order are ignored. Conversely, if currently there
+	are more carets than marks, the first relevant selections are produced.
+	Of all extra marks, those contained in the selections are removed, and
+	the rest of them are left where they are, without triggering a selection
+	from their position.
 
 **delete_to_mark**
-	Deletes the text between the the character right before the caret and the
-	marked character. If the former precedes the latter, it is not deleted, 
-	but the latter is, and vice versa.
-	
-	In other words, the text is deleted as if the text was selected from
-	the current position of the caret to the position where it was when
-	the mark was set and then deleted.
+	Deletes the text that ``select_to_mark`` would select.
 
 **swap_with_mark**
-	Removes the mark in the current file, if any, and sets it to the character
-	right before the caret. Then, it moves the caret to where it was when the
-	previous mark was set, or it leaves it where it is if no mark had been set
-	previously.
+	Marks all the current carets' positions, removes those carets, and sets
+	new carets at the previously marked positions, if any.
 
 **clear_bookmarks**
-	If no **name** argument is specified, it removes all bookmarks set in the 
-	current file, but not the mark, if it is set. If the **name** "mark" is 
-	specified as an argument, it only removes the mark.
+	If no **name** argument, or the **name** "bookmarks" is specified, it
+	removes all bookmarks set in the current file, but not the marks. If
+	the **name** "mark" is specified as an argument, it removes all marks set
+	in the current file, but not the bookmarks.
 
-	- **name** [String]: e.g. ``"mark"``.
+	- **name** [String]: e.g. ``"mark"``, ``bookmarks``.
 
 **yank**
 	XXX
