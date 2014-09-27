@@ -596,7 +596,7 @@ Commands
 	the **name** "mark" is specified as an argument, it removes all marks set
 	in the current file, but not the bookmarks.
 
-	- **name** [String]: e.g. ``"mark"``, ``bookmarks``.
+	- **name** [String]: e.g. ``"mark"``, ``"bookmarks"``.
 
 **yank**
 	XXX
