@@ -21,7 +21,7 @@ Contributing to the Documentation
 =================================
 
 If you want to contribute to this documentation,
-head over to the `github repo`_. This guide is created with `Sphinx`_.
+head over to the `GitHub repo`_. This guide is created with `Sphinx`_.
 
-.. _github repo: http://sphinx-doc.org/
+.. _GitHub repo: https://github.com/guillermooo/sublime-undocs
 .. _Sphinx: http://sphinx-doc.org/
