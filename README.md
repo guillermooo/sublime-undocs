@@ -28,7 +28,7 @@ This guide is hosted on [ReadTheDocs][]
 and built with [Sphinx][].
 
 We accept error reports and requests for new content
-via our [issue tracker][issues]
+via our [issue tracker][issues],
 and encourage you to send pull requests
 (but we cannot guarantee
 they will always be merged).
