@@ -38,7 +38,7 @@ as described in [CONTRIBUTING.md](./CONTRIBUTING.md).**
 
 This repository includes a `.sublime-project`
 with predefined settings and a build system
-that builds the HTML docs using.
+that builds the HTML docs using Sphinx.
 
 
 ### Building (HTML Preview)
