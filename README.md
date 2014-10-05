@@ -2,7 +2,8 @@
 
 We started this project
 to fill the gaps in the Sublime Text [official documentation][off-docs].
-You can [read this guide][undocs] online for free.
+
+[Read this guide][undocs] online for free.
 
 Following our [fundraiser on BountySource][fundraiser]
 during July-August 2014,
