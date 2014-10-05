@@ -43,27 +43,27 @@ that builds the HTML docs using Sphinx.
 
 ### Building (HTML Preview)
 
-In order to build and preview the docs
+In order to build and preview the docs,
 you'll need [Sphinx][],
-which in turn requires **Python 2.7**.
-**Python 3+ will not work.**
+which in turn **requires Python 2.7**.
+Python 3+ will not work.
 
     pip install sphinx
 
-When previewing the docs,
-a standard Sphinx theme will be used by default,
+By default, the docs' preview will display
+a standard Sphinx theme,
 but you can install
-and use the ReadTheDocs theme
+and use ReadTheDocs' theme
 if you prefer that:
 
     pip install sphinx_rtd_theme
 
-If the theme is available,
+If this theme is available,
 the build system will pick it up.
 
-After the build is finished
+After the build is finished,
 you can open `build/html/index.html`
-in your default browser.
+in your browser to see the guide.
 
 
 [off-docs]: http://sublimetext.com/docs/3
