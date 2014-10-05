@@ -2,15 +2,13 @@
 
 We started this project
 to fill the gaps in the Sublime Text [official documentation][off-docs].
-Read the guide at <http://docs.sublimetext.info/>.
-It is hosted on [ReadTheDocs][]
-and built with [Sphinx][].
+You can [read this guide][undocs] for free online.
 
 Following our [fundraiser on BountySource][fundraiser]
 during July-August 2014,
 we've started revising all topics
 and adding new ones.
-You can follow our progress
+You can follow our progress here and
 on our public [Trello board][trello].
 
 Huge thanks to [all our backers](./BACKERS.md)!
@@ -26,6 +24,9 @@ or send a donation our way:
 
 ## Contributing
 
+This guide is hosted on [ReadTheDocs][]
+and built with [Sphinx][].
+
 We accept error reports and requests for new content
 via our [issue tracker][issues]
 and encourage you to send pull requests
@@ -37,7 +38,7 @@ as described in [CONTRIBUTING.md](./CONTRIBUTING.md).**
 
 This repository includes a `.sublime-project`
 with predefined settings and a build system
-that builds the HTML docs using [Sphinx][].
+that builds the HTML docs using.
 
 
 ### Building (HTML Preview)
@@ -66,6 +67,7 @@ in your default browser.
 
 
 [off-docs]: http://sublimetext.com/docs/3
+[undocs]: http://docs.sublimetext.info/
 [trello]: https://trello.com/b/ArLlY4X7/sublime-text-unofficial-documentation
 [fundraiser]: https://www.bountysource.com/teams/st-undocs/fundraiser
 
