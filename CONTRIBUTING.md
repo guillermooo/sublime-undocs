@@ -1,4 +1,4 @@
-# Contribution guidelines
+# Contribution Guidelines
 
 
 ## Issue
@@ -12,7 +12,7 @@ before submitting your own.
 ## Pull request
 
 Please try to group related changes into single pull requests
-and great additional ones if necessary.
+and create additional ones if necessary.
 
 
 ### `.rst` Style guidelines
@@ -143,7 +143,7 @@ MUST be written like this:
 
 #### Shortcut Keys
 
-Except for the special OSX bindings site,
+Except for the special OS X bindings site,
 all shortcut keys use the `:kbd:` role:
 
 ```
