@@ -2,7 +2,8 @@
 
 We started this project
 to fill the gaps in the Sublime Text [official documentation][off-docs].
-You can [read this guide][undocs] online for free.
+
+[Read this guide][undocs] online for free.
 
 Following our [fundraiser on BountySource][fundraiser]
 during July-August 2014,
@@ -28,7 +29,7 @@ This guide is hosted on [ReadTheDocs][]
 and built with [Sphinx][].
 
 We accept error reports and requests for new content
-via our [issue tracker][issues]
+via our [issue tracker][issues],
 and encourage you to send pull requests
 (but we cannot guarantee
 they will always be merged).
