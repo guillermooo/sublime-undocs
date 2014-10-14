@@ -36,7 +36,7 @@ Sublime Text inserts for your convenience):
     </snippet>
 
 The ``snippet`` element contains all the information Sublime Text needs in order
-to know *what* to insert, *whether* to insert and *when*. Let's see all of
+to know *what* to insert, *whether* to insert and *when*. Let's look at each of
 these parts in turn.
 
 ``content``
