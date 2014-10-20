@@ -260,7 +260,7 @@ Commands
 **next_view_in_stack**
 	Switches to the most recently active view.
 
-**previous_view_in_stack**
+**prev_view_in_stack**
 	Switches to the view that was active before the most recently active view.
 
 .. XXX I don't think this is very clear or even true.
@@ -569,21 +569,39 @@ Commands
 	Swaps the case of each character in the selection.
 
 **set_mark**
-	XXX
+	Marks the position of each caret in the current file. If any marks have
+	already been set in that file, they are removed.
 
 **select_to_mark**
-	XXX
+	Selects the text between the current position of each one of the current
+	carets and the marked position. Each caret is matched with each mark
+	in order of occurrence, and is moved to the beginning of its selection.
+	
+	If any number of selections overlap, they are joined and, of all the
+	carets corresponding to each one of the joined selections, only the one
+	occurring first in the file is preserved.
+	
+	If the number of current carets is less or equal to the number of marks,
+	the remaining marks in order are ignored. Conversely, if currently there
+	are more carets than marks, the first relevant selections are produced.
+	Of all extra marks, those contained in the selections are removed, and
+	the rest of them are left where they are, without triggering a selection
+	from their position.
 
 **delete_to_mark**
-	XXX
+	Deletes the text that ``select_to_mark`` would select.
 
 **swap_with_mark**
-	XXX
+	Marks all the current carets' positions, removes those carets, and sets
+	new carets at the previously marked positions, if any.
 
 **clear_bookmarks**
-	XXX
+	If no **name** argument, or the **name** "bookmarks" is specified, it
+	removes all bookmarks set in the current file, but not the marks. If
+	the **name** "mark" is specified as an argument, it removes all marks set
+	in the current file, but not the bookmarks.
 
-	- **name** [String]: e.g. ``"mark"``.
+	- **name** [String]: e.g. ``"mark"``, ``"bookmarks"``.
 
 **yank**
 	XXX
