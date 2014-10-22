@@ -8,7 +8,7 @@ Key Bindings
         Complete documentation on key bindings.
 
 Key bindings let you
-map sequences of key presses to actions.
+map sequences of key presses to commands.
 
 
 File Format
@@ -17,109 +17,106 @@ File Format
 .. TODO: Perhaps we can turn this into bullet points. Faster to read and less
 ..       words.
 ..       Like this:
-..       	Format: Json
-..				File Name: Default(<platorm>).sublime-keymap
+..          Format: Json
+..          File Name: Default(<platorm>).sublime-keymap
 
 Key bindings are defined in JSON
 and stored in *.sublime-keymap* files.
-In order to integrate better with each platform,
-there are separate key map files
-for Linux, OSX and Windows.
-Only key maps for the corresponding platform
-will be loaded.
+In the same package, separate key map files
+for Linux, OSX and Windows
+may exist for better OS integration.
+
 
 Example
 *******
 
-Here's an excerpt from the default key map for Windows::
+::json
 
-	[
-		{ "keys": ["ctrl+shift+n"], "command": "new_window" },
-		{ "keys": ["ctrl+o"], "command": "prompt_open_file" }
-	]
+   [
+       { "keys": ["ctrl+shift+n"], "command": "new_window" },
+       { "keys": ["ctrl+o"], "command": "prompt_open_file" }
+   ]
 
 
 Defining and Overriding Key Bindings
 ====================================
 
-Sublime Text ships with a default key map
+Sublime Text ships with default key bindings
 (for example, :file:`Packages/Default/Default (Windows).sublime-keymap)`.
-In order to override the key bindings defined there,
-or to add new ones,
-you can store them in a separate key map
-of higher precedence:
-for example :file:`Packages/User/Default (Windows).sublime-keymap`.
+In order to override default key bindings
+or add new ones,
+use a separate key map file
+with higher precedence:
+for example, :file:`Packages/User/Default (Windows).sublime-keymap`.
 
 See :ref:`merging-and-order-of-precedence`
-for more information
-on how Sublime Text sorts files for merging.
+for more information.
 
 
 Advanced Key Bindings
 =====================
 
 Simple key bindings consist
-of a key combination and a command to be executed.
+of a sequence of one or more keys mapped to a command.
 However, there are more complex syntaxes
-for passing arguments and contextual awareness.
+for passing arguments to commands and
+restricting key bindings to specific contexts.
 
 
 Passing Arguments
 *****************
 
-Arguments are specified
-in the ``args`` key::
+Use the ``args`` key
+to specify arguments::
 
-		{ "keys": ["shift+enter"], "command": "insert", "args": {"characters": "\n"} }
+   { "keys": ["shift+enter"], "command": "insert", "args": {"characters": "\n"} }
 
 Here, ``\n`` is passed to the ``insert`` command
-when you press :kbd:`Shift+Enter`.
+whenever :kbd:`Shift+Enter` is pressed.
 
 
 Contexts
 ********
 
 Contexts determine
-whether a given key binding will be enabled
+whether a given key binding is enabled
 based on the caret's position
 or some other state.
 
 ::
 
-	{ "keys": ["escape"], "command": "clear_fields", "context":
-		[
-			{ "key": "has_next_field", "operator": "equal", "operand": true }
-		]
-	}
+   { "keys": ["escape"], "command": "clear_fields", "context":
+      [
+         { "key": "has_next_field", "operator": "equal", "operand": true }
+      ]
+   }
 
 This key binding translates to
 *clear snippet fields and resume normal editing
-if there is a next field available*.
-Thus, unless you are cycling through snippet fields,
-pressing :kbd:`ESC` will **not**
-trigger this key binding.
-(However, something else might occur instead
-if :kbd:`ESC` happens to be bound to a different context too---
-and that's likely to be the case for :kbd:`ESC`.)
+if there is a next snippet field available*.
+Thus, pressing :kbd:`ESC` will only
+trigger this key binding
+if you are cycling through snippet fields.
+
+The same key binding
+may be mapped to multiple contexts,
+so a single sequence of key presses
+may produce different results
+at different times.
 
 
-Keys combinations
-*****************
+Key Chords
+**********
 
-You can create a key binding
-which will be triggered only
-if a combination of multiple keys
-is stroked in sequence.
-To use it, you just have
-to add a second value in the ``keys`` array::
+You can create key bindings
+composed of multiple keys.
 
-	{ "keys": ["ctrl+k", "ctrl+v"], "command": "paste_from_history" }
+   { "keys": ["ctrl+k", "ctrl+v"], "command": "paste_from_history" }
 
 Here, to trigger the command ``paste_from_history``,
-you have to press :kbd:`Ctrl` + :kbd:`k` first,
-release the key :kbd:`k`,
-then press the key :kbd:`v`.
+you have to press :kbd:`Ctrl`+:kbd:`k` first,
+then release :kbd:`k`,
+and finally press :kbd:`v`.
 
-Note: this example is a default key binding,
-so you don't need to add it to your config file
-and you can try it right now!
+Note: This example is a default key binding,
+so you can try it at any time.
