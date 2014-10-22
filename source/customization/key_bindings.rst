@@ -30,7 +30,7 @@ may exist for better OS integration.
 Example
 *******
 
-::json
+::
 
    [
        { "keys": ["ctrl+shift+n"], "command": "new_window" },
@@ -110,6 +110,8 @@ Key Chords
 
 You can create key bindings
 composed of multiple keys.
+
+::
 
    { "keys": ["ctrl+k", "ctrl+v"], "command": "paste_from_history" }
 
