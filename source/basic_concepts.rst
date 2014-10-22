@@ -11,217 +11,203 @@ you need to be familiar
 with the concepts presented in this section.
 
 
-Conventions
-===========
+General Conventions
+===================
 
-Written from the perspective of a Windows user,
-most instructions will only require trivial changes
+This guide is written from the perspective of a Windows user.
+Most instructions will only require trivial changes
 to work on other platforms.
 
-Relative paths (e.g. :file:`Packages/User`) start at `the Data Directory`_
-unless otherwise noted.
+Unless otherwise noted,
+relative paths (for example, :file:`Packages/User`)
+start at `the Data Directory`_.
 
 We assume default key bindings
 when indicating keyboard shortcuts.
-If you're using a non-English keyboard layout,
-note that **some key bindings won't match
-your locale's keyboard**.
+If you are using a non-English keyboard layout,
+some key bindings may not match your layout.
 This is due to the way Sublime Text
-maps keys to commands.
+processes key strokes internally.
 
 
-With Great Power Comes A Lot of Questions
-=========================================
-
-Unquestionably a versatile tool for programmers,
-you don't need to be one in order to
-use Sublime Text,
-or even to configure it extensively.
-If you're a hacker, however, you are in
-for a great many pleasant surprises:
-Sublime Text can be infinitely customized and extended.
-You can start using it efficiently out of the box,
-but spending some time tailoring it
-to your exact needs will make it even better.
+Mastering Sublime Text Takes Time
+=================================
 
 This guide will teach you
-how to configure Sublime Text.
+how to use and configure Sublime Text.
 
-Sublime Text can't be mastered in a day,
-but it's built on a handful of pervasive ideas
+Sublime Text is a versatile editor for programmers,
+but you don't need to be one
+in order to use it,
+or to configure it extensively—it's an efficient tool out of the box.
+Hackers, however, will appreciate
+all the customization and extensibility opportunities.
+
+Mastering Sublime Text requires time and practice.
+Luckily, it's built around
+a handful of concepts
 that make for a consistent
 and easily understandable system
 once all the pieces come together.
 
 In the following paragraphs,
 we'll outline key aspects
-that may not click in your mind until
-you've spent some time using the editor.
-Experiment, look around in this guide
-and, eventually, everything will fall into place.
+that you'll get familiar with
+after you've spent some time using the editor.
 
 
 The *Data* Directory
 ====================
 
 Nearly all of the interesting files for users
-live under the data directory.
-This is a platform-dependent location:
+live under the *data directory*.
+The data directory is
+a platform-dependent location:
 
-.. XXX I'm using the portable installation, so double check this.
+* **Windows**: :file:`%APPDATA%\\Sublime Text 3`
+* **OS X**: :file:`~/Library/Application Support/Sublime Text 3`
+* **Linux**: :file:`~/.config/sublime-text-3`
 
-* **Windows**: *%APPDATA%\\Sublime Text 3*
-* **OS X**: *~/Library/Application Support/Sublime Text 3*
-* **Linux**: *~/.config/sublime-text-3*
-
-For **portable installations**,
-look inside *Sublime Text 3/Data*.
-Here, the *Sublime Text 3* part
+If you're using the **portable version** (Windows only),
+look for :file:`{Sublime Text 3}/Data`.
+Here, *Sublime Text 3*
 refers to the directory
-to which you've extracted the compressed portable files.
+to which you've extracted
+the compressed portable files.
 
-Note that only in portable installations
-does a directory named *Data* exist.
-For the remaining installation types,
-the data directory is the location
+Note that the :file:`Data` directory
+only exists with that name
+in the portable version.
+In full installations,
+it is one of the locations
 indicated above.
 
 
 The *Packages* Directory
-==============================
+========================
 
 This is a **key directory**:
-all resources for supported programming and markup languages
+all resources for supported programming
+and markup languages
 are stored here.
-A *package* is a directory or zip file
-containing related files
-having a special meaning for Sublime Text.
+(More on *packages* and *resources* later.)
+
+.. TODO: link term above to glossary?
 
 You can access the packages directory
 from the main menu (**Preferences | Browse Packages...**),
-or by means of an API call: ``sublime.packages_path()``.
-In this guide, we refer to this location
+by means of an API call: ``sublime.packages_path()``,
+and by other means
+that will be explained in later topics.
+
+In this guide, we refer to the packages folder
 as *Packages*, *packages path*, *packages folder* or *packages directory*.
 
+
 The ``User`` Package
-^^^^^^^^^^^^^^^^^^^^
+********************
 
 :file:`Packages/User` is a catch-all directory
 for custom plugins, snippets, macros, etc.
 Consider it your personal area
 in the packages folder.
-Sublime Text will never overwrite the contents of :file:`Packages/User`
-during upgrades.
+Updates to Sublime Text will never
+overwrite the contents of :file:`Packages/User`.
 
 
 The Python Console and the Python API
 =====================================
 
-This information is especially interesting
-for programmers.
-For other users,
-you just need to know
+This information is useful for programmers.
+Other users just need to know
 that Sublime Text
 enables users with programming skills
 to add their own features to the editor.
-(So go learn how to program;
-it's great fun!)
 
-Sublime Text comes with an embedded Python interpreter.
-It's a useful tool
+Sublime Text exposes its internals
+via an Application Programming Interface (API)
+that programmers can interact with using
+the Python programming language.
+An embedded Python interpreter is included
+in the editor.
+The embedded interpreter is useful
 to inspect the editor's settings
 and to quickly test API calls
 while developing plugins.
 
-To open the Python console,
+Sublime Text and plugins output information
+to a *console*.
+To open the console,
 press :kbd:`Ctrl+\``
 or select **View | Show Console**
 from the main menu.
 
-Confused?
-Let's try again more slowly:
-
-*Python* is a programming language
-known to be easy for beginners and very powerful
-at the same time.
-*API* is short for 'Application Programming Interface',
-which is a fancy way of saying that Sublime Text 3
-is prepared to be programmed by the user.
-Put differently,
-Sublime Text gives the user access to its internals
-through Python.
-Finally, a *console* is a little window inside Sublime Text
-that lets you type in short snippets of Python code
-and run them.
-The console also shows
-text output by Sublime Text or its plugins.
-
 
 Your System's Python vs the Sublime Text 3 Embedded Python
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**********************************************************
 
 Sublime Text 3 comes with its own Python interpreter
-and it's separate
-from your system's Python installation.
+that's separate
+from your system's Python interpreter
+(if available).
 
-The embedded interpreter is intended only
+The embedded interpreter is only intended
 to interact with the plugin API,
 not for general development.
 
 
-Packages, Plugins, Resources and Other Things That May Not Make Sense to You Now
-================================================================================
+Packages, Plugins, Resources and Other Terms
+============================================
 
 Almost every aspect of Sublime Text
 can be extended or customized.
-For now, this is all you need to understand.
-This vast flexibility is the reason
-why you will learn about so many configuration files:
-there simply must be a place
-to specify all your preferences.
-
 Among other things,
 you can modify the editor's behavior,
 add macros and snippets, extend menus...
-and even create whole new features
---where *feature* means 'anything you can think of'.
-OK, right, there might be things
-you can't do, but you're definitely
-spoiled for choice.
+You can even create whole new features
+using the editor's API to build complex
+plugins.
+This vast flexibility is the reason
+why you will learn
+about so many configuration files:
+there simply must be a place
+to specify all possible preferences.
 
-All these configuration files
-we're referring to
-are simple text files
-following a special structure or *format*:
-JSON predominates, but you'll find
-some XML files,
-and Python files too
-for the more advanced extensibility options.
+Configuration files in Sublime Text
+are simply text files
+that follow a predefined structure or *format*:
+JSON predominates,
+but you'll find XML files too.
+Finally, for the more advanced
+extensibility options,
+Python files are used.
 
-In this guide, for brevity,
-we refer collectively to all these
+For brevity, in this guide
+we sometimes collectively refer to all these
 disparate configuration files as *resources*.
 
 Sublime Text will look for resources
 inside the packages folder.
-And what is a package, you ask?
-We'll talk at length about them,
+We'll talk at length about *packages* later,
 but the short version is that,
 to keep things tidy,
-the editor has a notion of a *package*,
-which is a folder containing resources
+Sublime Text has a notion of a *package*,
+that is, a folder (or zip archive)
+that contains resources
 that belong together
-(maybe they all help
-compose emails faster, write HTML efficiently,
+(maybe they help
+compose emails faster,
+write HTML efficiently,
 enhance the coding experience for C, Ruby, Go...).
 
 
 Textmate Compatibility
 ======================
 
-This information is mainly useful
-for Textmate expats
-who've found a new home in Sublime Text.
+This information is useful
+for Textmate users
+who are now using Sublime Text.
+
 Textmate is an editor for the Mac.
 
 Sublime Text compatibility with Textmate bundles
@@ -237,13 +223,13 @@ even if they are located
 under a *Syntaxes* or *Preferences* subdirectory.
 
 
-Vi/Vim Emulation
+vi/Vim Emulation
 ================
 
-This information is mainly useful
-for dinosaurs and people who like to
-drop the term RSI in conversations.
-Vi is an ancient modal editor
+This information is useful for Vim users
+who are now using Sublime Text.
+
+vi is an ancient modal editor
 that lets the user perform all operations
 from the keyboard.
 Vim, a modern version of vi,
@@ -252,11 +238,11 @@ is still in widespread use.
 Sublime Text provides vi emulation
 through the *Vintage* package.
 The Vintage package is *ignored* by default.
-Read more about Vintage_
+Learn more about Vintage_
 in the official documentation.
 
-An evolution of Vintage called Vintageous_
-offers a better Vi editing experience
+An evolution of Vintage, called Vintageous_,
+offers a better vi/Vim editing experience
 and is updated more often than Vintage.
 Vintageous_ is an open source project.
 
@@ -264,26 +250,17 @@ Vintageous_ is an open source project.
 .. _Vintageous: http://guillermooo.bitbucket.org/Vintageous
 
 
-Emacs
+emacs
 =====
 
-This information is hardly useful for anyone.
-Emacs is...
-Well, nobody really knows what emacs is,
-but some people edit text with it.
+This information is useful
+for emacs users who are
+now using Sublime Text.
 
-If you are an emacs user,
-you're probably not reading this.
+emacs is another popular
+editor for programmers.
 
-
-Be Sublime, My Friend
-=====================
-
-Borrowing from `Bruce Lee's wisdom`_,
-Sublime Text can become almost anything
-you need it to be.
-In skilled hands, blah, blah, blah.
-
-Empty your mind; be sublime, my friend.
-
-.. _Bruce Lee's wisdom: http://www.youtube.com/watch?v=7ijCSu87I9k
+Sublime Text does not offer
+any built-in emacs emulation,
+but you can try third-party packages
+created by other Sublime Text users.
