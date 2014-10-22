@@ -30,7 +30,7 @@ may exist for better OS integration.
 Example
 *******
 
-::
+.. highlight:: json
 
    [
        { "keys": ["ctrl+shift+n"], "command": "new_window" },
@@ -67,7 +67,9 @@ Passing Arguments
 *****************
 
 Use the ``args`` key
-to specify arguments::
+to specify arguments:
+
+.. highlight:: json
 
    { "keys": ["shift+enter"], "command": "insert", "args": {"characters": "\n"} }
 
@@ -83,7 +85,7 @@ whether a given key binding is enabled
 based on the caret's position
 or some other state.
 
-::
+.. highlight:: json
 
    { "keys": ["escape"], "command": "clear_fields", "context":
       [
@@ -111,7 +113,7 @@ Key Chords
 You can create key bindings
 composed of multiple keys.
 
-::
+.. highlight:: json
 
    { "keys": ["ctrl+k", "ctrl+v"], "command": "paste_from_history" }
 
