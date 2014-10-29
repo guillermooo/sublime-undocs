@@ -22,7 +22,7 @@ File Format
 
 Key bindings are defined in JSON
 and stored in *.sublime-keymap* files.
-In the same package, separate key map files
+In the same package, separate keymap files
 for Linux, OSX and Windows
 may exist for better OS integration.
 
@@ -30,7 +30,7 @@ may exist for better OS integration.
 Example
 *******
 
-::json
+.. code-block:: json
 
    [
        { "keys": ["ctrl+shift+n"], "command": "new_window" },
@@ -45,7 +45,7 @@ Sublime Text ships with default key bindings
 (for example, :file:`Packages/Default/Default (Windows).sublime-keymap)`.
 In order to override default key bindings
 or add new ones,
-use a separate key map file
+use a separate keymap file
 with higher precedence:
 for example, :file:`Packages/User/Default (Windows).sublime-keymap`.
 
@@ -67,7 +67,9 @@ Passing Arguments
 *****************
 
 Use the ``args`` key
-to specify arguments::
+to specify arguments:
+
+.. code-block:: json
 
    { "keys": ["shift+enter"], "command": "insert", "args": {"characters": "\n"} }
 
@@ -83,7 +85,7 @@ whether a given key binding is enabled
 based on the caret's position
 or some other state.
 
-::
+.. code-block:: json
 
    { "keys": ["escape"], "command": "clear_fields", "context":
       [
@@ -110,6 +112,8 @@ Key Chords
 
 You can create key bindings
 composed of multiple keys.
+
+.. code-block:: json
 
    { "keys": ["ctrl+k", "ctrl+v"], "command": "paste_from_history" }
 
