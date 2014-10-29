@@ -10,38 +10,39 @@ File Format
 
 Key bindings are stored in ``.sublime-keymap`` files
 and defined in JSON.
-Key map files may be located anywhere in a package.
+Keymap files may be located anywhere in a package.
 
 
-Naming Key Map Files
+Naming Keymap Files
 --------------------
 
-Each platform can optionally have its own key map:
+Any keymap named ``Default.sublime-keymap``
+will always be applied in all platforms.
+
+Additionally, each platform
+can optionally have its own keymap:
 
 * ``Default (Windows).sublime-keymap``
 * ``Default (OSX).sublime-keymap``
 * ``Default (Linux).sublime-keymap``
 
-To have the key map applied in all platforms,
-name the file ``Default.sublime-keymap``.
-
-Sublime Text will ignore any ``.sublime-keymap``
+Sublime Text will ignore any ``.sublime-keymap`` file
 whose name doesn't follow the patterns just described.
 
 
 Structure of a Key Binding
 --------------------------
 
-Key maps are arrays of key bindings.
-This list presents all valid elements in a key binding.
+Keymaps are arrays of key bindings.
+These are all valid elements in a key binding:
 
 ``keys``
    An array of case-sensitive keys.
    Modifiers can be specified
    with the ``+`` sign.
-   Chords can be built
-   by adding elements to the array,
-   e.g. ``["ctrl+k","ctrl+j"]``.
+   You can build chords
+   by adding elements to the array
+   (for example, ``["ctrl+k","ctrl+j"]``).
    Ambiguous chords are resolved
    with a timeout.
 
@@ -51,17 +52,20 @@ This list presents all valid elements in a key binding.
 ``args``
    Dictionary of arguments
    to be passed to ``command``.
-   Keys must be the names
+   Keys must be names
    of parameters to ``command``.
 
 ``context``
    Array of conditions
    that determine a particular *context*.
    All conditions must evaluate to `true`
-   for the key binding to be active.
-   See :ref:`context-reference` below.
+   for the context to be active.
+   See :ref:`context-reference` below
+   for more information.
 
-Here's an example::
+Here's an example:
+
+.. code-block:: json
 
    { "keys": ["shift+enter"], "command": "insert_snippet", "args": {"contents": "\n\t$0\n"}, "context":
       [
@@ -74,18 +78,21 @@ Here's an example::
 
 
 .. _context-reference:
+
 Structure of a Context
 ----------------------
 
 ``key``
-   Name of a context operand to query.
+   Name of the context
+   whose value you want to query.
 
 ``operator``
-   Type of test to perform against ``key``.
+   Type of test to perform against ``key``'s value.
    Defaults to ``equal``.
 
 ``operand``
-   The result of ``key`` is tested against this value.
+   The result returned by ``key``
+   is tested against this value.
 
 ``match_all``
    Requires the test to succeed
@@ -181,7 +188,10 @@ This is useful, for example,
 to emulate Vim's modal behavior.
 
 Key bindings not intended for command mode
-should include a context like this::
+(generally, all of them)
+should include a context like this:
+
+.. code-block:: json
 
     {"key": "setting.command_mode", "operand": false}
 
@@ -195,10 +205,10 @@ Bindable Keys
 
 Keys in key bindings may be specified
 literally or by name.
-
-.. XXX: Check this
 If using a name doesn't work in your case,
 try a literal value.
+
+.. TODO: Check the above.
 
 Here's the list of all valid names:
 
@@ -282,13 +292,13 @@ Warning about Bindable Keys
 If you're developing a package,
 keep this in mind:
 
-* ``Ctrl+Alt+<alphanum>`` should not be used for any Windows key bindings.
-* ``Option+<alphanum>`` should not be used for any OS X key bindings.
+* ``Ctrl+Alt+<alphanum>`` should never be used in any Windows key bindings.
+* ``Option+<alphanum>`` should never be used in any OS X key bindings.
 
 In both cases,
 the user's ability
 to insert non-ASCII characters
-would be compromised.
+would be compromised otherwise.
 
 End-users are free to remap
 any key combination.
@@ -297,23 +307,24 @@ any key combination.
 Order of Preference for Key Bindings
 ************************************
 
-Key bindings in a key map file are evaluated
-from bottom to top.
+Key bindings in a keymap file are evaluated
+from the bottom to the top.
 The first matching context wins.
 
 
-Keeping Key Maps Organized
+Keeping Keymaps Organized
 **************************
 
-Sublime Text ships with default key maps
+Sublime Text ships with default keymaps
 under ``Packages/Default``.
 Other packages may include
-key map files of their own.
+keymap files of their own.
+
 The recommended storage location
-for your personal key map is ``Packages/User``.
+for your personal keymap files is ``Packages/User``.
 
 See :ref:`merging-and-order-of-precedence`
-for information.
+for more information.
 
 
 International Keyboards
@@ -321,20 +332,22 @@ International Keyboards
 
 Due to the way Sublime Text
 maps key names to physical keys,
-there might be a mismatch between the two.
+key names may not correspond to
+physical keys in keyboard layouts
+other than US English.
 
 
 Troubleshooting
 ***************
 
 To enable logging
-related to key maps, see:
+related to keymaps, see:
 
    - `sublime.log_commands(flag)`_.
    - `sublime.log_input(flag)`_.
 
 This may help in
-debugging key maps.
+debugging keymaps.
 
 
 .. _sublime.log_commands(flag): http://www.sublimetext.com/docs/3/api_reference.html
