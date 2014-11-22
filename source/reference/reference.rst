@@ -15,6 +15,9 @@ general index.
     build_systems
     key_bindings
     Settings <settings>
+    symbols
+    comments
+    metadata
     Command Palette <command_palette>
     plugins
     api
