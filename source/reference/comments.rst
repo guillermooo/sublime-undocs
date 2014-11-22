@@ -158,6 +158,25 @@ in those related to comments.
       <string>*/</string>
    </dict>
 
+``TM_COMMENT_DISABLE_INDENT``
+   Optional. Child of ``shellVariables``.
+   Disables indentation for the ``TM_COMMENT_START``
+   marker.
+
+``TM_COMMENT_2_DISABLE_INDENT``
+   Optional. Child of ``shellVariables``.
+   Disables indentation for the ``TM_COMMENT_START_2``
+   marker.
+
+::
+
+   <dict>
+      <key>name</key>
+      <string>TM_COMMENT_END</string>
+      <key>value</key>
+      <string>*/</string>
+   </dict>
+
 
 Here's a more complete example
 using some of the features just discussed:
