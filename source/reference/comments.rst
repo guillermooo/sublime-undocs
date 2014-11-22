@@ -203,5 +203,5 @@ Once comment metadata has been defined,
 you can use default Sublime Text key bindings
 to comment/uncomment lines of code.
 
-- To toggle a line comment, press :kbd:`Ctrl+/-`
-- To toggle a block comment, press :kbd:`Ctrl+Shif+/`
+- To toggle a line comment, press :kbd:`Ctrl+/`
+- To toggle a block comment, press :kbd:`Ctrl+Shift+/`
