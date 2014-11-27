@@ -2,34 +2,45 @@
 Build Systems
 =============
 
-Build systems let you run your files through external programs without leaving
-Sublime Text, and see the output they generate.
+Build systems let you run your files
+through external programs
+without leaving Sublime Text,
+and see the output they generate.
 
-Build systems consist of one --or optionally three-- parts:
+Build systems consist of one
+--or optionally three-- parts:
 
 * Configuration data in JSON format (the *.sublime-build* file contents)
 * Optionally, a Sublime Text command driving the build process
 * A Sublime Text command driving the build process
 * An optional, external executable file (script or binary file)
 
-Essentially, *.sublime-build* files are configuration data for an external
-program, as well as for a Sublime Text command (just mentioned). In them, you
-specify the switches, options and environment information you want forwarded.
+Essentially, *.sublime-build* files
+are configuration data for an external program,
+as well as for a Sublime Text command (just mentioned).
+In them, you specify the switches, options and environment information
+you want forwarded.
 
-The Sublime Text command then receives the data stored in the *.sublime-build*
-file. At this point, it can do whatever it needs to do, to *build* the files. By
-default, build systems will use the ``exec`` command implemented by
-:file:`Packages/Default/exec.py`. As we'll explain below, you can override this
-command.
+The Sublime Text command then receives
+the data stored in the *.sublime-build* file.
+At this point, it can do whatever it needs to do,
+to *build* the files.
+By default, build systems will use
+the ``exec`` command implemented by :file:`Packages/Default/exec.py`.
+As we'll explain below,
+you can override this command.
 
-Finally, the external program may be a shell script you've created to process
-your files, or a well-known utility like ``make`` or ``tidy``. Usually, these
-executable files will receive paths to files or directories, along with
-switches and options to run with.
+Finally, the external program
+may be a shell script you've created to process your files,
+or a well-known utility like ``make`` or ``tidy``.
+Usually, these executable files
+will receive paths to files or directories,
+along with switches and options to run with.
 
-Note that build systems can but don't need to call external programs; a valid
-build system could be implemented entirely in Python in a Sublime Text
-command.
+Note that build systems can but don't need to
+call external programs;
+a valid build system could be implemented entirely
+in Python in a Sublime Text command.
 
 
 File Format
@@ -52,36 +63,49 @@ Build system-specific options
 These options are standard for all build systems.
 
 ``target``
-    Optional. Sublime Text command to run. Defaults to ``exec``.
-    (:file:`Packages/Default/exec.py`). This command receives the full
-    configuration data specified in the *.build-system* file (as ``**kwargs``).
+    Optional. Sublime Text command to run.
+    Defaults to ``exec`` (:file:`Packages/Default/exec.py`).
+    This command receives
+    the full configuration data specified
+    in the *.build-system* file (as ``**kwargs``).
 
-    Used to override the default build system command. Note that if you choose
-    to override the default command for build systems, you can add arbitrary
-    variables in the *.sublime-build* file.
+    Used to override the default build system command.
+    Note that
+    if you choose
+    to override the default command for build systems,
+    you can add arbitrary variables
+in the *.sublime-build* file.
 
 ``selector``
-    Optional. Used when **Tools | Build System | Automatic** is set to ``true``.
-    Sublime Text uses this scope selector to find the appropriate build system
+    Optional. Used when **Tools | Build System | Automatic**
+    is set to ``true``.
+    Sublime Text uses this scope selector
+    to find the appropriate build system
     for the active view.
 
 ``windows``, ``osx`` and ``linux``
-    Optional. Allow specification of OS-specific options which will override the
-    default settings. These accept a dict of `Arbitrary options`_ each.
+    Optional. Allow specification of OS-specific options
+    which will override the default settings.
+    These accept a dict of `Arbitrary options`_ each.
 
     See `Platform-specific Options`_.
 
 ``variants``
-    Optional. A list of dictionaries of options to override the main build
-    system's options. Variant names will appear in the Command Palette for easy
-    access if the build system's selector matches for the active file.
+    Optional. A list of dictionaries of options
+    to override the main build system's options.
+    Variant names will appear in the Command Palette
+    for easy access if the build system's selector
+    matches for the active file.
 
     See Variants_.
 
 ``name``
-    **Only valid inside a variant** (see ``variants``). Identifies variant
-    build systems. If ``name`` is *Run*, the variant will show up under the
-    **Tools | Build System** menu and be bound to :kbd:`Ctrl+Shift+B`.
+    **Only valid inside a variant** (see ``variants``).
+    Identifies variant build systems.
+    If ``name`` is *Run*,
+    the variant will show up
+    under the **Tools | Build System** menu
+    and be bound to :kbd:`Ctrl+Shift+B`.
 
 .. _build-arbitrary-options:
 
@@ -89,43 +113,59 @@ These options are standard for all build systems.
 Arbitrary options
 -----------------
 
-Due to the ``target`` setting a build system can contain literally any option
-(key) that is not one of the options already listed above.
+Due to the ``target`` setting
+a build system can contain literally any option (key)
+that is not one of the options already listed above.
 
-Please note that all the options below are from the default implementation of
-``exec`` (see :ref:`exec command <cmd-exec>`). If you change the ``target``
-option, these can no longer be relied on.
+Please note that all the options below
+are from the default implementation of ``exec``
+(see :ref:`exec command <cmd-exec>`).
+If you change the ``target`` option,
+these can no longer be relied on.
 
 ``cmd``
-    Array containing the command to run and its desired arguments. If you don't
-    specify an absolute path, the external program will be searched in your
-    :const:`PATH`, one of your system's environmental variables.
+    Array containing the command to run
+    and its desired arguments.
+    If you don't specify an absolute path,
+    the external program will be searched in your :const:`PATH`,
+    one of your system's environmental variables.
 
     On Windows, GUIs are supressed.
 
 ``file_regex``
-    Optional. Regular expression (Perl-style) to capture error output of
-    ``cmd``. See the next section for details.
+    Optional. Regular expression (Perl-style)
+    to capture error output of ``cmd``.
+    See the next section for details.
 
 ``line_regex``
-    Optional. If ``file_regex`` doesn't match on the current line, but
-    ``line_regex`` exists, and it does match on the current line, then
-    walk backwards through the buffer until a line matching ``file regex`` is
-    found, and use these two matches to determine the file and line to go to.
+    Optional. If ``file_regex`` doesn't match
+    on the current line,
+    but ``line_regex`` exists,
+    and it does match on the current line,
+    then walk backwards through the buffer
+    until a line matching ``file regex`` is found,
+    and use these two matches
+    to determine the file and line to go to.
 
 ``working_dir``
-    Optional. Directory to change the current directory to before running
-    ``cmd``. The original current directory is restored afterwards.
+    Optional. Directory to change
+    the current directory to
+    before running ``cmd``.
+    The original current directory
+    is restored afterwards.
 
 ``encoding``
-    Optional. Output encoding of ``cmd``. Must be a valid Python encoding.
+    Optional. Output encoding of ``cmd``.
+    Must be a valid Python encoding.
     Defaults to ``UTF-8``.
 
 ``env``
-    Optional. Dictionary of environment variables to be merged with the current
-    process' before passing them to ``cmd``.
+    Optional. Dictionary of environment variables
+    to be merged with the current process'
+    before passing them to ``cmd``.
 
-    Use this element, for example, to add or modify environment variables
+    Use this element, for example,
+    to add or modify environment variables
     without modifying your system's settings.
 
 ``shell``
@@ -133,15 +173,21 @@ option, these can no longer be relied on.
     ``bash``/ ???).
 
 ``path``
-    Optional. This string will replace the current process' :const:`PATH`
-    before calling ``cmd``. The old :const:`PATH` value will be restored
+    Optional. This string will replace
+    the current process' :const:`PATH`
+    before calling ``cmd``.
+    The old :const:`PATH` value will be restored
     after that.
 
-    Use this option to add directories to :const:`PATH` without having to modify
+    Use this option
+    to add directories to :const:`PATH`
+    without having to modify
     your system's settings.
 
 ``syntax``
-    Optional. When provided, the build system output will be formatted with the
+    Optional. When provided,
+    the build system output
+    will be formatted with the
     provided syntax definition.
 
 
@@ -150,22 +196,30 @@ option, these can no longer be relied on.
 Capturing Error Output with ``file_regex``
 ------------------------------------------
 
-The ``file_regex`` option uses a Perl-style regular expression to capture up
-to four fields of error information from the build program's output, namely:
-*filename*, *line number*, *column number* and *error message*. Use
-groups in the pattern to capture this information. The *filename* field and
+The ``file_regex`` option
+uses a Perl-style regular expression
+to capture up to four fields of error information
+from the build program's output, namely:
+*filename*, *line number*, *column number* and *error message*.
+Use groups in the pattern
+to capture this information.
+The *filename* field and
 the *line number* field are required.
 
-When error information is captured, you can navigate to error instances in your
-project's files with :kbd:`F4` and :kbd:`Shift+F4`. If available, the captured
-*error message* will be displayed in the status bar.
+When error information is captured,
+you can navigate to error instances
+in your project's files with :kbd:`F4` and :kbd:`Shift+F4`.
+If available, the captured *error message*
+will be displayed in the status bar.
 
 
 Platform-specific Options
 -------------------------
 
-The ``windows``, ``osx`` and ``linux`` elements let you provide
-platform-specific data in the build system. Here's an example:
+The ``windows``, ``osx`` and ``linux`` elements
+let you provide platform-specific data
+in the build system.
+Here's an example:
 
 .. sourcecode:: javascript
 
@@ -180,14 +234,16 @@ platform-specific data in the build system. Here's an example:
         }
     }
 
-In this case, ``ant`` will be executed for every platform except Windows,
+In this case, ``ant`` will be executed
+for every platform except Windows,
 where ``ant.bat`` will be used instead.
 
 
 Variants
 --------
 
-Here's a contrived example of a build system with variants
+Here's a contrived example
+of a build system with variants
 
 .. sourcecode:: javascript
 
@@ -213,17 +269,20 @@ Here's a contrived example of a build system with variants
     }
 
 
-Given these settings, :kbd:`Ctrl+B` would run the *date* command,
-:kbd:`Crtl+Shift+B` would run the Python interpreter and the remaining variants
-would appear in the :ref:`Command Palette <ext-command-palette-overview>` as
-:samp:`Build: {name}` whenever the build system was active.
+Given these settings,
+:kbd:`Ctrl+B` would run the *date* command,
+:kbd:`Crtl+Shift+B` would run the Python interpreter
+and the remaining variants would appear
+in the :ref:`Command Palette <ext-command-palette-overview>`
+as :samp:`Build: {name}` whenever the build system was active.
 
 .. _build-system-variables:
 
 Build System Variables
 **********************
 
-Build systems expand the following variables in *.sublime-build* files:
+Build systems expand the following variables
+in *.sublime-build* files:
 
 ====================== =====================================================================================
 ``$file_path``         The directory of the current file, e.g., *C:\\Files*.
@@ -242,18 +301,22 @@ Build systems expand the following variables in *.sublime-build* files:
 Placeholders for Variables
 ---------------------------
 
-Features found in snippets can be used with these variables. For example::
+Features found in snippets
+can be used with these variables.
+For example::
 
     ${project_name:Default}
 
-This will emit the name of the current project if there is one, otherwise
-``Default``.
+This will emit the name of the current project
+if there is one, otherwise ``Default``.
 
 ::
 
     ${file/\.php/\.txt/}
 
-This will emit the full path of the current file, replacing *.php* with *.txt*.
+This will emit
+the full path of the current file,
+replacing *.php* with *.txt*.
 
 .. seealso::
 
@@ -265,8 +328,10 @@ This will emit the full path of the current file, replacing *.php* with *.txt*.
 Running Build Systems
 *********************
 
-Select the desired build system from **Tools | Build System**, and then select
-**Tools | Build** or press :kbd:`F7`.
+Select the desired build system
+from **Tools | Build System**,
+and then select **Tools | Build**
+or press :kbd:`F7`.
 
 
 .. _troubleshooting-build-systems:
@@ -274,23 +339,37 @@ Select the desired build system from **Tools | Build System**, and then select
 Troubleshooting Build Systems
 *****************************
 
-Build systems will look for executables in your :const:`PATH`, unless you
-specify an absolute path to the executable. Therefore, your :const:`PATH`
+Build systems will look for executables
+in your :const:`PATH`,
+unless you specify an absolute path
+to the executable.
+Therefore, your :const:`PATH`
 variable must be correctly set.
 
-On some operating systems, the value of :const:`PATH` may vary between terminal
-windows and graphical applications. Thus, in your build system, even if the
-command you are using works in the command line, it may not work from Sublime Text.
+On some operating systems,
+the value of :const:`PATH`
+may vary between terminal windows and graphical applications.
+Thus, in your build system,
+even if the command you are using
+works in the command line,
+it may not work from Sublime Text.
 This is due to user profiles in shells.
 
-To solve this issue, make sure you set the desired :const:`PATH` so that
-graphical applications such as Sublime Text can find it. See the links below for
-more information.
+To solve this issue,
+make sure you set the desired :const:`PATH`
+so that graphical applications such as Sublime Text
+can find it.
+See the links below
+for more information.
 
-Alternatively, you can use the ``path`` key in *.sublime-build* files to
-override the :const:`PATH` used to locate the executable specified in ``cmd``.
-This new value for :const:`PATH` will be in effect only as long as your
-build system is running. After that, the old :const:`PATH` will be restored.
+Alternatively, you can use the ``path`` key
+in *.sublime-build* files
+to override the :const:`PATH` used to locate
+the executable specified in ``cmd``.
+This new value for :const:`PATH`
+will be in effect only
+as long as your build system is running.
+After that, the old :const:`PATH` will be restored.
 
 .. seealso::
 
