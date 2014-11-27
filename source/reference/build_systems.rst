@@ -2,7 +2,7 @@
 Build Systems
 =============
 
-Build systems let you run your files
+Using build systems, you can run files
 through external programs
 without leaving Sublime Text,
 and see the output they generate.
@@ -10,37 +10,44 @@ and see the output they generate.
 Build systems consist of one
 --or optionally three-- parts:
 
-* Configuration data in JSON format (the *.sublime-build* file contents)
-* Optionally, a Sublime Text command driving the build process
-* A Sublime Text command driving the build process
-* An optional, external executable file (script or binary file)
+* Configuration data in JSON format (the *.sublime-build* file content)
+* Optionally, a custom Sublime Text command driving the build process
+* Optionally, an external executable file (script or binary file)
 
-Essentially, *.sublime-build* files
-are configuration data for an external program,
-as well as for a Sublime Text command (just mentioned).
-In them, you specify the switches, options and environment information
+A *.sublime-build* file
+contains configuration data
+in the form of a JSON object.
+This file is used to specify
+switches, options and environment information
 you want forwarded.
 
-The Sublime Text command then receives
-the data stored in the *.sublime-build* file.
-At this point, it can do whatever it needs to do,
+When you run a build action in Sublime Text
+(usually, by pressing :kbd:`Ctrl+B`),
+a Sublime Text command receives
+this configuration data.
+The command then does whatever it needs
 to *build* the files.
+Often, it forwards configuration data
+to an external program.
+
 By default, build systems will use
 the ``exec`` command implemented by :file:`Packages/Default/exec.py`.
-As we'll explain below,
-you can override this command.
+As we'll explain below, however,
+you this command can be overriden.
 
 Finally, the external program
-may be a shell script you've created to process your files,
+that processes the files
+may be a custom shell script
 or a well-known utility like ``make`` or ``tidy``.
-Usually, these executable files
-will receive paths to files or directories,
-along with switches and options to run with.
+Usually, this executable
+receives paths to files or directories,
+along with switches and options
+that configure its behavior.
 
 Note that build systems can but don't need to
 call external programs;
-a valid build system could be implemented entirely
-in Python in a Sublime Text command.
+a build system could be implemented entirely
+as a Sublime Text command.
 
 
 File Format
@@ -60,7 +67,7 @@ File Format
 Build system-specific options
 -----------------------------
 
-These options are standard for all build systems.
+Here's a list of standard options for all build systems.
 
 ``target``
     Optional. Sublime Text command to run.
@@ -74,7 +81,7 @@ These options are standard for all build systems.
     if you choose
     to override the default command for build systems,
     you can add arbitrary variables
-    in the *.sublime-build* file.
+    to the *.sublime-build* file.
 
 ``selector``
     Optional. Used when **Tools | Build System | Automatic**
@@ -84,28 +91,32 @@ These options are standard for all build systems.
     for the active view.
 
 ``windows``, ``osx`` and ``linux``
-    Optional. Allow specification of OS-specific options
-    which will override the default settings.
-    These accept a dict of `Arbitrary options`_ each.
+    Optional. Used to selectively apply options by OS.
+    OS-specific values override defaults.
+    Each of the listed items accepts a dict of `Arbitrary options`_.
 
     See `Platform-specific Options`_.
 
 ``variants``
-    Optional. A list of dictionaries of options
-    to override the main build system's options.
+    Optional. A list of dictionaries of options.
     Variant names will appear in the Command Palette
     for easy access if the build system's selector
     matches for the active file.
 
+    Using variants it's possible
+    to specify multiple build systems
+    for different tasks
+    in the same *.sublime-build* file.
+
     See Variants_.
 
 ``name``
-    **Only valid inside a variant** (see ``variants``).
+    **Only valid inside a variant** (see Variants_).
     Identifies variant build systems.
-    If ``name`` is *Run*,
+    If the ``name`` is *Run*,
     the variant will show up
     under the **Tools | Build System** menu
-    and be bound to :kbd:`Ctrl+Shift+B`.
+    and be bound to :kbd:`Ctrl+B`.
 
 .. _build-arbitrary-options:
 
