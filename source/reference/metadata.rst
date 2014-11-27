@@ -175,7 +175,7 @@ Indentation options control aspects of  the auto indentation mechanism.
 ::
 
       <key>increaseIndentPattern</key>
-      <string>regex</string>
+      <string>insert regex here</string>
 
 ``decreaseIndentPattern``
    Regex. If it matches on the current line,
@@ -184,7 +184,7 @@ Indentation options control aspects of  the auto indentation mechanism.
 ::
 
       <key>decreaseIndentPattern</key>
-      <string>regex</string>
+      <string>insert regex here</string>
 
 ``bracketIndentNextLinePattern``
    Regex. If it matches on the current line,
@@ -193,7 +193,7 @@ Indentation options control aspects of  the auto indentation mechanism.
 ::
 
       <key>bracketIndentNextLinePattern</key>
-      <string>regex</string>
+      <string>insert regex here</string>
 
 ``disableIndentNextLinePattern``
    Regex. If it matches on the current line,
@@ -202,16 +202,17 @@ Indentation options control aspects of  the auto indentation mechanism.
 ::
 
       <key>disableIndentNextLinePattern</key>
-      <string>regex</string>
+      <string>insert regex here</string>
 
 ``unIndentedLinePattern``
-   Regex. If it matches on the current line,
-   no indentation will be applied to the next line.
+   Regex. The autoindenter will ignore
+   lines matching this regex
+   when computing the next line's indentation level.
 
 ::
 
       <key>unIndentedLinePattern</key>
-      <string>regex</string>
+      <string>insert regex here</string>
 
 
 Completions Options (Child of ``settings``)
