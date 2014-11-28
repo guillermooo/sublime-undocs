@@ -20,14 +20,14 @@ and create additional ones if necessary.
 Not all the files in this project
 follow these guidelines yet,
 as we established them
-after a large portion of this guide had been written.
+after a large portion of this guide had been written already.
 If you find any style inconsistencies,
 please file a report or send a pull request to fix them.
 
-#### Line Width
+#### Line Widths
 
 Lines MUST NOT be longer than 80 characters,
-except for tables and urls.
+except for tables, urls and code blocks.
 
 Split the text using [semantic linefeeds][].
 This file can serve as an example.
