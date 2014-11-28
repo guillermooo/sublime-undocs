@@ -19,6 +19,12 @@ it's discussed in this separate document,
 where it should be easier to find.
 
 
+.. seealso::
+
+   :doc:`metadata`
+      More detailed documentation on metadata.
+
+
 Format
 ======
 
