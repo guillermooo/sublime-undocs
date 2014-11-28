@@ -22,6 +22,12 @@ Sublime Text Unofficial Documentation
    Reference <reference/reference>
    Glossary <glossary/glossary>
 
+
+Backers 2014
+============
+
+`Backers 2014 <backers_2014/backers_2014.html>`_
+
 .. Indices and tables
 .. ==================
 
