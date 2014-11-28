@@ -27,13 +27,13 @@ a Sublime Text command receives
 this configuration data.
 The command then does whatever it needs
 to *build* the files.
-Often, it forwards configuration data
-to an external program.
+Often, it interacts
+with an external program.
 
 By default, build systems will use
 the ``exec`` command implemented by :file:`Packages/Default/exec.py`.
 As we'll explain below, however,
-you this command can be overriden.
+this command can be overriden.
 
 Finally, the external program
 that processes the files
@@ -83,6 +83,9 @@ Here's a list of standard options for all build systems.
     you can add arbitrary variables
     to the *.sublime-build* file.
 
+    The `target` command
+    must be a `WindowCommand` subclass.
+
 ``selector``
     Optional. Used when **Tools | Build System | Automatic**
     is set to ``true``.
@@ -93,7 +96,7 @@ Here's a list of standard options for all build systems.
 ``windows``, ``osx`` and ``linux``
     Optional. Used to selectively apply options by OS.
     OS-specific values override defaults.
-    Each of the listed items accepts a dict of `Arbitrary options`_.
+    Each of the listed items accepts a dictionary of `Arbitrary options`_.
 
     See `Platform-specific Options`_.
 
@@ -112,11 +115,12 @@ Here's a list of standard options for all build systems.
 
 ``name``
     **Only valid inside a variant** (see Variants_).
+    
     Identifies variant build systems.
     If the ``name`` is *Run*,
     the variant will show up
     under the **Tools | Build System** menu
-    and be bound to :kbd:`Ctrl+B`.
+    and be bound to :kbd:`Ctrl+Shift+B`.
 
 .. _build-arbitrary-options:
 
