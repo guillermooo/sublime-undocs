@@ -3,8 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
+Backers 2014
+============
+
+`Backers 2014 <backers_2014/backers_2014.html>`_
+
+
 Sublime Text Unofficial Documentation
 =====================================
+
 
 .. toctree::
    :maxdepth: 2
@@ -23,10 +31,6 @@ Sublime Text Unofficial Documentation
    Glossary <glossary/glossary>
 
 
-Backers 2014
-============
-
-`Backers 2014 <backers_2014/backers_2014.html>`_
 
 .. Indices and tables
 .. ==================
