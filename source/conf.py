@@ -25,7 +25,7 @@ sys.path.append(os.path.abspath('_themes'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = []
+extensions = ['sphinxcontrib.rawfiles']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -227,3 +227,10 @@ man_pages = [
     ('index', 'sublimetexthelp', u'Sublime Text Unofficial Documentation',
      ['Guillermo López-Anglada'], [u'Sublime Text Community'], 1)
 ]
+
+
+# ==============================================================================
+# Read the Docs config
+# ==============================================================================
+rawfiles = ['backers_2014']
+
