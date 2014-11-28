@@ -21,7 +21,11 @@ If you find this guide useful,
 you can treat us to a beer
 or send a donation our way:
 
-[![Gratipay](http://img.shields.io/gratipay/sublimeundocs.svg)](https://gratipay.com/sublimeundocs/)
+**Recurring Tip** | **One-off Tip**
+----------------- | ---------------
+[![Gratipay](http://img.shields.io/gratipay/sublimeundocs.svg)](https://gratipay.com/sublimeundocs/) | **[ST Undocs Team](https://www.bountysource.com/teams/st-undocs)**
+
+
 
 ## Contributing
 
