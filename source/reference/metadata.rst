@@ -246,7 +246,7 @@ Symbol Definitions (Child of ``settings``)
 ------------------------------------------
 
 Documentation for symbol definitions
-has moved to a separate document:
+was moved to a separate page:
 :ref:`Symbol Definition settings <md-symbols-settings>`.
 
 

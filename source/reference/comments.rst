@@ -13,7 +13,7 @@ it's possible to make this command
 work for any type of source code.
 
 Because metadata for comment markers is commonly required by packages,
-it's discussed in this separate document,
+it's discussed in this separate page,
 where it should be easier to find.
 
 

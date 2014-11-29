@@ -15,7 +15,7 @@ it's possible to make these commands
 work for any type of source code.
 
 Because metadata for symbols is commonly required by packages,
-it's discussed in this separate document,
+it's discussed in this separate page,
 where it should be easier to find.
 
 
