@@ -12,19 +12,20 @@ using scope selectors.
 
 .. XXX ref scope selectors
 
-These parameters can for example be used for:
+These paremeters can be used for many purposes;
+for example:
 
-- specifying the current comment syntax,
-  even with embedded source code,
+- specifying the current comment markers,
+  even within embedded source code,
   so that you can toggle comments in any syntax,
-- defining indentation rules for auto-indenting source code,
-- defining symbols that ST will allow you to
+- defining rules for auto-indentation,
+- marking symbols that Sublime Text will allow you to
   :ref:`browse to quickly <fm-goto-symbol>`.
 
 .. Link to the separate comment and symbol sections from here
 
-Furthermore, snippets have access to metadata
-specified in the ``shellVariables`` setting,
+Furthermore, snippets can access metadata
+declared in the ``shellVariables`` setting,
 which allows you to create a snippet
 that has different contents
 depending on where it's used.
@@ -33,7 +34,7 @@ depending on where it's used.
 File Format
 ===========
 
-Metadata files have the :file:`.tmPreferences` extension and use the
+Metadata files have the ``.tmPreferences`` extension and use the
 Property List format. The file name can be arbitrary.
 
 Metadata files are inherited from TextMate.
@@ -108,8 +109,8 @@ which is inherited from the Property List format.
    </dict>
    </plist>
 
-These following top-level keys are interpreted in a metadata file,
-all others are ignored:
+The following top-level keys are used in a metadata file;
+all others are ignored.
 
 ``name``
    Optional.
@@ -161,19 +162,17 @@ Subelements of ``settings``
 ===========================
 
 The ``settings`` element can contain
-multiple types of subelements for different purposes,
+subelements for different purposes,
 which will be grouped in the following sections.
 
-Some specific subelements have certain functionality
-associated with them,
-arbitrary subelements can
-only be accessed via the :ref:`API <md-api>`.
+Some have certain functionality associated with them,
+while others can only be accessed via the :ref:`API <md-api>`.
 
 
 Indentation Options (Children of ``settings``)
 ----------------------------------------------
 
-Indentation options control aspects of  the auto indentation mechanism.
+Indentation options control aspects of the auto-indentation mechanism.
 
 ``increaseIndentPattern``
    Regex.
@@ -217,7 +216,7 @@ Indentation options control aspects of  the auto indentation mechanism.
 
 ``unIndentedLinePattern``
    Regex.
-   The autoindenter will ignore
+   The auto-indenter will ignore
    lines matching this regex
    when computing the next line's indentation level.
 
@@ -256,10 +255,8 @@ has moved to a separate document:
 Shell Variables (Child of ``settings``)
 ---------------------------------------
 
-Shell variables are,
-similarly to the ``settings`` subelements,
-used for different purposes
-but have the advantage of being available in snippets.
+Shell variables are used for different purposes
+and can be accessed from snippets.
 
 .. XXX: uncomment once reference exists
 
@@ -269,7 +266,7 @@ but have the advantage of being available in snippets.
       Using shell variables in snippets.
 
 Note that shell variables are defined
-as dictionaries in an array
+as dictionaries in an array,
 and thus have a different format
 from ``settings`` subelements.
 
@@ -288,7 +285,7 @@ from ``settings`` subelements.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Subelements of ``shellVariables`` are
-dictionaries with a ``name`` and a ``value`` key.
+dictionaries with ``name`` and ``value`` keys.
 
 .. code-block:: xml
 

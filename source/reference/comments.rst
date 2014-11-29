@@ -6,10 +6,10 @@ Comments
 Overview
 ========
 
-Sublime Text has default commands
+Sublime Text provids a default command
 to comment or uncomment lines of code.
 Using **metadata files**,
-it's possible to make these commands
+it's possible to make this command
 work for any type of source code.
 
 Because metadata for comment markers is commonly required by packages,
@@ -26,7 +26,7 @@ where it should be easier to find.
 File Format
 ===========
 
-Metadata files have the :file:`.tmPreferences` extension and use the
+Metadata files have the ``.tmPreferences`` extension and use the
 Property List format. The file name can be arbitrary.
 
 Metadata files are inherited from TextMate.
@@ -96,7 +96,7 @@ Top-level Elements
    Scope selector to determine
    in which context the metadata should be active.
 
-   In most cases you want this to be your syntax's base scope.
+   In most cases you'll want this to be your syntax's base scope.
 
    .. XXX: refer to scopes here
 
@@ -176,7 +176,7 @@ Top-level Elements
    Optional.
    Defines an end marker for a comment block.
 
-   If this is omitted,
+   If omitted,
    ``TM_COMMENT_START`` will be treated as a line comment marker.
 
    To add more types of comment end markers,
@@ -196,8 +196,8 @@ Top-level Elements
    Disables indentation for the ``TM_COMMENT_START``
    marker.
 
-   For targetting the ``TM_COMMENT_START/END_2`` group,
-   use ``TM_COMMENT_START_2``.
+   To target the ``TM_COMMENT_START/END_2`` group,
+   use ``TM_COMMENT_DISABLE_INDENT_2``.
 
    .. code-block:: xml
 

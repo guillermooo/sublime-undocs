@@ -28,7 +28,7 @@ where it should be easier to find.
 Format
 ======
 
-Metadata files have the :file:`.tmPreferences` extension and use the
+Metadata files have the ``.tmPreferences`` extension and use the
 Property List format. The file name can be arbitrary.
 
 Metadata files are inherited from TextMate.
@@ -37,7 +37,7 @@ Metadata files are inherited from TextMate.
 Defining Symbols
 ================
 
-Several symbol definition files can co-exist
+Several symbol definition files can coexist
 in the same package.
 For example, two symbol definition files
 could work in tandem:
@@ -100,7 +100,7 @@ in the symbol list.
 .. sure how it works.
 
 And this is our previous example,
-including (multiple) transformations:
+including transformations:
 
 .. code-block:: xml
    :emphasize-lines: 15,16
@@ -130,11 +130,9 @@ including (multiple) transformations:
 Structure of a Symbol Definition File
 =====================================
 
-This is the full list of valid
-elements in a symbol definition file.
+All metadata files share the same top-level structure,
+which is inherited from the Property List format.
 
-Symbol files are in the Property List format,
-so they share this top-level structure:
 
    .. code-block:: xml
 
