@@ -6,8 +6,8 @@ Comments
 Overview
 ========
 
-Sublime Text provids a default command
-to comment or uncomment lines of code.
+Sublime Text provides a default command
+to comment and uncomment lines of code.
 Using **metadata files**,
 it's possible to make this command
 work for any type of source code.

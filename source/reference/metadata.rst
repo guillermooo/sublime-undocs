@@ -109,7 +109,7 @@ which is inherited from the Property List format.
    </dict>
    </plist>
 
-The following top-level keys are used in a metadata file;
+The following top-level keys are used in metadata files;
 all others are ignored.
 
 ``name``
@@ -165,7 +165,7 @@ The ``settings`` element can contain
 subelements for different purposes,
 which will be grouped in the following sections.
 
-Some have certain functionality associated with them,
+Some subelements have certain functionality associated with them by default,
 while others can only be accessed via the :ref:`API <md-api>`.
 
 
