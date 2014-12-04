@@ -49,6 +49,8 @@ and then go to line 123.
 Supported Operators
 -------------------
 
+.. _fm-goto-symbol:
+
 :samp:`@{symbol}`
     Searches for **symbol** symbol in the active buffer;
     bound to :kbd:`Ctrl+R`.
