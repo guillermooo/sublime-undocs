@@ -198,59 +198,59 @@ which is inherited from the Property List format.
 
 ``showInSymbolList``
    Optional.
-
-   ``0`` or ``1`` (unlike other settings).
+   Links symbols to the local symbol list.
+   Valid values are ``0`` or ``1``.
    If ``0``,
-   the corresponding symbols will be hidden instead of indexed.
-
+   the corresponding symbols
+   will be hidden instead of indexed.
 
    .. code-block:: xml
 
-      <key>settings</key>
-      <dict>
-         <key>showInSymbolList</key>
-         <integer>1</integer>
-      </dict>
+      <key>showInSymbolList</key>
+      <integer>1</integer>
 
 ``showInIndexedSymbolList``
    Optional.
-   Links symbols to the project symbol list.
-
-   ``0`` or ``1`` integer (unlike other settings).
+   Links symbols to the global symbol list.
+   Valid values are ``0`` or ``1``.
    If ``0``,
-   the corresponding symbols will be hidden instead of indexed.
+   the corresponding symbols
+   will be hidden instead of indexed.
 
    .. code-block:: xml
 
-      <key>settings</key>
-      <dict>
-         <key>showInIndexedSymbolList</key>
-         <integer>1</integer>
-      </dict>
+      <key>showInIndexedSymbolList</key>
+      <integer>1</integer>
 
 ``symbolTransformation``
    Optional.
-   Semicolon-separated list of text substitutions
-   expressed as regular expressions.
-   The regular expressions engine used in `Oniguruma`_.
+   Targets the local symbol list.
+   Semicolon-separated list of text transformations
+   expressed as regular expressions
+   using the `Oniguruma`_ syntax.
 
    .. code-block:: xml
 
-      <key>settings</key>
-      <dict>
-         ...
-         <key>symbolTransformation</key>
-         <string>
-         s/class\s+([A-Za-z_][A-Za-z0-9_]*.+?\)?)(\:|$)/$1/g;
-         s/def\s+([A-Za-z_][A-Za-z0-9_]*\()(?:(.{0,40}?\))|((.{40}).+?\)))(\:)/$1(?2:$2)(?3:$4…\))/g;
-         </string>
-      </dict>
+      <key>symbolTransformation</key>
+      <string>
+      s/class\s+([A-Za-z_][A-Za-z0-9_]*.+?\)?)(\:|$)/$1/g;
+      s/def\s+([A-Za-z_][A-Za-z0-9_]*\()(?:(.{0,40}?\))|((.{40}).+?\)))(\:)/$1(?2:$2)(?3:$4…\))/g;
+      </string>
 
 ``symbolIndexTransformation``
    Optional.
-   Similar to ``symbolTransformation``
-   but modifies the project symbol list.
+   Targets the global symbol list.
+   Semicolon-separated list of text transformations
+   expressed as regular expressions
+   using the `Oniguruma`_ syntax.
 
+   .. code-block:: xml
+
+      <key>symbolIndexTransformation</key>
+      <string>
+      s/class\s+([A-Za-z_][A-Za-z0-9_]*.+?\)?)(\:|$)/$1/g;
+      s/def\s+([A-Za-z_][A-Za-z0-9_]*\()(?:(.{0,40}?\))|((.{40}).+?\)))(\:)/$1(?2:$2)(?3:$4…\))/g;
+      </string>
 
 .. _Oniguruma: http://www.geocities.jp/kosako3/oniguruma/
 
