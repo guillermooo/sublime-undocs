@@ -159,6 +159,7 @@ which is inherited from the Property List format.
       </dict>
       </plist>
 
+These are all valid elements in a symbol definition file:
 
 ``name``
    Optional.
@@ -273,4 +274,4 @@ using standard key bindings:
 .. seealso::
 
    :ref:`Goto Anything <fm-goto-symbol>`
-      Browsing Symbols using Goto Anything.
+      Browsing symbols using Goto Anything.
