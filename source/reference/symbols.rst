@@ -264,11 +264,13 @@ Once symbols are defined,
 you can navigate them
 using standard key bindings:
 
-- :kbd:`F12` (go to definition),
-- :kbd:`Ctrl+R` (show symbols in file) and
-- :kbd:`Ctrl+Shift+R` (show symbols in project).
+===================  ========================
+:kbd:`F12`           Go to definition
+:kbd:`Ctrl+R`        Show local symbol list
+:kbd:`Ctrl+Shift+R`  Show global symbol list
+===================  ========================
 
 .. seealso::
 
    :ref:`Goto Anything <fm-goto-symbol>`
-      Browsing Symbols using the Goto Anything panel.
+      Browsing Symbols using Goto Anything.
