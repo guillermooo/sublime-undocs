@@ -104,7 +104,7 @@ Text transformations are defined
 as regular expressions
 using the `Oniguruma`_ syntax.
 
-This is an example of a text substitution:
+This is an example of a text transformation:
 
 ::
 
