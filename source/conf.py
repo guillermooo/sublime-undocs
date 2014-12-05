@@ -25,7 +25,7 @@ sys.path.append(os.path.abspath('_themes'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinxcontrib.rawfiles']
+extensions = []
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -100,6 +100,7 @@ if not os.environ.get('READTHEDOCS', None) == 'True':
         import sphinx_rtd_theme
     except:
         print("could not find sphinx_rtd_theme, using default")
+        print(sys.path)
     else:
         html_theme = 'sphinx_rtd_theme'
         html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
@@ -232,5 +233,3 @@ man_pages = [
 # ==============================================================================
 # Read the Docs config
 # ==============================================================================
-rawfiles = ['backers_2014']
-
