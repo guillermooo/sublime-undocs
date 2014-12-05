@@ -65,6 +65,7 @@ Let's see an example
 of a symbol definition file:
 
 .. code-block:: xml
+   :emphasize-lines: 7-8,11-12
 
    <?xml version="1.0" encoding="UTF-8"?>
    <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -96,12 +97,12 @@ the local symbol list.
 Text Transformations
 ====================
 
-It is also possible
+It is possible
 to apply transformations to symbols
 before they are displayed to the user.
 Text transformations are defined
-as regular expressions.
-The regular expression engine used is `Oniguruma`_.
+as regular expressions
+using the `Oniguruma`_ syntax.
 
 This is an example of a text substitution:
 
