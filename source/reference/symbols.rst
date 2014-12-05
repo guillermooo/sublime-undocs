@@ -111,15 +111,11 @@ This is an example of a text substitution:
    s/class\s+([A-Za-z_][A-Za-z0-9_]*.+?\)?)(\:|$)/$1/g;
 
 In this case, a captured symbol such as ``class FooBar(object)``
-would show up instead as ``FooBar(object)``
+would show up as ``FooBar(object)``
 in the symbol list.
 
-
-.. TODO: local symbols vs project symbols in ST show different results. Not
-.. sure how it works.
-
-And this is our previous example,
-including transformations:
+Let's expand our previous example
+to include text transformations:
 
 .. code-block:: xml
    :emphasize-lines: 15,16
@@ -167,9 +163,7 @@ which is inherited from the Property List format.
 ``name``
    Optional.
    Name of the symbol definition.
-   This value is ignored by Sublime Text.
-
-.. XXX: Pretty useless, I believe.
+   Ignored by Sublime Text.
 
    .. code-block:: xml
 
@@ -187,7 +181,7 @@ which is inherited from the Property List format.
          <string>source.python meta.function.python, source.python meta.class.python</string>
 
 ``settings``
-   This section contains required and optional settings.
+   A container for settings.
 
    .. code-block:: xml
 
