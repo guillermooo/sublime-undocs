@@ -10,28 +10,29 @@ Sublime Text provides basic support
 for :ref:`symbol navigation <fm-goto-symbol>`
 (jumping to class and function definitions,
 etc.).
-Using **metadata files**,
-it's possible to make these commands
-work for any type of source code.
-
-Because metadata for symbols is commonly required by packages,
-it's discussed in this separate page,
-where it should be easier to find.
-
-
-.. seealso::
-
-   :doc:`metadata`
-      More detailed documentation on metadata.
+Symbol navigation can be enabled
+for any type of file.
 
 
 Format
 ======
 
-Metadata files have the ``.tmPreferences`` extension and use the
-Property List format. The file name can be arbitrary.
+Symbol navigation can be enabled using metadata files.
+Because symbol navigation metadata
+is commonly required by packages,
+it's discussed in this separate page,
+where it should be easier to find.
 
-Metadata files are inherited from TextMate.
+.. seealso::
+
+   :doc:`metadata`
+      Detailed documentation on metadata files.
+
+Just as regular metadata files,
+symbol navigation metadata files
+have the ``.tmPreferences`` extension
+and use the Property List format.
+The file name is ignored by Sublime Text.
 
 
 Defining Symbols
