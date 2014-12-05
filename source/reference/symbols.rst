@@ -7,7 +7,7 @@ Overview
 ========
 
 Sublime Text provides basic support
-for :ref:`symbol navigation <fm-goto-symbol>`.
+for :ref:`symbol navigation <fm-goto-symbol>`
 (jumping to class and function definitions,
 etc.).
 Using **metadata files**,
@@ -77,6 +77,10 @@ for scope names ``source.python meta.function.python``
 and ``source.python meta.class.python``,
 and text within would be indexed
 as symbols.
+
+
+Text Transformations
+====================
 
 It is also possible
 to apply transformations to symbols
