@@ -42,17 +42,27 @@ Several symbol definition files can coexist
 in the same package.
 For example, two symbol definition files
 could work in tandem:
-one would define symbols in general,
-and a second one would hide some symbols
-that are uninteresting for users.
+one would define all symbols,
+and a second one
+would selectively hide some of them
+that were uninteresting for users.
 
 The symbol navigation framework in Sublime Text
-uses scope selectors
+is strictly text-based
+and uses scope selectors
 to capture symbols in source code files.
+No lexical or syntactical analysis is performed.
+
+Sublime Text features two types of symbol list:
+a local symbol list (active file)
+and a global symbol list (project-wide).
+Using symbol definition files,
+you can target the two of them.
 
 .. XXX: ref scopes
 
-Let's see an example:
+Let's see an example
+of a symbol definition file:
 
 .. code-block:: xml
 
@@ -78,6 +88,9 @@ for scope names ``source.python meta.function.python``
 and ``source.python meta.class.python``,
 and text within would be indexed
 as symbols.
+The ``showInSymbolList`` setting tells
+Sublime Text to use
+the local symbol list.
 
 
 Text Transformations
