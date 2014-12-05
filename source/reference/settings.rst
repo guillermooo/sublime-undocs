@@ -9,7 +9,7 @@ Settings (Reference)
    default settings file (**Preferences | Settings - Default** or   :file:`Default/Preferences.sublime-settings`).
 
 .. seealso::
- 
+
    :doc:`Customization - Settings </customization/settings>`
       A detailed overview on settings in Sublime Text and their order of
       precedence.
@@ -49,7 +49,7 @@ and :file:`Preferences ({platform}).sublime-settings`.
 ``preview_on_click``
    If ``true``, preview file contents when clicking on a file in the side bar.
    Double clicking or editing the preview will open the file and assign it a
-   tab.   
+   tab.
 ``folder_exclude_patterns``
    Excludes the matching folders from the side bar, GoTo Anything, etc.
 ``file_exclude_patterns``
@@ -186,7 +186,7 @@ System and Miscellaneous Settings
    Toggles the spell checker.
 ``dictionary``
    Word list to be used by the spell checker. Accepts a path rooted at the
-   data directory (such as :path:`Packages/Language - English/en_US.dic`). You can
+   data directory (such as :file:`Packages/Language - English/en_US.dic`). You can
    `add more dictionaries <http://extensions.services.openoffice.org/en/dictionaries>`_.
 ``fallback_encoding``
    The encoding to use when the encoding can't be determined automatically.

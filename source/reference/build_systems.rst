@@ -74,7 +74,7 @@ These options are standard for all build systems.
     if you choose
     to override the default command for build systems,
     you can add arbitrary variables
-in the *.sublime-build* file.
+    in the *.sublime-build* file.
 
 ``selector``
     Optional. Used when **Tools | Build System | Automatic**

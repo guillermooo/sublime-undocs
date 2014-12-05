@@ -84,6 +84,7 @@ With this information, you can start writing your own snippets as described in
 the next sections.
 
 .. note::
+
     In the interest of brevity, we're only including the ``content``
     element's text in examples unless otherwise noted.
 
@@ -103,7 +104,7 @@ by Sublime Text.
 You can also add your own variables to provide extra information. These custom
 variables are defined in ``.sublime-options`` files.
 
-======================    ====================================================================================
+======================     =======================================================================
 **$PARAM1 .. $PARAMn**     Arguments passed to the ``insert_snippet`` command. (Not covered here.)
 **$SELECTION**             The text that was selected when the snippet was triggered.
 **$TM_CURRENT_LINE**       Content of the cursor's line when the snippet was triggered.
@@ -116,26 +117,26 @@ variables are defined in ``.sublime-options`` files.
 **$TM_SELECTED_TEXT**      An alias for **$SELECTION**.
 **$TM_SOFT_TABS**          ``YES`` if ``translate_tabs_to_spaces`` is true, otherwise ``NO``.
 **$TM_TAB_SIZE**           Spaces per-tab (controlled by the ``tab_size`` option).
-======================    ====================================================================================
+======================     =======================================================================
 
 Let's see a simple example of a snippet using variables:
 
 .. code-block:: perl
 
-    ====================================
+    =================================
     USER NAME:          $TM_FULLNAME
     FILE NAME:          $TM_FILENAME
      TAB SIZE:          $TM_TAB_SIZE
     SOFT TABS:          $TM_SOFT_TABS
-    ====================================
+    =================================
 
     # Output:
-    ====================================
+    =============================
     USER NAME:          guillermo
     FILE NAME:          test.txt
      TAB SIZE:          4
     SOFT TABS:          YES
-    ====================================
+    =============================
 
 
 Fields

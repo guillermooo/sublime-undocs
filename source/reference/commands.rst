@@ -6,6 +6,7 @@ Overview
 ========
 
 .. named actions, used everywhere, take json arguments
+
 This list of commands is a work in progress.
 
 .. _cmd-about-paths:
@@ -281,7 +282,7 @@ Commands
 	Hides the active panel.
 
 	- **cancel** [Bool]: Notifies the panel to restore the selection to what it
-	was when the panel was opened. (Only incremental find panel.)
+	  was when the panel was opened. (Only incremental find panel.)
 
 **hide_overlay**
 	Hides the active overlay. Show the overlay using the show_overlay command.
@@ -576,11 +577,11 @@ Commands
 	Selects the text between the current position of each one of the current
 	carets and the marked position. Each caret is matched with each mark
 	in order of occurrence, and is moved to the beginning of its selection.
-	
+
 	If any number of selections overlap, they are joined and, of all the
 	carets corresponding to each one of the joined selections, only the one
 	occurring first in the file is preserved.
-	
+
 	If the number of current carets is less or equal to the number of marks,
 	the remaining marks in order are ignored. Conversely, if currently there
 	are more carets than marks, the first relevant selections are produced.

@@ -2,7 +2,7 @@
 File Navigation and File Management
 ===================================
 
-.. _fm-goto-directives:
+.. _fm-goto-anything:
 
 Goto Anything
 =============
@@ -77,7 +77,8 @@ Supported Operators
     bound to :kbd:`Ctrl+G`.
 
 .. note::
-	Searching for symbols will only work
+
+    Searching for symbols will only work
     if the active file type
     has symbols defined for it.
     Symbols are defined in *.tmLanguage* files.
@@ -289,11 +290,11 @@ Or perhaps you use a different pane layout
 when you're writing tests, etc.
 Workspaces help in these situations.
 
-**Workspaces behave very much like projects.
+Workspaces behave very much like projects.
 To create a new workspace,
-select **Project | New Workspace for Project.
+select **Project | New Workspace for Project**.
 To save the active workspace,
-select **Project | Save Workspace As....
+select **Project | Save Workspace As...**.
 
 Workspaces data is stored in JSON files
 with the *.sublime-workspace* extension.

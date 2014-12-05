@@ -30,7 +30,7 @@ Windows
 =======
 
 Portable or Not Portable?
--------------------------
+*************************
 
 Sublime Text comes in two flavors for Windows: normal, and portable. If you
 need the portable installation, you probably know already. Otherwise, go with
@@ -46,13 +46,13 @@ one single folder. You can then move this folder around and the editor will
 still work.
 
 How to Install the Normal Version of Sublime Text
--------------------------------------------------
+*************************************************
 
 Download the installer, doubleclick on it and follow the onscreen
 instructions.
 
 How to Install the Portable Version of Sublime Text
-----------------------------------------------------
+***************************************************
 
 Download the package and uncompress it to a folder of your choice. You will
 find the *sublime_text.exe* executable inside that folder.

@@ -55,7 +55,7 @@ Other Ways of Searching in Files
 --------------------------------
 
 :ref:`Goto Anything <fm-goto-anything>` provides the operator ``#`` to search in
-the current buffer, see :ref:`fm-goto-directives`.
+the current buffer.
 
 
 Other Search-Related Key Bindings
