@@ -17,22 +17,22 @@ for any type of file.
 Format
 ======
 
-Symbol navigation can be enabled using metadata files.
-Because symbol navigation metadata
-is commonly required by packages,
-it's discussed in this separate page,
-where it should be easier to find.
+Symbols are defined  using metadata files.
+Because symbol definition files
+are commonly required by packages,
+they are discussed in this separate page
+so the information is easier to find.
+
+Just as regular metadata files,
+symbol definition files
+have the ``.tmPreferences`` extension
+and use the Property List format.
+The file name is ignored by Sublime Text.
 
 .. seealso::
 
    :doc:`metadata`
       Detailed documentation on metadata files.
-
-Just as regular metadata files,
-symbol navigation metadata files
-have the ``.tmPreferences`` extension
-and use the Property List format.
-The file name is ignored by Sublime Text.
 
 
 Defining Symbols
