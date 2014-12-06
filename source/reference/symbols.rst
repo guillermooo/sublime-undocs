@@ -20,8 +20,8 @@ Format
 Symbols are defined  using metadata files.
 Because symbol definition files
 are commonly required by packages,
-they are discussed in this separate page
-so the information is easier to find.
+they are discussed separately in this page
+for convenience.
 
 Just as regular metadata files,
 symbol definition files
@@ -159,7 +159,7 @@ which is inherited from the Property List format.
       </dict>
       </plist>
 
-These are all valid elements in a symbol definition file:
+These are all the valid elements in a symbol definition file:
 
 ``name``
    Optional.
@@ -253,8 +253,8 @@ These are all valid elements in a symbol definition file:
 
       <key>symbolIndexTransformation</key>
       <string>
-      s/class\s+([A-Za-z_][A-Za-z0-9_]*.+?\)?)(\:|$)/$1/g;
-      s/def\s+([A-Za-z_][A-Za-z0-9_]*\()(?:(.{0,40}?\))|((.{40}).+?\)))(\:)/$1(?2:$2)(?3:$4…\))/g;
+         s/class\s+([A-Za-z_][A-Za-z0-9_]*.+?\)?)(\:|$)/$1/g;
+         s/def\s+([A-Za-z_][A-Za-z0-9_]*\()(?:(.{0,40}?\))|((.{40}).+?\)))(\:)/$1(?2:$2)(?3:$4…\))/g;
       </string>
 
 .. _Oniguruma: http://www.geocities.jp/kosako3/oniguruma/
