@@ -2,22 +2,18 @@
 Completions
 ===========
 
-.. seealso::
-
-   `Sublime Text Documentation <http://www.sublimetext.com/docs/2/tab_completion.html>`_
-      Official documentation on this topic.
-
 In the spirit of IDEs,
 completions suggest terms and insert snippets.
-Completions work through the completions list
-or, optionally, by pressing :kbd:`Tab`.
+Completions work through the completions list,
+which opens automatically as you type
+or by pressing :kbd:`Ctrl + Space`.
 
 Note that, in the broader sense of
 *words that Sublime Text will look up and insert for you*,
 completions aren't limited to completions files,
 because other sources contribute
-to the list of words to be completed,
-namely:
+to the list of words to be completed.
+These are, namely:
 
 * Snippets
 * API-injected completions
@@ -26,8 +22,8 @@ namely:
 However, the most explicit way
 Sublime Text provides you to feed it completions
 is by means of ``.sublime-completions`` files.
-This topic deals
-with the creation of a ``.sublime-completions`` file
+This topic deals with
+the creation of a ``.sublime-completions`` file
 as well as with the interactions
 between all sources for completions.
 
@@ -36,9 +32,9 @@ File Format
 ===========
 
 Completions are JSON files
-with the *.sublime-completions* extension.
+with the ``.sublime-completions`` extension.
 Entries in completions files can contain
-either snippets or plain strings.
+either snippets-like strings or plain text.
 
 
 Example
@@ -54,7 +50,7 @@ Here's an example (with HTML completions):
       "completions":
       [
          { "trigger": "a", "contents": "<a href=\"$1\">$0</a>" },
-         { "trigger": "abbr", "contents": "<abbr>$0</abbr>" },
+         { "trigger": "abbr\t<abbr>", "contents": "<abbr>$0</abbr>" },
          { "trigger": "acronym", "contents": "<acronym>$0</acronym>" }
       ]
    }
@@ -62,6 +58,7 @@ Here's an example (with HTML completions):
 **scope**
    Determines when the completions list
    will be populated with this list of completions.
+
    See :ref:`scopes-and-scope-selectors` for more information.
 
 **completions**
@@ -92,7 +89,8 @@ Trigger-based Completions
 
 .. code-block:: js
 
-   { "trigger": "foo", "contents": "foobar" }
+   { "trigger": "foo", "contents": "foobar" },
+   { "trigger": "foo\ttest", "contents": "foobar" }
 
 **trigger**
    Text that will be displayed in the completions list
@@ -101,59 +99,64 @@ Trigger-based Completions
 
    You can use a ``\t`` tab character
    to separate the trigger from a brief description
-   on what the completion is about,
-   it will be displayed right-aligned
-   and slightly grayed
+   on what the completion is about.
+   It will be displayed right-aligned,
+   slightly grayed
    and does not affect the trigger itself.
 
 **contents**
    Text to be inserted in the buffer.
-   Can use :ref:`snippet-features`.
+   Uses the same string interpolation features
+   as snippets.
+
+   Refer to :ref:`snippet-features`.
+
+   Because of that,
+   if you want a literal ``$``,
+   you have to escape it like this: ``\\$``
+   (double backslashes are needed
+   because we are within a JSON string).
 
 
-
-Sources for Completions
-=======================
+Sources for Completions and their Priorities
+============================================
 
 These are the sources for completions
-the user can control:
+the user can control,
+in the order they are prioritized:
 
 .. py:currentmodule:: sublime_plugin
 
-* :doc:`/extensibility/snippets`
-* *.sublime-completions*
-* API-injected completions
-  via :py:meth:`EventListener.on_query_completions`
+
+1. :doc:`/extensibility/snippets`
+#. API-injected completions
+   via :py:meth:`EventListener.on_query_completions`
+#. ``.sublime-completions`` files
 
 Additionally,
-other completions are folded into the final list:
+these other completions are folded into the final list:
 
-* Words in the buffer
-
-
-Priority of Sources for Completions
-***********************************
-
-This is the order
-in which completions are prioritized:
-
-1. Snippets
-* API-injected completions
-* *.sublime-completions* files
-* Words in buffer
+4. Words in the buffer
 
 Snippets will always win
-if the current prefix matches their tab trigger exactly.
+when the current prefix
+matches their tab trigger exactly.
 For the rest of the completion sources,
 a fuzzy match is performed.
-Furthermore, snippets always lose with fuzzy matches.
+Furthermore,
+snippets always lose with fuzzy matches.
 
-But this is relevant only
-when the completion is inserted automatically.
 When a list of completions is shown,
 snippets will still be listed alongside the other items,
 even if the prefix only partially matches
 the snippets' tab triggers.
+
+.. note::
+
+   Word completions from the buffer
+   can be disabled exlicitly
+   from a completions event hook.
+
 
 How to Use Completions
 ======================
@@ -175,35 +178,29 @@ The Completions List
 
 To use the completions list:
 
-* Press :kbd:`Ctrl+spacebar` to open
+* Press :kbd:`Ctrl+spacebar` or type something to open.
 * Optionally, press :kbd:`Ctrl+spacebar` again
   to select next entry
-  or use up and down arrow keys
+  or use up and down arrow keys.
 * Press :kbd:`Enter` or :kbd:`Tab` to validate selection
-  (depending on the ``auto_complete_commit_on_tab`` )
+  (depending on the ``auto_complete_commit_on_tab`` setting)
+* Optionally, press :kbd:`Tab` repeatedly
+  to insert the next possible completion.
 
 .. note::
 
-   The current selection
+   If the completions list was opened explicitly,
+   the current selection
    in the completions list
-   can actually be validated
+   can also be validated
    with any punctuation sign
    that isn't itself bound to a snippet (e.g. ``.``).
 
-The completions list may work in two ways:
-by bringing up a list
-of suggested words to be completed,
-or by inserting the best match directly.
-The automatic insertion will only be done
-if the list of completion candidates
+When the list of completion candidates
 can be narrowed down to one unambiguous choice
-given the current prefix.
-
-If the choice of best completion is ambiguous,
-an interactive list will be presented to the user.
-Unlike other items,
-snippets in this list are displayed in this format:
-:samp:`{tab_trigger}\\t{name}`.
+given the current prefix,
+this one completion will be validated automatically
+the moment you trigger the completion list.
 
 
 .. _completions-multi-cursor:
@@ -214,7 +211,7 @@ Completions with multiple cursors
 Sublime Text can also handle completions with multiple cursors
 but will only open the completion list
 when all cursors share the same text
-between the current cursor position
+between the current cursor positions
 and the last word separator character
 (e.g. ``.``  or a line break).
 
@@ -254,10 +251,12 @@ The rules for selecting the best completion
 are the same as described above,
 but in case of ambiguity,
 Sublime Text will insert the item it deems most suitable.
+You can press the :kbd:`Tab` key multiple times
+to walk through other available options.
 
 Inserting a Literal Tab Character
 ---------------------------------
 
 When ``tab_completion`` is enabled,
-you can press ``Shift+Tab`` to insert
+you can press :kbd:`Shift + Tab` to insert
 a literal tab character.
