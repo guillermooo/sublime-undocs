@@ -4,12 +4,6 @@
    contain the root `toctree` directive.
 
 
-Backers 2014
-============
-
-`Backers 2014 <_static/backers_2014/backers_2014.html>`_
-
-
 Sublime Text Unofficial Documentation
 =====================================
 
@@ -17,6 +11,7 @@ Sublime Text Unofficial Documentation
 .. toctree::
    :maxdepth: 2
 
+   backers
    intro
    Installation <getting_started/install>
    basic_concepts
