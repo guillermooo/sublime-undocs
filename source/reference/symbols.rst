@@ -57,7 +57,7 @@ Sublime Text features two types of symbol list:
 a local symbol list (active file)
 and a global symbol list (project-wide).
 Using symbol definition files,
-you can target the two of them.
+you can target both individually.
 
 .. XXX: ref scopes
 
@@ -100,11 +100,11 @@ Text Transformations
 It is possible
 to apply transformations to symbols
 before they are displayed to the user.
-Text transformations are defined
+Text substitutions are defined
 as regular expressions
 using the `Oniguruma`_ syntax.
 
-This is an example of a text transformation:
+This is an example of a text substitution:
 
 ::
 
@@ -115,7 +115,7 @@ would show up as ``FooBar(object)``
 in the symbol list.
 
 Let's expand our previous example
-to include text transformations:
+to include a symbol transformation:
 
 .. code-block:: xml
    :emphasize-lines: 15,16
@@ -203,7 +203,7 @@ These are all valid elements in a symbol definition file:
    Valid values are ``0`` or ``1``.
    If ``0``,
    the corresponding symbols
-   will be hidden instead of indexed.
+   will not be displayed.
 
    .. code-block:: xml
 
@@ -216,7 +216,7 @@ These are all valid elements in a symbol definition file:
    Valid values are ``0`` or ``1``.
    If ``0``,
    the corresponding symbols
-   will be hidden instead of indexed.
+   will not be displayed.
 
    .. code-block:: xml
 
@@ -226,24 +226,28 @@ These are all valid elements in a symbol definition file:
 ``symbolTransformation``
    Optional.
    Targets the local symbol list.
-   Semicolon-separated list of text transformations
+   Semicolon-separated list of text substitutions
    expressed as regular expressions
    using the `Oniguruma`_ syntax.
+   Whitespace between substitution instructions
+   is ignored.
 
    .. code-block:: xml
 
       <key>symbolTransformation</key>
       <string>
-      s/class\s+([A-Za-z_][A-Za-z0-9_]*.+?\)?)(\:|$)/$1/g;
-      s/def\s+([A-Za-z_][A-Za-z0-9_]*\()(?:(.{0,40}?\))|((.{40}).+?\)))(\:)/$1(?2:$2)(?3:$4…\))/g;
+         s/class\s+([A-Za-z_][A-Za-z0-9_]*.+?\)?)(\:|$)/$1/g;
+         s/def\s+([A-Za-z_][A-Za-z0-9_]*\()(?:(.{0,40}?\))|((.{40}).+?\)))(\:)/$1(?2:$2)(?3:$4…\))/g;
       </string>
 
 ``symbolIndexTransformation``
    Optional.
    Targets the global symbol list.
-   Semicolon-separated list of text transformations
+   Semicolon-separated list of text substitutions
    expressed as regular expressions
    using the `Oniguruma`_ syntax.
+   Whitespace between substitution instructions
+   is ignored.
 
    .. code-block:: xml
 
