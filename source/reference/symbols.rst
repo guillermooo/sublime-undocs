@@ -7,31 +7,32 @@ Overview
 ========
 
 Sublime Text provides basic support
-for :ref:`symbol navigation <fm-goto-symbol>`.
+for :ref:`symbol navigation <fm-goto-symbol>`
 (jumping to class and function definitions,
 etc.).
-Using **metadata files**,
-it's possible to make these commands
-work for any type of source code.
-
-Because metadata for symbols is commonly required by packages,
-it's discussed in this separate page,
-where it should be easier to find.
-
-
-.. seealso::
-
-   :doc:`metadata`
-      More detailed documentation on metadata.
+Symbol navigation can be enabled
+for any type of file.
 
 
 Format
 ======
 
-Metadata files have the ``.tmPreferences`` extension and use the
-Property List format. The file name can be arbitrary.
+Symbols are defined  using metadata files.
+Because symbol definition files
+are commonly required by packages,
+they are discussed in this separate page
+so the information is easier to find.
 
-Metadata files are inherited from TextMate.
+Just as regular metadata files,
+symbol definition files
+have the ``.tmPreferences`` extension
+and use the Property List format.
+The file name is ignored by Sublime Text.
+
+.. seealso::
+
+   :doc:`metadata`
+      Detailed documentation on metadata files.
 
 
 Defining Symbols
@@ -41,19 +42,30 @@ Several symbol definition files can coexist
 in the same package.
 For example, two symbol definition files
 could work in tandem:
-one would define symbols in general,
-and a second one would hide some symbols
-that are uninteresting for users.
+one would define all symbols,
+and a second one
+would selectively hide some of them
+that were uninteresting for users.
 
 The symbol navigation framework in Sublime Text
-uses scope selectors
+is strictly text-based
+and uses scope selectors
 to capture symbols in source code files.
+No lexical or syntactical analysis is performed.
+
+Sublime Text features two types of symbol list:
+a local symbol list (active file)
+and a global symbol list (project-wide).
+Using symbol definition files,
+you can target both individually.
 
 .. XXX: ref scopes
 
-Let's see an example:
+Let's see an example
+of a symbol definition file:
 
 .. code-block:: xml
+   :emphasize-lines: 7-8,11-12
 
    <?xml version="1.0" encoding="UTF-8"?>
    <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -77,13 +89,20 @@ for scope names ``source.python meta.function.python``
 and ``source.python meta.class.python``,
 and text within would be indexed
 as symbols.
+The ``showInSymbolList`` setting tells
+Sublime Text to use
+the local symbol list.
 
-It is also possible
+
+Text Transformations
+====================
+
+It is possible
 to apply transformations to symbols
 before they are displayed to the user.
-Text transformations are defined
-as regular expressions.
-The regular expression engine used is `Oniguruma`_.
+Text substitutions are defined
+as regular expressions
+using the `Oniguruma`_ syntax.
 
 This is an example of a text substitution:
 
@@ -92,15 +111,11 @@ This is an example of a text substitution:
    s/class\s+([A-Za-z_][A-Za-z0-9_]*.+?\)?)(\:|$)/$1/g;
 
 In this case, a captured symbol such as ``class FooBar(object)``
-would show up instead as ``FooBar(object)``
+would show up as ``FooBar(object)``
 in the symbol list.
 
-
-.. TODO: local symbols vs project symbols in ST show different results. Not
-.. sure how it works.
-
-And this is our previous example,
-including transformations:
+Let's expand our previous example
+to include a symbol transformation:
 
 .. code-block:: xml
    :emphasize-lines: 15,16
@@ -144,13 +159,12 @@ which is inherited from the Property List format.
       </dict>
       </plist>
 
+These are all valid elements in a symbol definition file:
 
 ``name``
    Optional.
    Name of the symbol definition.
-   This value is ignored by Sublime Text.
-
-.. XXX: Pretty useless, I believe.
+   Ignored by Sublime Text.
 
    .. code-block:: xml
 
@@ -168,7 +182,7 @@ which is inherited from the Property List format.
          <string>source.python meta.function.python, source.python meta.class.python</string>
 
 ``settings``
-   This section contains required and optional settings.
+   A container for settings.
 
    .. code-block:: xml
 
@@ -185,59 +199,63 @@ which is inherited from the Property List format.
 
 ``showInSymbolList``
    Optional.
-
-   ``0`` or ``1`` (unlike other settings).
+   Links symbols to the local symbol list.
+   Valid values are ``0`` or ``1``.
    If ``0``,
-   the corresponding symbols will be hidden instead of indexed.
-
+   the corresponding symbols
+   will not be displayed.
 
    .. code-block:: xml
 
-      <key>settings</key>
-      <dict>
-         <key>showInSymbolList</key>
-         <integer>1</integer>
-      </dict>
+      <key>showInSymbolList</key>
+      <integer>1</integer>
 
 ``showInIndexedSymbolList``
    Optional.
-   Links symbols to the project symbol list.
-
-   ``0`` or ``1`` integer (unlike other settings).
+   Links symbols to the global symbol list.
+   Valid values are ``0`` or ``1``.
    If ``0``,
-   the corresponding symbols will be hidden instead of indexed.
+   the corresponding symbols
+   will not be displayed.
 
    .. code-block:: xml
 
-      <key>settings</key>
-      <dict>
-         <key>showInIndexedSymbolList</key>
-         <integer>1</integer>
-      </dict>
+      <key>showInIndexedSymbolList</key>
+      <integer>1</integer>
 
 ``symbolTransformation``
    Optional.
+   Targets the local symbol list.
    Semicolon-separated list of text substitutions
-   expressed as regular expressions.
-   The regular expressions engine used in `Oniguruma`_.
+   expressed as regular expressions
+   using the `Oniguruma`_ syntax.
+   Whitespace between substitution instructions
+   is ignored.
 
    .. code-block:: xml
 
-      <key>settings</key>
-      <dict>
-         ...
-         <key>symbolTransformation</key>
-         <string>
+      <key>symbolTransformation</key>
+      <string>
          s/class\s+([A-Za-z_][A-Za-z0-9_]*.+?\)?)(\:|$)/$1/g;
          s/def\s+([A-Za-z_][A-Za-z0-9_]*\()(?:(.{0,40}?\))|((.{40}).+?\)))(\:)/$1(?2:$2)(?3:$4…\))/g;
-         </string>
-      </dict>
+      </string>
 
 ``symbolIndexTransformation``
    Optional.
-   Similar to ``symbolTransformation``
-   but modifies the project symbol list.
+   Targets the global symbol list.
+   Semicolon-separated list of text substitutions
+   expressed as regular expressions
+   using the `Oniguruma`_ syntax.
+   Whitespace between substitution instructions
+   is ignored.
 
+   .. code-block:: xml
+
+      <key>symbolIndexTransformation</key>
+      <string>
+      s/class\s+([A-Za-z_][A-Za-z0-9_]*.+?\)?)(\:|$)/$1/g;
+      s/def\s+([A-Za-z_][A-Za-z0-9_]*\()(?:(.{0,40}?\))|((.{40}).+?\)))(\:)/$1(?2:$2)(?3:$4…\))/g;
+      </string>
 
 .. _Oniguruma: http://www.geocities.jp/kosako3/oniguruma/
 
@@ -251,11 +269,13 @@ Once symbols are defined,
 you can navigate them
 using standard key bindings:
 
-- :kbd:`F12` (go to definition),
-- :kbd:`Ctrl+R` (show symbols in file) and
-- :kbd:`Ctrl+Shift+R` (show symbols in project).
+===================  ========================
+:kbd:`F12`           Go to definition
+:kbd:`Ctrl+R`        Show local symbol list
+:kbd:`Ctrl+Shift+R`  Show global symbol list
+===================  ========================
 
 .. seealso::
 
    :ref:`Goto Anything <fm-goto-symbol>`
-      Browsing Symbols using the Goto Anything panel.
+      Browsing symbols using Goto Anything.
