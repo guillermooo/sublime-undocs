@@ -178,14 +178,14 @@ The Completions List
 
 To use the completions list:
 
-* Press :kbd:`Ctrl+spacebar` or type something to open.
-* Optionally, press :kbd:`Ctrl+spacebar` again
-  to select next entry
-  or use up and down arrow keys.
-* Press :kbd:`Enter` or :kbd:`Tab` to validate selection
-  (depending on the ``auto_complete_commit_on_tab`` setting)
-* Optionally, press :kbd:`Tab` repeatedly
-  to insert the next possible completion.
+1. Press :kbd:`Ctrl+spacebar` or type something to open.
+#. Optionally, press :kbd:`Ctrl+spacebar` again
+   to select next entry
+   or use up and down arrow keys.
+#. Press :kbd:`Enter` or :kbd:`Tab` to validate selection
+   (depending on the ``auto_complete_commit_on_tab`` setting)
+#. Optionally, press :kbd:`Tab` repeatedly
+   to insert the next possible completion.
 
 .. note::
 
