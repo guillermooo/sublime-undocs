@@ -117,6 +117,7 @@ We'll be styling the actual snippet content, not the whole ``.sublime-snippet``
 file.
 
 .. note::
+
     Since syntax definitions are primarily used to enable syntax highlighting,
     we'll use the phrase *to style* to mean *to break down a source code file
     into scopes*. Keep in mind, however, that colors are a different thing from
@@ -138,6 +139,7 @@ this example:
     - Variable Substitution (``${1/Hello/Hi/g}``)
 
 .. note::
+
     Before continuing, make sure you've installed the AAAPackageDev package as
     explained above.
 
@@ -147,7 +149,8 @@ Creating A New Syntax Definition
 To create a new syntax definition, follow these steps:
 
   - Go to **Tools | Packages | Package Development | New Syntax Definition**
-  - Save the new file in your :file:`Packages/User` folder as a ``.YAML-tmLanguage`` file.
+  - Save the new file in your :file:`Packages/User` folder as a
+    ``.YAML-tmLanguage`` file.
 
 You now should see a file like this:
 
@@ -167,9 +170,9 @@ You now should see a file like this:
 Let's examine the key elements.
 
 ``name``
-    The name that Sublime Text will display in the syntax definition drop-down list.
-    Use a short, descriptive name. Typically, you will use the name of the programming
-    language you are creating the syntax definition for.
+    The name that Sublime Text will display in the syntax definition drop-down
+    list. Use a short, descriptive name. Typically, you will use the name of the
+    programming language you are creating the syntax definition for.
 
 ``scopeName``
     The top level scope for this syntax definition. It takes the form
@@ -203,6 +206,7 @@ For our example, fill the template with the following information::
     ...
 
 .. note::
+
     YAML is not a very strict format, but can cause headaches when you don't
     know its conventions. It supports single and double quotes, but you may also
     omit them as long as the content does not create another YAML literal. If
@@ -326,6 +330,7 @@ And we can add it to our syntax definition too:
     ...
 
 .. note::
+
     You should use two spaces for indent. This is the recommended indent for
     YAML and lines up with lists like shown above.
 
@@ -384,6 +389,7 @@ Notice how numbers refer to parenthesized groups left to right. Of course, you
 can have as many capture groups as you want.
 
 .. note::
+
     Writing ``1`` on a new line and pressing tab will autocomplete to ``'1':
     {name: }`` thanks to AAAPackageDev.
 
@@ -391,15 +397,16 @@ Arguably, you'd want the other scope to be visually consistent with this one.
 Go ahead and change it too.
 
 .. note::
+
     As with ususal regular expressions and substítutions, the capture group
     ``'0'`` applies to the whole match.
 
 Begin-End Rules
 ---------------
 
-Up to now we've been using a simple rule. Although we've seen how to dissect patterns
-into smaller components, sometimes you'll want to target a larger portion of your
-source code that is clearly delimited by start and end marks.
+Up to now we've been using a simple rule. Although we've seen how to dissect
+patterns into smaller components, sometimes you'll want to target a larger
+portion of your source code that is clearly delimited by start and end marks.
 
 Literal strings enclosed by quotation marks or other delimiting constructs are
 better dealt with by begin-end rules. This is a skeleton for one of these rules::
@@ -502,6 +509,7 @@ that this doesn't work if we made the pattern greedy (``.+``) because this
 includes possible nested references.
 
 .. note::
+
     We could've used ``contentName: string.other.ssraw`` instead of the last
     pattern but this way we introduce the importance of ordering and how matches
     are consumed.
@@ -509,7 +517,8 @@ includes possible nested references.
 Final Touches
 -------------
 
-Lastly, let's style escape sequences and illegal sequences, and then we can wrap up.
+Lastly, let's style escape sequences and illegal sequences, and then we can wrap
+up.
 
 .. code-block:: yaml
 
@@ -521,9 +530,9 @@ Lastly, let's style escape sequences and illegal sequences, and then we can wrap
       name: invalid.illegal.ssraw
       match: '[$<>]'
 
-The only hard thing here is not forgetting that ``[]`` enclose arrays in YAML and thus must be wrapped in quotes.
-Other than that, the rules are pretty straightforward if you're familiar with
-regular expressions.
+The only hard thing here is not forgetting that ``[]`` enclose arrays in YAML
+and thus must be wrapped in quotes. Other than that, the rules are pretty
+straightforward if you're familiar with regular expressions.
 
 However, you must take care to place the second rule after any others matching
 the ``$`` character, since otherwise it will be consumed and result in every
@@ -581,6 +590,7 @@ There are more available constructs and code reuse techniques using a
 creation of syntax definitions.
 
 .. note::
+
     If you previously used JSON for syntax definitions you are still able to do
     this because AAAPackageDev is backwards compatible.
 
