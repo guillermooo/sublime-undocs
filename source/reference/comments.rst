@@ -8,32 +8,39 @@ Overview
 
 Sublime Text provides a default command
 to comment and uncomment lines of code.
-Using **metadata files**,
-it's possible to make this command
-work for any type of source code.
-
-Because metadata for comment markers is commonly required by packages,
-it's discussed in this separate page,
-where it should be easier to find.
-
-
-.. seealso::
-
-   :doc:`metadata`
-      More detailed documentation on metadata.
+This command can be enabled
+for any type of file using metadata files.
 
 
 File Format
 ===========
 
-Metadata files have the ``.tmPreferences`` extension and use the
-Property List format. The file name can be arbitrary.
+Comment markers are defined using metadata files.
+Because metadata for comment markers is commonly
+required by packages,
+it's discussed separately in this page
+for convenience.
 
-Metadata files are inherited from TextMate.
+Just as regular metadata files,
+comment metadata files
+have the ``.tmPreferences`` extension
+and use the Property List format.
+The file name is ignored by Sublime Text.
 
-Let's see a basic example:
+.. seealso::
+
+   :doc:`metadata`
+      Detailed documentation on metadata.
+
+
+Example
+=======
+
+Let's see a basic example
+of a comment metadata file:
 
 .. code-block:: xml
+   :emphasize-lines: 12,16,18
 
    <?xml version="1.0" encoding="UTF-8"?>
    <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -59,12 +66,17 @@ Let's see a basic example:
    </dict>
    </plist>
 
+In the example we've highlighted
+some parts that are specific
+to comment metadata files.
+
 
 Structure of a Comment Metadata File
 ====================================
 
 All comment metadata files
-share the same top-level structure:
+share the same top-level structure,
+which is inherited from Property List format:
 
 .. code-block:: xml
 
@@ -76,15 +88,13 @@ share the same top-level structure:
    </dict>
    </plist>
 
-
-Top-level Elements
-==================
+These are all the valid elements
+in a comment metadata file:
 
 ``name``
    Optional.
    Name of the metadata.
-
-   This value is ignored by Sublime Text.
+   Ignored by Sublime Text.
 
    .. code-block:: xml
 
@@ -93,10 +103,12 @@ Top-level Elements
 
 ``scope``
    Required.
-   Scope selector to determine
-   in which context the metadata should be active.
+   Comma-separated list of scope selectors
+   to determine in which context the metadata
+   should be active.
 
-   In most cases you'll want this to be your syntax's base scope.
+   In most cases you'll use
+   the base scope for a particular syntax.
 
    .. XXX: refer to scopes here
 
@@ -107,7 +119,7 @@ Top-level Elements
 
 ``settings``
    Required.
-   Container for other elements.
+   A container for settings.
 
    .. code-block:: xml
 
@@ -118,22 +130,22 @@ Top-level Elements
 
 ``uuid``
    Optional.
-   A unique identifier for this file.
-
-   This value is ignored by Sublime Text.
+   A unique identifier for the file.
+   Ignored by Sublime Text.
 
    .. code-block:: xml
 
       <key>uuid</key>
       <string>BC062860-3346-4D3B-8421-C5543F83D11F</string>
 
+.. _md-comment-settings:
 
 ``settings`` Subelements
 ========================
 
 ``shellVariables``
-   Required (for comment markers).
-   Container for other elements.
+   Required.
+   Container for comment markers.
 
    .. code-block:: xml
 
@@ -150,16 +162,15 @@ Top-level Elements
 
 .. note::
 
-   As explained in :ref:`md-shell-variables`,
-   ``shellVariables`` may contain more elements,
-   but here we're only interested
-   in those related to comments.
+   As explained in the :ref:`shell variables <md-shell-variables>` topic,
+   ``shellVariables`` may contain any arbitrary element,
+   but here we're only concerned
+   with those related to comments.
 
 ``TM_COMMENT_START``
-   Defines a default comment marker.
+   Defines a line comment marker.
 
-   To add a secondary comment marker,
-   (usually, for block comments)
+   To add a block comment marker,
    use the name ``TM_COMMENT_START_2``.
 
 
@@ -174,19 +185,18 @@ Top-level Elements
 
 ``TM_COMMENT_END``
    Optional.
-   Defines an end marker for a comment block.
+   Used to define an end marker
+   for block comments (use ``TM_COMMENT_END_2``).
 
-   If omitted,
-   ``TM_COMMENT_START`` will be treated as a line comment marker.
-
-   To add more types of comment end markers,
-   use a name like ``TM_COMMENT_END_2``.
+   .. XXX not sure about the following
+   .. If omitted,
+   .. ``TM_COMMENT_START`` will be treated as a line comment marker.
 
    .. code-block:: xml
 
       <dict>
          <key>name</key>
-         <string>TM_COMMENT_END</string>
+         <string>TM_COMMENT_END_2</string>
          <key>value</key>
          <string>*/</string>
       </dict>
@@ -213,9 +223,11 @@ Example
 =======
 
 Here's a more complete example
+of a comment metadata file
 using some of the features just discussed:
 
 .. code-block:: xml
+   :emphasize-lines: 15,21
 
    <?xml version="1.0" encoding="UTF-8"?>
    <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -253,8 +265,10 @@ Related Keyboard Shortcuts
 ==========================
 
 Once comment metadata has been defined,
-you can use default Sublime Text key bindings
-to comment/uncomment lines of code.
+you can use standard key bindings
+to comment or uncomment lines of code.
 
-- To toggle a line comment, press :kbd:`Ctrl+/`
-- To toggle a block comment, press :kbd:`Ctrl+Shift+/`
+===================  ========================
+:kbd:`Ctrl+/`        Toggle line comment
+:kbd:`Ctrl+Shift+/`  Toggle block comment
+===================  ========================
