@@ -13,6 +13,10 @@ etc.).
 Symbol navigation can be enabled
 for any type of file.
 
+The symbol navigation framework in Sublime Text
+is strictly text-based.
+No lexical or syntactical analysis is performed.
+
 
 Format
 ======
@@ -38,26 +42,23 @@ The file name is ignored by Sublime Text.
 Defining Symbols
 ================
 
+Sublime Text features two types of symbol list:
+a local symbol list (active file)
+and a global symbol list (project-wide).
+Using symbol definition files,
+you can target both individually.
+
+Symbol definition files use scope selectors
+to capture symbols in source code files.
+
 Several symbol definition files can coexist
 in the same package.
 For example, two symbol definition files
 could work in tandem:
 one would define all symbols,
 and a second one
-would selectively hide some of them
-that were uninteresting for users.
-
-The symbol navigation framework in Sublime Text
-is strictly text-based
-and uses scope selectors
-to capture symbols in source code files.
-No lexical or syntactical analysis is performed.
-
-Sublime Text features two types of symbol list:
-a local symbol list (active file)
-and a global symbol list (project-wide).
-Using symbol definition files,
-you can target both individually.
+could selectively hide some of them
+if they were uninteresting for users.
 
 .. XXX: ref scopes
 
