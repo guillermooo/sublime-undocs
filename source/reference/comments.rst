@@ -202,7 +202,7 @@ in a comment metadata file:
       </dict>
 
 ``TM_COMMENT_DISABLE_INDENT``
-   Optional.
+   Optional. Valid values are ``yes`` and ``no``.
    Disables indentation for the ``TM_COMMENT_START``
    marker.
 
@@ -213,9 +213,9 @@ in a comment metadata file:
 
       <dict>
          <key>name</key>
-         <string>TM_COMMENT_END</string>
+         <string>TM_COMMENT_DISABLE_INDENT</string>
          <key>value</key>
-         <string>*/</string>
+         <string>yes</string>
       </dict>
 
 
