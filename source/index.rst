@@ -4,15 +4,19 @@
    contain the root `toctree` directive.
 
 
+=================
+Table of Contents
+=================
+
+
 Backers 2014
 ============
 
 `Backers 2014 <_static/backers_2014/backers_2014.html>`_
 
 
-Sublime Text Unofficial Documentation
-=====================================
-
+Content
+=======
 
 .. toctree::
    :maxdepth: 2
