@@ -101,8 +101,8 @@ Text Transformations
 It is possible
 to apply transformations to symbols
 before they are displayed to the user.
-Text substitutions are defined
-as regular expressions
+Symbol transformations consist of text substitutions
+defined as regular expressions
 using the `Oniguruma`_ syntax.
 
 This is an example of a text substitution:
@@ -116,7 +116,7 @@ would show up as ``FooBar(object)``
 in the symbol list.
 
 Let's expand our previous example
-to include a symbol transformation:
+to use a symbol transformation:
 
 .. code-block:: xml
    :emphasize-lines: 15,16
