@@ -212,8 +212,8 @@ in a comment metadata file:
    Disables indentation for the ``TM_COMMENT_START``
    marker.
 
-   To target the ``TM_COMMENT_START/END_2`` group,
-   use ``TM_COMMENT_DISABLE_INDENT_2``.
+   To target other group of markers,
+   use ``TM_COMMENT_DISABLE_INDENT_2``, etc.
 
    .. code-block:: xml
 
