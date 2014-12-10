@@ -168,10 +168,10 @@ in a comment metadata file:
    with those related to comments.
 
 ``TM_COMMENT_START``
-   Defines a line comment marker.
+   Defines a default comment marker.
 
-   To add a block comment marker,
-   use the name ``TM_COMMENT_START_2``.
+   To define additional comment markers,
+   name them ``TM_COMMENT_START_2``, ``TM_COMMENT_START_3``, etc.
 
 
    .. code-block:: xml
@@ -185,12 +185,17 @@ in a comment metadata file:
 
 ``TM_COMMENT_END``
    Optional.
-   Used to define an end marker
-   for block comments (use ``TM_COMMENT_END_2``).
+   Defines an end comment marker.
+   If omitted,
+   ``TM_COMMENT_START`` will be treated as a line comment marker.
 
-   .. XXX not sure about the following
-   .. If omitted,
-   .. ``TM_COMMENT_START`` will be treated as a line comment marker.
+   If present,
+   if a corresponding start comment marker
+   can be found
+   they are treated as block comment markers.
+
+   To define additional end comment markers,
+   name them ``TM_COMMENT_END_2``, ``TM_COMMENT_END_3``, etc.
 
    .. code-block:: xml
 
@@ -266,7 +271,7 @@ Related Keyboard Shortcuts
 
 Once comment metadata has been defined,
 you can use standard key bindings
-to comment or uncomment lines of code.
+to comment and uncomment lines of code.
 
 ===================  ========================
 :kbd:`Ctrl+/`        Toggle line comment
