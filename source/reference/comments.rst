@@ -190,10 +190,10 @@ in a comment metadata file:
    If omitted,
    ``TM_COMMENT_START`` will be treated as a line comment marker.
 
-   If present,
-   if a corresponding start comment marker
-   can be found
-   they are treated as block comment markers.
+   If present
+   and a corresponding start comment marker
+   can be found,
+   the pair is treated as block comment markers.
 
    To define additional end comment markers,
    name them ``TM_COMMENT_END_2``, ``TM_COMMENT_END_3``, etc.
