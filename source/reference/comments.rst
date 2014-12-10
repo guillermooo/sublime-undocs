@@ -16,8 +16,8 @@ File Format
 ===========
 
 Comment markers are defined using metadata files.
-Because metadata for comment markers is commonly
-required by packages,
+However, because metadata for comment markers
+is commonly required by packages,
 it's discussed separately in this page
 for convenience.
 
@@ -162,10 +162,11 @@ in a comment metadata file:
 
 .. note::
 
-   As explained in the :ref:`shell variables <md-shell-variables>` topic,
-   ``shellVariables`` may contain any arbitrary element,
+   The ``shellVariables`` array
+   may contain any arbitrary subelement,
    but here we're only concerned
    with those related to comments.
+   See :ref:`md-shell-variables` for details.
 
 ``TM_COMMENT_START``
    Defines a default comment marker.
