@@ -12,8 +12,8 @@ using scope selectors.
 
 .. XXX ref scope selectors
 
-These paremeters can be used for many purposes;
-for example:
+These paremeters can be used
+for many purposes; for example:
 
 - specifying the current comment markers,
   even within embedded source code,
@@ -34,10 +34,15 @@ depending on where it's used.
 File Format
 ===========
 
-Metadata files have the ``.tmPreferences`` extension and use the
-Property List format. The file name can be arbitrary.
+Metadata files have the ``.tmPreferences`` extension
+and use the Property List format.
+The file name is ignored by Sublime Text.
 
 Metadata files are inherited from TextMate.
+
+
+Example
+=======
 
 Here's an example of a metadata file:
 
@@ -92,6 +97,9 @@ Here's an example of a metadata file:
    </dict>
    </plist>
 
+The example file combines
+several types of metadata.
+
 
 Structure of a Metadata File
 ============================
@@ -109,14 +117,14 @@ which is inherited from the Property List format.
    </dict>
    </plist>
 
-The following top-level keys are used in metadata files;
-all others are ignored.
+Sublime Text uses the following top-level keys
+in metadata files;
+all others are ignored by default.
 
 ``name``
    Optional.
    Name of the metadata.
-
-   This value is ignored by Sublime Text.
+   Ignored by Sublime Text.
 
    .. code-block:: xml
 
@@ -126,7 +134,7 @@ all others are ignored.
 ``scope``
    Required.
    Scope selector to determine
-   in which context the metadata should be active.
+   in which context the metadata should be available.
 
    .. XXX: refer to scopes here
 
@@ -137,7 +145,7 @@ all others are ignored.
 
 ``settings``
    Required.
-   Container for other elements.
+   Container for settings.
 
    .. code-block:: xml
 
@@ -148,9 +156,8 @@ all others are ignored.
 
 ``uuid``
    Optional.
-   A unique identifier for this file.
-
-   This value is ignored by Sublime Text.
+   A unique identifier for the file.
+   Ignored by Sublime Text.
 
    .. code-block:: xml
 
