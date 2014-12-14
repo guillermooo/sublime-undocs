@@ -13,7 +13,7 @@ and see the output they generate.
 
 .. note::
 
-    *Build* is used in a broad sense.
+    *Build* is used in a    road sense.
     A build system doesn't need to generate
     a compiled executable---it could simply
     format code, run an interpreter, etc.
@@ -44,24 +44,25 @@ Each ``.sublime-build`` file
 is normally associated with a specific scope.
 
 
-The Sublime Text Command Used in Build Systems
-**********************************************
+The Sublime Text Command Used in A Build System
+***********************************************
 
 When you run
-the default build action in Sublime Text
+the default build task in Sublime Text
 (:kbd:`Ctrl+B`),
 a Sublime Text command receives
 the configuration data
 specified in the ``.sublime-build`` file.
-The command then *builds* the files.
+This command then *builds* the files.
 Often, it interacts
 with an external program.
 By default, the command
-used in build systems is called ``excec``.
+used in build systems is called ``excec``,
+but it can be overriden.
 
 
-The ``target`` Option
----------------------
+Overriding the Default Command for Build Systems
+------------------------------------------------
 
 By default, build systems use
 the ``exec`` command implemented by :file:`Packages/Default/exec.py`.
@@ -80,10 +81,10 @@ Interaction with External Programs
 A build system may interact
 with an external program
 to process files.
-This program may be
-a custom shell script
-or a standard utility like ``make`` or ``tidy``.
-Usually, this executable
+The external program may be
+a custom shell script,
+a standard utility like ``make`` or ``tidy``, etc.
+Usually, the external program
 receives paths to files or directories,
 along with switches and options
 that configure its behavior.
@@ -97,14 +98,14 @@ that configure its behavior.
 
 
 Format
-------
+======
 
 ``.sublime-build`` files use JSON.
 The file name is ignored by Sublime Text.
 
 
 Example
--------
+*******
 
 .. sourcecode:: javascript
 
@@ -116,7 +117,7 @@ Example
 
 
 Predefined Options in Build Systems
-***********************************
+====================================
 
 This is a list of standard options
 that all build systems understand.
@@ -447,36 +448,29 @@ Troubleshooting Build Systems
 *****************************
 
 Build systems will look for executables
-in your :const:`PATH`,
-unless you specify an absolute path
-to the executable.
+in your :const:`PATH`.
 Therefore, your :const:`PATH`
 variable must be correctly set.
 
 On some operating systems,
 the value of :const:`PATH`
-may vary between terminal windows and graphical applications.
-Thus, in your build system,
-even if the command you are using
-works in the command line,
-it may not work from Sublime Text.
-This is due to user profiles in shells.
+may vary between terminal windows
+and graphical applications.
+Thus, depending how you start Sublime Text,
+the build system may or may not work.
 
 To solve this issue,
-make sure you set the desired :const:`PATH`
+make sure you set the :const:`PATH`
 so that graphical applications such as Sublime Text
 can find it.
 See the links below
 for more information.
 
-Alternatively, you can use the ``path`` key
-in ``.sublime-build`` files
+Alternatively, you can use the ``path`` option
+in a ``.sublime-build`` file
 to override the :const:`PATH` used to locate
 the executable specified in ``cmd``.
-This new value for :const:`PATH`
-will be in effect only
-as long as your build system is running.
-After that, the old :const:`PATH` will be restored.
+This will not alter your system's :const:`PATH`.
 
 .. seealso::
 
