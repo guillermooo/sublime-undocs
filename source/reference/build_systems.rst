@@ -45,7 +45,7 @@ or a well-known utility like ``make`` or ``tidy``.
 =======
 .. note::
 
-    *Build* is used in a    road sense.
+    *Build* is used in a broad sense.
     A build system doesn't need to generate
     a compiled executable---it could simply
     format code, run an interpreter, etc.
@@ -75,6 +75,20 @@ switches, options and environmental data.
 Each ``.sublime-build`` file
 is normally associated with a specific scope.
 
+The file name is ignored by Sublime Text.
+
+
+Example
+*******
+
+.. sourcecode:: javascript
+
+    {
+        "cmd": ["python", "-u", "$file"],
+        "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+        "selector": "source.python"
+    }
+
 
 The Sublime Text Command Used in A Build System
 ***********************************************
@@ -89,7 +103,7 @@ This command then *builds* the files.
 Often, it interacts
 with an external program.
 By default, the command
-used in build systems is called ``excec``,
+used in build systems is called ``exec``,
 but it can be overriden.
 
 
@@ -107,11 +121,11 @@ by modifying the ``target`` option
 in a ``.build-system`` file.
 
 
-Interaction with External Programs
-**********************************
+Calling External Programs
+*************************
 
-A build system may interact
-with an external program
+A build system may call
+an external program
 to process files.
 The external program may be
 a custom shell script,
@@ -129,27 +143,8 @@ that configure its behavior.
     as a Sublime Text command.
 
 
-Format
-======
-
-``.sublime-build`` files use JSON.
-The file name is ignored by Sublime Text.
-
-
-Example
-*******
-
-.. sourcecode:: javascript
-
-    {
-        "cmd": ["python", "-u", "$file"],
-        "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
-        "selector": "source.python"
-    }
-
-
-Predefined Options in Build Systems
-====================================
+Meta Options in Build Systems
+=============================
 
 This is a list of standard options
 that all build systems understand.
@@ -206,7 +201,7 @@ receive any of these options.
     Identifies variant build systems.
     If the ``name`` is *Run*,
     the variant will show up
-    under the **Tools | Build System**.
+    under **Tools | Build System**.
     Sublime Text will also automatically bind this
     task to :kbd:`Ctrl+Shift+B`.
 
@@ -237,7 +232,11 @@ these options can no longer be relied on
 (see `Target Command Arguments`_ for details).
 
 ``cmd``
-    Required. Array containing the command to run
+    Required.
+
+    Overriden by ``shell_cmd``.
+
+    Array containing the command to run
     and its desired arguments.
     If you don't specify an absolute path,
     the external program
@@ -250,7 +249,11 @@ these options can no longer be relied on
     over ``cmd``.
 
 ``shell_cmd``
-    Required. A string that specifies
+    Optional.
+
+    Overrides ``cmd`` if used.
+
+    A string that specifies
     the command to be run
     and its arguments.
 
@@ -263,12 +266,16 @@ these options can no longer be relied on
     over ``cmd``.
 
 ``file_regex``
-    Optional. Regular expression (Perl-style)
+    Optional.
+
+    Regular expression (Perl-style)
     to capture error output of ``cmd``.
     See the next section for details.
 
 ``line_regex``
-    Optional. If ``file_regex`` doesn't match
+    Optional.
+
+    If ``file_regex`` doesn't match
     on the current line,
     but ``line_regex`` exists,
     and it does match on the current line,
@@ -278,19 +285,25 @@ these options can no longer be relied on
     to determine the file and line to go to.
 
 ``working_dir``
-    Optional. Directory to change
+    Optional.
+
+    Directory to change
     the current directory to
     before running ``cmd``.
     The original current directory
     is restored afterwards.
 
 ``encoding``
-    Optional. Output encoding of ``cmd``.
+    Optional.
+
+    Output encoding of ``cmd``.
     Must be a valid Python encoding.
     Defaults to ``UTF-8``.
 
 ``env``
-    Optional. Dictionary of environment variables
+    Optional.
+
+    Dictionary of environment variables
     to be merged with the current process'
     before passing them to ``cmd``.
 
@@ -298,8 +311,13 @@ these options can no longer be relied on
     to add or modify environment variables
     without modifying your system's settings.
 
+    Environmental variables
+    will be expanded.
+
 ``shell``
-    Optional. If ``true``, ``cmd``
+    Optional.
+
+    If ``true``, ``cmd``
     will be run through the shell
     (``cmd.exe``, ``bash``...).
 
@@ -307,18 +325,24 @@ these options can no longer be relied on
     this option has no effect.
 
 ``path``
-    Optional. This string will replace
-    the current process' :const:`PATH`
-    before calling ``cmd``.
+    Optional.
+
+    :const:`PATH` used
+    by the ``cmd`` subprocess.
 
     Use this option
     to add directories to :const:`PATH`
     without having to modify
     your system's settings.
 
+    Environmental variables
+    will be expandend.
+
 ``syntax``
-    Optional. If provided,
-    it will be used to format
+    Optional.
+
+    If provided,
+    it will be used to colorize
     the build system's output.
 
 
@@ -462,6 +486,7 @@ Select the desired build system
 from **Tools | Build System**,
 and then select **Tools | Build**.
 Alternatively, you can use
+the command palette or
 the following key bindings:
 
 
@@ -469,6 +494,7 @@ the following key bindings:
 :kbd:`Ctrl+B`        Run default build task
 :kbd:`F7`            Run default build task
 :kbd:`Ctrl+Shift+B`  Run *Run* build task
+:kbd:`Ctrl+Break`    Cancel build task
 ===================  ========================
 
 See `Variants`_.
@@ -502,7 +528,6 @@ Alternatively, you can use the ``path`` option
 in a ``.sublime-build`` file
 to override the :const:`PATH` used to locate
 the executable specified in ``cmd``.
-This will not alter your system's :const:`PATH`.
 
 .. seealso::
 
