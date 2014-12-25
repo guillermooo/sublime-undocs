@@ -19,7 +19,6 @@ general index.
     comments
     metadata
     Command Palette <command_palette>
-    plugins
     api
     commands
     keyboard_shortcuts_win
