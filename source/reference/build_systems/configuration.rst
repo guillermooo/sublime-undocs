@@ -32,9 +32,7 @@ receive any of these options.
 
 .. _bs-target-option:
 
-``target``
-    Optional.
-
+``target`` *(optional)*
     A Sublime Text ``WindowCommand``.
     Defaults to ``exec`` (:file:`Packages/Default/exec.py`).
     This command receives
@@ -49,18 +47,14 @@ receive any of these options.
     you can add any number of extra options
     to the ``.sublime-build`` file.
 
-``selector``
-    Optional.
-
+``selector`` *(optional)*
     Used when **Tools | Build System | Automatic**
     is set to ``true``.
     Sublime Text uses this scope selector
     to find the appropriate build system
     for the active view.
 
-``windows``, ``osx`` and ``linux``
-    Optional.
-
+``windows``, ``osx`` and ``linux`` *(optional)*
     Used to selectively apply options by OS.
     OS-specific values override defaults.
     Each of the listed items
@@ -68,9 +62,7 @@ receive any of these options.
 
     See `Platform-specific Options`_.
 
-``variants``
-    Optional.
-
+``variants`` *(optional)*
     A list of dictionaries of options.
     Variant names will appear in the Command Palette
     for easy access if the build system's selector
@@ -82,9 +74,7 @@ receive any of these options.
 
     See Variants_.
 
-``name``
-    Optional.
-
+``name`` *(optional)*
     **Only valid inside a variant**.
 
     Identifies a build system task.
