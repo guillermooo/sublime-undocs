@@ -21,7 +21,7 @@ No lexical or syntactical analysis is performed.
 Format
 ======
 
-Symbols are defined  using metadata files.
+Symbols are defined using metadata files.
 Because symbol definition files
 are commonly required by packages,
 they are discussed separately in this page
@@ -146,7 +146,8 @@ to use a symbol transformation:
 Structure of a Symbol Definition File
 =====================================
 
-All metadata files share the same top-level structure,
+All metadata files
+share the same top-level structure,
 which is inherited from the Property List format.
 
 
@@ -160,7 +161,8 @@ which is inherited from the Property List format.
       </dict>
       </plist>
 
-These are all the valid elements in a symbol definition file:
+These are all the valid elements
+in a symbol definition file:
 
 ``name``
    Optional.
@@ -173,7 +175,7 @@ These are all the valid elements in a symbol definition file:
          <string>Some arbitrary name goes here</string>
 
 ``scope``
-   Comma separated list of scope names
+   Comma-separated list of scope names
    that Sublime Text will use
    to capture symbols in files.
 
@@ -183,6 +185,7 @@ These are all the valid elements in a symbol definition file:
          <string>source.python meta.function.python, source.python meta.class.python</string>
 
 ``settings``
+   Required.
    A container for settings.
 
    .. code-block:: xml
@@ -192,6 +195,15 @@ These are all the valid elements in a symbol definition file:
          ...
       </dict>
 
+``uuid``
+   Optional.
+   A unique identifier for the file.
+   Ignored by Sublime Text.
+
+   .. code-block:: xml
+
+      <key>uuid</key>
+      <string>BC062860-3346-4D3B-8421-C5543F83D11F</string>
 
 .. _md-symbols-settings:
 
