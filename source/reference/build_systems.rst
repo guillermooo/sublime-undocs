@@ -2,6 +2,11 @@
 Build Systems
 =============
 
+Using build systems, you can run files
+through external programs
+without leaving Sublime Text,
+and see the output they generate.
+
 .. toctree::
    :maxdepth: 1
 
