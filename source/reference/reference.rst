@@ -17,6 +17,7 @@ general index.
     Settings <settings>
     symbols
     comments
+    completions
     metadata
     Command Palette <command_palette>
     plugins

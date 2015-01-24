@@ -3,159 +3,23 @@ Completions
 ===========
 
 In the spirit of IDEs,
-completions suggest terms and insert snippets.
-Completions work through the completions list,
-which opens automatically as you type
-or by pressing :kbd:`Ctrl + Space`.
+Sublime Text offers completions
+that aggregate code or content while writing.
 
-Note that, in the broader sense of
-*words that Sublime Text will look up and insert for you*,
-completions aren't limited to completions files,
-because other sources contribute
-to the list of words to be completed.
-These are, namely:
+By default,
+Sublime Text provides completions
+based on the words in the current buffer,
+catching everything that you have written there,
+like variable names.
+There are however several ways
+to extend the list of available completions,
+for example depending on the current syntax.
 
-* Snippets
-* API-injected completions
-* Buffer contents
-
-However, the most explicit way
-Sublime Text provides you to feed it completions
-is by means of ``.sublime-completions`` files.
 This topic deals with
-the creation of a ``.sublime-completions`` file
-as well as with the interactions
-between all sources for completions.
-
-
-File Format
-===========
-
-Completions are JSON files
-with the ``.sublime-completions`` extension.
-Entries in completions files can contain
-either snippets-like strings or plain text.
-
-
-Example
-*******
-
-Here's an example (with HTML completions):
-
-.. code-block:: js
-
-   {
-      "scope": "text.html - source - meta.tag, punctuation.definition.tag.begin",
-
-      "completions":
-      [
-         { "trigger": "a", "contents": "<a href=\"$1\">$0</a>" },
-         { "trigger": "abbr\t<abbr>", "contents": "<abbr>$0</abbr>" },
-         { "trigger": "acronym", "contents": "<acronym>$0</acronym>" }
-      ]
-   }
-
-**scope**
-   Determines when the completions list
-   will be populated with this list of completions.
-
-   See :ref:`scopes-and-scope-selectors` for more information.
-
-**completions**
-   Array of *completions*.
-
-
-Types of Completions
-********************
-
-Plain Strings
--------------
-
-Plain strings are equivalent to
-an entry where the ``trigger``
-is identical to the ``contents``:
-
-.. code-block:: js
-
-   "foo"
-   // is equivalent to:
-   { "trigger": "foo", "contents": "foo" }
-
-
-.. _completions-trigger-based:
-
-Trigger-based Completions
--------------------------
-
-.. code-block:: js
-
-   { "trigger": "foo", "contents": "foobar" },
-   { "trigger": "foo\ttest", "contents": "foobar" }
-
-**trigger**
-   Text that will be displayed in the completions list
-   and will cause the ``contents``
-   to be inserted when chosen.
-
-   You can use a ``\t`` tab character
-   to separate the trigger from a brief description
-   on what the completion is about.
-   It will be displayed right-aligned,
-   slightly grayed
-   and does not affect the trigger itself.
-
-**contents**
-   Text to be inserted in the buffer.
-   Uses the same string interpolation features
-   as snippets.
-
-   Refer to :ref:`snippet-features`.
-
-   Because of that,
-   if you want a literal ``$``,
-   you have to escape it like this: ``\\$``
-   (double backslashes are needed
-   because we are within a JSON string).
-
-
-Sources for Completions and their Priorities
-============================================
-
-These are the sources for completions
-the user can control,
-in the order they are prioritized:
-
-.. py:currentmodule:: sublime_plugin
-
-
-1. :doc:`/extensibility/snippets`
-#. API-injected completions
-   via :py:meth:`EventListener.on_query_completions`
-#. ``.sublime-completions`` files
-
-Additionally,
-these other completions are folded into the final list:
-
-4. Words in the buffer
-
-Snippets will always win
-when the current prefix
-matches their tab trigger exactly.
-For the rest of the completion sources,
-a fuzzy match is performed.
-Furthermore,
-snippets always lose with fuzzy matches.
-
-When a list of completions is shown,
-snippets will still be listed alongside the other items,
-even if the prefix only partially matches
-the snippets' tab triggers.
-
-.. note::
-
-   Word completions from the buffer
-   can be disabled exlicitly
-   from a completions event hook.
+how completions are used,
+where they come from
+and refers to topics
+on how to make your own.
 
 
 How to Use Completions
@@ -164,13 +28,12 @@ How to Use Completions
 There are two methods for using completions.
 Even though, when screening them,
 the priority given to completions always stays the same,
-the two methods produce different results,
-as explained next.
+the two methods produce different results.
 
 Completions can be inserted in two ways:
 
-   * through the completions list (:kbd:`Ctrl+spacebar`), or
-   * By pressing :kbd:`Tab`.
+* through the completions list (:kbd:`Ctrl + Spacebar`), or
+* by pressing :kbd:`Tab`.
 
 
 The Completions List
@@ -178,8 +41,8 @@ The Completions List
 
 To use the completions list:
 
-1. Press :kbd:`Ctrl+spacebar` or type something to open.
-#. Optionally, press :kbd:`Ctrl+spacebar` again
+1. Press :kbd:`Ctrl + Spacebar` or type something to open.
+#. Optionally, press :kbd:`Ctrl + Spacebar` again
    to select next entry
    or use up and down arrow keys.
 #. Press :kbd:`Enter` or :kbd:`Tab` to validate selection
@@ -201,6 +64,46 @@ can be narrowed down to one unambiguous choice
 given the current prefix,
 this one completion will be validated automatically
 the moment you trigger the completion list.
+
+
+Hints
+-----
+
+Additionally,
+you may see a trigger hint
+on the right side of a completion's trigger
+in the completions list.
+This can be used as a preview
+of the completion's content.
+
+.. image:: images/completions_hint.png
+
+The above is in fact a snippet
+and completes to
+``$arrayName = array('' => , );``.
+
+
+Triggers and Contents
+*********************
+
+Completions that are not taken from the buffer
+may choose to provide a different trigger
+than what they will insert when selected.
+This is commonly used for function completions
+where the completion also includes its signature.
+
+For example,
+completing ``array_map`` from the PHP completions
+will result in :samp:`array_map({callback}, {arr1})`:
+
+.. image:: images/completions_contents.gif
+
+You may notice in the animation
+that the cursor automatically selected ``callback``.
+This is because completions support
+the same features as snippets
+with fields and placeholders.
+For more details, refer to :ref:`snippet-features`.
 
 
 .. _completions-multi-cursor:
@@ -260,3 +163,40 @@ Inserting a Literal Tab Character
 When ``tab_completion`` is enabled,
 you can press :kbd:`Shift + Tab` to insert
 a literal tab character.
+
+
+Sources for Completions and their Priorities
+============================================
+
+These are the sources for completions
+the user can control,
+in the order they are prioritized:
+
+1. :doc:`/extensibility/snippets`
+#. API-injected completions
+   via :py:meth:`~sublime_plugin.EventListener.on_query_completions`
+#. :doc:`Completions files </reference/completions>`
+
+Additionally,
+these other completions are folded into the final list:
+
+4. Words in the buffer
+
+Snippets will always win
+when the current prefix
+matches their tab trigger *exactly*.
+For the rest of the completion sources,
+a fuzzy match is performed.
+Furthermore,
+snippets always lose with fuzzy matches.
+
+When a list of completions is shown,
+snippets will still be listed alongside the other items,
+even if the prefix only partially matches
+the snippets' tab triggers.
+
+.. note::
+
+   Word completions from the buffer
+   can be disabled exlicitly
+   from a completions event hook.
