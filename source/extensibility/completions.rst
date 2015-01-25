@@ -3,23 +3,18 @@ Completions
 ===========
 
 In the spirit of IDEs,
-Sublime Text offers completions
-that aggregate code or content while writing.
-
-By default,
-Sublime Text provides completions
-based on the words in the current buffer,
-catching everything that you have written there,
+Sublime Text suggests completions
+that aggregate code or content while writing
+by catching everything that you have written,
 like variable names.
+
 There are however several ways
-to extend the list of available completions,
-for example depending on the current syntax.
+to extend the list of completions
+(for example, depending on the current syntax).
 
 This topic deals with
-how completions are used,
-where they come from
-and refers to topics
-on how to make your own.
+how completions are used and
+where they come from.
 
 
 How to Use Completions
@@ -41,14 +36,14 @@ The Completions List
 
 To use the completions list:
 
-1. Press :kbd:`Ctrl + Spacebar` or type something to open.
+1. Press :kbd:`Ctrl + Spacebar` or just type something.
 #. Optionally, press :kbd:`Ctrl + Spacebar` again
-   to select next entry
-   or use up and down arrow keys.
+   to select the next entry
+   or use *up* and *down* arrow keys.
 #. Press :kbd:`Enter` or :kbd:`Tab` to validate selection
    (depending on the ``auto_complete_commit_on_tab`` setting)
 #. Optionally, press :kbd:`Tab` repeatedly
-   to insert the next possible completion.
+   to insert the next available completion.
 
 .. note::
 
@@ -79,18 +74,20 @@ of the completion's content.
 .. image:: images/completions_hint.png
 
 The above is in fact a snippet
-and completes to
+and expands to
 ``$arrayName = array('' => , );``.
 
 
 Triggers and Contents
 *********************
 
-Completions that are not taken from the buffer
-may choose to provide a different trigger
-than what they will insert when selected.
+Completions not sourced from the text in the current file
+may provide a trigger
+that is different
+to the content they will insert if selected.
 This is commonly used for function completions
-where the completion also includes its signature.
+where the content also includes
+the function's signature.
 
 For example,
 completing ``array_map`` from the PHP completions
@@ -178,7 +175,8 @@ in the order they are prioritized:
 #. :doc:`Completions files </reference/completions>`
 
 Additionally,
-these other completions are folded into the final list:
+the following completions
+are folded into the final list:
 
 4. Words in the buffer
 
@@ -188,7 +186,7 @@ matches their tab trigger *exactly*.
 For the rest of the completion sources,
 a fuzzy match is performed.
 Furthermore,
-snippets always lose with fuzzy matches.
+snippets always lose in a fuzzy match.
 
 When a list of completions is shown,
 snippets will still be listed alongside the other items,
@@ -197,6 +195,6 @@ the snippets' tab triggers.
 
 .. note::
 
-   Word completions from the buffer
-   can be disabled exlicitly
-   from a completions event hook.
+   Completions sourced from words in the buffer
+   can be suppressed explicitly
+   from an ``on_query_completions`` event hook.

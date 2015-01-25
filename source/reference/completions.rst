@@ -8,24 +8,16 @@ Completions Files
       Introduction to the different types of completions
 
 
-Note that, in the broader sense of
-*words that Sublime Text will look up and insert for you*,
-completions aren't limited to completions files,
+Note that completions aren't limited to completions files,
 because other sources contribute
-to the list of words to be completed.
-These are, namely:
-
-* Snippets
-* API-injected completions
-* Buffer contents
-
+to the completions list
+(see above).
 However, the most explicit way
 Sublime Text provides you to feed it completions
 is by means of ``.sublime-completions`` files.
-This topic deals with
-the creation of a ``.sublime-completions`` file
-as well as with the interactions
-between all sources for completions.
+
+This topic only deals with
+the format of a ``.sublime-completions`` file.
 
 
 File Format
@@ -34,7 +26,7 @@ File Format
 Completions are JSON files
 with the ``.sublime-completions`` extension.
 Entries in completions files can contain
-either snippets-like strings or plain text.
+either snippet-like strings or plain text.
 
 
 Example
@@ -98,21 +90,21 @@ Trigger-based Completions
    to be inserted when chosen.
 
    You can use a ``\t`` tab character
-   to separate the trigger from a brief description
-   on what the completion is about.
-   It will be displayed right-aligned,
+   to add a *hint* for the preceding trigger.
+   The hint will be displayed right-aligned,
    slightly grayed
    and does not affect the trigger itself.
 
 **contents**
    Text to be inserted in the buffer.
-   Uses the same string interpolation features
+   Supports the same string interpolation features
    as snippets.
 
    Refer to :ref:`snippet-features`.
 
-   Because of that,
-   if you want a literal ``$``,
-   you have to escape it like this: ``\\$``
-   (double backslashes are needed
-   because we are within a JSON string).
+   .. note::
+
+      If you want a literal ``$``,
+      you have to escape it like this: ``\\$``
+      (double backslashes are needed
+      because we are within a JSON string).
