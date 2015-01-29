@@ -167,7 +167,7 @@ More information in the `official documentation`_.
 
 .. _official documentation: http://www.sublimetext.com/docs/2/projects.html
 
-.. todo: add settings example here.
+.. TODO add settings example here.
 
 You can open a project from the **command line**
 by passing the *.sublime- project* file as an argument
@@ -292,9 +292,9 @@ Workspaces help in these situations.
 
 Workspaces behave very much like projects.
 To create a new workspace,
-select **Project | New Workspace for Project**.
+select *Project → New Workspace for Project*.
 To save the active workspace,
-select **Project | Save Workspace As...**.
+select *Project → Save Workspace As...*.
 
 Workspaces data is stored in JSON files
 with the *.sublime-workspace* extension.
