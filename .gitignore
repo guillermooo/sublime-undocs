@@ -3,6 +3,11 @@
 .hgignore
 .hgtags
 
+*.pyc
+*.bak
+
 build
 
 *.sublime-workspace
+
+tool/venv
