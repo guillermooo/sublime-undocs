@@ -1,0 +1,702 @@
+-
+  comment: |
+    // Sets the colors used within the text area
+  description: insert description here
+  name: color_scheme
+  value: "Packages/Color Scheme - Default/Monokai.tmTheme"
+-
+  comment: |
+    // Note that the font_face and font_size are overridden in the platform
+    // specific settings file, for example, "Preferences (Linux).sublime-settings".
+    // Because of this, setting them here will have no effect: you must set them
+    // in your User File Preferences.
+  description: insert description here
+  name: font_face
+  value: ""
+-
+  comment: |
+  comment: 
+  description: insert description here
+  name: font_size
+  value: 10
+-
+  comment: |
+    // Valid options are "no_bold", "no_italic", "no_antialias", "gray_antialias",
+    // "subpixel_antialias", "no_round" (OS X only), "gdi" (Windows only) and
+    // "directwrite" (Windows only)
+  description: insert description here
+  name: font_options
+  value: []
+-
+  comment: |
+    // Characters that are considered to separate words
+  description: insert description here
+  name: word_separators
+  value: "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?"
+-
+  comment: |
+    // Set to false to prevent line numbers being drawn in the gutter
+  description: insert description here
+  name: line_numbers
+  value: true
+-
+  comment: |
+    // Set to false to hide the gutter altogether
+  description: insert description here
+  name: gutter
+  value: true
+-
+  comment: |
+    // Spacing between the gutter and the text
+  description: insert description here
+  name: margin
+  value: 4
+-
+  comment: |
+    // Fold buttons are the triangles shown in the gutter to fold regions of text
+  description: insert description here
+  name: fold_buttons
+  value: true
+-
+  comment: |
+    // Hides the fold buttons unless the mouse is over the gutter
+  description: insert description here
+  name: fade_fold_buttons
+  value: true
+-
+  comment: |
+    // Columns in which to display vertical rulers
+  description: insert description here
+  name: rulers
+  value: []
+-
+  comment: |
+    // Set to true to turn spell checking on by default
+  description: insert description here
+  name: spell_check
+  value: false
+-
+  comment: |
+    // The number of spaces a tab is considered equal to
+  description: insert description here
+  name: tab_size
+  value: 4
+-
+  comment: |
+    // Set to true to insert spaces when tab is pressed
+  description: insert description here
+  name: translate_tabs_to_spaces
+  value: false
+-
+  comment: |
+    // If translate_tabs_to_spaces is true, use_tab_stops will make tab and
+    // backspace insert/delete up to the next tabstop
+  description: insert description here
+  name: use_tab_stops
+  value: true
+-
+  comment: |
+    // Set to false to disable detection of tabs vs. spaces on load
+  description: insert description here
+  name: detect_indentation
+  value: true
+-
+  comment: |
+    // Calculates indentation automatically when pressing enter
+  description: insert description here
+  name: auto_indent
+  value: true
+-
+  comment: |
+    // Makes auto indent a little smarter, e.g., by indenting the next line
+    // after an if statement in C. Requires auto_indent to be enabled.
+  description: insert description here
+  name: smart_indent
+  value: true
+-
+  comment: |
+    // Adds whitespace up to the first open bracket when indenting. Requires
+    // auto_indent to be enabled.
+  description: insert description here
+  name: indent_to_bracket
+  value: false
+-
+  comment: |
+    // Trims white space added by auto_indent when moving the caret off the
+    // line.
+  description: insert description here
+  name: trim_automatic_white_space
+  value: true
+-
+  comment: |
+    // Disables horizontal scrolling if enabled.
+    // May be set to true, false, or "auto", where it will be disabled for
+    // source code, and otherwise enabled.
+  description: insert description here
+  name: word_wrap
+  value: "auto"
+-
+  comment: |
+    // Set to a value other than 0 to force wrapping at that column rather than the
+    // window width
+  description: insert description here
+  name: wrap_width
+  value: 0
+-
+  comment: |
+    // Set to false to prevent word wrapped lines from being indented to the same
+    // level
+  description: insert description here
+  name: indent_subsequent_lines
+  value: true
+-
+  comment: |
+    // Draws text centered in the window rather than left aligned
+  description: insert description here
+  name: draw_centered
+  value: false
+-
+  comment: |
+    // Controls auto pairing of quotes, brackets etc
+  description: insert description here
+  name: auto_match_enabled
+  value: true
+-
+  comment: |
+    // Word list to use for spell checking
+  description: insert description here
+  name: dictionary
+  value: "Packages/Language - English/en_US.dic"
+-
+  comment: |
+    // Sets which scopes are checked for spelling errors
+  description: insert description here
+  name: spelling_selector
+  value: "markup.raw, source string.quoted - punctuation - meta.preprocessor.c.include, source comment - source comment.block.preprocessor, -(source, constant, keyword, storage, support, variable, markup.underline.link, meta.tag)"
+-
+  comment: |
+    // Set to true to draw a border around the visible rectangle on the minimap.
+    // The color of the border will be determined by the "minimapBorder" key in
+    // the color scheme
+  description: insert description here
+  name: draw_minimap_border
+  value: false
+-
+  comment: |
+    // Always visualise the viewport on the minimap, as opposed to only
+    // showing it on mouse over
+  description: insert description here
+  name: always_show_minimap_viewport
+  value: false
+-
+  comment: |
+    // If enabled, will highlight any line with a caret
+  description: insert description here
+  name: highlight_line
+  value: false
+-
+  comment: |
+    // Valid values are "smooth", "phase", "blink" and "solid".
+  description: insert description here
+  name: caret_style
+  value: "smooth"
+-
+  comment: |
+    // These settings control the size of the caret
+  description: insert description here
+  name: caret_extra_top
+  value: 0
+-
+  comment: |
+  comment: 
+  description: insert description here
+  name: caret_extra_bottom
+  value: 0
+-
+  comment: |
+  comment: 
+  description: insert description here
+  name: caret_extra_width
+  value: 0
+-
+  comment: |
+    // Set to false to disable underlining the brackets surrounding the caret
+  description: insert description here
+  name: match_brackets
+  value: true
+-
+  comment: |
+    // Set to false if you'd rather only highlight the brackets when the caret is
+    // next to one
+  description: insert description here
+  name: match_brackets_content
+  value: true
+-
+  comment: |
+    // Set to false to not highlight square brackets. This only takes effect if
+    // match_brackets is true
+  description: insert description here
+  name: match_brackets_square
+  value: true
+-
+  comment: |
+    // Set to false to not highlight curly brackets. This only takes effect if
+    // match_brackets is true
+  description: insert description here
+  name: match_brackets_braces
+  value: true
+-
+  comment: |
+    // Set to false to not highlight angle brackets. This only takes effect if
+    // match_brackets is true
+  description: insert description here
+  name: match_brackets_angle
+  value: false
+-
+  comment: |
+    // Enable visualization of the matching tag in HTML and XML
+  description: insert description here
+  name: match_tags
+  value: true
+-
+  comment: |
+    // Highlights other occurrences of the currently selected text
+  description: insert description here
+  name: match_selection
+  value: true
+-
+  comment: |
+    // Additional spacing at the top of each line, in pixels
+  description: insert description here
+  name: line_padding_top
+  value: 0
+-
+  comment: |
+    // Additional spacing at the bottom of each line, in pixels
+  description: insert description here
+  name: line_padding_bottom
+  value: 0
+-
+  comment: |
+    // Set to false to disable scrolling past the end of the buffer.
+    // On OS X, this value is overridden in the platform specific settings, so
+    // you'll need to place this line in your user settings to override it.
+  description: insert description here
+  name: scroll_past_end
+  value: true
+-
+  comment: |
+    // This controls what happens when pressing up or down when on the first
+    // or last line.
+    // On OS X, this value is overridden in the platform specific settings, so
+    // you'll need to place this line in your user settings to override it.
+  description: insert description here
+  name: move_to_limit_on_up_down
+  value: false
+-
+  comment: |
+    // Set to "none" to turn off drawing white space, "selection" to draw only the
+    // white space within the selection, and "all" to draw all white space
+  description: insert description here
+  name: draw_white_space
+  value: "selection"
+-
+  comment: |
+    // Set to false to turn off the indentation guides.
+    // The color and width of the indent guides may be customized by editing
+    // the corresponding .tmTheme file, and specifying the colors "guide",
+    // "activeGuide" and "stackGuide"
+  description: insert description here
+  name: draw_indent_guides
+  value: true
+-
+  comment: |
+    // Controls how the indent guides are drawn, valid options are
+    // "draw_normal" and "draw_active". draw_active will draw the indent
+    // guides containing the caret in a different color.
+  description: insert description here
+  name: indent_guide_options
+  value: ["draw_normal"]
+-
+  comment: |
+    // Set to true to removing trailing white space on save
+  description: insert description here
+  name: trim_trailing_white_space_on_save
+  value: false
+-
+  comment: |
+    // Set to true to ensure the last line of the file ends in a newline
+    // character when saving
+  description: insert description here
+  name: ensure_newline_at_eof_on_save
+  value: false
+-
+  comment: |
+    // Set to true to automatically save files when switching to a different file
+    // or application
+  description: insert description here
+  name: save_on_focus_lost
+  value: false
+-
+  comment: |
+    // Save via writing to an alternate file, and then renaming it over the
+    // original file.
+  description: insert description here
+  name: atomic_save
+  value: true
+-
+  comment: |
+    // The encoding to use when the encoding can't be determined automatically.
+    // ASCII, UTF-8 and UTF-16 encodings will be automatically detected.
+  description: insert description here
+  name: fallback_encoding
+  value: "Western (Windows 1252)"
+-
+  comment: |
+    // Encoding used when saving new files, and files opened with an undefined
+    // encoding (e.g., plain ascii files). If a file is opened with a specific
+    // encoding (either detected or given explicitly), this setting will be
+    // ignored, and the file will be saved with the encoding it was opened
+    // with.
+  description: insert description here
+  name: default_encoding
+  value: "UTF-8"
+-
+  comment: |
+    // Files containing null bytes are opened as hexadecimal by default
+  description: insert description here
+  name: enable_hexadecimal_encoding
+  value: true
+-
+  comment: |
+    // Determines what character(s) are used to terminate each line in new files.
+    // Valid values are 'system' (whatever the OS uses), 'windows' (CRLF) and
+    // 'unix' (LF only).
+  description: insert description here
+  name: default_line_ending
+  value: "system"
+-
+  comment: |
+    // When enabled, pressing tab will insert the best matching completion.
+    // When disabled, tab will only trigger snippets or insert a tab.
+    // Shift+tab can be used to insert an explicit tab when tab_completion is
+    // enabled.
+  description: insert description here
+  name: tab_completion
+  value: true
+-
+  comment: |
+    // Enable auto complete to be triggered automatically when typing.
+  description: insert description here
+  name: auto_complete
+  value: true
+-
+  comment: |
+    // The maximum file size where auto complete will be automatically triggered.
+  description: insert description here
+  name: auto_complete_size_limit
+  value: 4194304
+-
+  comment: |
+    // The delay, in ms, before the auto complete window is shown after typing
+  description: insert description here
+  name: auto_complete_delay
+  value: 50
+-
+  comment: |
+    // Controls what scopes auto complete will be triggered in
+  description: insert description here
+  name: auto_complete_selector
+  value: "source - comment, meta.tag - punctuation.definition.tag.begin"
+-
+  comment: |
+    // Additional situations to trigger auto complete
+  description: insert description here
+  name: auto_complete_triggers
+  value: [ {"selector": "text.html", "characters": "<"} ]
+-
+  comment: |
+    // By default, auto complete will commit the current completion on enter.
+    // This setting can be used to make it complete on tab instead.
+    // Completing on tab is generally a superior option, as it removes
+    // ambiguity between committing the completion and inserting a newline.
+  description: insert description here
+  name: auto_complete_commit_on_tab
+  value: false
+-
+  comment: |
+    // Controls if auto complete is shown when snippet fields are active.
+    // Only relevant if auto_complete_commit_on_tab is true.
+  description: insert description here
+  name: auto_complete_with_fields
+  value: false
+-
+  comment: |
+    // Automatically close HTML and XML tags when </ is entered.
+  description: insert description here
+  name: auto_close_tags
+  value: true
+-
+  comment: |
+    // By default, shift+tab will only unindent if the selection spans
+    // multiple lines. When pressing shift+tab at other times, it'll insert a
+    // tab character - this allows tabs to be inserted when tab_completion is
+    // enabled. Set this to true to make shift+tab always unindent, instead of
+    // inserting tabs.
+  description: insert description here
+  name: shift_tab_unindent
+  value: false
+-
+  comment: |
+    // If true, the copy and cut commands will operate on the current line
+    // when the selection is empty, rather than doing nothing.
+  description: insert description here
+  name: copy_with_empty_selection
+  value: true
+-
+  comment: |
+    // If true, the selected text will be copied into the find panel when it's
+    // shown.
+    // On OS X, this value is overridden in the platform specific settings, so
+    // you'll need to place this line in your user settings to override it.
+  description: insert description here
+  name: find_selected_text
+  value: true
+-
+  comment: |
+    // When auto_find_in_selection is enabled, the "Find in Selection" flag
+    // will be enabled automatically when multiple lines of text are selected
+  description: insert description here
+  name: auto_find_in_selection
+  value: false
+-
+  comment: |
+    // When drag_text is enabled, clicking on selected text will begin a
+    // drag-drop operation. This is not currently implemented under Linux.
+  description: insert description here
+  name: drag_text
+  value: true
+-
+  comment: |
+    //
+    // User Interface Settings
+    //
+    // The theme controls the look of Sublime Text's UI (buttons, tabs, scroll bars, etc)
+  description: insert description here
+  name: theme
+  value: "Default.sublime-theme"
+-
+  comment: |
+    // Set to 0 to disable smooth scrolling. Set to a value between 0 and 1 to
+    // scroll slower, or set to larger than 1 to scroll faster
+  description: insert description here
+  name: scroll_speed
+  value: 1.0
+-
+  comment: |
+    // Controls side bar animation when expanding or collapsing folders
+  description: insert description here
+  name: tree_animation_enabled
+  value: true
+-
+  comment: |
+    // Controls animation throughout the application
+  description: insert description here
+  name: animation_enabled
+  value: true
+-
+  comment: |
+    // Makes tabs with modified files more visible
+  description: insert description here
+  name: highlight_modified_tabs
+  value: false
+-
+  comment: |
+  comment: 
+  description: insert description here
+  name: show_tab_close_buttons
+  value: true
+-
+  comment: |
+    // Show folders in the side bar in bold
+  description: insert description here
+  name: bold_folder_labels
+  value: false
+-
+  comment: |
+    // OS X only: Set to true to disable Lion style full screen support.
+    // Sublime Text must be restarted for this to take effect.
+  description: insert description here
+  name: use_simple_full_screen
+  value: false
+-
+  comment: |
+    // OS X only. Valid values are true, false, and "auto". Auto will enable
+    // the setting when running on a screen 2560 pixels or wider (i.e., a
+    // Retina display). When this setting is enabled, OpenGL is used to
+    // accelerate drawing. Sublime Text must be restarted for changes to take
+    // effect.
+  description: insert description here
+  name: gpu_window_buffer
+  value: "auto"
+-
+  comment: |
+    // Valid values are "system", "enabled" and "disabled"
+  description: insert description here
+  name: overlay_scroll_bars
+  value: "system"
+-
+  comment: |
+    // Allows tabs to scroll left and right, instead of simply shrinking
+  description: insert description here
+  name: enable_tab_scrolling
+  value: true
+-
+  comment: |
+    // Display file encoding in the status bar
+  description: insert description here
+  name: show_encoding
+  value: false
+-
+  comment: |
+    // Display line endings in the status bar
+  description: insert description here
+  name: show_line_endings
+  value: false
+-
+  comment: |
+    //
+    // Application Behavior Settings
+    //
+    // Exiting the application with hot_exit enabled will cause it to close
+    // immediately without prompting. Unsaved modifications and open files will
+    // be preserved and restored when next starting.
+    //
+    // Closing a window with an associated project will also close the window
+    // without prompting, preserving unsaved changes in the workspace file
+    // alongside the project.
+  description: insert description here
+  name: hot_exit
+  value: true
+-
+  comment: |
+    // remember_open_files makes the application start up with the last set of
+    // open files. Changing this to false will have no effect if hot_exit is
+    // true
+  description: insert description here
+  name: remember_open_files
+  value: true
+-
+  comment: |
+    // remember_full_screen will allow Sublime Text to start in full screen
+    // mode if it was exited in full screen mode. When set to false, Sublime
+    // Text will never start in full screen mode.
+  description: insert description here
+  name: remember_full_screen
+  value: false
+-
+  comment: |
+    // Always prompt before reloading a file, even if the file hasn't been
+    // modified. The default behavior is to automatically reload a file if it
+    // hasn't been edited. If a file has unsaved changes, a prompt will always
+    // be shown.
+  description: insert description here
+  name: always_prompt_for_file_reload
+  value: false
+-
+  comment: |
+    // OS X only: When files are opened from finder, or by dragging onto the
+    // dock icon, this controls if a new window is created or not.
+  description: insert description here
+  name: open_files_in_new_window
+  value: true
+-
+  comment: |
+    // OS X only: This controls if an empty window is created at startup or not.
+  description: insert description here
+  name: create_window_at_startup
+  value: true
+-
+  comment: |
+    // Set to true to close windows as soon as the last file is closed, unless
+    // there's a folder open within the window.
+    // On OS X, this value is overridden in the platform specific settings, so
+    // you'll need to place this line in your user settings to override it.
+  description: insert description here
+  name: close_windows_when_empty
+  value: false
+-
+  comment: |
+    // Show the full path to files in the title bar.
+    // On OS X, this value is overridden in the platform specific settings, so
+    // you'll need to place this line in your user settings to override it.
+  description: insert description here
+  name: show_full_path
+  value: true
+-
+  comment: |
+    // Shows the Build Results panel when building. If set to false, the Build
+    // Results can be shown via the Tools/Build Results menu.
+  description: insert description here
+  name: show_panel_on_build
+  value: true
+-
+  comment: |
+    // Preview file contents when clicking on a file in the side bar. Double
+    // clicking or editing the preview will open the file and assign it a tab.
+  description: insert description here
+  name: preview_on_click
+  value: true
+-
+  comment: |
+    // folder_exclude_patterns and file_exclude_patterns control which files
+    // are listed in folders on the side bar. These can also be set on a per-
+    // project basis.
+  description: insert description here
+  name: folder_exclude_patterns
+  value: [".svn", ".git", ".hg", "CVS"]
+-
+  comment: |
+  comment: 
+  description: insert description here
+  name: file_exclude_patterns
+  value: ["*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace"]
+-
+  comment: |
+    // These files will still show up in the side bar, but won't be included in
+    // Goto Anything or Find in Files
+  description: insert description here
+  name: binary_file_patterns
+  value: ["*.jpg", "*.jpeg", "*.png", "*.gif", "*.ttf", "*.tga", "*.dds", "*.ico", "*.eot", "*.pdf", "*.swf", "*.jar", "*.zip"]
+-
+  comment: |
+    // File indexing parses all files in the side bar, and builds an index of
+    // their symbols. This is required for Goto Definition to work.
+  description: insert description here
+  name: index_files
+  value: true
+-
+  comment: |
+    // index_exclude_patterns indicate which files won't be indexed.
+  description: insert description here
+  name: index_exclude_patterns
+  value: ["*.log"]
+-
+  comment: |
+    // When enabled, anonymised usage data is sent back, assisting Sublime HQ
+    // in making informed decisions about improving Sublime Text. File names
+    // and file contents are never included, but data such as computer
+    // specifications, startup time, installed packages, and edited file types
+    // are. When disabled, telemetry is neither recorded or sent.
+    // A setting of auto will enable telemetry in dev builds, and disable
+    // telemetry in regular builds.
+  description: insert description here
+  name: enable_telemetry
+  value: "auto"
+-
+  comment: |
+    // List any packages to ignore here. When removing entries from this list,
+    // a restart may be required if the package contains plugins.
+  description: insert description here
+  name: ignored_packages
+  value: ["Vintage"]
