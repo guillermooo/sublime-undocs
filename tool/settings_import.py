@@ -192,7 +192,7 @@ if __name__ == '__main__':
                     continue
                 print ('    %s' % line)
         except:
-            print('  comment: ""')
+            print('  comment: ')
         print('  description: insert description here')
         print('  name:', it.key)
         print('  value:', it.value)
