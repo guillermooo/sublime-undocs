@@ -77,10 +77,44 @@ def main():
 
 
 class SimpleVisitor(visitor.ApiHierarchicalVisitor):
+   def visit_module(self, m):
+      # if m.name != 'sublime':
+      #    return
+      print('- {}:'.format(m.name))
+
+      for f in m.functions:
+         # if f.name != 'xarch()':
+         #    continue
+         self.visit_function(f)
+
+      for (_, cls) in m.classes.items():
+         self.visit_class(cls)
+
    def visit_class(self, cls):
-      print(cls.name)
+      print ('  - name: {}'.format (cls.name))
+      print ('    type: class')
+      print ('    parameters: add params')
+      print ('    description: add description')
+      if cls.members:
+         print ('    members:')
       for m in cls.members:
-         print ('  ', m.name)
+         self.visit_function(m, indent='    ', typ='method')
+
+   def visit_function(self, f, typ='function', indent='  '):
+      print ()
+      print ('{0}- name: {1}'.format(indent, f.name))
+      print ('{0}  type: {1}'.format(indent, typ))
+      print ('{0}  parameters: add params'.format(indent))
+      if f.return_value.strip() != 'None':
+         print ('{0}  return_value: {1}'.format(indent, f.return_value))
+      print ('{0}  description: |'.format(indent))
+      # print ('{0}    {1}'.format(indent, f.description))
+      self.wrap(f.description, indent='    ' + indent)
+
+   def wrap(self, text, indent):
+      lines = text.split('\n')
+      for line in lines:
+         print('{0}{1}'.format(indent, line.strip()))
 
 
 def translate_to_rst():

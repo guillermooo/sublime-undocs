@@ -1,0 +1,1770 @@
+- sublime:
+
+  - name: set_timeout(callback, delay)
+    type: function
+    parameters: add params
+    description: |
+      Runs the callback in the main thread after the given delay
+      (in milliseconds). Callbacks with an equal delay will be run in the order
+      they were added.
+
+  - name: set_async_timeout(callback, delay)
+    type: function
+    parameters: add params
+    description: |
+      Runs the callback on an alternate thread after the given
+      delay (in milliseconds).
+
+  - name: status_message(string)
+    type: function
+    parameters: add params
+    description: |
+      Sets the message that appears in the status bar.
+
+  - name: error_message(string)
+    type: function
+    parameters: add params
+    description: |
+      Displays an error dialog to the user.
+
+  - name: message_dialog(string)
+    type: function
+    parameters: add params
+    description: |
+      Displays a message dialog to the user.
+
+  - name: ok_cancel_dialog(string, <ok_title>)
+    type: function
+    parameters: add params
+    return_value: bool
+    description: |
+      Displays an ok / cancel question dialog to the user. If
+      ok_title is provided, this may be used as the text on the ok button.
+      Returns True if the user presses the ok button.
+
+  - name: yes_no_cancel_dialog(string, <yes_title>,
+      <no_title>)
+    type: function
+    parameters: add params
+    return_value: Int
+    description: |
+      Displays a yes / no / cancel question dialog to the user.
+      If yes_title and/or no_title are provided, they will be used as the text
+      on the corresponding buttons on some platforms. Returns
+      sublime.DIALOG_YES, sublime.DIALOG_NO or sublime.DIALOG_CANCEL.
+
+  - name: load_resource(name)
+    type: function
+    parameters: add params
+    return_value: String
+    description: |
+      Loads the given resource. The name should be in the format
+      Packages/Default/Main.sublime-menu.
+
+  - name: load_binary_resource(name)
+    type: function
+    parameters: add params
+    return_value: bytes
+    description: |
+      Loads the given resource. The name should be in the format
+      Packages/Default/Main.sublime-menu.
+
+  - name: find_resources(pattern)
+    type: function
+    parameters: add params
+    return_value: [String]
+    description: |
+      Finds resources whose file name matches the given
+      pattern.
+
+  - name: encode_value(value, <pretty>)
+    type: function
+    parameters: add params
+    return_value: String
+    description: |
+      Encode a JSON compatible value into a string
+      representation. If pretty is set to True, the string will include newlines
+      and indentation.
+
+  - name: decode_value(string)
+    type: function
+    parameters: add params
+    return_value: value
+    description: |
+      Decodes a JSON string into an object. If the string is
+      invalid, a ValueError will be thrown.
+
+  - name: expand_variables(value, variables)
+    type: function
+    parameters: add params
+    return_value: value
+    description: |
+      Expands any variables in the string value using
+      the variables defined in the dictionary variables. value
+      may also be an array or dict, in which case the structure will be
+      recursively expanded. Strings should use snippet syntax, for example:
+      expand_variables("Hello, ${name}", {"name": "Foo"})
+
+  - name: load_settings(base_name)
+    type: function
+    parameters: add params
+    return_value: Settings
+    description: |
+      Loads the named settings. The name should include a file
+      name and extension, but not a path. The packages will be searched for
+      files matching the base name, and the results will be collated into the
+      settings object. Subsequent calls to load_settings with the name base_name
+      will return the same object, and not load the settings from disk again.
+
+  - name: save_settings(base_name)
+    type: function
+    parameters: add params
+    description: |
+      Flushes any in-memory changes to the named settings object
+      to disk.
+
+  - name: windows()
+    type: function
+    parameters: add params
+    return_value: [Window]
+    description: |
+      Returns a list of all the open windows.
+
+  - name: active_window()
+    type: function
+    parameters: add params
+    return_value: Window
+    description: |
+      Returns the most recently used window.
+
+  - name: packages_path()
+    type: function
+    parameters: add params
+    return_value: String
+    description: |
+      Returns the base path to the packages.
+
+  - name: installed_packages_path()
+    type: function
+    parameters: add params
+    return_value: String
+    description: |
+      Returns the path where all the user's *.sublime-package
+      files are.
+
+  - name: cache_path()
+    type: function
+    parameters: add params
+    return_value: String
+    description: |
+      Returns the path where Sublime Text stores cache files.
+
+  - name: get_clipboard(<size_limit>)
+    type: function
+    parameters: add params
+    return_value: String
+    description: |
+      Returns the contents of the clipboard. size_limit is there
+      to protect against unnecessarily large data, defaults to 16,777,216
+      characters
+
+  - name: set_clipboard(string)
+    type: function
+    parameters: add params
+    description: |
+      Sets the contents of the clipboard.
+
+  - name: score_selector(scope, selector)
+    type: function
+    parameters: add params
+    return_value: Int
+    description: |
+      Matches the selector against the given scope, returning a
+      score. A score of 0 means no match, above 0 means a match. Different
+      selectors may be compared against the same scope: a higher score means the
+      selector is a better match for the scope.
+
+  - name: run_command(string, <args>)
+    type: function
+    parameters: add params
+    description: |
+      Runs the named ApplicationCommand with the (optional)
+      given arguments.
+
+  - name: log_commands(flag)
+    type: function
+    parameters: add params
+    description: |
+      Controls command logging. If enabled, all commands run
+      from key bindings and the menu will be logged to the console.
+
+  - name: log_input(flag)
+    type: function
+    parameters: add params
+    description: |
+      Controls input logging. If enabled, all key presses will
+      be logged to the console.
+
+  - name: log_result_regex(flag)
+    type: function
+    parameters: add params
+    description: |
+      Controls result regex logging. This is useful for
+      debugging regular expressions used in build systems.
+
+  - name: version()
+    type: function
+    parameters: add params
+    return_value: String
+    description: |
+      Returns the version number
+
+  - name: platform()
+    type: function
+    parameters: add params
+    return_value: String
+    description: |
+      Returns the platform, which may be "osx", "linux" or
+      "windows"
+
+  - name: arch()
+    type: function
+    parameters: add params
+    return_value: String
+    description: |
+      Returns the CPU architecture, which may be "x32" or
+      "x64"
+  - name: Selection
+    type: class
+    parameters: add params
+    description: add description
+    members:
+
+    - name: clear()
+      type: method
+      parameters: add params
+      description: |
+        Removes all regions.
+
+    - name: add(region)
+      type: method
+      parameters: add params
+      description: |
+        Adds the given region. It will be merged with any
+        intersecting regions already contained within the set.
+
+    - name: add_all(region_set)
+      type: method
+      parameters: add params
+      description: |
+        Adds all regions in the given set.
+
+    - name: subtract(region)
+      type: method
+      parameters: add params
+      description: |
+        Subtracts the region from all regions in the set.
+
+    - name: contains(region)
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true iff the given region is a
+        subset.
+  - name: Edit
+    type: class
+    parameters: add params
+    description: add description
+    members:
+
+    - name: (no methods)
+      type: method
+      parameters: add params
+      return_value:
+      description: |
+
+  - name: View
+    type: class
+    parameters: add params
+    description: add description
+    members:
+
+    - name: id()
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        Returns a number that uniquely identifies this view.
+
+    - name: buffer_id()
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        Returns a number that uniquely identifies the buffer
+        underlying this view.
+
+    - name: file_name()
+      type: method
+      parameters: add params
+      return_value: String
+      description: |
+        The full name file the file associated with the buffer, or
+        None if it doesn't exist on disk.
+
+    - name: name()
+      type: method
+      parameters: add params
+      return_value: String
+      description: |
+        The name assigned to the buffer, if any
+
+    - name: set_name(name)
+      type: method
+      parameters: add params
+      description: |
+        Assigns a name to the buffer
+
+    - name: is_loading()
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true if the buffer is still loading from disk, and
+        not ready for use.
+
+    - name: is_dirty()
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true if there are any unsaved modifications to the
+        buffer.
+
+    - name: is_read_only()
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true if the buffer may not be modified.
+
+    - name: set_read_only(value)
+      type: method
+      parameters: add params
+      description: |
+        Sets the read only property on the buffer.
+
+    - name: is_scratch()
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true if the buffer is a scratch buffer. Scratch
+        buffers never report as being dirty.
+
+    - name: set_scratch(value)
+      type: method
+      parameters: add params
+      description: |
+        Sets the scratch property on the buffer.
+
+    - name: settings()
+      type: method
+      parameters: add params
+      return_value: Settings
+      description: |
+        Returns a reference to the views settings object. Any
+        changes to this settings object will be private to this view.
+
+    - name: window()
+      type: method
+      parameters: add params
+      return_value: Window
+      description: |
+        Returns a reference to the window containing the view.
+
+    - name: run_command(string, <args>)
+      type: method
+      parameters: add params
+      description: |
+        Runs the named TextCommand with the (optional) given
+        arguments.
+
+    - name: size()
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        Returns the number of character in the file.
+
+    - name: substr(region)
+      type: method
+      parameters: add params
+      return_value: String
+      description: |
+        Returns the contents of the region as a string.
+
+    - name: substr(point)
+      type: method
+      parameters: add params
+      return_value: String
+      description: |
+        Returns the character to the right of the point.
+
+    - name: insert(edit, point, string)
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        Inserts the given string in the buffer at the specified
+        point. Returns the number of characters inserted: this may be different if
+        tabs are being translated into spaces in the current buffer.
+
+    - name: erase(edit, region)
+      type: method
+      parameters: add params
+      description: |
+        Erases the contents of the region from the buffer.
+
+    - name: replace(edit, region, string)
+      type: method
+      parameters: add params
+      description: |
+        Replaces the contents of the region with the given
+        string.
+
+    - name: sel()
+      type: method
+      parameters: add params
+      return_value: Selection
+      description: |
+        Returns a reference to the selection.
+
+    - name: line(point)
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        Returns the line that contains the point.
+
+    - name: line(region)
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        Returns a modified copy of region such that it starts at
+        the beginning of a line, and ends at the end of a line. Note that it may
+        span several lines.
+
+    - name: full_line(point)
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        As line(), but the region includes the trailing newline
+        character, if any.
+
+    - name: full_line(region)
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        As line(), but the region includes the trailing newline
+        character, if any.
+
+    - name: lines(region)
+      type: method
+      parameters: add params
+      return_value: [Region]
+      description: |
+        Returns a list of lines (in sorted order) intersecting the
+        region.
+
+    - name: split_by_newlines(region)
+      type: method
+      parameters: add params
+      return_value: [Region]
+      description: |
+        Splits the region up such that each region returned exists
+        on exactly one line.
+
+    - name: word(point)
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        Returns the word that contains the point.
+
+    - name: word(region)
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        Returns a modified copy of region such that it starts at
+        the beginning of a word, and ends at the end of a word. Note that it may
+        span several words.
+
+    - name: classify(point)
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        Classifies pt, returning a bitwise OR of zero or more of
+        these flags:
+
+        CLASS_WORD_START
+        CLASS_WORD_END
+        CLASS_PUNCTUATION_START
+        CLASS_PUNCTUATION_END
+        CLASS_SUB_WORD_START
+        CLASS_SUB_WORD_END
+        CLASS_LINE_START
+        CLASS_LINE_END
+        CLASS_EMPTY_LINE
+
+    - name: find_by_class(point, forward, classes,
+    <separators>)
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        Finds the next location after point that matches the given
+        classes. If forward is False, searches backwards instead of forwards.
+        classes is a bitwise OR of the sublime.CLASS_XXX flags. separators may be
+        passed in, to define what characters should be considered to separate
+        words.
+
+    - name: expand_by_class(point, classes, <separators>)
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        Expands point to the left and right, until each side lands
+        on a location that matches classes. classes is a bitwise OR of the
+        sublime.CLASS_XXX flags. separators may be passed in, to define what
+        characters should be considered to separate words.
+
+    - name: expand_by_class(region, classes, <separators>)
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        Expands region to the left and right, until each side
+        lands on a location that matches classes. classes is a bitwise OR of the
+        sublime.CLASS_XXX flags. separators may be passed in, to define what
+        characters should be considered to separate words.
+
+    - name: find(pattern, fromPosition, <flags>)
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        Returns the first Region matching the regex pattern,
+        starting from the given point, or None if it can't be found. The optional
+        flags parameter may be sublime.LITERAL, sublime.IGNORECASE, or the two
+        ORed together.
+
+    - name: find_all(pattern, <flags>, <format>,
+      <extractions>)
+      type: method
+      parameters: add params
+      return_value: [Region]
+      description: |
+        Returns all (non-overlapping) regions matching the regex
+        pattern. The optional flags parameter may be sublime.LITERAL,
+        sublime.IGNORECASE, or the two ORed together. If a format string is given,
+        then all matches will be formatted with the formatted string and placed
+        into the extractions list.
+
+    - name: rowcol(point)
+      type: method
+      parameters: add params
+      return_value: (int, int)
+      description: |
+        Calculates the 0 based line and column numbers of the
+        point.
+
+    - name: text_point(row, col)
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        Calculates the character offset of the given, 0 based, row
+        and column. Note that 'col' is interpreted as the number of characters to
+        advance past the beginning of the row.
+
+    - name: set_syntax_file(syntax_file)
+      type: method
+      parameters: add params
+      description: |
+        Changes the syntax used by the view. syntax_file
+        should be a name along the lines of
+        Packages/Python/Python.tmLanguage. To retrieve the current
+        syntax, use view.settings().get('syntax').
+
+    - name: extract_scope(point)
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        Returns the extent of the syntax name assigned to the
+        character at the given point.
+
+    - name: scope_name(point)
+      type: method
+      parameters: add params
+      return_value: String
+      description: |
+        Returns the syntax name assigned to the character at the
+        given point.
+
+    - name: score_selector(point, selector)
+      type: method
+      parameters: add params
+      return_value: Int
+      description: |
+        Matches the selector against the scope at the given
+        location, returning a score. A score of 0 means no match, above 0 means a
+        match. Different selectors may be compared against the same scope: a
+        higher score means the selector is a better match for the scope.
+
+    - name: find_by_selector(selector)
+      type: method
+      parameters: add params
+      return_value: [Regions]
+      description: |
+        Finds all regions in the file matching the given selector,
+        returning them as a list.
+
+    - name: show(point, <show_surrounds>)
+      type: method
+      parameters: add params
+      description: |
+        Scroll the view to show the given point.
+
+    - name: show(region, <show_surrounds>)
+      type: method
+      parameters: add params
+      description: |
+        Scroll the view to show the given region.
+
+    - name: show(region_set, <show_surrounds>)
+      type: method
+      parameters: add params
+      description: |
+        Scroll the view to show the given region set.
+
+    - name: show_at_center(point)
+      type: method
+      parameters: add params
+      description: |
+        Scroll the view to center on the point.
+
+    - name: show_at_center(region)
+      type: method
+      parameters: add params
+      description: |
+        Scroll the view to center on the region.
+
+    - name: visible_region()
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        Returns the currently visible area of the view.
+
+    - name: viewport_position()
+      type: method
+      parameters: add params
+      return_value: Vector
+      description: |
+        Returns the offset of the viewport in layout
+        coordinates.
+
+    - name: set_viewport_position(vector, <animate<)
+      type: method
+      parameters: add params
+      description: |
+        Scrolls the viewport to the given layout position.
+
+    - name: viewport_extent()
+      type: method
+      parameters: add params
+      return_value: vector
+      description: |
+        Returns the width and height of the viewport.
+
+    - name: layout_extent()
+      type: method
+      parameters: add params
+      return_value: vector
+      description: |
+        Returns the width and height of the layout.
+
+    - name: text_to_layout(point)
+      type: method
+      parameters: add params
+      return_value: vector
+      description: |
+        Converts a text position to a layout position
+
+    - name: layout_to_text(vector)
+      type: method
+      parameters: add params
+      return_value: point
+      description: |
+        Converts a layout position to a text position
+
+    - name: window_to_layout(vector)
+      type: method
+      parameters: add params
+      return_value: vector
+      description: |
+        Converts a window position to a layout position
+
+    - name: window_to_text(vector)
+      type: method
+      parameters: add params
+      return_value: point
+      description: |
+        Converts a window position to a text position
+
+    - name: line_height()
+      type: method
+      parameters: add params
+      return_value: real
+      description: |
+        Returns the light height used in the layout
+
+    - name: em_width()
+      type: method
+      parameters: add params
+      return_value: real
+      description: |
+        Returns the typical character width used in the layout
+
+    - name: add_regions(key, [regions], <scope>, <icon>,
+      <flags>)
+      type: method
+      parameters: add params
+      description: |
+        Add a set of regions to the view. If a set of regions
+        already exists with the given key, they will be overwritten. The scope is
+        used to source a color to draw the regions in, it should be the name of a
+        scope, such as "comment" or "string". If the scope is empty, the regions
+        won't be drawn.
+        The optional icon name, if given, will draw the named icons in the
+        gutter next to each region. The icon will be tinted using the color
+        associated with the scope. Valid icon names are dot,
+        circle, bookmark and cross. The icon name may
+        also be a full package relative path, such as Packages/Theme -
+        Default/dot.png.
+        The optional flags parameter is a bitwise combination of:
+
+        sublime.DRAW_EMPTY. Draw empty regions with a vertical bar.
+        By default, they aren't drawn at all.
+        sublime.HIDE_ON_MINIMAP. Don't show the regions on the
+        minimap.
+        sublime.DRAW_EMPTY_AS_OVERWRITE. Draw empty regions with a
+        horizontal bar instead of a vertical one.
+        sublime.DRAW_NO_FILL. Disable filling the regions, leaving
+        only the outline.
+        sublime.DRAW_NO_OUTLINE. Disable drawing the outline of the
+        regions.
+        sublime.DRAW_SOLID_UNDERLINE. Draw a solid underline below
+        the regions.
+        sublime.DRAW_STIPPLED_UNDERLINE. Draw a stippled underline
+        below the regions.
+        sublime.DRAW_SQUIGGLY_UNDERLINE. Draw a squiggly underline
+        below the regions.
+        sublime.PERSISTENT. Save the regions in the session.
+        sublime.HIDDEN. Don't draw the regions.
+        The underline styles are exclusive, either zero or one of them should
+        be given. If using an underline, DRAW_NO_FILL and DRAW_NO_OUTLINE should
+        generally be passed in.
+
+    - name: get_regions(key)
+      type: method
+      parameters: add params
+      return_value: [regions]
+      description: |
+        Return the regions associated with the given key, if
+        any
+
+    - name: erase_regions(key)
+      type: method
+      parameters: add params
+      description: |
+        Removed the named regions
+
+    - name: set_status(key, value)
+      type: method
+      parameters: add params
+      description: |
+        Adds the status key to the view. The value will be
+        displayed in the status bar, in a comma separated list of all status
+        values, ordered by key. Setting the value to the empty string will clear
+        the status.
+
+    - name: get_status(key)
+      type: method
+      parameters: add params
+      return_value: String
+      description: |
+        Returns the previously assigned value associated with the
+        key, if any.
+
+    - name: erase_status(key)
+      type: method
+      parameters: add params
+      description: |
+        Clears the named status.
+
+    - name: command_history(index, <modifying_only>)
+      type: method
+      parameters: add params
+      return_value: (String,Dict,int)
+      description: |
+        Returns the command name, command arguments, and repeat
+        count for the given history entry, as stored in the undo / redo stack.
+        Index 0 corresponds to the most recent command, -1 the command before
+        that, and so on. Positive values for index indicate to look in the redo
+        stack for commands. If the undo / redo history doesn't extend far enough,
+        then (None, None, 0) will be returned.
+        Setting modifying_only to True (the default is False) will only return
+        entries that modified the buffer.
+
+    - name: change_count()
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        Returns the current change count. Each time the buffer is
+        modified, the change count is incremented. The change count can be used to
+        determine if the buffer has changed since the last it was inspected.
+
+    - name: fold([regions])
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Folds the given regions, returning False if they were
+        already folded
+
+    - name: fold(region)
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Folds the given region, returning False if it was already
+        folded
+
+    - name: unfold(region)
+      type: method
+      parameters: add params
+      return_value: [regions]
+      description: |
+        Unfolds all text in the region, returning the unfolded
+        regions
+
+    - name: unfold([regions])
+      type: method
+      parameters: add params
+      return_value: [regions]
+      description: |
+        Unfolds all text in the regions, returning the unfolded
+        regions
+
+    - name: encoding()
+      type: method
+      parameters: add params
+      return_value: String
+      description: |
+        Returns the encoding currently associated with the file
+
+    - name: set_encoding(encoding)
+      type: method
+      parameters: add params
+      description: |
+        Applies a new encoding to the file. This encoding will be
+        used the next time the file is saved.
+
+    - name: line_endings()
+      type: method
+      parameters: add params
+      return_value: String
+      description: |
+        Returns the line endings used by the current file.
+
+    - name: set_line_endings(line_endings)
+      type: method
+      parameters: add params
+      description: |
+        Sets the line endings that will be applied when next
+        saving.
+
+    - name: overwrite_status()
+      type: method
+      parameters: add params
+      return_value: Bool
+      description: |
+        Returns the overwrite status, which the user normally
+        toggles via the insert key.
+
+    - name: set_overwrite_status(enabled)
+      type: method
+      parameters: add params
+      description: |
+        Sets the overwrite status.
+
+    - name: symbols(line_endings)
+      type: method
+      parameters: add params
+      return_value: [(Region, String)]
+      description: |
+        Extract all the symbols defined in the buffer.
+
+    - name: show_popup_menu(items, on_done, <flags>)
+      type: method
+      parameters: add params
+      description: |
+        Shows a pop up menu at the caret, to select an item in a
+        list. on_done will be called once, with the index of the selected item. If
+        the pop up menu was cancelled, on_done will be called with an argument of
+        -1.
+        Items is an array of strings.
+        Flags currently only has no option.
+  - name: Window
+    type: class
+    parameters: add params
+    description: add description
+    members:
+
+    - name: id()
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        Returns a number that uniquely identifies this window.
+
+    - name: new_file()
+      type: method
+      parameters: add params
+      return_value: View
+      description: |
+        Creates a new file. The returned view will be empty, and
+        its is_loaded method will return True.
+
+    - name: open_file(file_name, <flags>)
+      type: method
+      parameters: add params
+      return_value: View
+      description: |
+        Opens the named file, and returns the corresponding view.
+        If the file is already opened, it will be brought to the front. Note that
+        as file loading is asynchronous, operations on the returned view won't be
+        possible until its is_loading() method returns False.
+        The optional flags parameter is a bitwise combination of:
+
+        sublime.ENCODED_POSITION. Indicates the file_name should be
+        searched for a :row or :row:col suffix
+        sublime.TRANSIENT. Open the file as a preview only: it
+        won't have a tab assigned it until modified
+
+    - name: find_open_file(file_name)
+      type: method
+      parameters: add params
+      return_value: View
+      description: |
+        Finds the named file in the list of open files, and
+        returns the corresponding View, or None if no such file is open.
+
+    - name: active_view()
+      type: method
+      parameters: add params
+      return_value: View
+      description: |
+        Returns the currently edited view.
+
+    - name: active_view_in_group(group)
+      type: method
+      parameters: add params
+      return_value: View
+      description: |
+        Returns the currently edited view in the given group.
+
+    - name: views()
+      type: method
+      parameters: add params
+      return_value: [View]
+      description: |
+        Returns all open views in the window.
+
+    - name: views_in_group(group)
+      type: method
+      parameters: add params
+      return_value: [View]
+      description: |
+        Returns all open views in the given group.
+
+    - name: num_groups()
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        Returns the number of view groups in the window.
+
+    - name: active_group()
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        Returns the index of the currently selected group.
+
+    - name: focus_group(group)
+      type: method
+      parameters: add params
+      description: |
+        Makes the given group active.
+
+    - name: focus_view(view)
+      type: method
+      parameters: add params
+      description: |
+        Switches to the given view.
+
+    - name: get_view_index(view)
+      type: method
+      parameters: add params
+      return_value: (group, index)
+      description: |
+        Returns the group, and index within the group of the view.
+        Returns -1 if not found.
+
+    - name: set_view_index(view, group, index)
+      type: method
+      parameters: add params
+      description: |
+        Moves the view to the given group and index.
+
+    - name: folders()
+      type: method
+      parameters: add params
+      return_value: [String]
+      description: |
+        Returns a list of the currently open folders.
+
+    - name: project_file_name()
+      type: method
+      parameters: add params
+      return_value: String
+      description: |
+        Returns name of the currently opened project file, if
+        any.
+
+    - name: project_data()
+      type: method
+      parameters: add params
+      return_value: Dictionary
+      description: |
+        Returns the project data associated with the current
+        window. The data is in the same format as the contents of a
+        .sublime-project file.
+
+        set_project_data(data)
+        None
+        Updates the project data associated with the current
+        window. If the window is associated with a .sublime-project file, the
+        project file will be updated on disk, otherwise the window will store the
+        data internally.
+
+        run_command(string, <args>)
+        None
+        Runs the named Command with the (optional) given
+        arguments. Window.run_command is able to run both any sort of command,
+        dispatching the command via input focus.
+
+        show_quick_panel(items, on_done, <flags>,
+        <selected_index>, <on_highlighted>)
+        None
+        Shows a quick panel, to select an item in a list. on_done
+        will be called once, with the index of the selected item. If the quick
+        panel was cancelled, on_done will be called with an argument of -1.
+        Items may be an array of strings, or an array of string arrays. In the
+        latter case, each entry in the quick panel will show multiple rows.
+        Flags currently only has one option, sublime.MONOSPACE_FONT
+        on_highlighted, if given, will be called every time the highlighted
+        item in the quick panel is changed.
+
+        show_input_panel(caption, initial_text, on_done,
+        on_change, on_cancel)
+        View
+        Shows the input panel, to collect a line of input from the
+        user. on_done and on_change, if not None, should both be functions that
+        expect a single string argument. on_cancel should be a function that
+        expects no arguments. The view used for the input widget is returned.
+
+        create_output_panel(name)
+        View
+        Returns the view associated with the named output panel,
+        created it if required. The output panel can be shown by running the
+        show_panel window command, with the panel argument set
+        to the name with an  "output." prefix.
+
+        lookup_symbol_in_index(symbol)
+        [Location]
+        Returns all locations where the symbol is defined across
+        files in the current project.
+
+        lookup_symbol_in_open_files(symbol)
+        [Location]
+        Returns all locations where the symbol is defined across
+        open files.
+
+        extract_variables()
+        Dictionary
+        Returns a dictionary of strings populated with contextual
+        keys: packages, platform, file, file_path, file_name, file_base_name,
+        file_extension, folder, project, project_path, project_name,
+        project_base_name, project_extension. This dictionary is suitable for
+        passing to sublime.expand_variables().
+
+    - name: set_project_data(data)
+      type: method
+      parameters: add params
+      description: |
+        Updates the project data associated with the current
+        window. If the window is associated with a .sublime-project file, the
+        project file will be updated on disk, otherwise the window will store the
+        data internally.
+
+        run_command(string, <args>)
+        None
+        Runs the named Command with the (optional) given
+        arguments. Window.run_command is able to run both any sort of command,
+        dispatching the command via input focus.
+
+        show_quick_panel(items, on_done, <flags>,
+        <selected_index>, <on_highlighted>)
+        None
+        Shows a quick panel, to select an item in a list. on_done
+        will be called once, with the index of the selected item. If the quick
+        panel was cancelled, on_done will be called with an argument of -1.
+        Items may be an array of strings, or an array of string arrays. In the
+        latter case, each entry in the quick panel will show multiple rows.
+        Flags currently only has one option, sublime.MONOSPACE_FONT
+        on_highlighted, if given, will be called every time the highlighted
+        item in the quick panel is changed.
+
+        show_input_panel(caption, initial_text, on_done,
+        on_change, on_cancel)
+        View
+        Shows the input panel, to collect a line of input from the
+        user. on_done and on_change, if not None, should both be functions that
+        expect a single string argument. on_cancel should be a function that
+        expects no arguments. The view used for the input widget is returned.
+
+        create_output_panel(name)
+        View
+        Returns the view associated with the named output panel,
+        created it if required. The output panel can be shown by running the
+        show_panel window command, with the panel argument set
+        to the name with an  "output." prefix.
+
+        lookup_symbol_in_index(symbol)
+        [Location]
+        Returns all locations where the symbol is defined across
+        files in the current project.
+
+        lookup_symbol_in_open_files(symbol)
+        [Location]
+        Returns all locations where the symbol is defined across
+        open files.
+
+        extract_variables()
+        Dictionary
+        Returns a dictionary of strings populated with contextual
+        keys: packages, platform, file, file_path, file_name, file_base_name,
+        file_extension, folder, project, project_path, project_name,
+        project_base_name, project_extension. This dictionary is suitable for
+        passing to sublime.expand_variables().
+
+    - name: run_command(string, <args>)
+      type: method
+      parameters: add params
+      description: |
+        Runs the named Command with the (optional) given
+        arguments. Window.run_command is able to run both any sort of command,
+        dispatching the command via input focus.
+
+    - name: show_quick_panel(items, on_done, <flags>,
+      <selected_index>, <on_highlighted>)
+      type: method
+      parameters: add params
+      description: |
+        Shows a quick panel, to select an item in a list. on_done
+        will be called once, with the index of the selected item. If the quick
+        panel was cancelled, on_done will be called with an argument of -1.
+        Items may be an array of strings, or an array of string arrays. In the
+        latter case, each entry in the quick panel will show multiple rows.
+        Flags currently only has one option, sublime.MONOSPACE_FONT
+        on_highlighted, if given, will be called every time the highlighted
+        item in the quick panel is changed.
+
+    - name: show_input_panel(caption, initial_text, on_done,
+      on_change, on_cancel)
+      type: method
+      parameters: add params
+      return_value: View
+      description: |
+        Shows the input panel, to collect a line of input from the
+        user. on_done and on_change, if not None, should both be functions that
+        expect a single string argument. on_cancel should be a function that
+        expects no arguments. The view used for the input widget is returned.
+
+    - name: create_output_panel(name)
+      type: method
+      parameters: add params
+      return_value: View
+      description: |
+        Returns the view associated with the named output panel,
+        created it if required. The output panel can be shown by running the
+        show_panel window command, with the panel argument set
+        to the name with an  "output." prefix.
+
+        lookup_symbol_in_index(symbol)
+        [Location]
+        Returns all locations where the symbol is defined across
+        files in the current project.
+
+        lookup_symbol_in_open_files(symbol)
+        [Location]
+        Returns all locations where the symbol is defined across
+        open files.
+
+        extract_variables()
+        Dictionary
+        Returns a dictionary of strings populated with contextual
+        keys: packages, platform, file, file_path, file_name, file_base_name,
+        file_extension, folder, project, project_path, project_name,
+        project_base_name, project_extension. This dictionary is suitable for
+        passing to sublime.expand_variables().
+
+    - name: lookup_symbol_in_index(symbol)
+      type: method
+      parameters: add params
+      return_value: [Location]
+      description: |
+        Returns all locations where the symbol is defined across
+        files in the current project.
+
+    - name: lookup_symbol_in_open_files(symbol)
+      type: method
+      parameters: add params
+      return_value: [Location]
+      description: |
+        Returns all locations where the symbol is defined across
+        open files.
+
+    - name: extract_variables()
+      type: method
+      parameters: add params
+      return_value: Dictionary
+      description: |
+        Returns a dictionary of strings populated with contextual
+        keys: packages, platform, file, file_path, file_name, file_base_name,
+        file_extension, folder, project, project_path, project_name,
+        project_base_name, project_extension. This dictionary is suitable for
+        passing to sublime.expand_variables().
+  - name: Region
+    type: class
+    parameters: add params
+    description: add description
+    members:
+
+    - name: Region(a, b)
+      type: method
+      parameters: add params
+      return_value: Creates a Region with initial values a and
+b.
+      description: |
+        n/a
+
+    - name: a
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        The first end of the region.
+
+    - name: b
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        The second end of the region. May be less that a, in which
+        case the region is a reversed one.
+
+    - name: xpos
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        The target horizontal position of the region, or -1 if
+        undefined. Effects behavior when pressing the up or down
+        keys.
+
+    - name: begin()
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        Returns the minimum of a and b.
+
+    - name: end()
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        Returns the maximum of a and b.
+
+    - name: size()
+      type: method
+      parameters: add params
+      return_value: int
+      description: |
+        Returns the number of characters spanned by the region.
+        Always >= 0.
+
+    - name: empty()
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true iff begin() == end().
+
+    - name: cover(region)
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        Returns a Region spanning both this and the given
+        regions.
+
+    - name: intersection(region)
+      type: method
+      parameters: add params
+      return_value: Region
+      description: |
+        Returns the set intersection of the two regions.
+
+    - name: intersects(region)
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns True iff this == region or both include one or
+        more positions in common.
+
+    - name: contains(region)
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns True iff the given region is a subset.
+
+    - name: contains(point)
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns True iff begin() <= point <=
+        end().
+  - name: Settings
+    type: class
+    parameters: add params
+    description: add description
+    members:
+
+    - name: get(name)
+      type: method
+      parameters: add params
+      return_value: value
+      description: |
+        Returns the named setting.
+
+    - name: get(name, default)
+      type: method
+      parameters: add params
+      return_value: value
+      description: |
+        Returns the named setting, or default if it's not
+        defined.
+
+    - name: set(name, value)
+      type: method
+      parameters: add params
+      description: |
+        Sets the named setting. Only primitive types, lists, and
+        dictionaries are accepted.
+
+    - name: erase(name)
+      type: method
+      parameters: add params
+      description: |
+        Removes the named setting. Does not remove it from any
+        parent Settings.
+
+    - name: has(name)
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true iff the named option exists in this set of
+        Settings or one of its parents.
+
+    - name: add_on_change(key, on_change)
+      type: method
+      parameters: add params
+      description: |
+        Register a callback to be run whenever a setting in this
+        object is changed.
+
+    - name: clear_on_change(key)
+      type: method
+      parameters: add params
+      description: |
+        Remove all callbacks registered with the given
+        key.
+- sublime_plugin:
+
+  - name: (no methods)
+    type: function
+    parameters: add params
+    return_value:
+    description: |
+
+  - name: ApplicationCommand
+    type: class
+    parameters: add params
+    description: add description
+    members:
+
+    - name: run(<args>)
+      type: method
+      parameters: add params
+      description: |
+        Called when the command is run.
+
+    - name: is_enabled(<args>)
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true if the command is able to be run at this
+        time. The default implementation simply always returns True.
+
+    - name: is_visible(<args>)
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true if the command should be shown in the menu at
+        this time. The default implementation always returns True.
+
+    - name: is_checked(<args>)
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true if a checkbox should be shown next to the
+        menu item. The .sublime-menu file must have the checkbox
+        attribute set to true for this to be used.
+
+    - name: description(<args>)
+      type: method
+      parameters: add params
+      return_value: String
+      description: |
+        Returns a description of the command with the given
+        arguments. Used in the menu, if no caption is provided. Return None to get
+        the default description.
+  - name: WindowCommand
+    type: class
+    parameters: add params
+    description: add description
+    members:
+
+    - name: run(<args>)
+      type: method
+      parameters: add params
+      description: |
+        Called when the command is run.
+
+    - name: is_enabled(<args>)
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true if the command is able to be run at this
+        time. The default implementation simply always returns True.
+
+    - name: is_visible(<args>)
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true if the command should be shown in the menu at
+        this time. The default implementation always returns True.
+
+    - name: description(<args>)
+      type: method
+      parameters: add params
+      return_value: String
+      description: |
+        Returns a description of the command with the given
+        arguments. Used in the menu, if no caption is provided. Return None to get
+        the default description.
+  - name: EventListener
+    type: class
+    parameters: add params
+    description: add description
+    members:
+
+    - name: on_new(view)
+      type: method
+      parameters: add params
+      description: |
+        Called when a new buffer is created.
+
+    - name: on_new_async(view)
+      type: method
+      parameters: add params
+      description: |
+        Called when a new buffer is created. Runs in a separate
+        thread, and does not block the application.
+
+    - name: on_clone(view)
+      type: method
+      parameters: add params
+      description: |
+        Called when a view is cloned from an existing one.
+
+    - name: on_clone_async(view)
+      type: method
+      parameters: add params
+      description: |
+        Called when a view is cloned from an existing one. Runs in
+        a separate thread, and does not block the application.
+
+    - name: on_load(view)
+      type: method
+      parameters: add params
+      description: |
+        Called when the file is finished loading.
+
+    - name: on_load_async(view)
+      type: method
+      parameters: add params
+      description: |
+        Called when the file is finished loading. Runs in a
+        separate thread, and does not block the application.
+
+    - name: on_pre_close(view)
+      type: method
+      parameters: add params
+      description: |
+        Called when a view is about to be closed. The view will
+        still be in the window at this point.
+
+    - name: on_close(view)
+      type: method
+      parameters: add params
+      description: |
+        Called when a view is closed (note, there may still be
+        other views into the same buffer).
+
+    - name: on_pre_save(view)
+      type: method
+      parameters: add params
+      description: |
+        Called just before a view is saved.
+
+    - name: on_pre_save_async(view)
+      type: method
+      parameters: add params
+      description: |
+        Called just before a view is saved. Runs in a separate
+        thread, and does not block the application.
+
+    - name: on_post_save(view)
+      type: method
+      parameters: add params
+      description: |
+        Called after a view has been saved.
+
+    - name: on_post_save_async(view)
+      type: method
+      parameters: add params
+      description: |
+        Called after a view has been saved. Runs in a separate
+        thread, and does not block the application.
+
+    - name: on_modified(view)
+      type: method
+      parameters: add params
+      description: |
+        Called after changes have been made to a view.
+
+    - name: on_modified_async(view)
+      type: method
+      parameters: add params
+      description: |
+        Called after changes have been made to a view. Runs in a
+        separate thread, and does not block the application.
+
+    - name: on_selection_modified(view)
+      type: method
+      parameters: add params
+      description: |
+        Called after the selection has been modified in a view.
+
+    - name: on_selection_modified_async(view)
+      type: method
+      parameters: add params
+      description: |
+        Called after the selection has been modified in a view.
+        Runs in a separate thread, and does not block the application.
+
+    - name: on_activated(view)
+      type: method
+      parameters: add params
+      description: |
+        Called when a view gains input focus.
+
+    - name: on_activated_async(view)
+      type: method
+      parameters: add params
+      description: |
+        Called when a view gains input focus. Runs in a separate
+        thread, and does not block the application.
+
+    - name: on_deactivated(view)
+      type: method
+      parameters: add params
+      description: |
+        Called when a view loses input focus.
+
+    - name: on_deactivated_async(view)
+      type: method
+      parameters: add params
+      description: |
+        Called when a view loses input focus. Runs in a separate
+        thread, and does not block the application.
+
+    - name: on_text_command(view, command_name, args)
+      type: method
+      parameters: add params
+      return_value: (new_command_name, new_args)
+      description: |
+        Called when a text command is issued. The listener may
+        return a (command, arguments) tuple to rewrite the command, or None to run
+        the command unmodified.
+
+    - name: on_window_command(window, command_name, args)
+      type: method
+      parameters: add params
+      return_value: (new_command_name, new_args)
+      description: |
+        Called when a window command is issued. The listener may
+        return a (command, arguments) tuple to rewrite the command, or None to run
+        the command unmodified.
+
+    - name: post_text_command(view, command_name, args)
+      type: method
+      parameters: add params
+      description: |
+        Called after a text command has been executed.
+
+    - name: post_window_command(window, command_name, args)
+      type: method
+      parameters: add params
+      description: |
+        Called after a window command has been executed.
+
+    - name: on_query_context(view, key, operator, operand,
+    match_all)
+      type: method
+      parameters: add params
+      return_value: bool or None
+      description: |
+        Called when determining to trigger a key binding with the
+        given context key. If the plugin knows how to respond to the context, it
+        should return either True of False. If the context is unknown, it should
+        return None.
+        operator is one of:
+
+        sublime.OP_EQUAL. Is the value of the context equal to the
+        operand?
+        sublime.OP_NOT_EQUAL. Is the value of the context not equal
+        to the operand?
+        sublime.OP_REGEX_MATCH. Does the value of the context match
+        the regex given in operand?
+        sublime.OP_NOT_REGEX_MATCH. Does the value of the context
+        not match the regex given in operand?
+        sublime.OP_REGEX_CONTAINS. Does the value of the context
+        contain a substring matching the regex given in operand?
+        sublime.OP_NOT_REGEX_CONTAINS. Does the value of the
+        context not contain a substring matching the regex given in operand?
+
+        match_all should be used if the context relates to the
+        selections: does every selection have to match (match_all = True), or is
+        at least one matching enough (match_all = Fals)?
+
+  - name: TextCommand
+    type: class
+    parameters: add params
+    description: add description
+    members:
+
+    - name: run(edit, <args>)
+      type: method
+      parameters: add params
+      description: |
+        Called when the command is run.
+
+    - name: is_enabled(<args>)
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true if the command is able to be run at this
+        time. The default implementation simply always returns True.
+
+    - name: is_visible(<args>)
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Returns true if the command should be shown in the menu at
+        this time. The default implementation always returns True.
+
+    - name: description(<args>)
+      type: method
+      parameters: add params
+      return_value: String
+      description: |
+        Returns a description of the command with the given
+        arguments. Used in the menus, and for Undo / Redo descriptions. Return
+        None to get the default description.
+
+    - name: want_event()
+      type: method
+      parameters: add params
+      return_value: bool
+      description: |
+        Return True to receive an event argument when the
+        command is triggered by a mouse action. The event information allows
+        commands to determine which portion of the view was clicked on. The
+        default implementation returns False.
