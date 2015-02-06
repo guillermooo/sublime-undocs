@@ -9,14 +9,14 @@ class ApiHierarchicalVisitor(object):
         self.api = api
 
     def visit_api(self):
-        for m in self.api.modules:
+        for (_, m) in self.api.modules.items():
             self.visit_module(m)
 
     def visit_module(self, m):
         for f in m.functions:
             self.visit_function(f)
 
-        for cls in m.classes:
+        for (_ , cls) in m.classes.items():
             self.visit_class(cls)
 
     def visit_class(self, cls):

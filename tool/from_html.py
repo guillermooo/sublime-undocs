@@ -13,72 +13,70 @@ class FromHtmlReader(object):
     def __init__(self, html):
         self.html = html
 
-    def funcs_from_table(self, t):
-        trs = t.find_all('tr')
-        fs = []
-
+    def extract_functions(self, table):
+        trs = table.find_all('tr')
+        funcs = []
         for tr in trs:
-            data = list(tr.children)
-            if data[0] is None:
-                print (tr)
+            # skip newlines
+            data = list(item for item in tr.children
+                             if not isinstance(item, bs4.NavigableString))
             func_name = data[0].text
-            if func_name == 'Methods':
+            # skip headings
+            if func_name in ('Methods', 'Properties', 'Constructors'):
                 continue
             ret_value = data[1].text
-
             try:
                 desc = data[2].text
             except:
                 desc = "n/a"
 
-            m = Member (None)
-            m.name = func_name
-            m.return_value = ret_value
-            m.description = desc
-            fs.append(m)
+            member = Member(None)
+            member.name = func_name
+            member.return_value = ret_value
+            member.description = desc
+            funcs.append(member)
 
-        return fs
+        return funcs
 
-    def classes_from_html(self, classes):
-        final_clasess = []
-        for cs in classes:
-            new_class = Class (None)
-            new_class.name = cs.attrs ['name']
-            t = cs.find_next('table')
-            assert t.attrs ['class'] == ['functions']
-            new_class.members = self.funcs_from_table (t)
-            final_clasess.append (new_class)
-        return final_clasess
+    def make_class(self, name, table):
+        cls = Class(None)
+        cls.name = name
+        cls.members = self.extract_functions(table)
+        return cls
 
-    def module_from_section(self, a_tag):
+    def make_module(self, a_tag, table):
         m = Module(None)
         m.name = a_tag.attrs['name']
-        t = a_tag.find_next('table')
-        assert t.attrs['class'] == ['functions']
-        m.functions = self.funcs_from_table(t)
-        cc = [a for a in self.html.find_all('a') if a.attrs.get('name', '.').split('.')[0] == m.name]
-        # skip the module
-        m.classes = self.classes_from_html(cc[1:])
+        assert table.attrs['class'] == ['functions']
+        m.functions = self.extract_functions(table)
         return m
 
-    def sections_from_tables(self, tables):
-        api = SublimeApi(None)
-        # for each t, find a#name
-        for t in tables:
-            a = t.find_previous('a')
-            try:
-                assert 'name' in a.attrs, 'boo!'
-            except:
-                print ("IGNORED:", a)
-            if '.' in a.attrs['name']:
-                pass
-            else:
-                api.modules.append(self.module_from_section(a))
-        return api
-
     def to_api(self):
-        tables = [t for t in self.html.find_all('table') if t.attrs['class'] == ['functions']]
-        return self.sections_from_tables(tables)
+        tables = [t for t in self.html.find_all('table')
+                          if t.attrs['class'] == ['functions']]
+
+        api = SublimeApi(None)
+        for table in tables:
+            # each module/class is associated with an 'a' tag
+            a = table.find_previous('a')
+            assert 'name' in a.attrs, 'unexpected anchor'
+            name = a.attrs['name']
+
+            module_name = class_name = None
+            if '.' in name:
+                module_name, class_name = name.split('.')
+
+            if not module_name:
+                module = self.make_module(a, table)
+                api.modules[module.name] = module
+            else:
+                cls = self.make_class(class_name, table)
+                if cls.name in api.modules[module_name].classes:
+                    api.modules[module_name
+                        ].classes[cls.name].members.extend(cls.members)
+                else:
+                    api.modules[module_name].classes[cls.name] = cls
+        return api
 
     @staticmethod
     def from_path(path):
@@ -98,6 +96,7 @@ def read_api(path):
 
 if __name__ == '__main__':
     try:
+        print('testing...')
         print(read_api('api.html'))
     except IOError:
         here = os.path.abspath(os.path.dirname(__file__))

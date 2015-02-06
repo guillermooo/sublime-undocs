@@ -8,7 +8,7 @@ class SublimeApi(object):
     """
     def __init__(self, html):
         self.html = html
-        self.modules = []
+        self.modules = {}
 
 
 class Module(object):
@@ -17,7 +17,7 @@ class Module(object):
     """
     def __init__(self, html):
         self.name = None
-        self.classes = []
+        self.classes = {}
         self.functions = [] # top-level funcs in the module
 
     def __str__(self):

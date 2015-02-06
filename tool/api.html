@@ -1,10 +1,11 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-<title>API Reference - Sublime Text 3 Documentation</title>
-<link rel="stylesheet" type="text/css" href="sublime_docs.css">
-<style>
+<!DOCTYPE HTML>
+<!-- saved from url=(0052)http://www.sublimetext.com/docs/3/api_reference.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><HTML><HEAD><META 
+content="IE=11.0000" http-equiv="X-UA-Compatible">
+ <TITLE>API Reference - Sublime Text 3 Documentation</TITLE> 
+<META http-equiv="Content-Type" content="text/html; charset=windows-1252"><LINK 
+href="api_files/sublime_docs.css" rel="stylesheet" type="text/css"> 
+<STYLE>
 table
 {
 	padding-top: 1em;
@@ -67,377 +68,909 @@ th:first-child
 {
 	width: 150px;
 }
-</style>
-</head>
-<body>
-
-<p class="contents"><a href="index.html">Contents</a></p>
-
-<h1>API Reference</h1>
-
-<h3>Sublime API</h3>
-<ul>
-<li><a href="#sublime.View">View</a>
-<li><a href="#sublime.Selection">Selection</a>
-<li><a href="#sublime.Region">Region</a>
-<li><a href="#sublime.Edit">Edit</a>
-<li><a href="#sublime.Window">Window</a>
-<li><a href="#sublime.Settings">Settings</a>
-</ul>
-
-<h3>Base Classes</h3>
-<ul>
-<li><a href="#sublime_plugin.EventListener">EventListener</a>
-<li><a href="#sublime_plugin.ApplicationCommand">ApplicationCommand</a>
-<li><a href="#sublime_plugin.WindowCommand">WindowCommand</a>
-<li><a href="#sublime_plugin.TextCommand">TextCommand</a>
-</ul>
-
-<h2>Example Plugins</h2>
-
-<p>Several pre-made plugins come with Sublime Text, you can find them in the <tt>Default</tt> package:
-
-<ul>
-<li><tt>Packages/Default/delete_word.py</tt> Deletes a word to the left or right of the cursor
-<li><tt>Packages/Default/duplicate_line.py</tt> Duplicates the current line
-<li><tt>Packages/Default/goto_line.py</tt> Prompts the user for input, then updates the selection
-<li><tt>Packages/Default/font.py</tt> Shows how to work with settings
-<li><tt>Packages/Default/mark.py</tt> Uses add_regions() to add an icon to the gutter
-<li><tt>Packages/Default/trim_trailing_whitespace.py</tt> Modifies a buffer just before its saved
-</ul>
-
-
-<h2>Plugin Lifecycle</h2>
-
-<p>At importing time, plugins may not call any API functions, with the exception of sublime.version(), sublime.platform(), sublime.architecture() and sublime.channel().
-
-<p>If a plugin defines a module level function plugin_loaded(), this will be called when the API is ready to use. Plugins may also define plugin_unloaded(), to get notified just before the plugin is unloaded.
-
-
-<h2>Threading</h2>
-
-<p>All API functions are thread-safe, however keep in mind that from the perspective of code running in an alternate thread, application state will be changing while the code is running.
-
-
-<a name="sublime"></a>
-<h2>Module sublime</h2>
-
-<table class="functions">
-<tr><th>Methods</th><th>Return Value</th><th>Description</th></tr>
-<tr><td class="mth">set_timeout(callback, delay)</td><td class="rtn">None</td><td class="dsc">Runs the callback in the main thread after the given delay (in milliseconds). Callbacks with an equal delay will be run in the order they were added.</td>
-<tr><td class="mth">set_async_timeout(callback, delay)</td><td class="rtn">None</td><td class="dsc">Runs the callback on an alternate thread after the given delay (in milliseconds).</td>
-<tr><td class="mth">status_message(string)</td><td class="rtn">None</td><td class="dsc">Sets the message that appears in the status bar.</td>
-<tr><td class="mth">error_message(string)</td><td class="rtn">None</td><td class="dsc">Displays an error dialog to the user.</td>
-<tr><td class="mth">message_dialog(string)</td><td class="rtn">None</td><td class="dsc">Displays a message dialog to the user.</td>
-<tr><td class="mth">ok_cancel_dialog(string, &lt;ok_button&gt;)</td><td class="rtn">bool</td><td class="dsc">Displays an ok / cancel question dialog to the user. If ok_button is provided, this may be used as the text on the ok button. Returns True if the user presses the ok button.</td>
-
-<tr><td class="mth">load_resource(name)</td><td class="rtn">String</td><td class="dsc">Loads the given resource. The name should be in the format <tt>Packages/Default/Main.sublime-menu</tt>.</td>
-<tr><td class="mth">load_binary_resource(name)</td><td class="rtn">bytes</td><td class="dsc">Loads the given resource. The name should be in the format <tt>Packages/Default/Main.sublime-menu</tt>.</td>
-<tr><td class="mth">find_resources(pattern)</td><td class="rtn">[String]</td><td class="dsc">Finds resources whose file name matches the given pattern.</td>
-
-<tr><td class="mth">encode_value(value, &lt;pretty&gt;)</td><td class="rtn">String</td><td class="dsc">Encode a JSON compatible value into a string representation. If pretty is set to True, the string will include newlines and indentation.</td>
-<tr><td class="mth">decode_value(string)</td><td class="rtn">value</td><td class="dsc">Decodes a JSON string into an object. If the string is invalid, a <tt>ValueError</tt> will be thrown.</td>
-
-
-<tr><td class="mth">load_settings(base_name)</td><td class="rtn">Settings</td><td class="dsc">Loads the named settings. The name should include a file name and extension, but not a path. The packages will be searched for files matching the base name, and the results will be collated into the settings object. Subsequent calls to load_settings with the name base_name will return the same object, and not load the settings from disk again.</td>
-<tr><td class="mth">save_settings(base_name)</td><td class="rtn">None</td><td class="dsc">Flushes any in-memory changes to the named settings object to disk.</td>
-<!--
+</STYLE>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.9600.17496"></HEAD> 
+<BODY>
+<P class="contents"><A 
+href="http://www.sublimetext.com/docs/3/index.html">Contents</A></P>
+<H1>API Reference</H1>
+<H3>Sublime API</H3>
+<UL>
+  <LI><A href="http://www.sublimetext.com/docs/3/api_reference.html#sublime.View">View</A> 
+  <LI><A href="http://www.sublimetext.com/docs/3/api_reference.html#sublime.Selection">Selection</A> 
+  <LI><A href="http://www.sublimetext.com/docs/3/api_reference.html#sublime.Region">Region</A> 
+  <LI><A href="http://www.sublimetext.com/docs/3/api_reference.html#sublime.Edit">Edit</A> 
+  <LI><A href="http://www.sublimetext.com/docs/3/api_reference.html#sublime.Window">Window</A> 
+  <LI><A href="http://www.sublimetext.com/docs/3/api_reference.html#sublime.Settings">Settings</A> 
+  </LI></UL>
+<H3>Base Classes</H3>
+<UL>
+  <LI><A href="http://www.sublimetext.com/docs/3/api_reference.html#sublime_plugin.EventListener">EventListener</A> 
+  <LI><A href="http://www.sublimetext.com/docs/3/api_reference.html#sublime_plugin.ApplicationCommand">ApplicationCommand</A> 
+  <LI><A href="http://www.sublimetext.com/docs/3/api_reference.html#sublime_plugin.WindowCommand">WindowCommand</A> 
+  <LI><A href="http://www.sublimetext.com/docs/3/api_reference.html#sublime_plugin.TextCommand">TextCommand</A> 
+  </LI></UL>
+<H2>Example Plugins</H2>
+<P>Several pre-made plugins come with Sublime Text, you can find them in the 
+<TT>Default</TT> package: 
+<UL>
+  <LI><TT>Packages/Default/delete_word.py</TT> Deletes a word to the left or 
+  right of the cursor 
+  <LI><TT>Packages/Default/duplicate_line.py</TT> Duplicates the current line 
+  <LI><TT>Packages/Default/goto_line.py</TT> Prompts the user for input, then 
+  updates the selection 
+  <LI><TT>Packages/Default/font.py</TT> Shows how to work with settings 
+  <LI><TT>Packages/Default/mark.py</TT> Uses add_regions() to add an icon to the 
+  gutter 
+  <LI><TT>Packages/Default/trim_trailing_whitespace.py</TT> Modifies a buffer 
+  just before its saved </LI></UL>
+<H2>Plugin Lifecycle</H2>
+<P>At importing time, plugins may not call any API functions, with the exception 
+of sublime.version(), sublime.platform(), sublime.architecture() and 
+sublime.channel(). 
+<P>If a plugin defines a module level function plugin_loaded(), this will be 
+called when the API is ready to use. Plugins may also define plugin_unloaded(), 
+to get notified just before the plugin is unloaded. 
+<H2>Threading</H2>
+<P>All API functions are thread-safe, however keep in mind that from the 
+perspective of code running in an alternate thread, application state will be 
+changing while the code is running. <A name="sublime"></A> 
+<H2>Module sublime</H2>
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Methods</TH>
+    <TH>Return Value</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">set_timeout(callback, delay)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Runs the callback in the main thread after the given delay 
+      (in milliseconds). Callbacks with an equal delay will be run in the order 
+      they were added.</TD>
+  <TR>
+    <TD class="mth">set_async_timeout(callback, delay)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Runs the callback on an alternate thread after the given 
+      delay (in milliseconds).</TD>
+  <TR>
+    <TD class="mth">status_message(string)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Sets the message that appears in the status bar.</TD>
+  <TR>
+    <TD class="mth">error_message(string)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Displays an error dialog to the user.</TD>
+  <TR>
+    <TD class="mth">message_dialog(string)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Displays a message dialog to the user.</TD>
+  <TR>
+    <TD class="mth">ok_cancel_dialog(string, &lt;ok_title&gt;)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Displays an ok / cancel question dialog to the user. If 
+      ok_title is provided, this may be used as the text on the ok button. 
+      Returns True if the user presses the ok button.</TD>
+  <TR>
+    <TD class="mth">yes_no_cancel_dialog(string, &lt;yes_title&gt;, 
+      &lt;no_title&gt;)</TD>
+    <TD class="rtn">Int</TD>
+    <TD class="dsc">Displays a yes / no / cancel question dialog to the user. 
+      If yes_title and/or no_title are provided, they will be used as the text 
+      on the corresponding buttons on some platforms. Returns 
+      sublime.DIALOG_YES, sublime.DIALOG_NO or sublime.DIALOG_CANCEL.</TD>
+  <TR>
+    <TD class="mth">load_resource(name)</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Loads the given resource. The name should be in the format 
+      <TT>Packages/Default/Main.sublime-menu</TT>.</TD>
+  <TR>
+    <TD class="mth">load_binary_resource(name)</TD>
+    <TD class="rtn">bytes</TD>
+    <TD class="dsc">Loads the given resource. The name should be in the format 
+      <TT>Packages/Default/Main.sublime-menu</TT>.</TD>
+  <TR>
+    <TD class="mth">find_resources(pattern)</TD>
+    <TD class="rtn">[String]</TD>
+    <TD class="dsc">Finds resources whose file name matches the given 
+    pattern.</TD>
+  <TR>
+    <TD class="mth">encode_value(value, &lt;pretty&gt;)</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Encode a JSON compatible value into a string 
+      representation. If pretty is set to True, the string will include newlines 
+      and indentation.</TD>
+  <TR>
+    <TD class="mth">decode_value(string)</TD>
+    <TD class="rtn">value</TD>
+    <TD class="dsc">Decodes a JSON string into an object. If the string is 
+      invalid, a <TT>ValueError</TT> will be thrown.</TD>
+  <TR>
+    <TD class="mth">expand_variables(value, variables)</TD>
+    <TD class="rtn">value</TD>
+    <TD class="dsc">Expands any variables in the string <TT>value</TT> using 
+      the variables defined in the dictionary <TT>variables</TT>. <TT>value</TT> 
+      may also be an array or dict, in which case the structure will be 
+      recursively expanded. Strings should use snippet syntax, for example: 
+      expand_variables("Hello, ${name}", {"name": "Foo"}) </TD>
+  <TR>
+    <TD class="mth">load_settings(base_name)</TD>
+    <TD class="rtn">Settings</TD>
+    <TD class="dsc">Loads the named settings. The name should include a file 
+      name and extension, but not a path. The packages will be searched for 
+      files matching the base name, and the results will be collated into the 
+      settings object. Subsequent calls to load_settings with the name base_name 
+      will return the same object, and not load the settings from disk again.</TD>
+  <TR>
+    <TD class="mth">save_settings(base_name)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Flushes any in-memory changes to the named settings object 
+      to disk.</TD><!--
 <tr><td class="mth">message_box(string)</td><td class="rtn">None</td><td class="dsc">Displays a message box to the user.</td>
 <tr><td class="mth">question_box(string)</td><td class="rtn">bool</td><td class="dsc">Displays a yes / no message box to the user, return True iff they selected yes.</td>
 <tr><td class="mth">options()</td class="rtn"><td class="rtn">Options</td><td class="dsc">Returns a reference to the application options.</td>
--->
-<tr><td class="mth">windows()</td class="rtn"><td class="rtn">[Window]</td><td class="dsc">Returns a list of all the open windows.</td>
-<tr><td class="mth">active_window()</td class="rtn"><td class="rtn">Window</td><td class="dsc">Returns the most recently used window.</td>
-<!--
+--> 
+  <TR>
+    <TD class="mth">windows()</TD>
+    <TD class="rtn">[Window]</TD>
+    <TD class="dsc">Returns a list of all the open windows.</TD>
+  <TR>
+    <TD class="mth">active_window()</TD>
+    <TD class="rtn">Window</TD>
+    <TD class="dsc">Returns the most recently used window.</TD><!--
 <tr><td class="mth">run_command(string, &lt;args&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Runs the named ApplicationCommand with the (optional) given arguments.</td>
 <tr><td class="mth">canRunCommand(string, &lt;args&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Returns True iff the command is enabled with the (optional) given arguments</td>
 <tr><td class="mth">makeCommand(string, &lt;args&gt;)</td class="rtn"><td class="rtn">String</td><td class="dsc">Builds a command string from a command name and arguments. This string is suitable to use as an argument to showCompletions().</td>
--->
-<tr><td class="mth">packages_path()</td class="rtn"><td class="rtn">String</td><td class="dsc">Returns the base path to the packages.</td>
-<tr><td class="mth">installed_packages_path()</td class="rtn"><td class="rtn">String</td><td class="dsc">Returns the path where all the user's *.sublime-package files are.</td>
-<tr><td class="mth">cache_path()</td class="rtn"><td class="rtn">String</td><td class="dsc">Returns the path where Sublime Text stores cache files.</td>
-<tr><td class="mth">get_clipboard(&lt;size_limit&gt;)</td class="rtn"><td class="rtn">String</td><td class="dsc">Returns the contents of the clipboard. size_limit is there to protect against unnecessarily large data, defaults to 16,777,216 characters</td>
-<tr><td class="mth">set_clipboard(string)</td class="rtn"><td class="rtn">None</td><td class="dsc">Sets the contents of the clipboard.</td>
-<!--
+--> 
+  <TR>
+    <TD class="mth">packages_path()</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns the base path to the packages.</TD>
+  <TR>
+    <TD class="mth">installed_packages_path()</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns the path where all the user's *.sublime-package 
+      files are.</TD>
+  <TR>
+    <TD class="mth">cache_path()</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns the path where Sublime Text stores cache files.</TD>
+  <TR>
+    <TD class="mth">get_clipboard(&lt;size_limit&gt;)</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns the contents of the clipboard. size_limit is there 
+      to protect against unnecessarily large data, defaults to 16,777,216 
+      characters</TD>
+  <TR>
+    <TD class="mth">set_clipboard(string)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Sets the contents of the clipboard.</TD><!--
 <tr><td class="mth">getMacro()</td class="rtn"><td class="rtn">[String]</td><td class="dsc">Returns the current macro. The macro is represented as a list of commands to run.</td>
 <tr><td class="mth">setMacro([string])</td class="rtn"><td class="rtn">None</td><td class="dsc">Sets the current macro.</td>
--->
-<tr><td class="mth">score_selector(scope, selector)</td class="rtn"><td class="rtn">Int</td><td class="dsc">Matches the selector against the given scope, returning a score. A score of 0 means no match, above 0 means a match. Different selectors may be compared against the same scope: a higher score means the selector is a better match for the scope.</td>
-<tr><td class="mth">run_command(string, &lt;args&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Runs the named ApplicationCommand with the (optional) given arguments.</td>
-<tr><td class="mth">log_commands(flag)</td class="rtn"><td class="rtn">None</td><td class="dsc">Controls command logging. If enabled, all commands run from key bindings and the menu will be logged to the console.</td>
-<tr><td class="mth">log_input(flag)</td class="rtn"><td class="rtn">None</td><td class="dsc">Controls input logging. If enabled, all key presses will be logged to the console.</td>
-<tr><td class="mth">log_result_regex(flag)</td class="rtn"><td class="rtn">None</td><td class="dsc">Controls result regex logging. This is useful for debugging regular expressions used in build systems.</td>
-<tr><td class="mth">version()</td class="rtn"><td class="rtn">String</td><td class="dsc">Returns the version number</td>
-<tr><td class="mth">platform()</td class="rtn"><td class="rtn">String</td><td class="dsc">Returns the platform, which may be "osx", "linux" or "windows"</td>
-<tr><td class="mth">arch()</td class="rtn"><td class="rtn">String</td><td class="dsc">Returns the CPU architecture, which may be "x32" or "x64"</td>
-</table>
-
-<a name="sublime.View"></a>
-<h2>Class sublime.View</h2>
-
-Represents a view into a text buffer. Note that multiple views may refer to the same buffer, but they have their own unique selection and geometry.
-
-<table class="functions">
-<tr><th>Methods</th><th>Return Value</th><th>Description</th></tr>
-<tr><td class="mth">id()</td><td class="rtn">int</td><td class="dsc">Returns a number that uniquely identifies this view.</td>
-<tr><td class="mth">buffer_id()</td><td class="rtn">int</td><td class="dsc">Returns a number that uniquely identifies the buffer underlying this view.</td>
-<tr><td class="mth">file_name()</td class="rtn"><td class="rtn">String</td><td class="dsc">The full name file the file associated with the buffer, or None if it doesn't exist on disk.</td>
-<tr><td class="mth">name()</td class="rtn"><td class="rtn">String</td><td class="dsc">The name assigned to the buffer, if any</td>
-<tr><td class="mth">set_name(name)</td class="rtn"><td class="rtn">None</td><td class="dsc">Assigns a name to the buffer</td>
-<tr><td class="mth">is_loading()</td class="rtn"><td class="rtn">bool</td><td class="dsc">Returns true if the buffer is still loading from disk, and not ready for use.</td>
-<tr><td class="mth">is_dirty()</td class="rtn"><td class="rtn">bool</td><td class="dsc">Returns true if there are any unsaved modifications to the buffer.</td>
-<tr><td class="mth">is_read_only()</td class="rtn"><td class="rtn">bool</td><td class="dsc">Returns true if the buffer may not be modified.</td>
-<tr><td class="mth">set_read_only(value)</td class="rtn"><td class="rtn">None</td><td class="dsc">Sets the read only property on the buffer.</td>
-<tr><td class="mth">is_scratch()</td class="rtn"><td class="rtn">bool</td><td class="dsc">Returns true if the buffer is a scratch buffer. Scratch buffers never report as being dirty.</td>
-<tr><td class="mth">set_scratch(value)</td class="rtn"><td class="rtn">None</td><td class="dsc">Sets the scratch property on the buffer.</td>
-<tr><td class="mth">settings()</td class="rtn"><td class="rtn">Settings</td><td class="dsc">Returns a reference to the views settings object. Any changes to this settings object will be private to this view.</td>
-<tr><td class="mth">window()</td class="rtn"><td class="rtn">Window</td><td class="dsc">Returns a reference to the window containing the view.</td>
-<tr><td class="mth">run_command(string, &lt;args&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Runs the named TextCommand with the (optional) given arguments.</td>
-<!--
+--> 
+  <TR>
+    <TD class="mth">score_selector(scope, selector)</TD>
+    <TD class="rtn">Int</TD>
+    <TD class="dsc">Matches the selector against the given scope, returning a 
+      score. A score of 0 means no match, above 0 means a match. Different 
+      selectors may be compared against the same scope: a higher score means the 
+      selector is a better match for the scope.</TD>
+  <TR>
+    <TD class="mth">run_command(string, &lt;args&gt;)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Runs the named ApplicationCommand with the (optional) 
+      given arguments.</TD>
+  <TR>
+    <TD class="mth">log_commands(flag)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Controls command logging. If enabled, all commands run 
+      from key bindings and the menu will be logged to the console.</TD>
+  <TR>
+    <TD class="mth">log_input(flag)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Controls input logging. If enabled, all key presses will 
+      be logged to the console.</TD>
+  <TR>
+    <TD class="mth">log_result_regex(flag)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Controls result regex logging. This is useful for 
+      debugging regular expressions used in build systems.</TD>
+  <TR>
+    <TD class="mth">version()</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns the version number</TD>
+  <TR>
+    <TD class="mth">platform()</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns the platform, which may be "osx", "linux" or 
+      "windows"</TD>
+  <TR>
+    <TD class="mth">arch()</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns the CPU architecture, which may be "x32" or 
+    "x64"</TD></TR></TBODY></TABLE><A name="sublime.View"></A> 
+<H2>Class sublime.View</H2>Represents a view into a text buffer. Note that 
+multiple views may refer to the same buffer, but they have their own unique 
+selection and geometry. 
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Methods</TH>
+    <TH>Return Value</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">id()</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">Returns a number that uniquely identifies this view.</TD>
+  <TR>
+    <TD class="mth">buffer_id()</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">Returns a number that uniquely identifies the buffer 
+      underlying this view.</TD>
+  <TR>
+    <TD class="mth">file_name()</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">The full name file the file associated with the buffer, or 
+      None if it doesn't exist on disk.</TD>
+  <TR>
+    <TD class="mth">name()</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">The name assigned to the buffer, if any</TD>
+  <TR>
+    <TD class="mth">set_name(name)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Assigns a name to the buffer</TD>
+  <TR>
+    <TD class="mth">is_loading()</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true if the buffer is still loading from disk, and 
+      not ready for use.</TD>
+  <TR>
+    <TD class="mth">is_dirty()</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true if there are any unsaved modifications to the 
+      buffer.</TD>
+  <TR>
+    <TD class="mth">is_read_only()</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true if the buffer may not be modified.</TD>
+  <TR>
+    <TD class="mth">set_read_only(value)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Sets the read only property on the buffer.</TD>
+  <TR>
+    <TD class="mth">is_scratch()</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true if the buffer is a scratch buffer. Scratch 
+      buffers never report as being dirty.</TD>
+  <TR>
+    <TD class="mth">set_scratch(value)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Sets the scratch property on the buffer.</TD>
+  <TR>
+    <TD class="mth">settings()</TD>
+    <TD class="rtn">Settings</TD>
+    <TD class="dsc">Returns a reference to the views settings object. Any 
+      changes to this settings object will be private to this view.</TD>
+  <TR>
+    <TD class="mth">window()</TD>
+    <TD class="rtn">Window</TD>
+    <TD class="dsc">Returns a reference to the window containing the view.</TD>
+  <TR>
+    <TD class="mth">run_command(string, &lt;args&gt;)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Runs the named TextCommand with the (optional) given 
+      arguments.</TD><!--
 <tr><td class="mth">canRunCommand(string, &lt;args&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Returns True iff the command is enabled with the (optional) given arguments</td>
--->
-<tr><td class="mth">size()</td><td class="rtn">int</td><td class="dsc">Returns the number of character in the file.</td>
-<tr><td class="mth">substr(region)</td><td class="rtn">String</td><td class="dsc">Returns the contents of the region as a string.</td>
-<tr><td class="mth">substr(point)</td><td class="rtn">String</td><td class="dsc">Returns the character to the right of the point.</td>
-<tr><td class="mth">insert(edit, point, string)</td class="rtn"><td class="rtn">int</td><td class="dsc">Inserts the given string in the buffer at the specified point. Returns the number of characters inserted: this may be different if tabs are being translated into spaces in the current buffer.</td>
-<tr><td class="mth">erase(edit, region)</td><td class="rtn">None</td><td class="dsc">Erases the contents of the region from the buffer.</td>
-<tr><td class="mth">replace(edit, region, string)</td><td class="rtn">None</td><td class="dsc">Replaces the contents of the region with the given string.</td>
-<tr><td class="mth">sel()</td class="rtn"><td class="rtn">Selection</td><td class="dsc">Returns a reference to the selection.</td>
-<tr><td class="mth">line(point)</td class="rtn"><td class="rtn">Region</td><td class="dsc">Returns the line that contains the point.</td>
-<tr><td class="mth">line(region)</td class="rtn"><td class="rtn">Region</td><td class="dsc">Returns a modified copy of region such that it starts at the beginning of a line, and ends at the end of a line. Note that it may span several lines.</td>
-<tr><td class="mth">full_line(point)</td class="rtn"><td class="rtn">Region</td><td class="dsc">As line(), but the region includes the trailing newline character, if any.</td>
-<tr><td class="mth">full_line(region)</td class="rtn"><td class="rtn">Region</td><td class="dsc">As line(), but the region includes the trailing newline character, if any.</td>
-<tr><td class="mth">lines(region)</td class="rtn"><td class="rtn">[Region]</td><td class="dsc">Returns a list of lines (in sorted order) intersecting the region.</td>
-<tr><td class="mth">split_by_newlines(region)</td class="rtn"><td class="rtn">[Region]</td><td class="dsc">Splits the region up such that each region returned exists on exactly one line.</td>
-<tr><td class="mth">word(point)</td class="rtn"><td class="rtn">Region</td><td class="dsc">Returns the word that contains the point.</td>
-<tr><td class="mth">word(region)</td class="rtn"><td class="rtn">Region</td><td class="dsc">Returns a modified copy of region such that it starts at the beginning of a word, and ends at the end of a word. Note that it may span several words.</td>
-
-<tr><td class="mth">classify(point)</td class="rtn"><td class="rtn">int</td><td class="dsc">Classifies pt, returning a bitwise OR of zero or more of these flags:
-<ul>
-	<li>CLASS_WORD_START
-	<li>CLASS_WORD_END
-	<li>CLASS_PUNCTUATION_START
-	<li>CLASS_PUNCTUATION_END
-	<li>CLASS_SUB_WORD_START
-	<li>CLASS_SUB_WORD_END
-	<li>CLASS_LINE_START
-	<li>CLASS_LINE_END
-	<li>CLASS_EMPTY_LINE
-</ul></td>
-
-<tr><td class="mth">find_by_class(point, forward, classes, &lt;separators&gt;)</td class="rtn"><td class="rtn">Region</td><td class="dsc">Finds the next location after point that matches the given classes. If forward is False, searches backwards instead of forwards. classes is a bitwise OR of the sublime.CLASS_XXX flags. separators may be passed in, to define what characters should be considered to separate words.</td>
-<tr><td class="mth">expand_by_class(point, classes, &lt;separators&gt;)</td class="rtn"><td class="rtn">Region</td><td class="dsc">Expands point to the left and right, until each side lands on a location that matches classes. classes is a bitwise OR of the sublime.CLASS_XXX flags. separators may be passed in, to define what characters should be considered to separate words.</td>
-<tr><td class="mth">expand_by_class(region, classes, &lt;separators&gt;)</td class="rtn"><td class="rtn">Region</td><td class="dsc">Expands region to the left and right, until each side lands on a location that matches classes. classes is a bitwise OR of the sublime.CLASS_XXX flags. separators may be passed in, to define what characters should be considered to separate words.</td>
-
-
-<tr><td class="mth">find(pattern, fromPosition, &lt;flags&gt;)</td class="rtn"><td class="rtn">Region</td><td class="dsc">Returns the first Region matching the regex pattern, starting from the given point, or None if it can't be found. The optional flags parameter may be sublime.LITERAL, sublime.IGNORECASE, or the two ORed together.</td>
-<tr><td class="mth">find_all(pattern, &lt;flags&gt;, &lt;format&gt;, &lt;extractions&gt;)</td class="rtn"><td class="rtn">[Region]</td><td class="dsc">Returns all (non-overlapping) regions matching the regex pattern. The optional flags parameter may be sublime.LITERAL, sublime.IGNORECASE, or the two ORed together. If a format string is given, then all matches will be formatted with the formatted string and placed into the extractions list.</td>
-<tr><td class="mth">rowcol(point)</td class="rtn"><td class="rtn">(int, int)</td><td class="dsc">Calculates the 0 based line and column numbers of the point.</td>
-<tr><td class="mth">text_point(row, col)</td class="rtn"><td class="rtn">int</td><td class="dsc">Calculates the character offset of the given, 0 based, row and column. Note that 'col' is interpreted as the number of characters to advance past the beginning of the row.</td>
-
-<tr><td class="mth">set_syntax_file(syntax_file)</td class="rtn"><td class="rtn">None</td><td class="dsc">Changes the syntax used by the view. <tt>syntax_file</tt> should be a name along the lines of <tt>Packages/Python/Python.tmLanguage</tt>. To retrieve the current syntax, use <tt>view.settings().get('syntax').</tt></td>
-
-<tr><td class="mth">extract_scope(point)</td class="rtn"><td class="rtn">Region</td><td class="dsc">Returns the extent of the syntax name assigned to the character at the given point.</td>
-<tr><td class="mth">scope_name(point)</td class="rtn"><td class="rtn">String</td><td class="dsc">Returns the syntax name assigned to the character at the given point.</td>
-<tr><td class="mth">score_selector(point, selector)</td class="rtn"><td class="rtn">Int</td><td class="dsc">Matches the selector against the scope at the given location, returning a score. A score of 0 means no match, above 0 means a match. Different selectors may be compared against the same scope: a higher score means the selector is a better match for the scope.</td>
-<tr><td class="mth">find_by_selector(selector)</td class="rtn"><td class="rtn">[Regions]</td><td class="dsc">Finds all regions in the file matching the given selector, returning them as a list.</td>
-
-<tr><td class="mth">show(point, &lt;show_surrounds&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Scroll the view to show the given point.</td>
-<tr><td class="mth">show(region, &lt;show_surrounds&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Scroll the view to show the given region.</td>
-<tr><td class="mth">show(region_set, &lt;show_surrounds&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Scroll the view to show the given region set.</td>
-<tr><td class="mth">show_at_center(point)</td class="rtn"><td class="rtn">None</td><td class="dsc">Scroll the view to center on the point.</td>
-<tr><td class="mth">show_at_center(region)</td class="rtn"><td class="rtn">None</td><td class="dsc">Scroll the view to center on the region.</td>
-
-<tr><td class="mth">visible_region()</td class="rtn"><td class="rtn">Region</td><td class="dsc">Returns the currently visible area of the view.</td>
-
-
-<tr><td class="mth">viewport_position()</td class="rtn"><td class="rtn">Vector</td><td class="dsc">Returns the offset of the viewport in layout coordinates.</td>
-<tr><td class="mth">set_viewport_position(vector, &lt;animate&lt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Scrolls the viewport to the given layout position.</td>
-<tr><td class="mth">viewport_extent()</td class="rtn"><td class="rtn">vector</td><td class="dsc">Returns the width and height of the viewport.</td>
-<tr><td class="mth">layout_extent()</td class="rtn"><td class="rtn">vector</td><td class="dsc">Returns the width and height of the layout.</td>
-<tr><td class="mth">text_to_layout(point)</td class="rtn"><td class="rtn">vector</td><td class="dsc">Converts a text position to a layout position</td>
-<tr><td class="mth">layout_to_text(vector)</td class="rtn"><td class="rtn">point</td><td class="dsc">Converts a layout position to a text position</td>
-<tr><td class="mth">line_height()</td class="rtn"><td class="rtn">real</td><td class="dsc">Returns the light height used in the layout</td>
-<tr><td class="mth">em_width()</td class="rtn"><td class="rtn">real</td><td class="dsc">Returns the typical character width used in the layout</td>
-
-<!--
+--> 
+  <TR>
+    <TD class="mth">size()</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">Returns the number of character in the file.</TD>
+  <TR>
+    <TD class="mth">substr(region)</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns the contents of the region as a string.</TD>
+  <TR>
+    <TD class="mth">substr(point)</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns the character to the right of the point.</TD>
+  <TR>
+    <TD class="mth">insert(edit, point, string)</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">Inserts the given string in the buffer at the specified 
+      point. Returns the number of characters inserted: this may be different if 
+      tabs are being translated into spaces in the current buffer.</TD>
+  <TR>
+    <TD class="mth">erase(edit, region)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Erases the contents of the region from the buffer.</TD>
+  <TR>
+    <TD class="mth">replace(edit, region, string)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Replaces the contents of the region with the given 
+    string.</TD>
+  <TR>
+    <TD class="mth">sel()</TD>
+    <TD class="rtn">Selection</TD>
+    <TD class="dsc">Returns a reference to the selection.</TD>
+  <TR>
+    <TD class="mth">line(point)</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">Returns the line that contains the point.</TD>
+  <TR>
+    <TD class="mth">line(region)</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">Returns a modified copy of region such that it starts at 
+      the beginning of a line, and ends at the end of a line. Note that it may 
+      span several lines.</TD>
+  <TR>
+    <TD class="mth">full_line(point)</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">As line(), but the region includes the trailing newline 
+      character, if any.</TD>
+  <TR>
+    <TD class="mth">full_line(region)</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">As line(), but the region includes the trailing newline 
+      character, if any.</TD>
+  <TR>
+    <TD class="mth">lines(region)</TD>
+    <TD class="rtn">[Region]</TD>
+    <TD class="dsc">Returns a list of lines (in sorted order) intersecting the 
+      region.</TD>
+  <TR>
+    <TD class="mth">split_by_newlines(region)</TD>
+    <TD class="rtn">[Region]</TD>
+    <TD class="dsc">Splits the region up such that each region returned exists 
+      on exactly one line.</TD>
+  <TR>
+    <TD class="mth">word(point)</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">Returns the word that contains the point.</TD>
+  <TR>
+    <TD class="mth">word(region)</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">Returns a modified copy of region such that it starts at 
+      the beginning of a word, and ends at the end of a word. Note that it may 
+      span several words.</TD>
+  <TR>
+    <TD class="mth">classify(point)</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">Classifies pt, returning a bitwise OR of zero or more of 
+      these flags: 
+      <UL>
+        <LI>CLASS_WORD_START	 
+        <LI>CLASS_WORD_END	 
+        <LI>CLASS_PUNCTUATION_START	 
+        <LI>CLASS_PUNCTUATION_END	 
+        <LI>CLASS_SUB_WORD_START	 
+        <LI>CLASS_SUB_WORD_END	 
+        <LI>CLASS_LINE_START	 
+        <LI>CLASS_LINE_END	 
+        <LI>CLASS_EMPTY_LINE </LI></UL></TD>
+  <TR>
+    <TD class="mth">find_by_class(point, forward, classes, 
+    &lt;separators&gt;)</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">Finds the next location after point that matches the given 
+      classes. If forward is False, searches backwards instead of forwards. 
+      classes is a bitwise OR of the sublime.CLASS_XXX flags. separators may be 
+      passed in, to define what characters should be considered to separate 
+      words.</TD>
+  <TR>
+    <TD class="mth">expand_by_class(point, classes, &lt;separators&gt;)</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">Expands point to the left and right, until each side lands 
+      on a location that matches classes. classes is a bitwise OR of the 
+      sublime.CLASS_XXX flags. separators may be passed in, to define what 
+      characters should be considered to separate words.</TD>
+  <TR>
+    <TD class="mth">expand_by_class(region, classes, &lt;separators&gt;)</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">Expands region to the left and right, until each side 
+      lands on a location that matches classes. classes is a bitwise OR of the 
+      sublime.CLASS_XXX flags. separators may be passed in, to define what 
+      characters should be considered to separate words.</TD>
+  <TR>
+    <TD class="mth">find(pattern, fromPosition, &lt;flags&gt;)</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">Returns the first Region matching the regex pattern, 
+      starting from the given point, or None if it can't be found. The optional 
+      flags parameter may be sublime.LITERAL, sublime.IGNORECASE, or the two 
+      ORed together.</TD>
+  <TR>
+    <TD class="mth">find_all(pattern, &lt;flags&gt;, &lt;format&gt;, 
+      &lt;extractions&gt;)</TD>
+    <TD class="rtn">[Region]</TD>
+    <TD class="dsc">Returns all (non-overlapping) regions matching the regex 
+      pattern. The optional flags parameter may be sublime.LITERAL, 
+      sublime.IGNORECASE, or the two ORed together. If a format string is given, 
+      then all matches will be formatted with the formatted string and placed 
+      into the extractions list.</TD>
+  <TR>
+    <TD class="mth">rowcol(point)</TD>
+    <TD class="rtn">(int, int)</TD>
+    <TD class="dsc">Calculates the 0 based line and column numbers of the 
+      point.</TD>
+  <TR>
+    <TD class="mth">text_point(row, col)</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">Calculates the character offset of the given, 0 based, row 
+      and column. Note that 'col' is interpreted as the number of characters to 
+      advance past the beginning of the row.</TD>
+  <TR>
+    <TD class="mth">set_syntax_file(syntax_file)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Changes the syntax used by the view. <TT>syntax_file</TT> 
+      should be a name along the lines of 
+      <TT>Packages/Python/Python.tmLanguage</TT>. To retrieve the current 
+      syntax, use <TT>view.settings().get('syntax').</TT></TD>
+  <TR>
+    <TD class="mth">extract_scope(point)</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">Returns the extent of the syntax name assigned to the 
+      character at the given point.</TD>
+  <TR>
+    <TD class="mth">scope_name(point)</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns the syntax name assigned to the character at the 
+      given point.</TD>
+  <TR>
+    <TD class="mth">score_selector(point, selector)</TD>
+    <TD class="rtn">Int</TD>
+    <TD class="dsc">Matches the selector against the scope at the given 
+      location, returning a score. A score of 0 means no match, above 0 means a 
+      match. Different selectors may be compared against the same scope: a 
+      higher score means the selector is a better match for the scope.</TD>
+  <TR>
+    <TD class="mth">find_by_selector(selector)</TD>
+    <TD class="rtn">[Regions]</TD>
+    <TD class="dsc">Finds all regions in the file matching the given selector, 
+      returning them as a list.</TD>
+  <TR>
+    <TD class="mth">show(point, &lt;show_surrounds&gt;)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Scroll the view to show the given point.</TD>
+  <TR>
+    <TD class="mth">show(region, &lt;show_surrounds&gt;)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Scroll the view to show the given region.</TD>
+  <TR>
+    <TD class="mth">show(region_set, &lt;show_surrounds&gt;)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Scroll the view to show the given region set.</TD>
+  <TR>
+    <TD class="mth">show_at_center(point)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Scroll the view to center on the point.</TD>
+  <TR>
+    <TD class="mth">show_at_center(region)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Scroll the view to center on the region.</TD>
+  <TR>
+    <TD class="mth">visible_region()</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">Returns the currently visible area of the view.</TD>
+  <TR>
+    <TD class="mth">viewport_position()</TD>
+    <TD class="rtn">Vector</TD>
+    <TD class="dsc">Returns the offset of the viewport in layout 
+    coordinates.</TD>
+  <TR>
+    <TD class="mth">set_viewport_position(vector, &lt;animate&lt;)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Scrolls the viewport to the given layout position.</TD>
+  <TR>
+    <TD class="mth">viewport_extent()</TD>
+    <TD class="rtn">vector</TD>
+    <TD class="dsc">Returns the width and height of the viewport.</TD>
+  <TR>
+    <TD class="mth">layout_extent()</TD>
+    <TD class="rtn">vector</TD>
+    <TD class="dsc">Returns the width and height of the layout.</TD>
+  <TR>
+    <TD class="mth">text_to_layout(point)</TD>
+    <TD class="rtn">vector</TD>
+    <TD class="dsc">Converts a text position to a layout position</TD>
+  <TR>
+    <TD class="mth">layout_to_text(vector)</TD>
+    <TD class="rtn">point</TD>
+    <TD class="dsc">Converts a layout position to a text position</TD>
+  <TR>
+    <TD class="mth">window_to_layout(vector)</TD>
+    <TD class="rtn">vector</TD>
+    <TD class="dsc">Converts a window position to a layout position</TD>
+  <TR>
+    <TD class="mth">window_to_text(vector)</TD>
+    <TD class="rtn">point</TD>
+    <TD class="dsc">Converts a window position to a text position</TD>
+  <TR>
+    <TD class="mth">line_height()</TD>
+    <TD class="rtn">real</TD>
+    <TD class="dsc">Returns the light height used in the layout</TD>
+  <TR>
+    <TD class="mth">em_width()</TD>
+    <TD class="rtn">real</TD>
+    <TD class="dsc">Returns the typical character width used in the layout</TD><!--
 <tr><td class="mth">extract_completions(prefix, &lt;point&gt;)</td class="rtn"><td class="rtn">[String]</td><td class="dsc">Returns the completions for the given prefix, based on the contents of the buffer. Completions will be ordered by frequency, and distance from the given point, if supplied.</td>
 
 <tr><td class="mth">show_completions(point, prefix, [completions])</td class="rtn"><td class="rtn">None</td><td class="dsc">Shows the autocomplete menu, at the given point, with the given completions. If an entry is selected, the given prefix will be replaced with the selected completion. Each completion may be either a string, or a tuple consisting of a description and a command to run.</td>
--->
-<tr><td class="mth">add_regions(key, [regions], &lt;scope&gt;, &lt;icon&gt;, &lt;flags&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Add a set of regions to the view. If a set of regions already exists with the given key, they will be overwritten. The scope is used to source a color to draw the regions in, it should be the name of a scope, such as "comment" or "string". If the scope is empty, the regions won't be drawn.
-
-<p>The optional icon name, if given, will draw the named icons in the gutter next to each region. The icon will be tinted using the color associated with the scope. Valid icon names are <tt>dot</tt>, <tt>circle</tt>, <tt>bookmark</tt> and <tt>cross</tt>. The icon name may also be a full package relative path, such as <tt>Packages/Theme - Default/dot.png</tt>.
-
-<p>The optional flags parameter is a bitwise combination of:
-
-<ul>
-<li><tt>sublime.DRAW_EMPTY</tt>. Draw empty regions with a vertical bar. By default, they aren't drawn at all.
-<li><tt>sublime.HIDE_ON_MINIMAP</tt>. Don't show the regions on the minimap.
-<li><tt>sublime.DRAW_EMPTY_AS_OVERWRITE</tt>. Draw empty regions with a horizontal bar instead of a vertical one.
-<li><tt>sublime.DRAW_NO_FILL</tt>. Disable filling the regions, leaving only the outline.
-<li><tt>sublime.DRAW_NO_OUTLINE</tt>. Disable drawing the outline of the regions.
-<li><tt>sublime.DRAW_SOLID_UNDERLINE</tt>. Draw a solid underline below the regions.
-<li><tt>sublime.DRAW_STIPPLED_UNDERLINE</tt>. Draw a stippled underline below the regions.
-<li><tt>sublime.DRAW_SQUIGGLY_UNDERLINE</tt>. Draw a squiggly underline below the regions.
-<li><tt>sublime.PERSISTENT</tt>. Save the regions in the session.
-<li><tt>sublime.HIDDEN</tt>. Don't draw the regions.
-</ul>
-
-<p>The underline styles are exclusive, either zero or one of them should be given. If using an underline, DRAW_NO_FILL and DRAW_NO_OUTLINE should generally be passed in.
-
-</td>
-
-<tr><td class="mth">get_regions(key)</td class="rtn"><td class="rtn">[regions]</td><td class="dsc">Return the regions associated with the given key, if any</td>
-<tr><td class="mth">erase_regions(key)</td class="rtn"><td class="rtn">None</td><td class="dsc">Removed the named regions</td>
-
-<tr><td class="mth">set_status(key, value)</td class="rtn"><td class="rtn">None</td><td class="dsc">Adds the status key to the view. The value will be displayed in the status bar, in a comma separated list of all status values, ordered by key. Setting the value to the empty string will clear the status.</td>
-<tr><td class="mth">get_status(key)</td class="rtn"><td class="rtn">String</td><td class="dsc">Returns the previously assigned value associated with the key, if any.</td>
-<tr><td class="mth">erase_status(key)</td class="rtn"><td class="rtn">None</td><td class="dsc">Clears the named status.</td>
-
-<tr><td class="mth">command_history(index, &lt;modifying_only&gt;)</td class="rtn"><td class="rtn">(String,Dict,int)</td><td class="dsc">Returns the command name, command arguments, and repeat count for the given history entry, as stored in the undo / redo stack.
-
-<p>Index 0 corresponds to the most recent command, -1 the command before that, and so on. Positive values for index indicate to look in the redo stack for commands. If the undo / redo history doesn't extend far enough, then (None, None, 0) will be returned.
-
-<p>Setting modifying_only to True (the default is False) will only return entries that modified the buffer.</td>
-
-<tr><td class="mth">change_count()</td class="rtn"><td class="rtn">int</td><td class="dsc">Returns the current change count. Each time the buffer is modified, the change count is incremented. The change count can be used to determine if the buffer has changed since the last it was inspected.</td>
-
-
-<tr><td class="mth">fold([regions])</td class="rtn"><td class="rtn">bool</td><td class="dsc">Folds the given regions, returning False if they were already folded</td>
-<tr><td class="mth">fold(region)</td class="rtn"><td class="rtn">bool</td><td class="dsc">Folds the given region, returning False if it was already folded</td>
-<tr><td class="mth">unfold(region)</td class="rtn"><td class="rtn">[regions]</td><td class="dsc">Unfolds all text in the region, returning the unfolded regions</td>
-<tr><td class="mth">unfold([regions])</td class="rtn"><td class="rtn">[regions]</td><td class="dsc">Unfolds all text in the regions, returning the unfolded regions</td>
-
-<tr><td class="mth">encoding()</td class="rtn"><td class="rtn">String</td><td class="dsc">Returns the encoding currently associated with the file</td>
-<tr><td class="mth">set_encoding(encoding)</td class="rtn"><td class="rtn">None</td><td class="dsc">Applies a new encoding to the file. This encoding will be used the next time the file is saved.</td>
-
-<tr><td class="mth">line_endings()</td class="rtn"><td class="rtn">String</td><td class="dsc">Returns the line endings used by the current file.</td>
-<tr><td class="mth">set_line_endings(line_endings)</td class="rtn"><td class="rtn">None</td><td class="dsc">Sets the line endings that will be applied when next saving.</td>
-
-<tr><td class="mth">overwrite_status()</td class="rtn"><td class="rtn">Bool</td><td class="dsc">Returns the overwrite status, which the user normally toggles via the insert key.</td>
-<tr><td class="mth">set_overwrite_status(enabled)</td class="rtn"><td class="rtn">None</td><td class="dsc">Sets the overwrite status.</td>
-
-<tr><td class="mth">symbols(line_endings)</td class="rtn"><td class="rtn">[(Region, String)]</td><td class="dsc">Extract all the symbols defined in the buffer.</td>
-
-<tr><td class="mth">show_popup_menu(items, on_done, &lt;flags&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Shows a pop up menu at the caret, to select an item in a list. on_done will be called once, with the index of the selected item. If the pop up menu was cancelled, on_done will be called with an argument of -1.
-
-<p>Items is an array of strings.</p>
-
-<p>Flags currently only has no option.</p>
-</td></tr>
-
-</table>
-
-<a name="sublime.Selection"></a>
-<h2>Class sublime.Selection</h2>
-
-Maintains a set of Regions, ensuring that none overlap. The regions are kept in sorted order.
-
-<table class="functions">
-<tr><th>Methods</th><th>Return Value</th><th>Description</th></tr>
-<tr><td class="mth">clear()</td><td class="rtn">None</td><td class="dsc">Removes all regions.</td>
-<tr><td class="mth">add(region)</td><td class="rtn">None</td><td class="dsc">Adds the given region. It will be merged with any intersecting regions already contained within the set.</td>
-<tr><td class="mth">add_all(region_set)</td><td class="rtn">None</td><td class="dsc">Adds all regions in the given set.</td>
-<tr><td class="mth">subtract(region)</td><td class="rtn">None</td><td class="dsc">Subtracts the region from all regions in the set.</td>
-<tr><td class="mth">contains(region)</td><td class="rtn">bool</td><td class="dsc">Returns true iff the given region is a subset.</td>
-</table>
-
-<a name="sublime.Region"></a>
-<h2>Class sublime.Region</h2>
-
-Represents an area of the buffer. Empty regions, where a == b are valid.
-
-<table class="functions">
-<tr><th>Constructors</th><th>Description</th></tr>
-<tr><td class="mth">Region(a, b)</td><td class="dsc">Creates a Region with initial values a and b.</td>
-</table>
-
-<table class="functions">
-<tr><th>Properties</th><th>Type</th><th>Description</th></tr>
-<tr><td class="mth">a</td><td class="rtn">int</td><td class="dsc">The first end of the region.</td>
-<tr><td class="mth">b</td><td class="rtn">int</td><td class="dsc">The second end of the region. May be less that a, in which case the region is a reversed one.</td>
-<tr><td class="mth">xpos</td><td class="rtn">int</td><td class="dsc">The target horizontal position of the region, or -1 if undefined. Effects behavior when pressing the up or down keys.</td>
-</table>
-
-<table class="functions">
-<tr><th>Methods</th><th>Return Value</th><th>Description</th></tr>
-<tr><td class="mth">begin()</td><td class="rtn">int</td><td class="dsc">Returns the minimum of a and b.</td>
-<tr><td class="mth">end()</td><td class="rtn">int</td><td class="dsc">Returns the maximum of a and b.</td>
-<tr><td class="mth">size()</td><td class="rtn">int</td><td class="dsc">Returns the number of characters spanned by the region. Always >= 0.</td>
-<tr><td class="mth">empty()</td><td class="rtn">bool</td><td class="dsc">Returns true iff begin() == end().</td>
-<tr><td class="mth">cover(region)</td><td class="rtn">Region</td><td class="dsc">Returns a Region spanning both this and the given regions.</td>
-<tr><td class="mth">intersection(region)</td><td class="rtn">Region</td><td class="dsc">Returns the set intersection of the two regions.</td>
-<tr><td class="mth">intersects(region)</td><td class="rtn">bool</td><td class="dsc">Returns True iff this == region or both include one or more positions in common.</td>
-<tr><td class="mth">contains(region)</td><td class="rtn">bool</td><td class="dsc">Returns True iff the given region is a subset.</td>
-<tr><td class="mth">contains(point)</td><td class="rtn">bool</td><td class="dsc">Returns True iff begin() &lt;= point &lt;= end().</td>
-</table>
-
-
-
-<a name="sublime.Edit"></a>
-<h2>Class sublime.Edit</h2>
-
-<p>Edit objects have no functions, they exist to group buffer modifications.
-
-<p>Edit objects are passed to TextCommands, and are not user createable. Using an invalid Edit object, or an Edit object from a different view, will cause the functions that require them to fail.
-
-<table class="functions">
-<tr><th>Methods</th><th>Return Value</th><th>Description</th></tr>
-<tr><td class="mth">(no methods)</td><td class="rtn"></td><td class="dsc"></td>
-</table>
-
-
-
-<a name="sublime.Window"></a>
-<h2>Class sublime.Window</h2>
-
-<table class="functions">
-<tr><th>Methods</th><th>Return Value</th><th>Description</th></tr>
-<tr><td class="mth">id()</td><td class="rtn">int</td><td class="dsc">Returns a number that uniquely identifies this window.</td>
-<tr><td class="mth">new_file()</td><td class="rtn">View</td><td class="dsc">Creates a new file. The returned view will be empty, and its is_loaded method will return True.</td>
-
-<tr><td class="mth">open_file(file_name, &lt;flags&gt;)</td><td class="rtn">View</td><td class="dsc">Opens the named file, and returns the corresponding view. If the file is already opened, it will be brought to the front. Note that as file loading is asynchronous, operations on the returned view won't be possible until its is_loading() method returns False.
-
-<p>The optional flags parameter is a bitwise combination of:
-
-<ul>
-<li><tt>sublime.ENCODED_POSITION</tt>. Indicates the file_name should be searched for a <tt>:row</tt> or <tt>:row:col</tt> suffix
-<li><tt>sublime.TRANSIENT</tt>. Open the file as a preview only: it won't have a tab assigned it until modified
-</ul>
-
-</td>
-
-<tr><td class="mth">find_open_file(file_name)</td><td class="rtn">View</td><td class="dsc">Finds the named file in the list of open files, and returns the corresponding View, or None if no such file is open.
-</td>
-
-<tr><td class="mth">active_view()</td><td class="rtn">View</td><td class="dsc">Returns the currently edited view.</td>
-<tr><td class="mth">active_view_in_group(group)</td><td class="rtn">View</td><td class="dsc">Returns the currently edited view in the given group.</td>
-<tr><td class="mth">views()</td><td class="rtn">[View]</td><td class="dsc">Returns all open views in the window.</td>
-<tr><td class="mth">views_in_group(group)</td><td class="rtn">[View]</td><td class="dsc">Returns all open views in the given group.</td>
-<tr><td class="mth">num_groups()</td><td class="rtn">int</td><td class="dsc">Returns the number of view groups in the window.</td>
-<tr><td class="mth">active_group()</td><td class="rtn">int</td><td class="dsc">Returns the index of the currently selected group.</td>
-<tr><td class="mth">focus_group(group)</td><td class="rtn">None</td><td class="dsc">Makes the given group active.</td>
-<tr><td class="mth">focus_view(view)</td><td class="rtn">None</td><td class="dsc">Switches to the given view.</td>
-
-<tr><td class="mth">get_view_index(view)</td><td class="rtn">(group, index)</td><td class="dsc">Returns the group, and index within the group of the view. Returns -1 if not found.</td>
-<tr><td class="mth">set_view_index(view, group, index)</td><td class="rtn">None</td><td class="dsc">Moves the view to the given group and index.</td>
-
-<tr><td class="mth">folders()</td><td class="rtn">[String]</td><td class="dsc">Returns a list of the currently open folders.</td>
-<tr><td class="mth">project_file_name()</td><td class="rtn">String</td><td class="dsc">Returns name of the currently opened project file, if any.</td>
-<tr><td class="mth">project_data()</td class="rtn"><td class="rtn">Dictionary</td><td class="dsc">Returns the project data associated with the current window. The data is in the same format as the contents of a .sublime-project file.
-<tr><td class="mth">set_project_data(data)</td class="rtn"><td class="rtn">None</td><td class="dsc">Updates the project data associated with the current window. If the window is associated with a .sublime-project file, the project file will be updated on disk, otherwise the window will store the data internally.
-
-<!--
+--> 
+  <TR>
+    <TD class="mth">add_regions(key, [regions], &lt;scope&gt;, &lt;icon&gt;, 
+      &lt;flags&gt;)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Add a set of regions to the view. If a set of regions 
+      already exists with the given key, they will be overwritten. The scope is 
+      used to source a color to draw the regions in, it should be the name of a 
+      scope, such as "comment" or "string". If the scope is empty, the regions 
+      won't be drawn. 
+      <P>The optional icon name, if given, will draw the named icons in the 
+      gutter next to each region. The icon will be tinted using the color 
+      associated with the scope. Valid icon names are <TT>dot</TT>, 
+      <TT>circle</TT>, <TT>bookmark</TT> and <TT>cross</TT>. The icon name may 
+      also be a full package relative path, such as <TT>Packages/Theme - 
+      Default/dot.png</TT>. 
+      <P>The optional flags parameter is a bitwise combination of: 
+      <UL>
+        <LI><TT>sublime.DRAW_EMPTY</TT>. Draw empty regions with a vertical bar. 
+        By default, they aren't drawn at all. 
+        <LI><TT>sublime.HIDE_ON_MINIMAP</TT>. Don't show the regions on the 
+        minimap. 
+        <LI><TT>sublime.DRAW_EMPTY_AS_OVERWRITE</TT>. Draw empty regions with a 
+        horizontal bar instead of a vertical one. 
+        <LI><TT>sublime.DRAW_NO_FILL</TT>. Disable filling the regions, leaving 
+        only the outline. 
+        <LI><TT>sublime.DRAW_NO_OUTLINE</TT>. Disable drawing the outline of the 
+        regions. 
+        <LI><TT>sublime.DRAW_SOLID_UNDERLINE</TT>. Draw a solid underline below 
+        the regions. 
+        <LI><TT>sublime.DRAW_STIPPLED_UNDERLINE</TT>. Draw a stippled underline 
+        below the regions. 
+        <LI><TT>sublime.DRAW_SQUIGGLY_UNDERLINE</TT>. Draw a squiggly underline 
+        below the regions. 
+        <LI><TT>sublime.PERSISTENT</TT>. Save the regions in the session. 
+        <LI><TT>sublime.HIDDEN</TT>. Don't draw the regions. </LI></UL>
+      <P>The underline styles are exclusive, either zero or one of them should 
+      be given. If using an underline, DRAW_NO_FILL and DRAW_NO_OUTLINE should 
+      generally be passed in. </P></TD>
+  <TR>
+    <TD class="mth">get_regions(key)</TD>
+    <TD class="rtn">[regions]</TD>
+    <TD class="dsc">Return the regions associated with the given key, if 
+any</TD>
+  <TR>
+    <TD class="mth">erase_regions(key)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Removed the named regions</TD>
+  <TR>
+    <TD class="mth">set_status(key, value)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Adds the status key to the view. The value will be 
+      displayed in the status bar, in a comma separated list of all status 
+      values, ordered by key. Setting the value to the empty string will clear 
+      the status.</TD>
+  <TR>
+    <TD class="mth">get_status(key)</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns the previously assigned value associated with the 
+      key, if any.</TD>
+  <TR>
+    <TD class="mth">erase_status(key)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Clears the named status.</TD>
+  <TR>
+    <TD class="mth">command_history(index, &lt;modifying_only&gt;)</TD>
+    <TD class="rtn">(String,Dict,int)</TD>
+    <TD class="dsc">Returns the command name, command arguments, and repeat 
+      count for the given history entry, as stored in the undo / redo stack. 
+      <P>Index 0 corresponds to the most recent command, -1 the command before 
+      that, and so on. Positive values for index indicate to look in the redo 
+      stack for commands. If the undo / redo history doesn't extend far enough, 
+      then (None, None, 0) will be returned. 
+      <P>Setting modifying_only to True (the default is False) will only return 
+      entries that modified the buffer.</P></TD>
+  <TR>
+    <TD class="mth">change_count()</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">Returns the current change count. Each time the buffer is 
+      modified, the change count is incremented. The change count can be used to 
+      determine if the buffer has changed since the last it was inspected.</TD>
+  <TR>
+    <TD class="mth">fold([regions])</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Folds the given regions, returning False if they were 
+      already folded</TD>
+  <TR>
+    <TD class="mth">fold(region)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Folds the given region, returning False if it was already 
+      folded</TD>
+  <TR>
+    <TD class="mth">unfold(region)</TD>
+    <TD class="rtn">[regions]</TD>
+    <TD class="dsc">Unfolds all text in the region, returning the unfolded 
+      regions</TD>
+  <TR>
+    <TD class="mth">unfold([regions])</TD>
+    <TD class="rtn">[regions]</TD>
+    <TD class="dsc">Unfolds all text in the regions, returning the unfolded 
+      regions</TD>
+  <TR>
+    <TD class="mth">encoding()</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns the encoding currently associated with the file</TD>
+  <TR>
+    <TD class="mth">set_encoding(encoding)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Applies a new encoding to the file. This encoding will be 
+      used the next time the file is saved.</TD>
+  <TR>
+    <TD class="mth">line_endings()</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns the line endings used by the current file.</TD>
+  <TR>
+    <TD class="mth">set_line_endings(line_endings)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Sets the line endings that will be applied when next 
+      saving.</TD>
+  <TR>
+    <TD class="mth">overwrite_status()</TD>
+    <TD class="rtn">Bool</TD>
+    <TD class="dsc">Returns the overwrite status, which the user normally 
+      toggles via the insert key.</TD>
+  <TR>
+    <TD class="mth">set_overwrite_status(enabled)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Sets the overwrite status.</TD>
+  <TR>
+    <TD class="mth">symbols(line_endings)</TD>
+    <TD class="rtn">[(Region, String)]</TD>
+    <TD class="dsc">Extract all the symbols defined in the buffer.</TD>
+  <TR>
+    <TD class="mth">show_popup_menu(items, on_done, &lt;flags&gt;)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Shows a pop up menu at the caret, to select an item in a 
+      list. on_done will be called once, with the index of the selected item. If 
+      the pop up menu was cancelled, on_done will be called with an argument of 
+      -1. 
+      <P>Items is an array of strings.</P>
+      <P>Flags currently only has no option.</P></TD></TR></TBODY></TABLE><A name="sublime.Selection"></A> 
+<H2>Class sublime.Selection</H2>Maintains a set of Regions, ensuring that none 
+overlap. The regions are kept in sorted order. 
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Methods</TH>
+    <TH>Return Value</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">clear()</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Removes all regions.</TD>
+  <TR>
+    <TD class="mth">add(region)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Adds the given region. It will be merged with any 
+      intersecting regions already contained within the set.</TD>
+  <TR>
+    <TD class="mth">add_all(region_set)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Adds all regions in the given set.</TD>
+  <TR>
+    <TD class="mth">subtract(region)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Subtracts the region from all regions in the set.</TD>
+  <TR>
+    <TD class="mth">contains(region)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true iff the given region is a 
+  subset.</TD></TR></TBODY></TABLE><A name="sublime.Region"></A> 
+<H2>Class sublime.Region</H2>Represents an area of the buffer. Empty regions, 
+where a == b are valid. 
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Constructors</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">Region(a, b)</TD>
+    <TD class="dsc">Creates a Region with initial values a and 
+b.</TD></TR></TBODY></TABLE>
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Properties</TH>
+    <TH>Type</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">a</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">The first end of the region.</TD>
+  <TR>
+    <TD class="mth">b</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">The second end of the region. May be less that a, in which 
+      case the region is a reversed one.</TD>
+  <TR>
+    <TD class="mth">xpos</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">The target horizontal position of the region, or -1 if 
+      undefined. Effects behavior when pressing the up or down 
+  keys.</TD></TR></TBODY></TABLE>
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Methods</TH>
+    <TH>Return Value</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">begin()</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">Returns the minimum of a and b.</TD>
+  <TR>
+    <TD class="mth">end()</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">Returns the maximum of a and b.</TD>
+  <TR>
+    <TD class="mth">size()</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">Returns the number of characters spanned by the region. 
+      Always &gt;= 0.</TD>
+  <TR>
+    <TD class="mth">empty()</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true iff begin() == end().</TD>
+  <TR>
+    <TD class="mth">cover(region)</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">Returns a Region spanning both this and the given 
+    regions.</TD>
+  <TR>
+    <TD class="mth">intersection(region)</TD>
+    <TD class="rtn">Region</TD>
+    <TD class="dsc">Returns the set intersection of the two regions.</TD>
+  <TR>
+    <TD class="mth">intersects(region)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns True iff this == region or both include one or 
+      more positions in common.</TD>
+  <TR>
+    <TD class="mth">contains(region)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns True iff the given region is a subset.</TD>
+  <TR>
+    <TD class="mth">contains(point)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns True iff begin() &lt;= point &lt;= 
+  end().</TD></TR></TBODY></TABLE><A name="sublime.Edit"></A> 
+<H2>Class sublime.Edit</H2>
+<P>Edit objects have no functions, they exist to group buffer modifications. 
+<P>Edit objects are passed to TextCommands, and are not user createable. Using 
+an invalid Edit object, or an Edit object from a different view, will cause the 
+functions that require them to fail. 
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Methods</TH>
+    <TH>Return Value</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">(no methods)</TD>
+    <TD class="rtn"></TD>
+    <TD class="dsc"></TD></TR></TBODY></TABLE><A name="sublime.Window"></A> 
+<H2>Class sublime.Window</H2>
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Methods</TH>
+    <TH>Return Value</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">id()</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">Returns a number that uniquely identifies this window.</TD>
+  <TR>
+    <TD class="mth">new_file()</TD>
+    <TD class="rtn">View</TD>
+    <TD class="dsc">Creates a new file. The returned view will be empty, and 
+      its is_loaded method will return True.</TD>
+  <TR>
+    <TD class="mth">open_file(file_name, &lt;flags&gt;)</TD>
+    <TD class="rtn">View</TD>
+    <TD class="dsc">Opens the named file, and returns the corresponding view. 
+      If the file is already opened, it will be brought to the front. Note that 
+      as file loading is asynchronous, operations on the returned view won't be 
+      possible until its is_loading() method returns False. 
+      <P>The optional flags parameter is a bitwise combination of: 
+      <UL>
+        <LI><TT>sublime.ENCODED_POSITION</TT>. Indicates the file_name should be 
+        searched for a <TT>:row</TT> or <TT>:row:col</TT> suffix 
+        <LI><TT>sublime.TRANSIENT</TT>. Open the file as a preview only: it 
+        won't have a tab assigned it until modified </LI></UL></TD>
+  <TR>
+    <TD class="mth">find_open_file(file_name)</TD>
+    <TD class="rtn">View</TD>
+    <TD class="dsc">Finds the named file in the list of open files, and 
+      returns the corresponding View, or None if no such file is open. </TD>
+  <TR>
+    <TD class="mth">active_view()</TD>
+    <TD class="rtn">View</TD>
+    <TD class="dsc">Returns the currently edited view.</TD>
+  <TR>
+    <TD class="mth">active_view_in_group(group)</TD>
+    <TD class="rtn">View</TD>
+    <TD class="dsc">Returns the currently edited view in the given group.</TD>
+  <TR>
+    <TD class="mth">views()</TD>
+    <TD class="rtn">[View]</TD>
+    <TD class="dsc">Returns all open views in the window.</TD>
+  <TR>
+    <TD class="mth">views_in_group(group)</TD>
+    <TD class="rtn">[View]</TD>
+    <TD class="dsc">Returns all open views in the given group.</TD>
+  <TR>
+    <TD class="mth">num_groups()</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">Returns the number of view groups in the window.</TD>
+  <TR>
+    <TD class="mth">active_group()</TD>
+    <TD class="rtn">int</TD>
+    <TD class="dsc">Returns the index of the currently selected group.</TD>
+  <TR>
+    <TD class="mth">focus_group(group)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Makes the given group active.</TD>
+  <TR>
+    <TD class="mth">focus_view(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Switches to the given view.</TD>
+  <TR>
+    <TD class="mth">get_view_index(view)</TD>
+    <TD class="rtn">(group, index)</TD>
+    <TD class="dsc">Returns the group, and index within the group of the view. 
+      Returns -1 if not found.</TD>
+  <TR>
+    <TD class="mth">set_view_index(view, group, index)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Moves the view to the given group and index.</TD>
+  <TR>
+    <TD class="mth">folders()</TD>
+    <TD class="rtn">[String]</TD>
+    <TD class="dsc">Returns a list of the currently open folders.</TD>
+  <TR>
+    <TD class="mth">project_file_name()</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns name of the currently opened project file, if 
+    any.</TD>
+  <TR>
+    <TD class="mth">project_data()</TD>
+    <TD class="rtn">Dictionary</TD>
+    <TD class="dsc">Returns the project data associated with the current 
+      window. The data is in the same format as the contents of a 
+      .sublime-project file. 
+  <TR>
+    <TD class="mth">set_project_data(data)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Updates the project data associated with the current 
+      window. If the window is associated with a .sublime-project file, the 
+      project file will be updated on disk, otherwise the window will store the 
+      data internally. <!--
 <tr><td class="mth">activeViewInGroup(groupIdx)</td><td class="rtn">View</td><td class="dsc">Returns the active view in the given group.</td>
 <tr><td class="mth">views()</td><td class="rtn">[View]</td><td class="dsc">Returns a list of all the views in the current window.</td>
 <tr><td class="mth">viewsInGroup(groupIdx)</td><td class="rtn">[View]</td><td class="dsc">Returns a list of all the views in given group.</td>
 <tr><td class="mth">focusView(view)</td><td class="rtn">None</td><td class="dsc">Focuses the given view.</td>
 <tr><td class="mth">getViewPosition(view)</td><td class="rtn">groupIdx, viewIdx</td><td class="dsc">Returns the group, and the index within the group, of the given view.</td>
 <tr><td class="mth">setViewPosition(view, groupIdx, viewIdx)</td><td class="rtn">None</td><td class="dsc">Moves the view to to the given group and index within the group.</td>
--->
-<tr><td class="mth">run_command(string, &lt;args&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Runs the named Command with the (optional) given arguments. Window.run_command is able to run both any sort of command, dispatching the command via input focus.</td>
-<!--
+--> 
+  <TR>
+    <TD class="mth">run_command(string, &lt;args&gt;)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Runs the named Command with the (optional) given 
+      arguments. Window.run_command is able to run both any sort of command, 
+      dispatching the command via input focus.</TD><!--
 <tr><td class="mth">canRunCommand(string, &lt;args&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Returns True iff the command is enabled with the (optional) given arguments</td>
 <tr><td class="mth">isFullScreen()</td class="rtn"><td class="rtn">bool</td><td class="dsc">Returns true of the Window is currently in full screen mode.</td>
 <tr><td class="mth">showQuickPanel(key, command, args, &lt;displayArgs&gt;, &lt;flags&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Shows the quick panel, populated with displayArgs. When an entry is selected, the command is run, with the arg corresponding to the selected display arg as a parameter. key should be used if updating the list asynchronously, or left blank otherwise.
@@ -476,152 +1009,349 @@ Represents an area of the buffer. Empty regions, where a == b are valid.
 <p>selectedIndex should be the index of the item to be initially selected, or omitted otherwise.
 
 </td>
--->
-
-<tr><td class="mth">show_quick_panel(items, on_done, &lt;flags&gt;, &lt;selected_index&gt;, &lt;on_highlighted&gt;)</td class="rtn"><td class="rtn">None</td><td class="dsc">Shows a quick panel, to select an item in a list. on_done will be called once, with the index of the selected item. If the quick panel was cancelled, on_done will be called with an argument of -1.
-
-<p>Items may be an array of strings, or an array of string arrays. In the latter case, each entry in the quick panel will show multiple rows.
-
-<p>Flags currently only has one option, <tt>sublime.MONOSPACE_FONT</tt>
-
-<p>on_highlighted, if given, will be called every time the highlighted item in the quick panel is changed.
-</td>
-
-<tr><td class="mth">show_input_panel(caption, initial_text, on_done, on_change, on_cancel)</td class="rtn"><td class="rtn">View</td><td class="dsc">Shows the input panel, to collect a line of input from the user. on_done and on_change, if not None, should both be functions that expect a single string argument. on_cancel should be a function that expects no arguments. The view used for the input widget is returned.</td>
-
-<tr><td class="mth">create_output_panel(name)</td class="rtn"><td class="rtn">View</td><td class="dsc">Returns the view associated with the named output panel, created it if required. The output panel can be shown by running the <tt>show_panel</tt> window command, with the <tt>panel</tt> argument set to the name with an  "output." prefix.
-
-<tr><td class="mth">lookup_symbol_in_index(symbol)</td class="rtn"><td class="rtn">[Location]</td><td class="dsc">Returns all locations where the symbol is defined across files in the current project.</td>
-<tr><td class="mth">lookup_symbol_in_open_files(symbol)</td class="rtn"><td class="rtn">[Location]</td><td class="dsc">Returns all locations where the symbol is defined across open files.</td>
-
-
-<!--
-<tr><td class="mth">hwnd()</td class="rtn"><td class="rtn">HWND</td><td class="dsc">Returns the win32 window handle for the window.</td>
--->
-
-</table>
-
-<a name="sublime.Settings"></a>
-<h2>Class sublime.Settings</h2>
-
-<table class="functions">
-<tr><th>Methods</th><th>Return Value</th><th>Description</th></tr>
-<tr><td class="mth">get(name)</td><td class="rtn">value</td><td class="dsc">Returns the named setting.</td>
-<tr><td class="mth">get(name, default)</td><td class="rtn">value</td><td class="dsc">Returns the named setting, or default if it's not defined.</td>
-<tr><td class="mth">set(name, value)</td><td class="rtn">None</td><td class="dsc">Sets the named setting. Only primitive types, lists, and dictionaries are accepted.</td>
-<tr><td class="mth">erase(name)</td><td class="rtn">None</td><td class="dsc">Removes the named setting. Does not remove it from any parent Settings.</td>
-<tr><td class="mth">has(name)</td><td class="rtn">bool</td><td class="dsc">Returns true iff the named option exists in this set of Settings or one of its parents.</td>
-<tr><td class="mth">add_on_change(key, on_change)</td><td class="rtn">None</td><td class="dsc">Register a callback to be run whenever a setting in this object is changed.</td>
-<tr><td class="mth">clear_on_change(key)</td><td class="rtn">None</td><td class="dsc">Remove all callbacks registered with the given key.</td>
-</table>
-
-
-
-<a name="sublime_plugin"></a>
-<h2>Module sublime_plugin</h2>
-
-<table class="functions">
-<tr><th>Methods</th><th>Return Value</th><th>Description</th></tr>
-<tr><td class="mth">(no methods)</td><td class="rtn"></td><td class="dsc"></td>
-</table>
-
-<a name="sublime_plugin.EventListener"></a>
-<h2>Class sublime_plugin.EventListener</h2>
-
-Note that many of these events are triggered by the buffer underlying the view, and thus the method is only called once, with the first view as the parameter.
-
-<table class="functions">
-<tr><th>Methods</th><th>Return Value</th><th>Description</th></tr>
-<tr><td class="mth">on_new(view)</td><td class="rtn">None</td><td class="dsc">Called when a new buffer is created.</td>
-<tr><td class="mth">on_new_async(view)</td><td class="rtn">None</td><td class="dsc">Called when a new buffer is created. Runs in a separate thread, and does not block the application.</td>
-<tr><td class="mth">on_clone(view)</td><td class="rtn">None</td><td class="dsc">Called when a view is cloned from an existing one.</td>
-<tr><td class="mth">on_clone_async(view)</td><td class="rtn">None</td><td class="dsc">Called when a view is cloned from an existing one. Runs in a separate thread, and does not block the application.</td>
-<tr><td class="mth">on_load(view)</td><td class="rtn">None</td><td class="dsc">Called when the file is finished loading.</td>
-<tr><td class="mth">on_load_async(view)</td><td class="rtn">None</td><td class="dsc">Called when the file is finished loading. Runs in a separate thread, and does not block the application.</td>
-<tr><td class="mth">on_pre_close(view)</td><td class="rtn">None</td><td class="dsc">Called when a view is about to be closed. The view will still be in the window at this point.</td>
-<tr><td class="mth">on_close(view)</td><td class="rtn">None</td><td class="dsc">Called when a view is closed (note, there may still be other views into the same buffer).</td>
-<tr><td class="mth">on_pre_save(view)</td><td class="rtn">None</td><td class="dsc">Called just before a view is saved.</td>
-<tr><td class="mth">on_pre_save_async(view)</td><td class="rtn">None</td><td class="dsc">Called just before a view is saved. Runs in a separate thread, and does not block the application.</td>
-<tr><td class="mth">on_post_save(view)</td><td class="rtn">None</td><td class="dsc">Called after a view has been saved.</td>
-<tr><td class="mth">on_post_save_async(view)</td><td class="rtn">None</td><td class="dsc">Called after a view has been saved. Runs in a separate thread, and does not block the application.</td>
-<tr><td class="mth">on_modified(view)</td><td class="rtn">None</td><td class="dsc">Called after changes have been made to a view.</td>
-<tr><td class="mth">on_modified_async(view)</td><td class="rtn">None</td><td class="dsc">Called after changes have been made to a view. Runs in a separate thread, and does not block the application.</td>
-<tr><td class="mth">on_selection_modified(view)</td><td class="rtn">None</td><td class="dsc">Called after the selection has been modified in a view.</td>
-<tr><td class="mth">on_selection_modified_async(view)</td><td class="rtn">None</td><td class="dsc">Called after the selection has been modified in a view. Runs in a separate thread, and does not block the application.</td>
-<tr><td class="mth">on_activated(view)</td><td class="rtn">None</td><td class="dsc">Called when a view gains input focus.</td>
-<tr><td class="mth">on_activated_async(view)</td><td class="rtn">None</td><td class="dsc">Called when a view gains input focus. Runs in a separate thread, and does not block the application.</td>
-<tr><td class="mth">on_deactivated(view)</td><td class="rtn">None</td><td class="dsc">Called when a view loses input focus.</td>
-<tr><td class="mth">on_deactivated_async(view)</td><td class="rtn">None</td><td class="dsc">Called when a view loses input focus. Runs in a separate thread, and does not block the application.</td>
-<tr><td class="mth">on_text_command(view, command_name, args)</td><td class="rtn">(new_command_name, new_args)</td><td class="dsc">Called when a text command is issued. The listener may return a (command, arguments) tuple to rewrite the command, or None to run the command unmodified.</td>
-<tr><td class="mth">on_window_command(window, command_name, args)</td><td class="rtn">(new_command_name, new_args)</td><td class="dsc">Called when a window command is issued. The listener may return a (command, arguments) tuple to rewrite the command, or None to run the command unmodified.</td>
-
-<tr><td class="mth">post_text_command(view, command_name, args)</td><td class="rtn">None</td><td class="dsc">Called after a text command has been executed.</td>
-<tr><td class="mth">post_window_command(window, command_name, args)</td><td class="rtn">None</td><td class="dsc">Called after a window command has been executed.</td>
-
-<!--
+--> 
+  <TR>
+    <TD class="mth">show_quick_panel(items, on_done, &lt;flags&gt;, 
+      &lt;selected_index&gt;, &lt;on_highlighted&gt;)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Shows a quick panel, to select an item in a list. on_done 
+      will be called once, with the index of the selected item. If the quick 
+      panel was cancelled, on_done will be called with an argument of -1. 
+      <P>Items may be an array of strings, or an array of string arrays. In the 
+      latter case, each entry in the quick panel will show multiple rows. 
+      <P>Flags currently only has one option, <TT>sublime.MONOSPACE_FONT</TT> 
+      <P>on_highlighted, if given, will be called every time the highlighted 
+      item in the quick panel is changed. </P></TD>
+  <TR>
+    <TD class="mth">show_input_panel(caption, initial_text, on_done, 
+      on_change, on_cancel)</TD>
+    <TD class="rtn">View</TD>
+    <TD class="dsc">Shows the input panel, to collect a line of input from the 
+      user. on_done and on_change, if not None, should both be functions that 
+      expect a single string argument. on_cancel should be a function that 
+      expects no arguments. The view used for the input widget is returned.</TD>
+  <TR>
+    <TD class="mth">create_output_panel(name)</TD>
+    <TD class="rtn">View</TD>
+    <TD class="dsc">Returns the view associated with the named output panel, 
+      created it if required. The output panel can be shown by running the 
+      <TT>show_panel</TT> window command, with the <TT>panel</TT> argument set 
+      to the name with an  "output." prefix. 
+  <TR>
+    <TD class="mth">lookup_symbol_in_index(symbol)</TD>
+    <TD class="rtn">[Location]</TD>
+    <TD class="dsc">Returns all locations where the symbol is defined across 
+      files in the current project.</TD>
+  <TR>
+    <TD class="mth">lookup_symbol_in_open_files(symbol)</TD>
+    <TD class="rtn">[Location]</TD>
+    <TD class="dsc">Returns all locations where the symbol is defined across 
+      open files.</TD>
+  <TR>
+    <TD class="mth">extract_variables()</TD>
+    <TD class="rtn">Dictionary</TD>
+    <TD class="dsc">Returns a dictionary of strings populated with contextual 
+      keys: <TT>packages, platform, file, file_path, file_name, file_base_name, 
+      file_extension, folder, project, project_path, project_name, 
+      project_base_name, project_extension</TT>. This dictionary is suitable for 
+      passing to <TT>sublime.expand_variables()</TT>. </TD></TR></TBODY></TABLE><A 
+name="sublime.Settings"></A> 
+<H2>Class sublime.Settings</H2>
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Methods</TH>
+    <TH>Return Value</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">get(name)</TD>
+    <TD class="rtn">value</TD>
+    <TD class="dsc">Returns the named setting.</TD>
+  <TR>
+    <TD class="mth">get(name, default)</TD>
+    <TD class="rtn">value</TD>
+    <TD class="dsc">Returns the named setting, or default if it's not 
+    defined.</TD>
+  <TR>
+    <TD class="mth">set(name, value)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Sets the named setting. Only primitive types, lists, and 
+      dictionaries are accepted.</TD>
+  <TR>
+    <TD class="mth">erase(name)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Removes the named setting. Does not remove it from any 
+      parent Settings.</TD>
+  <TR>
+    <TD class="mth">has(name)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true iff the named option exists in this set of 
+      Settings or one of its parents.</TD>
+  <TR>
+    <TD class="mth">add_on_change(key, on_change)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Register a callback to be run whenever a setting in this 
+      object is changed.</TD>
+  <TR>
+    <TD class="mth">clear_on_change(key)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Remove all callbacks registered with the given 
+  key.</TD></TR></TBODY></TABLE><A name="sublime_plugin"></A> 
+<H2>Module sublime_plugin</H2>
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Methods</TH>
+    <TH>Return Value</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">(no methods)</TD>
+    <TD class="rtn"></TD>
+    <TD class="dsc"></TD></TR></TBODY></TABLE><A 
+name="sublime_plugin.EventListener"></A> 
+<H2>Class sublime_plugin.EventListener</H2>Note that many of these events are 
+triggered by the buffer underlying the view, and thus the method is only called 
+once, with the first view as the parameter. 
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Methods</TH>
+    <TH>Return Value</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">on_new(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when a new buffer is created.</TD>
+  <TR>
+    <TD class="mth">on_new_async(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when a new buffer is created. Runs in a separate 
+      thread, and does not block the application.</TD>
+  <TR>
+    <TD class="mth">on_clone(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when a view is cloned from an existing one.</TD>
+  <TR>
+    <TD class="mth">on_clone_async(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when a view is cloned from an existing one. Runs in 
+      a separate thread, and does not block the application.</TD>
+  <TR>
+    <TD class="mth">on_load(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when the file is finished loading.</TD>
+  <TR>
+    <TD class="mth">on_load_async(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when the file is finished loading. Runs in a 
+      separate thread, and does not block the application.</TD>
+  <TR>
+    <TD class="mth">on_pre_close(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when a view is about to be closed. The view will 
+      still be in the window at this point.</TD>
+  <TR>
+    <TD class="mth">on_close(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when a view is closed (note, there may still be 
+      other views into the same buffer).</TD>
+  <TR>
+    <TD class="mth">on_pre_save(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called just before a view is saved.</TD>
+  <TR>
+    <TD class="mth">on_pre_save_async(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called just before a view is saved. Runs in a separate 
+      thread, and does not block the application.</TD>
+  <TR>
+    <TD class="mth">on_post_save(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called after a view has been saved.</TD>
+  <TR>
+    <TD class="mth">on_post_save_async(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called after a view has been saved. Runs in a separate 
+      thread, and does not block the application.</TD>
+  <TR>
+    <TD class="mth">on_modified(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called after changes have been made to a view.</TD>
+  <TR>
+    <TD class="mth">on_modified_async(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called after changes have been made to a view. Runs in a 
+      separate thread, and does not block the application.</TD>
+  <TR>
+    <TD class="mth">on_selection_modified(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called after the selection has been modified in a view.</TD>
+  <TR>
+    <TD class="mth">on_selection_modified_async(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called after the selection has been modified in a view. 
+      Runs in a separate thread, and does not block the application.</TD>
+  <TR>
+    <TD class="mth">on_activated(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when a view gains input focus.</TD>
+  <TR>
+    <TD class="mth">on_activated_async(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when a view gains input focus. Runs in a separate 
+      thread, and does not block the application.</TD>
+  <TR>
+    <TD class="mth">on_deactivated(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when a view loses input focus.</TD>
+  <TR>
+    <TD class="mth">on_deactivated_async(view)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when a view loses input focus. Runs in a separate 
+      thread, and does not block the application.</TD>
+  <TR>
+    <TD class="mth">on_text_command(view, command_name, args)</TD>
+    <TD class="rtn">(new_command_name, new_args)</TD>
+    <TD class="dsc">Called when a text command is issued. The listener may 
+      return a (command, arguments) tuple to rewrite the command, or None to run 
+      the command unmodified.</TD>
+  <TR>
+    <TD class="mth">on_window_command(window, command_name, args)</TD>
+    <TD class="rtn">(new_command_name, new_args)</TD>
+    <TD class="dsc">Called when a window command is issued. The listener may 
+      return a (command, arguments) tuple to rewrite the command, or None to run 
+      the command unmodified.</TD>
+  <TR>
+    <TD class="mth">post_text_command(view, command_name, args)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called after a text command has been executed.</TD>
+  <TR>
+    <TD class="mth">post_window_command(window, command_name, args)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called after a window command has been executed.</TD><!--
 <tr><td class="mth">onProjectLoad(window)</td><td class="rtn">None</td><td class="dsc">Called after a project has been loaded.</td>
 <tr><td class="mth">onProjectClose(window)</td><td class="rtn">None</td><td class="dsc">Called after a project has been closed.</td>
--->
-<tr><td class="mth">on_query_context(view, key, operator, operand, match_all)</td><td class="rtn">bool or None</td><td class="dsc">Called when determining to trigger a key binding with the given context key. If the plugin knows how to respond to the context, it should return either True of False. If the context is unknown, it should return None.
-
-<p><tt>operator</tt> is one of:
-
-<ul>
-<li><tt>sublime.OP_EQUAL</tt>. Is the value of the context equal to the operand?
-<li><tt>sublime.OP_NOT_EQUAL</tt>. Is the value of the context not equal to the operand?
-<li><tt>sublime.OP_REGEX_MATCH</tt>. Does the value of the context match the regex given in operand?
-<li><tt>sublime.OP_NOT_REGEX_MATCH</tt>. Does the value of the context not match the regex given in operand?
-<li><tt>sublime.OP_REGEX_CONTAINS</tt>. Does the value of the context contain a substring matching the regex given in operand?
-<li><tt>sublime.OP_NOT_REGEX_CONTAINS</tt>. Does the value of the context not contain a substring matching the regex given in operand?
-</ul>
-
-<p><tt>match_all</tt> should be used if the context relates to the selections: does every selection have to match (match_all = True), or is at least one matching enough (match_all = Fals)?
-
-
-</td>
-</table>
-
-
-<a name="sublime_plugin.ApplicationCommand"></a>
-<h2>Class sublime_plugin.ApplicationCommand</h2>
-
-<table class="functions">
-<tr><th>Methods</th><th>Return Value</th><th>Description</th></tr>
-<tr><td class="mth">run(&lt;args&gt;)</td><td class="rtn">None</td><td class="dsc">Called when the command is run.</td>
-<tr><td class="mth">is_enabled(&lt;args&gt;)</td><td class="rtn">bool</td><td class="dsc">Returns true if the command is able to be run at this time. The default implementation simply always returns True.</td>
-<tr><td class="mth">is_visible(&lt;args&gt;)</td><td class="rtn">bool</td><td class="dsc">Returns true if the command should be shown in the menu at this time. The default implementation always returns True.</td>
-<tr><td class="mth">is_checked(&lt;args&gt;)</td><td class="rtn">bool</td><td class="dsc">Returns true if a checkbox should be shown next to the menu item. The <tt>.sublime-menu</tt> file must have the checkbox attribute set to true for this to be used.</td>
-<tr><td class="mth">description(&lt;args&gt;)</td><td class="rtn">String</td><td class="dsc">Returns a description of the command with the given arguments. Used in the menu, if no caption is provided. Return None to get the default description.</td>
-</table>
-
-<a name="sublime_plugin.WindowCommand"></a>
-<h2>Class sublime_plugin.WindowCommand</h2>
-
-WindowCommands are instantiated once per window. The Window object may be retrieved via <tt>self.window</tt>
-
-<table class="functions">
-<tr><th>Methods</th><th>Return Value</th><th>Description</th></tr>
-<tr><td class="mth">run(&lt;args&gt;)</td><td class="rtn">None</td><td class="dsc">Called when the command is run.</td>
-<tr><td class="mth">is_enabled(&lt;args&gt;)</td><td class="rtn">bool</td><td class="dsc">Returns true if the command is able to be run at this time. The default implementation simply always returns True.</td>
-<tr><td class="mth">is_visible(&lt;args&gt;)</td><td class="rtn">bool</td><td class="dsc">Returns true if the command should be shown in the menu at this time. The default implementation always returns True.</td>
-<tr><td class="mth">description(&lt;args&gt;)</td><td class="rtn">String</td><td class="dsc">Returns a description of the command with the given arguments. Used in the menu, if no caption is provided. Return None to get the default description.</td>
-</table>
-
-<a name="sublime_plugin.TextCommand"></a>
-<h2>Class sublime_plugin.TextCommand</h2>
-
-TextCommands are instantiated once per view. The View object may be retrieved via <tt>self.view</tt>
-
-<table class="functions">
-<tr><th>Methods</th><th>Return Value</th><th>Description</th></tr>
-<tr><td class="mth">run(edit, &lt;args&gt;)</td><td class="rtn">None</td><td class="dsc">Called when the command is run.</td>
-<tr><td class="mth">is_enabled(&lt;args&gt;)</td><td class="rtn">bool</td><td class="dsc">Returns true if the command is able to be run at this time. The default implementation simply always returns True.</td>
-<tr><td class="mth">is_visible(&lt;args&gt;)</td><td class="rtn">bool</td><td class="dsc">Returns true if the command should be shown in the menu at this time. The default implementation always returns True.</td>
-<tr><td class="mth">description(&lt;args&gt;)</td><td class="rtn">String</td><td class="dsc">Returns a description of the command with the given arguments. Used in the menus, and for Undo / Redo descriptions. Return None to get the default description.</td>
-
-
-</table>
-
-
-</body>
-</html>
+--> 
+  <TR>
+    <TD class="mth">on_query_context(view, key, operator, operand, 
+    match_all)</TD>
+    <TD class="rtn">bool or None</TD>
+    <TD class="dsc">Called when determining to trigger a key binding with the 
+      given context key. If the plugin knows how to respond to the context, it 
+      should return either True of False. If the context is unknown, it should 
+      return None. 
+      <P><TT>operator</TT> is one of: 
+      <UL>
+        <LI><TT>sublime.OP_EQUAL</TT>. Is the value of the context equal to the 
+        operand? 
+        <LI><TT>sublime.OP_NOT_EQUAL</TT>. Is the value of the context not equal 
+        to the operand? 
+        <LI><TT>sublime.OP_REGEX_MATCH</TT>. Does the value of the context match 
+        the regex given in operand? 
+        <LI><TT>sublime.OP_NOT_REGEX_MATCH</TT>. Does the value of the context 
+        not match the regex given in operand? 
+        <LI><TT>sublime.OP_REGEX_CONTAINS</TT>. Does the value of the context 
+        contain a substring matching the regex given in operand? 
+        <LI><TT>sublime.OP_NOT_REGEX_CONTAINS</TT>. Does the value of the 
+        context not contain a substring matching the regex given in operand? 
+        </LI></UL>
+      <P><TT>match_all</TT> should be used if the context relates to the 
+      selections: does every selection have to match (match_all = True), or is 
+      at least one matching enough (match_all = Fals)? 
+</P></TD></TR></TBODY></TABLE><A name="sublime_plugin.ApplicationCommand"></A> 
+<H2>Class sublime_plugin.ApplicationCommand</H2>
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Methods</TH>
+    <TH>Return Value</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">run(&lt;args&gt;)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when the command is run.</TD>
+  <TR>
+    <TD class="mth">is_enabled(&lt;args&gt;)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true if the command is able to be run at this 
+      time. The default implementation simply always returns True.</TD>
+  <TR>
+    <TD class="mth">is_visible(&lt;args&gt;)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true if the command should be shown in the menu at 
+      this time. The default implementation always returns True.</TD>
+  <TR>
+    <TD class="mth">is_checked(&lt;args&gt;)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true if a checkbox should be shown next to the 
+      menu item. The <TT>.sublime-menu</TT> file must have the checkbox 
+      attribute set to true for this to be used.</TD>
+  <TR>
+    <TD class="mth">description(&lt;args&gt;)</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns a description of the command with the given 
+      arguments. Used in the menu, if no caption is provided. Return None to get 
+      the default description.</TD></TR></TBODY></TABLE><A name="sublime_plugin.WindowCommand"></A> 
+<H2>Class sublime_plugin.WindowCommand</H2>WindowCommands are instantiated once 
+per window. The Window object may be retrieved via <TT>self.window</TT> 
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Methods</TH>
+    <TH>Return Value</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">run(&lt;args&gt;)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when the command is run.</TD>
+  <TR>
+    <TD class="mth">is_enabled(&lt;args&gt;)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true if the command is able to be run at this 
+      time. The default implementation simply always returns True.</TD>
+  <TR>
+    <TD class="mth">is_visible(&lt;args&gt;)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true if the command should be shown in the menu at 
+      this time. The default implementation always returns True.</TD>
+  <TR>
+    <TD class="mth">description(&lt;args&gt;)</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns a description of the command with the given 
+      arguments. Used in the menu, if no caption is provided. Return None to get 
+      the default description.</TD></TR></TBODY></TABLE><A name="sublime_plugin.TextCommand"></A> 
+<H2>Class sublime_plugin.TextCommand</H2>TextCommands are instantiated once per 
+view. The View object may be retrieved via <TT>self.view</TT> 
+<TABLE class="functions">
+  <TBODY>
+  <TR>
+    <TH>Methods</TH>
+    <TH>Return Value</TH>
+    <TH>Description</TH></TR>
+  <TR>
+    <TD class="mth">run(edit, &lt;args&gt;)</TD>
+    <TD class="rtn">None</TD>
+    <TD class="dsc">Called when the command is run.</TD>
+  <TR>
+    <TD class="mth">is_enabled(&lt;args&gt;)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true if the command is able to be run at this 
+      time. The default implementation simply always returns True.</TD>
+  <TR>
+    <TD class="mth">is_visible(&lt;args&gt;)</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Returns true if the command should be shown in the menu at 
+      this time. The default implementation always returns True.</TD>
+  <TR>
+    <TD class="mth">description(&lt;args&gt;)</TD>
+    <TD class="rtn">String</TD>
+    <TD class="dsc">Returns a description of the command with the given 
+      arguments. Used in the menus, and for Undo / Redo descriptions. Return 
+      None to get the default description.</TD>
+  <TR>
+    <TD class="mth">want_event()</TD>
+    <TD class="rtn">bool</TD>
+    <TD class="dsc">Return True to receive an <TT>event</TT> argument when the 
+      command is triggered by a mouse action. The event information allows 
+      commands to determine which portion of the view was clicked on. The 
+      default implementation returns False.</TD></TR></TBODY></TABLE></BODY></HTML>
