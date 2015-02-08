@@ -523,8 +523,7 @@
         CLASS_LINE_END
         CLASS_EMPTY_LINE
 
-    - name: find_by_class(point, forward, classes,
-    <separators>)
+    - name: find_by_class(point, forward, classes, <separators>)
       type: method
       parameters: add params
       return_value: Region
@@ -565,8 +564,7 @@
         flags parameter may be sublime.LITERAL, sublime.IGNORECASE, or the two
         ORed together.
 
-    - name: find_all(pattern, <flags>, <format>,
-      <extractions>)
+    - name: find_all(pattern, <flags>, <format>, <extractions>)
       type: method
       parameters: add params
       return_value: [Region]
@@ -744,8 +742,7 @@
       description: |
         Returns the typical character width used in the layout
 
-    - name: add_regions(key, [regions], <scope>, <icon>,
-      <flags>)
+    - name: add_regions(key, [regions], <scope>, <icon>, <flags>)
       type: method
       parameters: add params
       description: |

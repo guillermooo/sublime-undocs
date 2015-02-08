@@ -1,6 +1,3 @@
-import bs4
-
-
 class SublimeApi(object):
     """
     Represents the Sublime Text Python docs from Sublime HQ.
@@ -18,7 +15,7 @@ class Module(object):
     def __init__(self, html):
         self.name = None
         self.classes = {}
-        self.functions = [] # top-level funcs in the module
+        self.functions = []  # top-level funcs in the module
 
     def __str__(self):
         return '<Module {}>'.format(self.name)

@@ -1,0 +1,47 @@
+- sublime:
+  - name: set_timeout
+    type: function # Could be detected automatically I suppose
+    parameters:
+    - callback (callable)
+    - name: delay  # long version
+      type: int
+    # .rst literal text here (supports rst markup, references etc)
+    description: |
+      Runs the callback
+      in the main thread
+      after the given delay
+      (in milliseconds).
+      Callbacks with an equal delay
+      will be run in the order
+      they were added.
+- sublime_plugin:
+  - name: View
+    type: class # Again, could be auto-detected because of naming conventions
+    description: |
+      bla bla
+    methods:
+    # Should render as `.. py:method:: run_command(name [, args])`
+    # or `.. py:method:: run_command(name : string [, args : dict])`.
+    # Need to experiment how it will look
+    - name: run_command
+      parameters:
+      - name (string)
+      - title: "args (dict) [optional]"
+        # optional: true
+        description: |
+          This is just a sample text
+          to illustrate how to use param description
+          and to show the key
+          of the short form.
+      # Linebreaks are preserved
+      # and indentation is based on the first line,
+      # so we just need to indent every line
+      # by a fixed indent in the generator.
+      description: |
+        Runs the named TextCommand
+        with the (optional) given arguments.
+
+        .. seealso::
+
+           :meth:`~sublime_plugin.Window.run_command`
+           :meth:`~sublime.run_command`
