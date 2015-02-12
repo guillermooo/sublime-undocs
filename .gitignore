@@ -1,8 +1,5 @@
 .ideas
 
-.hgignore
-.hgtags
-
 *.pyc
 *.bak
 
@@ -10,4 +7,5 @@ build
 
 *.sublime-workspace
 
-tool/venv
+tools/venv
+*.exe
