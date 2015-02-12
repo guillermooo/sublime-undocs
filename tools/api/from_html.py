@@ -9,12 +9,6 @@ from operator import xor
 from st_api import (SublimeApi, Module, Class, Function, Method, Property,
                     Constructor)
 
-try:
-    import html5lib
-except:
-    print("Unable to import html5lib, which is required for correct parsing.")
-    raise
-
 
 def custom_dedent(string):
     """Works like textwraps.dedent but bases the indentation on the first
@@ -303,7 +297,8 @@ class FromHtmlReader(object):
                 # Reached the end
                 return SublimeApi(modules)
 
-            elif child.name == 'p' and '<a name="sublime"></a>' in str(child):
+            elif child.name == 'p' and (child.a
+                                        and child.a.get('name') == "sublime"):
                 # The first anchor link is inside of an implicitly closed p tag,
                 # which we need to fix manually
                 child = child.a
@@ -312,7 +307,7 @@ class FromHtmlReader(object):
                 # Each module/class is associated with an 'a' tag,
                 # so search for it
                 module_name = child.get('name')
-                assert '.' not in module_name
+                assert '.' not in module_name, module_name
 
     @staticmethod
     def from_path(path):
@@ -322,10 +317,7 @@ class FromHtmlReader(object):
         # Remove comments before parsing because they are a pain to handle
         text = re.sub(r'<!--.*?-->', '', text, flags=re.DOTALL)
 
-        # We MUST use html5lib here, the default parser does not "correctly"
-        # recognize all unclosed tags like p or td, which leaves us with a
-        # differing HTML structure compared to what browsers parse.
-        html = bs4.BeautifulSoup(text, "html5lib")
+        html = bs4.BeautifulSoup(text)
         return FromHtmlReader(html)
 
 
