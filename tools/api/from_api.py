@@ -65,8 +65,8 @@ def main():
     yaml_api = to_yaml(api)
 
     print(yaml_api)
-    # with open('api.yaml', 'w') as f:
-    #     f.write(yaml_api)
+    with open('api.yaml', 'w') as f:
+        f.write(yaml_api)
 
 
 if __name__ == '__main__':
