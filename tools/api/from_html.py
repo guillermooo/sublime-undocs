@@ -6,20 +6,14 @@ import bs4
 
 from operator import xor
 
+from st_api import (SublimeApi, Module, Class, Function, Method, Property,
+                    Constructor)
+
 try:
     import html5lib
 except:
     print("Unable to import html5lib, which is required for correct parsing.")
     raise
-
-
-SublimeApi = namedtuple("SublimeApi", "modules")
-Module = namedtuple("Module", "name functions classes")
-Class = namedtuple("Class", "name constructors properties methods description")
-Function = namedtuple("Function", "name signature return_type description")
-Method = namedtuple("Method", "name signature return_type description")
-Property = namedtuple("Property", "name value_type description")
-Constructor = namedtuple("Constructor", "signature description")
 
 
 def custom_dedent(string):

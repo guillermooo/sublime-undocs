@@ -3,53 +3,71 @@
 import os
 
 import yaml
+from yaml.nodes import MappingNode, ScalarNode
 
 import from_html
-from orderddict_yaml import OrderedDictSafeDumper
+from ordereddict_yaml import OrderedDictSafeDumper
 
 
 class APIDumper(OrderedDictSafeDumper):
     """Some adjustments for value representations."""
-    def represent_scalar(self, tag, value, style=None):
-        if tag == u'tag:yaml.org,2002:str':
-            # Block style for multiline strings
-            if any(c in value for c in u"\u000a\u000d\u001c\u001d\u001e\u0085\u2028\u2029"):
-                style = '|'
+    literal_style_keys = ("description",)
 
-            # Use " to denote strings if the string contains ' but not ";
-            # but try to do this only when necessary as non-quoted strings are always better
-            elif ("'" in value and '"' not in value
-                  and (value[0] in "[]{#'}@"
-                       or any(s in value for s in (" '", ' #', ', ', ': ')))):
-                style = '"'
+    def represent_mapping(self, tag, mapping, flow_style=None):
+        """Changed in that it looks up keys to adjust scalar style"""
+        value = []
+        node = MappingNode(tag, value, flow_style=flow_style)
+        if self.alias_key is not None:
+            self.represented_objects[self.alias_key] = node
+        best_style = True
+        if hasattr(mapping, 'items'):
+            mapping = list(mapping.items())
+            try:
+                mapping = sorted(mapping)
+            except TypeError:
+                pass
+        for item_key, item_value in mapping:
+            node_key = self.represent_data(item_key)
+            # CHANGES BEGIN
+            default_style = self.default_style
+            if item_key in self.literal_style_keys:
+                self.default_style = '|'
+            node_value = self.represent_data(item_value)
+            if item_key in self.literal_style_keys:
+                self.default_style = default_style
+            # CHANGES END
+            if not (isinstance(node_key, ScalarNode) and not node_key.style):
+                best_style = False
+            if not (isinstance(node_value, ScalarNode) and not node_value.style):
+                best_style = False
+            value.append((node_key, node_value))
+        if flow_style is None:
+            if self.default_flow_style is not None:
+                node.flow_style = self.default_flow_style
+            else:
+                node.flow_style = best_style
+        return node
 
-        return super().represent_scalar(tag, value, style)
+
+def to_yaml(api):
+    """Build a YAML string from a `SublimeApi` instance.
+    """
+    return yaml.dump(api.to_data(), default_flow_style=False, Dumper=APIDumper)
 
 
-class ToYamlWriter(object):
-    """Translates Sublime Text API from `SublimeApi` to a YAML string."""
+def main():
+    if not os.path.exists('api.html'):
+        here = os.path.abspath(os.path.dirname(__file__))
+        print('no api.html file found in {}'.format(here))
+        return
 
-    def __init__(self, api):
-        self.api = api
+    api = from_html.read('api.html').to_api()
+    yaml_api = to_yaml(api)
 
-    def to_yaml(self):
-        """Build a YAML string from a `SublimeApi` instance.
-        """
-        return yaml.dump(data, default_flow_style=False, dumper=APIDumper)
-
-
-def read(api):
-    return ToYamlWriter(api)
+    print(yaml_api)
+    # with open('api.yaml', 'w') as f:
+    #     f.write(yaml_api)
 
 
 if __name__ == '__main__':
-    if os.path.exists('api.html'):
-        api = from_html.read('api.html').to_api()
-        yaml_api = read(api).to_yaml()
-
-        print(yaml_api)
-        # with open('api.yaml', 'w') as f:
-        #     f.write(yaml_api)
-    else:
-        here = os.path.abspath(os.path.dirname(__file__))
-        print('no api.html file found in {}'.format(here))
+    main()
