@@ -2,7 +2,7 @@
 Settings (Reference)
 ====================
 
-+.. warning::
+.. warning::
 
    This page may be outdated and contain wrong or not all information. However,
    you can find most of the available settings with a brief description in the
