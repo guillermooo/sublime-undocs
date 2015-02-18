@@ -64,8 +64,10 @@ depending on the file type, time of day, etc.
 Structure of a Color Scheme File
 ================================
 
-Color scheme files are based on the Property List format.
-All color scheme files share the same top-level structure.
+Color scheme files are based
+on the Property List format.
+All color scheme files share
+the same top-level structure.
 
 .. insert top-level example here
 
@@ -86,11 +88,13 @@ All color scheme files share the same top-level structure.
 Subelements of Settings
 ***********************
 
-Sublime Text supports the following color scheme settings:
+Sublime Text supports
+the following color scheme settings:
 
 Global Settings
 
-Not associated with any scope. These settings affect global visual items in the view.
+Not associated with any scope.
+These settings affect global visual items in the view.
 
 ``activeGuide``
    XXX
@@ -135,13 +139,15 @@ Not associated with any scope. These settings affect global visual items in the 
    Color of inactive selections (inactive view).
 
 ``invisibles``
-   Color of whitespace characters when they are displayed (see
-   SETTING_TO_CHANGE_WHITESPACE_VISIBILITY).
+   Color of whitespace characters
+   when they are displayed
+   (see SETTING_TO_CHANGE_WHITESPACE_VISIBILITY).
 
    IT DOESN’T SEEM TO DO THIS
 
 ``lineHihglight``
-   Color of the line the caret is in (see SETTING TO ENABLE LINE HILITIN).
+   Color of the line the caret is in
+   (see SETTING TO ENABLE LINE HILITIN).
 
 ``selection``
    Color of the selection regions.
@@ -199,4 +205,6 @@ Not associated with any scope. These settings affect global visual items in the 
    Sublime Text Settings Related to Color Schemes
 
 ``color_scheme``
-   Path to a color scheme file relative to the Data folder (example: Packages/User/Color Schemes - Custom/Fictitious.tmTheme).
+   Path to a color scheme file
+   relative to the Data folder
+   (example: Packages/User/Color Schemes - Custom/Fictitious.tmTheme).
