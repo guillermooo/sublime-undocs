@@ -72,6 +72,8 @@ class Function(namedtuple("Function", "name parameters return_type description")
         f_data = self._asdict()  # returns an OrderedDict
         parameters = self.parameters[:]
         f_data['parameters'] = _fix_parameters(parameters)
+        f_data['original'] = f_data['description']
+        del f_data['description']
         return f_data
 
 
@@ -87,7 +89,10 @@ class Property(namedtuple("Property", "name value_type description")):
     __slots__ = ()
 
     def to_data(self):
-        return self._asdict()
+        p_data = self._asdict()  # returns an OrderedDict
+        p_data['original'] = p_data['description']
+        del p_data['description']
+        return p_data
 
 
 class Constructor(namedtuple("Constructor", "parameters description")):

@@ -11,7 +11,7 @@ from ordereddict_yaml import OrderedDictSafeDumper
 
 class APIDumper(OrderedDictSafeDumper):
     """Some adjustments for value representations."""
-    literal_style_keys = ("description",)
+    literal_style_keys = ("description", "original",)
 
     def represent_mapping(self, tag, mapping, flow_style=None):
         """Changed in that it looks up keys to adjust scalar style"""
