@@ -3,18 +3,18 @@
   - name: active_window
     parameters: null
     return_type: Window
-    description: |-
+    original: |-
       Returns the most recently used window.
   - name: arch
     parameters: null
     return_type: string
-    description: |-
+    original: |-
       Returns the CPU architecture, which may be
       "x32" or "x64"
   - name: cache_path
     parameters: null
     return_type: string
-    description: |-
+    original: |-
       Returns the path where Sublime Text stores
       cache files.
   - name: decode_value
@@ -22,7 +22,7 @@
     - name: string
       type: str
     return_type: value
-    description: |-
+    original: |-
       Decodes a JSON string into an object. If the
       string is invalid, a `ValueError` will be thrown.
   - name: encode_value
@@ -33,7 +33,7 @@
       type: ''
       optional: true
     return_type: string
-    description: |-
+    original: |-
       Encode a JSON compatible value into a string
       representation. If pretty is set to True, the string will
       include newlines and indentation.
@@ -42,7 +42,7 @@
     - name: string
       type: str
     return_type: None
-    description: |-
+    original: |-
       Displays an error dialog to the user.
   - name: expand_variables
     parameters:
@@ -51,7 +51,7 @@
     - name: variables
       type: ''
     return_type: value
-    description: |-
+    original: |-
       Expands any variables in the string
       `value` using the variables defined in the dictionary
       `variables`. `value` may also be an array or
@@ -63,7 +63,7 @@
     - name: pattern
       type: ''
     return_type: list(string)
-    description: |-
+    original: |-
       Finds resources whose file name matches the
       given pattern.
   - name: get_clipboard
@@ -72,14 +72,14 @@
       type: ''
       optional: true
     return_type: string
-    description: |-
+    original: |-
       Returns the contents of the clipboard.
       size_limit is there to protect against unnecessarily large
       data, defaults to 16,777,216 characters
   - name: installed_packages_path
     parameters: null
     return_type: string
-    description: |-
+    original: |-
       Returns the path where all the user's
       *.sublime-package files are.
   - name: load_binary_resource
@@ -87,7 +87,7 @@
     - name: name
       type: str
     return_type: bytes
-    description: |-
+    original: |-
       Loads the given resource. The name should be
       in the format
       `Packages/Default/Main.sublime-menu`.
@@ -96,7 +96,7 @@
     - name: name
       type: str
     return_type: string
-    description: |-
+    original: |-
       Loads the given resource. The name should be
       in the format
       `Packages/Default/Main.sublime-menu`.
@@ -105,7 +105,7 @@
     - name: base_name
       type: str
     return_type: Settings
-    description: |-
+    original: |-
       Loads the named settings. The name should
       include a file name and extension, but not a path. The
       packages will be searched for files matching the base name,
@@ -118,7 +118,7 @@
     - name: flag
       type: ''
     return_type: None
-    description: |-
+    original: |-
       Controls command logging. If enabled, all
       commands run from key bindings and the menu will be logged to
       the console.
@@ -127,7 +127,7 @@
     - name: flag
       type: ''
     return_type: None
-    description: |-
+    original: |-
       Controls input logging. If enabled, all key
       presses will be logged to the console.
   - name: log_result_regex
@@ -135,7 +135,7 @@
     - name: flag
       type: ''
     return_type: None
-    description: |-
+    original: |-
       Controls result regex logging. This is useful
       for debugging regular expressions used in build systems.
   - name: message_dialog
@@ -143,7 +143,7 @@
     - name: string
       type: str
     return_type: None
-    description: |-
+    original: |-
       Displays a message dialog to the user.
   - name: ok_cancel_dialog
     parameters:
@@ -153,7 +153,7 @@
       type: ''
       optional: true
     return_type: bool
-    description: |-
+    original: |-
       Displays an ok / cancel question dialog to
       the user. If ok_title is provided, this may be used as the
       text on the ok button. Returns True if the user presses the
@@ -161,12 +161,12 @@
   - name: packages_path
     parameters: null
     return_type: string
-    description: |-
+    original: |-
       Returns the base path to the packages.
   - name: platform
     parameters: null
     return_type: string
-    description: |-
+    original: |-
       Returns the platform, which may be "osx",
       "linux" or "windows"
   - name: run_command
@@ -177,7 +177,7 @@
       type: ''
       optional: true
     return_type: None
-    description: |-
+    original: |-
       Runs the named ApplicationCommand with the
       (optional) given arguments.
   - name: save_settings
@@ -185,7 +185,7 @@
     - name: base_name
       type: str
     return_type: None
-    description: |-
+    original: |-
       Flushes any in-memory changes to the named
       settings object to disk.
   - name: score_selector
@@ -195,7 +195,7 @@
     - name: selector
       type: ''
     return_type: int
-    description: |-
+    original: |-
       Matches the selector against the given scope,
       returning a score. A score of 0 means no match, above 0 means
       a match. Different selectors may be compared against the same
@@ -208,7 +208,7 @@
     - name: delay
       type: ''
     return_type: None
-    description: |-
+    original: |-
       Runs the callback on an alternate thread
       after the given delay (in milliseconds).
   - name: set_clipboard
@@ -216,7 +216,7 @@
     - name: string
       type: str
     return_type: None
-    description: |-
+    original: |-
       Sets the contents of the clipboard.
   - name: set_timeout
     parameters:
@@ -225,7 +225,7 @@
     - name: delay
       type: ''
     return_type: None
-    description: |-
+    original: |-
       Runs the callback in the main thread after
       the given delay (in milliseconds). Callbacks with an equal
       delay will be run in the order they were added.
@@ -234,18 +234,18 @@
     - name: string
       type: str
     return_type: None
-    description: |-
+    original: |-
       Sets the message that appears in the status
       bar.
   - name: version
     parameters: null
     return_type: string
-    description: |-
+    original: |-
       Returns the version number
   - name: windows
     parameters: null
     return_type: list(Window)
-    description: |-
+    original: |-
       Returns a list of all the open windows.
   - name: yes_no_cancel_dialog
     parameters:
@@ -258,7 +258,7 @@
       type: ''
       optional: true
     return_type: int
-    description: |-
+    original: |-
       Displays a yes / no / cancel question dialog
       to the user. If yes_title and/or no_title are provided, they
       will be used as the text on the corresponding buttons on some
@@ -286,22 +286,22 @@
         type: ''
       - name: b
         type: ''
-      description: |-
+      original: |-
         Creates a Region with initial values a and
         b.
     properties:
     - name: a
       value_type: int
-      description: |-
+      original: |-
         The first end of the region.
     - name: b
       value_type: int
-      description: |-
+      original: |-
         The second end of the region. May be less
         that a, in which case the region is a reversed one.
     - name: xpos
       value_type: int
-      description: |-
+      original: |-
         The target horizontal position of the region,
         or -1 if undefined. Effects behavior when pressing the up or
         down keys.
@@ -309,14 +309,14 @@
     - name: begin
       parameters: null
       return_type: int
-      description: |-
+      original: |-
         Returns the minimum of a and b.
     - name: contains
       parameters:
       - name: region
         type: Region
       return_type: bool
-      description: |-
+      original: |-
         Returns True iff the given region is a
         subset.
     - name: contains
@@ -324,7 +324,7 @@
       - name: point
         type: int
       return_type: bool
-      description: |-
+      original: |-
         Returns True iff begin() <= point <=
         end().
     - name: cover
@@ -332,25 +332,25 @@
       - name: region
         type: Region
       return_type: Region
-      description: |-
+      original: |-
         Returns a Region spanning both this and the
         given regions.
     - name: empty
       parameters: null
       return_type: bool
-      description: |-
+      original: |-
         Returns true iff begin() == end().
     - name: end
       parameters: null
       return_type: int
-      description: |-
+      original: |-
         Returns the maximum of a and b.
     - name: intersection
       parameters:
       - name: region
         type: Region
       return_type: Region
-      description: |-
+      original: |-
         Returns the set intersection of the two
         regions.
     - name: intersects
@@ -358,13 +358,13 @@
       - name: region
         type: Region
       return_type: bool
-      description: |-
+      original: |-
         Returns True iff this == region or both
         include one or more positions in common.
     - name: size
       parameters: null
       return_type: int
-      description: |-
+      original: |-
         Returns the number of characters spanned by
         the region. Always >= 0.
   - name: Selection
@@ -377,7 +377,7 @@
       - name: region
         type: Region
       return_type: None
-      description: |-
+      original: |-
         Adds the given region. It will be merged with
         any intersecting regions already contained within the
         set.
@@ -386,19 +386,19 @@
       - name: region_set
         type: Region
       return_type: None
-      description: |-
+      original: |-
         Adds all regions in the given set.
     - name: clear
       parameters: null
       return_type: None
-      description: |-
+      original: |-
         Removes all regions.
     - name: contains
       parameters:
       - name: region
         type: Region
       return_type: bool
-      description: |-
+      original: |-
         Returns true iff the given region is a
         subset.
     - name: subtract
@@ -406,7 +406,7 @@
       - name: region
         type: Region
       return_type: None
-      description: |-
+      original: |-
         Subtracts the region from all regions in the
         set.
   - name: Settings
@@ -420,7 +420,7 @@
       - name: on_change
         type: callable
       return_type: None
-      description: |-
+      original: |-
         Register a callback to be run whenever a
         setting in this object is changed.
     - name: clear_on_change
@@ -428,7 +428,7 @@
       - name: key
         type: str
       return_type: None
-      description: |-
+      original: |-
         Remove all callbacks registered with the
         given key.
     - name: erase
@@ -436,7 +436,7 @@
       - name: name
         type: str
       return_type: None
-      description: |-
+      original: |-
         Removes the named setting. Does not remove it
         from any parent Settings.
     - name: get
@@ -444,7 +444,7 @@
       - name: name
         type: str
       return_type: value
-      description: |-
+      original: |-
         Returns the named setting.
     - name: get
       parameters:
@@ -453,7 +453,7 @@
       - name: default
         type: ''
       return_type: value
-      description: |-
+      original: |-
         Returns the named setting, or default if it's
         not defined.
     - name: has
@@ -461,7 +461,7 @@
       - name: name
         type: str
       return_type: bool
-      description: |-
+      original: |-
         Returns true iff the named option exists in
         this set of Settings or one of its parents.
     - name: set
@@ -471,7 +471,7 @@
       - name: value
         type: ''
       return_type: None
-      description: |-
+      original: |-
         Sets the named setting. Only primitive types,
         lists, and dictionaries are accepted.
   - name: View
@@ -496,7 +496,7 @@
         type: int
         optional: true
       return_type: None
-      description: |-
+      original: |-
         Add a set of regions to the view. If a set of regions
         already exists with the given key, they will be
         overwritten. The scope is used to source a color to draw
@@ -555,13 +555,13 @@
     - name: buffer_id
       parameters: null
       return_type: int
-      description: |-
+      original: |-
         Returns a number that uniquely identifies the
         buffer underlying this view.
     - name: change_count
       parameters: null
       return_type: int
-      description: |-
+      original: |-
         Returns the current change count. Each time
         the buffer is modified, the change count is incremented. The
         change count can be used to determine if the buffer has
@@ -571,7 +571,7 @@
       - name: point
         type: int
       return_type: int
-      description: |-
+      original: |-
         Classifies pt, returning a bitwise OR of zero or more of
         these flags:
 
@@ -601,7 +601,7 @@
         type: ''
         optional: true
       return_type: (String,Dict,int)
-      description: |-
+      original: |-
         Returns the command name, command arguments, and repeat
         count for the given history entry, as stored in the undo /
         redo stack.
@@ -617,13 +617,13 @@
     - name: em_width
       parameters: null
       return_type: real
-      description: |-
+      original: |-
         Returns the typical character width used in
         the layout
     - name: encoding
       parameters: null
       return_type: string
-      description: |-
+      original: |-
         Returns the encoding currently associated
         with the file
     - name: erase
@@ -633,7 +633,7 @@
       - name: region
         type: Region
       return_type: None
-      description: |-
+      original: |-
         Erases the contents of the region from the
         buffer.
     - name: erase_regions
@@ -641,14 +641,14 @@
       - name: key
         type: str
       return_type: None
-      description: |-
+      original: |-
         Removed the named regions
     - name: erase_status
       parameters:
       - name: key
         type: str
       return_type: None
-      description: |-
+      original: |-
         Clears the named status.
     - name: expand_by_class
       parameters:
@@ -660,7 +660,7 @@
         type: ''
         optional: true
       return_type: Region
-      description: |-
+      original: |-
         Expands point to the left and right, until
         each side lands on a location that matches classes. classes
         is a bitwise OR of the sublime.CLASS_XXX flags. separators
@@ -676,7 +676,7 @@
         type: ''
         optional: true
       return_type: Region
-      description: |-
+      original: |-
         Expands region to the left and right, until
         each side lands on a location that matches classes. classes
         is a bitwise OR of the sublime.CLASS_XXX flags. separators
@@ -687,13 +687,13 @@
       - name: point
         type: int
       return_type: Region
-      description: |-
+      original: |-
         Returns the extent of the syntax name
         assigned to the character at the given point.
     - name: file_name
       parameters: null
       return_type: string
-      description: |-
+      original: |-
         The full name file the file associated with
         the buffer, or None if it doesn't exist on disk.
     - name: find
@@ -706,7 +706,7 @@
         type: int
         optional: true
       return_type: Region
-      description: |-
+      original: |-
         Returns the first Region matching the regex
         pattern, starting from the given point, or None if it can't
         be found. The optional flags parameter may be
@@ -726,7 +726,7 @@
         type: ''
         optional: true
       return_type: list(Region)
-      description: |-
+      original: |-
         Returns all (non-overlapping) regions
         matching the regex pattern. The optional flags parameter may
         be sublime.LITERAL, sublime.IGNORECASE, or the two ORed
@@ -745,7 +745,7 @@
         type: ''
         optional: true
       return_type: Region
-      description: |-
+      original: |-
         Finds the next location after point that
         matches the given classes. If forward is False, searches
         backwards instead of forwards. classes is a bitwise OR of the
@@ -757,7 +757,7 @@
       - name: selector
         type: ''
       return_type: list(Regions)
-      description: |-
+      original: |-
         Finds all regions in the file matching the
         given selector, returning them as a list.
     - name: fold
@@ -765,7 +765,7 @@
       - name: regions
         type: list(Region)
       return_type: bool
-      description: |-
+      original: |-
         Folds the given regions, returning False if
         they were already folded
     - name: fold
@@ -773,7 +773,7 @@
       - name: region
         type: Region
       return_type: bool
-      description: |-
+      original: |-
         Folds the given region, returning False if it
         was already folded
     - name: full_line
@@ -781,7 +781,7 @@
       - name: point
         type: int
       return_type: Region
-      description: |-
+      original: |-
         As line(), but the region includes the
         trailing newline character, if any.
     - name: full_line
@@ -789,7 +789,7 @@
       - name: region
         type: Region
       return_type: Region
-      description: |-
+      original: |-
         As line(), but the region includes the
         trailing newline character, if any.
     - name: get_regions
@@ -797,7 +797,7 @@
       - name: key
         type: str
       return_type: list(Region)
-      description: |-
+      original: |-
         Return the regions associated with the given
         key, if any
     - name: get_status
@@ -805,13 +805,13 @@
       - name: key
         type: str
       return_type: string
-      description: |-
+      original: |-
         Returns the previously assigned value
         associated with the key, if any.
     - name: id
       parameters: null
       return_type: int
-      description: |-
+      original: |-
         Returns a number that uniquely identifies
         this view.
     - name: insert
@@ -823,7 +823,7 @@
       - name: string
         type: str
       return_type: int
-      description: |-
+      original: |-
         Inserts the given string in the buffer at the
         specified point. Returns the number of characters inserted:
         this may be different if tabs are being translated into
@@ -831,31 +831,31 @@
     - name: is_dirty
       parameters: null
       return_type: bool
-      description: |-
+      original: |-
         Returns true if there are any unsaved
         modifications to the buffer.
     - name: is_loading
       parameters: null
       return_type: bool
-      description: |-
+      original: |-
         Returns true if the buffer is still loading
         from disk, and not ready for use.
     - name: is_read_only
       parameters: null
       return_type: bool
-      description: |-
+      original: |-
         Returns true if the buffer may not be
         modified.
     - name: is_scratch
       parameters: null
       return_type: bool
-      description: |-
+      original: |-
         Returns true if the buffer is a scratch
         buffer. Scratch buffers never report as being dirty.
     - name: layout_extent
       parameters: null
       return_type: 2-tuple
-      description: |-
+      original: |-
         Returns the width and height of the
         layout.
     - name: layout_to_text
@@ -863,7 +863,7 @@
       - name: vector
         type: 2-tuple
       return_type: int
-      description: |-
+      original: |-
         Converts a layout position to a text
         position
     - name: line
@@ -871,7 +871,7 @@
       - name: point
         type: int
       return_type: Region
-      description: |-
+      original: |-
         Returns the line that contains the
         point.
     - name: line
@@ -879,20 +879,20 @@
       - name: region
         type: Region
       return_type: Region
-      description: |-
+      original: |-
         Returns a modified copy of region such that
         it starts at the beginning of a line, and ends at the end of
         a line. Note that it may span several lines.
     - name: line_endings
       parameters: null
       return_type: string
-      description: |-
+      original: |-
         Returns the line endings used by the current
         file.
     - name: line_height
       parameters: null
       return_type: real
-      description: |-
+      original: |-
         Returns the light height used in the
         layout
     - name: lines
@@ -900,18 +900,18 @@
       - name: region
         type: Region
       return_type: list(Region)
-      description: |-
+      original: |-
         Returns a list of lines (in sorted order)
         intersecting the region.
     - name: name
       parameters: null
       return_type: string
-      description: |-
+      original: |-
         The name assigned to the buffer, if any
     - name: overwrite_status
       parameters: null
       return_type: Bool
-      description: |-
+      original: |-
         Returns the overwrite status, which the user
         normally toggles via the insert key.
     - name: replace
@@ -923,7 +923,7 @@
       - name: string
         type: str
       return_type: None
-      description: |-
+      original: |-
         Replaces the contents of the region with the
         given string.
     - name: rowcol
@@ -931,7 +931,7 @@
       - name: point
         type: int
       return_type: (int, int)
-      description: |-
+      original: |-
         Calculates the 0 based line and column
         numbers of the point.
     - name: run_command
@@ -942,7 +942,7 @@
         type: ''
         optional: true
       return_type: None
-      description: |-
+      original: |-
         Runs the named TextCommand with the
         (optional) given arguments.
     - name: scope_name
@@ -950,7 +950,7 @@
       - name: point
         type: int
       return_type: string
-      description: |-
+      original: |-
         Returns the syntax name assigned to the
         character at the given point.
     - name: score_selector
@@ -960,7 +960,7 @@
       - name: selector
         type: ''
       return_type: int
-      description: |-
+      original: |-
         Matches the selector against the scope at the
         given location, returning a score. A score of 0 means no
         match, above 0 means a match. Different selectors may be
@@ -969,14 +969,14 @@
     - name: sel
       parameters: null
       return_type: Selection
-      description: |-
+      original: |-
         Returns a reference to the selection.
     - name: set_encoding
       parameters:
       - name: encoding
         type: ''
       return_type: None
-      description: |-
+      original: |-
         Applies a new encoding to the file. This
         encoding will be used the next time the file is saved.
     - name: set_line_endings
@@ -984,7 +984,7 @@
       - name: line_endings
         type: ''
       return_type: None
-      description: |-
+      original: |-
         Sets the line endings that will be applied
         when next saving.
     - name: set_name
@@ -992,21 +992,21 @@
       - name: name
         type: str
       return_type: None
-      description: |-
+      original: |-
         Assigns a name to the buffer
     - name: set_overwrite_status
       parameters:
       - name: enabled
         type: ''
       return_type: None
-      description: |-
+      original: |-
         Sets the overwrite status.
     - name: set_read_only
       parameters:
       - name: value
         type: ''
       return_type: None
-      description: |-
+      original: |-
         Sets the read only property on the
         buffer.
     - name: set_scratch
@@ -1014,7 +1014,7 @@
       - name: value
         type: ''
       return_type: None
-      description: |-
+      original: |-
         Sets the scratch property on the buffer.
     - name: set_status
       parameters:
@@ -1023,7 +1023,7 @@
       - name: value
         type: ''
       return_type: None
-      description: |-
+      original: |-
         Adds the status key to the view. The value
         will be displayed in the status bar, in a comma separated
         list of all status values, ordered by key. Setting the value
@@ -1033,7 +1033,7 @@
       - name: syntax_file
         type: ''
       return_type: None
-      description: |-
+      original: |-
         Changes the syntax used by the view.
         `syntax_file` should be a name along the lines of
         `Packages/Python/Python.tmLanguage`. To retrieve the
@@ -1047,13 +1047,13 @@
         type: ''
         optional: true
       return_type: None
-      description: |-
+      original: |-
         Scrolls the viewport to the given layout
         position.
     - name: settings
       parameters: null
       return_type: Settings
-      description: |-
+      original: |-
         Returns a reference to the views settings
         object. Any changes to this settings object will be private
         to this view.
@@ -1065,7 +1065,7 @@
         type: ''
         optional: true
       return_type: None
-      description: |-
+      original: |-
         Scroll the view to show the given point.
     - name: show
       parameters:
@@ -1075,7 +1075,7 @@
         type: ''
         optional: true
       return_type: None
-      description: |-
+      original: |-
         Scroll the view to show the given
         region.
     - name: show
@@ -1086,7 +1086,7 @@
         type: ''
         optional: true
       return_type: None
-      description: |-
+      original: |-
         Scroll the view to show the given region
         set.
     - name: show_at_center
@@ -1094,14 +1094,14 @@
       - name: point
         type: int
       return_type: None
-      description: |-
+      original: |-
         Scroll the view to center on the point.
     - name: show_at_center
       parameters:
       - name: region
         type: Region
       return_type: None
-      description: |-
+      original: |-
         Scroll the view to center on the region.
     - name: show_popup_menu
       parameters:
@@ -1113,7 +1113,7 @@
         type: int
         optional: true
       return_type: None
-      description: |-
+      original: |-
         Shows a pop up menu at the caret, to select an item in a
         list. on_done will be called once, with the index of the
         selected item. If the pop up menu was cancelled, on_done
@@ -1125,7 +1125,7 @@
     - name: size
       parameters: null
       return_type: int
-      description: |-
+      original: |-
         Returns the number of character in the
         file.
     - name: split_by_newlines
@@ -1133,7 +1133,7 @@
       - name: region
         type: Region
       return_type: list(Region)
-      description: |-
+      original: |-
         Splits the region up such that each region
         returned exists on exactly one line.
     - name: substr
@@ -1141,7 +1141,7 @@
       - name: region
         type: Region
       return_type: string
-      description: |-
+      original: |-
         Returns the contents of the region as a
         string.
     - name: substr
@@ -1149,7 +1149,7 @@
       - name: point
         type: int
       return_type: string
-      description: |-
+      original: |-
         Returns the character to the right of the
         point.
     - name: symbols
@@ -1157,7 +1157,7 @@
       - name: line_endings
         type: ''
       return_type: list((Region, String))
-      description: |-
+      original: |-
         Extract all the symbols defined in the
         buffer.
     - name: text_point
@@ -1167,7 +1167,7 @@
       - name: col
         type: ''
       return_type: int
-      description: |-
+      original: |-
         Calculates the character offset of the given,
         0 based, row and column. Note that 'col' is interpreted as
         the number of characters to advance past the beginning of the
@@ -1177,7 +1177,7 @@
       - name: point
         type: int
       return_type: 2-tuple
-      description: |-
+      original: |-
         Converts a text position to a layout
         position
     - name: unfold
@@ -1185,7 +1185,7 @@
       - name: region
         type: Region
       return_type: list(Region)
-      description: |-
+      original: |-
         Unfolds all text in the region, returning the
         unfolded regions
     - name: unfold
@@ -1193,31 +1193,31 @@
       - name: regions
         type: list(Region)
       return_type: list(Region)
-      description: |-
+      original: |-
         Unfolds all text in the regions, returning
         the unfolded regions
     - name: viewport_extent
       parameters: null
       return_type: 2-tuple
-      description: |-
+      original: |-
         Returns the width and height of the
         viewport.
     - name: viewport_position
       parameters: null
       return_type: 2-tuple
-      description: |-
+      original: |-
         Returns the offset of the viewport in layout
         coordinates.
     - name: visible_region
       parameters: null
       return_type: Region
-      description: |-
+      original: |-
         Returns the currently visible area of the
         view.
     - name: window
       parameters: null
       return_type: Window
-      description: |-
+      original: |-
         Returns a reference to the window containing
         the view.
     - name: window_to_layout
@@ -1225,7 +1225,7 @@
       - name: vector
         type: 2-tuple
       return_type: 2-tuple
-      description: |-
+      original: |-
         Converts a window position to a layout
         position
     - name: window_to_text
@@ -1233,7 +1233,7 @@
       - name: vector
         type: 2-tuple
       return_type: int
-      description: |-
+      original: |-
         Converts a window position to a text
         position
     - name: word
@@ -1241,7 +1241,7 @@
       - name: point
         type: int
       return_type: Region
-      description: |-
+      original: |-
         Returns the word that contains the
         point.
     - name: word
@@ -1249,7 +1249,7 @@
       - name: region
         type: Region
       return_type: Region
-      description: |-
+      original: |-
         Returns a modified copy of region such that
         it starts at the beginning of a word, and ends at the end of
         a word. Note that it may span several words.
@@ -1260,20 +1260,20 @@
     - name: active_group
       parameters: null
       return_type: int
-      description: |-
+      original: |-
         Returns the index of the currently selected
         group.
     - name: active_view
       parameters: null
       return_type: View
-      description: |-
+      original: |-
         Returns the currently edited view.
     - name: active_view_in_group
       parameters:
       - name: group
         type: int
       return_type: View
-      description: |-
+      original: |-
         Returns the currently edited view in the
         given group.
     - name: create_output_panel
@@ -1281,7 +1281,7 @@
       - name: name
         type: str
       return_type: View
-      description: |-
+      original: |-
         Returns the view associated with the named
         output panel, created it if required. The output panel can be
         shown by running the `show_panel` window command, with
@@ -1290,7 +1290,7 @@
     - name: extract_variables
       parameters: null
       return_type: dictionary
-      description: |-
+      original: |-
         Returns a dictionary of strings populated
         with contextual keys: `packages, platform, file,
         file_path, file_name, file_base_name, file_extension, folder,
@@ -1302,7 +1302,7 @@
       - name: file_name
         type: str
       return_type: View
-      description: |-
+      original: |-
         Finds the named file in the list of open
         files, and returns the corresponding View, or None if no such
         file is open.
@@ -1311,19 +1311,19 @@
       - name: group
         type: int
       return_type: None
-      description: |-
+      original: |-
         Makes the given group active.
     - name: focus_view
       parameters:
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Switches to the given view.
     - name: folders
       parameters: null
       return_type: list(string)
-      description: |-
+      original: |-
         Returns a list of the currently open
         folders.
     - name: get_view_index
@@ -1331,13 +1331,13 @@
       - name: view
         type: View
       return_type: (group, index)
-      description: |-
+      original: |-
         Returns the group, and index within the group
         of the view. Returns -1 if not found.
     - name: id
       parameters: null
       return_type: int
-      description: |-
+      original: |-
         Returns a number that uniquely identifies
         this window.
     - name: lookup_symbol_in_index
@@ -1345,7 +1345,7 @@
       - name: symbol
         type: ''
       return_type: list(Location)
-      description: |-
+      original: |-
         Returns all locations where the symbol is
         defined across files in the current project.
     - name: lookup_symbol_in_open_files
@@ -1353,19 +1353,19 @@
       - name: symbol
         type: ''
       return_type: list(Location)
-      description: |-
+      original: |-
         Returns all locations where the symbol is
         defined across open files.
     - name: new_file
       parameters: null
       return_type: View
-      description: |-
+      original: |-
         Creates a new file. The returned view will be
         empty, and its is_loaded method will return True.
     - name: num_groups
       parameters: null
       return_type: int
-      description: |-
+      original: |-
         Returns the number of view groups in the
         window.
     - name: open_file
@@ -1376,7 +1376,7 @@
         type: int
         optional: true
       return_type: View
-      description: |-
+      original: |-
         Opens the named file, and returns the corresponding view.
         If the file is already opened, it will be brought to the
         front. Note that as file loading is asynchronous,
@@ -1397,14 +1397,14 @@
     - name: project_data
       parameters: null
       return_type: dictionary
-      description: |-
+      original: |-
         Returns the project data associated with the
         current window. The data is in the same format as the
         contents of a .sublime-project file.
     - name: project_file_name
       parameters: null
       return_type: string
-      description: |-
+      original: |-
         Returns name of the currently opened project
         file, if any.
     - name: run_command
@@ -1415,7 +1415,7 @@
         type: ''
         optional: true
       return_type: None
-      description: |-
+      original: |-
         Runs the named Command with the (optional)
         given arguments. Window.run_command is able to run both any
         sort of command, dispatching the command via input
@@ -1425,7 +1425,7 @@
       - name: data
         type: ''
       return_type: None
-      description: |-
+      original: |-
         Updates the project data associated with the
         current window. If the window is associated with a
         .sublime-project file, the project file will be updated on
@@ -1439,7 +1439,7 @@
       - name: index
         type: int
       return_type: None
-      description: |-
+      original: |-
         Moves the view to the given group and
         index.
     - name: show_input_panel
@@ -1455,7 +1455,7 @@
       - name: on_cancel
         type: callable
       return_type: View
-      description: |-
+      original: |-
         Shows the input panel, to collect a line of
         input from the user. on_done and on_change, if not None,
         should both be functions that expect a single string
@@ -1478,7 +1478,7 @@
         type: callable
         optional: true
       return_type: None
-      description: |-
+      original: |-
         Shows a quick panel, to select an item in a list. on_done
         will be called once, with the index of the selected item.
         If the quick panel was cancelled, on_done will be called
@@ -1496,14 +1496,14 @@
     - name: views
       parameters: null
       return_type: list(View)
-      description: |-
+      original: |-
         Returns all open views in the window.
     - name: views_in_group
       parameters:
       - name: group
         type: int
       return_type: list(View)
-      description: |-
+      original: |-
         Returns all open views in the given
         group.
 - name: sublime_plugin
@@ -1518,7 +1518,7 @@
         type: ''
         optional: true
       return_type: string
-      description: |-
+      original: |-
         Returns a description of the command with the
         given arguments. Used in the menu, if no caption is provided.
         Return None to get the default description.
@@ -1528,7 +1528,7 @@
         type: ''
         optional: true
       return_type: bool
-      description: |-
+      original: |-
         Returns true if a checkbox should be shown
         next to the menu item. The `.sublime-menu` file must
         have the checkbox attribute set to true for this to be
@@ -1539,7 +1539,7 @@
         type: ''
         optional: true
       return_type: bool
-      description: |-
+      original: |-
         Returns true if the command is able to be run
         at this time. The default implementation simply always
         returns True.
@@ -1549,7 +1549,7 @@
         type: ''
         optional: true
       return_type: bool
-      description: |-
+      original: |-
         Returns true if the command should be shown
         in the menu at this time. The default implementation always
         returns True.
@@ -1559,7 +1559,7 @@
         type: ''
         optional: true
       return_type: None
-      description: |-
+      original: |-
         Called when the command is run.
   - name: EventListener
     description: |-
@@ -1573,14 +1573,14 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called when a view gains input focus.
     - name: on_activated_async
       parameters:
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called when a view gains input focus. Runs in
         a separate thread, and does not block the application.
     - name: on_clone
@@ -1588,7 +1588,7 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called when a view is cloned from an existing
         one.
     - name: on_clone_async
@@ -1596,7 +1596,7 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called when a view is cloned from an existing
         one. Runs in a separate thread, and does not block the
         application.
@@ -1605,7 +1605,7 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called when a view is closed (note, there may
         still be other views into the same buffer).
     - name: on_deactivated
@@ -1613,14 +1613,14 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called when a view loses input focus.
     - name: on_deactivated_async
       parameters:
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called when a view loses input focus. Runs in
         a separate thread, and does not block the application.
     - name: on_load
@@ -1628,7 +1628,7 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called when the file is finished
         loading.
     - name: on_load_async
@@ -1636,7 +1636,7 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called when the file is finished loading.
         Runs in a separate thread, and does not block the
         application.
@@ -1645,7 +1645,7 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called after changes have been made to a
         view.
     - name: on_modified_async
@@ -1653,7 +1653,7 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called after changes have been made to a
         view. Runs in a separate thread, and does not block the
         application.
@@ -1662,14 +1662,14 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called when a new buffer is created.
     - name: on_new_async
       parameters:
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called when a new buffer is created. Runs in
         a separate thread, and does not block the application.
     - name: on_post_save
@@ -1677,14 +1677,14 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called after a view has been saved.
     - name: on_post_save_async
       parameters:
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called after a view has been saved. Runs in a
         separate thread, and does not block the application.
     - name: on_pre_close
@@ -1692,7 +1692,7 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called when a view is about to be closed. The
         view will still be in the window at this point.
     - name: on_pre_save
@@ -1700,14 +1700,14 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called just before a view is saved.
     - name: on_pre_save_async
       parameters:
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called just before a view is saved. Runs in a
         separate thread, and does not block the application.
     - name: on_query_context
@@ -1723,7 +1723,7 @@
       - name: match_all
         type: ''
       return_type: bool or None
-      description: |-
+      original: |-
         Called when determining to trigger a key binding with the
         given context key. If the plugin knows how to respond to
         the context, it should return either True of False. If the
@@ -1762,7 +1762,7 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called after the selection has been modified
         in a view.
     - name: on_selection_modified_async
@@ -1770,7 +1770,7 @@
       - name: view
         type: View
       return_type: None
-      description: |-
+      original: |-
         Called after the selection has been modified
         in a view. Runs in a separate thread, and does not block the
         application.
@@ -1783,7 +1783,7 @@
       - name: args
         type: ''
       return_type: (new_command_name, new_args)
-      description: |-
+      original: |-
         Called when a text command is issued. The
         listener may return a (command, arguments) tuple to rewrite
         the command, or None to run the command unmodified.
@@ -1796,7 +1796,7 @@
       - name: args
         type: ''
       return_type: (new_command_name, new_args)
-      description: |-
+      original: |-
         Called when a window command is issued. The
         listener may return a (command, arguments) tuple to rewrite
         the command, or None to run the command unmodified.
@@ -1809,7 +1809,7 @@
       - name: args
         type: ''
       return_type: None
-      description: |-
+      original: |-
         Called after a text command has been
         executed.
     - name: post_window_command
@@ -1821,7 +1821,7 @@
       - name: args
         type: ''
       return_type: None
-      description: |-
+      original: |-
         Called after a window command has been
         executed.
   - name: TextCommand
@@ -1836,7 +1836,7 @@
         type: ''
         optional: true
       return_type: string
-      description: |-
+      original: |-
         Returns a description of the command with the
         given arguments. Used in the menus, and for Undo / Redo
         descriptions. Return None to get the default
@@ -1847,7 +1847,7 @@
         type: ''
         optional: true
       return_type: bool
-      description: |-
+      original: |-
         Returns true if the command is able to be run
         at this time. The default implementation simply always
         returns True.
@@ -1857,7 +1857,7 @@
         type: ''
         optional: true
       return_type: bool
-      description: |-
+      original: |-
         Returns true if the command should be shown
         in the menu at this time. The default implementation always
         returns True.
@@ -1869,12 +1869,12 @@
         type: ''
         optional: true
       return_type: None
-      description: |-
+      original: |-
         Called when the command is run.
     - name: want_event
       parameters: null
       return_type: bool
-      description: |-
+      original: |-
         Return True to receive an `event`
         argument when the command is triggered by a mouse action. The
         event information allows commands to determine which portion
@@ -1892,7 +1892,7 @@
         type: ''
         optional: true
       return_type: string
-      description: |-
+      original: |-
         Returns a description of the command with the
         given arguments. Used in the menu, if no caption is provided.
         Return None to get the default description.
@@ -1902,7 +1902,7 @@
         type: ''
         optional: true
       return_type: bool
-      description: |-
+      original: |-
         Returns true if the command is able to be run
         at this time. The default implementation simply always
         returns True.
@@ -1912,7 +1912,7 @@
         type: ''
         optional: true
       return_type: bool
-      description: |-
+      original: |-
         Returns true if the command should be shown
         in the menu at this time. The default implementation always
         returns True.
@@ -1922,5 +1922,5 @@
         type: ''
         optional: true
       return_type: None
-      description: |-
+      original: |-
         Called when the command is run.
