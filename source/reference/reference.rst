@@ -21,9 +21,9 @@ try the general index.
     build_systems
     key_bindings
     Settings <settings>
+    completions
     symbols
     comments
-    completions
     metadata
     Command Palette <command_palette>
     plugins
