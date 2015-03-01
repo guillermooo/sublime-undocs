@@ -10,14 +10,14 @@ Searching
 To open the **search panel** for buffers, press :kbd:`Ctrl + F`. Some options
 and actions available through this panel can be controlled from the keyboard:
 
-==========================	====================
-Toggle Regular Expressions	:kbd:`Alt + R`
-Toggle Case Sensitivity   	:kbd:`Alt + C`
-Toggle Exact Match       	:kbd:`Alt + W`
-Find Next					:kbd:`Enter`
-Find Previous				:kbd:`Shift + Enter`
-Find All					:kbd:`Alt + Enter`
-==========================	====================
+==========================  ====================
+Toggle Regular Expressions  :kbd:`Alt + R`
+Toggle Case Sensitivity     :kbd:`Alt + C`
+Toggle Exact Match          :kbd:`Alt + W`
+Find Next                   :kbd:`Enter`
+Find Previous               :kbd:`Shift + Enter`
+Find All                    :kbd:`Alt + Enter`
+==========================  ====================
 
 .. _snr-incremental-search-buffer:
 
@@ -39,10 +39,10 @@ Replacing Text
 To open the replace planel, press :kbd:`Ctrl + H`. Some actions available through
 this panel can be controlled from the keyboard.
 
-==========================	=========================
-Replace All:				:kbd:`Ctrl + Alt + Enter`
-Replace Next:				:kbd:`Ctrl + Shift + H`
-==========================	=========================
+==========================  =========================
+Replace All:                :kbd:`Ctrl + Alt + Enter`
+Replace Next:               :kbd:`Ctrl + Shift + H`
+==========================  =========================
 
 
 .. _snr-tips-buffer:
@@ -63,11 +63,11 @@ Other Search-Related Key Bindings
 
 These key bindings work when the search panel is hidden.
 
-===============================================	=================
-Search Forward Using Most Recent Pattern 		:kbd:`F3`
-Search Backwards Using Most Recent Pattern		:kbd:`Shift + F3`
-Select All Matches Using Most Recent Pattern	:kbd:`Alt + F3`
-===============================================	=================
+=============================================== =================
+Search Forward Using Most Recent Pattern        :kbd:`F3`
+Search Backwards Using Most Recent Pattern      :kbd:`Shift + F3`
+Select All Matches Using Most Recent Pattern    :kbd:`Alt + F3`
+=============================================== =================
 
 .. XXX search under cursor ??
 
