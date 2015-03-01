@@ -1,0 +1,22 @@
+/* !important prevents the common CSS stylesheets from
+ * overriding this as on RTD they are loaded after this stylesheet.
+ */
+
+/* override table width restrictions */
+.wy-table-responsive table td, .wy-table-responsive table th {
+  white-space: normal !important;
+}
+
+/* The following is not needed, but kept for reference: */
+/*
+.wy-table-responsive {
+  overflow: visible !important;
+}
+*/
+
+/* override weird spacing of explicit line blocks; currently not needed */
+/*
+.rst-content .line-block {
+  margin-left: 0 !important;
+}
+*/
