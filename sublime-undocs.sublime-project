@@ -3,7 +3,7 @@
         {
             "path": ".",
             "follow_symlinks": true,
-            "folder_exclude_patterns": ["build"]
+            "folder_exclude_patterns": ["build", "__pycache__"]
         }
     ],
     "build_systems": [
@@ -15,9 +15,7 @@
 
             "windows": {
                 "cmd": ["make.bat", "html"]
-            },
-
-            "selector": "text.restructuredtext, source.python"
+            }
         }
     ],
     "settings": {
