@@ -1,11 +1,11 @@
-============
-Key Bindings
-============
+==============
+ Key Bindings
+==============
 
 .. seealso::
 
    :doc:`Reference for key bindings </reference/key_bindings>`
-        Complete documentation on key bindings.
+      Complete documentation on key bindings.
 
 Key bindings let you
 map sequences of key presses to commands.
@@ -21,7 +21,8 @@ File Format
 ..          File Name: Default(<platorm>).sublime-keymap
 
 Key bindings are defined in JSON
-and stored in *.sublime-keymap* files.
+and stored in ``.sublime-keymap`` files.
+
 In the same package, separate keymap files
 for Linux, OSX and Windows
 may exist for better OS integration.
@@ -33,8 +34,8 @@ Example
 .. code-block:: json
 
    [
-       { "keys": ["ctrl+shift+n"], "command": "new_window" },
-       { "keys": ["ctrl+o"], "command": "prompt_open_file" }
+      { "keys": ["ctrl+shift+n"], "command": "new_window" },
+      { "keys": ["ctrl+o"], "command": "prompt_open_file" }
    ]
 
 
@@ -118,9 +119,9 @@ composed of multiple keys.
    { "keys": ["ctrl+k", "ctrl+v"], "command": "paste_from_history" }
 
 Here, to trigger the command ``paste_from_history``,
-you have to press :kbd:`Ctrl`+:kbd:`k` first,
-then release :kbd:`k`,
-and finally press :kbd:`v`.
+you have to press :kbd:`Ctrl + K` first,
+then release :kbd:`K`,
+and finally press :kbd:`V`.
 
 Note: This example is a default key binding,
 so you can try it at any time.
