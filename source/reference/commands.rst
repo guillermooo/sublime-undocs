@@ -91,6 +91,15 @@ Commands
 
 	- **characters** [String]: String to be inserted.
 
+**append**
+	Inserts a string at the end of the view.
+
+	XXX
+
+	- **characters** [String]: String to be inserted.
+	- **force** [Bool]:
+	- **scroll_to_end** [Bool]:
+
 **move**
 	Advances the caret by predefined units.
 
