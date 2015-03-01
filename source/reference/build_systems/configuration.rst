@@ -224,19 +224,25 @@ Build System Variables
 Build systems expand the following variables
 in ``.sublime-build`` files:
 
-====================== =====================================================================================
-``$file_path``         The directory of the current file, e.g., *C:\\Files*.
-``$file``              The full path to the current file, e.g., *C:\\Files\\Chapter1.txt*.
-``$file_name``         The name portion of the current file, e.g., *Chapter1.txt*.
-``$file_extension``    The extension portion of the current file, e.g., *txt*.
-``$file_base_name``    The name-only portion of the current file, e.g., *Document*.
-``$packages``          The full path to the *Packages* folder.
-``$project``           The full path to the current project file.
-``$project_path``      The directory of the current project file.
-``$project_name``      The name portion of the current project file.
-``$project_extension`` The extension portion of the current project file.
-``$project_base_name`` The name-only portion of the current project file.
-====================== =====================================================================================
+======================  ===========================================================
+``$file_path``          The directory of the current file,
+                        e.g., *C:\\Files*.
+``$file``               The full path to the current file,
+                        e.g., *C:\\Files\\Chapter1.txt*.
+``$file_name``          The name portion of the current file,
+                        e.g., *Chapter1.txt*.
+``$file_extension``     The extension portion of the current file,
+                        e.g., *txt*.
+``$file_base_name``     The name-only portion of the current file,
+                        e.g., *Document*.
+``$folder``             The path to the first folder opened in the current project.
+``$project``            The full path to the current project file.
+``$project_path``       The directory of the current project file.
+``$project_name``       The name portion of the current project file.
+``$project_extension``  The extension portion of the current project file.
+``$project_base_name``  The name-only portion of the current project file.
+``$packages``           The full path to the *Packages* folder.
+======================  ===========================================================
 
 Placeholders for Variables
 **************************
