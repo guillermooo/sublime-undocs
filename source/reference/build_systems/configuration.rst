@@ -2,6 +2,14 @@
 Build Systems -- Configuration
 ==============================
 
+.. warning::
+
+   Build system selection is currently
+   undergoing a rework in the dev channel.
+   The following information may be outdated.
+
+   See `this forum thread <http://www.sublimetext.com/forum/viewtopic.php?f=2&t=17471&sid=81fd17a6c886e151a3f69c0eaa87272d>`_ for details.
+
 Overview
 ========
 
