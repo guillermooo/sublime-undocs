@@ -6,7 +6,8 @@ Build System -- Basics
 Overview
 ========
 
-Using build systems, you can run files
+Using build systems,
+you can run files
 through external programs
 without leaving Sublime Text,
 and see the output they generate.
@@ -41,9 +42,13 @@ as a JSON object.
 This file is used to specify
 switches, options and environmental data.
 Each ``.sublime-build`` file
-is normally associated with a specific scope.
+is normally associated
+with a specific scope.
 
-The file name is ignored by Sublime Text.
+The file name represents the name
+of the build system
+and will be displayed
+whenever you can select a build system.
 
 
 Example
@@ -107,7 +112,7 @@ that configure its behavior.
 
 .. note::
 
-    Build systems can but don't need to
-    call external programs---a build system
-    could be implemented entirely
-    as a Sublime Text command.
+   Build systems can but don't need to
+   call external programs---a build system
+   could be implemented entirely
+   as a Sublime Text command.
