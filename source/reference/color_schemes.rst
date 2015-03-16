@@ -8,7 +8,7 @@ Overview
 
 Color schemes define the colors
 used to highlight source code in Sublime Text views
-and the colors used for different elements
+and the colors use for different elements
 found in the editing area:
 background, foreground, selection, caret, etc.
 
@@ -94,7 +94,9 @@ Subelements of Settings
 Sublime Text supports
 the following color scheme settings:
 
+
 Global Settings
+---------------
 
 Not associated with any scope.
 These settings affect global visual items in the editing area.
@@ -215,8 +217,12 @@ These settings affect global visual items in the editing area.
    Foreground color for reggions added via ``sublime.add_regions()``
    with the ``sublime.DRAW_OUTLINED`` flag added.
 
-``Scoped Settings``
-   Associated with a particular scope.
+
+Scoped Settings
+---------------
+
+Associated with a particular scope.
+
 
 ``name``
    Descriptive name of the item.
@@ -240,7 +246,9 @@ These settings affect global visual items in the editing area.
 ``background``
    Background color.
 
-   Sublime Text Settings Related to Color Schemes
+
+Sublime Text Settings Related to Color Schemes
+==============================================
 
 ``color_scheme``
    Path to a color scheme file
