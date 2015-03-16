@@ -19,7 +19,7 @@ File Format
 Color scheme files use the Property List format
 and have the .tmTheme extension.
 The file names of color scheme files
-are displayed in the Preferences → Color Scheme menu.
+are displayed in the **Preferences → Color Scheme** menu.
 
 The file format of color schemes
 is inherited from Textmate.
@@ -49,7 +49,7 @@ Most frequently, you will find color schemes
 inside their own directory.
 
 By convention, directories containing color scheme files
-have the ‘Color Scheme - ‘- prefix.
+have the *Color Scheme -*  prefix.
 For example: *Color Scheme - Default*.
 
 
@@ -57,7 +57,7 @@ Selecting a Color Scheme
 ************************
 
 You can change the current color scheme
-by means of the Preferences → Color Scheme menu.
+by means of the **Preferences → Color Scheme** menu.
 Using settings files or plugins,
 you can create advanced color scheme selection mechanisms
 to change the color scheme
@@ -101,8 +101,8 @@ These settings affect global visual items in the editing area.
 
 ``activeGuide``
    Color of the guide lined up with the caret.
-   Only used if the `indent_guide_options` setting
-   is set to `draw_active`.
+   Only used if the ``indent_guide_options`` setting
+   is set to ``draw_active``.
 
 ``background``
    Backgound color of the view.
@@ -110,35 +110,35 @@ These settings affect global visual items in the editing area.
 ``bracketContentsForeground``
    Color of bracketed sections of text
    when the caret is in a bracket section.
-   Only used when the `match_brackets` setting
+   Only used when the ``match_brackets`` setting
    is set to `true`.
 
 ``bracketContentsOptions``
    XXX when the caret is in a bracket section.
-   Only used when the `match_brackets` setting
-   is set to `true`.
+   Only used when the ``match_brackets`` setting
+   is set to ``true``.
 
-   Options: `underline`, `stippled_underline`, `squiggly_underline`.
+   Options: ``underline``, ``stippled_underline``, ``squiggly_underline``.
    `underline` indicates the text should be drawn
    using the given color, not just the underline.
 
 ``bracketsForeground``
    Foreground color of the brackets
    when the caret is next to a bracket.
-   Only used when the `match_brackets` setting
-   is set to `true`.
+   Only used when the ``match_brackets`` setting
+   is set to ``true``.
 
 ``bracketsForeground``
    Background color of the brackets
    when the caret is next to a bracket.
-   Only used when the `match_brackets` setting
-   is set to `true`.
+   Only used when the ``match_brackets`` setting
+   is set to ``true``.
 
 ``bracketsOptions``
    XXX
 
-   Options: `underline`, `stippled_underline`, `squiggly_underline`.
-   `underline` indicates the text should be drawn
+   Options: ``underline``, ``stippled_underline``, ``squiggly_underline``.
+   ``underline`` indicates the text should be drawn
    using the given color, not just the underline.
 
 ``caret``
@@ -166,11 +166,11 @@ These settings affect global visual items in the editing area.
    Color of inactive selections (inactive view).
 
 ``invisibles``
-   Not used by Sublime Text.
+  Ignored by Sublime Text.
 
 ``lineHihglight``
-   Color of the line the caret is in
-   (see SETTING TO ENABLE LINE HILITIN).
+   Color of the line the caret is in.
+   Only used when the ``higlight_line`` setting is set to ``true``.
 
 ``selection``
    Color of the selection regions.
@@ -189,21 +189,21 @@ These settings affect global visual items in the editing area.
 
 ``stackGuide``
    XXX
-   Only used if the `indent_guide_options` setting
-   is set to `draw_active`.
+   Only used if the ``indent_guide_options`` setting
+   is set to ``draw_active``.
 
 ``tagsForeground``
    Color of tags when the caret is next to a tag.
-   Only used when the `match_brackets` setting
-   is set to `true`.
+   Only used when the ``match_brackets`` setting
+   is set to ``true``.
 
 ``tagsOptions``
    XXX when the caret is next to a tag.
-   Only used when the `match_brackets` setting
-   is set to `true`.
+   Only used when the ``match_brackets`` setting
+   is set to ``true``.
 
-   Options: `underline`, `stippled_underline`, `squiggly_underline`.
-   `underline` indicates the text should be drawn
+   Options: ``underline``, ``stippled_underline``, ``squiggly_underline``.
+   ``underline`` indicates the text should be drawn
    using the given color,
    not just the underline.
 
