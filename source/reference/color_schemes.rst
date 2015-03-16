@@ -7,7 +7,10 @@ Overview
 ========
 
 Color schemes define the colors
-used to highlight source code in Sublime Text views.
+used to highlight source code in Sublime Text views
+and the colors use for different elements
+found in the editing area:
+background, foreground, selection, caret, etc.
 
 
 File Format
@@ -16,7 +19,7 @@ File Format
 Color scheme files use the Property List format
 and have the .tmTheme extension.
 The file names of color scheme files
-are displayed in the Preferences --> Color Scheme menu.
+are displayed in the Preferences → Color Scheme menu.
 
 The file format of color schemes
 is inherited from Textmate.
@@ -32,9 +35,9 @@ is inherited from Textmate.
    It’s important to remember
    that UI themes and color schemes
    are two different customization mechanisms.
-   Generally speaking, it is much simpler
+   Generally speaking, it is far less complex
    to create a new color scheme
-   than a new UI theme.
+   than to create a new UI theme.
 
 
 Where to Store Color Schemes
@@ -47,14 +50,14 @@ inside their own directory.
 
 By convention, directories containing color scheme files
 have the ‘Color Scheme - ‘- prefix.
-For example: Color Scheme - Default.
+For example: *Color Scheme - Default*.
 
 
 Selecting a Color Scheme
 ************************
 
 You can change the current color scheme
-by means of the Preferences > Color Scheme menu.
+by means of the Preferences → Color Scheme menu.
 Using settings files or plugins,
 you can create advanced color scheme selection mechanisms
 to change the color scheme
@@ -78,7 +81,7 @@ the same top-level structure.
 
 ``settings``
    Array of dict elements.
-   See Subelements of Settings for more information.
+   See :ref:`Subelements of Settings` for more information.
 
 ``uuid``
    Optional.
@@ -94,40 +97,64 @@ the following color scheme settings:
 Global Settings
 
 Not associated with any scope.
-These settings affect global visual items in the view.
+These settings affect global visual items in the editing area.
 
 ``activeGuide``
-   XXX
+   Color of the guide lined up with the caret.
+   Only used if the `indent_guide_options` setting
+   is set to `draw_active`.
 
 ``background``
    Backgound color of the view.
 
 ``bracketContentsForeground``
-   Color of bracketed sections of text.
+   Color of bracketed sections of text
+   when the caret is in a bracket section.
+   Only used when the `match_brackets` setting
+   is set to `true`.
 
 ``bracketContentsOptions``
-   XXX
+   XXX when the caret is in a bracket section.
+   Only used when the `match_brackets` setting
+   is set to `true`.
+
+   Options: `underline`, `stippled_underline`, `squiggly_underline`.
+   `underline` indicates the text should be drawn
+   using the given color, not just the underline.
 
 ``bracketsForeground``
-   Foreground color for brackets.
+   Foreground color of the brackets
+   when the caret is next to a bracket.
+   Only used when the `match_brackets` setting
+   is set to `true`.
+
+``bracketsForeground``
+   Background color of the brackets
+   when the caret is next to a bracket.
+   Only used when the `match_brackets` setting
+   is set to `true`.
 
 ``bracketsOptions``
    XXX
+
+   Options: `underline`, `stippled_underline`, `squiggly_underline`.
+   `underline` indicates the text should be drawn
+   using the given color, not just the underline.
 
 ``caret``
    Color of the caret.
 
 ``findHighlight``
-   Color of the current search match.
+   Background color of regions matching the current search.
 
 ``findHighlightForeground``
-   Foreground color of the current search match.
+   Background color of regions matching the current search.
 
 ``foreground``
    Foreground color for the view.
 
 ``guide``
-   XXX
+   Color of the guides displayed to mark nesting levels.
 
 ``gutter``
    Background color of the gutter.
@@ -139,11 +166,7 @@ These settings affect global visual items in the view.
    Color of inactive selections (inactive view).
 
 ``invisibles``
-   Color of whitespace characters
-   when they are displayed
-   (see SETTING_TO_CHANGE_WHITESPACE_VISIBILITY).
-
-   IT DOESN’T SEEM TO DO THIS
+   Not used by Sublime Text.
 
 ``lineHihglight``
    Color of the line the caret is in
@@ -159,25 +182,38 @@ These settings affect global visual items in the view.
    Color of the selection regions’ border.
 
 ``shadow``
-   XXX
+   Color of the shadow effect when the buffer is scrolled.
 
 ``shadowWidth``
-   XXX
+   Width ot the shadow effect when the buffer is scrolled.
 
 ``stackGuide``
    XXX
+   Only used if the `indent_guide_options` setting
+   is set to `draw_active`.
 
 ``tagsForeground``
-   Foreground color for tags.
+   Color of tags when the caret is next to a tag.
+   Only used when the `match_brackets` setting
+   is set to `true`.
 
 ``tagsOptions``
-   XXX
+   XXX when the caret is next to a tag.
+   Only used when the `match_brackets` setting
+   is set to `true`.
+
+   Options: `underline`, `stippled_underline`, `squiggly_underline`.
+   `underline` indicates the text should be drawn
+   using the given color,
+   not just the underline.
 
 ``highlight``
-   XXX
+   Background color for reggions added via ``sublime.add_regions()``
+   with the ``sublime.DRAW_OUTLINED`` flag added.
 
 ``highlightForeground``
-   XXX
+   Foreground color for reggions added via ``sublime.add_regions()``
+   with the ``sublime.DRAW_OUTLINED`` flag added.
 
 ``Scoped Settings``
    Associated with a particular scope.
@@ -194,7 +230,9 @@ These settings affect global visual items in the view.
    Valid settings are:
 
 ``fontStyle``
-   Style of the font. Any of AAA, BBB, CCC.
+   Style of the font.
+
+   Options: ``bold``, ``italic``.
 
 ``foreground``
    Foreground color.
