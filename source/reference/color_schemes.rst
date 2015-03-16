@@ -8,7 +8,7 @@ Overview
 
 Color schemes define the colors
 used to highlight source code in Sublime Text views
-and the colors use for different elements
+and the colors used for different elements
 found in the editing area:
 background, foreground, selection, caret, etc.
 
