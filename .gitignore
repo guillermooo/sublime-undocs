@@ -8,3 +8,5 @@ build
 *.sublime-workspace
 
 Thumbs.db
+
+venv/
