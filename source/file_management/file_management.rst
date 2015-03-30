@@ -275,7 +275,7 @@ such as searching files.
 To see a detailed description of their purpose,
 open the default settings file
 (*Default/Preferences.sublime-settings*)
-via the Command Palette (`Ctrl+P`).
+via the Command Palette (`Ctrl+Shift+P`).
 
 
 Workspaces
