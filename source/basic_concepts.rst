@@ -47,8 +47,7 @@ Mastering Sublime Text requires time and practice.
 Luckily, it's built around
 a handful of concepts
 that make for a consistent
-and easily understandable system
-once all the pieces come together.
+system once all the pieces come together.
 
 In the following paragraphs,
 we'll outline key aspects
