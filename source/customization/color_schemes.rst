@@ -3,12 +3,13 @@ Color Schemes
 
 Sublime Text uses color schemes
 to highlight source code
-and define the color of the editing area components:
-background, font, gutter, caret, selection, etc.
+and to define the colors
+of some items in the editing area:
+background, foreground, gutter, caret, selection...
+
 Color schemes are fully customizable.
 
-This is an example
-showing a Python file
+Let's look at a Python file
 as Sublime Text  highlights it
 using the default color scheme:
 
@@ -17,3 +18,4 @@ using the default color scheme:
 .. seealso::
 
    :doc:`Reference for color schemes <../reference/color_schemes>`
+      Complete reference on color scheme settings.
