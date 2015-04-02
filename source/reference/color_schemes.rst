@@ -2,6 +2,8 @@
 Color Schemes
 =============
 
+.. contents::
+   :depth: 2
 
 Overview
 ========
@@ -76,16 +78,14 @@ All color scheme files share
 the same top-level structure.
 
 Colors can be expressed in the
-following formats:
-
-- ``#RRGGBB``
-- ``#RGB``
+following formats: ``#RRGGBB``, ``#RGB``.
 
 Most elements controlling colors
 accept an alpha channel value:
+``#RRGGBBAA``.
 
-- ``#RRGGBBAA``
-
+.. contents:: Contents
+   :local:
 
 Top-level Elements in Color Schemes Files
 *****************************************
