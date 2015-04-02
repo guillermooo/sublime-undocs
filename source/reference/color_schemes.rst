@@ -8,9 +8,9 @@ Overview
 
 Color schemes define the colors
 used to highlight source code in Sublime Text views
-and the colors use for different elements
+and to style different elements
 found in the editing area:
-background, foreground, selection, caret, etc.
+background, foreground, selection, caret...
 
 
 File Format
@@ -18,8 +18,6 @@ File Format
 
 Color scheme files use the Property List format
 and have the .tmTheme extension.
-The file names of color scheme files
-are displayed in the **Preferences → Color Scheme** menu.
 
 The file format of color scheme files
 is inherited from Textmate.
@@ -51,6 +49,9 @@ a set of color scheme files
 have the *Color Scheme -* prefix.
 For example: *Color Scheme - Default*.
 
+The file names of all available color schemes
+are displayed in the **Preferences → Color Scheme** menu.
+
 
 Selecting a Color Scheme
 ************************
@@ -74,7 +75,7 @@ on the Property List format.
 All color scheme files share
 the same top-level structure.
 
-Colors can be express in the
+Colors can be expressed in the
 following formats:
 
 - ``#RRGGBB``
@@ -89,25 +90,33 @@ accept an alpha channel value:
 Top-level Elements in Color Schemes Files
 *****************************************
 
-.. insert top-level example here
+.. code-block:: xml
+
+   <?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+   <plist version="1.0">
+   <dict>
+      <key>name</key>
+      <string>Monokai</string>
+      <key>settings</key>
+      <array>
+      ... INSERT AWESOME COLORS HERE ...
+      </array>
+      <key>uuid</key>
+      <string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
+   </dict>
+   </plist>
 
 ``name``
    Optional.
    Name of the color scheme.
    Ignored by Sublime Text.
 
-``settings``
-   Array of dict elements.
-   See :ref:`Subelements of Settings` for more information.
-
 ``uuid``
    Optional.
    A unique identifier for the file.
    Ignored by Sublime Text.
 
-
-.. TODO: I think headings can be cross-linked in a simpler way?
-.. _Subelements of Settings:
 
 Subelements of Settings
 ***********************
@@ -123,26 +132,48 @@ Not associated with any scope.
 These settings affect global visual items
 in the editing area.
 
+Global settings go inside a ``<dict>`` element
+within the top-level ``<array>``.
 
-Guides
-^^^^^^
+.. code-block:: xml
 
-``guide``
-   Color of the guides displayed to indicate nesting levels.
+   <array>
+      <dict>
+         <key>settings</key>
+         <dict>
+            <key>background</key>
+            <string>#272822</string>
+            <key>caret</key>
+            <string>#F8F8F0</string>
+            ...
+         </dict>
+      </dict>
+   ...
+   </array>
 
-``activeGuide``
-   Color of the guide lined up with the caret.
-   Only applied if the ``indent_guide_options`` setting
-   is set to ``draw_active``.
 
-``stackGuide``
-   Color of the current guide's parent guide level.
+Global Settings Ordered by Type
+-------------------------------
 
-   Only used if the ``indent_guide_options`` setting
-   is set to ``draw_active``.
+
+General
+^^^^^^^
+
+``foreground``
+   Foreground color for the view.
 
 ``background``
    Backgound color of the view.
+
+``invisibles``
+  Ignored.
+
+``caret``
+   Color of the caret.
+
+``lineHighlight``
+   Color of the line the caret is in.
+   Only used when the ``higlight_line`` setting is set to ``true``.
 
 
 Brackets
@@ -187,65 +218,6 @@ Brackets
    ``underline`` indicates the text should be drawn
    using the given color, not just the underline.
 
-``caret``
-   Color of the caret.
-
-
-Find
-^^^^
-
-``findHighlight``
-   Background color of regions matching the current search.
-
-``findHighlightForeground``
-   Background color of regions matching the current search.
-
-``foreground``
-   Foreground color for the view.
-
-
-Gutter
-^^^^^^
-
-``gutter``
-   Background color of the gutter.
-
-``gutterForeground``
-   Foreground color of the gutter.
-
-``inactiveSelection``
-   Color of inactive selections (inactive view).
-
-``invisibles``
-  Ignored by Sublime Text.
-
-``lineHighlight``
-   Color of the line the caret is in.
-   Only used when the ``higlight_line`` setting is set to ``true``.
-
-
-Selection
-^^^^^^^^^
-
-``selection``
-   Color of the selection regions.
-
-``selectionBackground``
-   Background color of the selection regions.
-
-``selectionBorder``
-   Color of the selection regions’ border.
-
-
-Shadow
-^^^^^^
-
-``shadow``
-   Color of the shadow effect when the buffer is scrolled.
-
-``shadowWidth``
-   Width ot the shadow effect when the buffer is scrolled.
-
 
 Tags
 ^^^^
@@ -267,6 +239,60 @@ Tags
    not just the underline.
 
 
+Find
+^^^^
+
+``findHighlight``
+   Background color of regions matching the current search.
+
+``findHighlightForeground``
+   Background color of regions matching the current search.
+
+
+Gutter
+^^^^^^
+
+``gutter``
+   Background color of the gutter.
+
+``gutterForeground``
+   Foreground color of the gutter.
+
+
+Selection
+^^^^^^^^^
+
+``selection``
+   Color of the selection regions.
+
+``selectionBackground``
+   Background color of the selection regions.
+
+``selectionBorder``
+   Color of the selection regions’ border.
+
+``inactiveSelection``
+   Color of inactive selections (inactive view).
+
+
+Guides
+^^^^^^
+
+``guide``
+   Color of the guides displayed to indicate nesting levels.
+
+``activeGuide``
+   Color of the guide lined up with the caret.
+   Only applied if the ``indent_guide_options`` setting
+   is set to ``draw_active``.
+
+``stackGuide``
+   Color of the current guide's parent guide level.
+
+   Only used if the ``indent_guide_options`` setting
+   is set to ``draw_active``.
+
+
 Highlighted Regions
 ^^^^^^^^^^^^^^^^^^^
 
@@ -279,10 +305,38 @@ Highlighted Regions
    with the ``sublime.DRAW_OUTLINED`` flag added.
 
 
+Shadow
+^^^^^^
+
+``shadow``
+   Color of the shadow effect when the buffer is scrolled.
+
+``shadowWidth``
+   Width ot the shadow effect when the buffer is scrolled.
+
+
 Scoped Settings
 ---------------
 
 Settings associated with a particular scope.
+
+.. code-block:: xml
+
+   <array>
+      ...
+      <dict>
+         <key>name</key>
+         <string>Comment</string>
+         <key>scope</key>
+         <string>comment</string>
+         <key>settings</key>
+         <dict>
+            <key>foreground</key>
+            <string>#75715E</string>
+         </dict>
+      </dict>
+      ...
+   </array>
 
 
 ``name``
