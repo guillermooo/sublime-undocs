@@ -13,3 +13,4 @@ an immensely configurable area of Sublime Text.
     indentation
     key_bindings
     menus
+    color_schemes

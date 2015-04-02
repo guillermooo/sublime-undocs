@@ -12,6 +12,7 @@ general index.
     :maxdepth: 2
 
     syntaxdefs
+    color_schemes
     build_systems
     key_bindings
     Settings <settings>
