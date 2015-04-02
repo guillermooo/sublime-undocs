@@ -61,10 +61,12 @@ Selecting a Color Scheme
 You can change the current color scheme
 by means of the **Preferences → Color Scheme** menu.
 
-Using settings files or plugins,
-you can create advanced color scheme selection mechanisms
-to change the color scheme
-depending on the file type, time of day, etc.
+A common way of selecting a color scheme
+is by associating it to a type of file
+using the file-type-specific settings.
+For example, for the Python file type (``syntax_file`` == :file:`Python.tmLanguage`),
+we'd use the :file:`Python.sublime-settings` file
+and, within, set ``color_scheme`` to some color scheme file.
 
 For more information about settings, see :doc:`settings`.
 
