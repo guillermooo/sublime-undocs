@@ -21,14 +21,14 @@ and have the .tmTheme extension.
 The file names of color scheme files
 are displayed in the **Preferences → Color Scheme** menu.
 
-The file format of color schemes
+The file format of color scheme files
 is inherited from Textmate.
 
 .. note::
 
    Sublime Text uses the .tmTheme extension for color scheme files
    to maintain compatibility with Textmate.
-   Confusingly, Sublime Text also has a notion
+   Rather confusingly, Sublime Text also has a notion
    of a user interface (UI) theme.
    A UI theme is a set of styles and decorations
    to alter the look of the editor’s UI.
@@ -37,7 +37,7 @@ is inherited from Textmate.
    are two different customization mechanisms.
    Generally speaking, it is far less complex
    to create a new color scheme
-   than to create a new UI theme.
+   than it is to create a new UI theme.
 
 
 Where to Store Color Schemes
@@ -48,7 +48,8 @@ You can keep color scheme files anywhere under Packages
 Most frequently, you will find color schemes
 inside their own directory.
 
-By convention, directories containing color scheme files
+By convention, directories containing
+a set of color scheme files
 have the *Color Scheme -*  prefix.
 For example: *Color Scheme - Default*.
 
@@ -72,6 +73,10 @@ on the Property List format.
 All color scheme files share
 the same top-level structure.
 
+
+Top-level Elements in Color Schemes Files
+*****************************************
+
 .. insert top-level example here
 
 ``name``
@@ -88,6 +93,9 @@ the same top-level structure.
    A unique identifier for the file. Ignored by Sublime Text.
 
 
+.. TODO: I think headings can be cross-linked in a simpler way?
+.. _Subelements of Settings:
+
 Subelements of Settings
 ***********************
 
@@ -103,7 +111,7 @@ These settings affect global visual items in the editing area.
 
 ``activeGuide``
    Color of the guide lined up with the caret.
-   Only used if the ``indent_guide_options`` setting
+   Only applied if the ``indent_guide_options`` setting
    is set to ``draw_active``.
 
 ``background``
@@ -111,33 +119,38 @@ These settings affect global visual items in the editing area.
 
 ``bracketContentsForeground``
    Color of bracketed sections of text
-   when the caret is in a bracket section.
-   Only used when the ``match_brackets`` setting
+   when the caret is in a bracketed section.
+   Only applied when the ``match_brackets`` setting
    is set to `true`.
 
 ``bracketContentsOptions``
-   XXX when the caret is in a bracket section.
-   Only used when the ``match_brackets`` setting
+   Controls certain options
+   when the caret is in a bracket section.
+   Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
    Options: ``underline``, ``stippled_underline``, ``squiggly_underline``.
-   `underline` indicates the text should be drawn
+   The `underline` option indicates
+   that the text should be drawn
    using the given color, not just the underline.
 
 ``bracketsForeground``
    Foreground color of the brackets
    when the caret is next to a bracket.
-   Only used when the ``match_brackets`` setting
+   Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
 ``bracketsForeground``
    Background color of the brackets
    when the caret is next to a bracket.
-   Only used when the ``match_brackets`` setting
+   Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
 ``bracketsOptions``
-   XXX
+   Controls certain options
+   when the caret is next to a bracket.
+   Only applied when the ``match_brackets`` setting
+   is set to ``true``.
 
    Options: ``underline``, ``stippled_underline``, ``squiggly_underline``.
    ``underline`` indicates the text should be drawn
@@ -156,7 +169,7 @@ These settings affect global visual items in the editing area.
    Foreground color for the view.
 
 ``guide``
-   Color of the guides displayed to mark nesting levels.
+   Color of the guides displayed to indicate nesting levels.
 
 ``gutter``
    Background color of the gutter.
@@ -200,8 +213,9 @@ These settings affect global visual items in the editing area.
    is set to ``true``.
 
 ``tagsOptions``
-   XXX when the caret is next to a tag.
-   Only used when the ``match_brackets`` setting
+   Controls certain options
+   when the caret is next to a tag.
+   Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
    Options: ``underline``, ``stippled_underline``, ``squiggly_underline``.
@@ -221,7 +235,7 @@ These settings affect global visual items in the editing area.
 Scoped Settings
 ---------------
 
-Associated with a particular scope.
+Settings associated with a particular scope.
 
 
 ``name``
@@ -249,6 +263,9 @@ Associated with a particular scope.
 
 Sublime Text Settings Related to Color Schemes
 ==============================================
+
+View Settings
+*************
 
 ``color_scheme``
    Path to a color scheme file
