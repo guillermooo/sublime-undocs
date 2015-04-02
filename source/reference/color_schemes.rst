@@ -45,12 +45,10 @@ Where to Store Color Schemes
 
 You can keep color scheme files anywhere under Packages
 (even inside directories nested multiple levels deep).
-Most frequently, you will find color schemes
-inside their own directory.
 
 By convention, directories containing
 a set of color scheme files
-have the *Color Scheme -*  prefix.
+have the *Color Scheme -* prefix.
 For example: *Color Scheme - Default*.
 
 
@@ -59,10 +57,13 @@ Selecting a Color Scheme
 
 You can change the current color scheme
 by means of the **Preferences → Color Scheme** menu.
+
 Using settings files or plugins,
 you can create advanced color scheme selection mechanisms
 to change the color scheme
 depending on the file type, time of day, etc.
+
+For more information about settings, see :doc:`settings`.
 
 
 Structure of a Color Scheme File
@@ -72,6 +73,17 @@ Color scheme files are based
 on the Property List format.
 All color scheme files share
 the same top-level structure.
+
+Colors can be express in the
+following formats:
+
+- ``#RRGGBB``
+- ``#RGB``
+
+Most elements controlling colors
+accept an alpha channel value:
+
+- ``#RRGGBBAA``
 
 
 Top-level Elements in Color Schemes Files
@@ -90,7 +102,8 @@ Top-level Elements in Color Schemes Files
 
 ``uuid``
    Optional.
-   A unique identifier for the file. Ignored by Sublime Text.
+   A unique identifier for the file.
+   Ignored by Sublime Text.
 
 
 .. TODO: I think headings can be cross-linked in a simpler way?
@@ -107,15 +120,33 @@ Global Settings
 ---------------
 
 Not associated with any scope.
-These settings affect global visual items in the editing area.
+These settings affect global visual items
+in the editing area.
+
+
+Guides
+^^^^^^
+
+``guide``
+   Color of the guides displayed to indicate nesting levels.
 
 ``activeGuide``
    Color of the guide lined up with the caret.
    Only applied if the ``indent_guide_options`` setting
    is set to ``draw_active``.
 
+``stackGuide``
+   Color of the current guide's parent guide level.
+
+   Only used if the ``indent_guide_options`` setting
+   is set to ``draw_active``.
+
 ``background``
    Backgound color of the view.
+
+
+Brackets
+^^^^^^^^
 
 ``bracketContentsForeground``
    Color of bracketed sections of text
@@ -159,6 +190,10 @@ These settings affect global visual items in the editing area.
 ``caret``
    Color of the caret.
 
+
+Find
+^^^^
+
 ``findHighlight``
    Background color of regions matching the current search.
 
@@ -168,8 +203,9 @@ These settings affect global visual items in the editing area.
 ``foreground``
    Foreground color for the view.
 
-``guide``
-   Color of the guides displayed to indicate nesting levels.
+
+Gutter
+^^^^^^
 
 ``gutter``
    Background color of the gutter.
@@ -183,9 +219,13 @@ These settings affect global visual items in the editing area.
 ``invisibles``
   Ignored by Sublime Text.
 
-``lineHihglight``
+``lineHighlight``
    Color of the line the caret is in.
    Only used when the ``higlight_line`` setting is set to ``true``.
+
+
+Selection
+^^^^^^^^^
 
 ``selection``
    Color of the selection regions.
@@ -196,16 +236,19 @@ These settings affect global visual items in the editing area.
 ``selectionBorder``
    Color of the selection regions’ border.
 
+
+Shadow
+^^^^^^
+
 ``shadow``
    Color of the shadow effect when the buffer is scrolled.
 
 ``shadowWidth``
    Width ot the shadow effect when the buffer is scrolled.
 
-``stackGuide``
-   XXX
-   Only used if the ``indent_guide_options`` setting
-   is set to ``draw_active``.
+
+Tags
+^^^^
 
 ``tagsForeground``
    Color of tags when the caret is next to a tag.
@@ -223,12 +266,16 @@ These settings affect global visual items in the editing area.
    using the given color,
    not just the underline.
 
+
+Highlighted Regions
+^^^^^^^^^^^^^^^^^^^
+
 ``highlight``
-   Background color for reggions added via ``sublime.add_regions()``
+   Background color for regions added via ``sublime.add_regions()``
    with the ``sublime.DRAW_OUTLINED`` flag added.
 
 ``highlightForeground``
-   Foreground color for reggions added via ``sublime.add_regions()``
+   Foreground color for regions added via ``sublime.add_regions()``
    with the ``sublime.DRAW_OUTLINED`` flag added.
 
 
@@ -270,4 +317,4 @@ View Settings
 ``color_scheme``
    Path to a color scheme file
    relative to the Data folder
-   (example: Packages/User/Color Schemes - Custom/Fictitious.tmTheme).
+   (example: :file:`Packages/Color Scheme - Default/Monokai.tmTheme`).
