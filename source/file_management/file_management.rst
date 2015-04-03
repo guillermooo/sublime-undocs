@@ -14,7 +14,7 @@ to **navigate your project's files** swiftly.
 To open Goto Anything,
 press :kbd:`Ctrl+P`.
 As you type into the input area,
-names of open files and files in :ref:`open directories <fm-projects-folders>`
+names of files in the current project
 will be searched,
 and a preview of the best match
 will be shown.
@@ -23,7 +23,7 @@ that is, it won't become the actual active view
 until you perform some operation on it.
 Transient views go away when you press :kbd:`Esc`.
 You will find transient views in other situations,
-for example when single-clicking a file in the sidebar.
+for example when single-clicking a file on the sidebar.
 
 Goto Anything lives up to its name
 --there's more to it than locating files.
@@ -32,18 +32,18 @@ Goto Anything lives up to its name
 Goto Anything Operators
 -----------------------
 
-Goto Anything understands a handful of operators.
-Any of them can be used
-in combination with file search queries.
+Goto Anything understands several operators.
+All of them can be used
+on their own or after the search term.
 
 Example::
 
-	island:123
+	models:123
 
 This instructs Sublime Text
 to first search for a file
-that matches ``island``
-and then go to line 123.
+that matches ``models``,
+and then to go to line 123.
 
 
 Supported Operators
@@ -52,47 +52,47 @@ Supported Operators
 .. _fm-goto-symbol:
 
 :samp:`@{symbol}`
-    Searches for **symbol** symbol in the active buffer;
-    bound to :kbd:`Ctrl+R`.
+    Searches for the symbol named ``symbol`` in the active buffer.
+    Bound to :kbd:`Ctrl+R`.
 
-    Symbols usually are classes or functions,
-    but can target any scope present
+    Symbols usually include classes and functions,
+    but can extract names from any scope present
     in the syntax definition.
-    See *Symbols - Syntax Preferences*
-    (XXX to be added).
-    If no symbols are defined,
+    If no symbols are defined
+    for the current file type,
     the search will simply fail.
 
-.. (XXX to be added).
+..    See *Symbols - Syntax Preferences*
+..    (TODO: to be added).
 
 :samp:`#{term}`
-    Fuzzy-searches a word in the file matching **term**
-    and highlights all instances;
-    bound to :kbd:`Ctrl+;`.
+    Performs a fuzzy search of the ``term`` search term
+    and highlights all matches.
+    Bound to :kbd:`Ctrl+;`.
 
 :samp:`:{line_number}`
     Goes to the specified line number
-    or the end of the file
-    if it exceeds the file limit;
-    bound to :kbd:`Ctrl+G`.
+    or to the end of the file
+    (for too large numbers).
+    Bound to :kbd:`Ctrl+G`.
 
 .. note::
 
     Searching for symbols will only work
     if the active file type
     has symbols defined for it.
-    Symbols are defined in *.tmLanguage* files.
-
-.. todo: Explain how to create symbols.
+    Symbols are defined in ``.tmLanguage`` files.
+    For more information about symbols,
+    see :doc:`../reference/symbols`.
 
 .. _fm-sidebar:
 
 Sidebar
 =======
 
-The sidebar gives you an overview
+The sidebar provides an overview
 of the active project.
-Files and folders added to the sidebar
+Files and folders in the sidebar
 will be available in `Goto Anything`_
 and project-wide actions
 (like project-wide searches).
@@ -102,30 +102,36 @@ It's important to note
 that there's always an active project,
 whether it's explicit or implicit.
 
-To **toggle** the sidebar,
-press :kbd:`Ctrl+K, Ctrl+B`.
+The sidebar provides basic file management operations
+through its context menu.
 
-The sidebar can be navigated
-with the arrow keys,
-but first you need to give it the **focus**
-by pressing :kbd:`Ctrl+0`.
-To return the focus to the view,
-press :kbd:`Esc`.
-Alternatively, you can use the mouse
-to the same effect.
+These are common shortcuts
+related to the side bar:
+
++-----------------------+-----------------------------------------------------------+
+| Shortcut              | Function                                                  |
++=======================+===========================================================+
+| Ctrl + K, Ctrl + B    | Toggle side bar.                                          |
++-----------------------+-----------------------------------------------------------+
+| Ctrl + 0              | Give the focus to the side bar.                           |
++-----------------------+-----------------------------------------------------------+
+| Esc                   | Return the focus to the view.                             |
++-----------------------+-----------------------------------------------------------+
+| Arrow keys            | Navigate side bar.                                        |
++-----------------------+-----------------------------------------------------------+
 
 Files opened from the sidebar
 create *semi-transient* views.
-Unlike transient views, *semi-transient* views
+Unlike transient views, semi-transient views
 show up as a new tab.
-You will be able to tell semi-transient views from other views
-because their tab text is shown in italics.
+The tab text of semi-transient views appears in italics.
 When a new semi-transient view is opened,
 any existing semi- transient view in the same pane
 gets automatically closed.
 
-The sidebar provides basic file management operations
-through its context menu.
+Here's an example:
+
+.. image:: file-managementsemi-transient-tab-detail.png
 
 .. _fm-projects:
 
@@ -140,27 +146,26 @@ and then save your new configuration.
 
 .. _fm-projects-folders:
 
-You can add and remove folders to a project
-with the **Project** menu
-and the side bar's context menu.
-Alternatively,
-you can drag a folder onto a window
-and it will be added automatically.
+You can add and remove folders to/from a project
+using the **Project** menu
+or the side bar's context menu.
+If you drag a folder onto a Sublime Text window,
+it will be added to the project too.
 
 To save a project,
-go to **Project | Save Project As...**.
+go to **Project → Save Project As...**.
 
 To switch projects quickly,
 press :kbd:`Ctrl+Alt+P`.
 Using the menu,
 you can select **Projects | Recent Projects**.
 
-Project data are stored in JSON files
-with a *.sublime-project* extension.
-Wherever there's a *.sublime-project* file,
-you will find an ancillary *.sublime-workspace* file too.
+Project data is stored in JSON files
+with a ``.sublime-project`` extension.
+Wherever there's a ``.sublime-project`` file,
+you will find an ancillary ``.sublime-workspace`` file too.
 The second one is used by Sublime Text
-and you shouldn't edit it yourself.
+and you shouldn't edit it.
 
 Project files can define settings specific to that project.
 More information in the `official documentation`_.
@@ -170,27 +175,21 @@ More information in the `official documentation`_.
 .. TODO add settings example here.
 
 You can open a project from the **command line**
-by passing the *.sublime- project* file as an argument
+by passing the ``.sublime- project`` file as an argument
 to the Sublime Text executable.
 
-Project files are meant
-to be committed to source code repositories.
+Project files are generally apt
+to be committed to source code repositories,
+but always be mindful of what you store in them.
 
 
-Project Definitions
--------------------
+The ``.sublime-project`` Format
+-------------------------------
 
-Project definitions are stored in JSON files
-with a *.sublime-project* extension.
-Wherever there's a *.sublime-project* file,
-you will find an ancillary *.sublime-workspace* file too,
-which contains user specific data,
-such as the open files and the modifications to each.
-The latter is used by Sublime Text
-and isn't meant to be edited by users.
-
-Project definitions support three top level sections:
-``folders``, for the included folders, ``settings``, for settings overrides,
+Project metadata in ``.sublime-project`` files
+is split across three top level sections:
+``folders``, for the included folders, ``settings``,
+for project-specific settings,
 and ``build_systems``, for project-specific build systems.
 
 .. sourcecode:: javascript
@@ -222,19 +221,38 @@ and ``build_systems``, for project-specific build systems.
     }
 
 
-**Folders**
-    Each folder must have a ``path``,
-    and may optionally have a ``folder_exclude_patterns``
-and ``file_exclude_patterns`` setting.
+**Folder Options**
+
+``path``
+    Mandatory.
     The path may be relative to the project directory,
-    or an absolute path.
-    Folders may also be given a ``name``
-    that will appear in the side bar.
+    or absolute.
+
+``folder_exclude_patterns``
+    Optional. List of wildcards.
+    Folders matching the wildcards will be excluded from the project.
+
+``folder_include_patterns``
+    Optional. List of wildcards.
+    Folders matching the wildcards will be included in the project.
+
+``file_exclude_patterns``
+    Optional. List of wildcards.
+    Files matching the wildcards will be excluded from the project.
+
+``file_include_patterns``
+    Optional. List of wildcards.
+    Files matching the wildcards will be included in the project.
+
+``name``
+    Optional. If present, it will appear in the side bar.
+
+.. TODO: there are more settings supported by projects.
 
 **Settings**
     A project may define project-specific settings
     that will only apply to files within that project.
-    Project-specific settings override regular user settings,
+    Project-specific settings override user settings,
     but not syntax-specific settings.
 
     Almost all settings can be overridden
@@ -248,11 +266,11 @@ and ``file_exclude_patterns`` setting.
             Reference of available settings.
 
 **Build Systems**
-    You can define project-specific build systems in a project definition.
-    In addition to regular build systems,
-    a ``name`` must be specified for each one.
-    Build systems listed here will be available
-    via the regular **Tools | Build Systems** menu.
+    You can define project-specific build systems
+    in a ``.sublime-project`` file.
+    A ``name`` must be specified for each one.
+    Build systems included in a ``.sublime-project`` file
+    will show up in the **Tools → Build Systems** menu.
 
     .. seealso::
 
