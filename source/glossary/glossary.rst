@@ -31,3 +31,10 @@ Glossary
 
     overlay
         An input widget of a special kind. For example, Goto Anything is an overlay.
+
+    file type
+        In the context of Sublime Text, *file type* refers to the type of file
+        as determined by the applicable ``.tmLanguage`` syntax definition.
+
+        However, this is an ambiguous term, and in some instances it could also
+        be used with the broader meaning it has in technical texts.
