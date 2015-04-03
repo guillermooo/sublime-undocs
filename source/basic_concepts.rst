@@ -24,7 +24,7 @@ start at `the Data Directory`_.
 
 We assume default key bindings
 when indicating keyboard shortcuts.
-If you are using a non-English keyboard layout,
+If you are using a non-US-English keyboard layout,
 some key bindings may not match your layout.
 This is due to the way Sublime Text
 processes key strokes internally.
@@ -33,21 +33,22 @@ processes key strokes internally.
 Mastering Sublime Text Takes Time
 =================================
 
+Mastering Sublime Text requires time and practice.
+Luckily, it's built around
+a handful of concepts
+that make for a consistent
+system once all the pieces come together.
+
 This guide will teach you
 how to use and configure Sublime Text.
 
 Sublime Text is a versatile editor for programmers,
 but you don't need to be one
 in order to use it,
-or to configure it extensively—it's an efficient tool out of the box.
+and you don't need
+to configure it extensively to be productive—it's an efficient tool out of the box.
 Hackers, however, will appreciate
 all the customization and extensibility opportunities.
-
-Mastering Sublime Text requires time and practice.
-Luckily, it's built around
-a handful of concepts
-that make for a consistent
-system once all the pieces come together.
 
 In the following paragraphs,
 we'll outline key aspects
@@ -85,8 +86,9 @@ indicated above.
 The *Packages* Directory
 ========================
 
-This is a **key directory**:
-all resources for supported programming
+This is a key directory
+located under the data directory.
+All resources for supported programming
 and markup languages
 are stored here.
 (More on *packages* and *resources* later.)
@@ -94,8 +96,8 @@ are stored here.
 .. TODO: link term above to glossary?
 
 You can access the packages directory
-from the main menu (**Preferences | Browse Packages...**),
-by means of an API call: ``sublime.packages_path()``,
+from the main menu (**Preferences → Browse Packages...**),
+by means of an API call (``sublime.packages_path()``),
 and by other means
 that will be explained in later topics.
 
@@ -114,8 +116,8 @@ Updates to Sublime Text will never
 overwrite the contents of :file:`Packages/User`.
 
 
-The Python Console and the Python API
-=====================================
+Sublime Text is Programmable
+============================
 
 This information is useful for programmers.
 Other users just need to know
@@ -138,7 +140,7 @@ Sublime Text and plugins output information
 to a *console*.
 To open the console,
 press :kbd:`Ctrl+\``
-or select **View | Show Console**
+or select **View → Show Console**
 from the main menu.
 
 
@@ -160,29 +162,30 @@ Packages, Plugins, Resources and Other Terms
 
 Almost every aspect of Sublime Text
 can be extended or customized.
-Among other things,
-you can modify the editor's behavior,
-add macros and snippets, extend menus...
+You can modify the editor's behavior,
+add macros and snippets, extend menus
+and much more.
 You can even create whole new features
 using the editor's API to build complex
 plugins.
-This vast flexibility is the reason
+
+Sublime Text's vast flexibility is the reason
 why you will learn
 about so many configuration files:
 there simply must be a place
-to specify all possible preferences.
+to specify all available preferences and settings.
 
 Configuration files in Sublime Text
-are simply text files
-that follow a predefined structure or *format*:
+are text files
+that conform to a predefined structure or *format*:
 JSON predominates,
 but you'll find XML files too.
-Finally, for the more advanced
+For the more advanced
 extensibility options,
-Python files are used.
+Python source code files are used.
 
-For brevity, in this guide
-we sometimes collectively refer to all these
+In this guide, for brevity,
+we sometimes refer collectively to all these
 disparate configuration files as *resources*.
 
 Sublime Text will look for resources
@@ -216,7 +219,7 @@ Additionally, Sublime Text requires
 all syntax definitions to have the *.tmLanguage* extension,
 and all preferences files
 to have the *.tmPreferences* extension.
-This means that *.plist* files
+In particular, this means that *.plist* files
 will be ignored,
 even if they are located
 under a *Syntaxes* or *Preferences* subdirectory.
@@ -249,8 +252,8 @@ Vintageous_ is an open source project.
 .. _Vintageous: http://guillermooo.bitbucket.org/Vintageous
 
 
-emacs
-=====
+emacs Emulation
+===============
 
 This information is useful
 for emacs users who are

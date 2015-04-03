@@ -1,12 +1,13 @@
 ====================
-Settings (Reference)
+Settings – Reference
 ====================
 
 .. warning::
 
-   This page may be outdated and contain wrong or not all information. However,
-   you can find most of the available settings with a brief description in the
-   default settings file (**Preferences | Settings - Default** or   :file:`Default/Preferences.sublime-settings`).
+   This page may contain outdated or incomplete information.
+   You can see a description of most available settings in the
+   default settings file (**Preferences → Settings - Default** or
+   :file:`Default/Preferences.sublime-settings`).
 
 .. seealso::
 
