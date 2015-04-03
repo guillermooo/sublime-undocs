@@ -15,8 +15,6 @@ using the default color scheme:
 
 .. image:: images/color_schemes_main.png
 
-   Detail
-
 .. seealso::
 
    :doc:`Reference for color schemes <../reference/color_schemes>`
