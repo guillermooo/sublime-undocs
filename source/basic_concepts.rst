@@ -105,8 +105,8 @@ In this guide, we refer to the packages folder
 as *Packages*, *packages path*, *packages folder* or *packages directory*.
 
 
-The ``User`` Package
-********************
+The *User* Package
+******************
 
 :file:`Packages/User` is a catch-all directory
 for custom plugins, snippets, macros, etc.
