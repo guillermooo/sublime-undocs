@@ -2,6 +2,14 @@
 File Navigation and File Management
 ===================================
 
+Sublime Text includes a variety of features
+to help you keep your work organized
+and find your way around your projects.
+
+.. contents::
+    :local:
+    :depth: 2
+
 .. _fm-goto-anything:
 
 Goto Anything
@@ -10,6 +18,8 @@ Goto Anything
 Use Goto Anything
 to **navigate your project's files** swiftly.
 (More about projects later.)
+
+.. image:: file-management-goto-anything.png
 
 To open Goto Anything,
 press :kbd:`Ctrl+P`.
@@ -43,24 +53,34 @@ Example::
 This instructs Sublime Text
 to first search for a file
 that matches ``models``,
-and then to go to line 123.
+and then to go to line 123 in that file.
 
 
 Supported Operators
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 .. _fm-goto-symbol:
 
 :samp:`@{symbol}`
-    Searches for the symbol named ``symbol`` in the active buffer.
-    Bound to :kbd:`Ctrl+R`.
+    Searches for the symbol named ``symbol``
+    in the active file.
 
     Symbols usually include classes and functions,
-    but can extract names from any scope present
-    in the syntax definition.
+    but can in fact extract names
+    from any scope declared
+    in the corresponding syntax definition.
     If no symbols are defined
-    for the current file type,
+    for the active file type,
     the search will simply fail.
+
+    .. note::
+
+        Searching for symbols will only work
+        if the active file type
+        has symbols defined for it.
+        Symbols are defined in ``.tmLanguage`` files.
+        For more information about symbols,
+        see :doc:`../reference/symbols`.
 
 ..    See *Symbols - Syntax Preferences*
 ..    (TODO: to be added).
@@ -68,22 +88,22 @@ Supported Operators
 :samp:`#{term}`
     Performs a fuzzy search of the ``term`` search term
     and highlights all matches.
-    Bound to :kbd:`Ctrl+;`.
 
 :samp:`:{line_number}`
     Goes to the specified line number
     or to the end of the file
-    (for too large numbers).
-    Bound to :kbd:`Ctrl+G`.
+    (for numbers larger than the file's line count).
 
-.. note::
+The Goto Anything operators
+are bound to the following shortcuts:
 
-    Searching for symbols will only work
-    if the active file type
-    has symbols defined for it.
-    Symbols are defined in ``.tmLanguage`` files.
-    For more information about symbols,
-    see :doc:`../reference/symbols`.
++-----------------------+----------+
+| Ctrl + R              | **@**    |
++-----------------------+----------+
+| Ctrl + ;              | **#**    |
++-----------------------+----------+
+| Ctrl + G              | **:**    |
++-----------------------+----------+
 
 .. _fm-sidebar:
 
@@ -109,8 +129,6 @@ These are common shortcuts
 related to the side bar:
 
 +-----------------------+-----------------------------------------------------------+
-| Shortcut              | Function                                                  |
-+=======================+===========================================================+
 | Ctrl + K, Ctrl + B    | Toggle side bar.                                          |
 +-----------------------+-----------------------------------------------------------+
 | Ctrl + 0              | Give the focus to the side bar.                           |
@@ -160,7 +178,7 @@ go to **Project → Save Project As...**.
 To switch projects quickly,
 press :kbd:`Ctrl+Alt+P`.
 Using the menu,
-you can select **Projects | Recent Projects**.
+you can select **Projects → Recent Projects**.
 
 Project data is stored in JSON files
 with a ``.sublime-project`` extension.
@@ -280,7 +298,7 @@ and ``build_systems``, for project-specific build systems.
             Documentation on build systems and their options.
 
 
-Notable Settings Related to The Sidebar and Projects
+Notable Settings Related to the Sidebar and Projects
 ====================================================
 
 These options control which files
@@ -347,5 +365,5 @@ press :kbd:`Ctrl+K, Ctrl+Up`.
 To close a pane, press :kbd:`Ctrl+K, Ctrl+Down`.
 
 Further pane management commands
-can be found under **View | Layout**
+can be found under **View → Layout**
 and related submenus.
