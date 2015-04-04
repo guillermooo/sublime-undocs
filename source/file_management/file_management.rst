@@ -129,9 +129,11 @@ When a new semi-transient view is opened,
 any existing semi- transient view in the same pane
 gets automatically closed.
 
-Here's an example:
+Here's an example of a normal view, a transient view,
+and a semi-transient view.
+Note that the transient view has no tab:
 
-.. image:: file-managementsemi-transient-tab-detail.png
+.. image:: file-management-transient-views-detail.png
 
 .. _fm-projects:
 
