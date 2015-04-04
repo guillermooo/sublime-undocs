@@ -142,14 +142,14 @@ Files opened from the sidebar
 create *semi-transient* views.
 Unlike transient views, semi-transient views
 show up as a new tab.
-The tab text of semi-transient views appears in italics.
-When a new semi-transient view is opened,
-any existing semi- transient view in the same pane
+The tab title of semi-transient views appears in italics.
+Before a new semi-transient view is opened,
+any existing semi-transient view in the same pane
 gets automatically closed.
 
-Here's an example of a normal view, a transient view,
+Here's an example showing a normal view, a transient view,
 and a semi-transient view.
-Note that the transient view has no tab:
+Notice that the transient view has no tab:
 
 .. image:: file-management-transient-views-detail.png
 
@@ -160,6 +160,11 @@ Projects
 
 Projects group sets of files and folders
 to keep your work organized.
+
+There is always an active project.
+If you haven't created one,
+an implicit one is created by Sublime Text.
+
 Set up a project by adding folders in a way
 that suits you,
 and then save your new configuration.
@@ -180,15 +185,16 @@ press :kbd:`Ctrl+Alt+P`.
 Using the menu,
 you can select **Projects → Recent Projects**.
 
-Project data is stored in JSON files
+Project metadata is stored in JSON files
 with a ``.sublime-project`` extension.
 Wherever there's a ``.sublime-project`` file,
 you will find an ancillary ``.sublime-workspace`` file too.
 The second one is used by Sublime Text
 and you shouldn't edit it.
+(More on workspaces later.)
 
-Project files can define settings specific to that project.
-More information in the `official documentation`_.
+Projects can define settings applicable to that project only.
+See the `official documentation`_ for more information.
 
 .. _official documentation: http://www.sublimetext.com/docs/2/projects.html
 
@@ -196,7 +202,8 @@ More information in the `official documentation`_.
 
 You can open a project from the **command line**
 by passing the ``.sublime- project`` file as an argument
-to the Sublime Text executable.
+to the ``subl`` command line helper
+included with Sublime Text.
 
 Project files are generally apt
 to be committed to source code repositories,
@@ -212,7 +219,8 @@ is split across three top level sections:
 for project-specific settings,
 and ``build_systems``, for project-specific build systems.
 
-.. sourcecode:: javascript
+.. code-block:: javascript
+    :emphasize-lines: 2,14,18
 
     {
         "folders":
@@ -244,7 +252,7 @@ and ``build_systems``, for project-specific build systems.
 **Folder Options**
 
 ``path``
-    Mandatory.
+    Required.
     The path may be relative to the project directory,
     or absolute.
 
@@ -298,23 +306,16 @@ and ``build_systems``, for project-specific build systems.
             Documentation on build systems and their options.
 
 
-Notable Settings Related to the Sidebar and Projects
-====================================================
+Other Settings Related to the Sidebar and Projects
+==================================================
 
-These options control which files
-are shown in the sidebar
-and included in project-wide actions,
-such as searching files.
+``binary_file_patterns``
+    A list of wildcards.
+    Files matching these wildcards will show up in the side bar,
+    but will be excluded from Goto Anything
+    and Find in Files.
 
-	folder_exclude_patterns
-	file_exclude_patterns
-	binary_file_patterns
-
-To see a detailed description of their purpose,
-open the default settings file
-(*Default/Preferences.sublime-settings*)
-via the Command Palette (`Ctrl+Shift+P`).
-
+.. TODO: binary_file_patterns also applies to projects, right?
 
 Workspaces
 ==========
@@ -322,47 +323,48 @@ Workspaces
 Workspaces can be seen as different *views*
 into the same project.
 For example, you may want
-to have only a selected few files open
-while working on *Feature A*.
+to have only a few selected files open
+while working on some feature.
 Or perhaps you use a different pane layout
 when you're writing tests, etc.
 Workspaces help in these situations.
 
 Workspaces behave very much like projects.
 To create a new workspace,
-select *Project → New Workspace for Project*.
+select **Project → New Workspace for Project**.
 To save the active workspace,
-select *Project → Save Workspace As...*.
-
-Workspaces data is stored in JSON files
-with the *.sublime-workspace* extension.
-
-Contrary to *.sublime-project* files,
-*.sublime-workspace* files
-**are not** meant to be shared or edited manually.
-**Never** commit *.sublime-workspace* files
-into a source code repository.
+select **Project → Save Workspace As...**.
 
 To switch between different workspaces,
 use :kbd:`Ctrl+Alt+P`,
 exactly as you do with projects.
 
+Workspaces data is stored in JSON files
+with the ``.sublime-workspace`` extension.
+
+Unlike ``.sublime-project`` files,
+``.sublime-workspace`` files
+are not meant to be shared or edited manually.
+You should never commit ``.sublime-workspace`` files
+into a source code repository.
+
 As with projects, you can open a workspace
 from the **command line**
-by passing the desired *.sublime-workspace* file
-as an argument to the Sublime Text executable.
+by passing the desired ``.sublime-workspace`` file
+as an argument to the ``subl`` command line helper
+included with Sublime Text.
 
 
 Panes
 =====
 
 Panes are groups of views.
-In Sublime Text you can have
+In Sublime Text, you can have
 multiple panes open at the same time.
 
 To create a new pane,
-press :kbd:`Ctrl+K, Ctrl+Up`.
-To close a pane, press :kbd:`Ctrl+K, Ctrl+Down`.
+press :kbd:`Ctrl+K, Ctrl+↑`.
+To close a pane, press :kbd:`Ctrl+K, Ctrl+↓`.
 
 Further pane management commands
 can be found under **View → Layout**
