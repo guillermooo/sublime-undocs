@@ -91,7 +91,7 @@ but visual indentation is preferred.
 
    In this case
    it's discouraged
-   to begin a field's body 
+   to begin a field's body
    on the same line as the marker.
 ```
 
@@ -153,6 +153,21 @@ all shortcut keys use the `:kbd:` role:
 All key names are written in TitleCase
 and all key bindings MUST refer
 to the default for Windows.
+
+As an exception, in tables you MUST
+write the shortcut as regular text:
+
+```
+Ctrl + T
+```
+
+Special names for keys:
+
+##### Arrows
+
+Use the following Unicode characters:
+
+- XXX Draw a table here
 
 #### Sublime Text-specific
 
