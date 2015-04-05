@@ -21,9 +21,16 @@ to **navigate your project's files** swiftly.
 
 .. image:: file-management-goto-anything.png
 
-To open Goto Anything,
-press :kbd:`Ctrl+P`.
-As you type into the input area,
+
+Keyboard shortcuts related to Goto Anything:
+
++-----------------------+------------------------+
+| Ctrl + P              | Open Goto Anything     |
++-----------------------+------------------------+
+| Esc                   | Dismiss transient view |
++-----------------------+------------------------+
+
+As you type into Goto Anything's input area,
 names of files in the current project
 will be searched,
 and a preview of the best match
@@ -31,9 +38,8 @@ will be shown.
 This preview is *transient*;
 that is, it won't become the actual active view
 until you perform some operation on it.
-Transient views go away when you press :kbd:`Esc`.
 You will find transient views in other situations,
-for example when single-clicking a file on the sidebar.
+for example, after clicking on a file in the sidebar.
 
 Goto Anything lives up to its name
 --there's more to it than locating files.
@@ -48,12 +54,12 @@ on their own or after the search term.
 
 Example::
 
-	models:123
+	models:100
 
 This instructs Sublime Text
 to first search for a file
-that matches ``models``,
-and then to go to line 123 in that file.
+whose path matches ``models``,
+and then to go to line 100 in said file.
 
 
 Supported Operators
@@ -62,20 +68,14 @@ Supported Operators
 .. _fm-goto-symbol:
 
 :samp:`@{symbol}`
-    Searches for the symbol named ``symbol``
-    in the active file.
-
-    Symbols usually include classes and functions,
-    but can in fact extract names
-    from any scope declared
-    in the corresponding syntax definition.
-    If no symbols are defined
-    for the active file type,
-    the search will simply fail.
+    Searches  the active file
+    for the symbol named ``symbol``.
 
     .. note::
 
-        Searching for symbols will only work
+        Symbols usually include class and function names.
+
+        Symbol searches will only yield results
         if the active file type
         has symbols defined for it.
         Symbols are defined in ``.tmLanguage`` files.
@@ -90,9 +90,10 @@ Supported Operators
     and highlights all matches.
 
 :samp:`:{line_number}`
-    Goes to the specified line number
+    Goes to the specified ``line_number``,
     or to the end of the file
-    (for numbers larger than the file's line count).
+    if ``line_number`` is larger
+    that the file's line count.
 
 The Goto Anything operators
 are bound to the following shortcuts:
@@ -111,11 +112,12 @@ Sidebar
 =======
 
 The sidebar provides an overview
-of the active project.
+of the active project
+(more on projects later).
 Files and folders in the sidebar
 will be available in `Goto Anything`_
 and project-wide actions
-(like project-wide searches).
+like, for example, project-wide searches.
 
 Projects and the sidebar are closely related.
 It's important to note
@@ -125,7 +127,7 @@ whether it's explicit or implicit.
 The sidebar provides basic file management operations
 through its context menu.
 
-These are common shortcuts
+These are common keyboard shortcuts
 related to the side bar:
 
 +-----------------------+-----------------------------------------------------------+
@@ -144,7 +146,7 @@ Unlike transient views, semi-transient views
 show up as a new tab.
 The tab title of semi-transient views appears in italics.
 Before a new semi-transient view is opened,
-any existing semi-transient view in the same pane
+any other pre-existing semi-transient view in the same pane
 gets automatically closed.
 
 Here's an example showing a normal view, a transient view,
@@ -165,8 +167,8 @@ There is always an active project.
 If you haven't created one,
 an implicit one is created by Sublime Text.
 
-Set up a project by adding folders in a way
-that suits you,
+Set up a project in a way
+that suits you by adding folders,
 and then save your new configuration.
 
 .. _fm-projects-folders:
@@ -317,6 +319,7 @@ Other Settings Related to the Sidebar and Projects
     but will be excluded from Goto Anything
     and Find in Files.
 
+.. TODO: Find in Files seems to be the official name for 'project-wide search'
 .. TODO: binary_file_patterns also applies to projects, right?
 
 Workspaces
@@ -338,7 +341,7 @@ To save the active workspace,
 select **Project → Save Workspace As...**.
 
 Workspaces data is stored in JSON files
-with the *.sublime-workspace* extension.
+with the ``.sublime-workspace`` extension.
 
 To switch between different workspaces,
 use :kbd:`Ctrl+Alt+P`,
@@ -346,12 +349,6 @@ exactly as you do with projects.
 
 Workspaces data is stored in JSON files
 with the ``.sublime-workspace`` extension.
-
-Unlike ``.sublime-project`` files,
-``.sublime-workspace`` files
-are not meant to be shared or edited manually.
-You should never commit ``.sublime-workspace`` files
-into a source code repository.
 
 As with projects, you can open a workspace
 from the **command line**
