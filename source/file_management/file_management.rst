@@ -42,7 +42,7 @@ Goto Anything lives up to its name
 Goto Anything Operators
 -----------------------
 
-Goto Anything understands several operators.
+Goto Anything accepts several operators.
 All of them can be used
 on their own or after the search term.
 
