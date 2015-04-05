@@ -205,9 +205,11 @@ by passing the ``.sublime- project`` file as an argument
 to the ``subl`` command line helper
 included with Sublime Text.
 
-Project files are generally apt
-to be committed to source code repositories,
-but always be mindful of what you store in them.
+.. warning::
+
+    A ``.sublime-project`` file is generally apt
+    to be committed to a source code repository,
+    but always be mindful of what you store in it.
 
 
 The ``.sublime-project`` Format
@@ -215,8 +217,8 @@ The ``.sublime-project`` Format
 
 Project metadata in ``.sublime-project`` files
 is split across three top level sections:
-``folders``, for the included folders, ``settings``,
-for project-specific settings,
+``folders``, for the included folders; ``settings``,
+for project-specific settings;
 and ``build_systems``, for project-specific build systems.
 
 .. code-block:: javascript
@@ -335,6 +337,9 @@ select **Project → New Workspace for Project**.
 To save the active workspace,
 select **Project → Save Workspace As...**.
 
+Workspaces data is stored in JSON files
+with the *.sublime-workspace* extension.
+
 To switch between different workspaces,
 use :kbd:`Ctrl+Alt+P`,
 exactly as you do with projects.
@@ -354,6 +359,13 @@ by passing the desired ``.sublime-workspace`` file
 as an argument to the ``subl`` command line helper
 included with Sublime Text.
 
+.. warning::
+    Unlike ``.sublime-project`` files,
+    ``.sublime-workspace`` files
+    are not meant to be shared or edited manually.
+    You should never commit ``.sublime-workspace`` files
+    into a source code repository.
+
 
 Panes
 =====
@@ -362,9 +374,14 @@ Panes are groups of views.
 In Sublime Text, you can have
 multiple panes open at the same time.
 
-To create a new pane,
-press :kbd:`Ctrl+K, Ctrl+↑`.
-To close a pane, press :kbd:`Ctrl+K, Ctrl+↓`.
+You can manipulate panes
+using default keyboard shortcuts:
+
++-----------------------+--------------------+
+| Ctrl+K, Ctrl+↑        | Create new pane    |
++-----------------------+--------------------+
+| Ctrl+K, Ctrl+↓        | Close active pane  |
++-----------------------+--------------------+
 
 Further pane management commands
 can be found under **View → Layout**
