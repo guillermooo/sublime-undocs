@@ -24,11 +24,11 @@ to **navigate your project's files** swiftly.
 
 Keyboard shortcuts related to Goto Anything:
 
-+-----------------------+------------------------+
-| Ctrl + P              | Open Goto Anything     |
-+-----------------------+------------------------+
-| Esc                   | Dismiss transient view |
-+-----------------------+------------------------+
++------------------------+------------------------+
+| Open Goto Anything     | Ctrl + P               |
++------------------------+------------------------+
+| Dismiss transient view | Esc                    |
++------------------------+------------------------+
 
 As you type into Goto Anything's input area,
 names of files in the current project
@@ -98,13 +98,13 @@ Supported Operators
 The Goto Anything operators
 are bound to the following shortcuts:
 
-+-----------------------+----------+
-| Ctrl + R              | **@**    |
-+-----------------------+----------+
-| Ctrl + ;              | **#**    |
-+-----------------------+----------+
-| Ctrl + G              | **:**    |
-+-----------------------+----------+
++--------+-----------+
+| **@**  | Ctrl + R  |
++--------+-----------+
+| **#**  | Ctrl + ;  |
++--------+-----------+
+| **:**  | Ctrl + G  |
++--------+-----------+
 
 .. _fm-sidebar:
 
@@ -132,15 +132,15 @@ through its context menu.
 These are common keyboard shortcuts
 related to the side bar:
 
-+-----------------------+-----------------------------------------------------------+
-| Ctrl + K, Ctrl + B    | Toggle side bar.                                          |
-+-----------------------+-----------------------------------------------------------+
-| Ctrl + 0              | Give the focus to the side bar.                           |
-+-----------------------+-----------------------------------------------------------+
-| Esc                   | Return the focus to the view.                             |
-+-----------------------+-----------------------------------------------------------+
-| Arrow keys            | Navigate side bar.                                        |
-+-----------------------+-----------------------------------------------------------+
++----------------------------------+-----------------------+
+| Toggle side bar.                 | Ctrl + K, Ctrl + B    |
++----------------------------------+-----------------------+
+| Give the focus to the side bar.  | Ctrl + 0              |
++----------------------------------+-----------------------+
+| Return the focus to the view.    | Esc                   |
++----------------------------------+-----------------------+
+| Navigate side bar.               | Arrow keys            |
++----------------------------------+-----------------------+
 
 Files opened from the sidebar
 create *semi-transient* views.
@@ -378,9 +378,9 @@ You can manipulate panes
 using default keyboard shortcuts:
 
 +-----------------------+--------------------+
-| Ctrl+K, Ctrl+↑        | Create new pane    |
+| Create new pane       | Ctrl+K, Ctrl+↑     |
 +-----------------------+--------------------+
-| Ctrl+K, Ctrl+↓        | Close active pane  |
+| Close active pane     | Ctrl+K, Ctrl+↓     |
 +-----------------------+--------------------+
 
 Further pane management commands
