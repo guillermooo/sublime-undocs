@@ -123,7 +123,7 @@ Sublime Text ships with a trimmed down standard library.
 Automatic Plugin Reload
 ***********************
 
-Sublime Text will reload top-level Python modules as they change (perhaps
+Sublime Text will reload topmost Python modules as they change (perhaps
 because you are editing a *.py* file within *Packages*). By contrast, Python
 subpackages won't be reloaded automatically, and this can lead to confusion
 while you're developing plugins. Generally speaking, it's best to restart

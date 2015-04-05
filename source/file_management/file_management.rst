@@ -216,7 +216,7 @@ The ``.sublime-project`` Format
 -------------------------------
 
 Project metadata in ``.sublime-project`` files
-is split across three top level sections:
+is split across three topmost sections:
 ``folders``, for the included folders; ``settings``,
 for project-specific settings;
 and ``build_systems``, for project-specific build systems.

@@ -75,7 +75,7 @@ Structure of a Comment Metadata File
 ====================================
 
 All comment metadata files
-share the same top-level structure,
+share the same topmost structure,
 which is inherited from Property List format:
 
 .. code-block:: xml

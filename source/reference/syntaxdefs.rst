@@ -67,7 +67,7 @@ import statements in other language definitions.
     interface. It's usually the name of the programming language or equivalent.
 
 ``scopeName``
-    Name of the top-level scope for this syntax definition. Either
+    Name of the topmost scope for this syntax definition. Either
     ``source.<lang>`` or ``text.<lang>``. Use ``source`` for programming
     languages and ``text`` for markup and everything else.
 

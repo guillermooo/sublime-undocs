@@ -104,7 +104,7 @@ several types of metadata.
 Structure of a Metadata File
 ============================
 
-All metadata files share the same top-level structure,
+All metadata files share the same topmost structure,
 which is inherited from the Property List format.
 
 .. code-block:: xml
@@ -117,7 +117,7 @@ which is inherited from the Property List format.
    </dict>
    </plist>
 
-Sublime Text uses the following top-level keys
+Sublime Text uses the following topmost keys
 in metadata files;
 all others are ignored by default.
 
