@@ -175,7 +175,7 @@ Let's examine the key elements.
     programming language you are creating the syntax definition for.
 
 ``scopeName``
-    The top level scope for this syntax definition. It takes the form
+    The topmost scope for this syntax definition. It takes the form
     ``source.<lang_name>`` or ``text.<lang_name>``. For programming languages,
     use ``source``. For markup and everything else, use ``text``.
 

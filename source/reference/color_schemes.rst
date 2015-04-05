@@ -78,7 +78,7 @@ Structure of a Color Scheme File
 Color scheme files are based
 on the Property List format.
 All color scheme files share
-the same top-level structure.
+the same topmost structure.
 
 Colors can be expressed in the
 following formats: ``#RRGGBB``, ``#RGB``.
@@ -90,7 +90,7 @@ accept an alpha channel value:
 .. contents:: Contents
    :local:
 
-Top-level Elements in Color Schemes Files
+Topmost Elements in Color Schemes Files
 *****************************************
 
 .. code-block:: xml
@@ -136,7 +136,7 @@ These settings affect global visual items
 in the editing area.
 
 Global settings go inside a ``<dict>`` element
-within the top-level ``<array>``.
+within the topmost ``<array>``.
 
 .. code-block:: xml
 

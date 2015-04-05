@@ -147,7 +147,7 @@ Structure of a Symbol Definition File
 =====================================
 
 All metadata files
-share the same top-level structure,
+share the same topmost structure,
 which is inherited from the Property List format.
 
 
