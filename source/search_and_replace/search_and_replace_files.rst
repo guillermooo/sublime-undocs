@@ -37,7 +37,7 @@ It is also possible to combine these filters using commas; for example:
 Press the **...** button in the search panel
 to display a menu containing scope options.
 
-
+.. oops
 .. _snr-results-format-files:
 
 Results Format
