@@ -27,7 +27,7 @@ Keyboard shortcuts related to Goto Anything:
 +------------------------+------------------------+
 | Open Goto Anything     | Ctrl + P               |
 +------------------------+------------------------+
-| Dismiss transient view | Esc                    |
+| Close Goto Anything    | Esc                    |
 +------------------------+------------------------+
 
 As you type into Goto Anything's input area,
