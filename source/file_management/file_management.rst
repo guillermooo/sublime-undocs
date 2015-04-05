@@ -119,6 +119,8 @@ will be available in `Goto Anything`_
 and project-wide actions
 like, for example, project-wide searches.
 
+.. TODO: maybe say "Find in Files" instead.
+
 Projects and the sidebar are closely related.
 It's important to note
 that there's always an active project,
@@ -260,6 +262,9 @@ and ``build_systems``, for project-specific build systems.
     The path may be relative to the project directory,
     or absolute.
 
+``name``
+    Optional. If present, it will appear in the side bar.
+
 ``folder_exclude_patterns``
     Optional. List of wildcards.
     Folders matching the wildcards will be excluded from the project.
@@ -275,9 +280,6 @@ and ``build_systems``, for project-specific build systems.
 ``file_include_patterns``
     Optional. List of wildcards.
     Files matching the wildcards will be included in the project.
-
-``name``
-    Optional. If present, it will appear in the side bar.
 
 .. TODO: there are more settings supported by projects.
 
@@ -360,8 +362,8 @@ included with Sublime Text.
     Unlike ``.sublime-project`` files,
     ``.sublime-workspace`` files
     are not meant to be shared or edited manually.
-    You should never commit ``.sublime-workspace`` files
-    into a source code repository.
+    **You should never commit** ``.sublime-workspace`` **files
+    into a source code repository.**
 
 
 Panes
