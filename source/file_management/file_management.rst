@@ -205,15 +205,16 @@ See the `official documentation`_ for more information.
 .. TODO add settings example here.
 
 You can open a project from the **command line**
-by passing the ``.sublime- project`` file as an argument
+by passing the ``.sublime-project`` file as an argument
 to the ``subl`` command line helper
 included with Sublime Text.
 
 .. warning::
 
-    A ``.sublime-project`` file is generally apt
-    to be committed to a source code repository,
-    but always be mindful of what you store in it.
+    Generally speaking,
+    it's fine to commit ``.sublime-project`` files
+    to a source code repository,
+    but always be mindful of what you store in them.
 
 
 The ``.sublime-project`` Format
