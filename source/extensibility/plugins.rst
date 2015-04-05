@@ -187,14 +187,14 @@ for plugins go, this a very bad one.
     import sublime, sublime_plugin
 
     from xml.etree import ElementTree as ET
-    from urllib import urlopen
+    import urllib
 
     GOOGLE_AC = r"http://google.com/complete/search?output=toolbar&q=%s"
 
     class GoogleAutocomplete(sublime_plugin.EventListener):
         def on_query_completions(self, view, prefix, locations):
             elements = ET.parse(
-                urlopen(GOOGLE_AC % prefix)
+                urllib.request.urlopen(GOOGLE_AC % prefix)
             ).getroot().findall("./CompleteSuggestion/suggestion")
 
             sugs = [(x.attrib["data"],) * 2 for x in elements]
