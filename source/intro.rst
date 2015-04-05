@@ -5,11 +5,13 @@ About This Documentation
 Welcome to the unofficial documentation
 for the Sublime Text editor!
 
-`Sublime Text`_ is a versatile text editor
-for code and prose.
-It automates repetitive tasks
-so you can focus on your work.
-And it's fun to use!
+.. image:: pterodactyl.png
+
+`Sublime Text`_ is a versatile and fun text editor
+for code and prose
+that automates repetitive tasks
+so you can focus the important stuff.
+It works on OS X, Windows and Linux.
 
 If you're starting out with Sublime Text,
 read the :doc:`basic_concepts` section first.
