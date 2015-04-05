@@ -5,7 +5,7 @@ About This Documentation
 Welcome to the unofficial documentation
 for the Sublime Text editor!
 
-.. image:: pterodactyl.png
+.. image:: sample-intro.png
 
 `Sublime Text`_ is a versatile and fun text editor
 for code and prose

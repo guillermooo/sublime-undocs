@@ -143,6 +143,10 @@ press :kbd:`Ctrl+\``
 or select **View → Show Console**
 from the main menu.
 
+Here's the Python console in Sublime Text:
+
+.. image:: basic-concepts-console.png
+
 
 Your System's Python vs the Sublime Text 3 Embedded Python
 **********************************************************
