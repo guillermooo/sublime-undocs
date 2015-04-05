@@ -1,5 +1,5 @@
 ===================================
-Search and Replace - Multiple Files
+Search and Replace — Multiple Files
 ===================================
 
 .. _snr-search-files:
@@ -7,50 +7,50 @@ Search and Replace - Multiple Files
 Searching
 =========
 
-To open the search panel for files, press :kbd:`Ctrl + Shift + F`. You can use the
-keyboard to control some search panel options and search actions:
+Keyboard shortcuts related to Find in Files:
 
-==========================   ==============
-Toggle Regular Expressions   :kbd:`Alt + R`
-Toggle Case Sensitivity      :kbd:`Alt + C`
-Toggle Exact matches         :kbd:`Alt + W`
-Find Next                    :kbd:`Enter`
-==========================   ==============
+==========================   ================
+**Open Find in Files**       Ctrl + Shift + F
+Toggle regular expressions   Alt + R
+Toggle case sensitivity      Alt + C
+Toggle exact matches         Alt + W
+Find next                    Enter
+==========================   ================
 
 .. _snr-search-scope-files:
 
 Search Scope
 ============
 
-The **Where** field in the search panel determines search scope. You can
-define scopes in several ways:
+The **Where** field in Find in Files
+limits the search scope.
+You can define scopes in several ways:
 
 * Adding individual directories (Unix-style paths, even on Windows)
-* Adding/excluding files based on a pattern
-* Adding symbolic locations (``<open folders>``, ``<open files>``)
+* Adding/excluding files based on wildcards
+* Adding symbolic locations (``<open folders>``, ``<open files>``...)
 
-It is also possible to combine these filters using commas; for example::
+It is also possible to combine these filters using commas; for example:
 
-   /C/Users/Joe/Top Secret,-\*.html,<open files>
+.. image:: search-in-files-with-filters.png
 
-Press the **...** button in the search panel to display a menu containing
-these options.
+Press the **...** button in the search panel
+to display a menu containing scope options.
 
-.. xxx what kind of patterns are those?
-.. xxx special locations?
-.. xxx unix paths on windows too?
-.. xxx link to reference to fulloptions
 
 .. _snr-results-format-files:
 
 Results Format
 ==============
 
-In the search panel, you can customize the display of results with the following
-options:
+In the search panel, you can customize
+how results are displayed.
+These are the available options:
 
-* Show in Separate Buffer/Output Panel
-* Show Context
+* Show in separate view
+* Show context
+
+.. image:: search-and-replace-search-results.png
 
 
 .. _snr-results-navigation-files:
@@ -58,10 +58,11 @@ options:
 Navigating Results
 ==================
 
-If the search yields matches, you can move through the sequence using the
-following key bindings:
+If the search yields matches,
+you can move through the sequence
+using the following key bindings:
 
 ==============   =================
-Next match       :kbd:`F4`
-Previous match   :kbd:`Shift + F4`
+Next match       F4
+Previous match   Shift + F4
 ==============   =================

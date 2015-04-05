@@ -2,7 +2,8 @@
 Search and Replace
 ==================
 
-Sublime Text features two main types of search:
+Sublime Text features
+two main types of search:
 
 .. toctree::
    :maxdepth: 1
@@ -10,31 +11,39 @@ Sublime Text features two main types of search:
 	Search - Single File <search_and_replace>
 	Search - Multiple Files <search_and_replace_files>
 
-We'll examine them in turn, but first let's talk about a powerful tool for searching
-text: **regular expressions**.
+Both support **regular expressions**,
+a powerful tool for searching and replacing text.
 
 .. _snr-regexes:
 
 Regular Expressions
 ===================
 
-Regular Expressions find complex *patterns* in text. To take full advantage of
-the search and replace facilities in Sublime Text, you should at least learn
-the basics of regular expressions. In this guide we won't explain how to use
-regular expressions.
+Regular Expressions find complex *patterns* in text.
+To take full advantage
+of the search and replace facilities in Sublime Text,
+you should at least learn
+the basics of regular expressions.
+In this guide
+we won't explain how to use regular expressions.
 
-Typing out *regular expression* gets boring fast, and saying it is even more
-annoying, so it is usually shortened to *regexp* or *regex*.
+The term *regular expression*
+is usually shortened to *regexp* or *regex*.
 
 This is how a regex might look::
 
 	(?:Sw|P)i(?:tch|s{2})\s(?:it\s)?of{2}!
 
-To use regular expressions in Sublime Text, you first need to activate them in
-the various search panels. The search term will otherwise be interpreted
-literally.
+To use regular expressions in Sublime Text,
+you first need to activate them in
+the various search panels.
+Otherwise, search terms will be interpreted literally.
 
-Sublime Text uses Perl Regular Expression Syntax from the Boost library.
+.. image:: search-and-replace-regex-sample.png
+
+Sublime Text uses the
+Perl Compatible Regular Expressions (PCRE) engine
+from the Boost library.
 
 .. seealso::
 
