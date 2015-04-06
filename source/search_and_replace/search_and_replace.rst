@@ -91,7 +91,7 @@ based on the current selection:
 
 =================================== ==================
 Search using current selection      Ctrl + E
-Replace using current selection     Shift + Shift + E
+Replace using current selection     Ctrl + Shift + E
 =================================== ==================
 
 .. _snr-multiline-search:

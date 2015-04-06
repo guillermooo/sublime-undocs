@@ -25,7 +25,9 @@ to **navigate your project's files** swiftly.
 Keyboard shortcuts related to Goto Anything:
 
 +------------------------+------------------------+
-| Open Goto Anything     | Ctrl + P               |
+| **Open Goto Anything** | Ctrl + P               |
++------------------------+------------------------+
+| Pin current item       | Enter                  |
 +------------------------+------------------------+
 | Close Goto Anything    | Esc                    |
 +------------------------+------------------------+
@@ -133,13 +135,13 @@ These are common keyboard shortcuts
 related to the side bar:
 
 +----------------------------------+-----------------------+
-| Toggle side bar.                 | Ctrl + K, Ctrl + B    |
+| **Toggle side bar**              | Ctrl + K, Ctrl + B    |
 +----------------------------------+-----------------------+
-| Give the focus to the side bar.  | Ctrl + 0              |
+| Give the focus to the side bar   | Ctrl + 0              |
 +----------------------------------+-----------------------+
-| Return the focus to the view.    | Esc                   |
+| Return the focus to the view     | Esc                   |
 +----------------------------------+-----------------------+
-| Navigate side bar.               | Arrow keys            |
+| Navigate side bar                | Arrow keys            |
 +----------------------------------+-----------------------+
 
 Files opened from the sidebar
@@ -184,10 +186,15 @@ it will be added to the project too.
 To save a project,
 go to **Project → Save Project As...**.
 
-To switch projects quickly,
-press :kbd:`Ctrl+Alt+P`.
 Using the menu,
-you can select **Projects → Recent Projects**.
+you can switch projects
+by selecting **Projects → Recent Projects**.
+
+Keyboard shortcuts related to projects:
+
++----------------------------------+-----------------------+
+| **Switch project**               | Ctrl + Alt + P        |
++----------------------------------+-----------------------+
 
 Project metadata is stored in JSON files
 with a ``.sublime-project`` extension.
@@ -343,15 +350,14 @@ select **Project → New Workspace for Project**.
 To save the active workspace,
 select **Project → Save Workspace As...**.
 
-Workspaces data is stored in JSON files
-with the ``.sublime-workspace`` extension.
-
 To switch between different workspaces,
 use :kbd:`Ctrl+Alt+P`,
 exactly as you do with projects.
 
-Workspaces data is stored in JSON files
+Workspaces metadata is stored in JSON files
 with the ``.sublime-workspace`` extension.
+
+.. TODO: is the stuff below true?
 
 As with projects, you can open a workspace
 from the **command line**
@@ -374,8 +380,8 @@ Panes are groups of views.
 In Sublime Text, you can have
 multiple panes open at the same time.
 
-You can manipulate panes
-using default keyboard shortcuts:
+Main keyboard shortcuts related
+to panes:
 
 +-----------------------+--------------------+
 | Create new pane       | Ctrl+K, Ctrl+↑     |
