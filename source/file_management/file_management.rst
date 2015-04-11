@@ -27,7 +27,10 @@ Keyboard shortcuts related to Goto Anything:
 +------------------------+------------------------+
 | **Open Goto Anything** | Ctrl + P               |
 +------------------------+------------------------+
-| Pin current item       | Enter                  |
+| Pin current item and   | Enter                  |
+| close Goto Anything    |                        |
++------------------------+------------------------+
+| Pin current item       | →                      |
 +------------------------+------------------------+
 | Close Goto Anything    | Esc                    |
 +------------------------+------------------------+
