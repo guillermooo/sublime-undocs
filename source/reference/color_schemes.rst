@@ -227,13 +227,13 @@ Tags
 
 ``tagsForeground``
    Color of tags when the caret is next to a tag.
-   Only used when the ``match_brackets`` setting
+   Only used when the ``match_tags`` setting
    is set to ``true``.
 
 ``tagsOptions``
    Controls certain options
    when the caret is next to a tag.
-   Only applied when the ``match_brackets`` setting
+   Only applied when the ``match_tags`` setting
    is set to ``true``.
 
    Options: ``underline``, ``stippled_underline``, ``squiggly_underline``.
