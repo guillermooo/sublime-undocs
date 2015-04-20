@@ -122,11 +122,7 @@ in two main ways:
    In this guide,
    *installed packages* sometimes refers strictly
    to ``.sublime-package`` archives residing
-   in the ``<Data>/Installed Packages`` directory.
-
-   Sublime Text can restore any package
-   located in ``<Data>/Installed Packages``, but
-   not every package located under ``Packages``.
+   in the :file:`<Data>/Installed Packages` directory.
 
 
 .. _installation-of-sublime-packages:
