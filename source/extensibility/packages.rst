@@ -1,6 +1,6 @@
-========
-Packages
-========
+==========
+ Packages
+==========
 
 A package is a container for resources.
 Packages can be folders under ``Packages``,
@@ -30,7 +30,7 @@ as a data store for English dictionaries.
 
 
 The *Installed Packages* Folder
-*******************************
+===============================
 
 You will find this folder
 in ``<Data>/Installed Packages``.
@@ -38,7 +38,7 @@ It contains ``.sublime-package`` archives.
 
 
 Types of Packages
-*****************
+=================
 
 In this guide, we categorize packages
 for clarity when discussing this topic.
@@ -96,7 +96,7 @@ that can be reused without modification.
 
 
 Installing Packages
-*******************
+===================
 
 .. note::
 
@@ -128,7 +128,7 @@ in two main ways:
 .. _installation-of-sublime-packages:
 
 Installation of ``.sublime-package`` Archives
----------------------------------------------
+*********************************************
 
 Copy the ``.sublime-package`` archive
 to the ``<Data>/Installed Packages`` folder
@@ -141,12 +141,12 @@ are just ``.zip`` archives with a custom file extension.
 
 
 Packages and Magic
-******************
+==================
 
 Sublime Text deals with packages without much hidden magic. There are two
 notable exceptions: Macros defined in any package automatically appear under
-**Tools | Macros | <Your Package>**, and snippets from any package appear
-under **Tools | Snippets | <Your Package>**.
+**Tools ? Macros ? <Your Package>**, and snippets from any package appear
+under **Tools ? Snippets ? <Your Package>**.
 
 However, Sublime Text follows some rules for packages. For instance,
 ``Package/User`` will never be clobbered during updates to the software.
@@ -161,7 +161,7 @@ However, Sublime Text follows some rules for packages. For instance,
 .. _merging-and-order-of-precedence:
 
 Merging and Order of Precedence
--------------------------------
+*******************************
 
 *Packages/Default* and *Packages/User* receive special treatment when
 merging files (e.g. *.sublime-keymap* and *.sublime-settings* files).
@@ -172,7 +172,7 @@ always go to the front of the list, and those in *User*, to the end.
 
 
 Ignored Packages
-****************
+================
 
 To temporarily disable packages,
 you can add them to the ``ignored_packages`` list
@@ -180,7 +180,7 @@ in your ``Packages/User/Preferences.sublime-settings`` file.
 
 
 Restoring Packages
-******************
+==================
 
 Sublime Text keeps a copy of all installed packages so it can recreate them as
 needed. This means it can reinstall core packages, shipped packages and,
@@ -190,7 +190,7 @@ installed in alternative ways will be lost completely if you delete them.
 
 
 Reverting Sublime Text to Its Default Configuration
----------------------------------------------------
+***************************************************
 
 To revert Sublime Text to its default configuration, delete the data directory
 and restart the editor. Keep in mind that the ``Installed Packages`` folder will
