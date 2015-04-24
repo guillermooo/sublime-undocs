@@ -51,7 +51,7 @@ and you don't need to learn it.
 
 **core packages**
    Sublime Text requires these packages
-   in order to work.
+   in order to function properly.
    Located in ``<Data>/../Packages``.
 
 **shipped packages**
@@ -63,8 +63,8 @@ and you don't need to learn it.
    Located in ``<Data>/../Packages``.
 
 **user packages**
-   Installed by the user
-   to extend Sublime Text's functionaility.
+   Installed or created by the user
+   to extend Sublime Text's functionality.
    They are not part of Sublime Text,
    and are always contributed by users
    or third parties.
@@ -83,7 +83,7 @@ and you don't need to learn it.
       packages in Sublime Text
       becomes a confusing business.
 
-      Sometimes, in this guide, by *instaling* we mean
+      Sometimes, in this guide, by *installing* we mean
       'adding a user/third party package to Sublime Text'
       (in any form),
       and sometimes we use the term
@@ -92,8 +92,8 @@ and you don't need to learn it.
       to ``<Data>/Installed Packages``'.
 
 Note that by *third party*
-we mainly refer to users of other
-editors, such as Textmate,
+we also refer to users of other
+editors, notably Textmate,
 as Sublime Text and Textmate
 share some types of resource files
 that can be reused without modification.
@@ -111,14 +111,16 @@ Installing Packages
    are available.
 
    The de facto package manager
-   for Sublime Text is Package Control.
+   for Sublime Text is `Package Control`_.
+
+.. _Package Control: https://packagecontrol.io
 
 Packages can be installed
 in two main ways:
 
 - by copying Sublime Text resources
-  to  a folder under ``Packages``, or
-- by copying a ``.sublime-package``
+  to a folder under ``Packages``, or
+- by copying a ``.sublime-package`` file
   to ``<Data>/Installed Packages``
 
 .. note::
