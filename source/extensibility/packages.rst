@@ -12,15 +12,19 @@ Typical resources found in packages include:
 .. hlist::
 
    - build systems (``.sublime-build``)
+   - color schemes (``.tmTheme``)
    - key maps (``.sublime-keymap``)
    - macros (``.sublime-macro``)
    - menus (``.sublime-menu``)
+   - metadata (``.tmPreferences``)
+   - mouse maps (``.sublime-mousemap``)
    - plugins (``.py``)
    - settings (``.sublime-settings``)
    - snippets (``.sublime-snippet``)
    - syntax definitions (``.tmLanguage``)
-   - metadata (``.tmPreferences``)
    - themes (``.sublime-theme``)
+
+.. XXX link to respective docs
 
 Some packages may hold support files
 for other packages or core features.
