@@ -4,6 +4,9 @@
 
 A package is a container for resources.
 
+.. contents::
+   :depth: 3
+
 
 Package Locations (and Abbreviations)
 =====================================
@@ -37,6 +40,41 @@ can optionally be in any number of subdirectories.
    by :file:`{Packages}/PackageName`.
    Consequently, a file inside a package
    may also be referred to as :file:`PackageName/a_file.extension`.
+
+
+.. _.sublime-package:
+
+``.sublime-package`` Packages
+*****************************
+
+Packages inside ``.sublime-package`` zip archives
+are to be considered atomic containers of resources
+and not to be modified manually.
+Since they are usually replaced as a whole,
+any manual changes made to them
+will be lost in the process.
+
+For modifying these archived packages,
+see :ref:`overriding-packages`.
+
+
+Same-Package Interactions
+*************************
+
+If the same package name exists
+in both :file:`{Installed Packages}` and :file:`{Shipped Packages}`,
+the one in :file:`{Installed Packages}` takes precedence
+and the other is ignored.
+
+If the same package name exists
+in :file:`{Packages}` and any other location,
+any files in the :file:`{Packages}` package
+take precedence over their counterpart
+in a ``.sublime-package`` package.
+Files that only exist in the ``.sublime-package`` archive
+are unaffected.
+
+See also :ref:`overriding-packages`.
 
 
 Package Contents
@@ -135,6 +173,19 @@ and you don't need to learn it.
          'copying a ``.sublime-package`` archive
          to :file:`{Installed Packages}`'.
 
+   **override packages**
+      A special type of *user packages*.
+
+      Override packages serve the purpose of customizing packages
+      that are bundled in ``.sublime-package`` files.
+      They are effectively injected into the original package
+      and will usually not be referred to as stand-alone packages.
+
+      See :ref:`overriding-packages` for details.
+
+      Located in :file:`{Packages}`.
+
+
 Note that by *third party*
 we also refer to users of other
 editors, notably Textmate,
@@ -143,8 +194,13 @@ share some types of resource files
 that can be reused without modification.
 
 
+Managing Packages
+=================
+
+.. XXX some sentences here?
+
 Installing Packages
-===================
+*******************
 
 .. note::
 
@@ -171,69 +227,124 @@ in two main ways:
   you can create it.
 
 
-.. _installation-of-sublime-packages:
+Disabling Packages
+******************
 
-Installation of ``.sublime-package`` Archives
-*********************************************
+To temporarily disable packages,
+you can add them to the ``ignored_packages`` list setting
+in your :file:`{Packages}/User/Preferences.sublime-settings` file.
 
-Copy the ``.sublime-package`` archive
-to the ``<Data>/Installed Packages`` folder
-and restart Sublime Text.
-If the ``<Data>/Installed Packages`` folder
-doesn't exist, you can create it.
-
-Note that ``.sublime-package`` files
-are just ``.zip`` archives with a custom file extension.
+Changes are detected when the file is saved
+and packages will be (un-)loaded on the fly.
 
 
-Packages and Magic
-==================
+Removing Packages
+*****************
 
-Sublime Text deals with packages without much hidden magic. There are two
-notable exceptions: Macros defined in any package automatically appear under
-**Tools → Macros → <Your Package>**, and snippets from any package appear
-under **Tools → Snippets → <Your Package>**.
+Firstly, if you installed a package with a package manager
+you should use the method provided by the manager
+to remove it.
 
-However, Sublime Text follows some rules for packages. For instance,
-``Package/User`` will never be clobbered during updates to the software.
+If you installed a package manually,
+it is safest to `disable <#disabling-packages>`_ the package
+and then remove the package's resources from the disk
+while Sublime Text is not running.
+Afterwards you can re-enable the package
+since it doesn't exist anymore.
 
-.. sidebar:: The ``User`` Package
+In addition to the resources
+you have placed initially in a :file:`Packages` folder,
+plugins may create configuration files
+(such as ``.sublime-settings`` files)
+or other files to store package-related data.
+Usually you will find them in the *User* package.
+When you want to remove all traces of a package
+you need to remove these files manually.
 
-   Usually, unpackaged resources are stored in ``Packages/User``. If you
-   have a few loose snippets, macros or plugins, this is a good place to keep
-   them.
+.. warning::
+
+   Do not attempt to remove :term:`shipped packages`;
+   they will be re-added on every Sublime Text update!
+   Disable them instead.
+
+
+.. _overriding-packages:
+
+Customizing or Overriding Packages
+==================================
+
+Since packages in ``.sublime-package`` zip archives
+:ref:`are atomic <.sublime-package>`,
+you can not modify them directly.
+However, Sublime Text allows you
+to create an :term:`override package <override packages>`
+that will effectively inject files into the original archive
+without changing the actual file.
+
+To create an override package package,
+just create a new folder under :file:`{Packages}`
+and name it after the ``.sublime-package`` file
+you want to override, without the extension.
+Any file you create in this package
+will take precedence over a potential counterpart file
+in the original package.
+
+Python plugins are able to use relative imports
+for accessing other modules in the ``.sublime-package`` file
+as if they were part of it.
+
+.. warning::
+
+   Since you are always overriding entire files
+   you will not receive any updates for these overridden files
+   if the original ``.sublime-package`` happens to be updated
+   at some point.
+
+.. Generally, this only works on resources
+   interpreted by Sublime Text directly.
+   If there are other files which the package loads
+   by means of a Python plugin,
+   it depends on whether the code uses
+   the ``sublime.load_resource`` API or not.
 
 
 .. _merging-and-order-of-precedence:
 
 Merging and Order of Precedence
-*******************************
+===============================
 
-*Packages/Default* and *Packages/User* receive special treatment when
-merging files (e.g. *.sublime-keymap* and *.sublime-settings* files).
-Before merging can take place, the files have to be arranged in some order. To
-that end, Sublime Text sorts them alphabetically by name, with the exception
-of the *Default* and *User* folders. Files contained in *Default* will
-always go to the front of the list, and those in *User*, to the end.
+Package precedence is important for merging certain resources
+(e.g. ``.sublime-keymap`` and ``.sublime-settings`` files)
+or loading plugins (``.py``).
 
+If an :term:`override package <override packages>` exists
+for a ``.sublime-package`` package,
+it will be loaded together with the ``.sublime-package`` package.
 
-Ignored Packages
-================
-
-To temporarily disable packages,
-you can add them to the ``ignored_packages`` list
-in your ``Packages/User/Preferences.sublime-settings`` file.
+1. :file:`{Packages}/Default` is loaded.
+#. All :term:`shipped packages` and :term:`installed packages`
+   are joined and loaded in alphabetical order.
+#. All remaining :term:`user packages`
+   that did not override anything
+   are loaded in alphabetical order.
+#. :file:`{Packages}/User` is loaded.
 
 
 Reverting Sublime Text to Its Default Configuration
 ===================================================
 
-To revert Sublime Text to its default configuration, delete the data directory
-and restart the editor. Keep in mind that the ``Installed Packages`` folder will
-be deleted too, so you'll lose all your installed packages.
+To revert Sublime Text to its default configuration
+and remove all your settings and configurations,
+delete the :ref:`data directory <data-directory>`
+and restart the editor.
+Keep in mind
+that the ``Installed Packages`` folder will be deleted too,
+so you'll lose all your installed packages.
 
-Always make sure to back up your data before taking an extreme measure like
-this one.
+Always make sure to back up your data
+before taking an extreme measure like this one.
 
-Reverting Sublime Text to a fresh state solves many problems that appear to be
-due to bugs in Sublime Text but are in fact caused by misbehaving plugins.
+Reverting Sublime Text to a fresh state
+solves many problems
+that appear to be bugs in Sublime Text
+but are in fact caused by misbehaving plugins.
