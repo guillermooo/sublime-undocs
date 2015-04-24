@@ -3,9 +3,42 @@
 ==========
 
 A package is a container for resources.
-Packages can be folders under ``Packages``,
-or zip archives under ``<Data>/Installed Packages``
-with the ``.sublime-package`` extension.
+
+
+Package Locations (and Abbreviations)
+=====================================
+
+There are three locations
+for storing packages
+for different purposes.
+
+- Packages can be **folders**
+  under :file:`{Data}/Packages` (short: :file:`{Packages}`)
+- or **zip archives**
+  under :file:`{Data}/Installed Packages` (short: :file:`{Installed Packages}`)
+  with the ``.sublime-package`` extension.
+- Additionally,
+  Sublime Text provides a set of default packages
+  as **zip archives**
+  in :file:`{Application}/Packages` (short: :file:`{Shipped Packages}`),
+  where ``Application`` refers to the folder
+  that the ST binary resides in.
+
+Zip archives in :file:`{Installed Packages}`
+(or :file:`{Shipped Packages}`)
+can optionally be in any number of subdirectories.
+
+For simplicity we will, on occasions,
+collectively refer to all these directories by :file:`{Packages}`
+and refer to a package in any folder
+(``.sublime-package`` or not)
+by :file:`{Packages}/Package Name`.
+Consequently, a file inside a package
+may also be referred to as :file:`{Package Name}/a_file.extension`.
+
+
+Package Contents
+================
 
 Typical resources found in packages include:
 
@@ -29,16 +62,8 @@ Typical resources found in packages include:
 Some packages may hold support files
 for other packages or core features.
 For example, the spell checker
-uses ``Packages/Language - English.sublime-package``
+uses :file:`{Installed Packages}/Language - English.sublime-package`
 as a data store for English dictionaries.
-
-
-The *Installed Packages* Folder
-===============================
-
-You will find this folder
-in ``<Data>/Installed Packages``.
-It contains ``.sublime-package`` archives.
 
 
 Types of Packages
@@ -49,18 +74,25 @@ for clarity when discussing this topic.
 Sublime Text doesn't use this terminology
 and you don't need to learn it.
 
+**shipped packages** (or *default packages*)
+   A set of packages
+   that Sublime Text ships with by default.
+   They are included in every installation,
+   though technically not required
+   and enhance Sublime Text out of the box.
+
+   Examples: Default, Python, Java, C++, Markdown
+
+   Located in :file:`{Shipped Packages}`.
+
 **core packages**
    Sublime Text requires these packages
    in order to function properly.
-   Located in ``<Data>/../Packages``.
 
-**shipped packages**
-   Included in every installation,
-   though technically not required.
-   They enhance Sublime Text out of the box.
-   May have been contributed by users or
-   third parties.
-   Located in ``<Data>/../Packages``.
+   Examples: Default, Theme - Default, Color Scheme - Default
+
+   They are part of the shipped packages and
+   located in :file:`{Shipped Packages}`.
 
 **user packages**
    Installed or created by the user
@@ -68,13 +100,17 @@ and you don't need to learn it.
    They are not part of Sublime Text,
    and are always contributed by users
    or third parties.
-   Located in ``<Data>/Packages``
-   and ``<Data>/Installed Packages``.
+
+   Example: User
+
+   Located in :file:`{Packages}`
+   and :file:`{Installed Packages}`.
 
 **installed packages**
-   Packages stored under
-   ``<Data>/Installed Packages`` as ``.sublime-package`` archives.
-   A type of *user package*.
+   A subtype of *user packages*.
+
+   Packages stored under :file:`{Installed Packages}`
+   as ``.sublime-package`` archives.
 
    .. note::
 
@@ -89,7 +125,7 @@ and you don't need to learn it.
       and sometimes we use the term
       in its stricter sense of
       'copying a ``.sublime-package`` archive
-      to ``<Data>/Installed Packages``'.
+      to :file:`{Installed Packages}`'.
 
 Note that by *third party*
 we also refer to users of other
@@ -121,7 +157,7 @@ in two main ways:
 - by copying Sublime Text resources
   to a folder under ``Packages``, or
 - by copying a ``.sublime-package`` file
-  to ``<Data>/Installed Packages``
+  to :file:`{Installed Packages}`
 
 .. note::
 
@@ -151,8 +187,8 @@ Packages and Magic
 
 Sublime Text deals with packages without much hidden magic. There are two
 notable exceptions: Macros defined in any package automatically appear under
-**Tools ? Macros ? <Your Package>**, and snippets from any package appear
-under **Tools ? Snippets ? <Your Package>**.
+**Tools → Macros → <Your Package>**, and snippets from any package appear
+under **Tools → Snippets → <Your Package>**.
 
 However, Sublime Text follows some rules for packages. For instance,
 ``Package/User`` will never be clobbered during updates to the software.
