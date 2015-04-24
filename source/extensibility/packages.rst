@@ -22,19 +22,21 @@ for different purposes.
   as **zip archives**
   in :file:`{Application}/Packages` (short: :file:`{Shipped Packages}`),
   where ``Application`` refers to the folder
-  that the ST binary resides in.
+  that the Sublime Text executable resides.
 
 Zip archives in :file:`{Installed Packages}`
 (or :file:`{Shipped Packages}`)
 can optionally be in any number of subdirectories.
 
-For simplicity we will, on occasions,
-collectively refer to all these directories by :file:`{Packages}`
-and refer to a package in any folder
-(``.sublime-package`` or not)
-by :file:`{Packages}/Package Name`.
-Consequently, a file inside a package
-may also be referred to as :file:`{Package Name}/a_file.extension`.
+.. note::
+
+   For simplicity we will, on occasions,
+   collectively refer to all these directories by :file:`{Packages}`
+   and refer to a package in any folder
+   (``.sublime-package`` or not)
+   by :file:`{Packages}/PackageName`.
+   Consequently, a file inside a package
+   may also be referred to as :file:`PackageName/a_file.extension`.
 
 
 Package Contents
@@ -74,58 +76,64 @@ for clarity when discussing this topic.
 Sublime Text doesn't use this terminology
 and you don't need to learn it.
 
-**shipped packages** (or *default packages*)
-   A set of packages
-   that Sublime Text ships with by default.
-   They are included in every installation,
-   though technically not required
-   and enhance Sublime Text out of the box.
+.. glossary::
 
-   Examples: Default, Python, Java, C++, Markdown
+   **shipped packages**
+   **default packages**
+      A set of packages
+      that Sublime Text ships with by default.
+      They are included in every installation,
+      though technically not required,
+      and enhance Sublime Text out of the box.
 
-   Located in :file:`{Shipped Packages}`.
+      Examples: Default, Python, Java, C++, Markdown
 
-**core packages**
-   Sublime Text requires these packages
-   in order to function properly.
+      Located in :file:`{Shipped Packages}`.
 
-   Examples: Default, Theme - Default, Color Scheme - Default
+   **core packages**
+      Sublime Text requires these packages
+      in order to function properly.
 
-   They are part of the shipped packages and
-   located in :file:`{Shipped Packages}`.
+      Examples: Default, Theme - Default, Color Scheme - Default
 
-**user packages**
-   Installed or created by the user
-   to extend Sublime Text's functionality.
-   They are not part of Sublime Text,
-   and are always contributed by users
-   or third parties.
+      They are part of the shipped packages and
+      located in :file:`{Shipped Packages}`.
 
-   Example: User
+   **user packages**
+      Installed or created by the user
+      to extend Sublime Text's functionality.
+      They are not part of Sublime Text,
+      and are always contributed by users
+      or third parties.
 
-   Located in :file:`{Packages}`
-   and :file:`{Installed Packages}`.
+      Example: User
 
-**installed packages**
-   A subtype of *user packages*.
+      Located in :file:`{Packages}`
+      and :file:`{Installed Packages}`.
 
-   Packages stored under :file:`{Installed Packages}`
-   as ``.sublime-package`` archives.
+   **installed packages**
+      A subtype of *user packages*.
 
-   .. note::
+      Installed packages are ``.sublime-package``
+      and usually maintained by a package manager of some sort.
 
-      Due to the unfortunate name of this folder,
-      talking about *installing*
-      packages in Sublime Text
-      becomes a confusing business.
+      Packages stored under :file:`{Installed Packages}`
+      as ``.sublime-package`` archives.
 
-      Sometimes, in this guide, by *installing* we mean
-      'adding a user/third party package to Sublime Text'
-      (in any form),
-      and sometimes we use the term
-      in its stricter sense of
-      'copying a ``.sublime-package`` archive
-      to :file:`{Installed Packages}`'.
+      .. note::
+
+         Due to the unfortunate name of this folder,
+         talking about *installing*
+         packages in Sublime Text
+         becomes a confusing business.
+
+         Sometimes, in this guide, by *installing* we mean
+         'adding a user/third party package to Sublime Text'
+         (in any form),
+         and sometimes we use the term
+         in its stricter sense of
+         'copying a ``.sublime-package`` archive
+         to :file:`{Installed Packages}`'.
 
 Note that by *third party*
 we also refer to users of other
@@ -146,25 +154,21 @@ Installing Packages
    as automatic package managers
    are available.
 
-   The de facto package manager
+   The de-facto package manager
    for Sublime Text is `Package Control`_.
 
-.. _Package Control: https://packagecontrol.io
+   .. _Package Control: https://packagecontrol.io
+
 
 Packages can be installed
 in two main ways:
 
 - by copying Sublime Text resources
-  to a folder under ``Packages``, or
+  to a (new) folder under :file:`{Packages}`, or
 - by copying a ``.sublime-package`` file
-  to :file:`{Installed Packages}`
-
-.. note::
-
-   In this guide,
-   *installed packages* sometimes refers strictly
-   to ``.sublime-package`` archives residing
-   in the :file:`<Data>/Installed Packages` directory.
+  to :file:`{Installed Packages}`.
+  If the folder does not exist
+  you can create it.
 
 
 .. _installation-of-sublime-packages:
@@ -221,18 +225,8 @@ you can add them to the ``ignored_packages`` list
 in your ``Packages/User/Preferences.sublime-settings`` file.
 
 
-Restoring Packages
-==================
-
-Sublime Text keeps a copy of all installed packages so it can recreate them as
-needed. This means it can reinstall core packages, shipped packages and,
-potentially, user packages alike. However, only user packages installed as
-``sublime-packages`` are added to its registry of installed packages. Packages
-installed in alternative ways will be lost completely if you delete them.
-
-
 Reverting Sublime Text to Its Default Configuration
-***************************************************
+===================================================
 
 To revert Sublime Text to its default configuration, delete the data directory
 and restart the editor. Keep in mind that the ``Installed Packages`` folder will

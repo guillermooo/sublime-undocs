@@ -1,8 +1,8 @@
 .. _glossary:
 
-========
-Glossary
-========
+==========
+ Glossary
+==========
 
 .. glossary::
 
@@ -15,7 +15,7 @@ Glossary
       Graphical display of a buffer. Multiple views can show the same buffer.
 
    plugin
-      A feature impemented in Python, which can consist of a single command
+      A feature implemented in Python, which can consist of a single command
       or multiple commands. It can be contained in one *.py* file or many
       *.py* files.
 
@@ -38,3 +38,10 @@ Glossary
 
       However, this is an ambiguous term, and in some instances it could also
       be used with the broader meaning it has in technical texts.
+
+.. in extensibility/packages.rst:
+   default packages
+   shipped packages
+   core packages
+   user packages
+   installed packages
