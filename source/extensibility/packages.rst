@@ -20,24 +20,22 @@ for different purposes.
 - or **zip archives**
   under :file:`{Data}/Installed Packages` (short: :file:`{Installed Packages}`)
   with the ``.sublime-package`` extension.
+  Archives can optionally be in any number of subdirectories.
 - Additionally,
   Sublime Text provides a set of default packages
   as **zip archives**
   in :file:`{Application}/Packages` (short: :file:`{Shipped Packages}`),
   where ``Application`` refers to the folder
   that the Sublime Text executable resides.
-
-Zip archives in :file:`{Installed Packages}`
-(or :file:`{Shipped Packages}`)
-can optionally be in any number of subdirectories.
+  The folder is not intended to be modified by the user.
 
 .. note::
 
-   For simplicity we will, on occasions,
-   collectively refer to all these directories by :file:`{Packages}`
-   and refer to a package in any folder
+   For simplicity, we will occasionally
+   refer to all these directories simply as :file:`{Packages}`
+   and to a package in any folder
    (``.sublime-package`` or not)
-   by :file:`{Packages}/PackageName`.
+   as :file:`{Packages}/PackageName`.
    Consequently, a file inside a package
    may also be referred to as :file:`PackageName/a_file.extension`.
 
@@ -48,31 +46,27 @@ can optionally be in any number of subdirectories.
 *****************************
 
 Packages inside ``.sublime-package`` zip archives
-are to be considered atomic containers of resources
-and not to be modified manually.
-Since they are usually replaced as a whole,
+should be considered read-only containers of resources
+and should never modified manually.
+Since they are usually updated as a whole,
 any manual changes made to them
 will be lost in the process.
 
-For modifying these archived packages,
+If you do want to modify files in these archives,
 see :ref:`overriding-packages`.
 
 
-Same-Package Interactions
-*************************
+Interactions Between Packages With the Same Name
+************************************************
 
-If the same package name exists
+If two packages with the same name exist
 in both :file:`{Installed Packages}` and :file:`{Shipped Packages}`,
 the one in :file:`{Installed Packages}` takes precedence
-and the other is ignored.
+and the other is ignored entirely.
 
-If the same package name exists
-in :file:`{Packages}` and any other location,
-any files in the :file:`{Packages}` package
-take precedence over their counterpart
-in a ``.sublime-package`` package.
-Files that only exist in the ``.sublime-package`` archive
-are unaffected.
+Any files in :file:`{Packages}` take precedence
+over their counterpart files in a ``.sublime-package`` package
+or are simply added to the package.
 
 See also :ref:`overriding-packages`.
 
@@ -98,6 +92,7 @@ Typical resources found in packages include:
    - themes (``.sublime-theme``)
 
 .. XXX link to respective docs
+.. XXX add secondary extensions (.tmSnippet, .sublime-syntax)
 
 Some packages may hold support files
 for other packages or core features.
@@ -119,10 +114,10 @@ and you don't need to learn it.
    **shipped packages**
    **default packages**
       A set of packages
-      that Sublime Text ships with by default.
-      They are included in every installation,
-      though technically not required,
-      and enhance Sublime Text out of the box.
+      that Sublime Text ships with.
+      Some of these packages are :term:`core packages`
+      while others enhance Sublime Text
+      to support common programming languages out of the box.
 
       Examples: Default, Python, Java, C++, Markdown
 
@@ -155,8 +150,7 @@ and you don't need to learn it.
       Installed packages are ``.sublime-package``
       and usually maintained by a package manager of some sort.
 
-      Packages stored under :file:`{Installed Packages}`
-      as ``.sublime-package`` archives.
+      Located in :file:`{Installed Packages}`.
 
       .. note::
 
@@ -177,9 +171,9 @@ and you don't need to learn it.
       A special type of *user packages*.
 
       Override packages serve the purpose of customizing packages
-      that are bundled in ``.sublime-package`` files.
+      that are packed as ``.sublime-package`` files.
       They are effectively injected into the original package
-      and will usually not be referred to as stand-alone packages.
+      and not stand-alone.
 
       See :ref:`overriding-packages` for details.
 
@@ -206,11 +200,11 @@ Installing Packages
 
    Nowadays, regular users
    rarely need to know
-   how to install packages by hand,
+   how to install packages by hand
    as automatic package managers
    are available.
 
-   The de-facto package manager
+   The de facto package manager
    for Sublime Text is `Package Control`_.
 
    .. _Package Control: https://packagecontrol.io
@@ -220,12 +214,12 @@ Packages can be installed
 in two main ways:
 
 - by copying Sublime Text resources
-  to a (new) folder under :file:`{Packages}`, or
+  to a folder under :file:`{Packages}`, or
 - by copying a ``.sublime-package`` file
   to :file:`{Installed Packages}`.
-  If the folder does not exist
-  you can create it.
 
+
+.. _disabling-packages:
 
 Disabling Packages
 ******************
@@ -235,37 +229,50 @@ you can add them to the ``ignored_packages`` list setting
 in your :file:`{Packages}/User/Preferences.sublime-settings` file.
 
 Changes are detected when the file is saved
-and packages will be (un-)loaded on the fly.
+and packages will be loaded or unloaded on the fly.
+
+
+Enabling Packages
+*****************
+
+Similarly to :ref:`disabling-packages`,
+enabling a package is simply a matter of
+removing the package's name from the ``ignored_packages`` list setting.
 
 
 Removing Packages
 *****************
 
-Firstly, if you installed a package with a package manager
+If you installed a package with a package manager
 you should use the method provided by the manager
 to remove it.
 
 If you installed a package manually,
-it is safest to `disable <#disabling-packages>`_ the package
-and then remove the package's resources from the disk
-while Sublime Text is not running.
-Afterwards you can re-enable the package
-since it doesn't exist anymore.
+follow this procedure to safely remove a package:
+
+1. :ref:`Disable <disabling-packages>` the package
+   while Sublime Text is running.
+#. Close Sublime Text.
+#. Remove the package's resources from the disk.
+4. Afterwards you can remove the package
+   from the ``ignored_packages`` list setting
+   since it doesn't exist anymore.
 
 In addition to the resources
-you have placed initially in a :file:`Packages` folder,
+you have placed initially
+in a :file:`{Packages}` folder or in :file:`{Installed Packages}`,
 plugins may create configuration files
 (such as ``.sublime-settings`` files)
 or other files to store package-related data.
-Usually you will find them in the *User* package.
-When you want to remove all traces of a package
-you need to remove these files manually.
+Usually, you will find them in the *User* package.
+If you want to remove all traces of a package
+you need to find and remove these files manually.
 
 .. warning::
 
-   Do not attempt to remove :term:`shipped packages`;
-   they will be re-added on every Sublime Text update!
-   Disable them instead.
+   Shipped Packages are reinstated on every Sublime Text update.
+   If you want to get rid of any of them,
+   :ref:`disable <disabling-packages>` them instead of deleting.
 
 
 .. _overriding-packages:
@@ -274,14 +281,14 @@ Customizing or Overriding Packages
 ==================================
 
 Since packages in ``.sublime-package`` zip archives
-:ref:`are atomic <.sublime-package>`,
+:ref:`are read-only <.sublime-package>`,
 you can not modify them directly.
 However, Sublime Text allows you
 to create an :term:`override package <override packages>`
 that will effectively inject files into the original archive
-without changing the actual file.
+without changing the archive file.
 
-To create an override package package,
+To create an override package,
 just create a new folder under :file:`{Packages}`
 and name it after the ``.sublime-package`` file
 you want to override, without the extension.
@@ -289,13 +296,14 @@ Any file you create in this package
 will take precedence over a potential counterpart file
 in the original package.
 
-Python plugins are able to use relative imports
+Python plugins in override packages
+are able to use relative imports
 for accessing other modules in the ``.sublime-package`` file
 as if they were part of it.
 
 .. warning::
 
-   Since you are always overriding entire files
+   Since you are always overriding entire files,
    you will not receive any updates for these overridden files
    if the original ``.sublime-package`` happens to be updated
    at some point.
@@ -305,7 +313,8 @@ as if they were part of it.
    If there are other files which the package loads
    by means of a Python plugin,
    it depends on whether the code uses
-   the ``sublime.load_resource`` API or not.
+   the ``sublime.load_resource`` API or not
+   (which they should).
 
 
 .. _merging-and-order-of-precedence:
@@ -314,7 +323,7 @@ Merging and Order of Precedence
 ===============================
 
 Package precedence is important for merging certain resources
-(e.g. ``.sublime-keymap`` and ``.sublime-settings`` files)
+(for example ``.sublime-keymap`` and ``.sublime-settings`` files)
 or loading plugins (``.py``).
 
 If an :term:`override package <override packages>` exists
@@ -326,12 +335,17 @@ it will be loaded together with the ``.sublime-package`` package.
    are joined and loaded in alphabetical order.
 #. All remaining :term:`user packages`
    that did not override anything
-   are loaded in alphabetical order.
+   are loaded in alphabetical order,
+   except for :file:`{Packages}/User`.
 #. :file:`{Packages}/User` is loaded.
 
 
 Reverting Sublime Text to Its Default Configuration
 ===================================================
+
+Because of the nature of a powerful scripting language like Python,
+packages may cause Sublime Text to not function properly
+or have bad interactions between one another.
 
 To revert Sublime Text to its default configuration
 and remove all your settings and configurations,
