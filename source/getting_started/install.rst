@@ -183,7 +183,7 @@ Then copy the following into it.
 ::
 
     [Desktop Entry]
-    Version=3.0
+    Version=1.0
     Name=Sublime Text 3
     # Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
     # From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
