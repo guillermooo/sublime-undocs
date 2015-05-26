@@ -18,9 +18,10 @@ for different purposes.
 - Packages can be **folders**
   under :file:`{Data}/Packages` (short: :file:`{Packages}`)
 - or **zip archives**
-  under :file:`{Data}/Installed Packages` (short: :file:`{Installed Packages}`),
-  or any subdirectory under it,
-  with the ``.sublime-package`` extension.
+  with the ``.sublime-package`` extension
+  located under :file:`{Data}/Installed Packages`
+  (short: :file:`{Installed Packages}`)
+  or any of its subdirectories.
 - Additionally,
   Sublime Text provides a set of default packages
   as **zip archives**
@@ -62,8 +63,8 @@ Interactions Between Packages With the Same Name
 
 If two packages with the same name exist
 in both :file:`{Installed Packages}` and :file:`{Shipped Packages}`,
-the one in :file:`{Installed Packages}` will take precedence
-and the other is will be ignored.
+the one in :file:`{Installed Packages}` will be used
+and the other ignored.
 
 Any files in :file:`{Packages}` take precedence
 over their counterpart files in a ``.sublime-package`` package
@@ -174,7 +175,7 @@ and you don't need to learn it.
       Override packages serve the purpose of customizing packages
       that are distributed as ``.sublime-package`` files.
       They are effectively injected into the original package
-      do not stand-alone.
+      and do not stand-alone.
 
       See :ref:`overriding-packages` for details.
 
@@ -255,7 +256,7 @@ follow this procedure to safely remove a package:
    while Sublime Text is running.
 #. Close Sublime Text.
 #. Remove the package's resources from the disk.
-4. Finally you can remove the package
+4. Finally, you can remove the package
    from the ``ignored_packages`` list setting,
    since it doesn't exist anymore.
 
@@ -325,7 +326,7 @@ Merging and Order of Precedence
 
 Package precedence is important for merging certain resources,
 for example, ``.sublime-keymap`` and ``.sublime-settings`` files,
-or loading plugins (``.py``).
+or for loading plugins (``.py``).
 
 If an :term:`override package <override packages>` exists
 for a ``.sublime-package`` package,
