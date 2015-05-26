@@ -55,6 +55,7 @@ we'll outline key aspects
 that you'll get familiar with
 after you've spent some time using the editor.
 
+.. _data-directory:
 
 The *Data* Directory
 ====================
@@ -69,11 +70,12 @@ a platform-dependent location:
 * **Linux**: :file:`~/.config/sublime-text-3`
 
 If you're using the **portable version** (Windows only),
-look for :file:`{Sublime Text 3}/Data`.
-Here, *Sublime Text 3*
+look for :file:`{Application}/Data`.
+Here, ``Application``
 refers to the directory
 to which you've extracted
-the compressed portable files.
+the compressed portable files
+and where the executable resides.
 
 Note that the :file:`Data` directory
 only exists with that name
@@ -91,9 +93,9 @@ located under the data directory.
 All resources for supported programming
 and markup languages
 are stored here.
-(More on *packages* and *resources* later.)
 
-.. TODO: link term above to glossary?
+(More on *packages* and *resources* :doc:`later </extensibility/packages>`.)
+
 
 You can access the packages directory
 from the main menu (**Preferences → Browse Packages...**),
@@ -108,12 +110,15 @@ as *Packages*, *packages path*, *packages folder* or *packages directory*.
 The *User* Package
 ******************
 
-:file:`Packages/User` is a catch-all directory
+:file:`{Packages}/User` is a catch-all directory
 for custom plugins, snippets, macros, etc.
 Consider it your personal area
 in the packages folder.
+Additionally, it will contain
+most of your personal application or plugin settings.
+
 Updates to Sublime Text will never
-overwrite the contents of :file:`Packages/User`.
+overwrite the contents of :file:`{Packages}/User`.
 
 
 Sublime Text is Programmable
