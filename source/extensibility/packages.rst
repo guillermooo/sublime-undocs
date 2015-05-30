@@ -67,7 +67,7 @@ the one in :file:`{Installed Packages}` will be used
 and the one in :file:`{Shipped Packages}` will be ignored.
 
 Any file in :file:`{Packages/Something}` takes precedence
-over any identically named file in :file:`Installed Packages/Something.sublime-package` archive.
+over any identically named file in :file:`Installed Packages/Something.sublime-package`.
 
 See also :ref:`overriding-packages`.
 
@@ -107,8 +107,8 @@ Types of Packages
 =================
 
 In this guide, we categorize packages
-for clarity when discussing this topic.
-Sublime Text doesn't use this terminology
+for clarity when discussing this topic,
+but Sublime Text doesn't use this terminology
 and you don't need to learn it.
 
 .. glossary::
@@ -271,8 +271,8 @@ that it may have installed.
    Shipped packages are reinstated
    during every Sublime Text update,
    so you can't delete them forever.
-   If you want to get rid of any of them,
-   :ref:`disable <disabling-packages>` them.
+   If you want to stop using a shipped package,
+   :ref:`disable <disabling-packages>` it.
 
 
 .. _overriding-packages:
@@ -286,7 +286,7 @@ you cannot modify them directly.
 However, Sublime Text allows you
 to create an :term:`override package <override packages>`
 that will effectively inject files into the original archive
-without changing the archive files.
+without modifying the archive itself.
 
 To create an override package,
 create a new folder under :file:`{Packages}`
@@ -323,7 +323,7 @@ Merging and Order of Precedence
 
 Package precedence is important for merging certain resources,
 for example, ``.sublime-keymap`` and ``.sublime-settings`` files,
-or for loading plugins (``.py`` files).
+and for loading plugins (``.py`` files).
 
 If an :term:`override package <override packages>` exists
 for a ``.sublime-package`` package,
@@ -333,7 +333,7 @@ Sublime Text loads packages in this order:
 
 1. :file:`{Packages}/Default`;
 #. :term:`shipped packages` and :term:`installed packages`,
-   combined and in alphabetical order;
+   combined and sorted in alphabetical order;
 #. all remaining :term:`user packages`
    that did not override anything
    are loaded in alphabetical order,
