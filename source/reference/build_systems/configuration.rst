@@ -255,8 +255,10 @@ in ``.sublime-build`` files:
 
 
 .. note::
-    Expansion is applied only to the following keys:
-     `cmd`, `shell_cmd`, and `working_dir`
+
+    Expansion is currently applied only
+    to the following keys in the :file:`.sublime-build` file:
+    ``cmd``, ``shell_cmd``, and ``working_dir``.
 
 
 Placeholders for Variables
