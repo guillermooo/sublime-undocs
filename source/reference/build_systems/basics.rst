@@ -1,20 +1,19 @@
-======================
-Build System -- Basics
-======================
+=======================
+Build Systems -- Basics
+=======================
 
 
 Overview
 ========
 
-Using build systems,
-you can run files
-through external programs
-without leaving Sublime Text,
-and see the output they generate.
+You can use build systems
+to run files through external programs
+and see any generated output,
+all without leaving Sublime Text.
 
 .. note::
 
-    *Build* is used in a broad sense.
+    We use the term *build* in a broad sense.
     A build system doesn't need to generate
     a compiled executable---it could simply
     format code, run an interpreter, etc.
@@ -24,29 +23,31 @@ Parts of a Build System
 =======================
 
 Simple build systems
-only require a ``.sublime-build`` file.
+only require a :file:`.sublime-build` file.
 More advanced build systems
 may optionally consist of up to three parts:
 
-* a ``.sublime-build`` file (configuration data in JSON format)
-* optionally, a custom Sublime Text command driving the build process
-* optionally, an external executable file (script or binary file)
+* a ``.sublime-build`` file (configuration data in JSON format);
+* optionally, a custom Sublime Text command (Python code) driving the build process;
+* optionally, an external executable file (script or binary file).
 
 
 ``.sublime-build`` Files
 ************************
 
-A ``.sublime-build`` file
+A :file:`.sublime-build` file
 contains configuration data
 as a JSON object.
-This file is used to specify
+A :file:`.sublime-build` file is used to specify
 switches, options and environmental data.
-Each ``.sublime-build`` file
+Each :file:`.sublime-build` file
 is normally associated
-with a specific scope.
+with a specific scope
+corresponding to a file type
+(for example, ``source.python``).
 
-The file name represents the name
-of the build system
+The file name represents
+the name of the build system
 and will be displayed
 whenever you can select a build system.
 
@@ -76,7 +77,7 @@ This command then *builds* the files.
 Often, it calls
 an external program.
 By default, the command
-used in build systems is called ``exec``,
+used in build systems is ``exec``,
 but it can be overriden.
 
 
