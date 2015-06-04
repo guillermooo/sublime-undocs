@@ -2,10 +2,15 @@
  Packages
 ==========
 
-A package is a container for resources.
-
 .. contents::
-   :depth: 3
+   :local:
+   :depth: 2
+
+
+Overview
+========
+
+A package is a container for resources.
 
 
 Package Locations (and Abbreviations)
