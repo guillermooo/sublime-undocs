@@ -348,7 +348,7 @@ Follow these steps to perform the conversion:
     - Sublime Text will reload the changes to the syntax definition
 
 In case you are wondering why AAAPackageDev knows what you want to convert your
-file to: It's specified in the first commente line.
+file to: It's specified in the first comment line.
 
 You have now created your first syntax definition. Next, open a new file and
 save it with the extension ``.ssraw``. The buffer's syntax name should switch to
