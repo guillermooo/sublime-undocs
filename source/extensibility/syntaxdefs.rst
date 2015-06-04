@@ -76,8 +76,8 @@ any other language.
 
 Sublime Text inherits the idea of scopes from Textmate, a text editor for Mac.
 `Textmate's online manual`_ contains further information about scope selectors
-that's useful for Sublime Text users too. Especially Color Schemes make
-excessive usage of scopes to style every aspect of a language in the desired
+that's useful for Sublime Text users too. In particular, Color Schemes make
+extensive use of scopes to style every aspect of a language in the desired
 color.
 
 .. _`Textmate's online manual`: http://manual.macromates.com/en/scope_selectors
@@ -221,7 +221,7 @@ For our example, fill the template with the following information::
 Analyzing Patterns
 ******************
 
-The ``patterns`` array can contain several types of elements. We'll look at some
+The ``patterns`` array can contain several types of element. We'll look at some
 of them in the following sections. If you want to learn more about patterns,
 refer to Textmate's online manual.
 
@@ -485,7 +485,7 @@ We'll use this rule to style nested complex fields in snippets:
 This is the most complex pattern we'll see in this tutorial. The ``begin`` and
 ``end`` keys are self-explanatory: they define a region enclosed between
 ``${<NUMBER>:`` and ``}``. We need to wrap the begin pattern into quotes because
-otherwise the trailing ``:`` would indicate the parser to expect another
+otherwise the trailing ``:`` would tell the parser to expect another
 dictionary key. ``beginCaptures`` further divides the begin mark into smaller
 scopes.
 
@@ -602,4 +602,4 @@ creation of syntax definitions.
 .. seealso::
 
     :doc:`/reference/syntaxdefs`
-        Reference for snytax definitions
+        Reference for syntax definitions
