@@ -32,7 +32,7 @@ File Format
 ===========
 
 Build systems are JSON files
-and have the extension *.sublime-build*.
+and have the extension ``.sublime-build``.
 
 Example
 -------
@@ -76,7 +76,8 @@ Where to Store Build Systems
 ============================
 
 Build systems must be located somewhere
-under the *Packages* folder (e.g. *Packages/User*).
+under the :file:`{Packages}` folder
+(e.g. :file:`{Packages}/User`).
 Many packages include their own build systems.
 
 
@@ -84,4 +85,4 @@ Running Build Systems
 =====================
 
 Build systems can be run by pressing :kbd:`F7`
-or from **Tools | Build**.
+or from **Tools → Build**.
