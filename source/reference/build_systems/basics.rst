@@ -23,7 +23,7 @@ Parts of a Build System
 =======================
 
 Simple build systems
-only require a :file:`.sublime-build` file.
+only require a ``.sublime-build`` file.
 More advanced build systems
 may optionally consist of up to three parts:
 
@@ -35,12 +35,12 @@ may optionally consist of up to three parts:
 ``.sublime-build`` Files
 ************************
 
-A :file:`.sublime-build` file
+A ``.sublime-build`` file
 contains configuration data
-as a JSON object.
-A :file:`.sublime-build` file is used to specify
+as a JSON object
+and specifies
 switches, options and environmental data.
-Each :file:`.sublime-build` file
+Each ``.sublime-build`` file
 is normally associated
 with a specific scope
 corresponding to a file type
@@ -78,14 +78,14 @@ Often, it calls
 an external program.
 By default, the command
 used in build systems is ``exec``,
-but it can be overriden.
+but it can be overridden.
 
 
 Overriding the Default Command for Build Systems
 ------------------------------------------------
 
 By default, build systems use
-the ``exec`` command implemented by :file:`Packages/Default/exec.py`.
+the ``exec`` command implemented by :file:`{Packages}/Default/exec.py`.
 This command simply forwards configuration data
 to an external program
 and runs it asynchronously.
