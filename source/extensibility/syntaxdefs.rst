@@ -1,6 +1,18 @@
 Syntax Definitions
 ==================
 
+.. warning::
+
+   Development of Sublime Text has moved on to version 3.
+
+   As a result,
+   **this branch for Sublime Text 2
+   will not be updated any more**.
+   Please select the ``latest`` branch
+   in the panel on the bottom left
+   and consider updating Sublime Text.
+
+
 Syntax definitions make Sublime Text aware of programming and markup languages.
 Most noticeably, they work together with colors to provide syntax highlighting.
 Syntax definitions define *scopes* that divide the text in a buffer into named

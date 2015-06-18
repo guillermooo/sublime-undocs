@@ -4,6 +4,18 @@ Settings (Reference)
 
 .. warning::
 
+   Development of Sublime Text has moved on to version 3.
+
+   As a result,
+   **this branch for Sublime Text 2
+   will not be updated any more**.
+   Please select the ``latest`` branch
+   in the panel on the bottom left
+   and consider updating Sublime Text.
+
+
+.. warning::
+
    This page may be outdated and contain wrong or not all information. However,
    you can find most of the available settings with a brief description in the
    default settings file (**Preferences | Settings - Default** or

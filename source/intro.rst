@@ -2,6 +2,18 @@
 About This Documentation
 ========================
 
+.. warning::
+
+   Development of Sublime Text has moved on to version 3.
+
+   As a result,
+   **this branch for Sublime Text 2
+   will not be updated any more**.
+   Please select the ``latest`` branch
+   in the panel on the bottom left
+   and consider updating Sublime Text.
+
+
 This is the unofficial documentation for the Sublime Text editor, maintained by
 volunteers. We hope it's useful!
 

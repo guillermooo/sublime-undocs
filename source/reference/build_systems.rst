@@ -2,6 +2,18 @@
 Build Systems
 =============
 
+.. warning::
+
+   Development of Sublime Text has moved on to version 3.
+
+   As a result,
+   **this branch for Sublime Text 2
+   will not be updated any more**.
+   Please select the ``latest`` branch
+   in the panel on the bottom left
+   and consider updating Sublime Text.
+
+
 Build systems let you run your files through external programs without leaving
 Sublime Text, and see the output they generate.
 

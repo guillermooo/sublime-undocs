@@ -2,6 +2,18 @@
 Snippets
 ========
 
+.. warning::
+
+   Development of Sublime Text has moved on to version 3.
+
+   As a result,
+   **this branch for Sublime Text 2
+   will not be updated any more**.
+   Please select the ``latest`` branch
+   in the panel on the bottom left
+   and consider updating Sublime Text.
+
+
 Whether you are coding or writing the next vampire best-seller, you're likely to
 need certain short fragments of text again and again. Use snippets to save yourself
 tedious typing. Snippets are smart templates that will insert text for you,
