@@ -71,8 +71,10 @@ in both :file:`{Installed Packages}` and :file:`{Shipped Packages}`,
 the one in :file:`{Installed Packages}` will be used
 and the one in :file:`{Shipped Packages}` will be ignored.
 
-Any file in :file:`{Packages/Something}` takes precedence
-over any identically named file in :file:`Installed Packages/Something.sublime-package`.
+Any file in :file:`{Packages}/{PackageName}` takes precedence
+over an identically named file
+in :file:`{Installed Packages}/{PackageName}.sublime-package`
+or :file:`{Shipped Packages}/{PackageName}.sublime-package`.
 
 See also :ref:`overriding-packages`.
 
@@ -97,7 +99,6 @@ Typical resources found in packages include:
    - syntax definitions (``.tmLanguage``)
    - themes (``.sublime-theme``)
 
-.. XXX Update wit .sublime-syntax
 .. XXX link to respective docs
 .. XXX add secondary extensions (.tmSnippet, .sublime-syntax)
 
@@ -119,6 +120,7 @@ and you don't need to learn it.
 .. glossary::
 
    **shipped packages**
+   **default packages**
       A set of packages
       that Sublime Text ships with.
       Some of these packages are :term:`core packages`,
@@ -338,11 +340,11 @@ Sublime Text loads packages in this order:
 
 1. :file:`{Packages}/Default`;
 #. :term:`shipped packages` and :term:`installed packages`,
-   combined and sorted in alphabetical order;
-#. all remaining :term:`user packages`
-   that did not override anything
-   are loaded in alphabetical order,
-   except for :file:`{Packages}/User`;
+   merged and in alphabetical order;
+#. all remaining :term:`user packages`,
+   except for :file:`{Packages}/User`,
+   that did not override anything,
+   in alphabetical order;
 #. :file:`{Packages}/User`
 
 
