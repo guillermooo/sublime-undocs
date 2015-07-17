@@ -204,15 +204,6 @@ Managing Packages
 Installing Packages
 *******************
 
-Packages can be installed
-in two main ways:
-
-- by copying Sublime Text resources
-  to a folder under :file:`{Packages}`, or
-- by copying a ``.sublime-package`` file
-  to :file:`{Installed Packages}`.
-
-
 .. note::
 
    Regular users
@@ -225,6 +216,14 @@ in two main ways:
    for Sublime Text is `Package Control`_.
 
    .. _Package Control: https://packagecontrol.io
+
+Packages can be installed
+in two main ways:
+
+- by copying Sublime Text resources
+  to a folder under :file:`{Packages}`, or
+- by copying a ``.sublime-package`` file
+  to :file:`{Installed Packages}`.
 
 
 .. _disabling-packages:
@@ -260,7 +259,7 @@ follow this procedure to safely remove a package:
    while Sublime Text is running.
 #. Close Sublime Text.
 #. Remove the package's resources from the disk.
-#. Remove the package's name from the ``ignored_packages`` list setting.
+#. Remove the package's name from the ``ignored_packages`` list.
 
 In addition to the resources
 you have placed initially
