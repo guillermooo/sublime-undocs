@@ -100,7 +100,8 @@ Whitespace and Indentation
 
 Visual Settings
 ***************
-
+``always_show_minimap_viewport``
+  if set to true, then it will always show rectangle on minimap highlighting current document position; defualt false,   which shows position only on mouse over the minimap. 
 ``color_scheme``
    Sets the colors used for text highlighting. Accepts a path rooted at the
    data directory (e.g.: :file:`Packages/Color Scheme - Default/Monokai Bright.tmTheme`).
