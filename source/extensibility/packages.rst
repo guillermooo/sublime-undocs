@@ -135,7 +135,8 @@ and you don't need to learn it.
       Sublime Text requires these packages
       in order to function properly.
 
-      Examples: Default, Theme - Default, Color Scheme - Default.
+      Complete list: Default, Theme - Default, Color Scheme - Default, Text,
+      Language - English.
 
       They are part of the shipped packages and
       located in :file:`{Shipped Packages}`.
@@ -255,7 +256,7 @@ remove it using the method provided by the package manager.
 If you installed a package manually,
 follow this procedure to safely remove a package:
 
-1. :ref:`Disable <disabling-packages>` the package
+#. :ref:`Disable <disabling-packages>` the package
    while Sublime Text is running.
 #. Close Sublime Text.
 #. Remove the package's resources from the disk.
