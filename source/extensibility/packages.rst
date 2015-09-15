@@ -337,13 +337,13 @@ it will be loaded at the same time as the ``.sublime-package`` archive.
 
 Sublime Text loads packages in this order:
 
-1. :file:`{Packages}/Default`;
-#. :term:`shipped packages` and :term:`installed packages`,
-   merged and in alphabetical order;
+#. :file:`{Packages}/Default`;
+#. :term:`shipped packages` in lexicographical order;
+#. :term:`installed packages` in lexicographical order;
 #. all remaining :term:`user packages`,
    except for :file:`{Packages}/User`,
    that did not override anything,
-   in alphabetical order;
+   in lexicographical order;
 #. :file:`{Packages}/User`
 
 
