@@ -44,6 +44,7 @@ Project metadata is split across three topmost sections:
 
 .. code-block:: json
    :emphasize-lines: 2,14,18
+   :linenos:
 
    {
        "folders":
@@ -76,6 +77,17 @@ Sections
 ========
 
 
+.. sidebar:: Pattern precedence
+
+   The include patterns are applied first,
+   effectively excluding everything
+   that is not matched by them.
+   Afterwards,
+   the exclude patterns further exclude
+   files or folders from the project.
+
+   .. XXX there is more to this, but it requires some reverse engineering
+
 **Folders**
    A list of folders
    that will be listed in the sidebar
@@ -92,17 +104,6 @@ Sections
       If present,
       it will appear in the side bar
       instead of the directory name.
-
-   .. sidebar::
-
-      The include patterns are applied first,
-      effectively excluding everything
-      that is not matched by them.
-      Afterwards,
-      the exclude patterns further exclude
-      files or folders from the project.
-
-      .. XXX there is more to this, but it requires some reverse engineering
 
    ``folder_exclude_patterns``
       Optional.

@@ -146,10 +146,10 @@ by passing the desired ``.sublime-workspace`` file
 as an argument to the ``subl`` command line helper
 included with Sublime Text.
 
-.. warning::
+.. caution::
 
     Unlike ``.sublime-project`` files,
     ``.sublime-workspace`` files
     are not meant to be shared or edited manually.
-    **You should never commit ``.sublime-workspace`` files
+    **You should never commit** ``.sublime-workspace`` **files
     into a source code repository.**
