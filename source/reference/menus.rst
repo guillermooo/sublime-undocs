@@ -17,7 +17,7 @@ File Format
 **Extension**  ``.sublime-menu``
 
 **Name**       One out of the list of available menus.
-               See :ref:`menu-types` for the complete list
+               See :ref:`menu-types` for the complete name list
                and what menu they represent.
 
 **Location**   Any
@@ -33,6 +33,7 @@ The following is an excerpt
 from the default :file:`Main.sublime-menu` file.
 
 .. code-block:: json
+   :linenos:
 
    [
        {
@@ -60,6 +61,7 @@ from the default :file:`Main.sublime-menu` file.
            ]
        }
    ]
+
 
 .. _menu-item-objects:
 

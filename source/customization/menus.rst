@@ -9,7 +9,7 @@
 
 Sublime Text provides several menus
 that can be modified,
-most notably by adding menu items.
+for example, by adding menu items.
 
 
 File Format
@@ -21,13 +21,14 @@ File Format
 **Extension**  ``.sublime-menu``
 
 **Name**       One out of the list of available menus.
-               See :ref:`menu-types` for the complete list
+               See :ref:`menu-types` for the complete name list
                and what menu they represent.
 
 **Location**   Any
 
 **Content**    A list of "menu item" objects.
 =============  ===========================================
+
 
 Example
 *******
@@ -90,8 +91,8 @@ Available Menus
 
 The file name
 of a ``.sublime-menu`` file
-specifies the menu in the application
-to be modified.
+specifies the menu to be modified
+in the application.
 
 The following menus are available:
 
@@ -116,14 +117,14 @@ The following menus are available:
 **Widget Context**         Context menu of input fields
                            in all kinds of widgets,
                            including Command Palette, Goto Anything,
-                           the find panels
-                           and those opened by APIs
+                           the Find panels
+                           and panels opened by plugins
 ========================   ===============
 
 Additionally,
 the following four menus open
-when their column in the status bar
-is clicked:
+when you click the respective section
+in the status bar:
 
 - **Encoding**
 - **Line Endings**
@@ -143,7 +144,7 @@ Menu Items
 
 A menu item can either
 invoke a command (with arguments)
-when it is selected
+when it is selected,
 or have a sub-menu.
 
 The available properties are:
@@ -156,37 +157,38 @@ The available properties are:
 - a sub-menu.
 
 In order to function properly,
-it must provide *at least* either out of
+a menu item must provide at least:
 
 - a command name,
-- a caption and a sub-menu or
-- just a caption or
+- a caption and a sub-menu,
+- just a caption, or
 - an ID (see below).
 
 When parsing a menu item,
 the following rules apply:
 
-#. The presence of a sub-menu
-   overrides the command and its arguments,
-   making it effectively non-existent.
-   It also overrides the :ref:`separator caption <menu-separators>`.
+#. A menu item with a sub-menu
+   cannot invoke command.
+   It also overrides the :ref:`separator caption <menu-separators>`
+   and causes the item to render
+   a literal hyphen as caption.
 
 #. If no caption is provided,
    a caption is inferred
    from the command's ``description`` method.
    If neither caption nor command are provided,
-   the caption is an empty string.
+   the caption will be an empty string.
 
 #. The character used for the mnemonic
    must be contained in the item's caption.
    Mnemonics are case-sensitive.
 
 #. Menu items referencing
-   commands that can not be found
+   commands that cannot be found
    are disabled.
 
 #. Menu items can be hidden or disabled
-   by the command.
+   by their referenced command.
 
 .. TODO add refs to Command methods
 
@@ -201,14 +203,14 @@ with the caption ``-``
 and no sub-menu.
 They are commonly used
 to group menu items with similar purposes
-or with a shared thematic.
-Separators can not call commands,
-but the presence of a sub-menu
-converts the separator item into a regular item
+or that are otherwise related.
+Separators cannot invoke commands.
+The presence of a sub-menu
+causes the menu item
+to be rendered as a regular item
 with a single hyphen as its caption.
 
-For rendering,
-multiple consecutive separators are reduced to one
+Multiple consecutive separators are reduced to one
 and separators at the beginning or the end of a menu
 are not displayed.
 
@@ -218,21 +220,19 @@ are not displayed.
 Menu Merging
 ============
 
-Generally,
 ``.sublime-menu`` files are loaded in package load order.
 Menu files with the same name are concatenated
-by extending the menu item list
-with all items in the file,
 unless IDs are involved.
 See below for this case.
 
-Menu files in the same package are loaded lexicographically
-in the root folder,
-after which the sub folders are traversed similarly.
+Menu files in the same package
+are loaded in lexicographical order
+starting at the root folder,
+and then traversing sub-folders in the same manner.
 
 As a special case,
 menu items from the *User* package
-in the standard non-ID section
+declared in the standard non-ID section
 are always inserted after any standard items
 from other packages.
 
@@ -245,48 +245,48 @@ Item IDs
 When a menu item specifies an ID,
 a separate section within the menu is searched for
 and, if it does not exist,
-created at the very end of the menu.
-*This is a forward lookup only.*
+created at the end of the menu.
+*This ID lookup is forward-going only.*
+
 The ID determines the section's name
-and the menu item with the ID
+and the menu item with the matching ID
 will be the first item in this section.
 All following items in the file
 will then be appended to the ID's section,
-until another item with an ID is specified.
+until another item with an ID is found.
 
 If two menu items
 from different ``.sublime-menu`` files
 reference the same item via ID,
-Sublime Text will override the previously defined item's parameters
+Sublime Text will override the item's previous parameters
 with the new parameters,
 if there are any.
 Child elements in a sub menu are appended
 and do not override.
 All following items are then appended to the ID's section,
-until another item with an ID is specified.
+until another item with an ID is found.
 
-Common practice is
+It is common practice
 to assign IDs to separators
 and items having a sub-menu,
-to allow other packages or the user themselves
-to easily customize the menu.
-Separators always mark the beginning of a section,
-while it is required to address the exact same menu item
-in order to append items to its sub-menu.
+so that other packages or the user themselves
+can easily customize the menu.
+This allows appending items to sections introduced by separators
+and appending items to sub-menus.
 
 .. note::
 
-   Due to the strict forward lookup
+   Due to the strict forward lookup,
    it is possible to have
    *multiple different items with the same ID*
    in one menu.
 
-   Because of the potential confusion this may cause
+   Because of the potential confusion this may cause,
    it is discouraged.
 
    Example:
    The following three IDs
-   are defined in a menu, in order:
+   are defined in a menu, in this order:
    ``test, test2, test``.
 
    The item with the second "test" ID
@@ -298,15 +298,16 @@ in order to append items to its sub-menu.
 Sub-Menus
 =========
 
-Every menu item can have a sub-menu,
-where hovering the item
-reveals the items grouped behind it.
+Every menu item can have a sub-menu.
+Hovering the mouse pointer
+over a menu item with a sub-menu
+will reveal the items grouped under it.
 Sub-menus are independent menus
 with their own ID hierarchy.
 
 In order to extend a sub-menu
 from a different menu file,
-an ID must be specified in both occasions
+an ID must be specified in both places
 to target the correct item.
 
 
@@ -315,10 +316,8 @@ The Main Menu
 
 Unlike all other menus,
 the Main Menu's root menu
-represents the menu items in the menu bar,
-for example "File" and "Help".
-Other than that,
-there is no notable difference.
+represents the menu items in the menu bar
+(File, Help, etc.).
 
 
 Interface For Commands
@@ -332,24 +331,25 @@ Each menu item can be dynamically
 #. assigned a different caption.
 
 For this,
-commands may provide method endpoints in their class.
-The endpoints are called with the same arguments
+commands must implement the required methods in their class.
+The methods are either called with the same arguments
 as the actual command would be
 (except for ``edit`` in ``TextCommand`` s),
-however they may also accept no parameters at all.
+or none at all.
+
+.. XXX want_event() exception
 
 #. ``is_visible``
 #. ``is_enabled``
 #. ``is_checked``
 #. ``description``
 
-Note that these are also relevant
-for the command palette
-to an extent.
+Some of these methods also have an influence
+on the Command Palette.
 
 .. seealso::
 
-   `Official API Documentation on the Command endpoints`__
+   `Official API Documentation on the Command methods`__
 
    .. __: http://www.sublimetext.com/docs/3/api_reference.html#sublime_plugin.ApplicationCommand
 
@@ -358,10 +358,9 @@ Context Menus in the Side Bar
 =============================
 
 The **Side Bar** and **Side Bar Mount Point** menus
-are different to the others
-in that they have **contextual information** available
+are different to the other menus
+in that they provide **contextual information**
 regarding the selected item(s).
-The selected items in the sidebar,
-both directories and files,
+The selected directories and files,
 are passed as a list to the specified command
 in a ``files`` argument.
