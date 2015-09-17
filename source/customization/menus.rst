@@ -162,7 +162,7 @@ a menu item must provide at least:
 - a command name,
 - a caption and a sub-menu,
 - just a caption, or
-- an ID (see below).
+- an ID (see :ref:`below <item-ids>`).
 
 When parsing a menu item,
 the following rules apply:
@@ -220,10 +220,11 @@ are not displayed.
 Menu Merging
 ============
 
-``.sublime-menu`` files are loaded in package load order.
-Menu files with the same name are concatenated
-unless IDs are involved.
-See below for this case.
+``.sublime-menu`` files are loaded
+in the same order as packages
+Menu files with the same name are concatenated,
+unless IDs are specified
+(see :ref:`below <item-ids>`).
 
 Menu files in the same package
 are loaded in lexicographical order
@@ -240,7 +241,7 @@ from other packages.
 .. _item-ids:
 
 Item IDs
-========
+********
 
 When a menu item specifies an ID,
 a separate section within the menu is searched for
@@ -334,7 +335,7 @@ For this,
 commands must implement the required methods in their class.
 The methods are either called with the same arguments
 as the actual command would be
-(except for ``edit`` in ``TextCommand`` s),
+(except for ``edit`` in ``TextCommand``\ s),
 or none at all.
 
 .. XXX want_event() exception
