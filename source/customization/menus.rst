@@ -145,7 +145,7 @@ Menu Items
 A menu item can either
 invoke a command (with arguments)
 when it is selected,
-or have a sub-menu.
+or have a submenu.
 
 The available properties are:
 
@@ -154,20 +154,20 @@ The available properties are:
 - an ID,
 - a caption,
 - a mnemonic and
-- a sub-menu.
+- a submenu.
 
 In order to function properly,
 a menu item must provide at least:
 
 - a command name,
-- a caption and a sub-menu,
+- a caption and a submenu,
 - just a caption, or
 - an ID (see :ref:`below <item-ids>`).
 
 When parsing a menu item,
 the following rules apply:
 
-#. A menu item with a sub-menu
+#. A menu item with a submenu
    cannot invoke command.
    It also overrides the :ref:`separator caption <menu-separators>`
    and causes the item to render
@@ -200,12 +200,12 @@ Separators
 
 Separators are menu items
 with the caption ``-``
-and no sub-menu.
+and no submenu.
 They are commonly used
 to group menu items with similar purposes
 or that are otherwise related.
 Separators cannot invoke commands.
-The presence of a sub-menu
+The presence of a submenu
 causes the menu item
 to be rendered as a regular item
 with a single hyphen as its caption.
@@ -269,11 +269,11 @@ until another item with an ID is found.
 
 It is common practice
 to assign IDs to separators
-and items having a sub-menu,
+and items having a submenu,
 so that other packages or the user themselves
 can easily customize the menu.
 This allows appending items to sections introduced by separators
-and appending items to sub-menus.
+and appending items to submenus.
 
 .. note::
 
@@ -296,17 +296,17 @@ and appending items to sub-menus.
    ``test, test2, test``; ``test, test`` or ``test2, test``.
 
 
-Sub-Menus
-=========
+Submenus
+========
 
-Every menu item can have a sub-menu.
+Every menu item can have a submenu.
 Hovering the mouse pointer
-over a menu item with a sub-menu
+over a menu item with a submenu
 will reveal the items grouped under it.
-Sub-menus are independent menus
+submenus are independent menus
 with their own ID hierarchy.
 
-In order to extend a sub-menu
+In order to extend a submenu
 from a different menu file,
 an ID must be specified in both places
 to target the correct item.
