@@ -124,14 +124,14 @@ Ubuntu
 ::
 
     cd ~
-    wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3047_i386.deb
+    wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3083_i386.deb
 
 **For x64**
 
 ::
 
     cd ~
-    wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3047_amd64.deb
+    wget http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3083_amd64.deb
 
 
 Other Linux Distributions
@@ -142,16 +142,16 @@ Other Linux Distributions
 ::
 
     cd ~
-    wget http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3047_x32.tar.bz2
-    tar vxjf sublime_text_3_build_3047_x32.tar.bz2
+    wget http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3083_x32.tar.bz2
+    tar vxjf sublime_text_3_build_3083_x32.tar.bz2
 
 **For x64**
 
 ::
 
     cd ~
-    wget http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3047_x64.tar.bz2
-    tar vxjf sublime_text_3_build_3047_x64.tar.bz2
+    wget http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3083_x64.tar.bz2
+    tar vxjf sublime_text_3_build_3083_x64.tar.bz2
 
 Now we should move the uncompressed files
 to an appropriate location.
