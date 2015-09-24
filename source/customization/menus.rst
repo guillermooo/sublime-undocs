@@ -22,11 +22,11 @@ File Format
 
 **Name**       One out of the list of available menus.
                See :ref:`menu-types` for the complete name list
-               and what menu they represent.
+               and what menu each name represents.
 
-**Location**   Any
+**Location**   Any under :file:`{Packages}`
 
-**Content**    A list of "menu item" objects.
+**Content**    A list of :ref:`menu-items`
 =============  ===========================================
 
 
@@ -105,7 +105,8 @@ The following menus are available:
 
 **Find in Files**          Appears when clicking the "…" button
                            in the :doc:`Find in Files
-                           </search_and_replace/search_and_replace_files>` panel
+                           </search_and_replace/search_and_replace_files>`
+                           panel.
 
 **Side Bar**               Context menu for each node in the sidebar
 
@@ -123,7 +124,7 @@ The following menus are available:
 
 Additionally,
 the following four menus open
-when you click the respective section
+when you click their respective section
 in the status bar:
 
 - **Encoding**
@@ -142,10 +143,10 @@ in the status bar:
 Menu Items
 ==========
 
-A menu item can either
-invoke a command (with arguments)
-when it is selected,
-or have a submenu.
+When selected,
+a menu item can either
+invoke a command (with arguments),
+or open a submenu.
 
 The available properties are:
 
@@ -168,10 +169,9 @@ When parsing a menu item,
 the following rules apply:
 
 #. A menu item with a submenu
-   cannot invoke command.
-   It also overrides the :ref:`separator caption <menu-separators>`
-   and causes the item to render
-   a literal hyphen as caption.
+   cannot invoke a command.
+   If the :ref:`separator caption <menu-separators>` is used,
+   it will be rendered as a literal hyphen.
 
 #. If no caption is provided,
    a caption is inferred
@@ -183,8 +183,7 @@ the following rules apply:
    must be contained in the item's caption.
    Mnemonics are case-sensitive.
 
-#. Menu items referencing
-   commands that cannot be found
+#. Menu that reference missing commands
    are disabled.
 
 #. Menu items can be hidden or disabled
@@ -202,15 +201,15 @@ Separators are menu items
 with the caption ``-``
 and no submenu.
 They are commonly used
-to group menu items with similar purposes
+to group menu items with a similar purpose
 or that are otherwise related.
 Separators cannot invoke commands.
 The presence of a submenu
-causes the menu item
+causes the menu separator
 to be rendered as a regular item
 with a single hyphen as its caption.
 
-Multiple consecutive separators are reduced to one
+Multiple consecutive separators are reduced to one,
 and separators at the beginning or the end of a menu
 are not displayed.
 
@@ -221,7 +220,7 @@ Menu Merging
 ============
 
 ``.sublime-menu`` files are loaded
-in the same order as packages
+in the same order as packages.
 Menu files with the same name are concatenated,
 unless IDs are specified
 (see :ref:`below <item-ids>`).
@@ -233,7 +232,7 @@ and then traversing sub-folders in the same manner.
 
 As a special case,
 menu items from the *User* package
-declared in the standard non-ID section
+declared in the standard non-ID section of a menu
 are always inserted after any standard items
 from other packages.
 
@@ -247,9 +246,9 @@ When a menu item specifies an ID,
 a separate section within the menu is searched for
 and, if it does not exist,
 created at the end of the menu.
-*This ID lookup is forward-going only.*
+This ID lookup is forward-going only.
 
-The ID determines the section's name
+The ID determines the section's name,
 and the menu item with the matching ID
 will be the first item in this section.
 All following items in the file
@@ -262,8 +261,7 @@ reference the same item via ID,
 Sublime Text will override the item's previous parameters
 with the new parameters,
 if there are any.
-Child elements in a sub menu are appended
-and do not override.
+Child elements extend the submenu.
 All following items are then appended to the ID's section,
 until another item with an ID is found.
 
@@ -281,7 +279,6 @@ and appending items to submenus.
    it is possible to have
    *multiple different items with the same ID*
    in one menu.
-
    Because of the potential confusion this may cause,
    it is discouraged.
 
@@ -303,7 +300,7 @@ Every menu item can have a submenu.
 Hovering the mouse pointer
 over a menu item with a submenu
 will reveal the items grouped under it.
-submenus are independent menus
+Submenus are independent menus
 with their own ID hierarchy.
 
 In order to extend a submenu
@@ -321,15 +318,15 @@ represents the menu items in the menu bar
 (File, Help, etc.).
 
 
-Interface For Commands
+Interface for Commands
 ======================
 
-Each menu item can be dynamically
+A menu item can be dynamically
 
-#. hidden,
-#. disabled,
-#. checked, or
-#. assigned a different caption.
+- hidden,
+- disabled,
+- checked, or
+- assigned a different caption.
 
 For this,
 commands must implement the required methods in their class.
@@ -340,17 +337,17 @@ or none at all.
 
 .. XXX want_event() exception
 
-#. ``is_visible``
-#. ``is_enabled``
-#. ``is_checked``
-#. ``description``
+- ``is_visible``
+- ``is_enabled``
+- ``is_checked``
+- ``description``
 
 Some of these methods also have an influence
 on the Command Palette.
 
 .. seealso::
 
-   `Official API Documentation on the Command methods`__
+   `Official API Documentation on the Command interface`__
 
    .. __: http://www.sublimetext.com/docs/3/api_reference.html#sublime_plugin.ApplicationCommand
 
@@ -362,6 +359,6 @@ The **Side Bar** and **Side Bar Mount Point** menus
 are different to the other menus
 in that they provide **contextual information**
 regarding the selected item(s).
-The selected directories and files,
+The selected directories and files
 are passed as a list to the specified command
 in a ``files`` argument.

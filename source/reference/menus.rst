@@ -20,9 +20,9 @@ File Format
                See :ref:`menu-types` for the complete name list
                and what menu they represent.
 
-**Location**   Any
+**Location**   Any under :file:`{Packages}`
 
-**Content**    A list of :ref:`menu-item-objects`.
+**Content**    A list of :ref:`menu-item-objects`
 =============  ===========================================
 
 
@@ -92,15 +92,15 @@ each menu item must define either
 ``children``
    List of :ref:`menu-item-objects` that are displayed
    when the item is hovered.
-   Overrides existance of ``command`` property.
+   Overrides existence of ``command`` property.
 
 ``mnemonic``
    A single character used for menu accelerators.
-   The characer must be contained in the caption
+   The character must be contained in the caption
    and is case-sensitive.
 
 ``id``
-   A string identifier used to uniquely identify the menu item.
+   A unique string identifier for the menu item.
    This can be used to extend menu sections or sub-menu
    or to alter a menu item entirely.
 
