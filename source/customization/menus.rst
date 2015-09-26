@@ -330,10 +330,12 @@ A menu item can be dynamically
 
 For this,
 commands must implement the required methods in their class.
-The methods are either called with the same arguments
-as the actual command would be
-(except for ``edit`` in ``TextCommand``\ s),
-or none at all.
+Each implemented method will be called
+with the arguments specified
+in the corresponding menu item.
+If that call fails,
+the method will be immediately called again
+without arguments.
 
 .. XXX want_event() exception
 
