@@ -197,7 +197,7 @@ Commands
 **refresh_folder_list**
 	Reloads all folders in the current project and updates the side bar.
 
-**toggle_sidebar**
+**toggle_side_bar**
 	Shows or hides the sidebar.
 
 **toggle_show_open_files**
