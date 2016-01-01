@@ -362,7 +362,7 @@ Commands
 	Runs the macro stored in the macro buffer.
 
 **save_macro**
-	Prompts for a fiel path to save the macro in the macro buffer to.
+	Prompts for a file path to save the macro in the macro buffer to.
 
 **show_overlay**
 	Shows the requested overlay. Use the **hide_overlay** command to hide it.
