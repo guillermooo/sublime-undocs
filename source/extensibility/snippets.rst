@@ -215,7 +215,7 @@ Substitutions
 In addition to the place holder syntax, tab stops can specify more complex
 operations with substitutions. Use substitutions to dynamically generate text
 based on a mirrored tab stop. Of course, the tab stop you want to use as
-variable has to be mirrored somewhere else in the snipept.
+variable has to be mirrored somewhere else in the snippet.
 
 The substitution syntax has the following syntaxes:
 
