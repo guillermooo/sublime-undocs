@@ -249,7 +249,7 @@ Find
    Background color of regions matching the current search.
 
 ``findHighlightForeground``
-   Background color of regions matching the current search.
+   Foreground color of regions matching the current search.
 
 
 Gutter
