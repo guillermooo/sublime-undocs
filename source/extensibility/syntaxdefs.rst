@@ -30,12 +30,12 @@ Text gives the matching text its corresponding *scope name*.
 Prerequisites
 *************
 
-In order to follow this tutorial, you will need to install AAAPackageDev_, a
+In order to follow this tutorial, you will need to install PackageDev_, a
 package intended to ease the creation of new syntax definitions for Sublime
 Text. Follow the installation notes in the "Getting Started" section of the
 readme.
 
-.. _AAAPackageDev: https://github.com/SublimeText/AAAPackageDev
+.. _PackageDev: https://github.com/SublimeText/PackageDev
 
 
 File format
@@ -43,7 +43,7 @@ File format
 
 Sublime Text uses `property list`_ (Plist) files to store syntax definitions.
 However, because editing XML files is a cumbersome task, we'll use YAML_ instead
-and convert it to Plist format afterwards. This is where the AAAPackageDev
+and convert it to Plist format afterwards. This is where the PackageDev
 package (mentioned above) comes in.
 
 .. _property list: http://en.wikipedia.org/wiki/Property_list
@@ -51,7 +51,7 @@ package (mentioned above) comes in.
 
 .. note::
     If you experience unexpected errors during this tutorial, chances are
-    AAAPackageDev or YAML is to blame. Don't immediately think your problem is
+    PackageDev or YAML is to blame. Don't immediately think your problem is
     due to a bug in Sublime Text.
 
 By all means, do edit the Plist files by hand if you prefer to work in XML, but
@@ -153,7 +153,7 @@ this example:
 
 .. note::
 
-    Before continuing, make sure you've installed the AAAPackageDev package as
+    Before continuing, make sure you've installed the PackageDev package as
     explained above.
 
 Creating A New Syntax Definition
@@ -307,7 +307,7 @@ We can then build our pattern like this:
 .. sidebar:: Choosing the Right Scope Name
 
     Naming scopes isn't obvious sometimes. Check the `Textmate naming
-    conventions`_ for guidance on scope names. AAAPackageDev automatically
+    conventions`_ for guidance on scope names. PackageDev automatically
     provides completions for scope names according to these conventions. It is
     important to re-use the basic categories outlined there if you want to
     achieve the highest compatibility with existing colors.
@@ -360,7 +360,7 @@ Follow these steps to perform the conversion:
       your ``.YAML-tmLanguage`` file
     - Sublime Text will reload the changes to the syntax definition
 
-In case you are wondering why AAAPackageDev knows what you want to convert your
+In case you are wondering why PackageDev knows what you want to convert your
 file to: It's specified in the first comment line.
 
 You have now created your first syntax definition. Next, open a new file and
@@ -404,7 +404,7 @@ can have as many capture groups as you want.
 .. note::
 
     Writing ``1`` on a new line and pressing tab will autocomplete to ``'1':
-    {name: }`` thanks to AAAPackageDev.
+    {name: }`` thanks to PackageDev.
 
 Arguably, you'd want the other scope to be visually consistent with this one.
 Go ahead and change it too.
@@ -605,10 +605,10 @@ creation of syntax definitions.
 .. note::
 
     If you previously used JSON for syntax definitions you are still able to do
-    this because AAAPackageDev is backwards compatible.
+    this because PackageDev is backwards compatible.
 
     If you want to consider switching to YAML (either from JSON or directly from
-    Plist), it provides a command named ``AAAPackageDev: Convert to YAML and
+    Plist), it provides a command named ``PackageDev: Convert to YAML and
     Rearrange Syntax Definition`` which will automatically format the resulting
     YAML in a pleasurable way.
 
