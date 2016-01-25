@@ -8,7 +8,7 @@ them whenever you need to repeat the exact same steps to perform an operation.
 Macro files are JSON files with the extension ``.sublime-macro``. Sublime Text
 ships with a few macros providing core functionality, such as line and word
 deletion. You can find these under **Tools | Macros** or in
-+:file:`Packages/Default`.
+:file:`Packages/Default`.
 
 How to Record Macros
 ********************
