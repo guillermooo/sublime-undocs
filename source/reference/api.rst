@@ -213,6 +213,8 @@ module :py:mod:`sublime_plugin`
                 ``sublime.INHIBIT_WORD_COMPLETIONS``
                     Prevents Sublime Text from adding its word completions to
                     the completion list after all plugins have been processed.
+                    This consists of any word in the current document that is
+                    longer than 3 characters.
 
                 ``sublime.INHIBIT_EXPLICIT_COMPLETIONS``
                     Prevents Sublime Text from suggesting entries from
