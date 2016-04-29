@@ -21,16 +21,12 @@ If you find this guide useful,
 you can treat us to a beer
 or send a donation our way:
 
-**Recurring Tip** | **One-off Tip**
------------------ | ---------------
-[![Gratipay](http://img.shields.io/gratipay/sublimeundocs.svg)](https://gratipay.com/sublimeundocs/) | **[ST Undocs Team](https://www.bountysource.com/teams/st-undocs)**
-
+| **One-off Tip**                                                    |
+| ------------------------------------------------------------------ |
+| **[ST Undocs Team](https://www.bountysource.com/teams/st-undocs)** |
 
 
 ## Contributing
-
-This guide is hosted on [ReadTheDocs][]
-and built with [Sphinx][].
 
 We accept error reports and requests for new content
 via our [issue tracker][issues],
