@@ -3,7 +3,7 @@
         {
             "path": ".",
             "follow_symlinks": true,
-            "folder_exclude_patterns": ["build", "__pycache__"]
+            "folder_exclude_patterns": ["build", "__pycache__", "venv"]
         }
     ],
     "build_systems": [
