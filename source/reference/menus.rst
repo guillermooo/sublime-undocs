@@ -11,19 +11,7 @@
 File Format
 ===========
 
-=============  ===========================================
-**Format**     JSON (with comments)
-
-**Extension**  ``.sublime-menu``
-
-**Name**       One out of the list of available menus.
-               See :ref:`menu-types` for the complete name list
-               and what menu they represent.
-
-**Location**   Any under :file:`{Packages}`
-
-**Content**    A list of :ref:`menu-item-objects`
-=============  ===========================================
+.. include:: ../common/menus-table-summary.txt
 
 
 Example
@@ -32,35 +20,8 @@ Example
 The following is an excerpt
 from the default :file:`Main.sublime-menu` file.
 
-.. code-block:: json
-   :linenos:
-
-   [
-       {
-           "caption": "Edit",
-           "mnemonic": "E",
-           "id": "edit",
-           "children":
-           [
-               { "command": "undo", "mnemonic": "U" },
-               { "command": "redo_or_repeat", "mnemonic": "R" },
-               {
-                   "caption": "Undo Selection",
-                   "children":
-                   [
-                       { "command": "soft_undo" },
-                       { "command": "soft_redo" }
-                   ]
-               },
-               { "caption": "-", "id": "clipboard" },
-               { "command": "copy", "mnemonic": "C" },
-               { "command": "cut", "mnemonic": "t" },
-               { "command": "paste", "mnemonic": "P" },
-               { "command": "paste_and_indent", "mnemonic": "I" },
-               { "command": "paste_from_history", "caption": "Paste from History" }
-           ]
-       }
-   ]
+.. literalinclude:: ../common/menus-example-0.txt
+   :language: json
 
 
 .. _menu-item-objects:
