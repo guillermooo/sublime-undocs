@@ -104,6 +104,8 @@ into search panels.
 To enter newline characters,
 press :kbd:`Ctrl + Enter`.
 
-.. image:: search-and-replace-multiline.png
+.. figure:: search-and-replace-multiline.png
+
+   A multiline pattern
 
 Note that search panels are resizable too.
