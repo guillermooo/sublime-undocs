@@ -5,30 +5,36 @@ Command Palette
 The command palette is fed entries with ``.sublime-commands`` files.
 
 
-File Format (``.sublime-commands`` Files)
-=========================================
+File Format of ``.sublime-commands`` Files
+==========================================
 
-Here's an excerpt from ``Packages/Default/Default.sublime-commands``::
+.. include:: ../common/command-palette-table-summary.txt
 
-   [
-       { "caption": "Project: Save As", "command": "save_project_as" },
-       { "caption": "Project: Close", "command": "close_project" },
-       { "caption": "Project: Add Folder", "command": "prompt_add_folder" },
 
-       { "caption": "Preferences: Default File Settings", "command": "open_file", "args": {"file": "${packages}/Default/Base File.sublime-settings"} },
-       { "caption": "Preferences: User File Settings", "command": "open_file", "args": {"file": "${packages}/User/Base File.sublime-settings"} },
-       { "caption": "Preferences: Default Global Settings", "command": "open_file", "args": {"file": "${packages}/Default/Global.sublime-settings"} },
-       { "caption": "Preferences: User Global Settings", "command": "open_file", "args": {"file": "${packages}/User/Global.sublime-settings"} },
-       { "caption": "Preferences: Browse Packages", "command": "open_dir", "args": {"dir": "$packages"} }
-   ]
+Example
+=======
+
+.. include:: ../common/command-palette-example-0.txt
+
+.. _Command Palette Item:
+
+
+Command Palette Item
+====================
+
+These are the elements
+that can be included
+in a ``.sublime-commands`` item:
 
 ``caption``
    Text for display in the command palette.
+
 ``command``
    Command to be executed.
+
 ``args``
    Arguments to pass to ``command``. Note that to locate the packages folder
-   you need to use a snippet-like variable: ``${packages}`` or $packages. This
+   you need to use a snippet-like variable: ``${packages}`` or ``$packages``. This
    differs from other areas of the editor due to different implementations in
    the lower layers.
 

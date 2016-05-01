@@ -1,0 +1,13 @@
+=============  =============================================================
+**Format**     JSON (with comments)
+
+**Extension**  ``.sublime-commands``
+
+**Name**       Any
+
+**Location**   Any under :file:`{Packages}`
+
+**Content**    A list of :ref:`Command Palette Item`\s
+=============  =============================================================
+
+.. TODO: Link "Content" to reference via unique reference.
