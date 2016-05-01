@@ -20,3 +20,23 @@
   margin-left: 0 !important;
 }
 */
+
+/* images/figures with drop shadow */
+.rst-content img.shadowed {
+   box-shadow: 3px 3px 7px hsla(0, 0%, 0%, 0.7);
+}
+
+/* .. figure:: */
+.rst-content div.figure {
+   text-align: center;
+}
+
+.rst-content div.figure p.caption {
+   margin-top: 0.5em;
+
+   font-size: 90%;
+   font-style: italic;
+   font-weight: 100;
+   font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+   text-indent: inherit;
+}
