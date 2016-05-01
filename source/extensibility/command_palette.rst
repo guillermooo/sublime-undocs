@@ -19,28 +19,18 @@ by means of ``.sublime-commands`` files.
 Commands that don't warrant
 creating a key binding of their own
 are usually good candidates
-for inclusion in a ``.sublime- commands`` file.
+for inclusion in a ``.sublime-commands`` file.
+
+.. figure:: images/command-palette-0001.png
+
+  The Command Palette
 
 By default,
-the command palette includes many useful commands,
+the command palette includes many useful commands
 and provides convenient access
 to individual settings as well as settings files.
 
-
-File Format of ``.sublime-commands`` Files
-==========================================
-
-.. include:: ../common/command-palette-table-summary.txt
-
-
-Example
-=======
-
-.. include:: ../common/command-palette-example-0.txt
-
-
-How to Use the Command Palette
-==============================
+To use the command palette:
 
 #. Press :kbd:`Ctrl+Shift+P`
 #. Select a command
@@ -51,3 +41,10 @@ This means that
 whenever you open it,
 you won't always see all the commands
 defined in every ``.sublime-commands`` file.
+
+
+Example of a ``.sublime-commands`` File
+=======================================
+
+.. include:: ../common/command-palette-example-0.txt
+
