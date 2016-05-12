@@ -152,10 +152,10 @@ Visual Settings
 ``match_brackets_square``
    Set to ``false`` to stop highlighting square brackets. Only takes effect if
    ``match_brackets`` is ``true``.
-``match_bracktets_braces``
+``match_brackets_braces``
    Set to ``false`` to stop highlighting curly brackets. Only takes effect if
    ``match_brackets`` is ``true``.
-``match_bracktets_angle``
+``match_brackets_angle``
    Set to ``false`` to stop highlighting angle brackets. Only takes effect if
    ``match_brackets`` is ``true``.
 
