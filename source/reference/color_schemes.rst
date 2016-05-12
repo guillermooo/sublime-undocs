@@ -205,7 +205,7 @@ Brackets
    Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
-``bracketsForeground``
+``bracketsBackground``
    Background color of the brackets
    when the caret is next to a bracket.
    Only applied when the ``match_brackets`` setting
