@@ -173,6 +173,9 @@ Commands
 
 	- **encoding** [String]: The file encoding to save as.
 
+**save_all**
+	Saves all open files.
+
 **prompt_save_as**
     Prompts for a new file name and saves the active file.
 
