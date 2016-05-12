@@ -27,8 +27,12 @@ the two methods produce different results.
 
 Completions can be inserted in two ways:
 
-* through the completions list (:kbd:`Ctrl + Spacebar`), or
-* by pressing :kbd:`Tab`.
+* through the completions list :
+
+  * :kbd:`Ctrl + Spacebar` on Windows / OS X,
+  * :kbd:`Alt + /` on Linux
+
+* or by pressing :kbd:`Tab`.
 
 
 The Completions List
@@ -36,8 +40,9 @@ The Completions List
 
 To use the completions list:
 
-1. Press :kbd:`Ctrl + Spacebar` or just type something.
-#. Optionally, press :kbd:`Ctrl + Spacebar` again
+1. Press :kbd:`Ctrl + Spacebar` (:kbd:`Alt + /` on Linux)
+   or just type something.
+#. Optionally, press the shortcut again
    to select the next entry
    or use *up* and *down* arrow keys.
 #. Press :kbd:`Enter` or :kbd:`Tab` to validate selection
