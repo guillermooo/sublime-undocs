@@ -227,3 +227,9 @@ Input Settings
 ``command_mode``
    If set to ``true``, the buffer will ignore key strokes. Useful when emulating
    Vim's modal behavior.
+   
+``move_to_limit_on_up_down``
+   This setting controls what happens when reaching the first or last line by pressing the up or down arrows. 
+   If set to ``true`` and the caret is somewhere on the first line, then pressing the up arrow will move
+   the caret to the beginning of the line. From somewhere on the last line, the down arrow will
+   move the caret to the end of the last line. 
