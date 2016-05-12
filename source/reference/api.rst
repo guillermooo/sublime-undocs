@@ -213,9 +213,16 @@ module :py:mod:`sublime_plugin`
                 ``sublime.INHIBIT_WORD_COMPLETIONS``
                     Prevents Sublime Text from adding its word completions to
                     the completion list after all plugins have been processed.
+                    This consists of any word in the current document that is
+                    longer than 3 characters.
 
                 ``sublime.INHIBIT_EXPLICIT_COMPLETIONS``
-                    XXX What does this do?
+                    Prevents Sublime Text from suggesting entries from
+                    ``.sublime-completions`` files.
+                    Therefore, with this flag set, it will only show completions
+                    that are returned by plugins from their
+                    ``on_query_completions`` methods (along with word
+                    completions unless the above flag is also set.)
 
                 Flags are shared among all completions, once set by one
                 plugin you can not revert them.
