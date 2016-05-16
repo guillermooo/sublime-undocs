@@ -7,7 +7,7 @@ need certain short fragments of text again and again. Use snippets to save
 yourself tedious typing. Snippets are smart templates that will insert text for
 you and adapt it to their context.
 
-To create a new snippet, select **Tools | New Snippet...** Sublime Text will
+To create a new snippet, select **Tools | Developer | New Snippet...** Sublime Text will
 present you with a skeleton for it.
 
 Snippets can be stored under any package's folder, but to keep it simple while
