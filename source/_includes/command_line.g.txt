@@ -1,10 +1,10 @@
 .. This file was generated. Don't edit it.
 
-================================== =======================
-``subl [arguments] [files]``       Open given files.
-``subl [arguments] [directories]`` Open given directories.
-``subl [arguments] -``             Edit standard in.
-================================== =======================
+================================ =======================
+``subl [options] [files]``       Open given files.
+``subl [options] [directories]`` Open given directories.
+``subl [options] -``             Edit standard in.
+================================ =======================
 
 Filenames may be given a ``:line`` or ``:line:column`` suffix
 to open at a specific location.
@@ -18,17 +18,17 @@ Options
 The ``subl`` command-line helper accepts a few options.
 For details, see below the next summary.
 
-========================= ======================================================
-``--project <project>``   Load the given project.
-``--command <command>``   Execute the given command.
-``--new-window`` , ``-n`` Open a new window.
-``--add`` , ``-a``        Add folders to the current window.
-``--wait`` , ``-w``       Wait for the files to be closed before returning.
-``--background`` , ``-b`` Don't activate the application.
-``--stay`` , ``-s``       Keep the application activated after closing the file.
-``--help`` , ``-h``       Display help.
-``--version`` , ``-v``    Show version information.
-========================= ======================================================
+======================== ======================================================
+``--project <project>``  Load the given project.
+``--command <command>``  Execute the given command.
+``--new-window``, ``-n`` Open a new window.
+``--add``, ``-a``        Add folders to the current window.
+``--wait``, ``-w``       Wait for the files to be closed before returning.
+``--background``, ``-b`` Don't activate the application.
+``--stay``, ``-s``       Keep the application activated after closing the file.
+``--help``, ``-h``       Display help.
+``--version``, ``-v``    Show version information.
+======================== ======================================================
 
 ``--project <project>``
    Load the given project. The **project** argument
