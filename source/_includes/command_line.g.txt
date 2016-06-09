@@ -3,14 +3,14 @@
 ================================ =======================
 ``subl [options] [files]``       Open given files.
 ``subl [options] [directories]`` Open given directories.
-``subl [options] -``             Edit standard in.
+``subl [options] -``             Edit standard input.
 ================================ =======================
 
 Filenames may be given a ``:line`` or ``:line:column`` suffix
 to open at a specific location.
 The ``line`` and ``colunmn`` specifiers are 1-based offsets.
 
-Reading from standard in does not work on Windows.
+Reading from standard input only works in OS X.
 
 Options
 -------
@@ -31,16 +31,27 @@ For details, see below the next summary.
 ======================== ======================================================
 
 ``--project <project>``
-   Load the given project. The **project** argument
+   Load the given project.
+   
+   The **project** argument
    designates the :file:`.sublime-project` or :file:`.sublime-workspace` file
    to be loaded.
-
-
+   
+   
 ``--command <command>``
-   Execute the given command. The **command** argument
+   Execute the given command.
+   
+   The **command** argument
    designates the command to be run.
-   Only ``ApplicationCommand``\s will run
+   
+   If Sublime Text isn't running already,
+   only ``ApplicationCommand``\s will work
    when invoked from the command line.
+   
+   If Sublime Text is already running,
+   ``WindowCommand``\s will work as well
+   when invoked from the command line.
+   
    You can also pass arguments
    to the command. The arguments must
    be represented as a JSON object.
@@ -51,20 +62,24 @@ For details, see below the next summary.
    For example, this syntax may work
    in bash as well as PowerShell:
    ``subl --command 'echo {\"foo\": 100 }'``.
-
-
+   
+   
 ``--new-window (-n)``
    Open a new window.
    This option should be used
    when an instance of Sublime Text
    is already running.
-    
-
+   
+   
+   
+   
 ``--add (-a)``
    Add folders to the current window
    instead of opening a new window.
-    
-
+   
+   
+   
+   
 ``--wait (-w)``
    Wait for the files to be closed
    before returning.
@@ -72,18 +87,28 @@ For details, see below the next summary.
    to use Sublime Text as an editor
    with version control systems like git.
    Implied if reading from standard input.
-    
-
+   
+   
+   
+   
 ``--background (-b)``
-   Don't activate the application. 
-
+   Don't activate the application.
+   
+   
+   
 ``--stay (-s)``
    Keep the application activated after closing the file. Only works in combination
-   with ``--wait``. 
-
+   with ``--wait``.
+   
+   
+   
 ``--help (-h)``
-   Display help. 
-
+   Display help.
+   
+   
+   
 ``--version (-v)``
-   Show version information. 
-
+   Show version information.
+   
+   
+   
