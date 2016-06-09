@@ -32,8 +32,10 @@ may optionally consist of up to three parts:
 * optionally, an external executable file (script or binary file).
 
 
-``.sublime-build`` Files
-************************
+File Format of ``.sublime-build`` Files
+=======================================
+
+.. include:: ../../common/build-systems-table-summary.txt
 
 A ``.sublime-build`` file
 contains configuration data
