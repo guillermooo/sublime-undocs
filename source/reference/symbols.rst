@@ -270,7 +270,7 @@ in a symbol definition file:
          s/def\s+([A-Za-z_][A-Za-z0-9_]*\()(?:(.{0,40}?\))|((.{40}).+?\)))(\:)/$1(?2:$2)(?3:$4…\))/g;
       </string>
 
-.. _Oniguruma: http://www.geocities.jp/kosako3/oniguruma/
+.. _Oniguruma: https://raw.githubusercontent.com/kkos/oniguruma/master/doc/RE
 
 .. TODO: Are there more settings/options?
 

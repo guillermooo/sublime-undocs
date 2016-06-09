@@ -254,7 +254,7 @@ Matches take this form:
     supported by this regular expression engine that aren't part of perl-style
     regular expressions, hence the requirement for Oniguruma.
 
-    .. _Oniguruma: http://www.geocities.jp/kosako3/oniguruma/doc/RE.txt
+    .. _Oniguruma: https://raw.githubusercontent.com/kkos/oniguruma/master/doc/RE
 
 
 ``match``
