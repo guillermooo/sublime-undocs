@@ -18,17 +18,17 @@ Options
 The ``subl`` command-line helper accepts a few options.
 For details, see below the next summary.
 
-=========================== ======================================================
-``--project`` ``<project>`` Load the given project.
-``--command`` ``<command>`` Execute the given command.
-``--new-window``, ``-n``    Open a new window.
-``--add``, ``-a``           Add folders to the current window.
-``--wait``, ``-w``          Wait for the files to be closed before returning.
-``--background``, ``-b``    Don't activate the application.
-``--stay``, ``-s``          Keep the application activated after closing the file.
-``--help``, ``-h``          Display help.
-``--version``, ``-v``       Show version information.
-=========================== ======================================================
+========================= ======================================================
+``--project <project>``   Load the given project.
+``--command <command>``   Execute the given command.
+``--new-window`` , ``-n`` Open a new window.
+``--add`` , ``-a``        Add folders to the current window.
+``--wait`` , ``-w``       Wait for the files to be closed before returning.
+``--background`` , ``-b`` Don't activate the application.
+``--stay`` , ``-s``       Keep the application activated after closing the file.
+``--help`` , ``-h``       Display help.
+``--version`` , ``-v``    Show version information.
+========================= ======================================================
 
 ``--project <project>``
    Load the given project. The **project** argument
@@ -39,12 +39,17 @@ For details, see below the next summary.
 ``--command <command>``
    Execute the given command. The **command** argument
    designates the command to be run.
-   To pass arguments to the command,
+   Only ``ApplicationCommand``\s will run
+   when invoked from the command line.
+   You can also pass arguments
+   to the command. The arguments must
+   be represented as a JSON object.
+   As usual,
    you have to escape quotation marks
    and other characters
    as required by your shell.
    For example, this syntax may work
-   in bash and PowerShell:
+   in bash as well as PowerShell:
    ``subl --command 'echo {\"foo\": 100 }'``.
 
 
@@ -66,7 +71,7 @@ For details, see below the next summary.
    This is useful, for example,
    to use Sublime Text as an editor
    with version control systems like git.
-   Implied if reading from standard in.
+   Implied if reading from standard input.
     
 
 ``--background (-b)``
