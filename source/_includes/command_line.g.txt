@@ -1,0 +1,100 @@
+.. This file was generated. Don't edit it.
+
+================================ =======================
+``subl [options] [files]``       Open given files.
+``subl [options] [directories]`` Open given directories.
+``subl [options] -``             Edit standard input.
+================================ =======================
+
+Filenames may be given a ``:line`` or ``:line:column`` suffix
+to open at a specific location.
+The ``line`` and ``colunmn`` specifiers are 1-based offsets.
+
+Reading from standard input only works in OS X.
+
+Options
+-------
+
+The ``subl`` command-line helper accepts a few options.
+For details, see below the next summary.
+
+======================== ======================================================
+``--project <project>``  Load the given project.
+``--command <command>``  Execute the given command.
+``--new-window``, ``-n`` Open a new window.
+``--add``, ``-a``        Add folders to the current window.
+``--wait``, ``-w``       Wait for the files to be closed before returning.
+``--background``, ``-b`` Don't activate the application.
+``--stay``, ``-s``       Keep the application activated after closing the file.
+``--help``, ``-h``       Display help.
+``--version``, ``-v``    Show version information.
+======================== ======================================================
+
+``--project <project>``
+   Load the given project.
+   
+   The **project** argument
+   designates the :file:`.sublime-project` or :file:`.sublime-workspace` file
+   to be loaded.
+   
+``--command <command>``
+   Execute the given command.
+   
+   The **command** argument
+   designates the command to be run.
+   
+   If Sublime Text isn't running already,
+   only ``ApplicationCommand``\s will work
+   when invoked from the command line.
+   
+   If Sublime Text is already running,
+   ``WindowCommand``\s will work as well
+   when invoked from the command line.
+   
+   You can also pass arguments
+   to the command. The arguments must
+   be represented as a JSON object 
+   and separated from the command name by a space.
+   As usual,
+   you have to escape quotation marks
+   and other characters
+   as required by your shell.
+   For example, this syntax may work
+   in bash as well as PowerShell:
+   ``subl --command 'echo {\"foo\": 100 }'``.
+   
+``--new-window (-n)``
+   Open a new window.
+   
+   This option should be used
+   when an instance of Sublime Text
+   is already running.
+   
+``--add (-a)``
+   Add folders to the current window.
+   
+   Add folders to the current window
+   instead of opening a new window.
+   
+``--wait (-w)``
+   Wait for the files to be closed before returning.
+   
+   This is useful, for example,
+   to use Sublime Text as an editor
+   with version control systems like git.
+   Implied if reading from standard input.
+   
+``--background (-b)``
+   Don't activate the application.
+   
+``--stay (-s)``
+   Keep the application activated after closing the file.
+   
+   Only works in combination with ``--wait``.
+   
+``--help (-h)``
+   Display help.
+   
+``--version (-v)``
+   Show version information.
+   
