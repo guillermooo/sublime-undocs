@@ -46,15 +46,14 @@ For details, see below the next summary.
    If Sublime Text isn't running already,
    only ``ApplicationCommand``\s will work
    when invoked from the command line.
-   
    If Sublime Text is already running,
    ``WindowCommand``\s will work as well
    when invoked from the command line.
    
    You can also pass arguments
    to the command. The arguments must
-   be represented as a JSON object 
-   and separated from the command name by a space.
+   be separated from the command name by a space
+   and represented as a JSON object.
    As usual,
    you have to escape quotation marks
    and other characters
