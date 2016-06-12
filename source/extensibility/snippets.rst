@@ -50,7 +50,7 @@ these parts in turn.
 
         - When writing a snippet that contains indentation, always use tabs.
           When the snippet is inserted, the tabs will be transformed into spaces
-          if the option ``translateTabsToSpaces`` is ``true``.
+          if the option ``translate_tabs_to_spaces`` is ``true``.
 
         - The ``content`` must be included in a ``<![CDATA[…]]>`` section.
           Snippets won't work if you don't do this!
