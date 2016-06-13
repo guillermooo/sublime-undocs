@@ -1,9 +1,14 @@
 .. This file was generated. Don't edit it.
 
-============= ================================================================== 
-**Format**    JSON (with comments)                                               
-**Extension** :file:`.sublime-build`                                             
-**Name**      Any                                                                
-**Location**  Any under :file:`Packages`                                         
-**Content**   Predefined items and, optionally, arbitrary user-defined items     
-============= ================================================================== 
++---------------+--------------------------------------+
+| **Format**    | JSON (with comments)                 |
++---------------+--------------------------------------+
+| **Extension** | :file:`.sublime-build`               |
++---------------+--------------------------------------+
+| **Name**      | Any                                  |
++---------------+--------------------------------------+
+| **Location**  | Any under :file:`Packages`           |
++---------------+--------------------------------------+
+| **Content**   | Predefined items and, optionally,    |
+|               | arbitrary user-defined items         |
++---------------+--------------------------------------+
