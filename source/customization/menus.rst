@@ -15,7 +15,7 @@ for example, by adding menu items.
 File Format
 ===========
 
-.. include:: ../common/menus-table-summary.txt
+.. include:: /_includes/menus_summary_table.g.txt
 
 
 Example

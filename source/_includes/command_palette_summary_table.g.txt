@@ -1,0 +1,9 @@
+.. This file was generated. Don't edit it.
+
+============= ============================== 
+**Format**    JSON (with comments)           
+**Extension** :file:`.sublime-commands`      
+**Name**      Any                            
+**Location**  Any under :file:`Packages`     
+**Content**   Command palette item           
+============= ============================== 

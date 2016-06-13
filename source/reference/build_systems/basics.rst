@@ -35,7 +35,7 @@ may optionally consist of up to three parts:
 File Format of ``.sublime-build`` Files
 =======================================
 
-.. include:: ../../common/build-systems-table-summary.txt
+.. include:: /_includes/build_system_summary_table.g.txt
 
 A ``.sublime-build`` file
 contains configuration data

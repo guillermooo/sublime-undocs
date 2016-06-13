@@ -8,7 +8,7 @@ The command palette is fed entries with ``.sublime-commands`` files.
 File Format of ``.sublime-commands`` Files
 ==========================================
 
-.. include:: ../common/command-palette-table-summary.txt
+.. include:: /_includes/command_palette_summary_table.g.txt
 
 
 Example
