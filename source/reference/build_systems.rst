@@ -16,7 +16,7 @@ without leaving Sublime Text,
 and see the output they generate.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
     Build Systems -- Basics <build_systems/basics>
     Build Systems -- Configuration <build_systems/configuration>
