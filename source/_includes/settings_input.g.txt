@@ -1,0 +1,37 @@
+.. This file was generated. Don't edit it.
+
+``command_mode``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   the buffer will ignore key strokes.
+   Useful when emulating
+   Vim's modal behavior.
+
+   
+``move_to_limit_on_up_down``
+
+   +--------------------+-----------+
+   | **Type**           | bool      |
+   +--------------------+-----------+
+   | **Default (All)**  | ``false`` |
+   +--------------------+-----------+
+   | **Default (OS X)** | ``true``  |
+   +--------------------+-----------+
+
+   If ``true``
+   and the caret is on the first line,
+   pressing the up arrow
+   will move the caret
+   to the beginning of the line.
+   If the caret is on the last line,
+   the down arrow
+   will move the caret
+   to the end of the last line.
+
+   

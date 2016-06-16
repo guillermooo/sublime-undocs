@@ -1,0 +1,43 @@
+.. This file was generated. Don't edit it.
+
+``default_dir``
+
+   +-------------+----------+
+   | **Type**    | str      |
+   +-------------+----------+
+   | **Default** | ``null`` |
+   +-------------+----------+
+
+   Sets the default save folder for the view.
+   If the value of this setting
+   points to an existing folder,
+   you will be prompted to save the file
+   to that folder
+   when you try to save the file.
+
+   
+``atomic_save``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   Sublime Text will save
+   by writing to an alternate file
+   and then renaming it
+   over the original file.
+
+   Atomic save
+   attempts to reduce data loss
+   by only removing the orginal file
+   when the new file has been successfully written.
+   Because the a file is first created and then renamed
+   instead of being updated in place,
+   many file listeners and virtual file systems
+   will get confused.
+   For this reason, it's disabled by default.
+
+   

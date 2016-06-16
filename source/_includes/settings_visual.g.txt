@@ -1,0 +1,758 @@
+.. This file was generated. Don't edit it.
+
+``always_show_minimap_viewport``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   shows a rectangle on the minimap
+   highlighting the file's visible area.
+   If ``false``,
+   only shows the rectangle
+   when you hover the cursor
+   over the minimap.
+
+   
+``color_scheme``
+
+   +-------------+------------------------------------------------+
+   | **Type**    | str                                            |
+   +-------------+------------------------------------------------+
+   | **Default** | ``"Packages/Color Scheme -                     |
+   |             | Default/Monokai.tmTheme"``                     |
+   +-------------+------------------------------------------------+
+
+   Sets the colors used for text highlighting.
+   Accepts a path
+   relative to the :file:`Data` directory
+   (for example: :file:`Packages/Color Scheme - Default/Monokai Bright.tmTheme`).
+
+   
+``font_face``
+
+   +-----------------------+---------------------+
+   | **Type**              | str                 |
+   +-----------------------+---------------------+
+   | **Default (Linux)**   | ``"Monospace"``     |
+   +-----------------------+---------------------+
+   | **Default (OS X)**    | ``"Menlo-Regular"`` |
+   +-----------------------+---------------------+
+   | **Default (Windows)** | ``"Consolas"``      |
+   +-----------------------+---------------------+
+
+   Font face to be used
+   for editable text.
+
+   
+``font_size``
+
+   +--------------------+--------+
+   | **Type**           | int    |
+   +--------------------+--------+
+   | **Default (All)**  | ``10`` |
+   +--------------------+--------+
+   | **Default (OS X)** | ``12`` |
+   +--------------------+--------+
+
+   Size of the font for editable text.
+
+   
+``font_options``
+
+   +-------------+------------+
+   | **Type**    | enum : str |
+   +-------------+------------+
+   | **Default** | ``[]``     |
+   +-------------+------------+
+
+   Valid values: ``bold``, ``italic``, ``no_antialias``, ``gray_antialias``,
+   ``subpixel_antialias``, ``directwrite`` (Windows).
+
+   
+``gutter``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   Toggles display of gutter.
+
+   
+``line_numbers``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   displays line numbers
+   in the gutter.
+
+   
+``margin``
+
+   +-------------+-------+
+   | **Type**    | int   |
+   +-------------+-------+
+   | **Default** | ``4`` |
+   +-------------+-------+
+
+   Spacing between
+   the gutter and the text.
+
+   
+``fold_buttons``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   you will see triangles
+   next to lines that can be folded.
+
+   
+``fade_fold_buttons``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   the fold buttons
+   will be hidden
+   until you hover the mouse
+   over the gutter.
+
+   
+``rulers``
+
+   +-------------+------------------+
+   | **Type**    | float | [float,] |
+   +-------------+------------------+
+   | **Default** | ``[]``           |
+   +-------------+------------------+
+
+   Columns at which to display vertical lines.
+   Rulers help to visually indicate
+   the length of a line.
+   Accepts a list of numeric values
+   (such as ``[79, 89, 99]``)
+   or a single numeric value
+   (for example, ``79``).
+
+   
+``draw_minimap_border``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   draws a border
+   around the minimap's region
+   corresponding to the the view's currently visible text.
+   The ``minimapBorder`` key
+   of the active color scheme
+   controls the border's color.
+
+   
+``highlight_line``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   highlights lines
+   where a caret is present.
+
+   
+``line_padding_top``
+
+   +-------------+-------+
+   | **Type**    | int   |
+   +-------------+-------+
+   | **Default** | ``0`` |
+   +-------------+-------+
+
+   Additional spacing
+   at the top of each line,
+   in pixels.
+
+   
+``line_padding_bottom``
+
+   +-------------+-------+
+   | **Type**    | int   |
+   +-------------+-------+
+   | **Default** | ``0`` |
+   +-------------+-------+
+
+   Additional spacing
+   at the bottom of each line,
+   in pixels.
+
+   
+``caret_style``
+
+   +-------------+--------------+
+   | **Type**    | enum : str   |
+   +-------------+--------------+
+   | **Default** | ``"smooth"`` |
+   +-------------+--------------+
+
+   Determines the style
+   of the caret (text insertion point).
+
+   Valid values: ``smooth``, ``phase``, ``blink``, ``solid``.
+
+   
+``caret_extra_top``
+
+   +-------------+-------+
+   | **Type**    | int   |
+   +-------------+-------+
+   | **Default** | ``0`` |
+   +-------------+-------+
+
+   Increases the size of the caret.
+
+   
+``caret_extra_bottom``
+
+   +-------------+-------+
+   | **Type**    | int   |
+   +-------------+-------+
+   | **Default** | ``0`` |
+   +-------------+-------+
+
+   Increases the size of the caret.
+
+   
+``caret_extra_width``
+
+   +-------------+-------+
+   | **Type**    | int   |
+   +-------------+-------+
+   | **Default** | ``0`` |
+   +-------------+-------+
+
+   Increases the width of the caret.
+
+   
+``scroll_past_end``
+
+   +--------------------+-----------+
+   | **Type**           | bool      |
+   +--------------------+-----------+
+   | **Default (All)**  | ``true``  |
+   +--------------------+-----------+
+   | **Default (OS X)** | ``false`` |
+   +--------------------+-----------+
+
+   If ``true``,
+   Sublime Text will leave a wide, empty margin
+   between the last line
+   and the bottom of the window.
+
+   
+``word_wrap``
+
+   +-------------+-------------+
+   | **Type**    | bool | auto |
+   +-------------+-------------+
+   | **Default** | ``"auto"``  |
+   +-------------+-------------+
+
+   If ``true``,
+   disables horizontal scrolling.
+   If set to ``auto``,
+   will be disabled for source code
+   and enabled otherwise.
+
+   
+``wrap_width``
+
+   +----------------+---------------+
+   | **Type**       | int           |
+   +----------------+---------------+
+   | **Default**    | ``0``         |
+   +----------------+---------------+
+   | **Depends on** | ``word_wrap`` |
+   +----------------+---------------+
+
+   If greater than ``0``,
+   wraps long lines
+   at the specified column
+   as opposed to the window width.
+
+   
+``indent_subsequent_lines``
+
+   +----------------+---------------+
+   | **Type**       | bool          |
+   +----------------+---------------+
+   | **Default**    | ``true``      |
+   +----------------+---------------+
+   | **Depends on** | ``word_wrap`` |
+   +----------------+---------------+
+
+   If ``false``,
+   wrapped lines will not be indented.
+   Only has effect
+   if ``word_wrap`` is set to ``true``.
+
+   
+``draw_centered``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   text will be drawn centered
+   rather than left-aligned.
+
+   
+``match_brackets``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``false``,
+   disables bracket highlighting
+   for brackets enclosing the caret.
+
+   
+``match_brackets_content``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   the nearest bracket pair surrounding the caret
+   will be highlighted.
+   Otherwise, the caret has to be next to a bracket
+   for highlighting to occur.
+
+   
+``match_brackets_square``
+
+   +----------------+--------------------+
+   | **Type**       | bool               |
+   +----------------+--------------------+
+   | **Default**    | ``true``           |
+   +----------------+--------------------+
+   | **Depends on** | ``match_brackets`` |
+   +----------------+--------------------+
+
+   If ``false``,
+   stops highlighting square brackets.
+   Only has effect
+   if ``match_brackets`` is ``true``.
+
+   
+``match_brackets_braces``
+
+   +----------------+--------------------+
+   | **Type**       | bool               |
+   +----------------+--------------------+
+   | **Default**    | ``true``           |
+   +----------------+--------------------+
+   | **Depends on** | ``match_brackets`` |
+   +----------------+--------------------+
+
+   If ``false``,
+   stops highlighting curly brackets.
+   Only has effect
+   if ``match_brackets`` is ``true``.
+
+   
+``match_brackets_angle``
+
+   +----------------+--------------------+
+   | **Type**       | bool               |
+   +----------------+--------------------+
+   | **Default**    | ``false``          |
+   +----------------+--------------------+
+   | **Depends on** | ``match_brackets`` |
+   +----------------+--------------------+
+
+   If ``false``,
+   stops highlighting angle brackets.
+   Only has effect
+   if ``match_brackets`` is ``true``.
+
+   
+``match_tags``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   enables visualization
+   of the matching tag
+   in HTML and XML
+   content.
+
+   
+``match_selection``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   highlights other occurrences
+   of the selected text.
+
+   
+``draw_indent_guides``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   draws lines at every indentation level.
+
+   The color of the indentation guides
+   is controlled via the `.tmTheme` settings:
+   ``guide``, ``activeGuide`` and ``stackGuide``.
+
+   
+``indent_guide_options``
+
+   +----------------+------------------------+
+   | **Type**       | enum : str             |
+   +----------------+------------------------+
+   | **Default**    | ``["draw_normal"]``    |
+   +----------------+------------------------+
+   | **Depends on** | ``draw_indent_guides`` |
+   +----------------+------------------------+
+
+   Valid options: ``draw_normal``, ``draw_active``.
+
+   The ``draw_active`` option
+   will cause the indent guide
+   containing the caret to be
+   shown in a different color.
+
+   
+``show_definitions``
+
+   +----------------+-----------------+
+   | **Type**       | bool            |
+   +----------------+-----------------+
+   | **Depends on** | ``index_files`` |
+   +----------------+-----------------+
+
+   If ``true``,
+   hovering over a word
+   will show a popup
+   listing all possible locations
+   for the symbol.
+
+   
+``tree_animation_enabled``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   animations will be shown
+   in the sidebar
+   when expanding or collapsing folders.
+
+   
+``animation_enabled``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   animations will be shown
+   throughout the application.
+
+   
+``hightlight_modified_tabs``
+
+   +----------+------+
+   | **Type** | bool |
+   +----------+------+
+
+   If ``true``,
+   makes tabs
+   with unsaved changes
+   more visible.
+
+   
+``bold_folder_labels``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   folder names
+   in the side bar
+   will be bold.
+
+   
+``use_simple_full_screen``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   **OS X only.**
+
+   If ``true``,
+   disables Lion-style
+   full-screen support.
+
+   Sublime Text must be restarted
+   after changing this setting
+   for it to take effect.
+
+   
+``gpu_window_buffer``
+
+   +-------------+---------------------+
+   | **Type**    | enum : (bool | str) |
+   +-------------+---------------------+
+   | **Default** | ``"auto"``          |
+   +-------------+---------------------+
+
+   **OS X only.**
+
+   Valid values: ``true``, ``false``, ``auto``.
+
+   If ``auto``,
+   it will enable the setting
+   when running on a screen 2560 pixels or wider
+   (for example, a Retina display).
+
+   If ``true``,
+   OpenGL is used
+   to accelerate drawing.
+
+   Sublime Text must be restarted
+   after changing this setting
+   for it take effect.
+
+   
+``overlay_scroll_bars``
+
+   +-------------+--------------+
+   | **Type**    | enum : str   |
+   +-------------+--------------+
+   | **Default** | ``"system"`` |
+   +-------------+--------------+
+
+   Valid values: ``system``, ``enabled``, ``disabled``.
+
+   
+``enable_tab_scrolling``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   tabs will scroll left and right
+   instead of simply shrinking
+   when there are too many
+   to show on the tab bar.
+
+   
+``show_encoding``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   shows the active file's encoding
+   in the status bar.
+
+   
+``show_line_endings``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   shows the active file's type of line endings
+   in the status bar.
+
+   
+``remember_full_screen``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   allows Sublime Text
+   to start in full-screen mode
+   if it was exited in full-screen mode.
+
+   If ``false``,
+   Sublime Text will never
+   start in full-screen mode.
+
+   
+``always_prompt_for_file_reload``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   always prompt before reloading a file.
+
+   By default,
+   prompting will only occur
+   if a file has unsaved changes.
+
+   
+``create_window_at_startup``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   **OS X only.**
+
+   If ``true``,
+   an empty window will be created at startup.
+
+   
+``show_panel_on_build``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   shows the Build Results panel when building.
+
+   If ``false``,
+   the Build Results panel can be shown via the
+   ``Tools --> Build Results`` menu item.
+
+   
+``index_files``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   file indexing parses all files
+   in the side bar
+   and builds an index of their symbols.
+
+   Required for Goto Definition to work.
+
+   Symbols are only available for syntaxes
+   that define them via :file:`.tmPreferences` files.
+
+   
+``index_workers``
+
+   +----------------+-----------------+
+   | **Type**       | int             |
+   +----------------+-----------------+
+   | **Default**    | ``0``           |
+   +----------------+-----------------+
+   | **Depends on** | ``index_files`` |
+   +----------------+-----------------+
+
+   Sets the number of threads
+   used for indexing.
+
+   If ``0``,
+   Sublime Text will use
+   all available cores.
+
+   To disable indexing completely,
+   use ``index_files``.
+
+   
+``index_exclude_patterns``
+
+   +----------------+-----------------+
+   | **Type**       | [str,]          |
+   +----------------+-----------------+
+   | **Default**    | ``["*.log"]``   |
+   +----------------+-----------------+
+   | **Depends on** | ``index_files`` |
+   +----------------+-----------------+
+
+   Indicates which files
+   will not be indexed.
+
+   Patterns in this list accept wildcards.
+
+   

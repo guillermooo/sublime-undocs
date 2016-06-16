@@ -1,0 +1,243 @@
+.. This file was generated. Don't edit it.
+
+``theme``
+
+   +-------------+-----------------------------+
+   | **Type**    | str                         |
+   +-------------+-----------------------------+
+   | **Default** | ``"Default.sublime-theme"`` |
+   +-------------+-----------------------------+
+
+   Theme to be used.
+   Accepts a base name
+   for a :file:`.sublime-theme` file.
+
+   
+``scroll_speed``
+
+   +-------------+---------+
+   | **Type**    | float   |
+   +-------------+---------+
+   | **Default** | ``1.0`` |
+   +-------------+---------+
+
+   Controls the smooth scrolling feature.
+
+   - A value of ``0`` disables smooth scrolling.
+   - A value between ``0`` and ``1`` makes scrolling slower.
+   - A value of ``1`` is the default scrolling speed.
+   - A value larger than ``1`` makes scrolling faster.
+
+   
+``hot_exit``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``
+   and you exit the application
+   or active window,
+   Sublime Text will close
+   the application or window
+   without prompting,
+   even if there are unsaved files.
+   Unsaved files and the state of the active project
+   will be restored
+   the next time Sublime Text starts.
+
+   
+``remember_open_files``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   every time you start Sublime Text
+   it will reopen the files
+   that were open when the application
+   was closed the last time.
+
+   
+``open_files_in_new_window``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   **OS X only.**
+   If ``true``, a new window is created
+   when files are opened from Finder
+   or by dragging them onto the dock icon.
+
+   
+``close_windows_when_empty``
+
+   +--------------------+-----------+
+   | **Type**           | bool      |
+   +--------------------+-----------+
+   | **Default (All)**  | ``false`` |
+   +--------------------+-----------+
+   | **Default (OS X)** | ``true``  |
+   +--------------------+-----------+
+
+   If ``true``
+   and no folder is open in the active window,
+   the window will be closed
+   when the last file is closed.
+
+   
+``show_full_path``
+
+   +--------------------+-----------+
+   | **Type**           | bool      |
+   +--------------------+-----------+
+   | **Default (All)**  | ``true``  |
+   +--------------------+-----------+
+   | **Default (OS X)** | ``false`` |
+   +--------------------+-----------+
+
+   If ``true``,
+   show the active file's
+   full path in the title bar.
+
+   
+``preview_on_click``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   preview file contents
+   when clicking on a file in the side bar.
+   Files in preview
+   will be closed automatically
+   as soon as they lose focus
+   (for example, if you press :kbd:`Esc`).
+   Double-clicking or editing a file in preview
+   will open the file in a tab.
+
+   
+``folder_exclude_patterns``
+
+   +-------------+------------------------------------+
+   | **Type**    | [str,]                             |
+   +-------------+------------------------------------+
+   | **Default** | ``[".svn", ".git", ".hg", "CVS"]`` |
+   +-------------+------------------------------------+
+
+   Accepts wildcards.
+   Excludes the matching folders in the project
+   from the side bar, Goto Anything
+   and any project-wide action.
+
+   This setting must be used
+   in a global :file:`Preferences.sublime-settings` file,
+   or in folder items
+   in a ``.sublime-project`` file.
+
+   
+``file_exclude_patterns``
+
+   +-------------+------------------------------------------------+
+   | **Type**    | [str,]                                         |
+   +-------------+------------------------------------------------+
+   | **Default** | ``["*.pyc", "*.pyo", "*.exe", "*.dll",         |
+   |             | "*.obj", "*.o", "*.a", "*.lib", "*.so",        |
+   |             | "*.dylib", "*.ncb", "*.sdf", "*.suo",          |
+   |             | "*.pdb", "*.idb", ".DS_Store", "*.class",      |
+   |             | "*.psd", "*.db", "*.sublime-workspace"]``      |
+   +-------------+------------------------------------------------+
+
+   Accepts wildcards.
+   Excludes the matching files in the project
+   from the side bar, Goto Anything
+   and any project-wide action.
+
+   This setting must be used
+   in a global :file:`Preferences.sublime-settings` file,
+   or in folder items
+   in a ``.sublime-project`` file.
+
+   
+``binary_file_patterns``
+
+   +-------------+------------------------------------------------+
+   | **Type**    | [str,]                                         |
+   +-------------+------------------------------------------------+
+   | **Default** | ``["*.jpg", "*.jpeg", "*.png", "*.gif",        |
+   |             | "*.ttf", "*.tga", "*.dds", "*.ico", "*.eot",   |
+   |             | "*.pdf", "*.swf", "*.jar", "*.zip"]``          |
+   +-------------+------------------------------------------------+
+
+   Accepts wildcards.
+   Excludes the matching files in the project
+   from Goto Anything
+   and any project-wide action,
+   but not the side bar.
+
+   This setting must be used
+   in a global :file:`Preferences.sublime-settings` file,
+   or in folder items
+   in a ``.sublime-project`` file.
+
+   
+``show_tab_close_buttons``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``false``,
+   hides close buttons in the tab bar
+   until you hover the mouse over the tab bar.
+
+   
+``mouse_wheel_switches_tabs``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``
+   and the cursor is in the tab bar,
+   scrolling the mouse wheel
+   will switch tabs.
+
+   
+``ignored_packages``
+
+   +-------------+-----------------+
+   | **Type**    | [str,]          |
+   +-------------+-----------------+
+   | **Default** | ``["Vintage"]`` |
+   +-------------+-----------------+
+
+   A list of packages
+   that Sublime Text will ignore.
+   Packages in this list
+   will be disabled until
+   you remove them from the list.
+
+   Some packages
+   may not respond gracefully
+   to being disabled/enabled
+   via this setting.
+   Therefore, after editing this setting,
+   you should restart Sublime Text.
+
+   
