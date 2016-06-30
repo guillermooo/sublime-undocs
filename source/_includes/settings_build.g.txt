@@ -1,0 +1,58 @@
+.. This file was generated. Don't edit it.
+
+``result_file_regex``
+
+   +-------------+----------+
+   | **Type**    | str      |
+   +-------------+----------+
+   | **Default** | ``null`` |
+   +-------------+----------+
+
+   Regular expression
+   used to extract file names
+   from build system output
+   printed to a view or output panel.
+   Follows the rules for :ref:`error capturing
+   in build systems <build-capture-error-output>`.
+
+   
+``result_line_regex``
+
+   +-------------+----------+
+   | **Type**    | str      |
+   +-------------+----------+
+   | **Default** | ``null`` |
+   +-------------+----------+
+
+   Regular expression
+   used to extract line information
+   from build system output
+   printed to a view or output panel.
+   Follows the rules for :ref:`error capturing
+   in build systems <build-capture-error-output>`.
+
+   
+``result_base_dir``
+
+   +-------------+----------+
+   | **Type**    | str      |
+   +-------------+----------+
+   | **Default** | ``null`` |
+   +-------------+----------+
+
+   Folder to start looking
+   for offending files
+   based on information extracted with ``result_file_regex`` and ``result_line_regex``.
+
+   
+``build_env``
+
+   +-------------+--------------------+
+   | **Type**    | bool | {str : str} |
+   +-------------+--------------------+
+   | **Default** | ``false``          |
+   +-------------+--------------------+
+
+   List of paths to add to build systems by default.
+
+   

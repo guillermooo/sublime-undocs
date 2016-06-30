@@ -1,0 +1,382 @@
+.. This file was generated. Don't edit it.
+
+``auto_indent``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   Toggles automatic indentation.
+   Automatic indentation will try
+   to calculate the correct indentation
+   when you press :kbd:´Enter´.
+
+   
+``smart_indent``
+
+   +----------------+-----------------+
+   | **Type**       | bool            |
+   +----------------+-----------------+
+   | **Default**    | ``true``        |
+   +----------------+-----------------+
+   | **Depends on** | ``auto_indent`` |
+   +----------------+-----------------+
+
+   Toggles smart indentation.
+   Smart indentation tries
+   additional heuristics
+   to calculate the correct indentation.
+   when you press :kbd:´Enter´.
+
+   
+``indent_to_bracket``
+
+   +----------------+-----------------+
+   | **Type**       | bool            |
+   +----------------+-----------------+
+   | **Default**    | ``false``       |
+   +----------------+-----------------+
+   | **Depends on** | ``auto_indent`` |
+   +----------------+-----------------+
+
+   If ``true``,
+   adds whitespace
+   up to the first open bracket
+   when indenting.
+
+   
+``tab_size``
+
+   +-------------+-------+
+   | **Type**    | int   |
+   +-------------+-------+
+   | **Default** | ``4`` |
+   +-------------+-------+
+
+   Size of a tab in spaces.
+
+   
+``translate_tabs_to_spaces``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   Determines whether to replace a tab character
+   with ``tab_size`` number of spaces
+   when :kbd:`Tab` is pressed.
+
+   
+``use_tab_stops``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``translate_tabs_to_spaces`` is ``true``,
+   this setting will make :kbd:`Tab` and :kbd:`Backspace`
+   insert/delete ``tab_size`` number of spaces per key press.
+
+   
+``trim_automatic_white_space``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   Toggles deletion of whitespace
+   added by ``auto_indent``.
+
+   
+``detect_indentation``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``false``, disables detection of tabs vs. spaces
+   whenever a buffer is loaded.
+   If ``true``, it will automatically modify
+   ``translate_tabs_to_spaces`` and ``tab_size``.
+
+   
+``draw_white_space``
+
+   +-------------+-----------------+
+   | **Type**    | enum : str      |
+   +-------------+-----------------+
+   | **Default** | ``"selection"`` |
+   +-------------+-----------------+
+
+   Valid values: ``none``, ``selection``, ``all``.
+
+   
+``trim_trailing_white_space_on_save``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   Sublime Text will remove whitespace
+   from the active file
+   before saving.
+
+   
+``tab_completion``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   pressing :kbd:`Tab`
+   will insert the best matching completion.
+
+   If ``false``,
+   :kbd:`Tab` will only trigger snippets
+   or insert a tab.
+
+   :kbd:`Tab` can still be used
+   to insert an explicit tab
+   when ``tab_completion`` is ``true``.
+
+   
+``auto_complete``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   completions will be shown
+   automatically while typing.
+
+   
+``auto_complete_size_limit``
+
+   +-------------+-------------+
+   | **Type**    | int         |
+   +-------------+-------------+
+   | **Default** | ``4194304`` |
+   +-------------+-------------+
+
+   In files whose size
+   is larger than this value,
+   auto complete will stop
+   being automatically triggered.
+
+   
+``auto_complete_delay``
+
+   +-------------+--------+
+   | **Type**    | int    |
+   +-------------+--------+
+   | **Default** | ``50`` |
+   +-------------+--------+
+
+   Delay in milliseconds
+   before the auto complete window
+   is shown after typing.
+
+   
+``auto_complete_selector``
+
+   +-------------+------------------------------------------------+
+   | **Type**    | str                                            |
+   +-------------+------------------------------------------------+
+   | **Default** | ``"meta.tag -                                  |
+   |             | punctuation.definition.tag.begin, source -     |
+   |             | comment - string.quoted.double.block -         |
+   |             | string.quoted.single.block -                   |
+   |             | string.unquoted.heredoc"``                     |
+   +-------------+------------------------------------------------+
+
+   Selector denoting
+   scopes where auto complete
+   will be active.
+
+   
+``auto_complete_triggers``
+
+   +-------------+------------------------------------------------+
+   | **Type**    | [{ (enum : str) : str }, ]                     |
+   +-------------+------------------------------------------------+
+   | **Default** | ``[{"characters": "<", "selector":             |
+   |             | "text.html"}]``                                |
+   +-------------+------------------------------------------------+
+
+   Additional situations
+   to trigger auto complete.
+
+   
+``auto_complete_commit_on_tab``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   By default,
+   auto complete will commit the current completion
+   on :kbd:`Enter`.
+
+   If ``true``,
+   this setting will allow you
+   to complete on :kbd:`Tab` instead.
+
+   Completing on :kbd:`Tab`
+   is generally a superior option,
+   as it removes the ambiguity
+   between committing the completion
+   and inserting a newline.
+
+   
+``auto_complete_with_fields``
+
+   +----------------+---------------------------------+
+   | **Type**       | bool                            |
+   +----------------+---------------------------------+
+   | **Default**    | ``false``                       |
+   +----------------+---------------------------------+
+   | **Depends on** | ``auto_complete_commit_on_tab`` |
+   +----------------+---------------------------------+
+
+   If ``true``,
+   auto complete will be also shown
+   when snippet fields are active.
+
+   
+``auto_complete_cycle``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   pressing :kbd:`Up`
+   on the first item in the auto complete window
+   will select the last item.
+
+   If ``false``,
+   the auto complete window
+   will be closed in the same situation.
+
+   Likewise for the :kbd:`Down` key
+   when the last item is selected.
+
+   
+``auto_close_tags``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   entering ``</``
+   will automatically close HTML and XML tags.
+
+   
+``shift_tab_unindent``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   By default,
+   :kbd:`Shift+Tab` will only unindent
+   if the selection spans multiple lines.
+   When pressing :kbd:`Shift+Tab` at other times,
+   it will insert a tab character.
+   This way, tabs can be inserted
+   when ``tab_completion`` is enabled.
+
+   If ``true``,
+   :kbd:`Shift+Tab` will always unindent
+   instead of inserting tabs.
+
+   
+``copy_with_empty_selection``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   the ``copy`` and ``cut`` commands
+   will operate on the current line
+   when the selection is empty
+   instead of doing nothing.
+
+   
+``find_selected_text``
+
+   +--------------------+-----------+
+   | **Type**           | bool      |
+   +--------------------+-----------+
+   | **Default (All)**  | ``true``  |
+   +--------------------+-----------+
+   | **Default (OS X)** | ``false`` |
+   +--------------------+-----------+
+
+   If ``true``,
+   the selected text
+   will be copied into the find panel
+   when it's shown.
+
+   
+``auto_find_in_selection``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   the **Find in Selection** flag
+   will be enabled automatically
+   when multiple lines
+   are selected.
+
+   
+``drag_text``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   clicking on selected text
+   will begin a drag-drop operation.
+
+   Not currently implemented under Linux.
+
+   

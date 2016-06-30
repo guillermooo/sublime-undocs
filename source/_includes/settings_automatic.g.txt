@@ -1,0 +1,76 @@
+.. This file was generated. Don't edit it.
+
+``auto_match_enabled``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   Toggles automatic pairing of quotes, brackets, etc.
+
+   
+``save_on_focus_lost``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``, 
+   saves files automatically
+   when switching to a different file or application.
+
+   
+``find_selected_text``
+
+   +--------------------+-----------+
+   | **Type**           | bool      |
+   +--------------------+-----------+
+   | **Default (All)**  | ``true``  |
+   +--------------------+-----------+
+   | **Default (OS X)** | ``false`` |
+   +--------------------+-----------+
+
+   If ``true``,
+   the selected text will be copied
+   into the find panel
+   when the panel is opened.
+
+   
+``word_separators``
+
+   +-------------+-------------------------------------------+
+   | **Type**    | str                                       |
+   +-------------+-------------------------------------------+
+   | **Default** | ``"./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?"`` |
+   +-------------+-------------------------------------------+
+
+   Characters considered to divide words
+   for actions like advancing the cursor, etc.
+   Not used for every context
+   where a notion of a word separator is useful
+   (for example, word wrapping).
+   In some contexts,
+   the text might be tokenized
+   based on other criteria
+   (for example, the syntax definition rules).
+
+   
+``ensure_newline_at_eof_on_save``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   If ``true``,
+   adds a new line
+   at the end of the active file
+   before saving
+   if no new line is present.
+
+   

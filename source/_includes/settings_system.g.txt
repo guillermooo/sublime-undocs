@@ -1,0 +1,134 @@
+.. This file was generated. Don't edit it.
+
+``is_widget``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``null`` |
+   +-------------+----------+
+
+   Is set to ``true`` by Sublime Text
+   if the buffer is an input field in a dialog,
+   as opposed to a regular buffer.
+
+   
+``spell_check``
+
+   +-------------+-----------+
+   | **Type**    | bool      |
+   +-------------+-----------+
+   | **Default** | ``false`` |
+   +-------------+-----------+
+
+   Toggles the spell checker.
+
+   
+``dictionary``
+
+   +-------------+---------------------------------------------+
+   | **Type**    | bool                                        |
+   +-------------+---------------------------------------------+
+   | **Default** | ``"Packages/Language - English/en_US.dic"`` |
+   +-------------+---------------------------------------------+
+
+   Word list to be used by the spell checker.
+   Accepts a path relative to the :file:`Data` directory
+   (such as :file:`Packages/Language - English/en_US.dic`).
+   You can `add more dictionaries <http://extensions.services.openoffice.org/en/dictionaries>`_.
+
+   
+``spelling_selector``
+
+   +----------------+------------------------------------------------+
+   | **Type**       | str                                            |
+   +----------------+------------------------------------------------+
+   | **Default**    | ``"markup.raw, source string.quoted -          |
+   |                | punctuation - meta.preprocessor.c.include,     |
+   |                | source comment - source                        |
+   |                | comment.block.preprocessor, -(source,          |
+   |                | constant, keyword, storage, support,           |
+   |                | variable, markup.underline.link, meta.tag)"``  |
+   +----------------+------------------------------------------------+
+   | **Depends on** | ``spell_check``                                |
+   +----------------+------------------------------------------------+
+
+   Scope selector
+   to determine which scopes
+   will be spell checked.
+
+   
+``fallback_encoding``
+
+   +-------------+------------------------------+
+   | **Type**    | bool                         |
+   +-------------+------------------------------+
+   | **Default** | ``"Western (Windows 1252)"`` |
+   +-------------+------------------------------+
+
+   The encoding to use
+   when the encoding can't be determined automatically.
+   ASCII, UTF-8 and UTF-16 encodings
+   will be detected automatically .
+
+   
+``default_encoding``
+
+   +-------------+-------------+
+   | **Type**    | str         |
+   +-------------+-------------+
+   | **Default** | ``"UTF-8"`` |
+   +-------------+-------------+
+
+   Encoding used when saving new files,
+   and files opened with an undefined
+   encoding (for example, plain ascii files).
+
+   If a file is opened
+   with a specific encoding
+   (either detected or given explicitly),
+   this setting will be ignored
+   and the file's encoding will
+   be used to save the file.
+
+   
+``enable_hexadecimal_encoding``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   If ``true``,
+   files containing null bytes
+   will be opened as hexadecimal
+   by default.
+
+   
+``default_line_ending``
+
+   +-------------+--------------+
+   | **Type**    | bool         |
+   +-------------+--------------+
+   | **Default** | ``"system"`` |
+   +-------------+--------------+
+
+   Determines what characters to use
+   to designate new lines.
+   Valid values:
+   ``system`` (OS-dependant), ``windows`` (``CRLF``) and ``unix`` (``LF``).
+
+   
+``tab_completion``
+
+   +-------------+----------+
+   | **Type**    | bool     |
+   +-------------+----------+
+   | **Default** | ``true`` |
+   +-------------+----------+
+
+   Determines whether pressing :kbd:`Tab`
+   will insert completions.
+
+   
