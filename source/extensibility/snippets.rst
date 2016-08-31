@@ -223,7 +223,7 @@ The substitution syntax has the following syntaxes:
     - ``${var_name/regex/format_string/options}``
 
 **var_name**
-    The variable name: 1, 2, 3...
+    The variable name: 1, 2, 3... or an environment variable such as TM_FILENAME or SELECTION.
 
 **regex**
     Perl-style regular expression: See the `Boost library documentation for
@@ -270,3 +270,15 @@ It also illustrates that replaces may occur before the actual tabstop.
 
     Transformation: Text In Snail Case
           Original: text_in_snail_case
+
+You can also use environment variables with substitutions:
+
+.. code-block:: perl
+
+    # In file MyModule.js:
+    
+    Transformation: ${TM_FILENAME/(\w+)\.js/\1/g}
+    
+    # Output:
+    
+    Transformation: MyModule
