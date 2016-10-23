@@ -122,8 +122,8 @@ Topmost Elements in Color Schemes Files
    Ignored by Sublime Text.
 
 
-Subelements of Settings
-***********************
+Sub-elements of Settings
+************************
 
 Sublime Text supports
 the following color scheme settings:
@@ -154,10 +154,6 @@ within the topmost ``<array>``.
       </dict>
    ...
    </array>
-
-
-Global Settings Ordered by Type
--------------------------------
 
 
 General
