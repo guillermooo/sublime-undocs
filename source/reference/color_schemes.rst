@@ -33,6 +33,7 @@ is inherited from Textmate.
    of a user interface (UI) theme.
    A UI theme is a set of styles and decorations
    to alter the look of the editor’s UI.
+
    It’s important to remember
    that UI themes and color schemes
    are two different customization mechanisms.
@@ -176,6 +177,7 @@ General
 
 ``lineHighlight``
    Color of the line the caret is in.
+
    Only used when the ``higlight_line`` setting is set to ``true``.
 
 
@@ -185,6 +187,7 @@ Brackets
 ``bracketContentsForeground``
    Color of bracketed sections of text
    when the caret is in a bracketed section.
+
    Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
@@ -192,6 +195,7 @@ Brackets
    Controls how brackets are highlighted
    when a caret is between a bracket pair.
    Expects a space-separated list of the available options.
+
    Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
@@ -203,12 +207,14 @@ Brackets
 ``bracketsForeground``
    Foreground color of the brackets
    when the caret is next to a bracket.
+
    Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
 ``bracketsBackground``
    Background color of the brackets
    when the caret is next to a bracket.
+
    Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
@@ -216,6 +222,7 @@ Brackets
    Controls how brackets are highlighted
    when a caret is next to a bracket.
    Expects a space-separated list of the available options.
+
    Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
@@ -230,6 +237,7 @@ Tags
 
 ``tagsForeground``
    Color of tags when the caret is next to a tag.
+
    Only used when the ``match_tags`` setting
    is set to ``true``.
 
@@ -238,6 +246,7 @@ Tags
    when a caret is inside a tag
    or between a tag pair.
    Expects a space-separated list of the available options.
+
    Only applied when the ``match_tags`` setting
    is set to ``true``.
 
