@@ -184,13 +184,6 @@ General
 Brackets
 ^^^^^^^^
 
-``bracketContentsForeground``
-   Color of bracketed sections of text
-   when the caret is in a bracketed section.
-
-   Only applied when the ``match_brackets`` setting
-   is set to ``true``.
-
 ``bracketContentsOptions``
    Controls how brackets are highlighted
    when a caret is between a bracket pair.
@@ -204,9 +197,9 @@ Brackets
 
    Default: ``underline``
 
-``bracketsForeground``
-   Foreground color of the brackets
-   when the caret is next to a bracket.
+``bracketContentsForeground``
+   Color of the highlighting(s)
+   selected by ``bracketContentsOptions``.
 
    Only applied when the ``match_brackets`` setting
    is set to ``true``.
@@ -224,20 +217,20 @@ Brackets
 
    Default: ``underline``
 
+``bracketsForeground``
+   Color of the highlighting(s)
+   selected by ``bracketOptions``.
+
+   Only applied when the ``match_brackets`` setting
+   is set to ``true``.
+
 
 Tags
 ^^^^
 
-``tagsForeground``
-   Color of tags when the caret is next to a tag.
-
-   Only used when the ``match_tags`` setting
-   is set to ``true``.
-
 ``tagsOptions``
    Controls how tags are highlighted
-   when a caret is inside a tag
-   or between a tag pair.
+   when a caret is inside a tag.
    Expects a space-separated list of the available options.
 
    Only applied when the ``match_tags`` setting
@@ -247,6 +240,13 @@ Tags
    ``foreground``
 
    Default: ``stippled_underline``
+
+``tagsForeground``
+   Color of the highlighting(s)
+   selected by ``tagsOptions``.
+
+   Only applied when the ``match_tags`` setting
+   is set to ``true``.
 
 
 Find
