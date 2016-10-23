@@ -186,11 +186,12 @@ Brackets
    Color of bracketed sections of text
    when the caret is in a bracketed section.
    Only applied when the ``match_brackets`` setting
-   is set to `true`.
+   is set to ``true``.
 
 ``bracketContentsOptions``
-   Controls certain options
-   when the caret is in a bracket section.
+   Controls how brackets are highlighted
+   when a caret is between a bracket pair.
+   Expects a space-separated list of the available options.
    Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
@@ -212,8 +213,9 @@ Brackets
    is set to ``true``.
 
 ``bracketsOptions``
-   Controls certain options
-   when the caret is next to a bracket.
+   Controls how brackets are highlighted
+   when a caret is next to a bracket.
+   Expects a space-separated list of the available options.
    Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
@@ -232,15 +234,17 @@ Tags
    is set to ``true``.
 
 ``tagsOptions``
-   Controls certain options
-   when the caret is next to a tag.
+   Controls how tags are highlighted
+   when a caret is inside a tag
+   or between a tag pair.
+   Expects a space-separated list of the available options.
    Only applied when the ``match_tags`` setting
    is set to ``true``.
 
    Options: ``underline``, ``stippled_underline``, ``squiggly_underline``,
    ``foreground``
 
-   Default: ``squiggly_underline``
+   Default: ``stippled_underline``
 
 
 Find
