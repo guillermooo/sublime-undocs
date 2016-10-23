@@ -279,9 +279,6 @@ Selection
 ``selection``
    Color of the selection regions.
 
-``selectionBackground``
-   Background color of the selection regions.
-
 ``selectionBorder``
    Color of the selection regions' border.
 
