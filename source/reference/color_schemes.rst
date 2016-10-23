@@ -374,16 +374,17 @@ Settings associated with a particular scope.
 
    Valid settings are:
 
-``fontStyle``
-   Style of the font.
+   ``fontStyle``
+      Space-separated list of
+      styles for the font.
 
-   Options: ``bold``, ``italic``.
+      Options: ``bold``, ``italic``, nothing (resets fontStyle to normal)
 
-``foreground``
-   Foreground color.
+   ``foreground``
+      Foreground color.
 
-``background``
-   Background color.
+   ``background``
+      Background color.
 
 
 Sublime Text Settings Related to Color Schemes
