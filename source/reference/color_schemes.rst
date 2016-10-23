@@ -291,16 +291,22 @@ Guides
 ``guide``
    Color of the guides displayed to indicate nesting levels.
 
+   Only used if the ``indent_guide_options`` setting
+   includes``draw_normal``.
+
 ``activeGuide``
    Color of the guide lined up with the caret.
+
    Only applied if the ``indent_guide_options`` setting
-   is set to ``draw_active``.
+   includes ``draw_active``.
 
 ``stackGuide``
-   Color of the current guide's parent guide level.
+   Color of the current guide's parent guide levels.
 
    Only used if the ``indent_guide_options`` setting
    is set to ``draw_active``.
+
+.. TODO image
 
 
 Highlighted Regions
