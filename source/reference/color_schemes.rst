@@ -315,7 +315,14 @@ Shadow
    Color of the shadow effect when the buffer is scrolled.
 
 ``shadowWidth``
-   Width ot the shadow effect when the buffer is scrolled.
+   Width of the shadow effect when the buffer is scrolled.
+
+   Values greater than 32
+   cause the shadow to be hidden.
+   The default is 8.
+
+   Note that, despite its nature,
+   this expects a **string value**.
 
 
 Scoped Settings
