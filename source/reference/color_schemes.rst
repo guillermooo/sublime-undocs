@@ -173,6 +173,12 @@ General
 
    The alpha channel does not apply to file contents.
 
+   Because there is no override setting for rulers,
+   the only way to change the color of rulers
+   is a "hack" further described `here`__.
+
+   .. __: https://github.com/icylace/CursorRuler/wiki/Tips#ruler-colors
+
 ``background``
    Background color of the view (and gutter).
 
