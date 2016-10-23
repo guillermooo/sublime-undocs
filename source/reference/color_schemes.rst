@@ -32,9 +32,9 @@ is inherited from Textmate.
    Rather confusingly, Sublime Text also has a notion
    of a user interface (UI) theme.
    A UI theme is a set of styles and decorations
-   to alter the look of the editor’s UI.
+   to alter the look of the editor's UI.
 
-   It’s important to remember
+   It's important to remember
    that UI themes and color schemes
    are two different customization mechanisms.
    Generally speaking, it is far less complex
@@ -167,7 +167,7 @@ General
    Foreground color for the view.
 
 ``background``
-   Backgound color of the view.
+   Background color of the view.
 
 ``invisibles``
   Ignored.
@@ -279,7 +279,7 @@ Selection
    Background color of the selection regions.
 
 ``selectionBorder``
-   Color of the selection regions’ border.
+   Color of the selection regions' border.
 
 ``inactiveSelection``
    Color of inactive selections (inactive view).
