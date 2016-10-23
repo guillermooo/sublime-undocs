@@ -194,10 +194,10 @@ Brackets
    Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
-   Options: ``underline``, ``stippled_underline``, ``squiggly_underline``.
-   The ``underline`` option indicates
-   that the text should be drawn
-   using the given color, not just the underline.
+   Options: ``underline``, ``stippled_underline``, ``squiggly_underline``,
+   ``foreground``
+
+   Default: ``underline``
 
 ``bracketsForeground``
    Foreground color of the brackets
@@ -217,9 +217,10 @@ Brackets
    Only applied when the ``match_brackets`` setting
    is set to ``true``.
 
-   Options: ``underline``, ``stippled_underline``, ``squiggly_underline``.
-   ``underline`` indicates the text should be drawn
-   using the given color, not just the underline.
+   Options: ``underline``, ``stippled_underline``, ``squiggly_underline``,
+   ``foreground``
+
+   Default: ``underline``
 
 
 Tags
@@ -236,10 +237,10 @@ Tags
    Only applied when the ``match_tags`` setting
    is set to ``true``.
 
-   Options: ``underline``, ``stippled_underline``, ``squiggly_underline``.
-   ``underline`` indicates the text should be drawn
-   using the given color,
-   not just the underline.
+   Options: ``underline``, ``stippled_underline``, ``squiggly_underline``,
+   ``foreground``
+
+   Default: ``squiggly_underline``
 
 
 Find
