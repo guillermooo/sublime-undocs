@@ -48,7 +48,8 @@ Where to Store Color Schemes
 You can keep color scheme files anywhere under Packages
 (even inside directories nested multiple levels deep).
 
-By convention, directories containing
+By convention,
+directories primarily containing
 a set of color scheme files
 have the *Color Scheme -* prefix.
 For example: *Color Scheme - Default*.
@@ -66,9 +67,11 @@ by means of the **Preferences → Color Scheme** menu.
 A common way of selecting a color scheme
 is by associating it to a type of file
 using the file-type-specific settings.
-For example, for the Python file type (``syntax_file`` == :file:`Python.tmLanguage`),
-we'd use the :file:`Python.sublime-settings` file
-and, within, set ``color_scheme`` to some color scheme file.
+Select **Preferences → Settings - Syntax Specific**
+to open the settings file
+of the currently active syntax
+and set the ``color_scheme`` setting
+to some color scheme file.
 
 For more information about settings, see :doc:`settings`.
 
@@ -100,14 +103,14 @@ Topmost Elements in Color Schemes Files
    <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
    <plist version="1.0">
    <dict>
-      <key>name</key>
-      <string>Monokai</string>
-      <key>settings</key>
-      <array>
-      ... INSERT AWESOME COLORS HERE ...
-      </array>
-      <key>uuid</key>
-      <string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
+       <key>name</key>
+       <string>Monokai</string>
+       <key>settings</key>
+       <array>
+           ... INSERT AWESOME COLORS HERE ...
+       </array>
+       <key>uuid</key>
+       <string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
    </dict>
    </plist>
 
@@ -115,6 +118,11 @@ Topmost Elements in Color Schemes Files
    Optional.
    Name of the color scheme.
    Ignored by Sublime Text.
+
+``settings``
+   Required.
+   Container for further color scheme settings.
+   See the section below for details.
 
 ``uuid``
    Optional.
