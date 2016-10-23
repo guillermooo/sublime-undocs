@@ -195,7 +195,7 @@ Brackets
    is set to ``true``.
 
    Options: ``underline``, ``stippled_underline``, ``squiggly_underline``.
-   The `underline` option indicates
+   The ``underline`` option indicates
    that the text should be drawn
    using the given color, not just the underline.
 
