@@ -168,10 +168,13 @@ General
 ^^^^^^^
 
 ``foreground``
-   Foreground color for the view.
+   Standard foreground color for the view.
+   Affects file contents, the gutter, rulers and guides.
+
+   The alpha channel does not apply to file contents.
 
 ``background``
-   Background color of the view.
+   Background color of the view (and gutter).
 
 ``invisibles``
   Ignored.
