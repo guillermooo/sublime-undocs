@@ -8,7 +8,7 @@
 
 Filenames may be given a ``:line`` or ``:line:column`` suffix
 to open at a specific location.
-The ``line`` and ``colunmn`` specifiers are 1-based offsets.
+The ``line`` and ``column`` specifiers are 1-based offsets.
 
 Reading from standard input only works in OS X.
 
