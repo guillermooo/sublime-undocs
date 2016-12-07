@@ -16,6 +16,7 @@ try the general index.
 .. toctree::
     :maxdepth: 2
 
+    projects
     syntaxdefs
     color_schemes
     build_systems
