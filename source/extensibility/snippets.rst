@@ -169,7 +169,7 @@ Mirrored Fields
 Identical field markers mirror each other: when you edit the first one, the rest
 will be populated in real time with the same value.
 
-.. code-block:: perl
+.. code-block:: none
 
     First Name: $1
     Second Name: $2
@@ -186,7 +186,7 @@ By expanding the field syntax a little bit, you can define default values for
 a field. Placeholders are useful whenever there's a general case for your snippet,
 but you still want to keep it customizable.
 
-.. code-block:: perl
+.. code-block:: none
 
     First Name: ${1:Guillermo}
     Second Name: ${2:López}
@@ -195,7 +195,7 @@ but you still want to keep it customizable.
 
 Variables can be used as placeholders:
 
-.. code-block:: perl
+.. code-block:: none
 
     First Name: ${1:Guillermo}
     Second Name: ${2:López}
@@ -204,7 +204,7 @@ Variables can be used as placeholders:
 
 And you can nest placeholders within other placeholders too:
 
-.. code-block:: perl
+.. code-block:: none
 
     Test: ${1:Nested ${2:Placeholder}}
 
@@ -276,9 +276,9 @@ You can also use environment variables with substitutions:
 .. code-block:: perl
 
     # In file MyModule.js:
-    
+
     Transformation: ${TM_FILENAME/(\w+)\.js/\1/g}
-    
+
     # Output:
-    
+
     Transformation: MyModule
