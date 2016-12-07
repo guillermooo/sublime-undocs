@@ -6,12 +6,17 @@ Syntax Definitions
 
 .. note::
 
-    As of Sublime Text Build 3084,
-    a new syntax definition format has been added,
-    with the ``.sublime-syntax`` extension.
+   As of Sublime Text Build 3084,
+   a new syntax definition format has been added,
+   with the ``.sublime-syntax`` extension.
 
-    Documentation is available here:
-    http://www.sublimetext.com/docs/3/syntax.html
+   It is highly encouraged to be used
+   in favor of the legacy format
+   described in this document,
+   unless compatibility with older versions is desired.
+
+   Documentation is available here:
+   http://www.sublimetext.com/docs/3/syntax.html
 
 
 Compatibility with Textmate
@@ -19,6 +24,7 @@ Compatibility with Textmate
 
 Generally, Sublime Text syntax definitions are compatible with Textmate
 language files.
+
 
 File Format
 ***********
@@ -193,6 +199,7 @@ Elements contained in the ``patterns`` array.
         - name: support.other.ssraw
           match: .
 
+
 Repository
 **********
 
@@ -220,7 +227,7 @@ The repository can contain the following elements:
 
 Examples:
 
-.. code-block:: js
+.. code-block:: yaml
 
     repository:
       numericConstant:

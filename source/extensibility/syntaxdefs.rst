@@ -20,6 +20,11 @@ Text gives the matching text its corresponding *scope name*.
    a new syntax definition format has been added,
    with the ``.sublime-syntax`` extension.
 
+   It is highly encouraged to be used
+   in favor of the legacy format
+   described in this document,
+   unless compatibility with older versions is desired.
+
    Documentation is available here:
    http://www.sublimetext.com/docs/3/syntax.html
 
