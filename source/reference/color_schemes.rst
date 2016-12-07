@@ -26,9 +26,10 @@ is inherited from Textmate.
 
 .. note::
 
-   Sublime Text uses the .tmTheme extension for color scheme files
+   Sublime Text uses the ``.tmTheme`` extension for color scheme files
    to maintain compatibility with Textmate.
-   Rather confusingly, Sublime Text also has a notion
+   Rather confusingly,
+   Sublime Text also has a notion
    of a user interface (UI) theme.
    A UI theme is a set of styles and decorations
    to alter the look of the editor's UI.
@@ -45,13 +46,14 @@ Where to Store Color Schemes
 ============================
 
 By convention,
-directories primarily containing
+:doc:`packages </extensibility/packages>` primarily containing
 a set of color scheme files
 have the *Color Scheme -* prefix.
 For example: *Color Scheme - Default*.
 
 The file names of all available color schemes
-are displayed in the **Preferences → Color Scheme** menu.
+are displayed in the **Preferences → Color Scheme** menu,
+grouped by the containing package.
 
 
 .. _color-scheme-structure:
@@ -59,8 +61,6 @@ are displayed in the **Preferences → Color Scheme** menu.
 Structure of a Color Scheme File
 ================================
 
-Color scheme files are based
-on the Property List format.
 All color scheme files share
 the same topmost structure.
 
@@ -75,7 +75,7 @@ accept an alpha channel value:
    :local:
 
 Topmost Elements in Color Schemes Files
-*****************************************
+***************************************
 
 .. code-block:: xml
 
@@ -87,7 +87,7 @@ Topmost Elements in Color Schemes Files
        <string>Monokai</string>
        <key>settings</key>
        <array>
-           ... INSERT AWESOME COLORS HERE ...
+           <!-- INSERT DICTIONARIES WITH COLOR SETTINGS HERE -->
        </array>
        <key>uuid</key>
        <string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
