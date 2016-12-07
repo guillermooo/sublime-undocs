@@ -79,6 +79,19 @@ Keyboard shortcuts related to projects:
 | **Quick Switch Project…**        | Ctrl + Alt + P        |
 +----------------------------------+-----------------------+
 
+.. note::
+
+   The key binding was removed with build 3096 for Windows
+   and must be added manually,
+   if desired.
+   In order to do this,
+   add the following :doc:`key binding </customization/key_bindings>`
+   to your user key bindings file:
+
+   .. code-block:: json
+
+      { "keys": ["ctrl+alt+p"], "command": "prompt_select_workspace" }
+
 Additionally,
 you can open a project from the **command line**
 by passing the ``.sublime-project`` file as an argument
@@ -86,8 +99,8 @@ to the ``subl`` command line helper
 included with Sublime Text.
 
 
-More Configurability
-====================
+Advanced Configuration for Project Files
+========================================
 
 Along with more options for individual directories,
 projects can have specific build systems or settings overrides.
