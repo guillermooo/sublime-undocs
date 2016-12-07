@@ -19,8 +19,7 @@ background, foreground, selection, caret...
 File Format
 ===========
 
-Color scheme files use the Property List format
-and have the .tmTheme extension.
+.. include:: /_includes/color_scheme_summary_table.g.txt
 
 The file format of color scheme files
 is inherited from Textmate.
@@ -44,9 +43,6 @@ is inherited from Textmate.
 
 Where to Store Color Schemes
 ============================
-
-You can keep color scheme files anywhere under Packages
-(even inside directories nested multiple levels deep).
 
 By convention,
 directories primarily containing
@@ -74,6 +70,8 @@ and set the ``color_scheme`` setting.
 For more information about settings,
 see :doc:`settings`.
 
+
+.. _color-scheme-structure:
 
 Structure of a Color Scheme File
 ================================
