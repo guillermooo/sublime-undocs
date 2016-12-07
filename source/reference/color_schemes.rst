@@ -66,14 +66,13 @@ by means of the **Preferences → Color Scheme** menu.
 
 A common way of selecting a color scheme
 is by associating it to a type of file
-using the file-type-specific settings.
+using file-type-specific settings.
 Select **Preferences → Settings - Syntax Specific**
-to open the settings file
-of the currently active syntax
-and set the ``color_scheme`` setting
-to some color scheme file.
+to open the corresponding settings file
+and set the ``color_scheme`` setting.
 
-For more information about settings, see :doc:`settings`.
+For more information about settings,
+see :doc:`settings`.
 
 
 Structure of a Color Scheme File
@@ -122,13 +121,15 @@ Topmost Elements in Color Schemes Files
 ``settings``
    Required.
    Container for further color scheme settings.
-   See the section below for details.
+   See :ref:`color-scheme-settings` for details.
 
 ``uuid``
    Optional.
    A unique identifier for the file.
    Ignored by Sublime Text.
 
+
+.. _color-scheme-settings:
 
 Sub-elements of Settings
 ************************
@@ -168,7 +169,7 @@ General
 ^^^^^^^
 
 ``foreground``
-   Standard foreground color for the view.
+   Default foreground color for the view.
    Affects file contents, the gutter, rulers and guides.
 
    The alpha channel does not apply to file contents.
@@ -180,7 +181,7 @@ General
    .. __: https://github.com/icylace/CursorRuler/wiki/Tips#ruler-colors
 
 ``background``
-   Background color of the view (and gutter).
+   Default background color of the view (and gutter).
 
 ``invisibles``
   Ignored.
