@@ -4,7 +4,7 @@
 
 Projects group sets of files and folders
 to keep your work organized.
-They sport project-specific settings or build systems
+They support project-specific settings and build systems
 and you can quickly switch between them
 to continue working where you left off.
 
@@ -12,9 +12,10 @@ Adding folders to a project is necessary for
 :ref:`fm-goto-anything` and project-wide Goto Definition.
 
 There is always an active project,
-even if you haven't created one.
-This is called an *Anonymous Project*
-and limited in functionality.
+even if you haven't created or opened one.
+In this situation,
+you are working with an *anonymous project*,
+which has limited functionality.
 New windows always use an anonymous project
 when they first open.
 
@@ -22,8 +23,8 @@ Project metadata is stored in JSON files
 with a ``.sublime-project`` extension.
 Wherever there's a ``.sublime-project`` file,
 you will find an ancillary ``.sublime-workspace`` file too.
-The second one contains session data
-and you shouldn't edit it.
+The ``.sublime-workspace`` file contains session data
+that you *should* never edit.
 (More on workspaces later.)
 
 .. note::
@@ -52,7 +53,8 @@ To save an anonymous project,
 go to **Project → Save Project As...**.
 
 After the project is saved,
-you can edit it by hand and further customize it.
+you can edit it by hand
+to adjust further options.
 
 
 Opening Projects
@@ -64,10 +66,12 @@ by selecting **Projects → Open Recent**,
 **Projects → Switch Project…**
 or **Projects → Quick Switch Project…**.
 
-Switching will close the current project
-and open the specified in the same window
-whereas opening will open a new window
-and open the project there.
+When switching projects,
+Sublime Text will close the current project
+and open the specified one in the same window,
+When opening a project,
+Sublime Text will open a new window
+and open the selected project there.
 
 Keyboard shortcuts related to projects:
 
@@ -103,24 +107,25 @@ Settings Related to the Sidebar and Projects
     but will be excluded from Goto Anything
     and Find in Files.
 
-.. TODO: binary_file_patterns also applies to projects, right?
-
+.. TODO: file_exlude_patterns and folder_exlude_patterns also exist
+.. TODO: Add reference to setting or explain wildcards
 
 Workspaces
 ==========
 
-Workspaces hold sessions data
+Workspaces hold session data
 associated with a project,
 which includes information
-about the opened files, the pane layout or find history.
-A project can have multiple sessions
-(or workspaces) in parallel.
+about the opened files, pane layout,
+find history and more.
+A project can have multiple workspaces.
 
-A common use case is
+A common use case for workspaces is
 to work on different features
-within *the same project*
-that require different files each
-and you want to switch between them quickly.
+*within the same project*,
+where each feature requires
+a different set of files to be open,
+and you want to switch between features quickly.
 In this case you'll want to have
 a second workspace available.
 Writing tests could be an example for this.
@@ -131,16 +136,16 @@ select **Project → New Workspace for Project**.
 To save the active workspace,
 select **Project → Save Workspace As...**.
 
-Workspaces metadata is stored in JSON files
-with the ``.sublime-workspace`` extension
-and will not be covered in detail
-because it is not supposed to be edited by hand.
+The workspace metadata is stored in JSON files
+with the ``.sublime-workspace`` extension,
+which you are not supposed to edit.
 
 To switch between different workspaces,
 use :kbd:`Ctrl+Alt+P`,
 exactly as you do with projects.
 
-As with projects, you can open a workspace
+As with projects,
+you can open a workspace
 from the **command line**
 by passing the desired ``.sublime-workspace`` file
 as an argument to the ``subl`` command line helper

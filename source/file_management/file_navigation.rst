@@ -7,8 +7,8 @@
 Goto Anything
 =============
 
-Use Goto Anything
-to **navigate your project's files** swiftly.
+Using Goto Anything,
+you can **navigate your project's files** swiftly.
 
 .. image:: file-management-goto-anything.png
 
@@ -119,8 +119,9 @@ like, for example, project-wide searches.
 
 Projects and the sidebar are closely related.
 It's important to note
-that there's always an active project,
-whether it's explicit or implicit.
+that there's always an active project;
+if you haven't opened a project file,
+an anonymous project will be used instead.
 
 The sidebar provides basic file management operations
 through its context menu.

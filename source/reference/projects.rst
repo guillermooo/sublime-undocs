@@ -9,13 +9,15 @@
       Explains how to work with projects.
 
 
-Project information is saved in meta files
+Project information is saved in metadata files
 that can be edited
-to allow further configuration
-than just adding or removing folders.
-You can edit the project file
-of the currently active non-anonymous project
+to allow advanced configuration
+other than adding or removing folders.
+To edit the project file
+of the currently active project
 via the **Project → Edit Project** menu.
+An anonymous project cannot be configured in any way,
+because no .sublime-project file exists for it.
 
 
 File Format
@@ -28,7 +30,7 @@ File Format
 
 **Name**       Any
 
-**Location**   Anywhere on your filesystem
+**Location**   Anywhere on your file system
 
 **Content**    Metadata for projects
 =============  ===========================================
@@ -86,7 +88,8 @@ Sections
    the exclude patterns further exclude
    files or folders from the project.
 
-   .. XXX there is more to this, but it requires some reverse engineering
+   .. TODO there is more to this, but it requires some reverse engineering
+   .. TODO also find out whether and how the patterns are joined with their global pendants
 
 **Folders**
    A list of folders
@@ -128,6 +131,7 @@ Sections
       List of wildcard patterns.
       Files matching the wildcard patterns
       will be included in the project.
+
 
    ``follow_symlinks``
       Optional.
@@ -177,7 +181,7 @@ Sections
    follow the same rules as conventional build system,
    except a ``name`` must be specified for each.
    They will show up in the **Tools → Build Systems** menu
-   and are selectable in the Build With popup,
+   and are selectable in the *Build With* popup,
    but only in that project.
 
    .. seealso::
