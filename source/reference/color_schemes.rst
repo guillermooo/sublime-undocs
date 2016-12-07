@@ -65,7 +65,10 @@ All color scheme files share
 the same topmost structure.
 
 Colors can be expressed in the
-following formats: ``#RRGGBB``, ``#RGB``.
+following formats:
+``#RRGGBB``, ``#RGB``, `X11 color names`__
+
+.. __: https://en.wikipedia.org/wiki/X11_color_names
 
 Most elements controlling colors
 accept an alpha channel value:
