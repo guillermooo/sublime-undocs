@@ -81,7 +81,7 @@ All user-provided arguments to commands must be valid JSON types.
 Text Commands and the ``edit`` Object
 *************************************
 
-Text commands receive and ``edit`` object passed to them by Sublime Text.
+Text commands receive an ``edit`` object passed to them by Sublime Text.
 
 All actions done within an ``edit`` are grouped as a single undo action.
 Callbacks such as ``on_modified()`` and ``on_selection_modified()`` are called
