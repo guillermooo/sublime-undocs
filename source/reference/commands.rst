@@ -213,6 +213,9 @@ Commands
 **toggle_side_bar**
 	Shows or hides the sidebar.
 
+**reveal_in_side_bar**
+	Shows the selected file in the sidebar.
+
 **toggle_show_open_files**
 	Shows ot hides the open files in the sidebar.
 
