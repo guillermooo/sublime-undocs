@@ -34,6 +34,11 @@ that you *should* never edit.
    to a source code repository,
    but always be mindful of what you store in them.
 
+   The above not withstanding, in projects where not everybody
+   is using Sublime Text as their editor
+   it's advisable to keep the ``.sublime-project`` file
+   outside of the project's repository.
+
 
 Creating a Project
 ==================
@@ -171,3 +176,4 @@ included with Sublime Text.
     are not meant to be shared or edited manually.
     **You should never commit** ``.sublime-workspace`` **files
     into a source code repository.**
+    They may contain sensitive information.
