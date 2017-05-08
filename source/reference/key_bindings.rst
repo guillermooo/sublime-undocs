@@ -130,20 +130,12 @@ Context Operands
    if any panel is visible.
 
 ``following_text``
-   Restricts the test
-   to the text following the caret -
-   although, if there is a selection,
-   it always includes the selection,
-   regardless of caret position relative
-   to the selection.
+   Test against the selected text and the text
+   following it until the end of the line.
 
 ``preceding_text``
-   Restricts the test
-   to the text preceding the caret -
-   although, if there is a selection,
-   it always includes the selection,
-   regardless of caret position relative
-   to the selection.
+   Test against the text on the line up to and
+   including the selection.
 
 ``selection_empty``
    Returns ``true``
