@@ -131,11 +131,19 @@ Context Operands
 
 ``following_text``
    Restricts the test
-   to the text following the caret.
+   to the text following the caret -
+   although, if there is a selection,
+   it always includes the selection,
+   regardless of caret position relative
+   to the selection.
 
 ``preceding_text``
    Restricts the test
-   to the text preceding the caret.
+   to the text preceding the caret -
+   although, if there is a selection,
+   it always includes the selection,
+   regardless of caret position relative
+   to the selection.
 
 ``selection_empty``
    Returns ``true``
