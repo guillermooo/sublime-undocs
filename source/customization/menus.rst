@@ -219,6 +219,8 @@ until another item with an ID is found.
 
 For example, if you have main menu as:
 
+.. figure:: images/content_menu_copy_select.png
+
 .. code:: javascript
 
     [
@@ -228,12 +230,11 @@ For example, if you have main menu as:
         { "command": "select_all" }
     ]
 
-.. figure:: images/content_menu_copy_select.png
-
-
 And you want to insert the menu entry `paste` after the
 ``clipboard`` entry whe adding it, you need to create
 the insertion file as:
+
+.. figure:: images/content_menu_copy_paste_select.png
 
 .. code:: javascript
 
@@ -241,8 +242,6 @@ the insertion file as:
         { "caption": "-", "id": "clipboard" },
         { "command": "paste" }
     ]
-
-.. figure:: images/content_menu_copy_paste_select.png
 
 If two menu items
 from different ``.sublime-menu`` files
