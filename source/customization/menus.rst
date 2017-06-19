@@ -217,6 +217,33 @@ All following items in the file
 will then be appended to the ID's section,
 until another item with an ID is found.
 
+For example, 
+if you have main menu as:
+
+.. figure:: images/content_menu_copy_select.png
+
+.. code:: javascript
+
+    [
+        { "caption": "-", "id": "clipboard" },
+        { "command": "copy" },
+        { "caption": "-", "id": "selection" },
+        { "command": "select_all" }
+    ]
+
+And you want to insert the menu entry `paste`
+after the ``clipboard`` entry when adding it,
+you need to create the insertion file as:
+
+.. figure:: images/content_menu_copy_paste_select.png
+
+.. code:: javascript
+
+    [
+        { "caption": "-", "id": "clipboard" },
+        { "command": "paste" }
+    ]
+
 If two menu items
 from different ``.sublime-menu`` files
 reference the same item via ID,
