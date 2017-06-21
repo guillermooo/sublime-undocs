@@ -216,12 +216,11 @@ for plugins go, this a very bad one.
 Learning the API
 ****************
 
-In order to create plugins, you need to get acquainted with the Sublime Text
-API and the available commands. Documentation on both is scarce at the time of
-this writing, but you can read existing code and learn from it.
+The API reference is documented at `www.sublimetext.com/docs/3/api_reference.html <http://www.sublimetext.com/docs/3/api_reference.html>`
+
+To get acquainted with the Sublime Text API and the available commands, 
+it may be helpful to read existing code and learn from it.
 
 In particular, the :file:`Packages/Default` contains many examples of
 undocumented commands and API calls. Note that you will first have to extract
-its content to a folder if you want to take a look at the code within. As an
-exercise, you can try creating a build system to do that on demand, and a
-project file to be able to peek at the sample code easily.
+its contents to a folder if you want to take a look at the code within.
