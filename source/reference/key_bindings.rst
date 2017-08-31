@@ -148,7 +148,7 @@ provided by Sublime Text itself.
 
 ``setting.x``
    Returns the value of the ``x`` setting.
-   `x`` can be any string.
+   ``x`` can be any string.
 
 ``text``
    Restricts the test
