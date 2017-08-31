@@ -100,8 +100,12 @@ Structure of a Context
    Defaults to ``false``.
 
 
-Context Operands
-^^^^^^^^^^^^^^^^
+Context Keys
+^^^^^^^^^^^^
+
+Arbitrary keys may be provided by plugins.
+Thus, this section only features keys
+provided by Sublime Text itself.
 
 ``auto_complete_visible``
    Returns ``true``
