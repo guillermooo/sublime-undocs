@@ -192,7 +192,7 @@ Then copy the following into it.
 
     Exec=sublime
     Terminal=false
-    Icon=/opt/Sublime Text 3/Icon/48x48/sublime_text.png
+    Icon=/opt/Sublime Text 3/Icon/48x48/sublime-text.png
     Type=Application
     Categories=TextEditor;IDE;Development
     X-Ayatana-Desktop-Shortcuts=NewWindow
