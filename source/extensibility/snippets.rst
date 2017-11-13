@@ -109,12 +109,14 @@ variables are defined in ``.sublime-options`` files.
 **$SELECTION**             The text that was selected when the snippet was triggered.
 **$TM_CURRENT_LINE**       Content of the cursor's line when the snippet was triggered.
 **$TM_CURRENT_WORD**       Word under the cursor when the snippet was triggered.
+**$TM_DIRECTORY**          Directory name of the file being edited. (since 3154)
 **$TM_FILENAME**           Name of the file being edited, including extension.
 **$TM_FILEPATH**           Path to the file being edited.
 **$TM_FULLNAME**           User's user name.
 **$TM_LINE_INDEX**         Column where the snippet is being inserted, 0 based.
 **$TM_LINE_NUMBER**        Row where the snippet is being inserted, 1 based.
 **$TM_SELECTED_TEXT**      An alias for **$SELECTION**.
+**$TM_SCOPE**              The scope of the beginning of each selected region. (since 3154)
 **$TM_SOFT_TABS**          ``YES`` if ``translate_tabs_to_spaces`` is true, otherwise ``NO``.
 **$TM_TAB_SIZE**           Spaces per-tab (controlled by the ``tab_size`` option).
 ======================     =======================================================================
