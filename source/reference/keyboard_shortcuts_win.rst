@@ -132,7 +132,11 @@ Tabs
 +-----------------+-----------------------------------------------------------+
 | Ctrl + PgDn     | Cycle down through tabs                                   |
 +-----------------+-----------------------------------------------------------+
-| Ctrl + ⇆        | Find in files                                             |
+| Ctrl + ⇆        | Switch to a previous tab, hold Ctrl and repeat ⇆ to      |
+|                 | cycle through previous tabs                               |
++-----------------+-----------------------------------------------------------+
+| Ctrl + ⇧ + ⇆    | Switch in reverse order to a previous tab, hold Ctrl + ⇧  |
+|                 | and repeat ⇆ to cycle through previous tabs in reverse   |
 +-----------------+-----------------------------------------------------------+
 | Ctrl + W        | Close current tab                                         |
 +-----------------+-----------------------------------------------------------+
