@@ -120,7 +120,7 @@ locations for the same file type.
 
 Similarly to global settings, one can establish platform-specific settings for
 file types. For example, :file:`Python (Linux).sublime-settings` would only be
-consulted only under Linux.
+consulted under Linux.
 
 Also, let us emphasize that under :file:`Pakages/User` only
 :file:`Python.sublime-settings` would be read, but not any
