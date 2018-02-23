@@ -141,13 +141,13 @@ Commands
 
 **edit_settings**
 	Opens the default and user settings files in a new window.
-	
+
 	- **base_file** [String]: The path to the default setting file.
-	
+
 	- **default** [String]: Content of the user file if none exists.
-	
+
 	.. versionadded:: 3124
-	
+
 
 **open_file_settings**
 	Opens the syntax-specific user settings file for the current syntax.
@@ -497,18 +497,24 @@ Commands
 	parameters accepted by this command.
 
 	- **cmd** [[String]]
+	- **shell_cmd** [String]: Shell command to use. If given overrides
+	  ``cmd`` and ignores ``shell``.
 	- **file_regex** [String]
 	- **line_regex** [String]
 	- **working_dir** [String]
 	- **encoding** [String]
 	- **env** [{String: String}]
-	- **path** [String]
-	- **shell** [Bool]
+	- **quiet** [Bool]: If ``True`` no runtime information is printed if the
+	  command fails or has a non-zero exit code.
 	- **kill** [Bool]: If ``True`` will simply terminate the current build
 	  process. This is invoked via *Build: Cancel* command from the
 	  :ref:`Command Palette <ext-command-palette-overview>`.
-	- **quiet** [Bool]: If ``True`` information less running about prints the
-	  command.
+	- **update_phantoms_only** [Bool]
+	- **hide_phantoms_only** [Bool]
+	- **word_wrap** [Bool]: Whether to word-wrap the output in the build panel
+	- **syntax** [String]: Syntax file used to colour output.
+	- **path** [String]
+	- **shell** [Bool]
 
 	.. seealso::
 
