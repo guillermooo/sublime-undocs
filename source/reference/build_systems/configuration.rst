@@ -83,8 +83,8 @@ receive any of these options.
 
     See Variants_.
 
-``name`` *(optional)*
-    **Only valid inside a variant**.
+``name`` *(optional in standalone build systems; mandatory in project build systems)*
+    **Only valid inside a variant or inside a project build system.**.
 
     Identifies a build system task.
     If the ``name`` is 'Run',
