@@ -107,6 +107,20 @@ at the terminal::
     ln -s  "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
 
+Homebrew
+********
+
+Sublime Text is available on `Homebrew`_ cask, too.
+To install Sublime Text using Homebrew,
+after `installing Homebrew`_,
+run the following command at the terminal::
+
+    brew cask install sublime-text
+
+.. _Homebrew: https://brew.sh
+.. _installing Homebrew: https://brew.sh
+
+
 Linux
 =====
 
