@@ -480,6 +480,11 @@ Commands
 **auto_complete**
 	Opens the auto complete list.
 
+	- **api_completions_only** [Bool]: Defaults to ``false``. 
+	- **auto_complete_commit_on_tab** [Bool]: Defaults to ``true``.
+	- **disable_auto_insert** [Bool]: If ``false``, inserts the completion when auto completions are requested and there is only a single option. Defaults to ``false``.
+	- **next_completion_if_showing** [Bool]: Defaults to ``false``.
+
 **replace_completion_with_auto_complete**
 	XXX Useless for users. XXX
 
