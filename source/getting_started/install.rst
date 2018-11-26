@@ -184,7 +184,7 @@ to use at the command line.
 
 
 In Ubuntu, if you also want to add Sublime Text
-to the Unity luncher, read on.
+to the Unity launcher, read on.
 
 First we need to create a new file.
 
