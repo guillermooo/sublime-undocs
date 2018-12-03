@@ -306,6 +306,11 @@ the Main Menu's root menu
 represents the menu items in the menu bar
 (File, Help, etc.).
 
+Note that when multiple items need to be
+inserted in different places, order matters.
+E.g. ``edit`` *must* come before ``preferences``
+when adding children to both menus.
+
 
 Interface for Commands
 ======================
