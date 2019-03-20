@@ -65,7 +65,7 @@ Editing
 +-----------------+-----------------------------------------------------------+
 | ⌃ + Space       | Select next auto-complete suggestion                      |
 +-----------------+-----------------------------------------------------------+
-| ⌃ + U           | Soft undo; jumps to your last change before               |
+| ⌘ + U           | Soft undo; jumps to your last change before               |
 |                 | undoing change when repeated                              |
 +-----------------+-----------------------------------------------------------+
 | ⌃ + ⇧ + Up      | Column selection up                                       |
