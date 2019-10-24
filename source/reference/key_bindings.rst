@@ -121,6 +121,9 @@ provided by Sublime Text itself.
    Returns ``true``
    if a previous snippet field
    is available.
+   
+``last_command``
+   Returns the name of the last command run.
 
 ``num_selections``
    Returns the number of selections.
