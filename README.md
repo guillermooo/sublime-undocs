@@ -1,5 +1,9 @@
 # Sublime Text Unofficial Documentation
 
+**Update 2020-03-20: Because @guillermooo is AWOL, resulting in both the build pipeline and the domain being effectively unmaintained, the project has been forked to https://github.com/sublimetext-io/docs.sublimetext.io, accessible at https://docs.sublimetext.io/.** *See  [#270](https://github.com/guillermooo/sublime-undocs/issues/270) for details.*
+
+---
+
 We started this project
 to fill the gaps in the Sublime Text [official documentation][off-docs].
 
