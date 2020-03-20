@@ -12,16 +12,6 @@ to fill the gaps in the Sublime Text [official documentation][off-docs].
 You can follow our progress here and
 on our public [Trello board][trello].
 
-## Support Us
-
-If you find this guide useful,
-you can treat us to a beer
-or send a donation our way:
-
-| **One-off Tip**                                                    |
-| ------------------------------------------------------------------ |
-| **[ST Undocs Team](https://www.bountysource.com/teams/st-undocs)** |
-
 
 ## Contributing
 
